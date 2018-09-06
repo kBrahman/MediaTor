@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Created by Angel Leon (@gubatron), Marcelina Knitter (@marcelinkaaa)
+ *            Alden Torres (aldenml)
+ * Copyright (c) 2011-2017, FrostWire(R). All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:gravity="center_vertical">
+
+    <TextView android:id="@+id/view_product_card_title_bold_portion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dummy_title_bold"
+        style="@style/BuyNoAdsCardTitle.Bold" />
+
+    <TextView android:id="@+id/view_product_card_title_normal_portion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dummy_title"
+        style="@style/BuyNoAdsCardTitle"
+        android:layout_toRightOf="@+id/view_product_card_title_bold_portion"
+        android:layout_toStartOf="@+id/view_product_card_hint_button"
+        android:layout_toEndOf="@+id/view_product_card_title_bold_portion"
+        android:layout_toLeftOf="@+id/view_product_card_hint_button"
+        android:layout_marginLeft="5dp" />
+
+    <TextView android:id="@+id/view_product_card_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dummy_price"
+        style="@style/BuyNoAdsCardPrice"
+        android:layout_below="@+id/view_product_card_title_bold_portion" />
+
+    <TextView android:id="@+id/view_product_card_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dummy_content_description"
+        style="@style/BuyNoAdsCardDescription"
+        android:layout_below="@+id/view_product_card_price"/>
+
+    <TextView android:id="@+id/view_product_card_hint_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dummy_hint"
+        style="@style/BuyNoAdsCardHint"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:gravity="end" />
+
+</RelativeLayout>

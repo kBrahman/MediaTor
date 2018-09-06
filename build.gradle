@@ -1,0 +1,271 @@
+/*
+ * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
+ * Copyright (c) 2011-2018, FrostWire(R). All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import groovy.swing.SwingBuilder
+import groovy.xml.Namespace
+
+apply plugin: 'com.android.application'
+apply from: '../common/dependencies.gradle'
+
+buildscript {
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.4'
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+    jcenter()
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
+    maven { url "https://s3.amazonaws.com/moat-sdk-builds" }
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+def manifestVersionCode() {
+    def manifestFile = file(project.projectDir.absolutePath + '/AndroidManifest.xml')
+
+    def ns = new Namespace("http://schemas.android.com/apk/res/android", "android")
+    def xml = new XmlParser().parse(manifestFile)
+
+    return Integer.parseInt(xml.attributes()[ns.versionCode].toString())
+}
+
+def manifestVersionName() {
+    def manifestFile = file(project.projectDir.absolutePath + '/AndroidManifest.xml')
+
+    def ns = new Namespace("http://schemas.android.com/apk/res/android", "android")
+    def xml = new XmlParser().parse(manifestFile)
+
+    return xml.attributes()[ns.versionName].toString()
+}
+
+def changeApkOutput(variant) {
+    def flavor = 'unknown'
+    if (variant.productFlavors[0].name == "basic") {
+        flavor = 'basic'
+    } else if (variant.productFlavors[0].name == "plus1") {
+        flavor = 'plus'
+    }
+    def suffix = project.ext.versionName + '-b' + project.ext.versionCode + '-' + flavor
+    def name = "frostwire-android-" + variant.buildType.name + '-' + suffix
+
+    variant.outputs.all { output ->
+        outputFileName = name + '.apk'
+    }
+    variant.assemble.doLast { assemble ->
+        copy {
+            from variant.outputs*.outputFile
+            into "${project.buildDir}"
+        }
+    }
+}
+
+project.ext.versionCode = manifestVersionCode()
+project.ext.versionName = manifestVersionName()
+
+android {
+
+    compileSdkVersion 27
+    buildToolsVersion "28.0.2"
+
+    defaultConfig {
+        versionName project.ext.versionName
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            res.srcDirs = ['res', 'apollo/res']
+            aidl.srcDirs = ['src', 'apollo/src']
+            assets.srcDirs = ['assets']
+            java {
+                srcDir '../common/src/main/java'
+                srcDir 'apollo/src'
+                srcDir 'src'
+            }
+        }
+
+        plus1.res.srcDirs = ['res-plus1']
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    dexOptions {
+        javaMaxHeapSize "2g"
+        jumboMode = true
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../../frostwire-tools/installer_builders/android.keystore/frostwire.keystore")
+            storePassword ""
+            keyAlias ""
+            keyPassword ""
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+                    'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled true
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+                    'proguard-rules.pro'
+        }
+    }
+
+
+    flavorDimensions "classicApp"
+
+    productFlavors {
+        basic {
+            applicationId 'com.frostwire.android'
+            versionCode 9060000 + project.ext.versionCode
+        }
+        plus1 {
+            applicationId 'com.frostwire.android'
+            versionCode 9070000 + project.ext.versionCode
+        }
+    }
+
+    applicationVariants.all { variant ->
+        changeApkOutput(variant)
+    }
+}
+
+dependencies {
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:animated-vector-drawable:27.1.1'
+    implementation 'com.android.support:customtabs:27.1.1'
+    implementation 'com.android.support:exifinterface:27.1.1'
+    implementation 'com.android.support:preference-v7:27.1.1'
+    implementation 'com.google.android.gms:play-services-ads:15.0.1'
+    implementation 'com.squareup.picasso:picasso:3.0.0-SNAPSHOT'
+    implementation 'com.frostwire:jlibtorrent-android-arm:1.2.0.18-RC11'
+    implementation 'com.frostwire:jlibtorrent-android-x86:1.2.0.18-RC11'
+    implementation 'com.google.android:flexbox:1.0.0'
+    implementation(name: 'presage-moat-3.0.23-3.0.14', ext: 'aar')
+}
+
+class DeployRelease extends DefaultTask {
+
+    String flavor = 'unknown'
+
+    def version = project.ext.versionName
+    def build = project.ext.versionCode
+
+    static def runCmd(cmd) {
+        println(cmd)
+
+        def p = Runtime.getRuntime().exec(cmd)
+        def stdOut = new BufferedReader(new InputStreamReader(p.getInputStream()))
+
+        def s
+        while ((s = stdOut.readLine()) != null) {
+            println(s)
+        }
+    }
+
+    @TaskAction
+    def run() {
+
+        println "Building and installing..."
+        println "VERSION: $version"
+        println "BUILD: $build"
+        println "FLAVOR: $flavor"
+
+        def suffix = version + '-b' + build + '-' + flavor
+        def filename = "$project.buildDir/frostwire-android-release-" + suffix + '.apk'
+
+        runCmd("adb uninstall com.frostwire.android")
+        runCmd("./gradlew clean assembleRelease")
+        runCmd("adb install $filename")
+    }
+}
+
+task deployBasic(type: DeployRelease) {
+    flavor = 'basic'
+}
+
+task deployPlus(type: DeployRelease) {
+    flavor = 'plus'
+}
+
+gradle.taskGraph.whenReady { taskGraph ->
+    if (taskGraph.hasTask(':assembleRelease')) {
+
+        def myKeyAlias = ""
+        def myKeyPassword = ""
+        System.setProperty('java.awt.headless', 'false')
+        if (System.console() == null) {
+            new SwingBuilder().edt {
+                dialog(modal: true,
+                        title: 'Enter keystore data',
+                        alwaysOnTop: true,
+                        resizable: true,
+                        locationRelativeTo: null,
+                        show: true,
+                        size: [215, 147]
+                ) {
+                    vbox {
+                        label(text: "Key Alias:")
+                        inputAlias = textField()
+                        label(text: "Key Password:")
+                        inputPassword = passwordField()
+                        button(defaultButton: true, text: 'OK', actionPerformed: {
+                            myKeyAlias = inputAlias.text
+                            myKeyPassword = new String(inputPassword.password)
+                            dispose()
+                        })
+                    }
+                }
+            }
+        } else {
+            myKeyAlias = System.console().readPassword("\nKey Alias: ")
+            myKeyAlias = new String(myKeyAlias)
+            myKeyPassword = System.console().readPassword("\nKey Password: ")
+            myKeyPassword = new String(myKeyPassword)
+        }
+
+        android.signingConfigs.release.keyAlias = myKeyAlias
+        android.signingConfigs.release.storePassword = myKeyPassword
+        android.signingConfigs.release.keyPassword = myKeyPassword
+    }
+}

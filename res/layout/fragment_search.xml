@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Created by Angel Leon (@gubatron), Alden Torres (aldenml),
+ * Marcelina Knitter (@marcelinkaaa)
+ * Copyright (c) 2011-2017, FrostWire(R). All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:frostwire="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <com.frostwire.android.offers.SearchHeaderBanner
+        android:id="@+id/fragment_search_header_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ProgressBar
+            android:id="@+id/fragment_search_deepsearch_progress"
+            style="@style/ProgressBarHolo.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="5dip"
+            android:indeterminate="true"
+            android:progress="25"/>
+
+    <com.frostwire.android.gui.views.SearchInputView
+            android:id="@+id/fragment_search_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <com.frostwire.android.gui.views.RichNotification
+            android:id="@+id/fragment_search_rating_reminder_notification"
+            frostwire:rich_notification_icon="@drawable/rate_app_notification"
+            frostwire:rich_notification_title="@string/rate_our_app"
+            frostwire:rich_notification_title_underlined="true"
+            frostwire:rich_notification_description="@string/rating_reminder_description"
+            frostwire:rich_notification_number_of_action_links="2"
+            frostwire:rich_notification_action_links_horizontal_margin="25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+    <com.frostwire.android.gui.views.SwipeLayout
+            android:id="@+id/fragment_search_swipe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1.0">
+        
+        <FrameLayout
+            android:id="@+id/fragment_search_framelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_background_white">
+
+            <com.frostwire.android.gui.views.PromotionsView
+                android:id="@+id/fragment_search_promos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <com.frostwire.android.gui.views.SearchProgressView
+                android:id="@+id/fragment_search_search_progress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <ListView
+                android:id="@+id/fragment_search_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/scrollbar_default_style"
+                android:divider="@color/transparent"
+                android:dividerHeight="0dp"
+                android:childDivider="#00000000"
+                android:groupIndicator="@null" />
+        </FrameLayout>
+    </com.frostwire.android.gui.views.SwipeLayout>
+</LinearLayout>
