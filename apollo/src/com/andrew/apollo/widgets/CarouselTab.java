@@ -46,7 +46,7 @@ public class CarouselTab extends FrameLayoutWithOverlay {
 
     /**
      * @param context The {@link Context} to use
-     * @param attrs The attributes of the XML tag that is inflating the view.
+     * @param attrs   The attributes of the XML tag that is inflating the view.
      */
     public CarouselTab(final Context context, final AttributeSet attrs) {
         super(context, attrs);
@@ -85,13 +85,11 @@ public class CarouselTab extends FrameLayoutWithOverlay {
      * Used to set the artist image in the artist profile.
      *
      * @param context The {@link Context} to use.
-     * @param artist The name of the artist in the profile the user is viewing.
+     * @param artist  The name of the artist in the profile the user is viewing.
      */
     public void setArtistPhoto(final Activity context, final String artist) {
         if (!TextUtils.isEmpty(artist)) {
             mFetcher.loadArtistImage(artist, mPhoto);
-        } else {
-            setDefault(context);
         }
     }
 
@@ -123,33 +121,26 @@ public class CarouselTab extends FrameLayoutWithOverlay {
      * Used to blur the artist image in the album profile.
      *
      * @param context The {@link Context} to use.
-     * @param artist The artist nmae used to fetch the cached artist image.
-     * @param album The album name used to fetch the album art in case the
-     *            artist image is missing.
+     * @param artist  The artist nmae used to fetch the cached artist image.
+     * @param album   The album name used to fetch the album art in case the
+     *                artist image is missing.
      */
     public void blurPhoto(final Activity context, final String artist, final String album) {
         final ImageLoader loader = ImageLoader.getInstance(context.getApplicationContext());
         ImageLoader.Filter filter = new BlurFilter();
-        loader.load(ImageLoader.getArtistArtUri(artist),
-                    ImageLoader.getAlbumArtUri(MusicUtils.getIdForAlbum(context, album, artist)),
-                    filter,
-                    mPhoto,
-                    true);
+        loader.load(ImageLoader.getArtistArtUri(artist), ImageLoader.getAlbumArtUri(MusicUtils.getIdForAlbum(context, album, artist)), filter, mPhoto, true);
     }
 
     /**
      * Used to set the album art in the album profile.
      *
      * @param context The {@link Context} to use.
-     * @param album The name of the album in the profile the user is viewing.
+     * @param album   The name of the album in the profile the user is viewing.
      */
     public void setAlbumPhoto(final Activity context, final String album, final String artist) {
         if (!TextUtils.isEmpty(album)) {
             mAlbumArt.setVisibility(View.VISIBLE);
-            mFetcher.loadAlbumImage(artist, album,
-                    MusicUtils.getIdForAlbum(context, album, artist), mAlbumArt);
-        } else {
-            setDefault(context);
+            mFetcher.loadAlbumImage(artist, album, MusicUtils.getIdForAlbum(context, album, artist), mAlbumArt);
         }
     }
 
@@ -157,50 +148,34 @@ public class CarouselTab extends FrameLayoutWithOverlay {
      * Used to set the album art in the artist profile.
      *
      * @param context The {@link Context} to use.
-     * @param artist The name of the artist in the profile the user is viewing.
+     * @param artist  The name of the artist in the profile the user is viewing.
      */
     public void setArtistAlbumPhoto(final Activity context, final String artist) {
         final String lastAlbum = MusicUtils.getLastAlbumForArtist(context, artist);
         if (!TextUtils.isEmpty(lastAlbum)) {
             // Set the last album the artist played
-            mFetcher.loadAlbumImage(artist, lastAlbum,
-                    MusicUtils.getIdForAlbum(context, lastAlbum, artist), mPhoto);
+            mFetcher.loadAlbumImage(artist, lastAlbum, MusicUtils.getIdForAlbum(context, lastAlbum, artist), mPhoto);
             // Play the album
             mPhoto.setOnClickListener(v -> {
-                final long[] albumList = MusicUtils.getSongListForAlbum(getContext(),
-                        MusicUtils.getIdForAlbum(context, lastAlbum, artist));
+                final long[] albumList = MusicUtils.getSongListForAlbum(getContext(), MusicUtils.getIdForAlbum(context, lastAlbum, artist));
                 MusicUtils.playAll(albumList, 0, MusicUtils.isShuffleEnabled());
             });
-        } else {
-            setDefault(context);
         }
     }
 
     /**
      * Used to set the header image for playlists and genres.
      *
-     * @param context The {@link Context} to use.
+     * @param context     The {@link Context} to use.
      * @param profileName The key used to fetch the image.
      */
-    public void setPlaylistOrGenrePhoto(final Activity context,
-            final String profileName) {
+    public void setPlaylistOrGenrePhoto(final Activity context, final String profileName) {
         if (!TextUtils.isEmpty(profileName)) {
             final Bitmap image = mFetcher.getCachedBitmap(profileName);
             if (image != null) {
                 mPhoto.setImageBitmap(image);
-            } else {
-                setDefault(context);
             }
-        } else {
-            setDefault(context);
         }
-    }
-
-    /**
-     * @param context The {@link Context} to use.
-     */
-    public void setDefault(final Context context) {
-        mPhoto.setImageDrawable(context.getResources().getDrawable(R.drawable.header_temp));
     }
 
     /**

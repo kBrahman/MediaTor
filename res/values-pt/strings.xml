@@ -476,7 +476,7 @@
     <string name="help">Socorro</string>
     <string name="haptic_feedback">Feedback Táctil</string>
     <string name="vpn_not_found">Sem VPN. Considere criptografar a conexão.</string>
-    <string name="your_installation_is_complete">A instalação está completa.</string>
+
     <string name="error_connection_timed_out">Erro: conexão expirou/caiu. Tente novamente.</string>
     <string name="request_again">Solicitação novamente</string>
     <string name="restarting_summary">FrostWire será reiniciado para permissões concedidas tenham efeito.</string>
@@ -584,7 +584,7 @@
     <string name="frostwire_sticker_and_more">Etiquetas e mais de FrostWire</string>
     <string name="wifi_networks_only_summary">Guardar dados. Faça o download somente se a conexão Wi-Fi for estabelecida. </string>
     <string name="notifications_other_settings">Notificações e outros</string>
-    <string name="frostwire_features">FROSTWIRE APRESENTA</string>
+
     <string name="wifi_networks_only">Somente as redes Wi-Fi</string>
     <string name="distraction_free_search_results_summary">Ocultar componentes de interface do usuário para mostrar mais resultados. Necessita de reiniciar o aplicativo para ter efeito.</string>
     <string name="search_preferences">Preferências de pesquisa</string>

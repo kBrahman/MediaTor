@@ -35,7 +35,6 @@ import android.widget.TextView;
 import com.frostwire.android.BuildConfig;
 import com.frostwire.android.R;
 import com.frostwire.android.core.Constants;
-import com.frostwire.android.gui.SoftwareUpdater;
 import com.frostwire.android.gui.activities.AboutActivity;
 import com.frostwire.android.gui.activities.MainActivity;
 import com.frostwire.android.gui.fragments.TransfersFragment;
@@ -127,7 +126,7 @@ public final class NavigationMenu {
             // Prep update button
             ImageView updateButton = navViewHeader.findViewById(R.id.nav_view_header_main_update);
             updateButton.setVisibility(View.GONE);
-            updateButton.setOnClickListener(v -> onUpdateButtonClicked(activity));
+            updateButton.setOnClickListener(v -> onUpdateButtonClicked());
         }
         return resultNavView;
     }
@@ -174,9 +173,8 @@ public final class NavigationMenu {
         hide();
     }
 
-    private void onUpdateButtonClicked(MainActivity mainActivity) {
+    private void onUpdateButtonClicked() {
         hide();
-        SoftwareUpdater.getInstance().notifyUserAboutUpdate(mainActivity);
     }
 
     private void refreshMenuRemoveAdsItem() {

@@ -490,7 +490,7 @@
     <string name="send_feedback">フィードバックを送信</string>
     <string name="choose_email_app">メールアプリを選択…</string>
     <string name="media_preview">%s プレビュー</string>
-    <string name="your_installation_is_complete">インストールは完了しました。</string>
+
     <string name="thank_you">ありがとうございます!</string>
     <string name="keep_in_touch">Keep in touch!</string>
     <string name="frostwire_shutting_down_no_permissions">申し訳ありません。FrostWireはディスクへのアクセス許可がないと続行できません。</string>
@@ -533,7 +533,7 @@
     <string name="one_time_purchase">ワンタイム購入</string>
     <string name="activity_VPN">接続</string>
     <string name="one_year">1年</string>
-    <string name="frostwire_features">FROSTWIREの機能</string>
+
     <string name="i_have_read_and_agree_to_the">私は読んで同意する</string>
     <string name="scanning">仕上げ - スキャン</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">あなたの設定によると、Wi-Fiを使用していない限り、私は播種を開始できません。 このファイルは、インターネット対応のWi-Fiネットワークに戻ったときに自動的にシードできる状態になります。</string>

@@ -32,12 +32,10 @@ import android.widget.TextView;
 
 import com.frostwire.android.R;
 import com.frostwire.android.core.Constants;
-import com.frostwire.android.gui.util.UIUtils;
 
 /**
  * @author gubatron
  * @author aldenml
- * 
  */
 public class IntentWizardPage extends RelativeLayout implements WizardPageView {
     private final CheckAcceptListener checkAcceptListener;
@@ -67,11 +65,7 @@ public class IntentWizardPage extends RelativeLayout implements WizardPageView {
 
     @Override
     public void finish() {
-        UIUtils.showSocialLinksDialog(getContext(), true, dialog -> {
-            if (getContext() instanceof Activity) {
-                ((Activity) getContext()).finish();
-            }
-        }, "wizard");
+        ((Activity) getContext()).finish();
     }
 
     @Override

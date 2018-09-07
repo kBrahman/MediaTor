@@ -338,7 +338,7 @@
     <string name="storage_preference_summary">Penyimpanan default lokasi dimana file akan disimpan.</string>
     <string name="vpn_not_found">Tidak ada VPN. Pertimbangkan enkripsi koneksi.</string>
     <string name="activity_mediaplayer_name">Media Player</string>
-    <string name="your_installation_is_complete">Instalasi selesai.</string>
+
     <string name="error_connection_timed_out">Kesalahan: koneksi habis waktu/turun. Coba lagi.</string>
     <string name="wifi_sharing_settings">Wifi Setelan Berbagi</string>
     <string name="enable_wifi_sharing_summary">Berbagi file dengan rekan-rekan di jaringan Wifi lokal.</string>
@@ -413,7 +413,7 @@
     <string name="transfers_context_menu_pause_stop_all_transfers">Jeda/Hentikan semua transfer</string>
     <string name="wifi_sharing">Wi-Fi Sharing</string>
     <string name="transfers_select_downloading">downloading</string>
-    <string name="frostwire_features">FROSTWIRE KARAKTERISTIK</string>
+
     <string name="free_apps">Aplikasi gratis</string>
     <string name="i_have_read_and_agree_to_the">Saya telah membaca dan setuju dengan</string>
     <string name="scanning">Finishing - Scanning</string>

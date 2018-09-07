@@ -351,7 +351,7 @@
     <string name="storage_preference_summary">Standard opbevaring placering, hvor filerne skal gemmes.</string>
     <string name="vpn_not_found">Ingen VPN. Overvej kryptere forbindelsen.</string>
     <string name="activity_mediaplayer_name">Medie afspiller</string>
-    <string name="your_installation_is_complete">Din installationen er færdig.</string>
+
     <string name="error_connection_timed_out">Fejl: tilslutning timeout/droppet. Prøv igen.</string>
     <string name="wifi_sharing_settings">Wifi Indstillinger for deling</string>
     <string name="enable_wifi_sharing_summary">Del filer med jævnaldrende på det lokale Wifi netværk.</string>
@@ -421,7 +421,7 @@
     <string name="transfers_context_menu_pause_stop_all_transfers">Pause/Stop alle overførsler</string>
     <string name="wifi_sharing">Wifi Deling</string>
     <string name="transfers_select_downloading">downloading</string>
-    <string name="frostwire_features">FROSTWIRE FUNKTIONER</string>
+
     <string name="free_apps">Gratis Apps</string>
     <string name="i_have_read_and_agree_to_the">Jeg har læst og accepterer</string>
     <string name="scanning">Efterbehandling - Scanning</string>

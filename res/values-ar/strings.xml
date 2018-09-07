@@ -391,7 +391,7 @@
     <string name="anonymous_usage_statistics_summary">ارسال إحصائيات الاستخدام مجهولة الهوية. لا يوجد معلومات تخص محتوى البحث أو المشاركة أو المشغل ولا يمكن لأي معلومات تحدد من شخصيتك أن تخزن أو ترسل عبر الإنترنت</string>
     <string name="paused_song_name">موقف مؤقتاً %s</string>
     <string name="vpn_not_found">لا VPN. النظر في تشفير الاتصال.</string>
-    <string name="your_installation_is_complete">التثبيت كاملة.</string>
+
     <string name="error_connection_timed_out">خطأ: انتهت مهلة الاتصال. حاول ثانية.</string>
     <string name="wifi_sharing_settings">إعدادات المشاركة واي فاي</string>
     <string name="all_free_downloads">كل البرامج المجانية</string>
@@ -446,7 +446,7 @@
     <string name="transfers_select_completed">منجز</string>
     <string name="transfers_context_menu_pause_stop_all_transfers">وقفة/إيقاف كافة عمليات النقل</string>
     <string name="transfers_select_downloading">تحميل</string>
-    <string name="frostwire_features">المميزات برنامج FrostWire</string>
+
     <string name="i_have_read_and_agree_to_the">لقد قرات ووافقت على ال</string>
     <string name="scanning">التشطيب - المسح الضوئي</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">وفقا للإعدادات الخاصة بك وأنا لا يمكن أن تبدأ البذر إلا إذا كنت على خدمة الواي فاي. سوف يكون الملف جاهزا لبذر تلقائيا عند العودة إلى الإنترنت تمكين شبكة واي فاي.</string>

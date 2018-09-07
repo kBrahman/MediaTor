@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  Copyright (C) 2012 Andrew Neal
- 
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
- 
-       http://www.apache.org/licenses/LICENSE-2.0
- 
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
--->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/app_background_body_light"
-    android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/app_background_body_light"
+              android:orientation="vertical">
 
-    <include layout="@layout/toolbar_main" />
+    <include layout="@layout/toolbar_main"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -32,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_alignTop="@android:id/progress" />
+            android:layout_alignTop="@android:id/progress"/>
 
         <LinearLayout
             android:id="@+id/audio_player_header"
@@ -58,9 +43,9 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:maxLines="1"
+                    android:textColor="@color/audio_player_line_one"
                     android:textSize="@dimen/text_size_medium"
-                    android:textStyle="bold"
-                    android:textColor="@color/audio_player_line_one" />
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/audio_player_artist_name"
@@ -68,8 +53,8 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:textSize="@dimen/text_size_small"
-                    android:textColor="@color/audio_player_line_two" />
+                    android:textColor="@color/audio_player_line_two"
+                    android:textSize="@dimen/text_size_small"/>
             </LinearLayout>
 
             <FrameLayout
@@ -85,13 +70,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:contentDescription="@null" />
+                    android:contentDescription="@null"/>
 
                 <com.andrew.apollo.widgets.SquareImageView
                     android:id="@+id/audio_player_switch_album_art"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:visibility="invisible" />
+                    android:visibility="invisible"/>
             </FrameLayout>
         </LinearLayout>
 
@@ -112,25 +97,6 @@
                 android:scaleType="fitXY"
                 android:visibility="visible"/>
 
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_alignTop="@+id/audio_player_album_art"
-                    android:background="@drawable/divider_line" />
-
-                <com.frostwire.android.offers.MopubBannerView
-                    android:id="@+id/audio_player_mopub_banner_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"/>
-            </FrameLayout>
-
-
             <FrameLayout
                 android:id="@+id/audio_player_pager_container"
                 android:layout_width="match_parent"
@@ -143,18 +109,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_gravity="top"
-                    android:background="@drawable/divider_line" />
+                    android:background="@drawable/divider_line"/>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_gravity="bottom"
-                    android:background="@drawable/divider_line" />
+                    android:background="@drawable/divider_line"/>
 
                 <android.support.v4.view.ViewPager
                     android:id="@+id/audio_player_pager"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"/>
 
             </FrameLayout>
         </RelativeLayout>
@@ -168,8 +134,8 @@
             android:layout_alignTop="@android:id/progress"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:textSize="@dimen/text_size_medium"
-            android:textColor="@color/audio_player_current_time" />
+            android:textColor="@color/audio_player_current_time"
+            android:textSize="@dimen/text_size_medium"/>
 
         <TextView
             android:id="@+id/audio_player_total_time"
@@ -179,8 +145,8 @@
             android:layout_alignParentRight="true"
             android:layout_alignTop="@android:id/progress"
             android:gravity="center"
-            android:textSize="@dimen/text_size_medium"
-            android:textColor="@color/audio_player_total_time" />
+            android:textColor="@color/audio_player_total_time"
+            android:textSize="@dimen/text_size_medium"/>
 
         <SeekBar
             android:id="@android:id/progress"
@@ -192,7 +158,7 @@
             android:layout_toRightOf="@+id/audio_player_current_time"
             android:background="@null"
             android:max="1000"
-            android:progressDrawable="@drawable/audio_player_seekbar" />
+            android:progressDrawable="@drawable/audio_player_seekbar"/>
 
         <LinearLayout
             android:id="@+id/audio_player_controls"
@@ -211,7 +177,7 @@
                 android:background="@color/app_background_body_light"
                 android:orientation="horizontal">
 
-                <include layout="@layout/audio_player_controls" />
+                <include layout="@layout/audio_player_controls"/>
 
             </LinearLayout>
         </LinearLayout>

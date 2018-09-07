@@ -351,7 +351,7 @@
     <string name="storage_preference_summary">Výchozí úložiště, kde jsou soubory uloženy.</string>
     <string name="vpn_not_found">No VPN. Vezměme si šifrování spojení.</string>
     <string name="activity_mediaplayer_name">Přehrávač médií</string>
-    <string name="your_installation_is_complete">Vaše instalace je dokončena.</string>
+
     <string name="error_connection_timed_out">Chyba: Připojení vypršel/poklesla. Zkus to znovu.</string>
     <string name="wifi_sharing_settings">Wifi Nastavení sdílení</string>
     <string name="enable_wifi_sharing_summary">Sdílení souborů s vrstevníky na lokální WiFi síti.</string>
@@ -421,7 +421,7 @@
     <string name="transfers_context_menu_pause_stop_all_transfers">Pozastavení/Zastavit všechny převody</string>
     <string name="wifi_sharing">Wifi Sdílení</string>
     <string name="transfers_select_downloading">stahování</string>
-    <string name="frostwire_features">FROSTWIRE VLASTNOSTI</string>
+
     <string name="free_apps">Volný Apps</string>
     <string name="i_have_read_and_agree_to_the">Četl jsem a souhlasím s</string>
     <string name="scanning">Povrchová úprava - Skenování</string>

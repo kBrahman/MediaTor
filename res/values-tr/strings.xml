@@ -391,7 +391,7 @@
     <string name="anonymous_usage_statistics_summary">Anonim kullanım istatistiklerini gönderin. Aranan, paylaşılan, yürütülen içeriğe dair herhangi bir bilgi veya kişisel bilgilerinizi açığa çıkaracak hiçbir bilgi ağ üzerinden gönderilen diskte saklanmayacaktır.</string>
     <string name="paused_song_name">%s Durdu</string>
     <string name="vpn_not_found">VPN yok. Bağlantıyı şifrelemek düşünün.</string>
-    <string name="your_installation_is_complete">Kurulumunuz tamamlandı.</string>
+
     <string name="error_connection_timed_out">Hata: bağlantı zaman aşımına uğradı/bırakıldı. Tekrar dene.</string>
     <string name="wifi_sharing_settings">Kablosuz Paylaşım Ayarları</string>
     <string name="all_free_downloads">Tüm ücretsiz indirmeler</string>
@@ -446,7 +446,7 @@
     <string name="transfers_select_completed">tamamlanmış</string>
     <string name="transfers_context_menu_pause_stop_all_transfers">Tüm transferleri duraklatın/durdurun</string>
     <string name="transfers_select_downloading">indirme</string>
-    <string name="frostwire_features">FROSTWIRE ÖZELLİKLERİ</string>
+
     <string name="i_have_read_and_agree_to_the">Okudum ve onaylıyorum</string>
     <string name="scanning">Bitirme - Tarama</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">Ayarlarınıza göre, Wi-Fi olmadığı sürece tohumlamaya başlayamam. İnternet üzerinden bir Wi-Fi ağına geri döndüğünüzde dosya otomatik olarak ekim için hazır olacaktır.</string>

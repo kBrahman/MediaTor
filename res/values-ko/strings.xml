@@ -339,7 +339,7 @@
     <string name="storage_preference_summary">파일이 저장됩니다 기본 저장 위치.</string>
     <string name="vpn_not_found">VPN이 없습니다. 연결 암호화를 고려하십시오.</string>
     <string name="activity_mediaplayer_name">미디어 플레이어</string>
-    <string name="your_installation_is_complete">설치가 완료되었습니다.</string>
+
     <string name="error_connection_timed_out">오류 : 연결 시간 초과 / 중단. 다시 시도하십시오.</string>
     <string name="wifi_sharing_settings">Wi-Fi 공유 설정</string>
     <string name="enable_wifi_sharing_summary">로컬 Wi-Fi 네트워크에서 동료와 파일을 공유합니다.</string>
@@ -414,7 +414,7 @@
     <string name="transfers_context_menu_pause_stop_all_transfers">모든 전송 일시 중지 / 중지</string>
     <string name="wifi_sharing">Wi-Fi 공유</string>
     <string name="transfers_select_downloading">다운로드 중</string>
-    <string name="frostwire_features">FROSTWIRE 기능</string>
+
     <string name="free_apps">무료 앱</string>
     <string name="i_have_read_and_agree_to_the">나는이 책을 읽고 동의한다.</string>
     <string name="scanning">마무리 - 스캐닝</string>

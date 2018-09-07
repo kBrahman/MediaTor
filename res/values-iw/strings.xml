@@ -26,7 +26,7 @@
     <string name="vpn_not_found">לא VPN. לשקול להצפין חיבור.</string>
     <string name="azureus_peer_manager_status_finished">גָמוּר</string>
     <string name="activity_mediaplayer_name">נגן מדיה</string>
-    <string name="your_installation_is_complete">שההתקנה הושלמה.</string>
+
     <string name="error_connection_timed_out">שגיאה: חיבור הופסק/ירד. נסה שוב.</string>
     <string name="im_on_it">אני מטפל בזה…</string>
     <string name="wifi_sharing_settings">הגדרת שיתוף Wifi</string>
@@ -227,7 +227,7 @@
     <string name="toast_on_disconnect">מנותק ביטורנט. כל ההעברות ביטורנט הפסיקו.</string>
     <string name="transfers_select_downloading">הורדת</string>
     <string name="clear_torrent_index_summary">Clear Torrent Index</string>
-    <string name="frostwire_features">FROSTWIRE מציג</string>
+
     <string name="free_apps">אפליקציות חינמיות</string>
     <string name="support_free_software">תמיכה לתוכנה חופשית</string>
     <string name="send_my_geo_location_summary">Pings ישלח המיקום הגיאוגרפי המשוער שלך כדי למצוא עמיתים הקרובים.</string>

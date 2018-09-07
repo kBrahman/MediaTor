@@ -352,7 +352,7 @@
     <string name="haptic_feedback">Feedback Tattile</string>
     <string name="vpn_not_found">No VPN. Considerare la crittografia di connessione.</string>
     <string name="activity_mediaplayer_name">Media Player</string>
-    <string name="your_installation_is_complete">L\'installazione è terminata.</string>
+
     <string name="error_connection_timed_out">Errore: connessione scaduta / caduto. Riprova.</string>
     <string name="wifi_sharing_settings">Impostazioni di condivisione Wifi</string>
     <string name="enable_wifi_sharing_summary">Condividere file con i coetanei sulla rete Wi-Fi locale.</string>
@@ -585,7 +585,7 @@
     <string name="frostwire_sticker_and_more">FrostWire adesivi e altro ancora</string>
     <string name="wifi_networks_only_summary">Salvare i dati. Scarica solo se viene stabilita la connessione Wi-Fi. </string>
     <string name="notifications_other_settings">Notifiche e Altro</string>
-    <string name="frostwire_features">FROSTWIRE CARATTERISTICHE</string>
+
     <string name="wifi_networks_only">Reti Wi-Fi solo</string>
     <string name="distraction_free_search_results_summary">Nascondi componenti dell\'interfaccia utente per mostrare più risultati. Ha bisogno di riavvio app per avere effetto.</string>
     <string name="search_preferences">Preferenze di ricerca</string>

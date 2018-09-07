@@ -24,7 +24,7 @@
     <string name="vpn_not_found">Няма VPN. Разгледзім шыфраванне злучэння.</string>
     <string name="azureus_peer_manager_status_finished">Скончана</string>
     <string name="activity_mediaplayer_name">Media Player</string>
-    <string name="your_installation_is_complete">Ваша ўстаноўка завершана.</string>
+
     <string name="error_connection_timed_out">Памылка: тайм-аўт падключэння/ўпаў. Паспрабуй яшчэ.</string>
     <string name="im_on_it">Я на ім.…</string>
     <string name="wifi_sharing_settings">Wi-Fi Налады агульнага доступу</string>
@@ -218,7 +218,7 @@
     <string name="toast_on_disconnect">Адключаны ад BitTorrent. Усе пераклады BitTorrent спыніліся.</string>
     <string name="transfers_select_downloading">загрузка</string>
     <string name="clear_torrent_index_summary">Індэкс Torrent Ачысціць</string>
-    <string name="frostwire_features">FROSTWIRE АСАБЛІВАСЦІ</string>
+
     <string name="free_apps">бясплатныя прыкладання</string>
     <string name="support_free_software">Падтрымка вольнага праграмнага забеспячэння</string>
     <string name="send_my_geo_location_summary">Водгукі пашле прыблізнага геолокации, каб знайсці бліжэйшых калегаў.</string>

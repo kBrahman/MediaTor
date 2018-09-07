@@ -23,12 +23,10 @@ import android.view.ViewConfiguration;
 
 import com.andrew.apollo.cache.ImageCache;
 import com.frostwire.android.AndroidPlatform;
-import com.frostwire.android.BuildConfig;
 import com.frostwire.android.core.ConfigurationManager;
 import com.frostwire.android.core.Constants;
 import com.frostwire.android.gui.services.Engine;
 import com.frostwire.android.gui.views.AbstractActivity;
-import com.frostwire.android.offers.PlayStore;
 import com.frostwire.android.util.ImageLoader;
 import com.frostwire.bittorrent.BTContext;
 import com.frostwire.bittorrent.BTEngine;
@@ -94,9 +92,6 @@ public class MainApplication extends Application {
         ignoreHardwareMenu();
 
         AbstractActivity.setMenuIconsVisible(true);
-
-        PlayStore.getInstance(this); // triggers initial query
-
         NetworkManager.create(this);
         async(NetworkManager.instance(), NetworkManager::queryNetworkStatusBackground);
     }
@@ -104,8 +99,7 @@ public class MainApplication extends Application {
     private void ignoreHardwareMenu() {
         try {
             ViewConfiguration config = ViewConfiguration.get(this);
-            @SuppressWarnings("JavaReflectionMemberAccess")
-            Field f = ViewConfiguration.class.getDeclaredField("sHasPermanentMenuKey");
+            @SuppressWarnings("JavaReflectionMemberAccess") Field f = ViewConfiguration.class.getDeclaredField("sHasPermanentMenuKey");
             if (f != null) {
                 f.setAccessible(true);
                 f.setBoolean(config, false);
@@ -146,16 +140,7 @@ public class MainApplication extends Application {
             ctx.retries = port1 - port0;
 
             ctx.enableDht = ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_NETWORK_ENABLE_DHT);
-//            Simulate slow BTContext initialization
-//            try {
-//                Thread.sleep(60000);
-//            } catch (InterruptedException e) {
-//            }
-            String[] vStrArray = Constants.FROSTWIRE_VERSION_STRING.split("\\.");
-            ctx.version[0] = Integer.valueOf(vStrArray[0]);
-            ctx.version[1] = Integer.valueOf(vStrArray[1]);
-            ctx.version[2] = Integer.valueOf(vStrArray[2]);
-            ctx.version[3] = BuildConfig.VERSION_CODE % 100;
+
 
             BTEngine.ctx = ctx;
             BTEngine.onCtxSetupComplete();

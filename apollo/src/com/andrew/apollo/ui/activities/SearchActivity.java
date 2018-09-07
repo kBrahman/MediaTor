@@ -434,7 +434,6 @@ public final class SearchActivity extends AbstractActivity implements LoaderCall
             } else if (mimeType.startsWith("audio/") || mimeType.equals("application/ogg")
                     || mimeType.equals("application/x-ogg")) {
                 holder.mImage.get().setScaleType(ScaleType.FIT_XY);
-                holder.mImage.get().setImageResource(R.drawable.header_temp);
 
                 // Get the track name
                 final String track = cursor.getString(cursor

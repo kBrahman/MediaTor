@@ -18,12 +18,10 @@
 package com.frostwire.android.gui.util;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.FragmentManager;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -36,10 +34,7 @@ import android.support.v4.content.FileProvider;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
-import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.andrew.apollo.utils.MusicUtils;
@@ -90,20 +85,7 @@ public final class UIUtils {
     private static final String GENERAL_UNIT_KBPSEC = "KB/s";
 
     // put "support" pitches at the beginning and play with the offset
-    private static final int[] PITCHES = {
-            R.string.support_frostwire,
-            R.string.support_free_software,
-            R.string.support_frostwire,
-            R.string.support_free_software,
-            R.string.save_bandwidth,
-            R.string.cheaper_than_drinks,
-            R.string.cheaper_than_lattes,
-            R.string.cheaper_than_parking,
-            R.string.cheaper_than_beer,
-            R.string.cheaper_than_cigarettes,
-            R.string.cheaper_than_gas,
-            R.string.keep_the_project_alive
-    };
+    private static final int[] PITCHES = {R.string.support_frostwire, R.string.support_free_software, R.string.support_frostwire, R.string.support_free_software, R.string.save_bandwidth, R.string.cheaper_than_drinks, R.string.cheaper_than_lattes, R.string.cheaper_than_parking, R.string.cheaper_than_beer, R.string.cheaper_than_cigarettes, R.string.cheaper_than_gas, R.string.keep_the_project_alive};
 
     static {
         NUMBER_FORMAT0 = NumberFormat.getNumberInstance(Locale.getDefault());
@@ -180,33 +162,19 @@ public final class UIUtils {
     public static void showYesNoDialog(FragmentManager fragmentManager, String message, int titleId, OnClickListener positiveListener, OnClickListener negativeListener) {
         YesNoDialog yesNoDialog = YesNoDialog.newInstance(message, titleId, message, (byte) 0);
         yesNoDialog.setOnDialogClickListener((tag, which) -> {
-                    if (which == Dialog.BUTTON_POSITIVE && positiveListener != null) {
-                        positiveListener.onClick(yesNoDialog.getDialog(), which);
-                    } else if (which == Dialog.BUTTON_NEGATIVE && negativeListener != null) {
-                        negativeListener.onClick(yesNoDialog.getDialog(), which);
-                    }
-                    yesNoDialog.dismiss();
-                }
-        );
+            if (which == Dialog.BUTTON_POSITIVE && positiveListener != null) {
+                positiveListener.onClick(yesNoDialog.getDialog(), which);
+            } else if (which == Dialog.BUTTON_NEGATIVE && negativeListener != null) {
+                negativeListener.onClick(yesNoDialog.getDialog(), which);
+            }
+            yesNoDialog.dismiss();
+        });
         yesNoDialog.show(fragmentManager);
     }
 
-    public static void showEditTextDialog(FragmentManager fragmentManager,
-                                          int messageStringId,
-                                          int titleStringId,
-                                          int positiveButtonStringId,
-                                          boolean cancelable,
-                                          boolean multilineInput,
-                                          String optionalEditTextValue,
-                                          final EditTextDialog.TextViewInputDialogCallback callback) {
+    public static void showEditTextDialog(FragmentManager fragmentManager, int messageStringId, int titleStringId, int positiveButtonStringId, boolean cancelable, boolean multilineInput, String optionalEditTextValue, final EditTextDialog.TextViewInputDialogCallback callback) {
         new EditTextDialog().
-                init(titleStringId,
-                        messageStringId,
-                        positiveButtonStringId,
-                        cancelable,
-                        multilineInput,
-                        optionalEditTextValue,
-                        callback).show(fragmentManager);
+                init(titleStringId, messageStringId, positiveButtonStringId, cancelable, multilineInput, optionalEditTextValue, callback).show(fragmentManager);
     }
 
     public static String getBytesInHuman(long size) {
@@ -272,6 +240,7 @@ public final class UIUtils {
 
     /**
      * Takes a screenshot of the given view
+     *
      * @return File with jpeg of the screenshot taken. null if there was a problem.
      */
     public static File takeScreenshot(View view) {
@@ -317,9 +286,7 @@ public final class UIUtils {
     }
 
     public static Uri getFileUri(Context context, String filePath, boolean useFileProvider) {
-        return useFileProvider ?
-                FileProvider.getUriForFile(context, BuildConfig.APPLICATION_ID + ".fileprovider", new File(filePath)) :
-                Uri.fromFile(new File(filePath));
+        return useFileProvider ? FileProvider.getUriForFile(context, BuildConfig.APPLICATION_ID + ".fileprovider", new File(filePath)) : Uri.fromFile(new File(filePath));
     }
 
     public static void openFile(Context context, File file) {
@@ -415,40 +382,6 @@ public final class UIUtils {
         activity.startActivity(intent);
         activity.finish();
         activity.overridePendingTransition(0, 0);
-    }
-
-    /**
-     * @param context                         -  containing Context.
-     * @param showInstallationCompleteSection - true if you want to display "Your installation is now complete. Thank You" section
-     * @param dismissListener                 - what happens when the dialog is dismissed.
-     * @param referrerContextSuffix           - string appended at the end of social pages click urls's ?ref=_android_ parameter.
-     */
-    public static void showSocialLinksDialog(final Context context,
-                                             boolean showInstallationCompleteSection,
-                                             DialogInterface.OnDismissListener dismissListener,
-                                             String referrerContextSuffix) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        View customView = View.inflate(context, R.layout.view_social_buttons, null);
-        builder.setView(customView);
-        builder.setPositiveButton(context.getString(android.R.string.ok), (dialog, which) -> dialog.dismiss());
-        final AlertDialog socialLinksDialog = builder.create();
-        socialLinksDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        socialLinksDialog.setOnDismissListener(dismissListener);
-        ImageButton fbButton = customView.findViewById(R.id.view_social_buttons_facebook_button);
-        ImageButton twitterButton = customView.findViewById(R.id.view_social_buttons_twitter_button);
-        ImageButton redditButton = customView.findViewById(R.id.view_social_buttons_reddit_button);
-        final String referrerParam = "?ref=android_" + ((referrerContextSuffix != null) ? referrerContextSuffix.trim() : "");
-        fbButton.setOnClickListener(v -> UIUtils.openURL(v.getContext(), Constants.SOCIAL_URL_FACEBOOK_PAGE + referrerParam));
-        twitterButton.setOnClickListener(v -> UIUtils.openURL(v.getContext(), Constants.SOCIAL_URL_TWITTER_PAGE + referrerParam));
-        redditButton.setOnClickListener(v -> UIUtils.openURL(v.getContext(), Constants.SOCIAL_URL_REDDIT_PAGE + referrerParam));
-        if (showInstallationCompleteSection) {
-            LinearLayout installationCompleteLayout =
-                    customView.findViewById(R.id.view_social_buttons_installation_complete_layout);
-            installationCompleteLayout.setVisibility(View.VISIBLE);
-            ImageButton dismissCheckButton = customView.findViewById(R.id.view_social_buttons_dismiss_check);
-            dismissCheckButton.setOnClickListener(v -> socialLinksDialog.dismiss());
-        }
-        socialLinksDialog.show();
     }
 
     // tried playing around with <T> but at the moment I only need ByteExtra's, no need to over enginner.

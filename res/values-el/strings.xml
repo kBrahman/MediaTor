@@ -450,7 +450,7 @@
     <string name="help_translate_frostwire">Βοήθα με τη μετάφραση του FrostWire</string>
     <string name="advertisement">διαφήμιση</string>
     <string name="vpn_not_found">Αριθ VPN. Εξετάστε την κρυπτογράφηση σύνδεσης.</string>
-    <string name="your_installation_is_complete">εγκατάσταση σας είναι πλήρης.</string>
+
     <string name="error_connection_timed_out">Σφάλμα: η σύνδεση έληξε/έπεσε. Προσπάθησε ξανά.</string>
     <string name="wifi_sharing_settings">Wifi Ρυθμίσεις κοινής χρήσης</string>
     <string name="all_free_downloads">Όλα τα δωρεάν downloads</string>
@@ -482,7 +482,7 @@
     <string name="one_time_purchase">Αγορασε τωρα!</string>
     <string name="activity_VPN">Σύνδεση</string>
     <string name="one_year">1 χρόνος</string>
-    <string name="frostwire_features">ΧΑΡΑΚΤΗΡΙΣΤΙΚΑ FROSTWIRE</string>
+
     <string name="i_have_read_and_agree_to_the">Έχω διαβάσει και συμφωνώ με το</string>
     <string name="scanning">Φινίρισμα - Σάρωση</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">Σύμφωνα με τις ρυθμίσεις σας, δεν μπορώ να ξεκινήσετε τη σπορά, εκτός αν είστε σε Wi-Fi. Το αρχείο θα είναι έτοιμο για σπορά αυτόματα όταν γυρίσεις σε ένα internet ενεργοποιημένη δίκτυο Wi-Fi.</string>

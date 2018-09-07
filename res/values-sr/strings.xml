@@ -506,7 +506,7 @@
     <string name="send_feedback">Пошаљи повратне информације</string>
     <string name="choose_email_app">Изаберите емаил Апп…</string>
     <string name="media_preview">%s приказ</string>
-    <string name="your_installation_is_complete">Ваша инсталација је завршена.</string>
+
     <string name="thank_you">Хвала вам!</string>
     <string name="keep_in_touch">Останимо у контакту!</string>
     <string name="frostwire_shutting_down_no_permissions">Жао ми је, FrostWire не може да настави без дозволе за приступ диску.</string>
@@ -587,7 +587,7 @@
     <string name="terms_of_use">Услови коришћења</string>
     <string name="haptic_feedback">Haptic Feedback</string>
     <string name="advertisement">реклама</string>
-    <string name="frostwire_features">FROSTWIRE ПОКЛОНИ</string>
+
     <string name="all_free_downloads">Све фрее скидања</string>
     <string name="distraction_free_search_results">Ометање Бесплатан претрага (бета)</string>
     <string name="distraction_free_search_results_summary">Хиде компоненте корисничког интерфејса да покаже више резултата. Треба апликације рестарт да ступи на снагу.</string>

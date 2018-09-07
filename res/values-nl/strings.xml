@@ -352,7 +352,7 @@
     <string name="haptic_feedback">Haptische Feedback</string>
     <string name="vpn_not_found">Nr VPN. Overweeg het versleutelen van verbinding.</string>
     <string name="activity_mediaplayer_name">Mediaspeler</string>
-    <string name="your_installation_is_complete">Uw installatie is voltooid.</string>
+
     <string name="error_connection_timed_out">Fout: verbinding time-out/gedaald. Probeer het nog eens.</string>
     <string name="wifi_sharing_settings">het delen van Wifi-instellingen</string>
     <string name="enable_wifi_sharing_summary">Deel bestanden met collega\'s op het lokale netwerk Wifi.</string>
@@ -586,7 +586,7 @@
     <string name="frostwire_sticker_and_more">FrostWire stickers en meer</string>
     <string name="wifi_networks_only_summary">Gegevens opslaan. Download alleen als Wi-Fi-verbinding tot stand is gebracht. </string>
     <string name="notifications_other_settings">Kennisgevingen en andere</string>
-    <string name="frostwire_features">FROSTWIRE KENMERKEN</string>
+
     <string name="wifi_networks_only">Alleen Wi-Fi-netwerken</string>
     <string name="distraction_free_search_results_summary">Verberg componenten van de gebruikersinterface om meer resultaten te laten zien. Moet app herstart door te voeren.</string>
     <string name="search_preferences">Zoeken voorkeuren</string>

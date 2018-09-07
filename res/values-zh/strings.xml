@@ -470,7 +470,7 @@
     <string name="use_tpb_summary">TPB 基於磁力，僅適用於 Wi-Fi</string>
     <string name="help">帮帮我</string>
     <string name="vpn_not_found">无VPN。 考虑加密连接。.</string>
-    <string name="your_installation_is_complete">您的安装完成。</string>
+
     <string name="error_connection_timed_out">错误：连接超时/丢弃。 再试一次。</string>
     <string name="request_again">再次请求</string>
     <string name="restarting_summary">FrostWire将不会重新启动以使授权权限生效…</string>
@@ -585,7 +585,7 @@
     <string name="frostwire_sticker_and_more">FrostWire貼紙和更多</string>
     <string name="wifi_networks_only_summary">保存數據。 僅在建立Wi-Fi連接時下載。 </string>
     <string name="notifications_other_settings">通知和其他</string>
-    <string name="frostwire_features">FROSTWIRE特色</string>
+
     <string name="wifi_networks_only">僅限Wi-Fi網絡</string>
     <string name="distraction_free_search_results_summary">隱藏UI組件以顯示更多結果。 需要重新啟動應用才能生效。</string>
     <string name="search_preferences">搜索首選項</string>

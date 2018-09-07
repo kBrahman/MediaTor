@@ -23,7 +23,7 @@
     <string name="vpn_not_found">व्हीपीएन नाही कनेक्शन एन्क्रिप्ट करण्याबद्दल विचारात घ्या.</string>
     <string name="azureus_peer_manager_status_finished">समाप्त</string>
     <string name="activity_mediaplayer_name">मीडिया प्लेअर</string>
-    <string name="your_installation_is_complete">आपली स्थापना पूर्ण झाली आहे.</string>
+
     <string name="error_connection_timed_out">त्रुटी: कनेक्शन कालबाह्य/वगळले पुन्हा प्रयत्न करा.</string>
     <string name="vpn_client_feature_2_ExpressVPN">अमर्यादित डाउनलोड गती</string>
     <string name="im_on_it">मी त्यात आहे…</string>
@@ -83,7 +83,7 @@
     <string name="max_concurrent_uploads">कमाल एकाचवेळी अपलोड</string>
     <string name="use_torlock">TorLock वापरा</string>
     <string name="seed_stop">बीजन थांबवा</string>
-    <string name="frostwire_features">FROSTWIRE क्रिएटिव्ह कॉमन्स वैशिष्ट्ये</string>
+
     <string name="tos_title">वापरण्याच्या अटी</string>
     <string name="activity_downloads_name">सक्रिय डाउनलोड</string>
     <string name="wait">प्रतीक्षा करा</string>

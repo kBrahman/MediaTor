@@ -450,7 +450,7 @@
     <string name="help">Aidez-moi</string>
     <string name="haptic_feedback">Retour Haptique</string>
     <string name="vpn_not_found">Pas de VPN (réseau privé virtuel). Considérez chiffrer la connexion.</string>
-    <string name="your_installation_is_complete">L\'installation est terminée.</string>
+
     <string name="error_connection_timed_out">Erreur: connexion a expiré. Réessayer.</string>
     <string name="wifi_sharing_settings">Paramètres de partage Wifi</string>
     <string name="torrent_max_peers">Max Peers</string>
@@ -587,7 +587,7 @@
     <string name="frostwire_sticker_and_more">Autocollants FrostWire et plus</string>
     <string name="wifi_networks_only_summary">Enregistrer des données. Téléchargement uniquement si la connexion Wi-Fi est établie. </string>
     <string name="notifications_other_settings">Notifications et autres</string>
-    <string name="frostwire_features">FROSTWIRE PRÉSENTE</string>
+
     <string name="wifi_networks_only">Réseaux Wi-Fi uniquement</string>
     <string name="distraction_free_search_results_summary">Masquer les composants de l\'interface utilisateur pour afficher d\'autres résultats. Nécessite le redémarrage de l\'application pour prendre effet.</string>
     <string name="search_preferences">Préférences de recherche</string>

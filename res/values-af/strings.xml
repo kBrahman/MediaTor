@@ -26,7 +26,7 @@
     <string name="vpn_not_found">Geen VPN. Oorweeg enkripsieverbinding.</string>
     <string name="azureus_peer_manager_status_finished">Klaar</string>
     <string name="activity_mediaplayer_name">Media Player</string>
-    <string name="your_installation_is_complete">Jou installasie is voltooi.</string>
+
     <string name="vpn_client_feature_2_ExpressVPN">Onbeperkte aflaai spoed</string>
     <string name="im_on_it">Ek is besig met dit…</string>
     <string name="wifi_sharing_settings">Wi-Fi-deelinstellings</string>
@@ -81,7 +81,7 @@
     <string name="max_concurrent_uploads">Maksimum gelyktydige oplaaie</string>
     <string name="use_torlock">Gebruik TorLock</string>
     <string name="seed_stop">Stop saai</string>
-    <string name="frostwire_features">FROSTWIRE CREATIVE COMMONS FEATURES</string>
+
     <string name="tos_title">Gebruiksvoorwaardes</string>
     <string name="activity_downloads_name">Aktiewe aflaaie</string>
     <string name="wait">Wag</string>

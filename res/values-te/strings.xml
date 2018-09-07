@@ -22,7 +22,7 @@
     <string name="vpn_not_found">VPN లేదు. ఎన్క్రిప్షన్ కనెక్షన్ పరిగణించండి.</string>
     <string name="azureus_peer_manager_status_finished">పూర్తయ్యింది</string>
     <string name="activity_mediaplayer_name">మీడియా ప్లేయర్</string>
-    <string name="your_installation_is_complete">మీ సంస్థాపన పూర్తయింది.</string>
+
     <string name="error_connection_timed_out">లోపం: కనెక్షన్ సమయం ముగిసింది/పడిపోయింది. మళ్ళీ ప్రయత్నించండి.</string>
     <string name="vpn_client_feature_2_ExpressVPN">అపరిమిత డౌన్లోడ్ వేగం</string>
     <string name="im_on_it">నేను దాని మీదే వున్నాను…</string>
@@ -82,7 +82,7 @@
     <string name="max_concurrent_uploads">గరిష్ట సైమల్టేనియస్ అప్లోడ్లు</string>
     <string name="use_torlock">TorLock ఉపయోగించండి</string>
     <string name="seed_stop">నాట్లు వేయండి</string>
-    <string name="frostwire_features">FROSTWIRE CREATIVE COMMONS FEATURES</string>
+
     <string name="tos_title">ఉపయోగ నిబంధనలు</string>
     <string name="activity_downloads_name">యాక్టివ్ డౌన్లోడ్లు</string>
     <string name="wait">వేచి</string>

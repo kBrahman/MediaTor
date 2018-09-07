@@ -84,8 +84,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
     private boolean isFullScreen = false;
     private boolean videoSizeSetupDone = false;
     private boolean changedActionBarTitleToNonBuffering = false;
-    private boolean mopubLoaded = false;
-    private boolean isVertical;
 
     public PreviewPlayerActivity() {
         super(R.layout.activity_preview_player);

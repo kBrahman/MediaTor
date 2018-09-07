@@ -487,7 +487,7 @@
     <string name="send_feedback">Enviar Feedback</string>
     <string name="choose_email_app">Elige un App de Correo Electrónico…</string>
     <string name="media_preview">%s preliminar</string>
-    <string name="your_installation_is_complete">Instalación completa.</string>
+
     <string name="thank_you">¡Gracias!</string>
     <string name="keep_in_touch">¡Mantente en contacto!</string>
     <string name="restarting_summary">FrostWire ahora reiniciará para que los permisos tomen efecto</string>
@@ -586,7 +586,7 @@
     <string name="haptic_feedback">Retroalimentación Táctil</string>
     <string name="advertisement">publicidad</string>
     <string name="all_free_downloads">Descargas Gratuitas</string>
-    <string name="frostwire_features">FROSTWIRE PRESENTA</string>
+
     <string name="frostwire_sticker_and_more">Calcomanías de FrostWire y más</string>
     <string name="wifi_networks_only_summary">Ahorra datos. Descarga solo si se establece la conexión Wi-Fi.</string>
     <string name="notifications_other_settings">Notificaciones y otros</string>

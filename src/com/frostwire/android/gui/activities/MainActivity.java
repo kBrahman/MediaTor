@@ -55,7 +55,6 @@ import com.frostwire.android.core.ConfigurationManager;
 import com.frostwire.android.core.Constants;
 import com.frostwire.android.gui.LocalSearchEngine;
 import com.frostwire.android.gui.NetworkManager;
-import com.frostwire.android.gui.SoftwareUpdater;
 import com.frostwire.android.gui.activities.internal.MainController;
 import com.frostwire.android.gui.activities.internal.NavigationMenu;
 import com.frostwire.android.gui.dialogs.HandpickedTorrentDownloadDialogOnFetch;
@@ -482,7 +481,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         if (Engine.instance().wasShutdown()) {
             Engine.instance().startServices();
         }
-        SoftwareUpdater.getInstance().checkForUpdate(this);
     }
 
     private void handleSDPermissionDialogClick(int which) {

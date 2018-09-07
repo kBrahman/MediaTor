@@ -454,7 +454,6 @@ public class ProfileTabCarousel extends HorizontalScrollView implements OnTouchL
      */
     public void setPlaylistOrGenreProfileHeader(final Activity context,
             final String profileName) {
-        mFirstTab.setDefault(context);
         mFirstTab.setLabel(getResources().getString(R.string.page_songs));
         mFirstTab.setPlaylistOrGenrePhoto(context, profileName);
         mSecondTab.setVisibility(View.GONE);

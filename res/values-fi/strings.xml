@@ -24,7 +24,7 @@
     <string name="vpn_not_found">Ei VPN. Mieti salaamalla yhteys.</string>
     <string name="azureus_peer_manager_status_finished">Valmiit</string>
     <string name="activity_mediaplayer_name">Mediasoitin</string>
-    <string name="your_installation_is_complete">Asennus on valmis.</string>
+
     <string name="error_connection_timed_out">Virhe: yhteyden aikakatkaisu/laski. Yritä uudelleen.</string>
     <string name="im_on_it">Olen sitä…</string>
     <string name="wifi_sharing_settings">Wi-Fi Jakamisasetukset</string>
@@ -225,7 +225,7 @@
     <string name="toast_on_disconnect">Irrotettu BitTorrent. Kaikki BitTorrent siirrot ovat pysähtyneet.</string>
     <string name="transfers_select_downloading">lataaminen</string>
     <string name="clear_torrent_index_summary">Clear Torrent Index</string>
-    <string name="frostwire_features">FROSTWIRE ESITTELEE</string>
+
     <string name="free_apps">Ilmaiset sovellukset</string>
     <string name="support_free_software">Tukea ilmainen ohjelmisto</string>
     <string name="send_my_geo_location_summary">Ping lähettää arvioidun maantieteellisen sijainnin löytää lähimmän ikäisensä.</string>

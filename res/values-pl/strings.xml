@@ -474,7 +474,7 @@
     <string name="enable_dht">Używaj DHT</string>
     <string name="send_tip_donation">Wyślij Napiwek</string>
     <string name="try_other_keywords">Spróbuj innych słów kluczowych</string>
-    <string name="your_installation_is_complete">Twoja instalacja jest gotowa.</string>
+
     <string name="restarting_summary">FrostWire się teraz zrestartuje aby uaktywnić nadane mu pozwolenia.</string>
     <string name="why_we_need_storage_permissions_summary">FrostWire jest przeglądarką i ściągarką plików i dlatego potrzebuje dostępu do twojego dysku.\n\nBez twoich zezwoleń, FrostWire nie może funkcjonować.\n\nCzy chcesz spróbować jeszcze raz?</string>
     <string name="transfers_context_menu_copy_magnet_copied">Magnet skopiowany do schowka</string>
@@ -624,7 +624,7 @@
     <string name="exclude">Odejmnij</string>
     <string name="wifi_networks_only_summary">Oszczędziaj dane mobilne. Ściągaj tylko na Wi-Fi. </string>
     <string name="notifications_other_settings">Notifikacje i Inne</string>
-    <string name="frostwire_features">PROMOCJE CREATIVE COMMONS od FROSTWIRE</string>
+
     <string name="filter">Filtruj</string>
     <string name="try_changing_applied_filters">Spróbuj zmienić dodane filtry</string>
     <string name="wifi_networks_only">Tylko sieci Wi-Fi</string>

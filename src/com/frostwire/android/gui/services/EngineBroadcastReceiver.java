@@ -33,7 +33,6 @@ import com.frostwire.android.gui.Librarian;
 import com.frostwire.android.gui.NetworkManager;
 import com.frostwire.android.gui.transfers.TransferManager;
 import com.frostwire.android.gui.util.UIUtils;
-import com.frostwire.android.offers.PlayStore;
 import com.frostwire.android.util.SystemUtils;
 import com.frostwire.bittorrent.BTEngine;
 import com.frostwire.platform.Platforms;
@@ -117,8 +116,7 @@ public class EngineBroadcastReceiver extends BroadcastReceiver {
     private void handleDisconnectedNetwork(NetworkInfo networkInfo) {
         LOG.info("Disconnected from network (" + networkInfo.getTypeName() + ")");
 
-        if (!ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_NETWORK_BITTORRENT_ON_VPN_ONLY) &&
-                isNetworkVPN(networkInfo)) {
+        if (!ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_NETWORK_BITTORRENT_ON_VPN_ONLY) && isNetworkVPN(networkInfo)) {
             //don't stop
             return;
         }
@@ -127,7 +125,6 @@ public class EngineBroadcastReceiver extends BroadcastReceiver {
     }
 
     private void handleConnectedNetwork(Context context, NetworkInfo networkInfo) {
-        PlayStore.getInstance(context).refresh();
         NetworkManager networkManager = NetworkManager.instance();
         if (networkManager.isDataUp()) {
             ConfigurationManager CM = ConfigurationManager.instance();
@@ -159,8 +156,7 @@ public class EngineBroadcastReceiver extends BroadcastReceiver {
                 if (Engine.instance().isDisconnected()) {
                     // avoid ANR error inside a broadcast receiver
 
-                    if (CM.getBoolean(Constants.PREF_KEY_NETWORK_BITTORRENT_ON_VPN_ONLY) &&
-                            !(networkManager.isTunnelUp() || isNetworkVPN(networkInfo))) {
+                    if (CM.getBoolean(Constants.PREF_KEY_NETWORK_BITTORRENT_ON_VPN_ONLY) && !(networkManager.isTunnelUp() || isNetworkVPN(networkInfo))) {
                         //don't start
                         return;
                     }
@@ -178,9 +174,7 @@ public class EngineBroadcastReceiver extends BroadcastReceiver {
 
     private boolean shouldStopSeeding() {
         ConfigurationManager CM = ConfigurationManager.instance();
-        return !CM.getBoolean(Constants.PREF_KEY_TORRENT_SEED_FINISHED_TORRENTS) ||
-                (!NetworkManager.instance().isDataWIFIUp() &&
-                        CM.getBoolean(Constants.PREF_KEY_TORRENT_SEED_FINISHED_TORRENTS_WIFI_ONLY));
+        return !CM.getBoolean(Constants.PREF_KEY_TORRENT_SEED_FINISHED_TORRENTS) || (!NetworkManager.instance().isDataWIFIUp() && CM.getBoolean(Constants.PREF_KEY_TORRENT_SEED_FINISHED_TORRENTS_WIFI_ONLY));
     }
 
     private static void handleMediaMounted(final Context context, Intent intent) {
@@ -198,8 +192,7 @@ public class EngineBroadcastReceiver extends BroadcastReceiver {
             e.printStackTrace();
         }
         if (Engine.instance().isDisconnected()) {
-            if (ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_NETWORK_BITTORRENT_ON_VPN_ONLY) &&
-                !NetworkManager.instance().isTunnelUp()) {
+            if (ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_NETWORK_BITTORRENT_ON_VPN_ONLY) && !NetworkManager.instance().isTunnelUp()) {
                 //don't start
             } else {
                 Engine.instance().startServices();
@@ -215,8 +208,7 @@ public class EngineBroadcastReceiver extends BroadcastReceiver {
      */
     private void handleMediaUnmounted(Intent intent) {
         String path = intent.getDataString().replace("file://", "");
-        if (!SystemUtils.isPrimaryExternalPath(new File(path)) &&
-                SystemUtils.isPrimaryExternalStorageMounted()) {
+        if (!SystemUtils.isPrimaryExternalPath(new File(path)) && SystemUtils.isPrimaryExternalStorageMounted()) {
             File primaryExternal = Environment.getExternalStorageDirectory();
             ConfigurationManager.instance().setStoragePath(primaryExternal.getAbsolutePath());
         }

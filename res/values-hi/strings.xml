@@ -335,7 +335,7 @@
     <string name="hints_by_google">गूगल द्वारा संकेत</string>
     <string name="vpn_not_found">ना वीपीएन। कनेक्शन के गोपन पर विचार करें।</string>
     <string name="activity_mediaplayer_name">मीडिया प्लेयर</string>
-    <string name="your_installation_is_complete">आपकी स्थापना पूर्ण है।</string>
+
     <string name="error_connection_timed_out">त्रुटि: कनेक्शन का समय समाप्त / गिरा दिया। पुनः प्रयास करें।</string>
     <string name="wifi_sharing_settings">वाईफ़ाई शेयरिंग सेटिंग</string>
     <string name="enable_wifi_sharing_summary">स्थानीय वाईफाई नेटवर्क पर साथियों के साथ फ़ाइलें साझा करें।</string>
@@ -585,7 +585,7 @@
     <string name="frostwire_sticker_and_more">FrostWire स्टिकर और अधिक</string>
     <string name="wifi_networks_only_summary">डेटा बचाना। डाउनलोड अगर केवल वाई-फाई कनेक्शन की स्थापना की है। </string>
     <string name="notifications_other_settings">सूचनाएं और अन्य</string>
-    <string name="frostwire_features">FrostWire फीचर्स</string>
+
     <string name="wifi_networks_only">केवल वाई-फाई नेटवर्क</string>
     <string name="distraction_free_search_results_summary">यूआई घटकों को छिपाने के लिए और अधिक परिणाम दिखाने के लिए। एप्लिकेशन को पुनः आरंभ करने की जरूरत प्रभावी करने के लिए।</string>
     <string name="search_preferences">खोज वरीयता</string>

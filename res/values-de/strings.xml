@@ -372,7 +372,7 @@
     <string name="haptic_feedback">Haptisches Feedback</string>
     <string name="vpn_not_found">Kein VPN. Betrachten Verbindung verschlüsseln.</string>
     <string name="activity_mediaplayer_name">Media Player</string>
-    <string name="your_installation_is_complete">Installation abgeschlossen.</string>
+
     <string name="error_connection_timed_out">Fehler: Verbindung Zeitüberschreitung/gesunken. Versuch es noch einmal.</string>
     <string name="wifi_sharing_settings">Wi-Fi Sharing Einstellungen</string>
     <string name="enable_wifi_sharing_summary">Gemeinsame Nutzung von Dateien mit Kollegen auf dem lokalen Wi-Fi-Netzwerk.</string>
@@ -586,7 +586,7 @@
     <string name="frostwire_sticker_and_more">FrostWire Aufkleber und mehr</string>
     <string name="wifi_networks_only_summary">Daten speichern. Download nur, wenn Wifi-Verbindung hergestellt ist. </string>
     <string name="notifications_other_settings">Benachrichtigungen und Sonstiges</string>
-    <string name="frostwire_features">FROSTWIRE EIGENSCHAFTEN</string>
+
     <string name="wifi_networks_only">Wifi Netzwerke nur</string>
     <string name="distraction_free_search_results_summary">Hide UI-Komponenten, um mehr Ergebnisse zu zeigen. Neustart der App erforderlich.</string>
     <string name="search_preferences">Sucheinstellungen</string>

@@ -466,7 +466,7 @@
     <string name="files_shared">datoteka dijeljeno</string>
     <string name="share_finished_downloads">Dijeli završena preuzimanja na Wi-Fiu</string>
     <string name="help">Pomoć</string>
-    <string name="your_installation_is_complete">Vaša instalacija je završena.</string>
+
     <string name="request_again">Zatraži opet</string>
     <string name="send_feedback">Pošalji povratne informacije</string>
     <string name="choose_email_app">Choose an Email App…</string>
@@ -518,7 +518,7 @@
     <string name="activity_VPN">priključak</string>
     <string name="notifications_other_settings">Obavijesti i ostale</string>
     <string name="one_year">1 godina</string>
-    <string name="frostwire_features">FROSTWIRE ZNAČAJKE</string>
+
     <string name="i_have_read_and_agree_to_the">Pročitao sam i slažem se</string>
     <string name="scanning">Dovršavanje - Skeniranje</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">Prema postavkama ne mogu početi zasijavanja, osim ako ste na Wi-Fi. Datoteka će biti spreman za automatski zasijavanje kad se vratiš na internetu omogućena Wi-Fi mreže.</string>

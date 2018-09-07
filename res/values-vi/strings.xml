@@ -351,7 +351,7 @@
     <string name="storage_preference_summary">Các lưu trữ mặc định vị trí nơi các tập tin sẽ được lưu lại.</string>
     <string name="vpn_not_found">Không VPN. Hãy xem xét việc mã hóa kết nối.</string>
     <string name="activity_mediaplayer_name">Media Player</string>
-    <string name="your_installation_is_complete">cài đặt hoàn tất.</string>
+
     <string name="error_connection_timed_out">Lỗi: kết nối quá hạn/giảm. Thử lại.</string>
     <string name="wifi_sharing_settings">Cài đặt chia sẻ wifi</string>
     <string name="enable_wifi_sharing_summary">Chia sẻ tập tin với bạn bè trên các mạng Wifi ở địa phương.</string>
@@ -421,7 +421,7 @@
     <string name="transfers_context_menu_pause_stop_all_transfers">Tạm dừng/Dừng tất cả các chuyển</string>
     <string name="wifi_sharing">Wi-Fi Sharing</string>
     <string name="transfers_select_downloading">tải</string>
-    <string name="frostwire_features">Các tính năng FrostWire</string>
+
     <string name="free_apps">Những ứng dụng miễn phí</string>
     <string name="i_have_read_and_agree_to_the">Tôi đã đọc và đồng ý với</string>
     <string name="scanning">Hoàn thiện - Quét</string>
