@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.frostwire.android"
+          package="zig.zak.media.tor"
           android:installLocation="auto">
 
 
@@ -28,7 +28,7 @@
     <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
 
     <application
-        android:name="com.frostwire.android.gui.MainApplication"
+        android:name=".android.gui.MainApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/application_label"
@@ -37,7 +37,7 @@
         <!-- activities -->
 
         <activity
-            android:name="com.frostwire.android.gui.activities.MainActivity"
+            android:name=".android.gui.activities.MainActivity"
             android:label="@string/application_label"
             android:launchMode="singleTask"
             android:protectionLevel="dangerous"
@@ -98,29 +98,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.frostwire.android.gui.activities.WizardActivity"
+            android:name=".android.gui.activities.WizardActivity"
             android:label="@string/application_label"
             android:theme="@style/WizardActivity"/>
         <activity
-            android:name="com.frostwire.android.gui.activities.SettingsActivity"
+            android:name=".android.gui.activities.SettingsActivity"
             android:label="@string/activity_preferences_name"/>
         <activity
-            android:name="com.frostwire.android.gui.activities.AboutActivity"
-            android:label="@string/about"/>
-        <activity
-            android:name="com.frostwire.android.gui.activities.ImageViewerActivity"
+            android:name=".android.gui.activities.ImageViewerActivity"
             android:label="@string/picture"/>
         <activity
-            android:name="com.frostwire.android.gui.activities.PreviewPlayerActivity"
+            android:name=".android.gui.activities.PreviewPlayerActivity"
             android:configChanges="screenSize"
             android:label="@string/playing"/>
         <activity
-            android:name="com.frostwire.android.gui.activities.VPNStatusDetailActivity"
+            android:name=".android.gui.activities.VPNStatusDetailActivity"
             android:excludeFromRecents="true"
             android:label="@string/activity_VPN"
             android:noHistory="true"/>
         <activity
-            android:name="com.frostwire.android.gui.activities.TransferDetailActivity"
+            android:name=".android.gui.activities.TransferDetailActivity"
             android:label="@string/title_activity_transfer_detail"/>
 
         <!-- apollo activities -->
@@ -177,7 +174,7 @@
                 <data android:mimeType="vnd.android.cursor.dir/artists"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="com.frostwire.android.AUDIO_PLAYER"/>
+                <action android:name="zig.zak.media.tor.android.AUDIO_PLAYER"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
@@ -220,7 +217,7 @@
         <!-- services -->
 
         <service
-            android:name="com.frostwire.android.gui.services.EngineService"
+            android:name=".android.gui.services.EngineService"
             android:exported="false"/>
         <service
             android:name="com.andrew.apollo.MusicPlaybackService"
@@ -228,7 +225,7 @@
 
         <!-- receivers -->
 
-        <receiver android:name="com.frostwire.android.gui.services.EngineBroadcastReceiver">
+        <receiver android:name=".android.gui.services.EngineBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>

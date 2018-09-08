@@ -30,7 +30,8 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import com.frostwire.android.R;
+import zig.zak.media.tor.R;;
+
 
 /**
  * ListView subclass that mediates drag and drop resorting of items.
@@ -703,10 +704,6 @@ public class DragSortListView extends ListView {
             measureItemAndGetHeights(position, v, heights);
         }
 
-    }
-
-    private int getShuffleEdge(final int position, final int top) {
-        return getShuffleEdge(position, top, null);
     }
 
     /**

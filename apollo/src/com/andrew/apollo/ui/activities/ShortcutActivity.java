@@ -39,7 +39,7 @@ import com.andrew.apollo.loaders.SearchLoader;
 import com.andrew.apollo.model.Song;
 import com.andrew.apollo.utils.MusicUtils;
 import com.andrew.apollo.utils.MusicUtils.ServiceToken;
-import com.frostwire.android.R;
+import zig.zak.media.tor.R;
 
 import java.util.ArrayList;
 import java.util.List;

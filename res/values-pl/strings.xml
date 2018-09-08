@@ -23,9 +23,8 @@
     <string name="tip_touch_tags_to"><![CDATA[ <b>WSKAZÓWKA:</b> Dotchnij dodane tagi aby]]></string>
 
     <!-- non HTML tags. -->
-    <string name="application_label">FrostWire</string>
     <string name="activity_preferences_name">Ustawienia</string>
-    <string name="activity_chat_name">Czat</string>
+    <string name="activity_chat_named">Czat</string>
     <string name="activity_downloads_name">Aktywne Pobieranie</string>
     <string name="activity_uploads_name">Aktywne Wysyłanie</string>
     <string name="activity_about">O nas</string>
@@ -112,8 +111,8 @@
     <string name="tos_accept">Akceptuj</string>
     <string name="tos_refuse">Odrzuć</string>
     <string name="downloads">Pobieraj</string>
-    <string name="minimize_frostwire">Minimalizuj FrostWire</string>
-    <string name="are_you_sure_you_wanna_leave">Czy na pewno chcesz wrócić do ekranu głównego?</string>
+
+
     <string name="set_as_wallpaper">Ustaw jako Tapetę</string>
     <string name="failed_to_set_wallpaper">Nie udało się ustawić Tapety</string>
     <string name="tell_others_chooser">Tweet / SMS / E-mail</string>
@@ -585,7 +584,7 @@
     <string name="cloud_download_aborted_on_mobile_data">Obecne ustawienia zapobiegają ściąganiu kiedy nie na Wi-Fi</string>
     <string name="sharing_privacy_settings">Udostępnianie i Prywatność</string>
     <string name="delete_started_torrents_summary">Usuń pliki .torrent po rozpoczęciu ściągania</string>
-    <string name="dismiss">Odwołaj</string>
+
     <string name="torrent_preferences_header">Ustawienia Torrentów</string>
     <string name="search_preferences_one_engine_checked_always">Przynajmniej jedna wyszukiwarka musi być zawsze wybrana</string>
     <string name="switch_off_engine_without_vpn">VPN jest nieaktywny - zatrzymuję silnik BitTorrent.</string>
@@ -703,7 +702,7 @@
     <string name="add">Dodaj</string>
     <string name="transfers_context_seed_all_transfers">Seeduj wszystkie zakonczone transfery</string>
     <string name="time_left">Pozostały czas</string>
-    <string name="join_frostwire_chat">Dołącz do czatu FrostWire</string>
+
     <string name="n_files">%1$d PLIKI</string>
     <string name="visit_vpn_client_ExpressVPN">Odwiedź ExpressVPN</string>
     <string name="total_size">Całkowity rozmiar</string>

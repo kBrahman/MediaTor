@@ -30,7 +30,6 @@
     <string name="wifi_sharing_settings">Wi-Fi Налады агульнага доступу</string>
     <string name="is_not_responding">%s не адказвае</string>
     <string name="azureus_manager_item_seeding">Пасеў</string>
-    <string name="application_label">FrostWire</string>
     <string name="enable_wifi_sharing_summary">Агульны доступ да файлаў з калегамі па лакальнай сеткі Wi-Fi.</string>
     <string name="how_other_users_will_see_you">Як іншыя карыстальнікі будуць бачыць вас</string>
     <string name="share_selected_files">Доля абраных файлаў</string>
@@ -308,7 +307,7 @@
     <string name="error_moving_incomplete">Памылка: Moving Няпоўнае</string>
     <string name="torrent_url_added">Торэнт URL дададзены да перадач.</string>
     <string name="only_up_to_n_uploads_at_the_same_time">Толькі да %s загрузкі ў той жа час</string>
-    <string name="are_you_sure_you_wanna_leave">Вы ўпэўненыя, што хочаце вярнуцца да экрана?</string>
+
     <string name="search_label">Пошук</string>
     <string name="search_select_filetype">Калі ласка, абярыце тып файла</string>
     <string name="http_download_status_temp_dir_error">Часовы каталог не існуе ці не можа быць створаны</string>
@@ -432,7 +431,7 @@
     <string name="send_pm">Адправіць асабістае паведамленне</string>
     <string name="advertisement">рэклама</string>
     <string name="pick_the_files_you_want_to_download_from_this_torrent">Выберыце файлы, якія вы хочаце загрузіць з гэтага торэнта</string>
-    <string name="minimize_frostwire">Мінімізацыя FrostWire</string>
+
     <string name="azureus_manager_item_forced">Прымусовы</string>
     <string name="failed_to_set_wallpaper">Не атрымалася ўсталяваць шпалеры</string>
     <string name="cancel_delete_menu_action">Прыпынак і выдаленне дадзеных</string>
@@ -455,7 +454,7 @@
     <string name="hints_by_google">Парады па Google</string>
     <string name="ringtone">Мелодыя</string>
     <string name="vpn_off_toast_notification">Ваша злучэнне не можа быць прыватным.</string>
-    <string name="activity_chat_name">Чат</string>
+    <string name="activity_chat_named">Чат</string>
     <string name="loading">Загрузка</string>
     <string name="downloading_metadata">Загрузка метададзеных</string>
     <string name="storage_preference_summary">Размяшчэнне па змаўчанні для захоўвання, дзе будуць захаваны файлы.</string>
@@ -595,7 +594,7 @@
     <string name="cloud_download_aborted_on_mobile_data">Бягучая налада прадухіляе загрузку, калі не на Wi-Fi сеткі</string>
     <string name="sharing_privacy_settings">Сумеснае выкарыстанне і канфідэнцыяльнасць</string>
     <string name="delete_started_torrents_summary">Выдаліць файлы .torrent пасля пачатку загрузкі</string>
-    <string name="dismiss">Звольніце</string>
+
     <string name="torrent_preferences_header">Торэнт Налады</string>
     <string name="search_preferences_one_engine_checked_always">Па змаўчанні, адзін пошукавік павінен быць правераны ў любы час</string>
     <string name="switch_off_engine_without_vpn">VPN неактыўная, прыпынак рухавіка BitTorrent.</string>
@@ -718,5 +717,5 @@
     <string name="vpn_suggestion_nordvpn">NORDVPN \n Бясплатная 7-дзённая пробная версія</string>
     <string name="play_store_out_of_sync">Google Play Маркета неабходна сінхранізаваць, пачакайце некалькі хвілін</string>
     <string name="contact_us">Звяжыцеся з намі</string>
-    <string name="join_frostwire_chat">Далучайцеся да чату FrostWire</string>
+
 </resources>

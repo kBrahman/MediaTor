@@ -23,7 +23,7 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
 import com.andrew.apollo.ui.fragments.phone.MusicBrowserPhoneFragment;
-import com.frostwire.android.R;
+import zig.zak.media.tor.R;
 
 /**
  * This class is used to display the {@link ViewPager} used to swipe between the

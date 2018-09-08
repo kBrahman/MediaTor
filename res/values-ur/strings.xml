@@ -22,7 +22,7 @@
     <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[افشا: اگرچہ آپ کے ڈاؤن لوڈ کے لئے سفارش کی گئی ہے، آپ کو FrostWire استعمال کرنے کے لئے ایک وی پی این کی ضرورت نہیں ہے.]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>معلومات:</b> ایپلی کیشنز کو ٹچ کریں]]></string>
     <string name="activity_preferences_name">ترتیبات</string>
-    <string name="activity_chat_name">بات چیت</string>
+    <string name="activity_chat_named">بات چیت</string>
     <string name="activity_downloads_name">موجودہ ڈونلوڈ</string>
     <string name="activity_uploads_name">موجودہ اپلوڈ</string>
     <string name="activity_about">ہمارے بارے میں</string>
@@ -119,7 +119,6 @@
     <string name="error_connection_timed_out">غلطی: کنکشن / وقت ختم گرا. دوبارہ کوشش کریں.</string>
     <string name="im_on_it">میں اس پر ہوں…</string>
     <string name="is_not_responding">%s جواب نہیں ہے</string>
-    <string name="application_label">FrostWire</string>
     <string name="enable_wifi_sharing_summary">مقامی وائی فائی نیٹ ورک پر ساتھیوں کے ساتھ فائلوں کا اشتراک کریں.</string>
     <string name="how_other_users_will_see_you">کس طرح دوسرے یوزرز جو آپ دیکھیں گے</string>
     <string name="share_selected_files">سیکنڈ اور منتخب کردہ فائلوں</string>
@@ -355,7 +354,7 @@
     <string name="error_moving_incomplete">خرابی: نامکمل و حرکت</string>
     <string name="torrent_url_added">اوپر کے URL کی منتقلی میں شامل کر دیا.</string>
     <string name="only_up_to_n_uploads_at_the_same_time">ایک ہی وقت میں صرف s% کے اپ لوڈز تک</string>
-    <string name="are_you_sure_you_wanna_leave">آپ کے گھر کی سکرین پر واپس جانا چاہتے ہیں؟</string>
+
     <string name="search_select_filetype">ایک فائل کی قسم کا انتخاب کریں</string>
     <string name="http_download_status_temp_dir_error">عارضی ڈائریکٹری موجود نہیں ہے یا پیدا نہیں کیا جا سکتا</string>
     <string name="playing_now_colon">اب چل رہا ہے:</string>
@@ -465,7 +464,7 @@
     <string name="send_pm">ذاتی پیغام ارسال کریں</string>
     <string name="advertisement">اشتہار</string>
     <string name="pick_the_files_you_want_to_download_from_this_torrent">فائلوں اٹھاو آپ کو اس سیلاب سے ڈاؤن لوڈ کرنا چاہتے ہیں</string>
-    <string name="minimize_frostwire">FrostWire کو کم سے کم</string>
+
     <string name="azureus_manager_item_forced">جبری</string>
     <string name="failed_to_set_wallpaper">وال پیپر سیٹ کرنے میں ناکام ہوگیا</string>
     <string name="cancel_delete_menu_action">بند کرو اور ڈیٹا حذف</string>
@@ -595,7 +594,7 @@
     <string name="cloud_download_aborted_on_mobile_data">موجودہ ترتیب وائی فائی نیٹ ورک پر جب نہیں ڈاؤن لوڈ کرنے سے روکتا ہے</string>
     <string name="sharing_privacy_settings">شیئرنگ اور پرائیویسی</string>
     <string name="delete_started_torrents_summary">ڈاؤن لوڈ کرنے کے آغاز کے بعد .torrent فائلوں کو خارج کر</string>
-    <string name="dismiss">برخاست</string>
+
     <string name="torrent_preferences_header">اوپر کی ترجیحات</string>
     <string name="search_preferences_one_engine_checked_always">ڈیفالٹ کی طرف سے، ایک کی تلاش کے انجن کو ہر وقت کی جانچ پڑتال کی جائے کی ضرورت ہے</string>
     <string name="switch_off_engine_without_vpn">VPN غیر فعال ہے. BitTorrent کے انجن روکنا.</string>
@@ -718,5 +717,5 @@
     <string name="vpn_suggestion_nordvpn">NORDVPN \n مفت 7 دن کی آزمائش</string>
     <string name="play_store_out_of_sync">Google Play Store کو مطابقت پذیر کرنے کی ضرورت ہے، چند منٹ انتظار کریں</string>
     <string name="contact_us">ہم سے رابطہ کریں</string>
-    <string name="join_frostwire_chat">FrostWire چیٹ شامل کریں</string>
+
 </resources>

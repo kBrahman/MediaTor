@@ -20,7 +20,8 @@ import com.andrew.apollo.model.Song;
 import com.andrew.apollo.ui.MusicViewHolder;
 import com.andrew.apollo.ui.fragments.profile.*;
 import com.andrew.apollo.utils.MusicUtils;
-import com.frostwire.android.R;
+
+import zig.zak.media.tor.R;;
 
 /**
  * This {@link ArrayAdapter} is used to display the songs for a particular

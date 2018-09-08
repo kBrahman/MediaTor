@@ -43,9 +43,9 @@ import com.andrew.apollo.ui.activities.ProfileActivity;
 import com.andrew.apollo.ui.fragments.profile.ApolloFragment;
 import com.andrew.apollo.utils.MusicUtils;
 import com.andrew.apollo.utils.PreferenceUtils;
-import com.frostwire.android.R;
-import com.frostwire.android.gui.views.AbstractActivity;
-import com.frostwire.android.gui.views.AbstractDialog;
+import zig.zak.media.tor.R;
+import zig.zak.media.tor.android.gui.views.AbstractActivity;
+import zig.zak.media.tor.android.gui.views.AbstractDialog;
 
 import java.util.List;
 

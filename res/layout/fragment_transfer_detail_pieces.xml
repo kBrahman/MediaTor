@@ -103,7 +103,7 @@
             android:layout_gravity="center_vertical|center_horizontal"
             android:visibility="gone"/>
 
-        <com.frostwire.android.gui.views.HexHiveView
+        <zig.zak.media.tor.android.gui.views.HexHiveView
             android:id="@+id/fragment_transfer_detail_pieces_hexhive_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"

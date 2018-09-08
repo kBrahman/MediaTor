@@ -33,7 +33,7 @@
         android:layout_alignParentTop="true"
         android:indeterminate="true" />
 
-    <com.frostwire.android.gui.views.TouchImageView
+    <zig.zak.media.tor.android.gui.views.TouchImageView
         android:id="@+id/fragment_image_viewer_image_highres"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

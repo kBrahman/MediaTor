@@ -30,7 +30,6 @@
     <string name="is_not_responding">%s ప్రతిస్పందించడం లేదు</string>
     <string name="vpn_client_feature_3_ExpressVPN">ప్రైవేట్ మరియు లాగింగ్ బ్రౌజింగ్ లేదు</string>
     <string name="azureus_manager_item_seeding">నాట్లు</string>
-    <string name="application_label">FrostWire</string>
     <string name="enable_wifi_sharing_summary">స్థానిక Wi-Fi నెట్వర్క్లో సహచరులతో ఫైల్లను భాగస్వామ్యం చేయండి.</string>
     <string name="transfers_context_stop_seeding_all_transfers">అన్ని బదిలీలు నాటడం ఆపండి</string>
     <string name="how_other_users_will_see_you">ఇతర వినియోగదారులు మిమ్మల్ని ఎలా చూస్తారు</string>
@@ -96,7 +95,7 @@
     <string name="send_to_chat">చాట్కు పంపండి</string>
     <string name="delete_this_track">ఈ ట్రాక్ని తొలగించండి</string>
     <string name="five_dollars">$5</string>
-    <string name="dismiss">రద్దుచేసే</string>
+
     <string name="seeding_settings_explanation">ఇంటర్నెట్లో బిటొరెంట్ వినియోగదారులు మీ టోరెంట్స్ సీడ్ యొక్క డేటా రాళ్లను డౌన్లోడ్ చేయగలుగుతారు.</string>
     <string name="transfer_detail_storage_header">నిల్వ మార్గం:</string>
     <string name="loading_indeterminate">లోడ్…</string>
@@ -380,7 +379,7 @@
     <string name="visit_vpn_client_PIA">ప్రైవేట్ ఇంటర్నెట్ యాక్సెస్ ను సందర్శించండి</string>
     <string name="torrent_url_added">బదిలీలకు టోరెంట్ URL జోడించబడింది.</string>
     <string name="only_up_to_n_uploads_at_the_same_time">ఒకే సమయంలో %s అప్లోడ్లకు మాత్రమే</string>
-    <string name="are_you_sure_you_wanna_leave">మీరు ఖచ్చితంగా హోమ్ స్క్రీన్కు తిరిగి వెళ్ళాలనుకుంటున్నారా?</string>
+
     <string name="search_label">శోధన</string>
     <string name="search_select_filetype">దయచేసి ఒక ఫైల్ రకాన్ని ఎంచుకోండి</string>
     <string name="http_download_status_temp_dir_error">తాత్కాలిక డైరెక్టరీ ఉనికిలో లేదు లేదా సృష్టించబడదు</string>
@@ -525,7 +524,7 @@
     <string name="send_pm">ప్రైవేట్ సందేశం పంపండి</string>
     <string name="advertisement">ప్రకటన</string>
     <string name="pick_the_files_you_want_to_download_from_this_torrent">మీరు ఈ టొరెంట్ నుండి డౌన్లోడ్ చేయదలిచిన ఫైళ్ళను ఎంచుకోండి</string>
-    <string name="minimize_frostwire">FrostWire కనిష్టీకరించు</string>
+
     <string name="data_saving_kill_http_warning">ఇది అన్ని అసంపూర్తి బదిలీలు ప్రోగ్రెస్లో నిలిపివేయబడుతుంది</string>
     <string name="azureus_manager_item_forced">ఫోర్స్డ్</string>
     <string name="sharing_preferences">భాగస్వామ్య సెట్టింగ్లు</string>
@@ -555,7 +554,7 @@
     <string name="vpn_off_toast_notification">మీ కనెక్షన్ ప్రైవేట్ కాకపోవచ్చు.</string>
     <string name="delete_started_torrents">.torrent ఫైళ్లను తొలగించండి</string>
     <string name="search_header">శోధన</string>
-    <string name="activity_chat_name">చాట్</string>
+    <string name="activity_chat_named">చాట్</string>
     <string name="help_translate_or_proofread_frostwire">అనువదించడానికి లేదా సరిచూసుకున్నారు FrostWire సహాయం</string>
     <string name="loading">లోడ్</string>
     <string name="downloading_metadata">మెటాడేటాను డౌన్లోడ్ చేస్తోంది</string>
@@ -718,5 +717,5 @@
     <string name="vpn_suggestion_nordvpn">NORDVPN \n ఉచిత 7 రోజుల ట్రయల్</string>
     <string name="play_store_out_of_sync">Play Store సమకాలీకరించాల్సిన అవసరం ఉంది, కొన్ని నిమిషాలు వేచి ఉండండి</string>
     <string name="contact_us">మమ్మల్ని సంప్రదించండి</string>
-    <string name="join_frostwire_chat">ఫ్రోస్ట్వైర్ చాట్లో చేరండి</string>
+
 </resources>

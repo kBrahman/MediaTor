@@ -23,9 +23,8 @@
     <string name="tip_touch_tags_to"><![CDATA[ <b>Hinweis:</b> Berühren angewendet Tags]]></string>
     <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Ihre Privatsphäre ist ein Grundrecht</b>. Eine ungeschützte Verbindung bedeutet, dass alles, was Sie online tun, einschließlich <b>Downloads, Suchen, Nachrichten</b>, von jedem in Ihrem Netzwerk überwacht und abgefangen werden kann, z. Internet Service Provider, Hacker, Regierungen.<br><br><b>Wir empfehlen DRINGLICH, einen VPN-Dienst zu verwenden</b>. <br> Hier sind einige Optionen, die einen zuverlässigen Service bieten und gut mit FrostWire funktionieren:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Sie sind über ein VPN mit dem Internet verbunden. <br> <br> Wenn Sie es nicht bereits sind, empfehlen wir Ihnen, einen der folgenden Dienste zu verwenden, um Ihre Verbindung zu verschlüsseln und <b>Ihre Privatsphäre zu schützen</b>. ]]></string>
-    <string name="application_label">FrostWire</string>
     <string name="activity_preferences_name">Einstellungen</string>
-    <string name="activity_chat_name">Chat</string>
+    <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Aktive Downloads</string>
     <string name="activity_uploads_name">Aktive Uploads</string>
     <string name="activity_about">Über</string>
@@ -112,8 +111,8 @@
     <string name="tos_accept">Akzeptieren</string>
     <string name="tos_refuse">Ablehnen</string>
     <string name="downloads">Downloads</string>
-    <string name="minimize_frostwire">FrostWire minimieren</string>
-    <string name="are_you_sure_you_wanna_leave">Bist du sicher, dass du zurück zum Startbildschirm willst?</string>
+
+
     <string name="set_as_wallpaper">Als Hintergrundbild einstellen</string>
     <string name="failed_to_set_wallpaper">Hintergrund-Einstellung ist fehlgeschlagen</string>
     <string name="tell_others_chooser">Tweet / SMS / E-Mail</string>
@@ -597,7 +596,7 @@
     <string name="cloud_download_aborted_on_mobile_data">Aktuelle Einstellung verhindert das Herunterladen, wenn nicht auf Wifi-Netzwerk</string>
     <string name="sharing_privacy_settings">Teilen und Datenschutz</string>
     <string name="delete_started_torrents_summary">Löschen Sie .torrent-Dateien nach dem Download</string>
-    <string name="dismiss">Entlassen</string>
+
     <string name="torrent_preferences_header">Torrent-Einstellungen</string>
     <string name="search_preferences_one_engine_checked_always">Standardmäßig muss eine Suchmaschine jederzeit überprüft werden</string>
     <string name="switch_off_engine_without_vpn">VPN ist inaktiv und stoppt den BitTorrent-Motor.</string>
@@ -720,5 +719,5 @@
     <string name="vpn_suggestion_nordvpn">NORDVPN \n Kostenlose 7-Tage-Testversion</string>
     <string name="play_store_out_of_sync">Play Store muss synchronisiert werden, warten Sie ein paar Minuten</string>
     <string name="contact_us">Kontaktiere uns</string>
-    <string name="join_frostwire_chat">Trete dem FrostWire-Chat bei</string>
+
 </resources>

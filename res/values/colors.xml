@@ -1,29 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml), and
- * Marcelina Knitter (@marcelinkaaa)
- * Copyright (c) 2011-2014, FrostWire(R). All rights reserved.
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
--->
 <resources>
 
     <!-- Basic colors -->
     <color name="basic_white">@android:color/white</color>
-    <color name="basic_blue">#38536a</color>
+    <color name="basic_cburgundy">#613761</color>
     <color name="basic_blue_transparent">#642889AC</color>
     <color name="basic_blue_dark">#264053</color>
     <color name="basic_blue_dark_highlight">#21313f</color>
@@ -43,12 +23,12 @@
     <!-- GENERAL APP COLORS -->
     <!-- Background Colors -->
     <color name="app_background_white">@color/basic_white</color>
-    <color name="app_background">@color/basic_blue</color>
+    <color name="app_background">@color/basic_cburgundy</color>
     <color name="app_background_dark">@color/basic_blue_dark</color>
     <color name="app_background_dark_highlight">@color/basic_blue_dark_highlight</color>
     <color name="app_background_body_light">@color/basic_gray_light</color>
     <color name="app_background_body_dark">@color/basic_gray_medium</color>
-    <color name="app_toolbar_background">@color/basic_blue</color>
+    <color name="app_toolbar_background">@color/basic_cburgundy</color>
     <color name="app_toolbar_background_bottom">@color/basic_blue_dark_highlight</color>
     <color name="app_selection_background">@color/basic_gray_light</color>
     <color name="app_rich_notification_background">@color/basic_yellow</color>

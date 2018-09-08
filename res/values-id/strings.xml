@@ -23,9 +23,8 @@
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Sentuh tag yang diterapkan ke]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Anda terhubung ke Internet menggunakan VPN. <br><br> Jika Anda belum melakukannya, kami sarankan menggunakan salah satu layanan di bawah ini untuk mengenkripsi koneksi Anda dan <b>menjaga privasi Anda</b>. ]]></string>
     <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Privasi Anda adalah hak asasi manusia yang fundamental</b>. Sambungan tidak terlindungi artinya semua yang Anda lakukan secara online termasuk <b>unduhan, penelusuran, perpesanan</b>, dapat dipantau dan disadap oleh siapa saja di jaringan Anda, mis. Penyedia Layanan Internet, peretas, pemerintah.<br><br><b>Kami SANGAT merekomendasikan menggunakan layanan VPN</b>. <br> Berikut adalah beberapa opsi yang menyediakan layanan andal dan berfungsi baik dengan FrostWire:]]></string>
-    <string name="application_label">FrostWire</string>
     <string name="activity_preferences_name">Pengaturan</string>
-    <string name="activity_chat_name">Percakapan</string>
+    <string name="activity_chat_named">Percakapan</string>
     <string name="activity_downloads_name">Unduhan-unduhan Aktif</string>
     <string name="activity_uploads_name">Unggahan-unggahan Aktif</string>
     <string name="activity_about">Tentang</string>
@@ -112,8 +111,8 @@
     <string name="tos_accept">Terima</string>
     <string name="tos_refuse">Tolak</string>
     <string name="downloads">Unduhan-unduhan</string>
-    <string name="minimize_frostwire">Memperkecil FrostWire</string>
-    <string name="are_you_sure_you_wanna_leave">Apakah Anda yakin kembali ke tampilan beranda?</string>
+
+
     <string name="set_as_wallpaper">Atur sebagai Wallpaper</string>
     <string name="failed_to_set_wallpaper">Gagal mengatur Wallpaper</string>
     <string name="tell_others_chooser">Tweet / SMS /Email</string>
@@ -597,7 +596,7 @@
     <string name="cloud_download_aborted_on_mobile_data">Pengaturan arus mencegah download bila tidak pada jaringan Wifi</string>
     <string name="sharing_privacy_settings">Berbagi dan Privasi</string>
     <string name="delete_started_torrents_summary">Hapus file torrent setelah mulai men-download</string>
-    <string name="dismiss">Memberhentikan</string>
+
     <string name="torrent_preferences_header">Preferensi torrent</string>
     <string name="search_preferences_one_engine_checked_always">Pada pengaturan standar, satu mesin pencari perlu diperiksa setiap saat</string>
     <string name="switch_off_engine_without_vpn">VPN tidak aktif, menghentikan mesin BitTorrent.</string>
@@ -673,7 +672,7 @@
     <string name="play_store_out_of_sync">Play Store perlu melakukan sinkronisasi, tunggu beberapa menit</string>
     <string name="one_file_shared">Satu file telah dibagikan ke perangkat FrostWire di jaringan Wi-Fi yang sama.</string>
     <string name="contact_us">Hubungi kami</string>
-    <string name="join_frostwire_chat">Bergabung FrostWire chatting</string>
+
     <string name="uploaded">Diunggah</string>
     <string name="trackers">Pelacak</string>
     <string name="source_type">Sumber: %1$s</string>

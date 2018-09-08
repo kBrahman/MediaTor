@@ -53,20 +53,21 @@ import com.andrew.apollo.provider.FavoritesStore;
 import com.andrew.apollo.provider.RecentStore;
 import com.andrew.apollo.ui.activities.AudioPlayerActivity;
 import com.andrew.apollo.utils.MusicUtils;
-import com.frostwire.android.BuildConfig;
-import com.frostwire.android.R;
-import com.frostwire.android.core.ConfigurationManager;
-import com.frostwire.android.core.Constants;
-import com.frostwire.android.util.Asyncs;
-import com.frostwire.util.Logger;
-import com.frostwire.util.Ref;
+
+import zig.zak.media.tor.BuildConfig;
+import zig.zak.media.tor.R;
+import zig.zak.media.tor.android.core.ConfigurationManager;
+import zig.zak.media.tor.android.core.Constants;
+import zig.zak.media.tor.android.util.Asyncs;
+import zig.zak.media.tor.util.Logger;
+import zig.zak.media.tor.util.Ref;
 
 import java.lang.ref.WeakReference;
 import java.util.Random;
 import java.util.Stack;
 
-import static com.frostwire.android.util.Asyncs.async;
-import static com.frostwire.android.util.RunStrict.runStrict;
+import static zig.zak.media.tor.android.util.Asyncs.async;
+import static zig.zak.media.tor.android.util.RunStrict.runStrict;
 
 /**
  * A background {@link Service} used to keep music playing between activities

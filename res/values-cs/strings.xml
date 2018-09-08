@@ -23,9 +23,8 @@
     <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Zveřejnění:</b> Ačkoli doporučen pro vaše stahování, zejména při každém stahování nebo výměně citlivých informací (např. bankovnictví) a při používání veřejných Wi-Fi nebo mobilních dat, <b>nepotřebujete VPN použít FrostWire. </b>]]></string>
     <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Vaše soukromí je základním lidským právem</b>. Nechránené připojení znamená, že vše, co děláte online, včetně <b>stažení, vyhledávání a zasílání zpráv</b>, může být sledováno a zachyceno kýmkoli ve vaší síti, např. Poskytovatelé internetových služeb, hackeři, vlády.<br><br><b>Důrazně doporučujeme používat službu VPN</b>. <br> Zde jsou některé možnosti, které poskytují spolehlivý servis a fungují dobře s aplikací FrostWire:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Připojíte se k síti Internet pomocí VPN. <br><br> Pokud nejste již, doporučujeme použít jednu z níže uvedených služeb pro šifrování vašeho připojení a <b>zabezpečení vašeho soukromí</b>. ]]></string>
-    <string name="application_label">FrostWire</string>
     <string name="activity_preferences_name">Nastavení</string>
-    <string name="activity_chat_name">Chat</string>
+    <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Aktivovat Stažení</string>
     <string name="activity_uploads_name">Aktivovat Odesílání</string>
     <string name="activity_about">Informace o</string>
@@ -112,8 +111,8 @@
     <string name="tos_accept">Akceptovat</string>
     <string name="tos_refuse">Odmítnout</string>
     <string name="downloads">Soubory ke Stažení</string>
-    <string name="minimize_frostwire">Minimalizovat FrostWire</string>
-    <string name="are_you_sure_you_wanna_leave">Jste si jisti, že chcete vrátit na úvodní obrazovku?</string>
+
+
     <string name="set_as_wallpaper">Nastavit jako Tapetu</string>
     <string name="failed_to_set_wallpaper">Nepodařilo se nastavit Tapety</string>
     <string name="tell_others_chooser">Tweet / SMS / E-mail</string>
@@ -597,7 +596,7 @@
     <string name="cloud_download_aborted_on_mobile_data">Aktuální nastavení zabraňuje stahování, pokud není v síti Wi-Fi</string>
     <string name="sharing_privacy_settings">Sdílení a soukromí</string>
     <string name="delete_started_torrents_summary">Mazat soubory torrentů po začátku stahování</string>
-    <string name="dismiss">Propustit</string>
+
     <string name="torrent_preferences_header">Torrent preferencí</string>
     <string name="search_preferences_one_engine_checked_always">Ve výchozím potřebuje jeden vyhledávač které mají být kontrolovány po celou dobu</string>
     <string name="switch_off_engine_without_vpn">VPN je neaktivní, zastavování motoru BitTorrent.</string>
@@ -720,5 +719,5 @@
     <string name="vpn_suggestion_nordvpn">NORDVPN \n Volná 7denní zkušební verze</string>
     <string name="play_store_out_of_sync">Obchod Google Play potřebuje synchronizaci, počkejte několik minut</string>
     <string name="contact_us">Kontaktujte nás</string>
-    <string name="join_frostwire_chat">Připojte se k chatu FrostWire</string>
+
 </resources>

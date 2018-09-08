@@ -32,7 +32,6 @@
     <string name="wifi_sharing_settings">Wi-Fi Delningsinställningar</string>
     <string name="is_not_responding">%s svarar inte</string>
     <string name="azureus_manager_item_seeding">Seeding</string>
-    <string name="application_label">FrostWire</string>
     <string name="enable_wifi_sharing_summary">Dela filer med kollegor på lokala Wi-Fi-nätverk.</string>
     <string name="how_other_users_will_see_you">Hur andra användare kommer att se dig</string>
     <string name="share_selected_files">Dela valda filer</string>
@@ -319,7 +318,7 @@
     <string name="error_moving_incomplete">Fel: Flytta Ofullständig</string>
     <string name="torrent_url_added">Torrent URL läggs till överföringar.</string>
     <string name="only_up_to_n_uploads_at_the_same_time">Endast upp till %s uppladdningar samtidigt</string>
-    <string name="are_you_sure_you_wanna_leave">Är du säker på att du vill gå tillbaka till startskärmen?</string>
+
     <string name="search_label">Sök</string>
     <string name="search_select_filetype">Välj en filtyp</string>
     <string name="http_download_status_temp_dir_error">Temporära katalogen finns inte eller kan inte skapas</string>
@@ -445,7 +444,7 @@
     <string name="send_pm">Skicka privat meddelande</string>
     <string name="advertisement">annons</string>
     <string name="pick_the_files_you_want_to_download_from_this_torrent">Plocka de filer du vill hämta från denna torrent</string>
-    <string name="minimize_frostwire">Minimera FrostWire</string>
+
     <string name="azureus_manager_item_forced">Tvingade</string>
     <string name="failed_to_set_wallpaper">Det gick inte att ställa in Bakgrund</string>
     <string name="cancel_delete_menu_action">Stoppa och ta bort data</string>
@@ -469,7 +468,7 @@
     <string name="ringtone">Ringsignal</string>
     <string name="vpn_off_toast_notification">Anslutningen kan inte vara privat.</string>
     <string name="search_header">Sök</string>
-    <string name="activity_chat_name">Chatt</string>
+    <string name="activity_chat_named">Chatt</string>
     <string name="help_translate_or_proofread_frostwire">Hjälp till att översätta eller korrekturläsa FrostWire</string>
     <string name="loading">Läser in</string>
     <string name="downloading_metadata">Nedladdning av metadata</string>
@@ -603,7 +602,7 @@
     <string name="use_tpb_summary">TPB är magnet baserad, fungerar endast på Wifi</string>
     <string name="cloud_download_aborted_on_mobile_data">Nuvarande inställning förhindrar nedladdning när inte på WiFi-nätverk</string>
     <string name="delete_started_torrents_summary">Radera .torrent filer efter att ha påbörjat ladda ner</string>
-    <string name="dismiss">Avfärda</string>
+
     <string name="search_preferences_one_engine_checked_always">Som standard behöver en sökmotor som ska kontrolleras vid alla tidpunkter</string>
     <string name="switch_off_engine_without_vpn">VPN är inaktiv, stoppa BitTorrent motor.</string>
     <string name="number_picker_tip">Tips: tryck valt nummer för att använda tangentbordet</string>
@@ -720,5 +719,5 @@
     <string name="vpn_suggestion_nordvpn">NORDVPN \n Gratis 7-dagars prov</string>
     <string name="play_store_out_of_sync">Google Play Butik behöver synkronisera, vänta några minuter</string>
     <string name="contact_us">Kontakta oss</string>
-    <string name="join_frostwire_chat">Gå med i FrostWire-chatten</string>
+
 </resources>

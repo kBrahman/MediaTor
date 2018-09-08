@@ -30,7 +30,6 @@
     <string name="wifi_sharing_settings">Wi-Fi Setări de distribuire</string>
     <string name="is_not_responding">%s nu răspunde</string>
     <string name="azureus_manager_item_seeding">Însămânțarea</string>
-    <string name="application_label">FrostWire</string>
     <string name="enable_wifi_sharing_summary">Trimiteți fișiere colegii de pe rețeaua WiFi locală.</string>
     <string name="how_other_users_will_see_you">Cum de alți utilizatori veți vedea</string>
     <string name="share_selected_files">Fișierele selecționate</string>
@@ -308,7 +307,7 @@
     <string name="error_moving_incomplete">Eroare: Mutarea incompletă</string>
     <string name="torrent_url_added">Torrent URL-ul adăugat la transferuri.</string>
     <string name="only_up_to_n_uploads_at_the_same_time">Numai până la %s încărcate în același timp,</string>
-    <string name="are_you_sure_you_wanna_leave">Sunteți sigur că doriți să mergeți înapoi la ecranul de start?</string>
+
     <string name="search_label">Căutare</string>
     <string name="search_select_filetype">Vă rugăm să selectați un tip de fișier</string>
     <string name="http_download_status_temp_dir_error">Directorul temporar nu există sau nu pot fi create</string>
@@ -431,7 +430,7 @@
     <string name="send_pm">Trimite mesaj privat</string>
     <string name="advertisement">publicitate</string>
     <string name="pick_the_files_you_want_to_download_from_this_torrent">Alege fișierele pe care doriți să îl descărcați de pe acest torrent</string>
-    <string name="minimize_frostwire">Minimiza FrostWire</string>
+
     <string name="azureus_manager_item_forced">Forţat</string>
     <string name="failed_to_set_wallpaper">Nu s-a stabilit monitorului</string>
     <string name="cancel_delete_menu_action">Opriți-vă și ștergerea datelor</string>
@@ -453,7 +452,7 @@
     <string name="hints_by_google">Indicii de la Google</string>
     <string name="ringtone">Ton de apel</string>
     <string name="vpn_off_toast_notification">Conexiunea dvs. poate să nu fie privat.</string>
-    <string name="activity_chat_name">Chat</string>
+    <string name="activity_chat_named">Chat</string>
     <string name="loading">De încărcare</string>
     <string name="downloading_metadata">Se descarcă metadate</string>
     <string name="storage_preference_summary">Locația de stocare implicită în cazul în care fișierele vor fi salvate.</string>
@@ -595,7 +594,7 @@
     <string name="cloud_download_aborted_on_mobile_data">Setarea curentă previne descărcarea atunci când nu este pe rețea Wi-Fi</string>
     <string name="sharing_privacy_settings">Distribuirea și confidențialitatea</string>
     <string name="delete_started_torrents_summary">Șterge fișierele .torrent după care începe descărcarea</string>
-    <string name="dismiss">Demită</string>
+
     <string name="torrent_preferences_header">Preferințe Torrent</string>
     <string name="search_preferences_one_engine_checked_always">În mod implicit, un motor de căutare trebuie să fie verificate în orice moment</string>
     <string name="switch_off_engine_without_vpn">VPN este inactiv, oprirea motorului BitTorrent.</string>
@@ -720,5 +719,5 @@
     <string name="add_tracker">Adaugă tracker</string>
     <string name="play_store_out_of_sync">Magazinul Google Play trebuie sincronizat, așteptați câteva minute</string>
     <string name="contact_us">Contacteaza-ne</string>
-    <string name="join_frostwire_chat">Participă la chat FrostWire</string>
+
 </resources>

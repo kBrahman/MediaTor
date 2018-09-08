@@ -35,6 +35,7 @@ android {
     buildToolsVersion "28.0.2"
 
     defaultConfig {
+        applicationId "zig.zak.media.tor"
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -91,15 +92,6 @@ android {
             }
         }
     }
-
-
-//    flavorDimensions "classicApp"
-//
-//    productFlavors {
-//        basic {
-//            applicationId 'com.frostwire.android'
-//        }
-//    }
 }
 
 dependencies {

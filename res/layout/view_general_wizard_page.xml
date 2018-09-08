@@ -19,8 +19,8 @@
  */
 -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,20 +32,20 @@
             style="@style/WizardTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/welcome_to_frostwire" />
+            android:text="@string/welcome_to_frostwire"/>
 
         <TextView
             android:id="@+id/view_general_wizard_page_title_horizontal_break"
             style="@style/WizardDivider"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/view_general_wizard_page_storage_path_title"
             style="@style/WizardSubTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/storage_path" />
+            android:text="@string/storage_path"/>
 
         <TextView
             android:id="@+id/view_general_wizard_page_storage_path_textview"
@@ -53,12 +53,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:key="frostwire.prefs.storage.path_asf"
-            android:text="/storage/emulated/0" />
+            android:text="/storage/emulated/0"/>
 
         <TextView
             style="@style/WizardDivider.Bottom"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
         <TextView
             style="@style/WizardText.Header"
@@ -67,7 +67,7 @@
             android:background="@color/basic_blue_dark"
             android:paddingBottom="7dp"
             android:paddingTop="7dp"
-            android:text="@string/seeding_settings" />
+            android:text="@string/seeding_settings"/>
 
         <CheckBox
             android:id="@+id/view_general_wizard_page_check_seed_finished_torrents"
@@ -76,13 +76,13 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
-            android:text="@string/seed_finished_torrents" />
+            android:text="@string/seed_finished_torrents"/>
 
         <TextView
             style="@style/WizardText.Sub"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/seeding_settings_explanation" />
+            android:text="@string/seeding_settings_explanation"/>
 
         <CheckBox
             android:id="@+id/view_general_wizard_page_check_seed_finished_torrents_wifi_only"
@@ -90,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:text="@string/seed_finished_torrents_wifi_only" />
+            android:text="@string/seed_finished_torrents_wifi_only"/>
 
         <TextView
             android:id="@+id/view_general_wizard_page_wifi_only_text"
@@ -99,7 +99,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="35dp"
             android:text="@string/seeding_wifi_settings_explanation"
-            android:textColor="@color/app_text_wizard_dark" />
+            android:textColor="@color/app_text_wizard_dark"/>
 
         <TextView
             style="@style/WizardText.Header"
@@ -109,7 +109,7 @@
             android:background="@color/basic_blue_dark"
             android:paddingBottom="7dp"
             android:paddingTop="7dp"
-            android:text="@string/other_settings" />
+            android:text="@string/other_settings"/>
 
         <CheckBox
             android:id="@+id/view_general_wizard_page_check_ux_stats"
@@ -118,12 +118,12 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
-            android:text="@string/anonymous_usage_statistics" />
+            android:text="@string/anonymous_usage_statistics"/>
 
         <TextView
             style="@style/WizardText.Sub"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/anonymous_usage_statistics_summary" />
+            android:text="@string/anonymous_usage_statistics_summary"/>
     </LinearLayout>
 </ScrollView>

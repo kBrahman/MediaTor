@@ -137,7 +137,7 @@
                     android:paddingRight="10dp"
                     frostwire:flexWrap="wrap">
 
-                    <com.frostwire.android.gui.views.KeywordTagView
+                    <zig.zak.media.tor.android.gui.views.KeywordTagView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         frostwire:keyword_tag_count="45"
@@ -145,7 +145,7 @@
                         frostwire:keyword_tag_inclusive="true"
                         frostwire:keyword_tag_keyword="lorem" />
 
-                    <com.frostwire.android.gui.views.KeywordTagView
+                    <zig.zak.media.tor.android.gui.views.KeywordTagView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         frostwire:keyword_tag_count="45"
@@ -153,7 +153,7 @@
                         frostwire:keyword_tag_inclusive="true"
                         frostwire:keyword_tag_keyword="ipsum" />
 
-                    <com.frostwire.android.gui.views.KeywordTagView
+                    <zig.zak.media.tor.android.gui.views.KeywordTagView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         frostwire:keyword_tag_count="55"
@@ -161,7 +161,7 @@
                         frostwire:keyword_tag_inclusive="true"
                         frostwire:keyword_tag_keyword="dolor" />
 
-                    <com.frostwire.android.gui.views.KeywordTagView
+                    <zig.zak.media.tor.android.gui.views.KeywordTagView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         frostwire:keyword_tag_count="5"
@@ -169,7 +169,7 @@
                         frostwire:keyword_tag_inclusive="false"
                         frostwire:keyword_tag_keyword="sit" />
 
-                    <com.frostwire.android.gui.views.KeywordTagView
+                    <zig.zak.media.tor.android.gui.views.KeywordTagView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         frostwire:keyword_tag_count="3"
@@ -339,7 +339,7 @@
                     android:layout_height="wrap_content"
                     frostwire:flexWrap="wrap">
 
-                    <com.frostwire.android.gui.views.KeywordTagView
+                    <zig.zak.media.tor.android.gui.views.KeywordTagView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         frostwire:keyword_tag_count="30"
@@ -373,7 +373,7 @@
                     android:layout_height="wrap_content"
                     frostwire:flexWrap="wrap">
 
-                    <com.frostwire.android.gui.views.KeywordTagView
+                    <zig.zak.media.tor.android.gui.views.KeywordTagView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         frostwire:keyword_tag_count="623"

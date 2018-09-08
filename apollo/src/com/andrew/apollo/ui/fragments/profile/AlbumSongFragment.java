@@ -30,9 +30,9 @@ import com.andrew.apollo.loaders.AlbumSongLoader;
 import com.andrew.apollo.model.Song;
 import com.andrew.apollo.ui.fragments.Fragments;
 import com.andrew.apollo.utils.PreferenceUtils;
-import com.frostwire.android.R;
-
 import java.util.List;
+
+import zig.zak.media.tor.R;;
 
 /**
  * This class is used to display all of the songs from a particular album.

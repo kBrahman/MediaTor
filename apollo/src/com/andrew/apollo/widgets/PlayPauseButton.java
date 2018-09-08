@@ -29,7 +29,7 @@ import android.widget.ImageButton;
 import com.andrew.apollo.ui.activities.AudioPlayerActivity;
 import com.andrew.apollo.utils.ApolloUtils;
 import com.andrew.apollo.utils.MusicUtils;
-import com.frostwire.android.R;
+import zig.zak.media.tor.R;
 
 /**
  * A custom {@link ImageButton} that represents the "play and pause" button.

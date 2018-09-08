@@ -26,7 +26,7 @@ import android.provider.MediaStore;
 import com.andrew.apollo.format.Capitalize;
 import com.andrew.apollo.utils.MusicUtils;
 import com.devspark.appmsg.AppMsg;
-import com.frostwire.android.R;
+import zig.zak.media.tor.R;
 
 /**
  * @author Andrew Neal (andrewdneal@gmail.com) TODO - The playlist names are

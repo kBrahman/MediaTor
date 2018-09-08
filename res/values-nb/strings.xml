@@ -30,7 +30,6 @@
     <string name="wifi_sharing_settings">Wi-Fi delingsinnstillinger</string>
     <string name="is_not_responding">%s svarer ikke</string>
     <string name="azureus_manager_item_seeding">Seeding</string>
-    <string name="application_label">FrostWire</string>
     <string name="enable_wifi_sharing_summary">Del filer med jevnaldrende på den lokale Wi-Fi-nettverk.</string>
     <string name="how_other_users_will_see_you">Hvordan andre brukere vil se deg</string>
     <string name="share_selected_files">Del valgte filer</string>
@@ -317,7 +316,7 @@
     <string name="error_moving_incomplete">Feil: Moving ufullstendig</string>
     <string name="torrent_url_added">Torrent URL lagt til overføringer.</string>
     <string name="only_up_to_n_uploads_at_the_same_time">Bare opp til %s opplastinger samtidig</string>
-    <string name="are_you_sure_you_wanna_leave">Er du sikker på at du vil gå tilbake til startskjermen?</string>
+
     <string name="search_label">Søke</string>
     <string name="search_select_filetype">Velg en filtype</string>
     <string name="http_download_status_temp_dir_error">Midlertidig katalog eksisterer ikke, eller kan ikke opprettes</string>
@@ -443,7 +442,7 @@
     <string name="send_pm">Send en privat melding</string>
     <string name="advertisement">annonse</string>
     <string name="pick_the_files_you_want_to_download_from_this_torrent">Plukk filene du ønsker å laste ned fra denne torrenten</string>
-    <string name="minimize_frostwire">Minimer Frostwire</string>
+
     <string name="azureus_manager_item_forced">Tvungen</string>
     <string name="failed_to_set_wallpaper">Kunne sette Bakgrunn</string>
     <string name="cancel_delete_menu_action">Stopp og Slett data</string>
@@ -467,7 +466,7 @@
     <string name="ringtone">Ringtone</string>
     <string name="vpn_off_toast_notification">Tilkoblingen kan ikke være privat.</string>
     <string name="search_header">Søke</string>
-    <string name="activity_chat_name">Chat</string>
+    <string name="activity_chat_named">Chat</string>
     <string name="help_translate_or_proofread_frostwire">Hjelp sette eller korrekturlese Frostwire</string>
     <string name="loading">Laster</string>
     <string name="downloading_metadata">Nedlasting av metadata</string>
@@ -601,7 +600,7 @@
     <string name="use_tpb_summary">TPB er magnet basert, fungerer bare på Wifi</string>
     <string name="cloud_download_aborted_on_mobile_data">Aktuell innstilling forhindrer nedlasting når den ikke er på Wifi-nettverk</string>
     <string name="delete_started_torrents_summary">Slett .torrent filer etter begynner å laste ned</string>
-    <string name="dismiss">Avskjedige</string>
+
     <string name="search_preferences_one_engine_checked_always">Som standard, trenger en søkemotor som skal kontrolleres til enhver tid</string>
     <string name="switch_off_engine_without_vpn">VPN er inaktiv, stoppe BitTorrent motoren.</string>
     <string name="number_picker_tip">Tips: Trykk valgte nummeret å bruke tastaturet</string>
@@ -720,5 +719,5 @@
     <string name="add_tracker">Legg til tracker</string>
     <string name="play_store_out_of_sync">Google Play Butikk må synkroniseres, vent noen minutter</string>
     <string name="contact_us">Kontakt oss</string>
-    <string name="join_frostwire_chat">Bli med på FrostWire chat</string>
+
 </resources>

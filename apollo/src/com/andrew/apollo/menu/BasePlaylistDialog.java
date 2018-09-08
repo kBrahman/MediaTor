@@ -35,8 +35,8 @@ import android.widget.TextView;
 
 import com.andrew.apollo.ui.fragments.PlaylistFragment;
 import com.andrew.apollo.utils.MusicUtils;
-import com.frostwire.android.R;
-import com.frostwire.android.gui.views.AbstractActivity;
+import zig.zak.media.tor.R;
+import zig.zak.media.tor.android.gui.views.AbstractActivity;
 
 /**
  * A simple base class for the playlist dialogs.

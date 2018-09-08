@@ -23,9 +23,8 @@
     <string name="tip_touch_tags_to"><![CDATA[ <b>信息:</b> 触摸应用的标签]]></string>
     <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>您的隐私是一项基本人权</b>. 不受保护的连接意味着您在线进行的所有操作（包括<b>下载，搜索，消息传递</b>）都可以被网络上的任何人监控和拦截，例如： 互联网服务提供商，黑客，政府。<br><br><b>我们强烈建议您使用VPN服务</b>. <br> 以下是一些提供可靠服务并与FrostWire配合良好的选项：]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ 您已使用VPN连接到Internet。 <br><br> 如果您尚未使用，我们建议您使用以下服务之一加密您的连接并<b>保护您的隐私</b>。 ]]></string>
-    <string name="application_label">FrostWire</string>
     <string name="activity_preferences_name">设置</string>
-    <string name="activity_chat_name">聊天</string>
+    <string name="activity_chat_named">聊天</string>
     <string name="activity_downloads_name">主动下载</string>
     <string name="activity_uploads_name">主动上传</string>
     <string name="activity_about">关于</string>
@@ -112,8 +111,8 @@
     <string name="tos_accept">接受</string>
     <string name="tos_refuse">拒绝</string>
     <string name="downloads">下载</string>
-    <string name="minimize_frostwire">FrostWire最小化</string>
-    <string name="are_you_sure_you_wanna_leave">确定想回到主页界面?</string>
+
+
     <string name="set_as_wallpaper">设为墙纸</string>
     <string name="failed_to_set_wallpaper">无法设为墙纸</string>
     <string name="tell_others_chooser">推文 / 短信/ 邮箱</string>
@@ -596,7 +595,7 @@
     <string name="cloud_download_aborted_on_mobile_data">当前设置阻止不在Wifi网络上下载</string>
     <string name="sharing_privacy_settings">分享和隐私</string>
     <string name="delete_started_torrents_summary">删除.torrent文件开始下载后</string>
-    <string name="dismiss">解雇</string>
+
     <string name="torrent_preferences_header">Torrent偏好</string>
     <string name="search_preferences_one_engine_checked_always">默认情况下，需要始终检查一个搜索引擎</string>
     <string name="switch_off_engine_without_vpn">VPN不活动，停止BitTorrent引擎。</string>
@@ -720,5 +719,5 @@
     <string name="piece_size_header">件大小：</string>
     <string name="add_tracker">添加跟踪器</string>
     <string name="contact_us">联系我们</string>
-    <string name="join_frostwire_chat">加入FrostWire聊天</string>
+
 </resources>

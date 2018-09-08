@@ -58,13 +58,15 @@ import com.andrew.apollo.utils.PreferenceUtils;
 import com.andrew.apollo.widgets.ProfileTabCarousel;
 import com.andrew.apollo.widgets.VerticalScrollListener;
 import com.devspark.appmsg.AppMsg;
-import com.frostwire.android.R;
-import com.frostwire.android.core.Constants;
-import com.frostwire.android.gui.util.WriteSettingsPermissionActivityHelper;
 
 import java.util.List;
 
-import static com.frostwire.android.util.Asyncs.async;
+import zig.zak.media.tor.R;;
+import zig.zak.media.tor.android.core.Constants;
+import zig.zak.media.tor.android.gui.util.WriteSettingsPermissionActivityHelper;
+
+import static zig.zak.media.tor.android.util.Asyncs.async;
+
 
 /**
  * Created on 1/26/16 in a plane.
@@ -73,11 +75,7 @@ import static com.frostwire.android.util.Asyncs.async;
  * @author Alden Torres (@aldenml)
  * @author Jose Molina (@votaguz)
  */
-public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I>
-        extends Fragment implements
-        LoaderManager.LoaderCallbacks<List<I>>,
-        AdapterView.OnItemClickListener,
-        MusicStateListener {
+public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I> extends Fragment implements LoaderManager.LoaderCallbacks<List<I>>, AdapterView.OnItemClickListener, MusicStateListener {
 
     private final int GROUP_ID;
     /**
@@ -140,8 +138,7 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I>
 
     protected abstract String getLayoutTypeName();
 
-    public abstract void onItemClick(final AdapterView<?> parent, final View view, final int position,
-                                     final long id);
+    public abstract void onItemClick(final AdapterView<?> parent, final View view, final int position, final long id);
 
     protected void onSongItemClick(int position) {
         if (mAdapter != null) {
@@ -170,8 +167,7 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I>
     }
 
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
-                             final Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
         // The View for the fragment's UI
         if (isSimpleLayout()) {
             mRootView = (ViewGroup) inflater.inflate(R.layout.list_base, null, false);
@@ -181,7 +177,7 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I>
             mRootView = (ViewGroup) inflater.inflate(R.layout.grid_base, null, false);
             initGridView();
         }
-        if (mEmptyTextView == null ){
+        if (mEmptyTextView == null) {
             mEmptyTextView = mRootView.findViewById(R.id.empty);
         }
         return mRootView;
@@ -199,8 +195,7 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I>
     }
 
     @Override
-    public void onCreateContextMenu(final ContextMenu menu, final View v,
-                                    final ContextMenu.ContextMenuInfo menuInfo) {
+    public void onCreateContextMenu(final ContextMenu menu, final View v, final ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         // Get the position of the selected item
         final AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
@@ -245,41 +240,30 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I>
 
         }
         // Play the selected songs
-        menu.add(GROUP_ID, FragmentMenuItems.PLAY_SELECTION, Menu.NONE, getString(R.string.context_menu_play_selection))
-                .setIcon(R.drawable.contextmenu_icon_play);
+        menu.add(GROUP_ID, FragmentMenuItems.PLAY_SELECTION, Menu.NONE, getString(R.string.context_menu_play_selection)).setIcon(R.drawable.contextmenu_icon_play);
         // Play the next song
-        menu.add(GROUP_ID, FragmentMenuItems.PLAY_NEXT, Menu.NONE, getString(R.string.context_menu_play_next))
-                .setIcon(R.drawable.contextmenu_icon_next);
+        menu.add(GROUP_ID, FragmentMenuItems.PLAY_NEXT, Menu.NONE, getString(R.string.context_menu_play_next)).setIcon(R.drawable.contextmenu_icon_next);
         // Add the song/album to the queue
-        menu.add(GROUP_ID, FragmentMenuItems.ADD_TO_QUEUE, Menu.NONE, getString(R.string.add_to_queue))
-                .setIcon(R.drawable.contextmenu_icon_queue_add);
+        menu.add(GROUP_ID, FragmentMenuItems.ADD_TO_QUEUE, Menu.NONE, getString(R.string.add_to_queue)).setIcon(R.drawable.contextmenu_icon_queue_add);
         // Add the song to favorite's playlist
-        menu.add(GROUP_ID, FragmentMenuItems.ADD_TO_FAVORITES, Menu.NONE, R.string.add_to_favorites)
-                .setIcon(R.drawable.contextmenu_icon_favorite);
+        menu.add(GROUP_ID, FragmentMenuItems.ADD_TO_FAVORITES, Menu.NONE, R.string.add_to_favorites).setIcon(R.drawable.contextmenu_icon_favorite);
         // Add the song/album to a playlist
-        final SubMenu subMenu =
-                menu.addSubMenu(GROUP_ID, FragmentMenuItems.ADD_TO_PLAYLIST, Menu.NONE, R.string.add_to_playlist)
-                        .setIcon(R.drawable.contextmenu_icon_add_to_existing_playlist_dark);
+        final SubMenu subMenu = menu.addSubMenu(GROUP_ID, FragmentMenuItems.ADD_TO_PLAYLIST, Menu.NONE, R.string.add_to_playlist).setIcon(R.drawable.contextmenu_icon_add_to_existing_playlist_dark);
         MusicUtils.makePlaylistMenu(getActivity(), GROUP_ID, subMenu, true);
         if (mItem instanceof Song) {
-            menu.add(GROUP_ID, FragmentMenuItems.USE_AS_RINGTONE, Menu.NONE, getString(R.string.context_menu_use_as_ringtone))
-                    .setIcon(R.drawable.contextmenu_icon_ringtone);
+            menu.add(GROUP_ID, FragmentMenuItems.USE_AS_RINGTONE, Menu.NONE, getString(R.string.context_menu_use_as_ringtone)).setIcon(R.drawable.contextmenu_icon_ringtone);
         }
         // More by artist
-        menu.add(GROUP_ID, FragmentMenuItems.MORE_BY_ARTIST, Menu.NONE, getString(R.string.context_menu_more_by_artist))
-                .setIcon(R.drawable.contextmenu_icon_artist);
+        menu.add(GROUP_ID, FragmentMenuItems.MORE_BY_ARTIST, Menu.NONE, getString(R.string.context_menu_more_by_artist)).setIcon(R.drawable.contextmenu_icon_artist);
         // Delete the album
-        menu.add(GROUP_ID, FragmentMenuItems.DELETE, Menu.NONE, getString(R.string.context_menu_delete))
-                .setIcon(R.drawable.contextmenu_icon_trash);
+        menu.add(GROUP_ID, FragmentMenuItems.DELETE, Menu.NONE, getString(R.string.context_menu_delete)).setIcon(R.drawable.contextmenu_icon_trash);
 
     }
 
     @Override
     public boolean onContextItemSelected(final android.view.MenuItem item) {
         if (item.getGroupId() == GROUP_ID) {
-            final long[] songList = mSongList != null ?
-                    mSongList :
-                    new long[]{mSelectedId};
+            final long[] songList = mSongList != null ? mSongList : new long[]{mSelectedId};
             switch (item.getItemId()) {
                 case FragmentMenuItems.PLAY_SELECTION:
                     MusicUtils.playAll(songList, 0, MusicUtils.isShuffleEnabled());
@@ -392,13 +376,11 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I>
                 }
             }
             if (added > 0) {
-                final String message = getResources().getQuantityString(
-                        R.plurals.NNNtrackstoplaylist, added, added);
+                final String message = getResources().getQuantityString(R.plurals.NNNtrackstoplaylist, added, added);
                 AppMsg.makeText(getActivity(), message, AppMsg.STYLE_CONFIRM).show();
             }
         } else if (mSelectedId != -1) {
-            FavoritesStore.getInstance(getActivity()).addSongId(
-                    mSelectedId, mSongName, mAlbumName, mArtistName);
+            FavoritesStore.getInstance(getActivity()).addSongId(mSelectedId, mSongName, mAlbumName, mArtistName);
         }
     }
 
@@ -632,9 +614,7 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I>
             if (mAdapter == null) {
                 return;
             }
-            mAdapter.setPauseDiskCache(
-                    scrollState == AbsListView.OnScrollListener.SCROLL_STATE_FLING ||
-                            scrollState == AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL);
+            mAdapter.setPauseDiskCache(scrollState == AbsListView.OnScrollListener.SCROLL_STATE_FLING || scrollState == AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL);
 
         }
     };

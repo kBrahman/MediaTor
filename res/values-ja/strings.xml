@@ -23,9 +23,8 @@
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> 適用タグをタップする]]></string>
     <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>あなたのプライバシーは基本的な人権です</b>. 保護されていない接続は、オンラインを含めないすべてのものを意味し、 <b>ダウンロード、検索、メッセージング</b>あなたのネットワーク上の誰かが監視して傍受することができます。 インターネットサービスプロバイダ、ハッカー、政府.<br><br><b>VPNサービスを使用することを強くお勧めします</b>. <br> 信頼できるサービスを提供し、FrostWireでうまくいくいくつかのオプションがあります：]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ あなたはVPNを使ってインターネットに接続しています。 <br><br> まだ接続していない場合は、以下のいずれかのサービスを使用して接続を暗号化することをお勧めします <b>あなたのプライバシーを守る</b>. ]]></string>
-    <string name="application_label">FrostWire</string>
     <string name="activity_preferences_name">設定</string>
-    <string name="activity_chat_name">チャット</string>
+    <string name="activity_chat_named">チャット</string>
     <string name="activity_downloads_name">アクティブダウンロード</string>
     <string name="activity_uploads_name">アクティブアップロード</string>
     <string name="activity_about">詳細</string>
@@ -112,8 +111,8 @@
     <string name="tos_accept">許可する</string>
     <string name="tos_refuse">拒否する</string>
     <string name="downloads">ダウンロード</string>
-    <string name="minimize_frostwire">FrostWireを最小化する</string>
-    <string name="are_you_sure_you_wanna_leave">ホームに移動しますか？</string>
+
+
     <string name="set_as_wallpaper">壁紙に設定する</string>
     <string name="failed_to_set_wallpaper">壁紙の設定に失敗しました</string>
     <string name="tell_others_chooser">ツイート/ SMS / Eメール</string>
@@ -600,7 +599,7 @@
     <string name="cloud_download_aborted_on_mobile_data">現在の設定ではWi-Fiネットワークに接続していないときのダウンロードを防止します</string>
     <string name="sharing_privacy_settings">共有とプライバシー</string>
     <string name="delete_started_torrents_summary">ダウンロード開始後に.torrentファイルを削除する</string>
-    <string name="dismiss">却下する</string>
+
     <string name="torrent_preferences_header">トレント環境設定</string>
     <string name="search_preferences_one_engine_checked_always">デフォルトでは、1つの検索エンジンを常にチェックする必要があります</string>
     <string name="switch_off_engine_without_vpn">VPNは非アクティブで、BitTorrentエンジンを停止します。</string>
@@ -721,5 +720,5 @@
     <string name="vpn_suggestion_nordvpn">NORDVPN \n 無料の7日間のトライアル</string>
     <string name="play_store_out_of_sync">Google Playストアが同期する必要があり、数分待ってください</string>
     <string name="contact_us">お問い合わせ</string>
-    <string name="join_frostwire_chat">FrostWireチャットに参加</string>
+
 </resources>

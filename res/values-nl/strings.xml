@@ -23,9 +23,8 @@
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Raak toegepaste tags aan]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ U bent verbonden met internet via een VPN. <br><br> Als u dit nog niet doet, raden we u aan een van de onderstaande services te gebruiken om uw verbinding te versleutelen en <b>uw privacy te beschermen</b>. ]]></string>
     <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Uw privacy is een fundamenteel mensenrecht</b>. Een onbeveiligde verbinding betekent dat alles wat u online doet, inclusief <b>downloads, zoekopdrachten, berichten</b>, kan worden gecontroleerd en onderschept door iedereen in uw netwerk, bijvoorbeeld Internetproviders, hackers, overheden.<br><br><b>We raden ten stelligste aan een VPN-service te gebruiken</b>. <br> Hier zijn enkele opties die betrouwbare service bieden en goed werken met FrostWire:]]></string>
-    <string name="application_label">FrostWire</string>
     <string name="activity_preferences_name">Instellingen</string>
-    <string name="activity_chat_name">Chat</string>
+    <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Actieve Downloads</string>
     <string name="activity_uploads_name">Actieve Uploads</string>
     <string name="activity_about">Over</string>
@@ -112,8 +111,8 @@
     <string name="tos_accept">Accepteer</string>
     <string name="tos_refuse">Weiger</string>
     <string name="downloads">Downloads</string>
-    <string name="minimize_frostwire">Minimaliseer FrostWire</string>
-    <string name="are_you_sure_you_wanna_leave">Weet je zeker dat je terug wilt gaan naar het homescherm?</string>
+
+
     <string name="set_as_wallpaper">Stel in als Wallpaper</string>
     <string name="failed_to_set_wallpaper">Instellen als Wallpaper mislukt</string>
     <string name="tell_others_chooser">Tweet / SMS / Email</string>
@@ -597,7 +596,7 @@
     <string name="cloud_download_aborted_on_mobile_data">Huidige instelling voorkomt het downloaden wanneer ze niet op de website Wifi netwerk</string>
     <string name="sharing_privacy_settings">Delen en privacy</string>
     <string name="delete_started_torrents_summary">Verwijder .torrent-bestanden na het begin van het downloaden</string>
-    <string name="dismiss">Ontslaan</string>
+
     <string name="torrent_preferences_header">Torrent Voorkeuren</string>
     <string name="search_preferences_one_engine_checked_always">Standaard heeft een zoekmachine worden gecontroleerd ten alle tijden</string>
     <string name="switch_off_engine_without_vpn">VPN inactief is, het stoppen van de BitTorrent engine.</string>
@@ -677,7 +676,7 @@
     <string name="one_file_shared">Eén bestand is gedeeld met FrostWire-apparaten op hetzelfde Wi-Fi-netwerk.</string>
     <string name="n_files_shared">%d bestanden zijn gedeeld met FrostWire-apparaten op hetzelfde Wi-Fi-netwerk.</string>
     <string name="contact_us">Neem contact op</string>
-    <string name="join_frostwire_chat">Doe mee met FrostWire-chat</string>
+
     <string name="uploaded">Geüpload</string>
     <string name="trackers">Trackers</string>
     <string name="source_type">Bron: %1$s</string>

@@ -19,12 +19,14 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+
 import com.andrew.apollo.model.Album;
 import com.andrew.apollo.ui.MusicViewHolder;
 import com.andrew.apollo.ui.fragments.profile.ArtistAlbumFragment;
 import com.andrew.apollo.utils.MusicUtils;
-import com.frostwire.android.R;
-import com.frostwire.util.Ref;
+
+import zig.zak.media.tor.R;;
+import zig.zak.media.tor.util.Ref;
 
 
 /**
@@ -94,8 +96,7 @@ public class ArtistAlbumAdapter extends ApolloFragmentAdapter<Album> {
             }
             if (Ref.alive(holder.mLineTwo)) {
                 // Set the number of songs (line two)
-                holder.mLineTwo.get().setText(MusicUtils.makeLabel(getContext(),
-                        R.plurals.Nsongs, album.mSongNumber));
+                holder.mLineTwo.get().setText(MusicUtils.makeLabel(getContext(), R.plurals.Nsongs, album.mSongNumber));
             }
             if (Ref.alive(holder.mLineThree)) {
                 // Set the album year (line three)
@@ -105,9 +106,7 @@ public class ArtistAlbumAdapter extends ApolloFragmentAdapter<Album> {
 
         if (mImageFetcher != null && Ref.alive(holder.mImage)) {
             // Asynchronously load the album images into the adapter
-            mImageFetcher.loadAlbumImage(album.mArtistName,
-                    albumName, album.mAlbumId,
-                    holder.mImage.get());
+            mImageFetcher.loadAlbumImage(album.mArtistName, albumName, album.mAlbumId, holder.mImage.get());
         }
 
         // Play the album when the artwork is touched

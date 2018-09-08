@@ -25,8 +25,8 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.widget.ImageView;
 
-import com.frostwire.android.R;
-import com.frostwire.android.util.ImageLoader;
+import zig.zak.media.tor.R;;
+import zig.zak.media.tor.android.util.ImageLoader;
 
 /**
  * This class wraps up completing some arbitrary long running work when loading
@@ -105,15 +105,14 @@ public abstract class ImageWorker {
     /**
      * Called to fetch the artist or album art.
      *
-     * @param key The unique identifier for the image.
+     * @param key        The unique identifier for the image.
      * @param artistName The artist name for the Last.fm API.
-     * @param albumId The album art index, to check for missing artwork.
-     * @param imageView The {@link ImageView} used to set the cached
-     *            {@link Bitmap}.
-     * @param imageType The type of image URL to fetch for.
+     * @param albumId    The album art index, to check for missing artwork.
+     * @param imageView  The {@link ImageView} used to set the cached
+     *                   {@link Bitmap}.
+     * @param imageType  The type of image URL to fetch for.
      */
-    void loadImage(final String key, final String artistName,
-            final long albumId, final ImageView imageView, final ImageType imageType) {
+    void loadImage(final String key, final String artistName, final long albumId, final ImageView imageView, final ImageType imageType) {
         if (key == null || mImageCache == null || imageView == null) {
             return;
         }

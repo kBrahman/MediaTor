@@ -25,7 +25,7 @@
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ आप एक वीपीएन का उपयोग कर इंटरनेट से जुड़े हुए हैं।<br><br> यदि आप पहले से नहीं हैं, तो हम आपके कनेक्शन को एन्क्रिप्ट करने के लिए नीचे दी गई सेवाओं में से एक का उपयोग करने की सलाह देते हैं और <b>अपनी गोपनीयता की रक्षा करें</b>। ]]></string>
     <string name="application_label">फ्रॉस्टवाइर</string>
     <string name="activity_preferences_name">सेटिंग्स</string>
-    <string name="activity_chat_name">बातचीत</string>
+    <string name="activity_chat_named">बातचीत</string>
     <string name="activity_downloads_name">सक्रिय डाउनलोड</string>
     <string name="activity_uploads_name">सक्रिय अपलोड</string>
     <string name="activity_about">क बारे में</string>
@@ -112,8 +112,8 @@
     <string name="tos_accept">स्वीकार करना</string>
     <string name="tos_refuse">इनकार</string>
     <string name="downloads">डाउनलोड</string>
-    <string name="minimize_frostwire">फ्रॉस्टवाइर मिनिमाइज़ करें </string>
-    <string name="are_you_sure_you_wanna_leave">क्या आप सुनिश्चित करें कि आप होम स्क्रीन पर वापस जाना चाहते हैं?</string>
+
+
     <string name="set_as_wallpaper">वॉलपेपर के रूप में सेट करें</string>
     <string name="failed_to_set_wallpaper">वॉलपेपर सेट करने में विफल</string>
     <string name="tell_others_chooser"> ट्वीट / एस एम एस / ईमेल</string>
@@ -597,7 +597,7 @@
     <string name="cloud_download_aborted_on_mobile_data">वर्तमान सेटिंग डाउनलोडिंग वाईफाई नेटवर्क पर जब नहीं रोकता</string>
     <string name="sharing_privacy_settings">साझा करना और गोपनीयता</string>
     <string name="delete_started_torrents_summary">डाउनलोड करने की शुरुआत के बाद धार फ़ाइलों को हटाएँ</string>
-    <string name="dismiss">बर्खास्त</string>
+
     <string name="torrent_preferences_header">टोरेंट प्राथमिकताएं</string>
     <string name="search_preferences_one_engine_checked_always">डिफ़ॉल्ट रूप से, एक खोज इंजन हर समय जाँच की जरूरत है</string>
     <string name="switch_off_engine_without_vpn">वीपीएन BitTorrent इंजन रोक, निष्क्रिय है।</string>
@@ -720,5 +720,5 @@
     <string name="vpn_suggestion_nordvpn">NORDVPN \n नि: शुल्क 7-दिन का परीक्षण</string>
     <string name="play_store_out_of_sync">Play Store को सिंक्रनाइज़ करने की आवश्यकता है, कुछ मिनट प्रतीक्षा करें</string>
     <string name="contact_us">हमसे संपर्क करें</string>
-    <string name="join_frostwire_chat">फ्रॉस्टवायर चैट में शामिल हों</string>
+
 </resources>

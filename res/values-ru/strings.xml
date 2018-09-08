@@ -6,7 +6,7 @@
     <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Ваша конфиденциальность является основополагающим правом человека</b>. Незащищенное соединение означает все, что вы делаете в сети, в том числе <b>загрузка, поиск, обмен сообщениями</b>, может контролироваться и перехватываться кем-либо из вашей сети, например. Интернет-провайдеры, хакеры, правительства.<br><br><b>Мы настоятельно рекомендуем использовать службу VPN</b>. <br> Вот некоторые варианты, которые обеспечивают надежное обслуживание и хорошо работают с FrostWire:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Вы подключены к Интернету с помощью VPN. <br><br> Если вы еще этого не сделали, мы рекомендуем использовать одну из приведенных ниже служб для шифрования вашего соединения и <b>защитить вашу конфиденциальность</b>. ]]></string>
     <string name="activity_preferences_name">Настройки</string>
-    <string name="activity_chat_name">Чат</string>
+    <string name="activity_chat_named">Чат</string>
     <string name="activity_downloads_name">Активные загрузки</string>
     <string name="activity_uploads_name">Активные раздачи</string>
     <string name="activity_about">Об активности</string>
@@ -94,8 +94,8 @@
     <string name="tos_accept">Принять</string>
     <string name="tos_refuse">Отклонить</string>
     <string name="downloads">Загрузки</string>
-    <string name="minimize_frostwire">Свернуть FrostWire</string>
-    <string name="are_you_sure_you_wanna_leave">Вы уверены, что хотите вернуться к экрану заставки?</string>
+
+
     <string name="set_as_wallpaper">Установить в качестве обоев</string>
     <string name="failed_to_set_wallpaper">Не удалось установить в качестве обоев</string>
     <string name="tell_others_chooser">Рассказать через Твиттер/SMS/E-Mail</string>
@@ -484,7 +484,6 @@
     <string name="protected_connection">Защищенное соединение</string>
     <string name="protect_my_privacy">Защита моей приватности</string>
     <string name="error_connection_timed_out">Ошибка: тайм-аут подключения/упал. Попробуй еще раз.</string>
-    <string name="application_label">FrostWire</string>
     <string name="buy_uppercase">КУПИТЬ</string>
     <string name="selected">выбранный</string>
     <string name="bittorrent_off">БитТоррента выкл</string>
@@ -577,7 +576,6 @@
     <string name="cloud_download_aborted_on_mobile_data">Текущая настройка предотвращает загрузку, если не на Wi-Fi сети</string>
     <string name="sharing_privacy_settings">Общий доступ к и конфиденциальность</string>
     <string name="delete_started_torrents_summary">Удалить файлы .torrent после начала загрузки</string>
-    <string name="dismiss">Увольте</string>
     <string name="torrent_preferences_header">Торрент Предпочтения</string>
     <string name="search_preferences_one_engine_checked_always">По умолчанию, один поисковик должен быть проверен в любое время</string>
     <string name="switch_off_engine_without_vpn">VPN неактивна, остановка двигателя BitTorrent.</string>
@@ -700,5 +698,5 @@
     <string name="vpn_suggestion_nordvpn">NORDVPN \n Бесплатная 7-дневная пробная версия</string>
     <string name="play_store_out_of_sync">Play Store необходимо синхронизировать, подождать несколько минут</string>
     <string name="contact_us">Свяжитесь с нами</string>
-    <string name="join_frostwire_chat">Присоединяйтесь к чату FrostWire</string>
+
 </resources>

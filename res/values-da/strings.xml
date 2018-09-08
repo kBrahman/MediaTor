@@ -23,9 +23,8 @@
     <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Afsløring:</b> Selvom anbefalet til dine downloads, især når du downloader eller udveksler følsomme oplysninger (f.eks. bank) og samtidig bruger offentlige Wi-Fi- eller mobildata, <b>du behøver ikke en VPN til at bruge FrostWire. </b>]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Du er forbundet til internettet ved hjælp af en VPN. <br><br> Hvis du ikke allerede er, anbefaler vi at bruge en af nedenstående tjenester til at kryptere din forbindelse og <b>beskytte dit privatliv</b>. ]]></string>
     <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Dit privatliv er en grundlæggende menneskerettighed</b>. En ubeskyttet forbindelse betyder alt, hvad du gør online, herunder <b>downloads, søgninger, meddelelser</b>, kan overvåges og opfanges af alle på dit netværk, f.eks. Internetudbydere, hackere, regeringer.<br><br><b>Vi anbefaler stærkt at bruge en VPN-tjeneste</b>. <br> Her er nogle muligheder, der giver pålidelig service og fungerer godt med FrostWire:]]></string>
-    <string name="application_label">FrostWire</string>
     <string name="activity_preferences_name">Indstillinger</string>
-    <string name="activity_chat_name">Chat</string>
+    <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Active Downloads</string>
     <string name="activity_uploads_name">Active Uploads</string>
     <string name="activity_about">Om</string>
@@ -112,8 +111,8 @@
     <string name="tos_accept">Accept</string>
     <string name="tos_refuse">Afvis</string>
     <string name="downloads">Downloads</string>
-    <string name="minimize_frostwire">Minimer FrostWire</string>
-    <string name="are_you_sure_you_wanna_leave">Er du sikker du ønsker at gå tilbage til startskærmen?</string>
+
+
     <string name="set_as_wallpaper">Sæt som Baggrund</string>
     <string name="failed_to_set_wallpaper">Kunne ikke sætte Baggrund</string>
     <string name="tell_others_chooser">Tweet / SMS / Email</string>
@@ -597,7 +596,7 @@
     <string name="cloud_download_aborted_on_mobile_data">Aktuel indstilling forhindrer downloading, når den ikke på Wifi-netværk</string>
     <string name="sharing_privacy_settings">Deling og privatliv</string>
     <string name="delete_started_torrents_summary">Slet .torrent filer efter begynder downloadet</string>
-    <string name="dismiss">Afskedige</string>
+
     <string name="torrent_preferences_header">Torrent præferencer</string>
     <string name="search_preferences_one_engine_checked_always">Som standard skal kontrolleres på alle tidspunkter søgemaskine</string>
     <string name="switch_off_engine_without_vpn">VPN er inaktiv, stoppe BitTorrent motor.</string>
@@ -720,5 +719,5 @@
     <string name="vpn_suggestion_nordvpn">NORDVPN \n Gratis 7-dages prøveperiode</string>
     <string name="play_store_out_of_sync">Google Play Butik skal synkronisere, vent et par minutter</string>
     <string name="contact_us">Kontakt os</string>
-    <string name="join_frostwire_chat">Tilmeld dig FrostWire chat</string>
+
 </resources>

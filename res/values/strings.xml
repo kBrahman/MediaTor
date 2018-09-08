@@ -9,9 +9,8 @@
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Touch applied tags to]]></string>
 
     <!-- non HTML tags. -->
-    <string name="application_label">FrostWire</string>
     <string name="activity_preferences_name">Settings</string>
-    <string name="activity_chat_name">Chat</string>
+    <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Active Downloads</string>
     <string name="activity_uploads_name">Active Uploads</string>
     <string name="activity_about">About</string>
@@ -104,8 +103,6 @@
     <string name="tos_accept">Accept</string>
     <string name="tos_refuse">Refuse</string>
     <string name="downloads">Downloads</string>
-    <string name="minimize_frostwire">Minimize FrostWire</string>
-    <string name="are_you_sure_you_wanna_leave">Are you sure you want to go back to the home screen?</string>
     <string name="set_as_wallpaper">Set as Wallpaper</string>
     <string name="failed_to_set_wallpaper">Failed to set Wallpaper</string>
     <string name="tell_others_chooser">Tweet / SMS / Email</string>
@@ -659,7 +656,7 @@
     <string name="switch_off_engine_without_vpn">VPN is inactive, stopping the BitTorrent engine.</string>
     <string name="vpn_drop_protection_title">VPN-Drop Protection</string>
     <string name="vpn_drop_protection_summary">Protect your privacy. Automatically disable BitTorrent transfers unless an encrypted VPN connection is active</string>
-    <string name="dismiss">Dismiss</string>
+
     <string name="fullscreen">fullscreen</string>
     <string name="size">Size</string>
     <string name="date">Date</string>
@@ -771,6 +768,5 @@
     <string name="vpn_find_out_more">Find out more</string>
     <string name="frostwire_start_engine_service_security_exception">FrostWire could not start properly due to lack of permissions. Please grant the required permissions and restart the application</string>
     <string name="play_store_out_of_sync">Play Store needs to synchronize, wait a few minutes</string>
-    <string name="join_frostwire_chat">Join FrostWire Chat</string>
     <string name="contact_us">Contact Us</string>
 </resources>

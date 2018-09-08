@@ -32,7 +32,6 @@
     <string name="wifi_sharing_settings">Wifi megosztási beállítások</string>
     <string name="is_not_responding">%s nem válaszol</string>
     <string name="azureus_manager_item_seeding">Seeding</string>
-    <string name="application_label">FrostWire</string>
     <string name="enable_wifi_sharing_summary">Fájlok megosztása a társaik a helyi WiFi hálózatra.</string>
     <string name="how_other_users_will_see_you">Ahogyan a többi felhasználó is látni</string>
     <string name="share_selected_files">Megosztása kiválasztott fájlok</string>
@@ -310,7 +309,7 @@
     <string name="error_moving_incomplete">Hiba: Mozgó Befejezetlen</string>
     <string name="torrent_url_added">Torrent URL adunk át.</string>
     <string name="only_up_to_n_uploads_at_the_same_time">Legfeljebb csak %s feltöltések egyidejűleg</string>
-    <string name="are_you_sure_you_wanna_leave">Biztos benne, hogy vissza szeretne térni a kezdőképernyőre?</string>
+
     <string name="search_label">Keres</string>
     <string name="search_select_filetype">Kérjük, válassza ki a fájltípust</string>
     <string name="http_download_status_temp_dir_error">Átmeneti könyvtár nem létezik vagy nem hozható létre</string>
@@ -433,7 +432,7 @@
     <string name="send_pm">Privát üzenet küldése</string>
     <string name="advertisement">reklám</string>
     <string name="pick_the_files_you_want_to_download_from_this_torrent">Csákány a kívánt fájlokat letölteni ezt a torrentet</string>
-    <string name="minimize_frostwire">Kis méret FrostWire</string>
+
     <string name="azureus_manager_item_forced">Kényszerű</string>
     <string name="failed_to_set_wallpaper">Nem sikerült beállítani a háttérképet</string>
     <string name="cancel_delete_menu_action">Megáll és törlése</string>
@@ -455,7 +454,7 @@
     <string name="hints_by_google">Tippek a Google</string>
     <string name="ringtone">Csengőhang</string>
     <string name="vpn_off_toast_notification">A kapcsolat nem lehet privát.</string>
-    <string name="activity_chat_name">Csevegés</string>
+    <string name="activity_chat_named">Csevegés</string>
     <string name="loading">Betöltés</string>
     <string name="downloading_metadata">Letöltése metaadatok</string>
     <string name="storage_preference_summary">Az alapértelmezett tárolási helyet, ahol fájlok kerülnek mentésre.</string>
@@ -597,7 +596,7 @@
     <string name="cloud_download_aborted_on_mobile_data">Aktuális beállítás megakadályozza a letöltést, ha nincs WiFi hálózat</string>
     <string name="sharing_privacy_settings">Megosztás és adatvédelem</string>
     <string name="delete_started_torrents_summary">Törlés .torrent fájlokat megkezdése után a letöltés</string>
-    <string name="dismiss">Elvetése</string>
+
     <string name="torrent_preferences_header">Torrent preferenciák</string>
     <string name="search_preferences_one_engine_checked_always">Alapértelmezésben egy kereső ellenőrizni kell minden alkalommal</string>
     <string name="switch_off_engine_without_vpn">VPN inaktív, megállás a BitTorrent motort.</string>
@@ -720,5 +719,5 @@
     <string name="vpn_suggestion_nordvpn">NORDVPN \n Ingyenes 7 napos próba</string>
     <string name="play_store_out_of_sync">Szinkronizálnia kell a Google Play Áruházat, várjon néhány percet</string>
     <string name="contact_us">Lépjen kapcsolatba velünk</string>
-    <string name="join_frostwire_chat">Csatlakozzon a FrostWire chathez</string>
+
 </resources>

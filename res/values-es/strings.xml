@@ -26,9 +26,8 @@
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Estás conectado a Internet usando un VPN. <br><br> Si aún no lo has hecho, te recomendamos que uses uno de estos servicios para encriptar tu conexión y <b>proteger tu privacidad</b>. ]]></string>
 
     <!-- NON HTML TAGS -->
-    <string name="application_label">FrostWire</string>
     <string name="activity_preferences_name">Configuración</string>
-    <string name="activity_chat_name">Chat</string>
+    <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Descargas Activas</string>
     <string name="activity_uploads_name">Cargas Activas</string>
     <string name="activity_about">Acerca de</string>
@@ -115,8 +114,8 @@
     <string name="tos_accept">Aceptar</string>
     <string name="tos_refuse">Rechazar</string>
     <string name="downloads">Descargas</string>
-    <string name="minimize_frostwire">Minimizar FrostWire</string>
-    <string name="are_you_sure_you_wanna_leave">¿Seguro que quieres volver a la pantalla de inicio?</string>
+
+
     <string name="set_as_wallpaper">Poner como fondo de pantalla</string>
     <string name="failed_to_set_wallpaper">No se pudo poner como fondo</string>
     <string name="tell_others_chooser">Tweet / SMS / Email</string>
@@ -600,7 +599,7 @@
     <string name="cloud_download_aborted_on_mobile_data">La configuración actual evita la descarga cuando no está activa la red Wifi</string>
     <string name="sharing_privacy_settings">Compartir y Privacidad</string>
     <string name="delete_started_torrents_summary">Eliminar archivos .torrent después de empezar la descarga</string>
-    <string name="dismiss">Descartar</string>
+
     <string name="torrent_preferences_header">Preferencias del Torrent</string>
     <string name="search_preferences_one_engine_checked_always">Por defecto, un motor de búsqueda debe permanecer activo en todo momento</string>
     <string name="switch_off_engine_without_vpn">VPN está inactivo, deteniendo el motor BitTorrent.</string>
@@ -722,5 +721,5 @@
     <string name="vpn_suggestion_nordvpn">NORDVPN \n Prueba gratuita de 7 días</string>
     <string name="play_store_out_of_sync">Play Store necesita sincronizarse, espera unos minutos</string>
     <string name="contact_us">Contáctanos</string>
-    <string name="join_frostwire_chat">Únete al chat de FrostWire</string>
+
 </resources>

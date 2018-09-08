@@ -30,8 +30,6 @@ import android.util.Log;
 import android.util.LruCache;
 
 import com.andrew.apollo.utils.ApolloUtils;
-import com.frostwire.android.util.SystemUtils;
-import com.frostwire.util.Ref;
 
 import java.io.File;
 import java.io.FileDescriptor;
@@ -41,6 +39,9 @@ import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
+import zig.zak.media.tor.android.util.SystemUtils;
+import zig.zak.media.tor.util.Ref;
 
 /**
  * This class holds the memory and disk bitmap caches.
@@ -184,10 +185,8 @@ public final class ImageCache {
      * @param context The {@link Context} to use
      */
     private void initLruCache(final Context context) {
-        final ActivityManager activityManager = (ActivityManager) context
-                .getSystemService(Context.ACTIVITY_SERVICE);
-        final int lruCacheSize = Math.round(MEM_CACHE_DIVIDER * activityManager.getMemoryClass()
-                * 1024 * 1024);
+        final ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        final int lruCacheSize = Math.round(MEM_CACHE_DIVIDER * activityManager.getMemoryClass() * 1024 * 1024);
         mLruCache = new MemoryCache(lruCacheSize);
         // Release some memory as needed
         context.registerComponentCallbacks(new ComponentCallbacks2() {
@@ -233,8 +232,7 @@ public final class ImageCache {
      */
     public static ImageCache findOrCreateCache(final Activity activity) {
         // Search for, or create an instance of the non-UI RetainFragment
-        final RetainFragment retainFragment = findOrCreateRetainFragment(
-                activity.getFragmentManager());
+        final RetainFragment retainFragment = findOrCreateRetainFragment(activity.getFragmentManager());
         // See if we already have an ImageCache stored in RetainFragment
         ImageCache cache = (ImageCache) retainFragment.getObject();
         // No existing ImageCache, create one and store it in RetainFragment
@@ -380,8 +378,7 @@ public final class ImageCache {
         waitUntilUnpaused();
         try {
             final Uri uri = ContentUris.withAppendedId(mArtworkUri, albumId);
-            final ParcelFileDescriptor parcelFileDescriptor = context.getContentResolver()
-                    .openFileDescriptor(uri, "r");
+            final ParcelFileDescriptor parcelFileDescriptor = context.getContentResolver().openFileDescriptor(uri, "r");
             if (parcelFileDescriptor != null) {
                 final FileDescriptor fileDescriptor = parcelFileDescriptor.getFileDescriptor();
                 artwork = BitmapFactory.decodeFileDescriptor(fileDescriptor);

@@ -42,11 +42,12 @@ import com.andrew.apollo.menu.FragmentMenuItems;
 import com.andrew.apollo.model.Song;
 import com.andrew.apollo.ui.fragments.Fragments;
 import com.andrew.apollo.utils.PreferenceUtils;
-import com.frostwire.android.R;
-import com.frostwire.android.core.Constants;
-import com.frostwire.android.gui.util.UIUtils;
 
 import java.util.List;
+
+import zig.zak.media.tor.R;;
+import zig.zak.media.tor.android.core.Constants;
+import zig.zak.media.tor.android.gui.util.UIUtils;
 
 /**
  * This class is used to display all of the songs from a particular playlist.
@@ -59,9 +60,7 @@ import java.util.List;
 public final class PlaylistSongFragment extends ApolloFragment<ProfileSongAdapter, Song> implements DropListener, RemoveListener, DragScrollProfile {
 
     public PlaylistSongFragment() {
-        super(Fragments.PLAYLIST_SONG_PROFILE_FRAGMENT_GROUP_ID,
-                Fragments.PLAYLIST_SONG_PROFILE_FRAGMENT_LOADER_ID,
-                R.string.empty_playlist);
+        super(Fragments.PLAYLIST_SONG_PROFILE_FRAGMENT_GROUP_ID, Fragments.PLAYLIST_SONG_PROFILE_FRAGMENT_LOADER_ID, R.string.empty_playlist);
     }
 
     @Override
@@ -74,19 +73,15 @@ public final class PlaylistSongFragment extends ApolloFragment<ProfileSongAdapte
     }
 
     @Override
-    public void onCreateContextMenu(final ContextMenu menu, final View v,
-                                    final ContextMenuInfo menuInfo) {
+    public void onCreateContextMenu(final ContextMenu menu, final View v, final ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        
+
         // Remove the song from playlist
-        menu.add(Fragments.PLAYLIST_SONG_PROFILE_FRAGMENT_GROUP_ID, FragmentMenuItems.REMOVE_FROM_PLAYLIST, Menu.NONE,
-                getString(R.string.context_menu_remove_from_playlist))
-                .setIcon(R.drawable.contextmenu_icon_remove_transfer);
+        menu.add(Fragments.PLAYLIST_SONG_PROFILE_FRAGMENT_GROUP_ID, FragmentMenuItems.REMOVE_FROM_PLAYLIST, Menu.NONE, getString(R.string.context_menu_remove_from_playlist)).setIcon(R.drawable.contextmenu_icon_remove_transfer);
     }
 
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
-                             final Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         DragSortListView dsListView = (DragSortListView) mListView;
         dsListView.setDropListener(this);
@@ -107,8 +102,7 @@ public final class PlaylistSongFragment extends ApolloFragment<ProfileSongAdapte
     }
 
     @Override
-    public void onItemClick(final AdapterView<?> parent, final View view, final int position,
-                            final long id) {
+    public void onItemClick(final AdapterView<?> parent, final View view, final int position, final long id) {
         onSongItemClick(position);
     }
 
@@ -133,9 +127,7 @@ public final class PlaylistSongFragment extends ApolloFragment<ProfileSongAdapte
         mListView.invalidate();
         mAdapter.notifyDataSetChanged();
         final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri("external", mPlaylistId);
-        getActivity().getContentResolver().delete(uri,
-                MediaStore.Audio.Playlists.Members.AUDIO_ID + "=" + mItem.mSongId,
-                null);
+        getActivity().getContentResolver().delete(uri, MediaStore.Audio.Playlists.Members.AUDIO_ID + "=" + mItem.mSongId, null);
     }
 
     @Override
@@ -152,7 +144,7 @@ public final class PlaylistSongFragment extends ApolloFragment<ProfileSongAdapte
             mItem = mAdapter.getItem(realFrom);
             mAdapter.remove(mItem);
             int count = mAdapter.getCount();
-            int adjustedTo = (realTo >= count) ? count-1 : realTo;
+            int adjustedTo = (realTo >= count) ? count - 1 : realTo;
             mAdapter.insert(mItem, adjustedTo);
             mAdapter.notifyDataSetChanged();
             final ContentResolver resolver = getActivity().getContentResolver();

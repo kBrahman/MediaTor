@@ -23,9 +23,8 @@
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Αγγίξτε τις ετικέτες στις]]></string>
     <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Η ιδιωτική σας ζωή είναι ένα θεμελιώδες ανθρώπινο δικαίωμα</b>. Μια μη προστατευμένη σύνδεση σημαίνει ότι ό, τι κάνετε online, συμπεριλαμβανομένων των <b>λήψεων, αναζητήσεων, μηνυμάτων</b>, μπορεί να παρακολουθείται και να παρεμποδίζεται από οποιονδήποτε στο δίκτυό σας, π.χ. Πάροχοι υπηρεσιών διαδικτύου, χάκερ, κυβερνήσεις.<br><br><b>We STRONGLY recommend using a VPN service</b>. <br> Εδώ είναι μερικές επιλογές που παρέχουν αξιόπιστες υπηρεσίες και λειτουργούν καλά με το FrostWire:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Συνδέεστε στο Internet χρησιμοποιώντας ένα VPN. <br><br> Αν δεν το έχετε ήδη, συνιστούμε να χρησιμοποιήσετε μία από τις παρακάτω υπηρεσίες για να κρυπτογραφήσετε τη σύνδεσή σας και <b>να διαφυλάξετε τα προσωπικά σας δεδομένα</b>. ]]></string>
-    <string name="application_label">FrostWire</string>
     <string name="activity_preferences_name">Ρυθμίσεις</string>
-    <string name="activity_chat_name">Chat</string>
+    <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Ενεργά Downloads</string>
     <string name="activity_uploads_name">Ενεργά Uploads</string>
     <string name="activity_about">Πληροφορίες</string>
@@ -112,8 +111,8 @@
     <string name="tos_accept">Δέχομαι</string>
     <string name="tos_refuse">Αρνούμαι</string>
     <string name="downloads">Downloads</string>
-    <string name="minimize_frostwire">Ελαχιστοποίηση FrostWire</string>
-    <string name="are_you_sure_you_wanna_leave">Σίγουρα θέλεις να επιστρέψεις στην αρχική;</string>
+
+
     <string name="set_as_wallpaper">Ορισμός ως Φόντο</string>
     <string name="failed_to_set_wallpaper">Αποτύχαμε να το θέσουμε ως Φόντο</string>
     <string name="tell_others_chooser">Tweet / SMS / Email</string>
@@ -599,7 +598,7 @@
     <string name="cloud_download_aborted_on_mobile_data">Τρέχουσα ρύθμιση αποτρέπει τη λήψη, όταν δεν σε δίκτυο Wi-Fi</string>
     <string name="sharing_privacy_settings">Κοινή χρήση και Απορρήτου</string>
     <string name="delete_started_torrents_summary">Διαγραφή .torrent αρχεία μετά την έναρξη κατέβασμα</string>
-    <string name="dismiss">Απολύω</string>
+
     <string name="torrent_preferences_header">Torrent Προτιμήσεις</string>
     <string name="search_preferences_one_engine_checked_always">Από προεπιλογή, μια μηχανή αναζήτησης θα πρέπει να ελέγχονται ανά πάσα στιγμή</string>
     <string name="switch_off_engine_without_vpn">VPN είναι ανενεργό, το σβήσιμο του κινητήρα BitTorrent.</string>
@@ -720,5 +719,5 @@
     <string name="vpn_suggestion_nordvpn">NORDVPN \n Δωρεάν δοκιμή 7 ημερών</string>
     <string name="play_store_out_of_sync">Το Google Play Store χρειάζεται συγχρονισμό, περιμένετε μερικά λεπτά</string>
     <string name="contact_us">Επικοινωνήστε μαζί μας</string>
-    <string name="join_frostwire_chat">Συμμετοχή σε συζήτηση FrostWire</string>
+
 </resources>

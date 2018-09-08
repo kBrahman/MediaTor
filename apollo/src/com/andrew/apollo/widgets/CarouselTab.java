@@ -24,8 +24,9 @@ import com.andrew.apollo.cache.ImageFetcher;
 import com.andrew.apollo.utils.ApolloUtils;
 import com.andrew.apollo.utils.BitmapUtils;
 import com.andrew.apollo.utils.MusicUtils;
-import com.frostwire.android.R;
-import com.frostwire.android.util.ImageLoader;
+
+import zig.zak.media.tor.R;;
+import zig.zak.media.tor.android.util.ImageLoader;
 
 /**
  * @author Andrew Neal (andrewdneal@gmail.com)

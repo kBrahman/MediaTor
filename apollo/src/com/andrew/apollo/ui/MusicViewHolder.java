@@ -21,10 +21,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.frostwire.android.R;
-import com.frostwire.util.Ref;
 
 import java.lang.ref.WeakReference;
+
+import zig.zak.media.tor.R;;
+import zig.zak.media.tor.util.Ref;
 
 /**
  * Used to efficiently cache and recycle the {@link View}s used in the artist,

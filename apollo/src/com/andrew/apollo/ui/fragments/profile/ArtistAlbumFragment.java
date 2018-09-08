@@ -34,7 +34,7 @@ import com.andrew.apollo.utils.MusicUtils;
 import com.andrew.apollo.utils.NavUtils;
 import com.andrew.apollo.utils.PreferenceUtils;
 import com.andrew.apollo.widgets.VerticalScrollListener;
-import com.frostwire.android.R;
+import zig.zak.media.tor.R;
 
 import java.util.List;
 

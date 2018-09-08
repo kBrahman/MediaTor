@@ -31,7 +31,7 @@ import com.andrew.apollo.Config;
 import com.andrew.apollo.cache.ImageFetcher;
 import com.andrew.apollo.utils.ApolloUtils;
 import com.andrew.apollo.utils.MusicUtils;
-import com.frostwire.android.R;
+import zig.zak.media.tor.R;
 
 /**
  * Alert dialog used to delete tracks.

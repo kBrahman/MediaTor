@@ -25,7 +25,7 @@ import com.andrew.apollo.adapters.AlbumAdapter;
 import com.andrew.apollo.loaders.AlbumLoader;
 import com.andrew.apollo.model.Album;
 import com.andrew.apollo.utils.PreferenceUtils;
-import com.frostwire.android.R;
+import zig.zak.media.tor.R;
 
 import java.util.List;
 

@@ -28,7 +28,7 @@ import com.andrew.apollo.loaders.SongLoader;
 import com.andrew.apollo.model.Song;
 import com.andrew.apollo.ui.fragments.profile.ApolloFragment;
 import com.andrew.apollo.utils.PreferenceUtils;
-import com.frostwire.android.R;
+import zig.zak.media.tor.R;
 
 import java.util.List;
 

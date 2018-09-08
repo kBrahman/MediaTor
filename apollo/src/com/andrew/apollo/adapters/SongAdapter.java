@@ -30,12 +30,13 @@ import com.andrew.apollo.ui.MusicViewHolder.DataHolder;
 import com.andrew.apollo.ui.fragments.QueueFragment;
 import com.andrew.apollo.ui.fragments.SongFragment;
 import com.andrew.apollo.utils.MusicUtils;
-import com.frostwire.android.R;
-import com.frostwire.util.Ref;
 
 import java.util.List;
 
-import static com.frostwire.android.util.Asyncs.async;
+import zig.zak.media.tor.R;
+import zig.zak.media.tor.util.Ref;
+
+import static zig.zak.media.tor.android.util.Asyncs.async;
 
 /**
  * This {@link ArrayAdapter} is used to display all of the songs on a user's
@@ -79,10 +80,7 @@ public class SongAdapter extends ApolloFragmentAdapter<Song> implements ApolloFr
         if (mImageFetcher != null && dataHolder != null && Ref.alive(musicViewHolder.mImage)) {
             if (dataHolder.mParentId == -1) {
                 mImageFetcher.loadAlbumImage(dataHolder.mLineTwo, dataHolder.mLineOne, R.drawable.list_item_audio_icon, musicViewHolder.mImage.get());
-                async(getContext(),
-                      SongAdapter::updateDataHolderAlbumId,
-                      dataHolder, musicViewHolder, mImageFetcher,
-                      SongAdapter::updateAlbumImage);
+                async(getContext(), SongAdapter::updateDataHolderAlbumId, dataHolder, musicViewHolder, mImageFetcher, SongAdapter::updateAlbumImage);
             } else {
                 mImageFetcher.loadAlbumImage(dataHolder.mLineTwo, dataHolder.mLineOne, dataHolder.mParentId, musicViewHolder.mImage.get());
             }
@@ -105,13 +103,13 @@ public class SongAdapter extends ApolloFragmentAdapter<Song> implements ApolloFr
                     musicViewHolder.mLineTwo.get().setText(dataHolder.mLineTwo);
                 }
                 if (MusicUtils.getCurrentAudioId() == dataHolder.mItemId) {
-                    musicViewHolder.mLineOne.get().setTextColor(getContext().getResources().getColor(com.frostwire.android.R.color.app_text_highlight));
-                    musicViewHolder.mLineOneRight.get().setTextColor(getContext().getResources().getColor(com.frostwire.android.R.color.app_text_highlight));
-                    musicViewHolder.mLineTwo.get().setTextColor(getContext().getResources().getColor(com.frostwire.android.R.color.app_text_highlight));
+                    musicViewHolder.mLineOne.get().setTextColor(getContext().getResources().getColor(R.color.app_text_highlight));
+                    musicViewHolder.mLineOneRight.get().setTextColor(getContext().getResources().getColor(R.color.app_text_highlight));
+                    musicViewHolder.mLineTwo.get().setTextColor(getContext().getResources().getColor(R.color.app_text_highlight));
                 } else {
-                    musicViewHolder.mLineOne.get().setTextColor(getContext().getResources().getColor(com.frostwire.android.R.color.app_text_primary));
-                    musicViewHolder.mLineOneRight.get().setTextColor(getContext().getResources().getColor(com.frostwire.android.R.color.app_text_primary));
-                    musicViewHolder.mLineTwo.get().setTextColor(getContext().getResources().getColor(com.frostwire.android.R.color.app_text_primary));
+                    musicViewHolder.mLineOne.get().setTextColor(getContext().getResources().getColor(R.color.app_text_primary));
+                    musicViewHolder.mLineOneRight.get().setTextColor(getContext().getResources().getColor(R.color.app_text_primary));
+                    musicViewHolder.mLineTwo.get().setTextColor(getContext().getResources().getColor(R.color.app_text_primary));
                 }
             }
         }
@@ -119,16 +117,14 @@ public class SongAdapter extends ApolloFragmentAdapter<Song> implements ApolloFr
     }
 
     @SuppressWarnings("unused")
-    private static void updateDataHolderAlbumId(Context context, DataHolder dataHolder,
-        MusicViewHolder musicViewHolder, ImageFetcher imageFetcher) {
+    private static void updateDataHolderAlbumId(Context context, DataHolder dataHolder, MusicViewHolder musicViewHolder, ImageFetcher imageFetcher) {
         if (dataHolder.mParentId == -1) {
             dataHolder.mParentId = MusicUtils.getAlbumIdForSong(context, dataHolder.mItemId);
         }
     }
 
     @SuppressWarnings("unused")
-    private static void updateAlbumImage(Context context, DataHolder dataHolder,
-        MusicViewHolder musicViewHolder, ImageFetcher imageFetcher) {
+    private static void updateAlbumImage(Context context, DataHolder dataHolder, MusicViewHolder musicViewHolder, ImageFetcher imageFetcher) {
         if (dataHolder != null && dataHolder.mParentId != -1) {
             imageFetcher.loadAlbumImage(dataHolder.mLineTwo, dataHolder.mLineOne, dataHolder.mParentId, musicViewHolder.mImage.get());
         }

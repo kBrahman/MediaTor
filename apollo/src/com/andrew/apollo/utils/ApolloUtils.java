@@ -27,11 +27,11 @@ import android.widget.Toast;
 import com.andrew.apollo.Config;
 import com.andrew.apollo.cache.ImageCache;
 import com.andrew.apollo.cache.ImageFetcher;
-import com.frostwire.android.gui.services.Engine;
+import zig.zak.media.tor.android.gui.services.Engine;
 import com.andrew.apollo.ui.activities.ShortcutActivity;
 import com.devspark.appmsg.AppMsg;
-import com.frostwire.android.R;
-import com.frostwire.util.Ref;
+import zig.zak.media.tor.R;
+import zig.zak.media.tor.util.Ref;
 
 import java.lang.ref.WeakReference;
 

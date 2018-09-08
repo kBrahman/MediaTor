@@ -34,11 +34,12 @@ import com.andrew.apollo.menu.FragmentMenuItems;
 import com.andrew.apollo.model.Song;
 import com.andrew.apollo.ui.fragments.profile.ApolloFragment;
 import com.andrew.apollo.utils.PreferenceUtils;
-import com.frostwire.android.R;
 
 import java.util.List;
 
-import static com.frostwire.android.util.Asyncs.async;
+import zig.zak.media.tor.R;
+
+import static zig.zak.media.tor.android.util.Asyncs.async;
 
 /**
  * This class is used to display all of the recently listened to albums by the
@@ -53,12 +54,10 @@ public final class RecentFragment extends ApolloFragment<SongAdapter, Song> {
     }
 
     @Override
-    public void onCreateContextMenu(final ContextMenu menu, final View v,
-                                    final ContextMenuInfo menuInfo) {
+    public void onCreateContextMenu(final ContextMenu menu, final View v, final ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         // Remove the album from the list
-        menu.add(Fragments.RECENT_FRAGMENT_GROUP_ID, FragmentMenuItems.REMOVE_FROM_RECENT, Menu.NONE,
-                getString(R.string.context_menu_remove_from_recent)).setIcon(R.drawable.contextmenu_icon_remove_transfer);
+        menu.add(Fragments.RECENT_FRAGMENT_GROUP_ID, FragmentMenuItems.REMOVE_FROM_RECENT, Menu.NONE, getString(R.string.context_menu_remove_from_recent)).setIcon(R.drawable.contextmenu_icon_remove_transfer);
     }
 
     @Override
@@ -72,8 +71,7 @@ public final class RecentFragment extends ApolloFragment<SongAdapter, Song> {
     }
 
     @Override
-    public void onItemClick(final AdapterView<?> parent, final View view,
-                            final int position, final long id) {
+    public void onItemClick(final AdapterView<?> parent, final View view, final int position, final long id) {
         onSongItemClick(position);
     }
 

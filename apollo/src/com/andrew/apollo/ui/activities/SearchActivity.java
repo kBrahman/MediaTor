@@ -62,8 +62,8 @@ import com.andrew.apollo.utils.ApolloUtils;
 import com.andrew.apollo.utils.MusicUtils;
 import com.andrew.apollo.utils.MusicUtils.ServiceToken;
 import com.andrew.apollo.utils.NavUtils;
-import com.frostwire.android.R;
-import com.frostwire.android.gui.views.AbstractActivity;
+import zig.zak.media.tor.R;
+import zig.zak.media.tor.android.gui.views.AbstractActivity;
 
 import java.util.Locale;
 

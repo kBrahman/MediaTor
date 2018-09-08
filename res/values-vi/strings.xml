@@ -24,9 +24,8 @@
     <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Quyền riêng tư của bạn là quyền cơ bản của con người</b>. Kết nối không được bảo vệ có nghĩa là mọi thứ bạn thực hiện trực tuyến bao gồm <b>tải xuống, tìm kiếm, nhắn tin</b>, có thể được theo dõi và chặn bởi bất kỳ ai trên mạng của bạn, ví dụ: Nhà cung cấp dịch vụ Internet, tin tặc, chính phủ.<br><br><b>Chúng tôi mạnh mẽ khuyên bạn nên sử dụng dịch vụ VPN</b>. <br> Dưới đây là một số tùy chọn cung cấp dịch vụ đáng tin cậy và hoạt động tốt với FrostWire:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Bạn đang kết nối với Internet bằng VPN. <br><br> Nếu bạn chưa sẵn sàng, chúng tôi khuyên bạn nên sử dụng một trong các dịch vụ bên dưới để mã hóa kết nối của bạn và <b>bảo vệ quyền riêng tư của bạn</b>. ]]></string>
     <string name="invalid_tracker_url">URL trình theo dõi không hợp lệ</string>
-    <string name="application_label">FrostWire</string>
     <string name="activity_preferences_name">Thiết đặt</string>
-    <string name="activity_chat_name">Chat</string>
+    <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Tải về đang hoạt động</string>
     <string name="activity_uploads_name">Tải lên đang hoạt động</string>
     <string name="activity_about">Giới thiệu</string>
@@ -112,8 +111,8 @@
     <string name="tos_title">Thỏa thuận sử dụng</string>
     <string name="tos_refuse">Từ chối</string>
     <string name="downloads">Tải về</string>
-    <string name="minimize_frostwire">Thu nhỏ FrostWire</string>
-    <string name="are_you_sure_you_wanna_leave">Bạn có chắc chắn muốn trở lại màn hình chính?</string>
+
+
     <string name="set_as_wallpaper">Đặt làm hình nền</string>
     <string name="failed_to_set_wallpaper">Thất bại khi thiết lập hình nền</string>
     <string name="tell_others_chooser">Tweet / SMS / Email</string>
@@ -598,7 +597,7 @@
     <string name="cloud_download_aborted_on_mobile_data">Cài đặt hiện ngăn chặn tải khi không vào mạng Wifi</string>
     <string name="sharing_privacy_settings">Chia sẻ và bảo mật</string>
     <string name="delete_started_torrents_summary">Xóa các tập tin .torrent sau khi bắt đầu tải về</string>
-    <string name="dismiss">Bỏ qua</string>
+
     <string name="torrent_preferences_header">Tùy chọn torrent</string>
     <string name="search_preferences_one_engine_checked_always">Theo mặc định, một trong những công cụ tìm kiếm cần phải được kiểm tra ở tất cả các lần</string>
     <string name="switch_off_engine_without_vpn">VPN là không hoạt động, dừng động cơ BitTorrent.</string>
@@ -720,5 +719,5 @@
     <string name="vpn_suggestion_nordvpn">NORDVPN \n Dùng thử 7 ngày miễn phí</string>
     <string name="play_store_out_of_sync">Cửa hàng Google Play cần đồng bộ hóa, đợi một vài phút</string>
     <string name="contact_us">Liên hệ chúng tôi</string>
-    <string name="join_frostwire_chat">Tham gia trò chuyện FrostWire</string>
+
 </resources>

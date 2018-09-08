@@ -32,7 +32,6 @@
     <string name="wifi_sharing_settings">ตั้งค่าการแชร์ Wifi</string>
     <string name="is_not_responding">%s ไม่ตอบสนอง</string>
     <string name="azureus_manager_item_seeding">การเพาะ</string>
-    <string name="application_label">FrostWire</string>
     <string name="enable_wifi_sharing_summary">แชร์ไฟล์กับเพื่อนบนเครือข่าย WiFi ท้องถิ่น</string>
     <string name="how_other_users_will_see_you">วิธีที่ผู้ใช้อื่น ๆ จะเห็นคุณ</string>
     <string name="share_selected_files">แบ่งปันไฟล์ที่เลือก</string>
@@ -314,7 +313,7 @@
     <string name="error_moving_incomplete">ข้อผิดพลาด: การย้ายที่ไม่สมบูรณ์</string>
     <string name="torrent_url_added">ฝนตกหนัก URL ที่เพิ่มเพื่อการถ่ายโอน</string>
     <string name="only_up_to_n_uploads_at_the_same_time">เท่านั้นถึง %s ภาพที่ส่งในเวลาเดียวกัน</string>
-    <string name="are_you_sure_you_wanna_leave">คุณคุณแน่ใจว่าต้องการที่จะกลับไปที่หน้าจอไป?</string>
+
     <string name="search_label">ค้นหา</string>
     <string name="search_select_filetype">โปรดเลือกประเภทไฟล์</string>
     <string name="http_download_status_temp_dir_error">ไดเรกทอรีชั่วคราวไม่อยู่หรือไม่สามารถสร้าง</string>
@@ -440,7 +439,7 @@
     <string name="send_pm">ส่งจดหมายข้อความส่วนตัว</string>
     <string name="advertisement">การโฆษณา</string>
     <string name="pick_the_files_you_want_to_download_from_this_torrent">เลือกไฟล์ที่คุณต้องการดาวน์โหลดจากฝนตกหนักนี้</string>
-    <string name="minimize_frostwire">ลด FrostWire</string>
+
     <string name="azureus_manager_item_forced">ถูกบังคับ</string>
     <string name="failed_to_set_wallpaper">ล้มเหลวในการตั้งวอลล์เปเปอร์</string>
     <string name="cancel_delete_menu_action">หยุดและลบข้อมูล</string>
@@ -463,7 +462,7 @@
     <string name="hints_by_google">คำแนะนำโดย Google</string>
     <string name="ringtone">เสียงเรียกเข้า</string>
     <string name="vpn_off_toast_notification">เชื่อมต่อของคุณอาจจะไม่เป็นส่วนตัว</string>
-    <string name="activity_chat_name">พูดคุย</string>
+    <string name="activity_chat_named">พูดคุย</string>
     <string name="help_translate_or_proofread_frostwire">ช่วยแปลหรือพิสูจน์อักษร FrostWire</string>
     <string name="loading">กำลังโหลด</string>
     <string name="downloading_metadata">เมตาดาต้าดาวน์โหลด</string>
@@ -597,7 +596,7 @@
     <string name="cloud_download_aborted_on_mobile_data">การตั้งค่าปัจจุบันจะช่วยป้องกันการดาวน์โหลดเมื่อไม่ได้อยู่บนเครือข่ายไร้สาย</string>
     <string name="sharing_privacy_settings">ร่วมกันและความเป็นส่วนตัว</string>
     <string name="delete_started_torrents_summary">ลบไฟล์ .torrent หลังจากที่เริ่มต้นการดาวน์โหลด</string>
-    <string name="dismiss">ยกเลิก</string>
+
     <string name="torrent_preferences_header">การตั้งค่า Torrent</string>
     <string name="search_preferences_one_engine_checked_always">โดยค่าเริ่มต้นเครื่องมือค้นหาหนึ่งจะต้องมีการตรวจสอบทุกครั้ง</string>
     <string name="switch_off_engine_without_vpn">VPN ไม่ได้ใช้งานหยุดเครื่องยนต์ BitTorrent</string>
@@ -677,7 +676,7 @@
     <string name="one_file_shared">ไฟล์หนึ่งไฟล์ถูกแชร์กับอุปกรณ์ FrostWire บนเครือข่าย Wi-Fi เดียวกัน</string>
     <string name="n_files_shared">มีการแชร์ไฟล์ %d ไฟล์กับอุปกรณ์ FrostWire บนเครือข่าย Wi-Fi เดียวกัน</string>
     <string name="contact_us">ติดต่อเรา</string>
-    <string name="join_frostwire_chat">เข้าร่วมการแชท FrostWire</string>
+
     <string name="uploaded">ที่อัปโหลด</string>
     <string name="trackers">ติดตาม</string>
     <string name="source_type">ที่มา: %1$s</string>

@@ -14,13 +14,15 @@ import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+
 import com.andrew.apollo.model.Album;
 import com.andrew.apollo.ui.MusicViewHolder;
 import com.andrew.apollo.ui.MusicViewHolder.DataHolder;
 import com.andrew.apollo.utils.MusicUtils;
-import com.frostwire.android.R;
-import com.frostwire.util.Logger;
-import com.frostwire.util.Ref;
+
+import zig.zak.media.tor.R;;
+import zig.zak.media.tor.util.Logger;
+import zig.zak.media.tor.util.Ref;
 
 /**
  * This {@link ArrayAdapter} is used to display all of the albums on a user's
@@ -151,8 +153,7 @@ public class AlbumAdapter extends ApolloFragmentAdapter<Album> implements Apollo
             // Album artist names (line two)
             mData[i].mLineTwo = album.mArtistName;
             // Number of songs for each album (line three)
-            mData[i].mLineThree = MusicUtils.makeLabel(getContext(),
-                    R.plurals.Nsongs, album.mSongNumber);
+            mData[i].mLineThree = MusicUtils.makeLabel(getContext(), R.plurals.Nsongs, album.mSongNumber);
         }
     }
 

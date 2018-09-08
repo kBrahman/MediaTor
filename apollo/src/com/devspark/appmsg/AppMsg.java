@@ -22,7 +22,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
-import com.frostwire.android.R;
+import zig.zak.media.tor.R;
 
 /**
  * In-layout notifications. Based on {@link android.widget.Toast} notifications 

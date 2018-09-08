@@ -21,9 +21,8 @@
 <resources>
     <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[* على الرغم من أن أوصى لتحميل الخاص بك، فإنك لا تحتاج إلى VPN لاستخدام برنامج FrostWire. ]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>النصيحة:</b> المس العلامات المطبقة على]]></string>
-    <string name="application_label">FrostWire</string>
     <string name="activity_preferences_name">إعدادات</string>
-    <string name="activity_chat_name">دردشة</string>
+    <string name="activity_chat_named">دردشة</string>
     <string name="activity_downloads_name">التنزيلات النشطة</string>
     <string name="activity_uploads_name">التحميلات النشطة</string>
     <string name="activity_about">حول</string>
@@ -110,8 +109,8 @@
     <string name="tos_accept">قبول</string>
     <string name="tos_refuse">رفض</string>
     <string name="downloads">تنزيلات</string>
-    <string name="minimize_frostwire">تصغير فروست واير</string>
-    <string name="are_you_sure_you_wanna_leave">هل أنت متأكد من رغبتك في العودة إلى الشاشة الرئيسية؟</string>
+
+
     <string name="set_as_wallpaper">وضعها كخلفية</string>
     <string name="failed_to_set_wallpaper">فشل في وضع الخلفية</string>
     <string name="tell_others_chooser">تغريدة / رسالة نصية / بريد إلكتروني</string>
@@ -597,7 +596,7 @@
     <string name="cloud_download_aborted_on_mobile_data">الإعداد الحالي يمنع تحميل عندما لا تكون على شبكة واي فاي</string>
     <string name="sharing_privacy_settings">المشاركة والخصوصية</string>
     <string name="delete_started_torrents_summary">حذف الملفات سيل بعد بداية تحميل</string>
-    <string name="dismiss">رفض</string>
+
     <string name="torrent_preferences_header">تفضيلات سيل</string>
     <string name="search_preferences_one_engine_checked_always">افتراضيا، يحتاج محرك بحث واحد إلى أن يتم التحقق في جميع الأوقات</string>
     <string name="switch_off_engine_without_vpn">VPN غير نشط، ووقف المحرك تورنت.</string>
@@ -718,5 +717,5 @@
     <string name="vpn_suggestion_nordvpn">NORDVPN \n نسخة تجريبية مجانية لمدة 7 أيام</string>
     <string name="play_store_out_of_sync">يحتاج متجر Google Play إلى المزامنة ، انتظر بضع دقائق</string>
     <string name="contact_us">اتصل بنا</string>
-    <string name="join_frostwire_chat">انضم إلى دردشة FrostWire</string>
+
 </resources>

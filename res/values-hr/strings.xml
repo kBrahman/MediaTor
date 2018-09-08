@@ -21,9 +21,8 @@
 <resources>
     <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Razotkrivanje:</b> Iako je preporučeno za download, osobito pri svakom preuzimanju ili razmjeni osjetljivih informacija (npr. bankarstva) i tijekom korištenja javnih Wi-Fi ili mobilnih podataka, <b>ne morate VPN koristiti FrostWire. </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Dodirnite dodijeljene oznake u]]></string>
-    <string name="application_label">FrostWire</string>
     <string name="activity_preferences_name">Postavke</string>
-    <string name="activity_chat_name">Razgovor</string>
+    <string name="activity_chat_named">Razgovor</string>
     <string name="activity_downloads_name">Aktivna preuzimanja</string>
     <string name="activity_uploads_name">Aktivna slanja</string>
     <string name="activity_about">O</string>
@@ -110,8 +109,8 @@
     <string name="tos_accept">Prihvati</string>
     <string name="tos_refuse">Odbij</string>
     <string name="downloads">Preuzimanja</string>
-    <string name="minimize_frostwire">Sakriti FrostWire</string>
-    <string name="are_you_sure_you_wanna_leave">Jeste li sigurni da želite ići natrag na početni zaslon?</string>
+
+
     <string name="set_as_wallpaper">Postaviti kao pozadinu</string>
     <string name="failed_to_set_wallpaper">Nemoguce postaviti pozadinsku sliku</string>
     <string name="tell_others_chooser">Tweet / SMS / Email</string>
@@ -595,7 +594,7 @@
     <string name="cloud_download_aborted_on_mobile_data">Trenutna postavka onemogućuje preuzimanje kada niste na mreži Wifi</string>
     <string name="sharing_privacy_settings">Dijeljenje i privatnost</string>
     <string name="delete_started_torrents_summary">Brisanje .torrent datoteke nakon početka preuzimanja</string>
-    <string name="dismiss">Odbaciti</string>
+
     <string name="torrent_preferences_header">Torrent preferencije</string>
     <string name="search_preferences_one_engine_checked_always">Po defaultu, jedan tražilice treba provjeriti u svakom trenutku</string>
     <string name="switch_off_engine_without_vpn">VPN je neaktivan, zaustavljanje BitTorrent motor.</string>
@@ -720,5 +719,5 @@
     <string name="piece_size_header">Veličina komada:</string>
     <string name="add_tracker">Dodaj tracker</string>
     <string name="contact_us">Kontaktirajte nas</string>
-    <string name="join_frostwire_chat">Pridružite se FrostWire chatu</string>
+
 </resources>

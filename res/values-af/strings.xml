@@ -1,23 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2016, FrostWire(R). All rights reserved.
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
--->
 <resources>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Raak toegepaste etikette aan]]></string>
     <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Openbaarmaking:</b> Alhoewel dit aanbeveel word vir jou aflaai, veral wanneer sensitiewe inligting (bv. bankdienste) afgelaai of verruil word en tydens die gebruik van openbare Wi-Fi- of mobiele data, <b> het jy nie \'n Skynprivaatnetwerk nodig om FrostWire te gebruik nie.</b>]]></string>
@@ -33,7 +14,6 @@
     <string name="is_not_responding">%s reageer nie</string>
     <string name="vpn_client_feature_3_ExpressVPN">Privaat en loglose blaai</string>
     <string name="azureus_manager_item_seeding">Saai</string>
-    <string name="application_label">FrostWire</string>
     <string name="enable_wifi_sharing_summary">Deel lêers met eweknieë op die plaaslike Wi-Fi-netwerk.</string>
     <string name="transfers_context_stop_seeding_all_transfers">Hou op om alle oordragte te saai</string>
     <string name="how_other_users_will_see_you">Hoe ander gebruikers jou sal sien</string>
@@ -95,7 +75,7 @@
     <string name="send_to_chat">Stuur na Chat</string>
     <string name="delete_this_track">Vee hierdie snit uit</string>
     <string name="five_dollars">$5</string>
-    <string name="dismiss">Ontslaan</string>
+
     <string name="seeding_settings_explanation">BitTorrent-gebruikers op die internet sal lêer stukke van die data wat jou torrents saad kan aflaai.</string>
     <string name="loading_indeterminate">Laai…</string>
     <string name="nickname_hint">Bynaam</string>
@@ -356,7 +336,7 @@
     <string name="visit_vpn_client_PIA">Besoek Private Internet Access</string>
     <string name="torrent_url_added">Torrent-URL bygevoeg aan oordragte.</string>
     <string name="only_up_to_n_uploads_at_the_same_time">Slegs tot %s oplaaie op dieselfde tyd</string>
-    <string name="are_you_sure_you_wanna_leave">Is jy seker jy wil terug na die tuisskerm gaan?</string>
+
     <string name="search_label">Soek</string>
     <string name="search_select_filetype">Kies asseblief \'n lêertipe</string>
     <string name="http_download_status_temp_dir_error">Tydelike gids bestaan nie of kan nie geskep word nie</string>
@@ -494,7 +474,7 @@
     <string name="send_pm">Stuur privaat boodskap</string>
     <string name="advertisement">Advertensie</string>
     <string name="pick_the_files_you_want_to_download_from_this_torrent">Kies die lêers wat jy wil aflaai van hierdie torrent</string>
-    <string name="minimize_frostwire">Verminder FrostWire</string>
+
     <string name="data_saving_kill_http_warning">Dit sal alle onvoltooide oordragte aan die gang hou</string>
     <string name="azureus_manager_item_forced">Gedwing</string>
     <string name="failed_to_set_wallpaper">Kon nie plakpapier stel nie</string>
@@ -521,7 +501,7 @@
     <string name="vpn_off_toast_notification">Jou verbinding is dalk nie privaat nie.</string>
     <string name="delete_started_torrents">Verwyder .torrent lêers</string>
     <string name="search_header">Soek</string>
-    <string name="activity_chat_name">Chat</string>
+    <string name="activity_chat_named">Chat</string>
     <string name="help_translate_or_proofread_frostwire">Help om FrostWire te vertaal of te proeflees</string>
     <string name="loading">Laai</string>
     <string name="downloading_metadata">Laai van metadata</string>
@@ -677,7 +657,7 @@
     <string name="one_file_shared">Een lêer is gedeel na FrostWire-toestelle op dieselfde Wi-Fi-netwerk.</string>
     <string name="n_files_shared">%d lêers is op FrostWire-toestelle op dieselfde Wi-Fi-netwerk gedeel.</string>
     <string name="contact_us">Kontak Ons</string>
-    <string name="join_frostwire_chat">Sluit aan by FrostWire Chat</string>
+
     <string name="uploaded">Gelaai</string>
     <string name="trackers">Spoorsnyers</string>
     <string name="source_type">Bron: %1$s</string>

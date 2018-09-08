@@ -27,7 +27,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.HorizontalScrollView;
 import com.andrew.apollo.ui.activities.ProfileActivity;
 import com.andrew.apollo.utils.ApolloUtils;
-import com.frostwire.android.R;
+
+import zig.zak.media.tor.R;;
 
 /**
  * A custom {@link HorizontalScrollView} that displays up to two "tabs" in the

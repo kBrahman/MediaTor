@@ -32,7 +32,6 @@
     <string name="wifi_sharing_settings">Wi-Fi Tetapan Perkongsian</string>
     <string name="is_not_responding">%s tidak bertindak balas</string>
     <string name="azureus_manager_item_seeding">Pembenihan</string>
-    <string name="application_label">FrostWire</string>
     <string name="enable_wifi_sharing_summary">Berkongsi fail dengan rakan-rakan di rangkaian Wi-Fi tempatan.</string>
     <string name="how_other_users_will_see_you">Bagaimana pengguna lain akan melihat anda</string>
     <string name="share_selected_files">Berkongsi fail dipilih</string>
@@ -314,7 +313,7 @@
     <string name="error_moving_incomplete">Ralat: Moving yang tidak lengkap</string>
     <string name="torrent_url_added">Torrent URL ditambah untuk pemindahan.</string>
     <string name="only_up_to_n_uploads_at_the_same_time">Hanya sehingga %s muat naik pada masa yang sama</string>
-    <string name="are_you_sure_you_wanna_leave">Adakah anda pasti anda mahu kembali ke skrin utama?</string>
+
     <string name="search_label">Carian</string>
     <string name="search_select_filetype">Sila pilih jenis fail</string>
     <string name="http_download_status_temp_dir_error">Direktori sementara tidak wujud atau tidak boleh dicipta</string>
@@ -440,7 +439,7 @@
     <string name="send_pm">Hantar Mesej Peribadi</string>
     <string name="advertisement">iklan</string>
     <string name="pick_the_files_you_want_to_download_from_this_torrent">Pilihkan fail yang anda ingin muat turun dari torrent ini</string>
-    <string name="minimize_frostwire">Kurangkan FrostWire</string>
+
     <string name="azureus_manager_item_forced">Paksa</string>
     <string name="failed_to_set_wallpaper">Gagal untuk menetapkan kertas dinding</string>
     <string name="cancel_delete_menu_action">Berhenti dan Padam Data</string>
@@ -463,7 +462,7 @@
     <string name="hints_by_google">Petua oleh Google</string>
     <string name="ringtone">Ringtone</string>
     <string name="vpn_off_toast_notification">Sambungan anda mungkin tidak peribadi.</string>
-    <string name="activity_chat_name">Chat</string>
+    <string name="activity_chat_named">Chat</string>
     <string name="help_translate_or_proofread_frostwire">Membantu menterjemahkannya atau mengoreksi FrostWire</string>
     <string name="loading">Pembebanan</string>
     <string name="downloading_metadata">Metadata memuat turun</string>
@@ -597,7 +596,7 @@
     <string name="cloud_download_aborted_on_mobile_data">tetapan semasa menghalang dimuat turun apabila tidak pada rangkaian Wifi</string>
     <string name="sharing_privacy_settings">Perkongsian dan Privasi</string>
     <string name="delete_started_torrents_summary">Padam fail Torrent selepas mula memuat turun</string>
-    <string name="dismiss">Abaikan</string>
+
     <string name="torrent_preferences_header">Keutamaan torrent</string>
     <string name="search_preferences_one_engine_checked_always">Secara lalai, satu enjin carian perlu diperiksa pada setiap masa</string>
     <string name="switch_off_engine_without_vpn">VPN tidak aktif, berhenti enjin BitTorrent.</string>
@@ -721,5 +720,5 @@
     <string name="piece_size_header">Saiz potongan:</string>
     <string name="add_tracker">Tambah tracker</string>
     <string name="contact_us">Hubungi Kami</string>
-    <string name="join_frostwire_chat">Sertai sembang FrostWire</string>
+
 </resources>

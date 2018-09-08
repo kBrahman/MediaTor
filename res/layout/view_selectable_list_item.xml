@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 -->
-<com.frostwire.android.gui.views.CheckableLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<zig.zak.media.tor.android.gui.views.CheckableLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/listview_item_background_selector"
@@ -49,4 +49,4 @@
         style="@style/divider_line"
         android:layout_width="match_parent"
         android:layout_height="1dp" />
-</com.frostwire.android.gui.views.CheckableLinearLayout>
+</zig.zak.media.tor.android.gui.views.CheckableLinearLayout>

@@ -21,9 +21,8 @@
 <resources>
     <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Bilgilendirme:</b> İndirmeleriniz için önerilse de, özellikle hassas bilgileri (örneğin bankacılık) indirirken veya paylaşırken ve herkese açık Wi-Fi veya mobil veri kullanırken, <b>FrostWire\'ı kullanmak için VPN\'ye ihtiyacınız yok. </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>Bilgi:</b> Için uygulanmış etiketler\'e dokunun]]></string>
-    <string name="application_label">FrostWire</string>
     <string name="activity_preferences_name">Ayarlar</string>
-    <string name="activity_chat_name">Sohbet</string>
+    <string name="activity_chat_named">Sohbet</string>
     <string name="activity_downloads_name">Aktif İndirmeler</string>
     <string name="activity_uploads_name">Aktif Yüklemeler</string>
     <string name="activity_about">Hakkında</string>
@@ -110,8 +109,8 @@
     <string name="tos_accept">Kabul Edin</string>
     <string name="tos_refuse">Reddedin</string>
     <string name="downloads">İndirmeler</string>
-    <string name="minimize_frostwire">FrostWire\'ı Küçültün</string>
-    <string name="are_you_sure_you_wanna_leave">Ana sayfaya geri dönmek istediğinize emin misiniz?</string>
+
+
     <string name="set_as_wallpaper">Duvar-kağıdı olarak ayarla</string>
     <string name="failed_to_set_wallpaper">Duvar-kağıdı olarak ayarlanamadı</string>
     <string name="tell_others_chooser">Twit\'le / SMS Çek / E-posta Gönder</string>
@@ -597,7 +596,7 @@
     <string name="cloud_download_aborted_on_mobile_data">Geçerli ayar, Wifi şebekesinde değilken indirmeyi engeller</string>
     <string name="sharing_privacy_settings">Paylaşım ve Gizlilik</string>
     <string name="delete_started_torrents_summary">İndirilmeye başlandıktan sonra .torrent dosyalarını silin.</string>
-    <string name="dismiss">Reddet</string>
+
     <string name="torrent_preferences_header">Torrent Tercihleri</string>
     <string name="search_preferences_one_engine_checked_always">Varsayılan olarak, bir arama motorunun her zaman kontrol edilmesi gerekiyor</string>
     <string name="switch_off_engine_without_vpn">VPN devre dışı, BitTorrent motorunu durduruyor.</string>
@@ -720,5 +719,5 @@
     <string name="add_tracker">İzleyici ekle</string>
     <string name="play_store_out_of_sync">Google Play Store\'un senkronize edilmesi, birkaç dakika beklemesi gerekiyor</string>
     <string name="contact_us">Bizimle iletişime geçin</string>
-    <string name="join_frostwire_chat">FrostWire sohbetine katıl</string>
+
 </resources>

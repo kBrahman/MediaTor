@@ -23,9 +23,8 @@
     <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Informazione:</b> Anche se consigliata per i download, soprattutto quando si scaricano o si scambiano informazioni riservate (ad esempio servizi bancari) e mentre si utilizzano dati pubblici Wi-Fi o mobili, <b>non c\'è bisogno di una VPN da utilizzare FrostWire. </b>]]></string>
     <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>La tua vita privata è un diritto umano fondamentale</b>. Una connessione non protetta, tutto ciò che fai online <b>ricerche, messaggistica e download</b>, può essere monitorato e intercettato da chiunque sulla tua rete, ad es. Provider di servizi Internet, hacker, governi.<br><br><b>Raccomandiamo VIVAMENTE di utilizzare un servizio VPN</b>. <br> Ecco alcune opzioni che forniscono un servizio affidabile e funzionano bene con FrostWire:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Sei connesso a Internet tramite una rete VPN. <br><br> Se non lo sei già, ti consigliamo di utilizzare uno dei seguenti servizi per crittografare la tua connessione e <b>salvaguardare la vostra vita privata</b>. ]]></string>
-    <string name="application_label">FrostWire</string>
     <string name="activity_preferences_name">Impostazioni</string>
-    <string name="activity_chat_name">Chat</string>
+    <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Download attivi</string>
     <string name="activity_uploads_name">Upload attivi</string>
     <string name="activity_about">Informazioni</string>
@@ -112,8 +111,8 @@
     <string name="tos_accept">Accetta</string>
     <string name="tos_refuse">Rifiuta</string>
     <string name="downloads">Downloads</string>
-    <string name="minimize_frostwire">Riduci FrostWire</string>
-    <string name="are_you_sure_you_wanna_leave">Sicuro di voler tornare alla schermata iniziale?</string>
+
+
     <string name="set_as_wallpaper">Imposta come sfondo</string>
     <string name="failed_to_set_wallpaper">Impossibile impostare come sfondo</string>
     <string name="tell_others_chooser">Tweet / SMS / Email</string>
@@ -597,7 +596,7 @@
     <string name="cloud_download_aborted_on_mobile_data">Impostazione corrente impedisce scaricano quando non è in rete Wifi</string>
     <string name="sharing_privacy_settings">Condivisione e opzioni di privacy</string>
     <string name="delete_started_torrents_summary">Eliminare i file .torrent dopo l\'inizio il download</string>
-    <string name="dismiss">Respingere</string>
+
     <string name="torrent_preferences_header">Preferenze Torrent</string>
     <string name="search_preferences_one_engine_checked_always">Per impostazione predefinita, un motore di ricerca deve essere controllato in ogni momento</string>
     <string name="switch_off_engine_without_vpn">VPN è inattivo, spegnimento del motore BitTorrent.</string>
@@ -720,5 +719,5 @@
     <string name="vpn_suggestion_nordvpn">NORDVPN \n Prova gratuita di 7 giorni</string>
     <string name="play_store_out_of_sync">Google Play Store deve essere sincronizzato, attendere alcuni minuti</string>
     <string name="contact_us">Contattaci</string>
-    <string name="join_frostwire_chat">Unisciti alla chat di FrostWire</string>
+
 </resources>

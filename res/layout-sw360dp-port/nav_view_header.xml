@@ -21,7 +21,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="132dp"
-    android:background="@color/basic_blue"
+    android:background="@color/basic_cburgundy"
     android:gravity="bottom"
     android:orientation="vertical"
     android:paddingBottom="10dp"
@@ -34,7 +34,7 @@
         android:layout_height="54dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="12dp"
-        android:src="@drawable/app_icon" />
+        android:src="@mipmap/ic_launcher" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -52,25 +52,6 @@
             android:textColor="@color/basic_white"
             android:textSize="@dimen/text_size_small"
             android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/nav_view_header_main_version"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/nav_view_header_main_title"
-            android:text="@string/dummy_title"
-            android:textColor="@color/basic_white"
-            android:textSize="@dimen/text_size_small"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/nav_view_header_main_build"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/nav_view_header_main_title"
-            android:text="@string/dummy_build"
-            android:textColor="@color/basic_gray_medium"
-            android:textSize="@dimen/text_size_micro" />
 
         <ImageView
             android:id="@+id/nav_view_header_main_update"

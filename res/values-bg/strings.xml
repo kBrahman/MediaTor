@@ -32,7 +32,6 @@
     <string name="wifi_sharing_settings">Wi-Fi настройки за споделяне</string>
     <string name="is_not_responding">%s не реагира</string>
     <string name="azureus_manager_item_seeding">Засяване</string>
-    <string name="application_label">FrostWire</string>
     <string name="enable_wifi_sharing_summary">Споделяне на файлове с връстниците върху местната Wi-Fi мрежа.</string>
     <string name="how_other_users_will_see_you">Как другите потребители ще виждате</string>
     <string name="share_selected_files">Споделете избрани файлове</string>
@@ -314,7 +313,7 @@
     <string name="error_moving_incomplete">Грешка: Преместването Непълно</string>
     <string name="torrent_url_added">Torrent URL добавя към трансфери.</string>
     <string name="only_up_to_n_uploads_at_the_same_time">Само до %s добавени в същото време</string>
-    <string name="are_you_sure_you_wanna_leave">Сигурни ли сте че искате да се върнете в началния екран?</string>
+
     <string name="search_label">Търсене</string>
     <string name="search_select_filetype">Моля, изберете тип файл</string>
     <string name="http_download_status_temp_dir_error">Временната директория не съществува или не може да бъде създаден</string>
@@ -440,7 +439,7 @@
     <string name="send_pm">Изпрати лично съобщение</string>
     <string name="advertisement">реклама</string>
     <string name="pick_the_files_you_want_to_download_from_this_torrent">Изберете файловете, които искате да изтеглите от този торент</string>
-    <string name="minimize_frostwire">Минимизиране FrostWire</string>
+
     <string name="azureus_manager_item_forced">Принуден</string>
     <string name="failed_to_set_wallpaper">Не може да се определи тапети</string>
     <string name="cancel_delete_menu_action">Спрете и изтриване на данни</string>
@@ -463,7 +462,7 @@
     <string name="hints_by_google">Съвети от Google</string>
     <string name="ringtone">Мелодия</string>
     <string name="vpn_off_toast_notification">Връзката ви може да не е частно.</string>
-    <string name="activity_chat_name">Чат</string>
+    <string name="activity_chat_named">Чат</string>
     <string name="help_translate_or_proofread_frostwire">Помогнете за превода или коригирам FrostWire</string>
     <string name="loading">Зареждане</string>
     <string name="downloading_metadata">Изтеглянето на метаданни</string>
@@ -597,7 +596,7 @@
     <string name="cloud_download_aborted_on_mobile_data">Текуща настройка позволява да се тегли, когато не по Wifi мрежа</string>
     <string name="sharing_privacy_settings">Споделяне и поверителност</string>
     <string name="delete_started_torrents_summary">Изтриване торентни файлове след началото на изтеглянето</string>
-    <string name="dismiss">Отхвърляне</string>
+
     <string name="torrent_preferences_header">Торент Предпочитания</string>
     <string name="search_preferences_one_engine_checked_always">По подразбиране, една търсачка, трябва да бъдат проверявани по всяко време</string>
     <string name="switch_off_engine_without_vpn">VPN е неактивна, спиране на двигателя BitTorrent.</string>
@@ -719,6 +718,6 @@
     <string name="vpn_suggestion_nordvpn">NORDVPN \n Безплатен 7-дневен пробен период</string>
     <string name="play_store_out_of_sync">Google Play Магазин трябва да се синхронизира, изчакайте няколко минути</string>
     <string name="contact_us">Свържете се с нас</string>
-    <string name="join_frostwire_chat">Присъединете се към FrostWire чата</string>
+
     <string name="invalid_tracker_url">URL адрес на тракера е невалиден</string>
 </resources>

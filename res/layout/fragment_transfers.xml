@@ -27,7 +27,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/basic_blue"
+        android:background="@color/basic_cburgundy"
         android:orientation="vertical">
 
         <View
@@ -44,7 +44,7 @@
             android:focusableInTouchMode="true"
             android:orientation="horizontal" />
 
-        <com.frostwire.android.gui.views.ClearableEditTextView
+        <zig.zak.media.tor.android.gui.views.ClearableEditTextView
             android:id="@+id/fragment_transfers_add_transfer_text_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
         style="@style/AppTabLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/basic_blue"
+        android:background="@color/basic_cburgundy"
         app:tabMode="scrollable">
 
         <android.support.design.widget.TabItem
@@ -91,7 +91,7 @@
             android:text="@string/transfers_select_completed" />
     </android.support.design.widget.TabLayout>
 
-    <com.frostwire.android.gui.views.RichNotification
+    <zig.zak.media.tor.android.gui.views.RichNotification
         android:id="@+id/fragment_transfers_sd_card_notification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
         frostwire:rich_notification_title="@string/saving_to_sd_card"
         frostwire:rich_notification_title_underlined="true" />
 
-    <com.frostwire.android.gui.views.RichNotification
+    <zig.zak.media.tor.android.gui.views.RichNotification
         android:id="@+id/fragment_transfers_internal_memory_notification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -119,7 +119,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.frostwire.android.gui.views.TransfersNoSeedsView
+            <zig.zak.media.tor.android.gui.views.TransfersNoSeedsView
                 android:id="@+id/fragment_transfers_no_seeds_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -129,7 +129,7 @@
 
         </ScrollView>
 
-        <com.frostwire.android.gui.views.SwipeLayout
+        <zig.zak.media.tor.android.gui.views.SwipeLayout
             android:id="@+id/fragment_transfers_swipe"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -145,7 +145,7 @@
                 android:dividerHeight="0dp"
                 android:groupIndicator="@null" />
 
-        </com.frostwire.android.gui.views.SwipeLayout>
+        </zig.zak.media.tor.android.gui.views.SwipeLayout>
 
         <TextView
             android:id="@+id/fragment_transfers_vpn_notification"

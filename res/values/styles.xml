@@ -97,7 +97,7 @@
         <item name="android:indeterminateDrawable">
             @drawable/progress_indeterminate_horizontal_holo
         </item>
-        <item name="android:background">@color/basic_blue</item>
+        <item name="android:background">@color/basic_cburgundy</item>
         <item name="android:minHeight">16dip</item>
         <item name="android:maxHeight">16dip</item>
     </style>
@@ -330,7 +330,7 @@
     <style name="SearchResultListItemSource">
         <item name="android:singleLine">true</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/basic_blue</item>
+        <item name="android:textColor">@color/basic_cburgundy</item>
     </style>
 
     <style name="SearchProgressViewRetryButton">

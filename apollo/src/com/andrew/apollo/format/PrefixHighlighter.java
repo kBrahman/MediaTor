@@ -17,7 +17,7 @@ import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.widget.TextView;
 
-import com.frostwire.android.R;
+import zig.zak.media.tor.R;
 
 /**
  * Highlights the text in a text field.

@@ -54,15 +54,16 @@ import com.andrew.apollo.widgets.PlayPauseButton;
 import com.andrew.apollo.widgets.RepeatButton;
 import com.andrew.apollo.widgets.RepeatingImageButton;
 import com.andrew.apollo.widgets.ShuffleButton;
-import com.frostwire.android.R;
-import com.frostwire.android.gui.adapters.menu.CreateNewPlaylistMenuAction;
-import com.frostwire.android.gui.util.DangerousPermissionsChecker;
-import com.frostwire.android.gui.util.UIUtils;
-import com.frostwire.android.gui.util.WriteSettingsPermissionActivityHelper;
-import com.frostwire.android.gui.views.AbstractActivity;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+
+import zig.zak.media.tor.R;;
+import zig.zak.media.tor.android.gui.adapters.menu.CreateNewPlaylistMenuAction;
+import zig.zak.media.tor.android.gui.util.DangerousPermissionsChecker;
+import zig.zak.media.tor.android.gui.util.UIUtils;
+import zig.zak.media.tor.android.gui.util.WriteSettingsPermissionActivityHelper;
+import zig.zak.media.tor.android.gui.views.AbstractActivity;
 
 import static com.andrew.apollo.utils.MusicUtils.musicPlaybackService;
 
@@ -74,8 +75,7 @@ import static com.andrew.apollo.utils.MusicUtils.musicPlaybackService;
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
-public abstract class BaseActivity extends AbstractActivity
-        implements ServiceConnection {
+public abstract class BaseActivity extends AbstractActivity implements ServiceConnection {
     /**
      * Play state and meta change listener
      */
@@ -382,11 +382,7 @@ public abstract class BaseActivity extends AbstractActivity
         public void onClick(final View v) {
             long currentAlbumId = MusicUtils.getCurrentAudioId();
             if (currentAlbumId != -1) {
-                NavUtils.openAlbumProfile(BaseActivity.this,
-                        MusicUtils.getAlbumName(),
-                        MusicUtils.getArtistName(),
-                        MusicUtils.getCurrentAlbumId(),
-                        MusicUtils.getSongListForAlbum(BaseActivity.this, currentAlbumId));
+                NavUtils.openAlbumProfile(BaseActivity.this, MusicUtils.getAlbumName(), MusicUtils.getArtistName(), MusicUtils.getCurrentAlbumId(), MusicUtils.getSongListForAlbum(BaseActivity.this, currentAlbumId));
             } else {
                 MusicUtils.shuffleAll(BaseActivity.this);
             }
@@ -447,10 +443,8 @@ public abstract class BaseActivity extends AbstractActivity
                 if (!MusicUtils.isStopped() && mReference.get() != null && mReference.get().mPlayPauseButton != null) {
                     mReference.get().mPlayPauseButton.updateState();
                 }
-            } else if (action.equals(MusicPlaybackService.REPEATMODE_CHANGED)
-                    || action.equals(MusicPlaybackService.SHUFFLEMODE_CHANGED)) {
-                if (!MusicUtils.isStopped() && mReference.get() != null && mReference.get().mRepeatButton != null &&
-                        mReference.get().mShuffleButton != null) {
+            } else if (action.equals(MusicPlaybackService.REPEATMODE_CHANGED) || action.equals(MusicPlaybackService.SHUFFLEMODE_CHANGED)) {
+                if (!MusicUtils.isStopped() && mReference.get() != null && mReference.get().mRepeatButton != null && mReference.get().mShuffleButton != null) {
                     // Set the repeat image
                     mReference.get().mRepeatButton.updateRepeatState();
                     // Set the shuffle image

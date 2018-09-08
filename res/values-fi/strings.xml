@@ -30,7 +30,6 @@
     <string name="wifi_sharing_settings">Wi-Fi Jakamisasetukset</string>
     <string name="is_not_responding">%s ei vastaa</string>
     <string name="azureus_manager_item_seeding">Seeding</string>
-    <string name="application_label">FrostWire</string>
     <string name="enable_wifi_sharing_summary">Jaa tiedostoja ikäisensä paikallisista Wi-Fi-verkkoon.</string>
     <string name="how_other_users_will_see_you">Miten muut käyttäjät näkevät sinut</string>
     <string name="share_selected_files">Jaa valitut tiedostot</string>
@@ -317,7 +316,7 @@
     <string name="error_moving_incomplete">Virhe: Liukuvien Keskeneräinen</string>
     <string name="torrent_url_added">Torrent URL lisätään siirtoja.</string>
     <string name="only_up_to_n_uploads_at_the_same_time">Ainoastaan enintään %s lisäykset samanaikaisesti</string>
-    <string name="are_you_sure_you_wanna_leave">Oletko varma, että haluat palata aloitusnäyttöön?</string>
+
     <string name="search_label">Haku</string>
     <string name="search_select_filetype">Valitse tiedostotyyppi</string>
     <string name="http_download_status_temp_dir_error">Väliaikaiset hakemistoa ei ole olemassa tai ei voida luoda</string>
@@ -443,7 +442,7 @@
     <string name="send_pm">Lähetä yksityisviesti</string>
     <string name="advertisement">mainos</string>
     <string name="pick_the_files_you_want_to_download_from_this_torrent">Nouto tiedostot haluat ladata tästä torrent</string>
-    <string name="minimize_frostwire">Minimoi FrostWire</string>
+
     <string name="azureus_manager_item_forced">Pakko</string>
     <string name="failed_to_set_wallpaper">Epäonnistui asettaa Taustakuva</string>
     <string name="cancel_delete_menu_action">Lopeta ja poista data</string>
@@ -467,7 +466,7 @@
     <string name="ringtone">Ringtone</string>
     <string name="vpn_off_toast_notification">Yhteys ei ehkä yksityisiä.</string>
     <string name="search_header">Haku</string>
-    <string name="activity_chat_name">Chat</string>
+    <string name="activity_chat_named">Chat</string>
     <string name="help_translate_or_proofread_frostwire">Auttaa kääntää tai oikolukea FrostWire</string>
     <string name="loading">Ladataan</string>
     <string name="downloading_metadata">Lataaminen metadata</string>
@@ -601,7 +600,7 @@
     <string name="use_tpb_summary">TPB on magneetti pohjainen, toimii vain Wifi</string>
     <string name="cloud_download_aborted_on_mobile_data">Nykyinen asetus estää lataaminen kun ei WiFi-verkossa</string>
     <string name="delete_started_torrents_summary">Poista .torrent-tiedostoja jälkeen alkaa lataamisen</string>
-    <string name="dismiss">Hylkää</string>
+
     <string name="search_preferences_one_engine_checked_always">Oletuksena yksi hakukone on tarkistettava aina</string>
     <string name="switch_off_engine_without_vpn">VPN on aktiivinen, pysäytetään BitTorrent moottori.</string>
     <string name="number_picker_tip">Vihje: touch valittu numero käyttää näppäimistöä</string>
@@ -720,5 +719,5 @@
     <string name="add_tracker">Lisää seuranta</string>
     <string name="play_store_out_of_sync">Google Play Kaupan on synkronoitava, odota muutama minuutti</string>
     <string name="contact_us">Ota meihin yhteyttä</string>
-    <string name="join_frostwire_chat">Liity FrostWire chat</string>
+
 </resources>

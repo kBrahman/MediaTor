@@ -40,7 +40,7 @@ import com.andrew.apollo.utils.MusicUtils;
 import com.andrew.apollo.utils.NavUtils;
 import com.andrew.apollo.utils.PreferenceUtils;
 import com.andrew.apollo.utils.SortOrder;
-import com.frostwire.android.R;
+import zig.zak.media.tor.R;
 
 /**
  * This class is used to hold the {@link ViewPager} used for swiping between the

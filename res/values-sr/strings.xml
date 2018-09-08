@@ -25,9 +25,8 @@
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Повезани сте на Интернет помоћу ВПН-а. <br><br> Ако нисте већ, препоручујемо вам да користите једну од услуга испод да бисте шифровали везу и <b>заштитили своју приватност </b>. ]]></string>
     <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Ваша приватност је основно људско право</b>. Незаштићена веза значи све што радите на мрежи, укључујући <b>преузимање, претраживање, размену порука</b>, може се пратити и пресретнути од стране било кога на вашој мрежи, нпр. Интернет провајдери, хакери, владе.<br><br><b>Стално препоручујемо коришћење ВПН сервиса</b>. <br> Ево неких опција које пружају поуздан сервис и добро функционишу са ФростВире:]]></string>
     <!-- non HTML tags. -->
-    <string name="application_label">FrostWire</string>
     <string name="activity_preferences_name">Подешавања</string>
-    <string name="activity_chat_name">Chat</string>
+    <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Активни бесплатно</string>
     <string name="activity_uploads_name">Активни Уплоадс</string>
     <string name="activity_about">О томе</string>
@@ -119,8 +118,8 @@
     <string name="tos_accept">прихватити</string>
     <string name="tos_refuse">Одбити</string>
     <string name="downloads">преузимања</string>
-    <string name="minimize_frostwire">минимизира FrostWire</string>
-    <string name="are_you_sure_you_wanna_leave">Да ли сте сигурни да желите да се вратите на почетни екран?</string>
+
+
     <string name="set_as_wallpaper">Поставите као позадину</string>
     <string name="failed_to_set_wallpaper">Фаилед то сет Валлпапер</string>
     <string name="tell_others_chooser">Твеет / СМС / Е-маил</string>
@@ -607,7 +606,7 @@
     <string name="changelog">Changelog</string>
     <string name="cloud_download_aborted_on_mobile_data">Актуелна поставка спречава преузимање када није на Ви-Фи мрежи</string>
     <string name="delete_started_torrents_summary">Обриши .торрент фајлове након почетка преузимања</string>
-    <string name="dismiss">одбацити</string>
+
     <string name="search_preferences_one_engine_checked_always">По дефаулту, један претраживач треба да се провери у сваком тренутку</string>
     <string name="switch_off_engine_without_vpn">ВПН је неактиван, заустављање БитТоррент мотор.</string>
     <string name="number_picker_tip">Савет: додир изабран број да користе тастатуру</string>
@@ -722,5 +721,5 @@
     <string name="add_tracker">Додај траку</string>
     <string name="play_store_out_of_sync">Гоогле Плаи продавница мора да се синхронизује, сачекајте неколико минута</string>
     <string name="contact_us">Контактирајте нас</string>
-    <string name="join_frostwire_chat">Придружите FrostWire цхат</string>
+
 </resources>

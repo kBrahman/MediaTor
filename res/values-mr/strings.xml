@@ -31,7 +31,6 @@
     <string name="is_not_responding">%s प्रतिसाद देत नाही</string>
     <string name="vpn_client_feature_3_ExpressVPN">खाजगी आणि लॉगलेस ब्राउझिंग</string>
     <string name="azureus_manager_item_seeding">बीजन</string>
-    <string name="application_label">FrostWire</string>
     <string name="enable_wifi_sharing_summary">स्थानिक Wi-Fi नेटवर्कवरील मित्रांबरोबर फायली सामायिक करा.</string>
     <string name="transfers_context_stop_seeding_all_transfers">सर्व बदल्यांची बीजारोणा थांबवा</string>
     <string name="how_other_users_will_see_you">इतर वापरकर्ते आपल्याला कसे पाहू शकतील</string>
@@ -97,7 +96,7 @@
     <string name="send_to_chat">चॅट पाठवा</string>
     <string name="delete_this_track">हा ट्रॅक हटवा</string>
     <string name="five_dollars">$5</string>
-    <string name="dismiss">डिसमिस करा</string>
+
     <string name="seeding_settings_explanation">इंटरनेटवरील बिटटॉरंट वापरकर्ते आपल्या टॉरेन्ट्स बीडच्या डेटाच्या फाईल भागांमध्ये डाउनलोड करण्यास सक्षम असतील.</string>
     <string name="transfer_detail_storage_header">संचयन पथ:</string>
     <string name="loading_indeterminate">लोड होत आहे…</string>
@@ -383,7 +382,7 @@
     <string name="visit_vpn_client_PIA">Private Internet Access ला भेट द्या</string>
     <string name="torrent_url_added">टॉरेंट URL ची बदली जोडली</string>
     <string name="only_up_to_n_uploads_at_the_same_time">केवळ एकाच वेळी %s पर्यंतचे अपलोड</string>
-    <string name="are_you_sure_you_wanna_leave">आपल्याला खात्री आहे की आपण परत घरी जायचे आहे?</string>
+
     <string name="search_label">शोध</string>
     <string name="search_select_filetype">कृपया एक फाइल प्रकार निवडा</string>
     <string name="http_download_status_temp_dir_error">तात्पुरती निर्देशिका अस्तित्वात नाही किंवा तयार केली जाऊ शकत नाही</string>
@@ -528,7 +527,7 @@
     <string name="send_pm">खासगी संदेश पाठवा</string>
     <string name="advertisement">जाहिरात</string>
     <string name="pick_the_files_you_want_to_download_from_this_torrent">आपण या टॉरेंट वरून डाउनलोड करू इच्छित असलेल्या फायली निवडा</string>
-    <string name="minimize_frostwire">FrostWire विंडो लहान करा</string>
+
     <string name="data_saving_kill_http_warning">हे सर्व अपूर्ण संचयन प्रगतीपथावर थांबवेल</string>
     <string name="azureus_manager_item_forced">सक्तीने</string>
     <string name="sharing_preferences">सामायिकरण सेटिंग्ज</string>
@@ -558,7 +557,7 @@
     <string name="vpn_off_toast_notification">आपले कनेक्शन खाजगी असू शकत नाही</string>
     <string name="delete_started_torrents">.torrent फाईल्स डिलीट करा</string>
     <string name="search_header">शोध</string>
-    <string name="activity_chat_name">गप्पा मारा</string>
+    <string name="activity_chat_named">गप्पा मारा</string>
     <string name="help_translate_or_proofread_frostwire">FrostWire अनुवाद किंवा proofread मदत</string>
     <string name="loading">लोड होत आहे</string>
     <string name="downloading_metadata">मेटाडेटा डाउनलोड करत आहे</string>
@@ -721,5 +720,5 @@
     <string name="vpn_suggestion_nordvpn">NORDVPN \n विनामूल्य 7-दिवसांची चाचणी</string>
     <string name="play_store_out_of_sync">Google Play Store समक्रमित करण्याची आवश्यकता आहे, काही मिनिटे प्रतीक्षा करा</string>
     <string name="contact_us">आमच्याशी संपर्क साधा</string>
-    <string name="join_frostwire_chat">FrostWire चॅटमध्ये सामील व्हा</string>
+
 </resources>

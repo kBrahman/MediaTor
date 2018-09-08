@@ -73,24 +73,24 @@ import com.andrew.apollo.widgets.PlayPauseButton;
 import com.andrew.apollo.widgets.RepeatButton;
 import com.andrew.apollo.widgets.RepeatingImageButton;
 import com.andrew.apollo.widgets.ShuffleButton;
-import com.frostwire.android.R;
-import com.frostwire.android.core.Constants;
-import com.frostwire.android.gui.adapters.menu.AddToPlaylistMenuAction;
-import com.frostwire.android.gui.services.Engine;
-import com.frostwire.android.gui.util.UIUtils;
-import com.frostwire.android.gui.util.WriteSettingsPermissionActivityHelper;
-import com.frostwire.android.gui.views.AbstractActivity;
-import com.frostwire.android.gui.views.SwipeLayout;
-import com.frostwire.util.Logger;
-import com.frostwire.util.Ref;
-import com.frostwire.uxstats.UXAction;
-import com.frostwire.uxstats.UXStats;
+import zig.zak.media.tor.R;
+import zig.zak.media.tor.android.core.Constants;
+import zig.zak.media.tor.android.gui.adapters.menu.AddToPlaylistMenuAction;
+import zig.zak.media.tor.android.gui.services.Engine;
+import zig.zak.media.tor.android.gui.util.UIUtils;
+import zig.zak.media.tor.android.gui.util.WriteSettingsPermissionActivityHelper;
+import zig.zak.media.tor.android.gui.views.AbstractActivity;
+import zig.zak.media.tor.android.gui.views.SwipeLayout;
+import zig.zak.media.tor.util.Logger;
+import zig.zak.media.tor.util.Ref;
+import zig.zak.media.tor.uxstats.UXAction;
+import zig.zak.media.tor.uxstats.UXStats;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
 
 import static com.andrew.apollo.utils.MusicUtils.musicPlaybackService;
-import static com.frostwire.android.util.Asyncs.async;
+import static zig.zak.media.tor.android.util.Asyncs.async;
 
 /**
  * Apollo's "now playing" interface.
