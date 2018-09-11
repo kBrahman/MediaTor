@@ -25,9 +25,6 @@ package zig.zak.media.tor.frostclick;
  */
 public class Slide {
 
-    /** Open the URL if available, don't download */
-    public static final int DOWNLOAD_METHOD_OPEN_URL = 0;
-
     /** Download the torrent file */
     public static final int DOWNLOAD_METHOD_TORRENT = 1;
 

@@ -1,9 +1,6 @@
 # okhttp3
 -keep class okhttp3.Headers { *; }
 
-# MoPub
--keep class com.mopub.mobileads.WebViewCacheService { *; }
-
 -dontwarn javax.annotation.Nullable
 -dontwarn javax.annotation.ParametersAreNonnullByDefault
 -dontwarn org.conscrypt.Conscrypt

@@ -40,8 +40,7 @@ import java.lang.reflect.Field;
  */
 public abstract class AbstractPreferenceFragment extends PreferenceFragment {
 
-    protected static final String DIALOG_FRAGMENT_TAG =
-            "android.support.v14.preference.PreferenceFragment.DIALOG";
+    protected static final String DIALOG_FRAGMENT_TAG = "android.support.v14.preference.PreferenceFragment.DIALOG";
 
     private final int preferencesResId;
 
@@ -95,8 +94,7 @@ public abstract class AbstractPreferenceFragment extends PreferenceFragment {
         }
     }
 
-    public static abstract class PreferenceDialogFragment
-            extends android.support.v14.preference.PreferenceDialogFragment {
+    public static abstract class PreferenceDialogFragment extends android.support.v14.preference.PreferenceDialogFragment {
 
         @NonNull
         @Override
@@ -105,10 +103,7 @@ public abstract class AbstractPreferenceFragment extends PreferenceFragment {
             // initialize private super.mWhichButtonClicked
             onClick(null, DialogInterface.BUTTON_NEGATIVE);
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(context)
-                    .setIcon(this.<Drawable>getValue("mDialogIcon"))
-                    .setPositiveButton(get("mPositiveButtonText"), this)
-                    .setNegativeButton(get("mNegativeButtonText"), this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(context).setIcon(this.<Drawable>getValue("mDialogIcon")).setPositiveButton(get("mPositiveButtonText"), this).setNegativeButton(get("mNegativeButtonText"), this);
 
             View contentView = onCreateDialogView(context);
             if (contentView != null) {
