@@ -20,13 +20,6 @@ package zig.zak.media.tor.android.core;
 
 import zig.zak.media.tor.BuildConfig;
 
-/**
- * Static class containing all constants in one place.
- *
- * @author Angel Leon (@gubatron)
- * @author Alden Torres (@aldenml)
- * @author Jose Molina (@votaguz)
- */
 public final class Constants {
 
     /**

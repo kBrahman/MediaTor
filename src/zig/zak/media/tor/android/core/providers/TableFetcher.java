@@ -23,10 +23,6 @@ import android.net.Uri;
 
 import zig.zak.media.tor.android.core.FileDescriptor;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public interface TableFetcher {
 
     String[] getColumns();

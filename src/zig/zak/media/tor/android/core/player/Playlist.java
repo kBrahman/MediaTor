@@ -20,11 +20,6 @@ package zig.zak.media.tor.android.core.player;
 
 import java.util.List;
 
-/**
- * @author gubatron
- * @author aldenml
- *
- */
 public interface Playlist {
     
     List<PlaylistItem> getItems();

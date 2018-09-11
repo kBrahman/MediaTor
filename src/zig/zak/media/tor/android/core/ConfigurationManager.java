@@ -29,16 +29,9 @@ import zig.zak.media.tor.android.gui.services.Engine;
 import zig.zak.media.tor.util.JsonUtils;
 import zig.zak.media.tor.util.Logger;
 
-import java.util.Arrays;
 import java.util.Map;
 import java.util.Map.Entry;
 
-/**
- * Looking for default config values? look at {@link ConfigurationDefaults}
- *
- * @author gubatron
- * @author aldenml
- */
 @SuppressLint("CommitPrefEdits") // this is due to a lint false positive
 public final class ConfigurationManager {
 
@@ -165,10 +158,6 @@ public final class ConfigurationManager {
         resetToDefaults(preferences.edit(), defaults.getDefaultValues()).apply();
     }
 
-    public String getUUIDString() {
-        return getString(Constants.PREF_KEY_CORE_UUID);
-    }
-
     public int getLastMediaTypeFilter() {
         return getInt(Constants.PREF_KEY_GUI_LAST_MEDIA_TYPE_FILTER);
     }
@@ -179,19 +168,6 @@ public final class ConfigurationManager {
 
     public boolean vibrateOnFinishedDownload() {
         return getBoolean(Constants.PREF_KEY_GUI_VIBRATE_ON_FINISHED_DOWNLOAD);
-    }
-
-    public String[] getStringArray(String key) {
-        String s = getString(key);
-        return s != null ? JsonUtils.toObject(s, String[].class) : null;
-    }
-
-    public void setStringArray(String key, String[] values) {
-        try {
-            setStringArray(preferences.edit(), key, values).apply();
-        } catch (Throwable ignore) {
-            LOG.warn("setStringArray(key=" + key + ", value=" + Arrays.toString(values) + ") failed", ignore);
-        }
     }
 
     public boolean showTransfersOnDownloadStart() {
@@ -288,7 +264,7 @@ public final class ConfigurationManager {
         return editor.putBoolean(key, value);
     }
 
-    private Editor setStringArray(Editor editor, String key, String[] values) {
-        return setString(editor, key, JsonUtils.toJson(values));
+    private void setStringArray(Editor editor, String key, String[] values) {
+        setString(editor, key, JsonUtils.toJson(values));
     }
 }

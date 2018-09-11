@@ -27,10 +27,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 final class ConfigurationDefaults {
 
     private final Map<String, Object> defaultValues;

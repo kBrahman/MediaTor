@@ -24,13 +24,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Playlist based on a given list of file descriptors.
- * 
- * @author gubatron
- * @author aldenml
- *
- */
 public final class EphemeralPlaylist implements Playlist {
 
     private final List<PlaylistItem> items;

@@ -30,14 +30,6 @@ import zig.zak.media.tor.android.core.Constants;
 import zig.zak.media.tor.android.core.FileDescriptor;
 import zig.zak.media.tor.android.core.MediaType;
 
-/**
- * Help yourself with TableFetchers.
- * <p/>
- * Note: if you need to fetch files by file path(s) see Librarian.instance().getFiles(filepath,exactMatch)
- *
- * @author gubatron
- * @author aldenml
- */
 public final class TableFetchers {
 
     private static final TableFetcher AUDIO_TABLE_FETCHER = new AudioTableFetcher();
@@ -304,14 +296,13 @@ public final class TableFetchers {
 
         @Override
         public String where() {
-            String where = FileColumns.DATA + " NOT LIKE ? AND " +
+            return FileColumns.DATA + " NOT LIKE ? AND " +
                     FileColumns.DATA + " NOT LIKE ? AND " +
                     FileColumns.DATA + " NOT LIKE ? AND " +
                     FileColumns.DATA + " NOT LIKE ? AND " +
                     extensionsWhereSubClause +
                     FileColumns.MEDIA_TYPE + " = " + FileColumns.MEDIA_TYPE_NONE + " AND " +
                     FileColumns.SIZE + " > 0 AND " + FileColumns.SIZE + " != 4096";
-            return where;
         }
 
         @Override

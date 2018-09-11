@@ -20,11 +20,6 @@ package zig.zak.media.tor.android.core.player;
 
 import zig.zak.media.tor.android.core.FileDescriptor;
 
-/**
- * @author gubatron
- * @author aldenml
- *
- */
 public class PlaylistItem {
 
     private final FileDescriptor fd;
@@ -39,11 +34,7 @@ public class PlaylistItem {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || !(o instanceof PlaylistItem)) {
-            return false;
-        }
-
-        return fd.equals(((PlaylistItem) o).fd);
+        return o != null && o instanceof PlaylistItem && fd.equals(((PlaylistItem) o).fd);
     }
 
     @Override
