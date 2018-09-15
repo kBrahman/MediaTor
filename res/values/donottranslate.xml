@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="application_label">MediaTor</string>
+    <string name="app_id">ca-app-pub-8761730220693010~8960465928</string>
+    <string name="banner_id">ca-app-pub-8761730220693010/5900964414</string>
 </resources>

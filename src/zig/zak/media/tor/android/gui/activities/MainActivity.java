@@ -48,6 +48,9 @@ import android.view.View;
 import com.andrew.apollo.IApolloService;
 import com.andrew.apollo.utils.MusicUtils;
 import com.andrew.apollo.utils.MusicUtils.ServiceToken;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import org.apache.commons.io.IOUtils;
 
@@ -105,7 +108,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     private static final Logger LOG = Logger.getLogger(MainActivity.class);
     private static final String FRAGMENTS_STACK_KEY = "fragments_stack";
     private static final String CURRENT_FRAGMENT_KEY = "current_fragment";
-    private static final String LAST_BACK_DIALOG_ID = "last_back_dialog";
     private static final String SHUTDOWN_DIALOG_ID = "shutdown_dialog";
     private static boolean firstTime = true;
     private boolean externalStoragePermissionsRequested = false;
@@ -402,7 +404,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         setTheme(R.style.Theme_FrostWire);
         super.onCreate(savedInstanceState);
         if (!ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_GUI_TOS_ACCEPTED)) {
-            // we are still in the wizard.
             return;
         }
         if (isShutdown()) {
@@ -410,6 +411,14 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         }
         checkExternalStoragePermissionsOrBindMusicService();
         checkAccessCoarseLocationPermissions();
+        AdView adView = findViewById(R.id.adView);
+        adView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                adView.setVisibility(View.VISIBLE);
+            }
+        });
+        adView.loadAd(new AdRequest.Builder().build());
     }
 
     private void checkAccessCoarseLocationPermissions() {
@@ -417,8 +426,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         if (checker != null && !checker.hasAskedBefore()) {
             checker.requestPermissions();
             ConfigurationManager.instance().setBoolean(Constants.ASKED_FOR_ACCESS_COARSE_LOCATION_PERMISSIONS, true);
-        } else {
-            LOG.info("Asked for ACCESS_COARSE_LOCATION before, skipping.");
         }
     }
 
