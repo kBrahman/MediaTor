@@ -1,32 +1,21 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml),
- * Marcelina Knitter (@marcelinkaaa)
- * Copyright (c) 2011-2017, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package zig.zak.media.tor.android.gui.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Paint;
 import android.net.Uri;
 import android.os.SystemClock;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.apache.commons.io.FilenameUtils;
+
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.Constants;
@@ -53,26 +42,12 @@ import zig.zak.media.tor.util.Ref;
 import zig.zak.media.tor.uxstats.UXAction;
 import zig.zak.media.tor.uxstats.UXStats;
 
-import org.apache.commons.io.FilenameUtils;
-
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
-
-/**
- * @author gubatron
- * @author aldenml
- */
 public abstract class SearchResultListAdapter extends AbstractListAdapter<SearchResult> {
-    private static final int NO_FILE_TYPE = -1;
 
+    private static final int NO_FILE_TYPE = -1;
     private final OnLinkClickListener linkListener;
     private final PreviewClickListener previewClickListener;
-
     private int fileType;
-
     private final ImageLoader thumbLoader;
     private final List<KeywordFilter> keywordFiltersPipeline;
     private final AtomicLong lastFilterCallTimestamp = new AtomicLong();
@@ -157,12 +132,6 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
         seeds.setText("");
 
         String license = sr.getLicense().equals(Licenses.UNKNOWN) ? "" : " - " + sr.getLicense();
-
-        TextView sourceLink = findView(view, R.id.view_bittorrent_search_result_list_item_text_source);
-        sourceLink.setText(sr.getSource() + license); // TODO: ask for design
-        sourceLink.setTag(sr.getDetailsUrl());
-        sourceLink.setPaintFlags(sourceLink.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-        sourceLink.setOnClickListener(linkListener);
     }
 
     private void populateThumbnail(View view, SearchResult sr) {

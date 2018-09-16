@@ -33,8 +33,16 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import zig.zak.media.tor.android.AndroidPlatform;
+import org.apache.commons.io.FilenameUtils;
+
+import java.io.File;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import zig.zak.media.tor.R;
+import zig.zak.media.tor.android.AndroidPlatform;
 import zig.zak.media.tor.android.core.ConfigurationManager;
 import zig.zak.media.tor.android.core.Constants;
 import zig.zak.media.tor.android.core.FileDescriptor;
@@ -73,18 +81,6 @@ import zig.zak.media.tor.transfers.YouTubeDownload;
 import zig.zak.media.tor.util.Logger;
 import zig.zak.media.tor.util.Ref;
 
-import org.apache.commons.io.FilenameUtils;
-
-import java.io.File;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-/**
- * @author gubatron
- * @author aldenml
- */
 public class TransferListAdapter extends RecyclerView.Adapter<TransferListAdapter.ViewHolder> {
     private static final Logger LOG = Logger.getLogger(TransferListAdapter.class);
     private final WeakReference<Context> contextRef;
@@ -113,15 +109,8 @@ public class TransferListAdapter extends RecyclerView.Adapter<TransferListAdapte
     // RecyclerView.Adapter methods
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int i) {
-        LinearLayout convertView =
-                (LinearLayout) LayoutInflater.from(parent.getContext()).inflate(R.layout.view_transfer_list_item, parent, false);
-        return new ViewHolder(this,
-                contextRef.get(),
-                convertView,
-                viewOnClickListener,
-                viewOnLongClickListener,
-                openOnClickListener,
-                transferDetailsClickListener);
+        LinearLayout convertView = (LinearLayout) LayoutInflater.from(parent.getContext()).inflate(R.layout.view_transfer_list_item, parent, false);
+        return new ViewHolder(this, contextRef.get(), convertView, viewOnClickListener, viewOnLongClickListener, openOnClickListener, transferDetailsClickListener);
     }
 
     @Override
@@ -226,18 +215,8 @@ public class TransferListAdapter extends RecyclerView.Adapter<TransferListAdapte
             items.add(new StopSeedingAction(contextRef.get(), bittorrentDownload));
         }
         items.add(new CancelMenuAction(contextRef.get(), bittorrentDownload, !bittorrentDownload.isComplete()));
-        items.add(new CopyToClipboardMenuAction(contextRef.get(),
-                R.drawable.contextmenu_icon_magnet,
-                R.string.transfers_context_menu_copy_magnet,
-                R.string.transfers_context_menu_copy_magnet_copied,
-                bittorrentDownload.magnetUri() + BTEngine.getInstance().magnetPeers()
-        ));
-        items.add(new CopyToClipboardMenuAction(contextRef.get(),
-                R.drawable.contextmenu_icon_copy,
-                R.string.transfers_context_menu_copy_infohash,
-                R.string.transfers_context_menu_copy_infohash_copied,
-                bittorrentDownload.getInfoHash()
-        ));
+        items.add(new CopyToClipboardMenuAction(contextRef.get(), R.drawable.contextmenu_icon_magnet, R.string.transfers_context_menu_copy_magnet, R.string.transfers_context_menu_copy_magnet_copied, bittorrentDownload.magnetUri() + BTEngine.getInstance().magnetPeers()));
+        items.add(new CopyToClipboardMenuAction(contextRef.get(), R.drawable.contextmenu_icon_copy, R.string.transfers_context_menu_copy_infohash, R.string.transfers_context_menu_copy_infohash_copied, bittorrentDownload.getInfoHash()));
         if (bittorrentDownload.isComplete()) {
             // Remove Torrent and Data action.
             items.add(new CancelMenuAction(contextRef.get(), bittorrentDownload, true, true));
@@ -304,13 +283,7 @@ public class TransferListAdapter extends RecyclerView.Adapter<TransferListAdapte
         private ImageButton buttonDetails;
         private ImageView fileTypeIndicatorImageView;
 
-        public ViewHolder(TransferListAdapter adapter,
-                          Context context,
-                          View itemView,
-                          ViewOnClickListener viewOnClickListener,
-                          ViewOnLongClickListener viewOnLongClickListener,
-                          OpenOnClickListener openOnClickListener,
-                          TransferDetailsClickListener transferDetailsClickListener) {
+        public ViewHolder(TransferListAdapter adapter, Context context, View itemView, ViewOnClickListener viewOnClickListener, ViewOnLongClickListener viewOnLongClickListener, OpenOnClickListener openOnClickListener, TransferDetailsClickListener transferDetailsClickListener) {
             super(itemView);
             this.resourcesRef = Ref.weak(context.getResources());
             this.adapterRef = Ref.weak(adapter);
