@@ -32,7 +32,7 @@
     <string name="settings_description">Search Settings</string>
     <string name="clear_finished">Clear Finished</string>
     <string name="support_free_software">Support Free Software</string>
-    <string name="show_love">Love FrostWire?</string>
+
     <string name="waiting">Waiting…</string>
     <string name="use_icons_to_browse">Use the icons to browse files.</string>
     <string name="type_to_filter_results">Type to filter results.</string>
@@ -72,7 +72,6 @@
     <string name="searching_for">Searching for</string>
     <string name="search_for_type_files">Search for %s files</string>
     <string name="update_title">Update time!</string>
-    <string name="update_message">FrostWire has downloaded a new PERFORMANCE UPDATE for you, please go ahead and touch the OK button if you want to install it now.</string>
     <string name="next_time">Next Time</string>
     <string name="change_my_nickname">Change my nickname</string>
     <string name="try_changing_your_nickname">Enter your nickname</string>
@@ -82,7 +81,6 @@
     <string name="home">Home</string>
     <string name="about">About</string>
     <string name="remove_ads">Remove Ads</string>
-    <string name="remove_ads_description">Enjoy the ad-free experience, support FrostWire</string>
     <string name="send_file_using">Send file using</string>
     <string name="my_files">My Files</string>
     <string name="clear_messages">Clear messages</string>
@@ -98,8 +96,6 @@
     <string name="stop_all_transfers_message">This will cancel all ongoing and queued downloads. All transferred data will be lost. Are you sure?</string>
     <string name="files">files</string>
     <string name="touch_filetype_icon">Touch icon to change file type</string>
-    <string name="tos_title">Terms of Use</string>
-    <string name="tos_accept">Accept</string>
     <string name="tos_refuse">Refuse</string>
     <string name="downloads">Downloads</string>
     <string name="set_as_wallpaper">Set as Wallpaper</string>
@@ -339,7 +335,7 @@
     <string name="seeding_settings">Seeding Settings</string>
     <string name="seeding_settings_explanation">BitTorrent users on the internet will be able to download file chunks of the data your torrents seed.</string>
     <string name="seeding_wifi_settings_explanation">Seed only when using a Wi-Fi connection. Avoid extra charges from your carrier.</string>
-    <string name="intent_text">FrostWire is a peer-to-peer program for sharing authorized files only. Installing and using the program does not constitute a license for obtaining or distributing unauthorized content.</string>
+    <string name="intent_text">MediaTor is a peer-to-peer program for sharing authorized files only. Installing and using the program does not constitute a license for obtaining or distributing unauthorized content.</string>
     <string name="accept_intent">I will not use FrostWire for copyright infringement</string>
     <string name="toast_on_disconnect">Disconnected from BitTorrent. All BitTorrent transfers have stopped.</string>
     <string name="toast_on_connect">BitTorrent core started.</string>
@@ -625,11 +621,9 @@
     <string name="no_interruptions">No Interruptions</string>
     <string name="keep_the_project_alive">Keep the Project Alive</string>
     <string name="processing_payment">Processing payment, refresh in a few seconds</string>
-    <string name="i_have_read_and_agree_to_the">I have read and agree to the</string>
     <string name="terms_of_use">Terms of Use</string>
     <string name="haptic_feedback">Haptic Feedback</string>
     <string name="advertisement">Advertisement</string>
-
     <string name="all_free_downloads">All free downloads</string>
     <string name="distraction_free_search_results">Distraction Free Search (beta)</string>
     <string name="distraction_free_search_results_summary">Hide UI components to show more results. Needs app restart to take effect.</string>

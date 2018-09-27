@@ -27,7 +27,7 @@
     <string name="settings_description">Настройки поиска</string>
     <string name="clear_finished">Удалить завершённые</string>
     <string name="support_free_software">Поддержать свободное ПО</string>
-    <string name="show_love">Нравится FrostWire?</string>
+
     <string name="waiting">Подождите…</string>
     <string name="use_icons_to_browse">Используйте иконки для того, чтобы просматривать файлы.</string>
     <string name="type_to_filter_results">Введите слово, для фильтрации результатов.</string>
@@ -64,7 +64,7 @@
     <string name="searching_for">Поиск</string>
     <string name="search_for_type_files">Искать %s файлы</string>
     <string name="update_title">Время обновлений!</string>
-    <string name="update_message">FrostWire скачал новое ПОЛЕЗНОЕ ОБНОВЛЕНИЕ. Пожалуйста, нажмите кнопку ОК, если Вы хотите установить его прямо сейчас.</string>
+
     <string name="next_time">В другой раз</string>
     <string name="change_my_nickname">Изменить мой псевдоним</string>
     <string name="try_changing_your_nickname">Введите свой псевдоним</string>
@@ -89,8 +89,8 @@
     <string name="files">файлов</string>
     <string name="or_enter_url">или введите URL</string>
     <string name="touch_filetype_icon">Нажмите на иконку, чтобы изменить тип файла</string>
-    <string name="tos_title">Условия использования</string>
-    <string name="tos_accept">Принять</string>
+
+
     <string name="tos_refuse">Отклонить</string>
     <string name="downloads">Загрузки</string>
 
@@ -295,7 +295,7 @@
     <string name="seeding_settings">Настройки раздачи</string>
     <string name="seeding_settings_explanation">Пользователи BitTorrent в сети смогут скачивать части файла, который раздает ваш торрент.</string>
     <string name="seeding_wifi_settings_explanation">Раздавайте только при Wi-Fi подключении. Избегайте дополнительных расходов у своего сотового оператора.</string>
-    <string name="intent_text">FrostWire - это пиринговая программа для обмена только разрешенными файлами. Установка и использование программы не дает право на получение или несанкционированное распространение контента.</string>
+    <string name="intent_text">MediaTor - это пиринговая программа для обмена только разрешенными файлами. Установка и использование программы не дает право на получение или несанкционированное распространение контента.</string>
     <string name="accept_intent">Я не буду использовать FrostWire с целью нарушения авторских прав</string>
     <string name="toast_on_disconnect">Разъединено от BitTorrent. Все передачи на BitTorrent были остановлены.</string>
     <string name="toast_on_connect">Ядро BitTorrent запущено.</string>
@@ -497,7 +497,7 @@
     <string name="one_time_purchase">Один раз Покупка</string>
     <string name="activity_VPN">Cоединение</string>
     <string name="one_year">1 год</string>
-    <string name="i_have_read_and_agree_to_the">Я прочитал и согласен с</string>
+
     <string name="scanning">Отделка - Сканирование</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">В соответствии с вашими настройками я не могу начать раздачу, если вы не на Wi-Fi. Файл будет готов к высева автоматически, когда вы вернетесь к Интернету включен сеть Wi-Fi.</string>
     <string name="are_you_sure_delete_playlist">Вы уверены, что хотите удалить список воспроизведения %s</string>
@@ -506,7 +506,7 @@
     <string name="delete_files">Удалить файлы</string>
     <string name="vpn_price">ot $%1$.2f в месяц</string>
     <string name="thirty_days">30 дней</string>
-    <string name="remove_ads_description">Наслаждайтесь опыт без рекламы, поддержки FrostWire</string>
+
     <string name="dummy_title_bold">[Жирный Название]</string>
     <string name="storage_picker_treeuri_cant_write">FrostWire не может писать на выбранном пути хранения</string>
     <string name="processing_payment">Обработка платежей, обновить в течение нескольких секунд</string>

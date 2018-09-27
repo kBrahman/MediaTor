@@ -72,7 +72,7 @@
     <string name="multicast_discovery_summary">Csatlakozás helyi Wifi társaik keresztül multicast (ajánlott)</string>
     <string name="max_concurrent_uploads">Maximális egyidejű feltöltések</string>
     <string name="use_torlock">Használja TorLock</string>
-    <string name="tos_title">Használati feltételek</string>
+
     <string name="activity_downloads_name">Aktív letöltések</string>
     <string name="wait">Várjon</string>
     <string name="summary_files_shared">Megosztása %s fájlok helyi</string>
@@ -225,7 +225,7 @@
     <string name="send_my_geo_location_summary">Pingek küld a hozzávetőleges földrajzi helymeghatározó találni legközelebb társaik.</string>
     <string name="wants_to_share_a_file">akar osztani egy fájlt</string>
     <string name="simultaneous_uploads_summary">Beállíthatjuk, hogy hány Wi-fi megosztási feltöltések azt szeretné, hogy ugyanabban az időben.</string>
-    <string name="i_have_read_and_agree_to_the">Elolvastam és beleegyezem a</string>
+
     <string name="media_type_images">Képek</string>
     <string name="scanning">Befejező - Beolvasási</string>
     <string name="delete_file_menu_action">Töröl</string>
@@ -281,7 +281,7 @@
     <string name="thirty_days">30 nap</string>
     <string name="peer_http_upload_status_error">Hiba</string>
     <string name="donation_thanks">Nagyon köszönöm, hogy a támogató FrostWire</string>
-    <string name="remove_ads_description">Élvezze a hirdetés-mentes élmény, támogassa FrostWire</string>
+
     <string name="crawl_cache_size">Crawl cache %1$.2fMB</string>
     <string name="wizard_previous">Előző</string>
     <string name="azureus_manager_item_downloading">A letöltés</string>
@@ -516,10 +516,10 @@
     <string name="stop_all_transfers">Ez leállítja az összes transzfer</string>
     <string name="includes_3_day_free_trial">Tartalmaz 3 napos próbaverzióját. Ajánlott</string>
     <string name="use_mobile_data_summary">Használja a mobil hálózat BitTorrent letöltések. Az adatok felesleget díjak merülhetnek fel. Használja óvatosan.</string>
-    <string name="intent_text">FrostWire egy peer-to-peer programok megosztása engedélyezett fájlokon. Telepítése és a program használata nem jelent engedélyt megszerzésére vagy terjesztése nem engedélyezett tartalom.</string>
+    <string name="intent_text">MediaTor egy peer-to-peer programok megosztása engedélyezett fájlokon. Telepítése és a program használata nem jelent engedélyt megszerzésére vagy terjesztése nem engedélyezett tartalom.</string>
     <string name="searching_indeterminate">Kutató…</string>
     <string name="azureus_peer_manager_status_finishedin">Kész</string>
-    <string name="tos_accept">Elfogad</string>
+
     <string name="support">Támogat</string>
     <string name="seeding_has_been_turned_off">Seeding ki van kapcsolva</string>
     <string name="try_changing_your_nickname">Írd be a beceneved</string>
@@ -562,7 +562,7 @@
     <string name="transfers_context_menu_stop_delete_data">Megáll és törlése</string>
     <string name="cheaper_than_cigarettes">Olcsóbb, mint a cigaretta</string>
     <string name="search_settings">Keresési beállítások</string>
-    <string name="update_message">FrostWire letöltötte egy új teljesítmény UPDATE az Ön számára, kérjük, menjen előre, és érintse meg az OK gombot, ha szeretné most telepíteni.</string>
+
     <string name="days_left">nap van hátra</string>
     <string name="media_player_failed">Media player nem</string>
     <string name="six_months">6 hónap</string>
@@ -579,7 +579,7 @@
     <string name="ringtone_set">Csengőhang beállítása</string>
     <string name="transfers">Átigazolások</string>
     <string name="keep_the_project_alive">Hogy a projekt életben</string>
-    <string name="show_love">Szerelem FrostWire?</string>
+
     <string name="remove_ads">Hirdetések eltávolítása</string>
     <string name="your_connection_has_dropped_stopping_services">A Wifi kapcsolat megszakad. Szolgáltatások leállítása.</string>
     <string name="use_tpb_summary">TPB van mágnes alapú, csak akkor működik, Wifi</string>

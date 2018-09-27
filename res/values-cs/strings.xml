@@ -46,7 +46,7 @@
     <string name="settings_description">Parametry Hledání</string>
     <string name="clear_finished">Vymazat Ukončené</string>
     <string name="support_free_software">Podpora Svobodného Softwaru</string>
-    <string name="show_love">Maš rád FrostWire?</string>
+
     <string name="waiting">Čekání…</string>
     <string name="use_icons_to_browse">Použijte ikony k prohlížení souborů.</string>
     <string name="type_to_filter_results">Zadejte k filtrování výsledků.</string>
@@ -83,7 +83,7 @@
     <string name="searching_for">Vyhledávání pro</string>
     <string name="search_for_type_files">Vyhledávání pro %s souborů</string>
     <string name="update_title">Je Čas Aktualizovat!</string>
-    <string name="update_message">FrostWire stahnoul novou AKTUALIZACE VÝKONNOSTI pro tebe, Prosím, jděte do toho a stiskněte tlačítko OK, pokud chcete nyní nainstalovat.</string>
+
     <string name="next_time">Příště</string>
     <string name="change_my_nickname">Změnit svůj Nick</string>
     <string name="try_changing_your_nickname">Zadejte svůj nick</string>
@@ -107,8 +107,8 @@
     <string name="stop_all_transfers_message">Tím se zruší všechny probíhající a zařazeny do fronty soubory ke stažení. Všechna přenášená data budou ztracena. Jste si jisti?</string>
     <string name="files">soubory</string>
     <string name="touch_filetype_icon">Dotknout na ikonu aby změnit typ souboru</string>
-    <string name="tos_title">Podmínky Používání</string>
-    <string name="tos_accept">Akceptovat</string>
+
+
     <string name="tos_refuse">Odmítnout</string>
     <string name="downloads">Soubory ke Stažení</string>
 
@@ -313,7 +313,7 @@
     <string name="seeding_settings">Seeding Nastavení</string>
     <string name="seeding_settings_explanation">BitTorrent uživatelé na internetu budou moci stáhnout soubor kusů dat vašeho torrent seed.</string>
     <string name="seeding_wifi_settings_explanation">Seed pouze při použití Wi-Fi připojení. Vyhněte se dodatečných poplatků od vašeho operátora.</string>
-    <string name="intent_text">FrostWire je to program peer-to-peer pouze pro sdílení povolene souborů. Instalace a používání programu nepředstavuje pro získání licence nebo rozšiřování neoprávněného obsahu.</string>
+    <string name="intent_text">MediaTor je to program peer-to-peer pouze pro sdílení povolene souborů. Instalace a používání programu nepředstavuje pro získání licence nebo rozšiřování neoprávněného obsahu.</string>
     <string name="accept_intent">Nebudu používat FrostWire pro porušení autorského práva</string>
     <string name="toast_on_disconnect">Odpojen od BitTorrent. Všechny transfery BitTorrent se zastavily.</string>
     <string name="toast_on_connect">BitTorrent jádro začalo.</string>
@@ -422,7 +422,7 @@
     <string name="transfers_select_downloading">stahování</string>
 
     <string name="free_apps">Volný Apps</string>
-    <string name="i_have_read_and_agree_to_the">Četl jsem a souhlasím s</string>
+
     <string name="scanning">Povrchová úprava - Skenování</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">V závislosti na nastavení Nemohu zahájit setí, pokud jste na Wi-Fi. Soubor bude připravena k setí automaticky, když se vrátíš k internetu povoleno síť Wi-Fi.</string>
     <string name="checking_ellipsis">Kontrola&#8230;</string>
@@ -450,7 +450,7 @@
     <string name="transfers_select_all">všechno</string>
     <string name="thirty_days">30 dní</string>
     <string name="donation_thanks">Děkuji moc pro podporu FrostWire</string>
-    <string name="remove_ads_description">Neopakovatelný zážitek bez reklam, podporu FrostWire</string>
+
     <string name="crawl_cache_size">Crawl cache %1$.2fMB</string>
     <string name="wifi_sharing_disabled">Sdílení Wifi je vypnutý.\n\nSdílení WiFi lze použít ke sdílení souborů lokálně mezi FrostWire poháněných zařízeními připojenými ke stejné síti Wi-Fi.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Další informace.&lt;/a&gt;</string>
     <string name="pausing">Pozastavení</string>

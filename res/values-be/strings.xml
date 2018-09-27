@@ -70,7 +70,7 @@
     <string name="multicast_discovery_summary">Падключэнне да лакальных аднагодкі Wifi з дапамогай шматадрасных рассылання (рэкамендуецца)</string>
     <string name="max_concurrent_uploads">Максімальную колькасць Uploads</string>
     <string name="use_torlock">Выкарыстоўвайце TorLock</string>
-    <string name="tos_title">Умовы выкарыстання</string>
+
     <string name="activity_downloads_name">Актыўныя загрузкі</string>
     <string name="wait">Пачакайце</string>
     <string name="summary_files_shared">Сумеснае %s файлаў лакальна.</string>
@@ -223,7 +223,7 @@
     <string name="send_my_geo_location_summary">Водгукі пашле прыблізнага геолокации, каб знайсці бліжэйшых калегаў.</string>
     <string name="wants_to_share_a_file">хоча падзяліць файл</string>
     <string name="simultaneous_uploads_summary">Ўсталяваць, як шмат агульнага доступу Wi-Fi загрузкі, якія вы хочаце, каб у той жа час.</string>
-    <string name="i_have_read_and_agree_to_the">Я прачытаў і згодны на</string>
+
     <string name="media_type_images">Малюнка</string>
     <string name="scanning">Аздабленне - Сканіраванне</string>
     <string name="delete_file_menu_action">Выдаліць</string>
@@ -279,7 +279,7 @@
     <string name="thirty_days">30 дзён</string>
     <string name="peer_http_upload_status_error">Памылка</string>
     <string name="donation_thanks">Вялікае вам дзякуй за падтрымкай FrostWire</string>
-    <string name="remove_ads_description">Атрымлівайце асалоду ад вопыт без рэкламы, падтрымкі FrostWire</string>
+
     <string name="crawl_cache_size">Crawl cache %1$.2fMB</string>
     <string name="wizard_previous">Папярэдні</string>
     <string name="azureus_manager_item_downloading">Загрузка</string>
@@ -516,10 +516,10 @@
     <string name="stop_all_transfers">Гэта спыніць усе трансферы</string>
     <string name="includes_3_day_free_trial">Ўключае ў сябе 3-х дзён бясплатнага тэставання. Рэкамендуецца.</string>
     <string name="use_mobile_data_summary">Выкарыстоўвайце мабільную сетку для загрузкі BitTorrent. зборы Залішнія дадзеныя могуць прымяняцца. Выконвайце асцярожнасць пры звароце.</string>
-    <string name="intent_text">FrostWire гэта праграма раўнапраўных вузлоў ЛВС для сумеснага выкарыстання толькі дазволеных файлаў. Ўстаноўка і выкарыстанне праграмы не з\'яўляецца ліцэнзіяй на атрыманне або распаўсюд несанкцыянаванага кантэнту.</string>
+    <string name="intent_text">MediaTor гэта праграма раўнапраўных вузлоў ЛВС для сумеснага выкарыстання толькі дазволеных файлаў. Ўстаноўка і выкарыстанне праграмы не з\'яўляецца ліцэнзіяй на атрыманне або распаўсюд несанкцыянаванага кантэнту.</string>
     <string name="searching_indeterminate">Пошук…</string>
     <string name="azureus_peer_manager_status_finishedin">Скончаны ст</string>
-    <string name="tos_accept">Прыняць</string>
+
     <string name="support">Падтрымка</string>
     <string name="seeding_has_been_turned_off">Пасеў быў выключаны</string>
     <string name="try_changing_your_nickname">Калі ласка, увядзіце свой нік</string>
@@ -562,7 +562,7 @@
     <string name="transfers_context_menu_stop_delete_data">Прыпынак і выдаленне дадзеных</string>
     <string name="cheaper_than_cigarettes">Танней, чым цыгарэты</string>
     <string name="search_settings">Налады пошуку</string>
-    <string name="update_message">FrostWire запампаваў новы абнаўленне прадукцыйнасці для вас, калі ласка, ісці наперад і націсніце кнопку OK, калі вы хочаце ўсталяваць яго цяпер.</string>
+
     <string name="days_left">засталося дзён</string>
     <string name="media_player_failed">Медыяплэер не ўдалося</string>
     <string name="six_months">6 месяцаў</string>
@@ -579,7 +579,7 @@
     <string name="ringtone_set">Мелодыя набор</string>
     <string name="transfers">Пераклады</string>
     <string name="keep_the_project_alive">Трымаеце праект жывы</string>
-    <string name="show_love">Каханне FrostWire?</string>
+
     <string name="remove_ads">выдаліць аб\'явы</string>
     <string name="your_connection_has_dropped_stopping_services">Ваша падлучэнне да Wi-Fi ўпаў. Прыпынак службаў.</string>
     <string name="use_tpb_summary">СПТ з\'яўляецца магнітам на аснове, працуе толькі на Wi-Fi</string>

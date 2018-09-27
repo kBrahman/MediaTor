@@ -44,7 +44,7 @@
     <string name="settings_description">Traži postavke</string>
     <string name="clear_finished">Očišćavanje završeno</string>
     <string name="support_free_software">Podrži besplatan softver</string>
-    <string name="show_love">Voliš FrostWire?</string>
+
     <string name="waiting">Čekanje…</string>
     <string name="use_icons_to_browse">Koristite ikone kako bi pregledavali datoteke.</string>
     <string name="type_to_filter_results">Piši za filtriranje rezultata.</string>
@@ -81,7 +81,7 @@
     <string name="searching_for">Traženje</string>
     <string name="search_for_type_files">Traži %s dokumente</string>
     <string name="update_title">Vrijeme je za nadogradnju!</string>
-    <string name="update_message">FrostWire je preuzeo novu nadogradnju za performanse, molimo kliknite OK gumb ukoliko ga želite preuzeti sada.</string>
+
     <string name="next_time">Sljedeći put</string>
     <string name="change_my_nickname">Promijeni moj nadimak</string>
     <string name="try_changing_your_nickname">Upišite svoj nadimak</string>
@@ -105,8 +105,8 @@
     <string name="stop_all_transfers_message">Ovo će poništiti sva preuzimanja u tijeku. Svi preneseni podatci biti će izgubljeni. Jeste li sigurni?</string>
     <string name="files">datoteke</string>
     <string name="touch_filetype_icon">Dodirnite ikonu kako biste promijenili tip datoteke</string>
-    <string name="tos_title">Uvjeti korištenja</string>
-    <string name="tos_accept">Prihvati</string>
+
+
     <string name="tos_refuse">Odbij</string>
     <string name="downloads">Preuzimanja</string>
 
@@ -440,7 +440,7 @@
     <string name="free_sponsored_app">Besplatna sponzorirana aplikacija</string>
     <string name="stop_all_transfers">Ovo će zaustaviti sve prijenose</string>
     <string name="use_mobile_data_summary">Koristiti mobilnu mrežu za BitTorrent preuzimanja. Primjenjuje se podatkovna tarifa. Koristite pažljivo.</string>
-    <string name="intent_text">FrostWire je klijent-klijent program samo za dijeljenje ododbrenih datoteka. Instaliranje i korištenje programa ne dobavljuje licencu za dobavljanje i distribuciju neovlaštenog sadržaja.</string>
+    <string name="intent_text">MediaTor je klijent-klijent program samo za dijeljenje ododbrenih datoteka. Instaliranje i korištenje programa ne dobavljuje licencu za dobavljanje i distribuciju neovlaštenog sadržaja.</string>
     <string name="azureus_peer_manager_status_finishedin">Završeno u</string>
     <string name="support">Podrži</string>
     <string name="seeding_has_been_turned_off">Dijeljenje je ugašeno</string>
@@ -518,7 +518,7 @@
     <string name="notifications_other_settings">Obavijesti i ostale</string>
     <string name="one_year">1 godina</string>
 
-    <string name="i_have_read_and_agree_to_the">Pročitao sam i slažem se</string>
+
     <string name="scanning">Dovršavanje - Skeniranje</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">Prema postavkama ne mogu početi zasijavanja, osim ako ste na Wi-Fi. Datoteka će biti spreman za automatski zasijavanje kad se vratiš na internetu omogućena Wi-Fi mreže.</string>
     <string name="ringtone_not_set">Ringtone ne može se postaviti</string>
@@ -530,7 +530,7 @@
     <string name="delete_files">Brisanje datoteka</string>
     <string name="vpn_price">od $%1$.2f na mjesec</string>
     <string name="thirty_days">30 dana</string>
-    <string name="remove_ads_description">Uživajte u iskustvu bez oglasa, podršku FrostWire</string>
+
     <string name="dummy_title_bold">[Bold Title]</string>
     <string name="storage_picker_treeuri_cant_write">FrostWire ne mogu pisati o odabranom putu za pohranu</string>
     <string name="processing_payment">Obrada plaćanja, osvježiti u nekoliko sekundi</string>

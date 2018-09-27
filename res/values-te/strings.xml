@@ -82,7 +82,7 @@
     <string name="use_torlock">TorLock ఉపయోగించండి</string>
     <string name="seed_stop">నాట్లు వేయండి</string>
 
-    <string name="tos_title">ఉపయోగ నిబంధనలు</string>
+
     <string name="activity_downloads_name">యాక్టివ్ డౌన్లోడ్లు</string>
     <string name="wait">వేచి</string>
     <string name="summary_files_shared">స్థానికంగా %s ఫైళ్ళను పంచుకోవడం</string>
@@ -279,7 +279,7 @@
     <string name="wants_to_share_a_file">ఫైల్ను భాగస్వామ్యం చేయాలనుకుంటోంది</string>
     <string name="simultaneous_uploads_summary">మీరు ఒకే సమయంలో అనుమతించదలిచిన ఎన్ని Wi-Fi భాగస్వామ్య అప్లోడ్లను సెట్ చేయండి.</string>
     <string name="size">పరిమాణం</string>
-    <string name="i_have_read_and_agree_to_the">నేను చదివాను మరియు అంగీకరిస్తున్నాను</string>
+
     <string name="media_type_images">చిత్రాలు</string>
     <string name="scanning">పూర్తి - స్కానింగ్</string>
     <string name="delete_file_menu_action">తొలగించు</string>
@@ -344,7 +344,7 @@
     <string name="thirty_days">30 రోజులు</string>
     <string name="peer_http_upload_status_error">లోపం</string>
     <string name="donation_thanks">ఫ్రోస్ట్వైర్ సహాయానికి చాలా ధన్యవాదాలు</string>
-    <string name="remove_ads_description">ప్రకటన లేని అనుభవాన్ని ఆనందించండి, ఫ్రోస్ట్వైర్కు మద్దతు ఇవ్వండి</string>
+
     <string name="build">నిర్మించడానికి</string>
     <string name="completed">పూర్తయింది</string>
     <string name="crawl_cache_size">క్రాల్ కాష్ %1$.2fMB</string>
@@ -630,10 +630,10 @@
     <string name="stop_all_transfers">ఇది అన్ని బదిలీలను ఆపివేస్తుంది</string>
     <string name="includes_3_day_free_trial">3 రోజుల ఫ్రీ ట్రయల్ కలిపి. సిఫార్సు</string>
     <string name="use_mobile_data_summary">BitTorrent డౌన్లోడ్ల కోసం మొబైల్ నెట్వర్క్ని ఉపయోగించండి. డేటా ఓవర్ ఛార్జీలు వర్తించవచ్చు. జాగ్రత్తగా ఉపయోగించండి.</string>
-    <string name="intent_text">FrostWire మాత్రమే అధికారం ఫైళ్లను భాగస్వామ్యం కోసం ఒక పీర్-టు-పీర్ కార్యక్రమం. ప్రోగ్రామ్ను ఇన్స్టాల్ చేయడం మరియు ఉపయోగించడం అనధికార కంటెంట్ను పొందడానికి లేదా పంపిణీ చేయడానికి లైసెన్స్ని కలిగి ఉండదు.</string>
+    <string name="intent_text">MediaTor మాత్రమే అధికారం ఫైళ్లను భాగస్వామ్యం కోసం ఒక పీర్-టు-పీర్ కార్యక్రమం. ప్రోగ్రామ్ను ఇన్స్టాల్ చేయడం మరియు ఉపయోగించడం అనధికార కంటెంట్ను పొందడానికి లేదా పంపిణీ చేయడానికి లైసెన్స్ని కలిగి ఉండదు.</string>
     <string name="searching_indeterminate">శోధించండి…</string>
     <string name="azureus_peer_manager_status_finishedin">పూర్తయింది</string>
-    <string name="tos_accept">అంగీకరించు</string>
+
     <string name="support">మద్దతు</string>
     <string name="seeding_has_been_turned_off">నాటడం నిలిపివేయబడింది</string>
     <string name="try_changing_your_nickname">మీ మారుపేరును నమోదు చేయండి</string>
@@ -684,7 +684,7 @@
     <string name="transfers_context_menu_stop_delete_data">డేటాను ఆపివేసి, తొలగించండి</string>
     <string name="cheaper_than_cigarettes">సిగరెట్ల కంటే చౌకైనది</string>
     <string name="search_settings">శోధన సెట్టింగులు</string>
-    <string name="update_message">మీరు కోసం, ముందుకు వెళ్ళి మీరు ఇప్పుడు అది ఇన్స్టాల్ అనుకుంటే సరే బటన్ టచ్ దయచేసి FrostWire ఒక కొత్త ప్రదర్శన నవీకరణ డౌన్లోడ్.</string>
+
     <string name="days_left">మిగిలిన రోజులు</string>
     <string name="media_player_failed">మీడియా ప్లేయర్ విఫలమైంది</string>
     <string name="six_months">6 నెలల</string>
@@ -710,7 +710,7 @@
     <string name="file_information">ఫైల్ సమాచారం</string>
     <string name="keep_the_project_alive">ప్రాజెక్ట్ అలైవ్ ఉంచండి</string>
     <string name="add_tracker">ట్రాకర్ని జోడించండి</string>
-    <string name="show_love">FrostWire లవ్?</string>
+
     <string name="remove_ads">ప్రకటనలు తొలగించండి</string>
     <string name="your_connection_has_dropped_stopping_services">మీ Wi-Fi కనెక్షన్ తగ్గింది. సేవలను ఆపడం.</string>
     <string name="use_tpb_summary">TPB అనేది అయస్కాంత ఆధారితది, Wi-Fi లో పనిచేస్తుంది</string>

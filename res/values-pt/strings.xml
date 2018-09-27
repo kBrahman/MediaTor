@@ -44,7 +44,7 @@
     <string name="settings_description">Pesquisar Configurações</string>
     <string name="clear_finished">Limpar os que Terminaram</string>
     <string name="support_free_software">Software com Suporte Gratuito</string>
-    <string name="show_love">Ama FrostWire?</string>
+
     <string name="waiting">Esperando…</string>
     <string name="use_icons_to_browse">Utilize esse ícone para procurar arquivos.</string>
     <string name="type_to_filter_results">Digite para filtrar resultados.</string>
@@ -81,7 +81,7 @@
     <string name="searching_for">Procurando por</string>
     <string name="search_for_type_files">Procure por %s arquivos</string>
     <string name="update_title">Atualizar Hora!</string>
-    <string name="update_message">O FrostWire baixou uma nova ATUALIZAÇÃO DE DESEMPENHO para você, por favor, clique no botão OK se você deseja instalar.</string>
+
     <string name="next_time">Próxima Vez</string>
     <string name="change_my_nickname">Mude meu Apelido</string>
     <string name="try_changing_your_nickname">Digite seu apelido</string>
@@ -105,8 +105,8 @@
     <string name="stop_all_transfers_message">Isso irá cancelar todos os downloads em andamento e em espera. Todos os dados de transferência serão perdidos. Você tem certeza?</string>
     <string name="files">arquivos</string>
     <string name="touch_filetype_icon">Toque no ícone para mudar o tipo de arquivo</string>
-    <string name="tos_title">Termos de Uso</string>
-    <string name="tos_accept">Aceitar</string>
+
+
     <string name="tos_refuse">Declinar</string>
     <string name="downloads">Downloads</string>
 
@@ -311,7 +311,7 @@
     <string name="seeding_settings">Sementeando Configurações</string>
     <string name="seeding_settings_explanation">Usuários BitTorrent online poderão baixar pedaços de arquivos dos dados da sua semente torrents.</string>
     <string name="seeding_wifi_settings_explanation">Sementei somente quando usando uma conexão WiFi. Evite tarifas extras.</string>
-    <string name="intent_text">FrostWire é um programa amigável somente para compartilhar arquivos autorizados. Instalar e utilizar o programa não constitui uma licença para a obtenção ou distribuição de conteúdo não autorizado.</string>
+    <string name="intent_text">MediaTor é um programa amigável somente para compartilhar arquivos autorizados. Instalar e utilizar o programa não constitui uma licença para a obtenção ou distribuição de conteúdo não autorizado.</string>
     <string name="accept_intent">Eu não irei usar o FrostWire para violar os direitos autorais</string>
     <string name="toast_on_disconnect">Desconectado do BitTorrent. Todas as transferências BitTorrent irão parar.</string>
     <string name="toast_on_connect">BitTorrent começou.</string>
@@ -501,7 +501,7 @@
     <string name="one_time_purchase">Compra de uma só vez</string>
     <string name="activity_VPN">Conexão</string>
     <string name="one_year">1 ano</string>
-    <string name="i_have_read_and_agree_to_the">Eu li e concordo com o</string>
+
     <string name="scanning">Acabamento - Scanning</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">De acordo com suas configurações eu não posso começar a semeadura, a menos que você estiver em Wi-Fi. O arquivo estará pronto para semear automaticamente quando você voltar para uma internet habilitado rede Wi-Fi.</string>
     <string name="ringtone_not_set">Toque não pôde ser definido</string>
@@ -512,7 +512,7 @@
     <string name="delete_files">Deletar arquivos</string>
     <string name="vpn_price">de $%1$.2f por mês</string>
     <string name="thirty_days">30 dias</string>
-    <string name="remove_ads_description">Aproveite a experiência livre de anúncios, apoiar a FrostWire</string>
+
     <string name="dummy_title_bold">[Título em negrito]</string>
     <string name="storage_picker_treeuri_cant_write">FrostWire não pode escrever no caminho de armazenamento selecionado</string>
     <string name="processing_payment">O pagamento está sendo processado, refrescar em poucos segundos</string>

@@ -47,7 +47,7 @@
     <string name="settings_description">Thiết lập tìm kiếm</string>
     <string name="clear_finished">Xóa hoàn tất</string>
     <string name="support_free_software">Hỗ trợ phần mềm miễn phí</string>
-    <string name="show_love">Bạn yêu FrostWire?</string>
+
     <string name="waiting">Đang chờ¦</string>
     <string name="use_icons_to_browse">Sử dụng biểu tượng để chọn tập tin.</string>
     <string name="type_to_filter_results">Nhập vào để lọc kết quả.</string>
@@ -84,7 +84,7 @@
     <string name="searching_for">Đang tìm kiếm cho</string>
     <string name="search_for_type_files">Đang tìm kiếm cho những kiểu %s tập tin</string>
     <string name="update_title">Cập nhật thời gian!</string>
-    <string name="update_message">FrostWire đã tải về một bản cập nhật mới cho bạn, vui lòng tiếp tục và nhấn vào nút OK nếu bạn muốn cài đặt nó ngay bây giờ.</string>
+
     <string name="next_time">Lần Sau</string>
     <string name="change_my_nickname">Thay đổi nickname của tôi</string>
     <string name="try_changing_your_nickname">Nhập nickname của bạn</string>
@@ -108,7 +108,7 @@
     <string name="stop_all_transfers_message">Chức năng này sẽ hủy tất cả quá trình tải về đang tiến hành hoặc đang đợi. Tất cả dữ liệu đã truyền tải sẽ mất. Bạn chắc chắn chứ?</string>
     <string name="files">những tập tin</string>
     <string name="touch_filetype_icon">Chạm vào biểu tưởng để thay đổi kiểu tập tin</string>
-    <string name="tos_title">Thỏa thuận sử dụng</string>
+
     <string name="tos_refuse">Từ chối</string>
     <string name="downloads">Tải về</string>
 
@@ -313,7 +313,7 @@
     <string name="seeding_settings">Thiết lập Seeding</string>
     <string name="seeding_settings_explanation">Người dùng BitTorrent trên Internet sẽ có thể tải về các phần tập tin dữ liệu của những torrent bạn đang seed.</string>
     <string name="seeding_wifi_settings_explanation">Chỉ Seed khi sử dụng kết nối WiFi. Tránh thêm phí từ nhà mạng.</string>
-    <string name="intent_text">FrostWire là một chương trình chia sẻ mạng ngang hàng (peer-to-peer) các tập tin hợp pháp. Việc cài đặt và sử dụng chương trình sẽ không vi phạm bản quyền liên quan đến lưu trữ và chia sẻ nội dung trái phép.</string>
+    <string name="intent_text">MediaTor là một chương trình chia sẻ mạng ngang hàng (peer-to-peer) các tập tin hợp pháp. Việc cài đặt và sử dụng chương trình sẽ không vi phạm bản quyền liên quan đến lưu trữ và chia sẻ nội dung trái phép.</string>
     <string name="accept_intent">Tôi sẽ không dùng FrostWire cho mục đích vi phạm bản quyền</string>
     <string name="toast_on_disconnect">Đã ngắt kết nối từ BitTorrent. Tất cả quá trình BitTorrent đã dừng lại.</string>
     <string name="toast_on_connect">Nhân Bittorent đã bắt đầu chạy.</string>
@@ -422,7 +422,7 @@
     <string name="transfers_select_downloading">tải</string>
 
     <string name="free_apps">Những ứng dụng miễn phí</string>
-    <string name="i_have_read_and_agree_to_the">Tôi đã đọc và đồng ý với</string>
+
     <string name="scanning">Hoàn thiện - Quét</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">Theo các thiết lập của bạn, tôi không thể bắt đầu gieo hạt, trừ khi bạn đang trên Wi-Fi. Các tập tin sẽ được sẵn sàng để gieo hạt tự động khi bạn trở lại với một internet kích hoạt mạng Wi-Fi.</string>
     <string name="checking_ellipsis">Kiểm tra&#8230;</string>
@@ -450,7 +450,7 @@
     <string name="transfers_select_all">tất cả các</string>
     <string name="thirty_days">30 ngày</string>
     <string name="donation_thanks">Cảm ơn bạn rất nhiều vì đã hỗ trợ FrostWire</string>
-    <string name="remove_ads_description">Hãy tận hưởng những trải nghiệm quảng cáo miễn phí, hỗ trợ FrostWire</string>
+
     <string name="crawl_cache_size">Thu thập thông tin bộ nhớ cache %1$.2fMB</string>
     <string name="wifi_sharing_disabled">Chia sẻ wifi tắt.\n\nchia sẻ Wi-fi có thể được sử dụng để chia sẻ tập tin cục bộ giữa các thiết bị FrostWire trợ kết nối với mạng Wi-Fi.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Tìm hiểu thêm.&lt;/a&gt;</string>
     <string name="pausing">Tạm dừng</string>
@@ -557,7 +557,7 @@
     <string name="rating_reminder_description">Nếu bạn yêu thích FrostWire xin vui lòng mất một phút để đánh giá chúng tôi.</string>
     <string name="free_sponsored_app">Ứng dụng miễn phí được Tài trợ</string>
     <string name="includes_3_day_free_trial">Bao gồm 3 ngày dùng thử miễn phí. Đề xuất</string>
-    <string name="tos_accept">Chấp nhận</string>
+
     <string name="support">Ủng hộ</string>
     <string name="transfers_context_menu_copy_magnet">Sao chép Magnet</string>
     <string name="try_other_keywords">Thử ít từ khóa/khác nhau</string>

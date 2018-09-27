@@ -44,7 +44,7 @@
     <string name="settings_description">بحث الإعدادات</string>
     <string name="clear_finished">تم إنهاء المسح</string>
     <string name="support_free_software">ادعم البرنامج المجاني</string>
-    <string name="show_love">هل تحب فروست واير؟</string>
+
     <string name="waiting">…جاري الإنتظار</string>
     <string name="use_icons_to_browse">.استخدم الأيقونات لتصفح الملفات</string>
     <string name="type_to_filter_results">.اكتب لترشيح النتائج</string>
@@ -81,7 +81,7 @@
     <string name="searching_for">البحث عن</string>
     <string name="search_for_type_files">البحث عن %s ملفات</string>
     <string name="update_title">!حان وقت التحديث</string>
-    <string name="update_message">لقد قام فروست واير بتنزيل تحديث للأداء من أجلك,يرجى الاستمرار والضغط على موافق إذا كنت ترغب في تثبيته.</string>
+
     <string name="next_time">المرة الثانية</string>
     <string name="change_my_nickname">تغيير كنيتك</string>
     <string name="try_changing_your_nickname">ادخل كنيتك</string>
@@ -105,8 +105,8 @@
     <string name="stop_all_transfers_message">هذا سوف يلغي جميع التنزيلات الجارية والمصطفة.سوف تضيع جميع البيانات المنقولة.هل أنت متأكد؟</string>
     <string name="files">ملفات</string>
     <string name="touch_filetype_icon">المس الأيقونة لتغيير نوع الملف</string>
-    <string name="tos_title">شروط الاستخدام</string>
-    <string name="tos_accept">قبول</string>
+
+
     <string name="tos_refuse">رفض</string>
     <string name="downloads">تنزيلات</string>
 
@@ -446,7 +446,7 @@
     <string name="transfers_context_menu_pause_stop_all_transfers">وقفة/إيقاف كافة عمليات النقل</string>
     <string name="transfers_select_downloading">تحميل</string>
 
-    <string name="i_have_read_and_agree_to_the">لقد قرات ووافقت على ال</string>
+
     <string name="scanning">التشطيب - المسح الضوئي</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">وفقا للإعدادات الخاصة بك وأنا لا يمكن أن تبدأ البذر إلا إذا كنت على خدمة الواي فاي. سوف يكون الملف جاهزا لبذر تلقائيا عند العودة إلى الإنترنت تمكين شبكة واي فاي.</string>
     <string name="checking_ellipsis">تدقيق&#8230;</string>
@@ -470,7 +470,7 @@
     <string name="you_need_a_bitcoin_wallet_app">كنت في حاجة الى محفظة بيتكوين تثبيتها على جهازك لتقديم التبرع BTC.</string>
     <string name="transfers_select_all">جميع</string>
     <string name="thirty_days">30 يوما</string>
-    <string name="remove_ads_description">استمتع بتجربة خالية من الإعلانات، ودعم برنامج FrostWire</string>
+
     <string name="pausing">التوقف</string>
     <string name="dummy_title_bold">[عنوان عريض]</string>
     <string name="storage_picker_treeuri_cant_write">لا يمكن برنامج FrostWire الكتابة على مسار التخزين المحدد</string>

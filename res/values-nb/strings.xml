@@ -71,7 +71,7 @@
     <string name="multicast_discovery_summary">Koble til lokale Wifi kolleger via multicast (anbefales)</string>
     <string name="max_concurrent_uploads">Maksimal samtidige opplastinger</string>
     <string name="use_torlock">Bruk TorLock</string>
-    <string name="tos_title">Vilkår for bruk</string>
+
     <string name="activity_downloads_name">Aktive nedlastinger</string>
     <string name="wait">Vente</string>
     <string name="summary_files_shared">Dele %s filer lokalt</string>
@@ -230,7 +230,7 @@
     <string name="send_my_geo_location_summary">Pings vil sende den omtrent geolocation å finne nærmeste kolleger.</string>
     <string name="wants_to_share_a_file">ønsker å dele en fil</string>
     <string name="simultaneous_uploads_summary">Angi hvor mange Wi-fi deling opplastninger du vil tillate samtidig.</string>
-    <string name="i_have_read_and_agree_to_the">Jeg har lest og er enig i</string>
+
     <string name="media_type_images">Bilder</string>
     <string name="scanning">Etterbehandling - Scanning</string>
     <string name="delete_file_menu_action">Slett</string>
@@ -288,7 +288,7 @@
     <string name="thirty_days">30 dager</string>
     <string name="peer_http_upload_status_error">Feil</string>
     <string name="donation_thanks">Takk så mye for å støtte Frostwire</string>
-    <string name="remove_ads_description">Nyt ad-fri opplevelse, støtte Frostwire</string>
+
     <string name="crawl_cache_size">Crawl cache %1$.2fMB</string>
     <string name="wizard_previous">Tidligere</string>
     <string name="azureus_manager_item_downloading">Nedlasting</string>
@@ -531,10 +531,10 @@
     <string name="stop_all_transfers">Dette vil stoppe alle overføringer</string>
     <string name="includes_3_day_free_trial">Inkluderer 3 dagers gratis prøveperiode. Anbefalt</string>
     <string name="use_mobile_data_summary">Bruk mobilnett for BitTorrent-nedlastinger. Data Overskudds kan påløpe. Bruk nøye.</string>
-    <string name="intent_text">Frostwire er et peer-to-peer program for deling av autoriserte filer. Installere og bruke programmet utgjør ikke en lisens for å skaffe og distribuering av uautorisert innhold.</string>
+    <string name="intent_text">MediaTor er et peer-to-peer program for deling av autoriserte filer. Installere og bruke programmet utgjør ikke en lisens for å skaffe og distribuering av uautorisert innhold.</string>
     <string name="searching_indeterminate">Søker…</string>
     <string name="azureus_peer_manager_status_finishedin">Ferdig i</string>
-    <string name="tos_accept">Aksepterer</string>
+
     <string name="support">Støtte</string>
     <string name="seeding_has_been_turned_off">Seeding er slått av</string>
     <string name="try_changing_your_nickname">Skriv inn ditt kallenavn</string>
@@ -577,7 +577,7 @@
     <string name="transfers_context_menu_stop_delete_data">Stopp og slette data</string>
     <string name="cheaper_than_cigarettes">Billigere enn sigaretter</string>
     <string name="search_settings">Innstillinger for søk</string>
-    <string name="update_message">Frostwire har lastet ned en ny resultatoppdateringen for deg, kan du gå videre og trykk på OK-knappen hvis du ønsker å installere det nå.</string>
+
     <string name="days_left">dager igjen</string>
     <string name="media_player_failed">Mediespiller mislyktes</string>
     <string name="six_months">6 måneder</string>
@@ -594,7 +594,7 @@
     <string name="ringtone_set">Ringtone Set</string>
     <string name="transfers">Overganger</string>
     <string name="keep_the_project_alive">Holde prosjektet i live</string>
-    <string name="show_love">Elsker Frostwire?</string>
+
     <string name="remove_ads">Fjern annonser</string>
     <string name="your_connection_has_dropped_stopping_services">Din WiFi-tilkobling har falt. Stoppe tjenester.</string>
     <string name="use_tpb_summary">TPB er magnet basert, fungerer bare på Wifi</string>

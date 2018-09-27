@@ -20,18 +20,13 @@ package zig.zak.media.tor.android.gui.views;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.Resources;
-import android.text.Html;
-import android.text.method.LinkMovementMethod;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import zig.zak.media.tor.R;
-import zig.zak.media.tor.android.core.Constants;
 
 /**
  * @author gubatron
@@ -40,7 +35,6 @@ import zig.zak.media.tor.android.core.Constants;
 public class IntentWizardPage extends RelativeLayout implements WizardPageView {
     private final CheckAcceptListener checkAcceptListener;
     private CheckBox checkCopyrightAccept;
-    private CheckBox checkTOUAccept;
     private OnCompleteListener listener;
 
     public IntentWizardPage(Context context, AttributeSet attrs) {
@@ -79,13 +73,6 @@ public class IntentWizardPage extends RelativeLayout implements WizardPageView {
         View.inflate(getContext(), R.layout.view_intent_wizard_page, this);
         checkCopyrightAccept = findViewById(R.id.view_intent_wizard_page_check_accept_copyright);
         checkCopyrightAccept.setOnCheckedChangeListener(checkAcceptListener);
-        checkTOUAccept = findViewById(R.id.view_intent_wizard_page_check_accept_tou);
-        checkTOUAccept.setOnCheckedChangeListener(checkAcceptListener);
-        Resources r = getResources();
-        TextView tosTextView = findViewById(R.id.view_intent_wizard_page_text_tos);
-        tosTextView.setMovementMethod(LinkMovementMethod.getInstance());
-        final String tou = r.getString(R.string.terms_of_use);
-        tosTextView.setText(Html.fromHtml("<a href='" + Constants.TERMS_OF_USE_URL + "'>" + tou + "</a>"));
     }
 
     protected void onComplete(boolean complete) {
@@ -98,7 +85,7 @@ public class IntentWizardPage extends RelativeLayout implements WizardPageView {
      * Put more complete/validation logic here.
      */
     private void validate() {
-        onComplete(checkCopyrightAccept.isChecked() && checkTOUAccept.isChecked());
+        onComplete(checkCopyrightAccept.isChecked());
     }
 
     private static final class CheckAcceptListener extends ClickAdapter<IntentWizardPage> {

@@ -46,7 +46,7 @@
     <string name="settings_description">Sucheinstellungen</string>
     <string name="clear_finished">Löschen abgeschlossen</string>
     <string name="support_free_software">Unterstütze kostenlose Software.</string>
-    <string name="show_love">Mir gefällt FrostWire?</string>
+
     <string name="waiting">Warten…</string>
     <string name="use_icons_to_browse">Verwende die Symbole, um Dateien zu suchen.</string>
     <string name="type_to_filter_results">Zum Filtern der Ergebnisse tippen.</string>
@@ -83,7 +83,7 @@
     <string name="searching_for">Suche nach</string>
     <string name="search_for_type_files">Suche nach %s Dateien</string>
     <string name="update_title">Aktualisierungszeit!</string>
-    <string name="update_message">FrostWire hat eine neues PERFORMANCE UPDATE für dich heruntergeladen. Tippe die OK-Schaltfläche an, wenn du die Update jetzt installieren willst.</string>
+
     <string name="next_time">Nächstes Mal</string>
     <string name="change_my_nickname">Meinen Nicknamen ändern</string>
     <string name="try_changing_your_nickname">Gebe deinen Nicknamen ein</string>
@@ -107,8 +107,8 @@
     <string name="stop_all_transfers_message">Alle laufenden Downloads, sowie die in der Warteschlange werden abgebrochen. Alle übertragenen Daten gehen verlorgen. Bist du sicher?</string>
     <string name="files">Dateien</string>
     <string name="touch_filetype_icon">Tippe das Symbol an, um Dateityp zu ändern.</string>
-    <string name="tos_title">Nutzungsbedingungen</string>
-    <string name="tos_accept">Akzeptieren</string>
+
+
     <string name="tos_refuse">Ablehnen</string>
     <string name="downloads">Downloads</string>
 
@@ -321,7 +321,7 @@
     <string name="seeding_settings">Seeden-Einstellungen</string>
     <string name="seeding_settings_explanation">Benutzer von BitTorrent im Internet können Dateiblocks der Daten herunterladen, die deine Torrents seeden.</string>
     <string name="seeding_wifi_settings_explanation">Nur dann seeden wenn du eine WLAN-Verbindung benutzt. Vermeide so extra Kosten deines Dienstleiters</string>
-    <string name="intent_text">Frostwire ist ein Pee-to-Peer-Programm, alleinig für den Austausch von autorisierten Dateien bestimmt. Installation und Benutzung des Programms stellt weder eine Lizenz für den Erhalt noch für die Verteilung von nicht autorisierten Inhalten dar.</string>
+    <string name="intent_text">MediaTor ist ein Pee-to-Peer-Programm, alleinig für den Austausch von autorisierten Dateien bestimmt. Installation und Benutzung des Programms stellt weder eine Lizenz für den Erhalt noch für die Verteilung von nicht autorisierten Inhalten dar.</string>
     <string name="accept_intent">Ich werde FrostWire nicht dazu benutzen, Verstöße gegen das Urheberrecht zu begehen.</string>
     <string name="toast_on_disconnect">Verbindung mit BitTorrent abgebrochen. Alle BitTorrent-Übertragungen wurden gestoppt.</string>
     <string name="toast_on_connect">BitTorrent Kern gestartet.</string>
@@ -432,7 +432,7 @@
     <string name="transfers_context_menu_pause_stop_all_transfers">Pause/Stopp alle Transfers</string>
     <string name="wifi_sharing">Wifi-Sharing</string>
     <string name="transfers_select_downloading">Herunterladen</string>
-    <string name="i_have_read_and_agree_to_the">Ich habe die gelesen und stimme ihnen zu.</string>
+
     <string name="scanning">Finishing - Scanning</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">Je nach Ihren Einstellungen kann ich nicht Impfen beginnen, wenn Sie auf Wi-Fi sind. Die Datei wird für Aussaat automatisch bereit sein, wenn Sie zu einem Internet-fähigen Wi-Fi-Netzwerk zurück.</string>
     <string name="checking_ellipsis">Überprüfung&#8230;</string>
@@ -458,7 +458,7 @@
     <string name="you_need_a_bitcoin_wallet_app">Sie benötigen einen Bitcoin Brieftasche auf Ihrem Gerät installiert eine BTC Spende einreichen.</string>
     <string name="thirty_days">30 Tage</string>
     <string name="donation_thanks">Vielen Dank für Unterstützung von Frostwire</string>
-    <string name="remove_ads_description">Genießen Sie die werbefreie Erfahrung, unterstützen Frostwire</string>
+
     <string name="crawl_cache_size">Crawl-Cache %1$.2fMB</string>
     <string name="wifi_sharing_disabled">Wifi-Sharing ist aus.\n\nWi-Fi-Sharing können Dateien verwendet werden, lokal zu teilen zwischen Wire Geräte mit dem gleichen Wi-Fi-Netzwerk verbunden.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Mehr erfahren.&lt;/a&gt;</string>
     <string name="pausing">Pausieren</string>

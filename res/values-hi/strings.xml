@@ -27,7 +27,7 @@
     <string name="settings_description">सेटिंग्स की खोज</string>
     <string name="clear_finished">स्पष्ट समाप्त</string>
     <string name="support_free_software">फ्री सॉफ्टवेयर समर्थन</string>
-    <string name="show_love">फ्रॉस्टवाइर से प्यार है?</string>
+
     <string name="waiting">प्रतीक्षा</string>
     <string name="use_icons_to_browse">फ़ाइलों को ब्राउज़ करने के लिए आइकान का प्रयोग करें. </string>
     <string name="type_to_filter_results">फ़िल्टर परिणाम टाइप करें.</string>
@@ -64,7 +64,7 @@
     <string name="searching_for">के लिए खोज</string>
     <string name="search_for_type_files">%s फ़ाइलों के लिए खोज</string>
     <string name="update_title"> अद्यतन समय!</string>
-    <string name="update_message">फ्रॉस्टवाइर आप के लिए एक नया कार्य निष्पादन अद्यतन डाउनलोड किया गया है, आगे जाओ और ओके बटन को छुए  यदि आप इसे अब स्थापित करना चाहते हैं.</string>
+
     <string name="next_time">अगली बार</string>
     <string name="change_my_nickname">मेरा उपनाम बदलें</string>
     <string name="try_changing_your_nickname">अपना प्रचलित नाम दर्ज करें</string>
@@ -88,8 +88,8 @@
     <string name="stop_all_transfers_message">यह सब चल रहे और कतारबद्ध डाउनलोड को रद्द . सभी स्थानांतरित डेटा खो जाएगा. क्या आपको यकीन है?</string>
     <string name="files">फाइलें</string>
     <string name="touch_filetype_icon">फ़ाइल प्रकार बदलने आइकन छुये</string>
-    <string name="tos_title">इस्तेमाल की शर्तें</string>
-    <string name="tos_accept">स्वीकार करना</string>
+
+
     <string name="tos_refuse">इनकार</string>
     <string name="downloads">डाउनलोड</string>
 
@@ -392,7 +392,7 @@
     <string name="wifi_sharing">वाईफ़ाई शेयरिंग</string>
     <string name="transfers_select_downloading">डाउनलोडिंग</string>
     <string name="free_apps">मुफ्त ऍप्स</string>
-    <string name="i_have_read_and_agree_to_the">मैंने पढ़ा है और मैं सहमत हूं</string>
+
     <string name="scanning">फिनिशिंग - स्कैनिंग</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">अपनी सेटिंग्स के अनुसार मैं बोने शुरू नहीं कर सकते जब तक कि आप वाई-फाई पर हैं। जब तुम वापस एक इंटरनेट को पाने के लिए वाई-फाई नेटवर्क सक्षम फ़ाइल स्वचालित रूप से बोने के लिए तैयार हो जाएगा।</string>
     <string name="checking_ellipsis">Checking&#8230;</string>
@@ -422,7 +422,7 @@
     <string name="desktop_transfer_status_cancelled">रद्द</string>
     <string name="thirty_days">तीस दिन</string>
     <string name="donation_thanks">आप FrostWire सहायक लिए बहुत बहुत धन्यवाद</string>
-    <string name="remove_ads_description">विज्ञापन मुक्त अनुभव का आनंद लें, समर्थन FrostWire</string>
+
     <string name="crawl_cache_size">क्रॉल कैश %1$.2fMB</string>
     <string name="wifi_sharing_disabled">वाईफ़ाई बंटवारे बंद है।\n\nवाई-फाई के बंटवारे ही वाई-फाई नेटवर्क से जुड़े FrostWire संचालित उपकरणों के बीच स्थानीय स्तर पर फ़ाइलों को साझा करने के लिए इस्तेमाल किया जा सकता है।\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;और अधिक जानें।&lt;/a&gt;</string>
     <string name="pausing">रोकना</string>

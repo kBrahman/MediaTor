@@ -72,7 +72,7 @@
     <string name="multicast_discovery_summary">Підключення до локальних однолітки Wifi за допомогою під LGPL (рекомендується)</string>
     <string name="max_concurrent_uploads">Максимальна кількість одночасних uploads</string>
     <string name="use_torlock">користування TorLock</string>
-    <string name="tos_title">Умови користування</string>
+
     <string name="activity_downloads_name">Активні завантаження</string>
     <string name="wait">Зачекайте</string>
     <string name="summary_files_shared">Спільне використання файлів %s локально.</string>
@@ -225,7 +225,7 @@
     <string name="send_my_geo_location_summary">Відгуки пошле приблизного геолокації, щоб знайти найближчих колег.</string>
     <string name="wants_to_share_a_file">хоче розділити файл</string>
     <string name="simultaneous_uploads_summary">Встановити, як багато спільного доступу Wi-Fi завантаження, які ви хочете, щоб в той же час.</string>
-    <string name="i_have_read_and_agree_to_the">Я прочитав і згоден на</string>
+
     <string name="media_type_images">Зображення</string>
     <string name="scanning">Оздоблення - Сканування</string>
     <string name="delete_file_menu_action">Видалити</string>
@@ -281,7 +281,7 @@
     <string name="thirty_days">30 днів</string>
     <string name="peer_http_upload_status_error">Помилка</string>
     <string name="donation_thanks">Велике вам спасибі за підтримкою FrostWire</string>
-    <string name="remove_ads_description">Насолоджуйтесь досвід без реклами, підтримки FrostWire</string>
+
     <string name="crawl_cache_size">Кеш сканування %1$.2fMB</string>
     <string name="wizard_previous">Попередній</string>
     <string name="azureus_manager_item_downloading">Завантаження</string>
@@ -516,10 +516,10 @@
     <string name="stop_all_transfers">Це зупинить всі трансфери</string>
     <string name="includes_3_day_free_trial">Включає в себе 3-х днів безкоштовної пробної версії. Рекомендується.</string>
     <string name="use_mobile_data_summary">Використовуйте мобільну мережу для завантаження BitTorrent. збори Надлишкові дані можуть застосовуватися. Будьте обережні, працюючи.</string>
-    <string name="intent_text">FrostWire це програма рівноправних вузлів ЛВС для спільного використання тільки дозволених файлів. Установка і використання програми не є ліцензією на отримання або розповсюдження несанкціонованого контенту.</string>
+    <string name="intent_text">MediaTor це програма рівноправних вузлів ЛВС для спільного використання тільки дозволених файлів. Установка і використання програми не є ліцензією на отримання або розповсюдження несанкціонованого контенту.</string>
     <string name="searching_indeterminate">Пошук…</string>
     <string name="azureus_peer_manager_status_finishedin">Закінчений в</string>
-    <string name="tos_accept">Прийняти</string>
+
     <string name="support">Підтримка</string>
     <string name="seeding_has_been_turned_off">Посів був вимкнений</string>
     <string name="try_changing_your_nickname">Введіть свій нік</string>
@@ -562,7 +562,7 @@
     <string name="transfers_context_menu_stop_delete_data">Зупинка і видалення даних</string>
     <string name="cheaper_than_cigarettes">Дешевше, ніж сигарети</string>
     <string name="search_settings">налаштування пошуку</string>
-    <string name="update_message">FrostWire скачав нове оновлення продуктивності для вас, будь ласка, йти вперед і натисніть кнопку OK, якщо ви хочете встановити його зараз.</string>
+
     <string name="days_left">днів залишилося</string>
     <string name="media_player_failed">Медіаплеєр не вдалося</string>
     <string name="six_months">6 місяців</string>
@@ -579,7 +579,7 @@
     <string name="ringtone_set">Мелодія набір</string>
     <string name="transfers">Перекази</string>
     <string name="keep_the_project_alive">Тримайте проект живий</string>
-    <string name="show_love">Любов FrostWire?</string>
+
     <string name="remove_ads">видалити оголошення</string>
     <string name="your_connection_has_dropped_stopping_services">Ваше підключення до Wi-Fi впав. Зупинка служб.</string>
     <string name="use_tpb_summary">TPB є магнітом на основі, працює тільки на Wi-Fi.</string>

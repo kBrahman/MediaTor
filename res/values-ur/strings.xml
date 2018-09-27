@@ -151,7 +151,7 @@
     <string name="multicast_discovery_summary">کثیر نشریات کے ذریعے مقامی وائی فائی ساتھیوں سے مربوط (مجوزہ)</string>
     <string name="max_concurrent_uploads">زیادہ سے زیادہ بیک وقت اپ لوڈز</string>
     <string name="use_torlock">استعمال TorLock</string>
-    <string name="tos_title">استعمال کرنے کی شرائط</string>
+
     <string name="summary_files_shared">مقامی طور پر s% فائلوں کا اشتراک</string>
     <string name="search">تلاش کریں</string>
     <string name="bittorrent_off">BitTorrent off</string>
@@ -281,7 +281,7 @@
     <string name="send_my_geo_location_summary">پنگ کے قریب ترین ساتھیوں کو تلاش کرنے کے لئے آپ کے تخمینی جغرافیائی محل وقوع کو بھیج دیں گے.</string>
     <string name="wants_to_share_a_file">فائل کا اشتراک کرنے کے لئے چاہتا</string>
     <string name="simultaneous_uploads_summary">آپ کو ایک ہی وقت میں اجازت دینے کے لئے چاہتے ہیں کہ کتنے وائی فائی کا اشتراک اپ لوڈز مقرر کریں.</string>
-    <string name="i_have_read_and_agree_to_the">میں نے پڑھا اور ان سے متفق ہوں</string>
+
     <string name="media_type_images">امیجز</string>
     <string name="scanning">تکمیل - سکین کر رہا ہے</string>
     <string name="delete_file_menu_action">حذف کریں</string>
@@ -331,7 +331,7 @@
     <string name="internal_port">اندرونی پورٹ</string>
     <string name="thirty_days">30 دن</string>
     <string name="donation_thanks">FrostWire حمایت کے لئے آپ کا بہت بہت شکریہ</string>
-    <string name="remove_ads_description">اشتھار مفت تجربہ کا لطف اٹھائیں، حمایت کریں FrostWire</string>
+
     <string name="wizard_previous">پچھلا</string>
     <string name="there_is_n_torrents_indexed">حساب سے ترتیب d% بارشیں نہیں ہے</string>
     <string name="wifi_sharing_disabled">Wi-fi sharing is off.\n\nWi-fi sharing can be used to share files locally between FrostWire powered devices connected to the same Wi-Fi network.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Learn more.&lt;/a&gt;</string>
@@ -536,10 +536,10 @@
     <string name="free_sponsored_app">مفت سپانسر اپلی</string>
     <string name="now_on_port">ابھی بندرگاہ پر</string>
     <string name="includes_3_day_free_trial">3 دن کا مفت ٹرائل مشتمل. تجویز کردہ</string>
-    <string name="intent_text">FrostWire صرف مجاز فائلوں اشتراک کرنے کے لئے ایک ہم مرتبہ سے ہم مرتبہ کے پروگرام ہے. نصب ہو اور پروگرام استعمال کرتے ہوئے حاصل کرنے یا غیر مجاز مواد کی تقسیم کے لئے لائسنس کا قیام نہیں کرتا.</string>
+    <string name="intent_text">MediaTor صرف مجاز فائلوں اشتراک کرنے کے لئے ایک ہم مرتبہ سے ہم مرتبہ کے پروگرام ہے. نصب ہو اور پروگرام استعمال کرتے ہوئے حاصل کرنے یا غیر مجاز مواد کی تقسیم کے لئے لائسنس کا قیام نہیں کرتا.</string>
     <string name="searching_indeterminate">تلاش ہو…</string>
     <string name="azureus_peer_manager_status_finishedin">میں ختم</string>
-    <string name="tos_accept">قبول کریں</string>
+
     <string name="support">سپورٹ</string>
     <string name="seeding_has_been_turned_off">بوائ بند کردیا گیا ہے</string>
     <string name="try_changing_your_nickname">آپ عرفیت درج کریں</string>
@@ -576,7 +576,7 @@
     <string name="transfers_context_menu_stop_delete_data">بند کرو اور ڈیٹا حذف</string>
     <string name="cheaper_than_cigarettes">سگریٹ کے مقابلے میں سستی</string>
     <string name="search_settings">تلاش کی ترتیبات</string>
-    <string name="update_message">FrostWire ایک نئے کارکردگی اپ ڈیٹ ڈاؤن لوڈ کیا ہے کے لئے آپ کو، براہ مہربانی، آگے بڑھو اور اب آپ اسے نصب کرنے کے لئے چاہتے ہیں تو OK بٹن کو چھو.</string>
+
     <string name="days_left">دن باقی</string>
     <string name="media_player_failed">میڈیا پلیئر میں ناکام رہے</string>
     <string name="six_months">6 ماہ</string>
@@ -588,7 +588,7 @@
     <string name="ringtone_set">رنگ ٹون طے</string>
     <string name="transfers">ٹرانسفر</string>
     <string name="keep_the_project_alive">پروجیکٹ زندہ رکھنے کے</string>
-    <string name="show_love">FrostWire پسند ہے؟</string>
+
     <string name="remove_ads">اشتھارات ہٹا</string>
     <string name="use_tpb_summary">TPB مقناطیس کی بنیاد پر ہے، صرف وائی فائی پر کام کرتا ہے</string>
     <string name="cloud_download_aborted_on_mobile_data">موجودہ ترتیب وائی فائی نیٹ ورک پر جب نہیں ڈاؤن لوڈ کرنے سے روکتا ہے</string>

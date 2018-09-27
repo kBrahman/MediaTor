@@ -49,7 +49,7 @@
     <string name="settings_description">Подешавања претраге</string>
     <string name="clear_finished">јасно Завршена</string>
     <string name="support_free_software">Суппорт Фрее Софтваре</string>
-    <string name="show_love">Лове FrostWire?</string>
+
     <string name="waiting">чекање…</string>
     <string name="use_icons_to_browse">Користите иконе да бисте прегледали фајлове.</string>
     <string name="type_to_filter_results">Типе за филтрирање резултата.</string>
@@ -88,7 +88,7 @@
     <string name="searching_for">Потрази за</string>
     <string name="search_for_type_files">Тражење датотека %s</string>
     <string name="update_title">Упдате тиме!</string>
-    <string name="update_message">ФростВире је преузети нови ПЕРФОРМАНЦЕ УПДАТЕ за вас, изволите и додирните дугме ОК ако желите да га инсталирате сада.</string>
+
     <string name="next_time">Следећи пут</string>
     <string name="change_my_nickname">Промените свој надимак</string>
     <string name="try_changing_your_nickname">Унесите свој надимак</string>
@@ -98,7 +98,7 @@
     <string name="home">Дом</string>
     <string name="about">О томе</string>
     <string name="remove_ads">Ремове Адс</string>
-    <string name="remove_ads_description">Уживајте у без огласа искуства, подржава ФростВире</string>
+
     <string name="send_file_using">Пошаљи датотеку користећи</string>
     <string name="my_files">Моје датотеке</string>
     <string name="clear_messages">јасне поруке</string>
@@ -114,8 +114,8 @@
     <string name="stop_all_transfers_message">Ово ће поништити све текуће и стао преузимања. Све се преносе подаци ће бити изгубљени. Да ли сте сигурни?</string>
     <string name="files">фајлови</string>
     <string name="touch_filetype_icon">Додирните икону да промените тип датотеке</string>
-    <string name="tos_title">Услови коришћења</string>
-    <string name="tos_accept">прихватити</string>
+
+
     <string name="tos_refuse">Одбити</string>
     <string name="downloads">преузимања</string>
 
@@ -331,7 +331,7 @@
     <string name="seeding_settings">Сеединг Подешавања</string>
     <string name="seeding_settings_explanation">БитТоррент корисници на Интернету ће моћи да преузмете фајл делове података вашег семена торрентс.</string>
     <string name="seeding_wifi_settings_explanation">Семе само када се користи ВиФи везе. Избегавајте додатне трошкове од свог носиоца.</string>
-    <string name="intent_text">FrostWire је програм пеер-то-пеер за дељење само овлашћеним фајлове. Инсталирање и коришћење програма не представља дозволу за добијање или дистрибуцију неовлашћеног садржаја.</string>
+    <string name="intent_text">MediaTor је програм пеер-то-пеер за дељење само овлашћеним фајлове. Инсталирање и коришћење програма не представља дозволу за добијање или дистрибуцију неовлашћеног садржаја.</string>
     <string name="accept_intent">Нећу користити FrostWire за кршење ауторских права</string>
     <string name="toast_on_disconnect">Искључен из БитТоррент. Све БитТоррент трансфери су престали.</string>
     <string name="toast_on_connect">Додато језгро почело.</string>
@@ -582,7 +582,7 @@
     <string name="no_interruptions">Но Прекиди</string>
     <string name="keep_the_project_alive">Држите Пројецт Аливе</string>
     <string name="processing_payment">плаћање обрада, освежите за неколико секунди</string>
-    <string name="i_have_read_and_agree_to_the">Прочитао сам и слажем до</string>
+
     <string name="terms_of_use">Услови коришћења</string>
     <string name="haptic_feedback">Haptic Feedback</string>
     <string name="advertisement">реклама</string>

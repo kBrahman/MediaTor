@@ -24,10 +24,6 @@ import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public class SwipeLayout extends LinearLayout {
 
     private static final float DELTA_THRESHOLD = 100;
@@ -71,10 +67,6 @@ public class SwipeLayout extends LinearLayout {
         } catch (Throwable t) {
             return false;
         }
-    }
-
-    public OnSwipeListener getOnSwipeListener() {
-        return listener;
     }
 
     public void setOnSwipeListener(OnSwipeListener listener) {

@@ -38,24 +38,15 @@ import android.widget.Filterable;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 
-import zig.zak.media.tor.R;
-import zig.zak.media.tor.util.Logger;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * We extend from ListAdapter to populate our ListViews.
- * This one allows us to click and long click on the elements of our ListViews.
- * Supports checkbox and radio button selection.
- *
- * @param <T>
- * @author gubatron
- * @author aldenml
- */
+import zig.zak.media.tor.R;
+import zig.zak.media.tor.util.Logger;
+
 public abstract class AbstractListAdapter<T> extends BaseAdapter implements Filterable {
 
     private static final Logger LOG = Logger.getLogger(AbstractListAdapter.class);
@@ -83,10 +74,7 @@ public abstract class AbstractListAdapter<T> extends BaseAdapter implements Filt
     protected Set<T> checked;
     protected List<T> visualList;
 
-    private AbstractListAdapter(Context context,
-                                int viewItemId,
-                                List<T> list,
-                                Set<T> checked) {
+    private AbstractListAdapter(Context context, int viewItemId, List<T> list, Set<T> checked) {
         this.context = context;
         this.viewItemId = viewItemId;
         this.viewOnClickListener = new ViewOnClickListener();
@@ -279,6 +267,7 @@ public abstract class AbstractListAdapter<T> extends BaseAdapter implements Filt
 
     /**
      * Note: only calls notifyDataSetChanged if called from the main thread
+     *
      * @param item
      */
     public void deleteItem(T item) {
@@ -454,8 +443,7 @@ public abstract class AbstractListAdapter<T> extends BaseAdapter implements Filt
     }
 
     private SparseArray<View> getHolder(View view) {
-        @SuppressWarnings("unchecked")
-        SparseArray<View> h = (SparseArray<View>) view.getTag(R.id.abstract_list_adapter_holder_tag_id);
+        @SuppressWarnings("unchecked") SparseArray<View> h = (SparseArray<View>) view.getTag(R.id.abstract_list_adapter_holder_tag_id);
         if (h == null) {
             h = new SparseArray<>();
             view.setTag(R.id.abstract_list_adapter_holder_tag_id, h);
@@ -517,11 +505,7 @@ public abstract class AbstractListAdapter<T> extends BaseAdapter implements Filt
         initTouchFeedback(v, item, viewOnClickListener, viewOnLongClickListener, viewOnKeyListener);
     }
 
-    protected void initTouchFeedback(View v,
-                                     T item,
-                                     OnClickListener clickListener,
-                                     OnLongClickListener longClickListener,
-                                     OnKeyListener keyListener) {
+    protected void initTouchFeedback(View v, T item, OnClickListener clickListener, OnLongClickListener longClickListener, OnKeyListener keyListener) {
         if (v == null || v instanceof CheckBox) {
             return;
         }

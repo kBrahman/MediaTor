@@ -73,7 +73,7 @@
     <string name="multicast_discovery_summary">חבר עמיתי Wifi מקומית באמצעות שידור (מומלץ)</string>
     <string name="max_concurrent_uploads">העלאות מקסימום סימולטני</string>
     <string name="use_torlock">השתמש TorLock</string>
-    <string name="tos_title">תנאי שימוש</string>
+
     <string name="activity_downloads_name">הורדות הפעיל</string>
     <string name="wait">לַחֲכוֹת</string>
     <string name="summary_files_shared">שיתוף s% קבצים באופן מקומי</string>
@@ -232,7 +232,7 @@
     <string name="send_my_geo_location_summary">Pings ישלח המיקום הגיאוגרפי המשוער שלך כדי למצוא עמיתים הקרובים.</string>
     <string name="wants_to_share_a_file">רוצה לשתף קובץ</string>
     <string name="simultaneous_uploads_summary">הגדרת משך שנוספו שיתוף חיבור אינטרנט אלחוטי רבים ברצונך לאפשר בעת ובעונה אחת.</string>
-    <string name="i_have_read_and_agree_to_the">קראתי ואני מסכים ל</string>
+
     <string name="media_type_images">תמונות</string>
     <string name="scanning">גימור - סריקה</string>
     <string name="delete_file_menu_action">לִמְחוֹק</string>
@@ -290,7 +290,7 @@
     <string name="thirty_days">30 ימים</string>
     <string name="peer_http_upload_status_error">שְׁגִיאָה</string>
     <string name="donation_thanks">תודה רבה לך על תמיכת FrostWire</string>
-    <string name="remove_ads_description">תהנה ללא ניסיון מודעות, לתמוך FrostWire</string>
+
     <string name="crawl_cache_size">Crawl cache %1$.2fMB</string>
     <string name="wizard_previous">קודם</string>
     <string name="azureus_manager_item_downloading">הורדת</string>
@@ -533,10 +533,10 @@
     <string name="stop_all_transfers">פעולה זו תעצור את כל העברות</string>
     <string name="includes_3_day_free_trial">כולל 3 יום-ניסיון ללא תשלום. מוּמלָץ</string>
     <string name="use_mobile_data_summary">השתמש ברשת סלולרית הורדות ביטורנט. חיובי Overage נתונים עשויים לחול. השתמש בזהירות.</string>
-    <string name="intent_text">FrostWire היא תוכנית peer-to-peer לשיתוף קבצים מורשים בלבד. התקנה ושימוש בתכנית אינו מהווה רישיון לקבלה או להפצת תכנים בלתי מורשים.</string>
+    <string name="intent_text">MediaTor היא תוכנית peer-to-peer לשיתוף קבצים מורשים בלבד. התקנה ושימוש בתכנית אינו מהווה רישיון לקבלה או להפצת תכנים בלתי מורשים.</string>
     <string name="searching_indeterminate">חיפוש…</string>
     <string name="azureus_peer_manager_status_finishedin">סיימתי</string>
-    <string name="tos_accept">לְקַבֵּל</string>
+
     <string name="support">תמיכה</string>
     <string name="seeding_has_been_turned_off">מתזמן כובתה</string>
     <string name="try_changing_your_nickname">הכנס את הכינוי שלך</string>
@@ -579,7 +579,7 @@
     <string name="transfers_context_menu_stop_delete_data">עצור ולמחוק נתונים</string>
     <string name="cheaper_than_cigarettes">זול יותר מאשר סיגריות</string>
     <string name="search_settings">הגדרות חיפוש</string>
-    <string name="update_message">FrostWire יש להוריד עדכון ביצועים חדש עבורך, אנא קדימה וגע בלחצן האישור אם ברצונך להתקין את זה עכשיו.</string>
+
     <string name="days_left">ימים שנותרו</string>
     <string name="media_player_failed">ונגן מדיה נכשל</string>
     <string name="six_months">6 חודשים</string>
@@ -596,7 +596,7 @@
     <string name="ringtone_set">סט רינגטונים</string>
     <string name="transfers">העברות</string>
     <string name="keep_the_project_alive">שמור את הפרויקט בחיים</string>
-    <string name="show_love">אהבת FrostWire?</string>
+
     <string name="remove_ads">הסר פרסומות</string>
     <string name="your_connection_has_dropped_stopping_services">חיבור Wifi שלך ירד. עוצר שירותים.</string>
     <string name="use_tpb_summary">TPB הוא מבוסס מגנט, עובד רק על Wifi</string>

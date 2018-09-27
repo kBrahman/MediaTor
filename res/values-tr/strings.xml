@@ -44,7 +44,7 @@
     <string name="settings_description">Arama Ayarları</string>
     <string name="clear_finished">Bitenleri Temizle</string>
     <string name="support_free_software">Ücretsiz Yazılımı Destekleyin</string>
-    <string name="show_love">FrostWire\'ı Seviyor musunuz?</string>
+
     <string name="waiting">Bekleniyor…</string>
     <string name="use_icons_to_browse">Dosyaları taramak için ikonları kullanın.</string>
     <string name="type_to_filter_results">Sonuçları filtrelemek için yazın.</string>
@@ -81,7 +81,7 @@
     <string name="searching_for">Aranan:</string>
     <string name="search_for_type_files">%s dosyaları için arama</string>
     <string name="update_title">Güncelleme Zamanı!</string>
-    <string name="update_message">FrostWire sizin için yeni bir PERFORMANS GÜNCELLEMESİ İndirdi, eğer şimdi kurmak istiyorsanız lütfen OK butonuna dokunup kuruluma devam ediniz.</string>
+
     <string name="next_time">Gelecek Sefer</string>
     <string name="change_my_nickname">Takma Adımı Değiştir</string>
     <string name="try_changing_your_nickname">Takma adınızı girin</string>
@@ -105,8 +105,8 @@
     <string name="stop_all_transfers_message">Bu tüm devam eden ve sırada bekleyen indirmeleri iptal edecektir. Tüm transfer edilen veri yok olacaktır. Emin misiniz?</string>
     <string name="files">dosyalar</string>
     <string name="touch_filetype_icon">Dosya türünü değiştirmek için ikona tıklayın</string>
-    <string name="tos_title">Kullanım Koşulları</string>
-    <string name="tos_accept">Kabul Edin</string>
+
+
     <string name="tos_refuse">Reddedin</string>
     <string name="downloads">İndirmeler</string>
 
@@ -311,7 +311,7 @@
     <string name="seeding_settings">Tohumlama Ayarları</string>
     <string name="seeding_settings_explanation">İnternet üzerindeki BitTorrent kullanıcıları users torrentlerinizin tohumladığı dosya parçalarını indirebileceklerdir.</string>
     <string name="seeding_wifi_settings_explanation">Sadece bir WiFi bağlantısı kullanırken tohumlandırın. Cep operatörünüzün size ekstra ücretler yüklemesinin önüne geçin.</string>
-    <string name="intent_text">FrostWire sadece izinli dosyaların uçbirimden uçbirime paylaştırıldığı bir programdır. Programın kurulması ve kullanılması izinsiz içeriğin edinilmesi ve dağıtılması için herhangi bir lisans teşkil etmez.</string>
+    <string name="intent_text">MediaTor sadece izinli dosyaların uçbirimden uçbirime paylaştırıldığı bir programdır. Programın kurulması ve kullanılması izinsiz içeriğin edinilmesi ve dağıtılması için herhangi bir lisans teşkil etmez.</string>
     <string name="accept_intent">FrostWire\'i kopya haklarına aykırı şekilde kullanmayacağım.</string>
     <string name="toast_on_disconnect">BitTorrent\'ten bağlantı koparıldı. Tüm BitTorrent transferleri durdu.</string>
     <string name="toast_on_connect">BitTorrent merkezi başlatıldı.</string>
@@ -446,7 +446,7 @@
     <string name="transfers_context_menu_pause_stop_all_transfers">Tüm transferleri duraklatın/durdurun</string>
     <string name="transfers_select_downloading">indirme</string>
 
-    <string name="i_have_read_and_agree_to_the">Okudum ve onaylıyorum</string>
+
     <string name="scanning">Bitirme - Tarama</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">Ayarlarınıza göre, Wi-Fi olmadığı sürece tohumlamaya başlayamam. İnternet üzerinden bir Wi-Fi ağına geri döndüğünüzde dosya otomatik olarak ekim için hazır olacaktır.</string>
     <string name="checking_ellipsis">Kontrol etme&#8230;</string>
@@ -470,7 +470,7 @@
     <string name="you_need_a_bitcoin_wallet_app">BTC bağışı göndermek için cihazınıza bir Bitcoin cüzdanı kurulu olmalıdır.</string>
     <string name="transfers_select_all">Her şey</string>
     <string name="thirty_days">30 gün</string>
-    <string name="remove_ads_description">Reklamsız deneyimi yaşayın, FrostWire\'ı destekleyin</string>
+
     <string name="pausing">Duraklatma</string>
     <string name="dummy_title_bold">[Kalın Başlık]</string>
     <string name="storage_picker_treeuri_cant_write">FrostWire seçilen saklama yolunda yazamaz</string>

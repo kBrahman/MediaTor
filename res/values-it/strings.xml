@@ -46,7 +46,7 @@
     <string name="settings_description">Impostazioni di ricerca</string>
     <string name="clear_finished">Elimina download completati</string>
     <string name="support_free_software">Supporta il software gratuito</string>
-    <string name="show_love">Ami FrostWire?</string>
+
     <string name="waiting">Aspetta…</string>
     <string name="use_icons_to_browse">Usa le icone per visualizzare i file</string>
     <string name="type_to_filter_results">Scrivi qui per filtrare i risultati.</string>
@@ -83,7 +83,7 @@
     <string name="searching_for">Ricerca in corso</string>
     <string name="search_for_type_files">Cerca file %s</string>
     <string name="update_title">E\' ora di aggiornare!</string>
-    <string name="update_message">FrostWire ha scaricato un nuovo AGGIORNAMENTO per te, tocca il pulsante OK se vuoi installarlo ora</string>
+
     <string name="next_time">Prossima volta</string>
     <string name="change_my_nickname">Cambia nickname</string>
     <string name="try_changing_your_nickname">Inserisci il tuo nickname</string>
@@ -107,8 +107,8 @@
     <string name="stop_all_transfers_message">Stai per cancellare tutti i download in coda o in attesa da tempo. Tutti i dati trasferiti verranno persi. Sei sicuro?</string>
     <string name="files">file</string>
     <string name="touch_filetype_icon">Tocca l\'icona per cambiare tipo di file</string>
-    <string name="tos_title">Condizioni di utilizzo</string>
-    <string name="tos_accept">Accetta</string>
+
+
     <string name="tos_refuse">Rifiuta</string>
     <string name="downloads">Downloads</string>
 
@@ -313,7 +313,7 @@
     <string name="seeding_settings">Impostazioni Seeding</string>
     <string name="seeding_settings_explanation">Gli utenti di BitTorrent su internet potranno scaricare parti di torrent seedati da te.</string>
     <string name="seeding_wifi_settings_explanation">Seeda slo se connesso via Wi-Fi. Evita spese extra dal tuo gestore</string>
-    <string name="intent_text">FrostWire è un programma peer-to-peer per la condivisione autorizzata di file. Installare e utilizzare il programma non significa avere il diritto di ottenere e distribuire materiale senza autorizzazione.</string>
+    <string name="intent_text">MediaTor è un programma peer-to-peer per la condivisione autorizzata di file. Installare e utilizzare il programma non significa avere il diritto di ottenere e distribuire materiale senza autorizzazione.</string>
     <string name="accept_intent">Non userò FrostWire per violare copyright</string>
     <string name="toast_on_disconnect">Disconnesso da BitTorrent. Tutti i trasferimenti da BitTorrent sono stati bloccati.</string>
     <string name="toast_on_connect">BitTorrent core avviato.</string>
@@ -421,7 +421,7 @@
     <string name="wifi_sharing">Condivisione del WiFi</string>
     <string name="transfers_select_downloading">downloading</string>
     <string name="free_apps">Applicazioni gratuite</string>
-    <string name="i_have_read_and_agree_to_the">Ho letto e accetto la</string>
+
     <string name="scanning">Finitura - Scansione</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">Secondo le impostazioni che non può avviare la semina a meno che non si è in Wi-Fi. Il file sarà pronto per la semina automaticamente quando si torna a un internet abilitato rete Wi-Fi.</string>
     <string name="checking_ellipsis">Verifica&#8230;</string>
@@ -449,7 +449,7 @@
     <string name="transfers_select_all">tutti</string>
     <string name="thirty_days">30 giorni</string>
     <string name="donation_thanks">Grazie mille per il sostegno FrostWire</string>
-    <string name="remove_ads_description">Godetevi l\'esperienza senza pubblicità, sostenere FrostWire</string>
+
     <string name="crawl_cache_size">Crawl cache %1$.2fMB</string>
     <string name="wifi_sharing_disabled">La condivisione del WiFi è spento.\n\ncondivisione WiFi può essere utilizzato per condividere file in locale tra dispositivi FrostWire alimentati collegati alla stessa rete WiFi.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Scopri di più.&lt;/a&gt;</string>
     <string name="pausing">Pausa</string>

@@ -83,7 +83,7 @@
     <string name="use_torlock">TorLock वापरा</string>
     <string name="seed_stop">बीजन थांबवा</string>
 
-    <string name="tos_title">वापरण्याच्या अटी</string>
+
     <string name="activity_downloads_name">सक्रिय डाउनलोड</string>
     <string name="wait">प्रतीक्षा करा</string>
     <string name="summary_files_shared">स्थानिक %s फाइल्स शेअर करणे</string>
@@ -282,7 +282,7 @@
     <string name="wants_to_share_a_file">एक फाइल शेअर करू इच्छित आहे</string>
     <string name="simultaneous_uploads_summary">एकाच वेळी आपण किती Wi-Fi सामायिकरण अपलोड करू इच्छिता ते सेट करा</string>
     <string name="size">आकार</string>
-    <string name="i_have_read_and_agree_to_the">मी वाचले आणि मान्य केले आहे</string>
+
     <string name="media_type_images">प्रतिमा</string>
     <string name="scanning">फिनिशिंग - स्कॅनिंग</string>
     <string name="delete_file_menu_action">हटवा</string>
@@ -347,7 +347,7 @@
     <string name="thirty_days">30 दिवस</string>
     <string name="peer_http_upload_status_error">त्रुटी</string>
     <string name="donation_thanks">फ्रॉस्टवायरला सहाय्य करण्यासाठी खूप धन्यवाद</string>
-    <string name="remove_ads_description">नाही जाहिराती अनुभव आनंद घ्या, FrostWire समर्थन</string>
+
     <string name="build">बिल्ड करा</string>
     <string name="completed">पूर्ण झाले</string>
     <string name="crawl_cache_size">क्रॉल कॅशे %1$.2fMB</string>
@@ -633,10 +633,10 @@
     <string name="stop_all_transfers">हे सर्व हस्तांतरण थांबवेल</string>
     <string name="includes_3_day_free_trial">तीन दिवसीय विनामूल्य-चाचणी समाविष्ट आहे शिफारस केलेले</string>
     <string name="use_mobile_data_summary">बिटटॉरंट डाउनलोड्ससाठी मोबाईल नेटवर्क वापरा. डेटा वेज शुल्क लागू शकते. काळजीपूर्वक वापरा</string>
-    <string name="intent_text">FrostWire केवळ अधिकृत फाइल्स शेअर एक सरदार-ते-सरदार कार्यक्रम आहे. प्रोग्राम स्थापित करणे आणि वापरणे अनधिकृत सामग्री प्राप्त करण्यासाठी किंवा वितरणासाठी परवाना तयार करत नाही.</string>
+    <string name="intent_text">MediaTor केवळ अधिकृत फाइल्स शेअर एक सरदार-ते-सरदार कार्यक्रम आहे. प्रोग्राम स्थापित करणे आणि वापरणे अनधिकृत सामग्री प्राप्त करण्यासाठी किंवा वितरणासाठी परवाना तयार करत नाही.</string>
     <string name="searching_indeterminate">शोधत आहे…</string>
     <string name="azureus_peer_manager_status_finishedin">मध्ये समाप्त</string>
-    <string name="tos_accept">स्वीकार करा</string>
+
     <string name="support">समर्थन</string>
     <string name="seeding_has_been_turned_off">बीजन बंद केले गेले आहे</string>
     <string name="try_changing_your_nickname">आपले टोपणनाव प्रविष्ट करा</string>
@@ -687,7 +687,7 @@
     <string name="transfers_context_menu_stop_delete_data">थांबवा आणि डेटा हटवा</string>
     <string name="cheaper_than_cigarettes">सिगारेटपेक्षा स्वस्त</string>
     <string name="search_settings">शोध सेटिंग्ज</string>
-    <string name="update_message">FrostWire ने आपल्यासाठी एक नवीन कार्यक्षमता अद्यतने डाउनलोड केली आहे, कृपया पुढे जा आणि आपण हे आता स्थापित करू इच्छित असल्यास ठीक बटणास स्पर्श करा.</string>
+
     <string name="days_left">दिवस बाकी</string>
     <string name="media_player_failed">माध्यम प्लेअर अयशस्वी झाला</string>
     <string name="six_months">6 महिने</string>
@@ -713,7 +713,7 @@
     <string name="file_information">फाईल माहिती</string>
     <string name="keep_the_project_alive">प्रकल्प जीवित ठेवा</string>
     <string name="add_tracker">ट्रॅकर जोडा</string>
-    <string name="show_love">प्रेम FrostWire?</string>
+
     <string name="remove_ads">जाहिराती काढून</string>
     <string name="your_connection_has_dropped_stopping_services">आपले Wi-Fi कनेक्शन सोडले आहे सेवा थांबविणे</string>
     <string name="use_tpb_summary">टीपीबी चुंबक आधारित आहे, केवळ वाय-फाय वर कार्य करते</string>

@@ -62,7 +62,7 @@
     <string name="use_torlock">Gebruik TorLock</string>
     <string name="seed_stop">Stop saai</string>
 
-    <string name="tos_title">Gebruiksvoorwaardes</string>
+
     <string name="activity_downloads_name">Aktiewe aflaaie</string>
     <string name="wait">Wag</string>
     <string name="summary_files_shared">Plaas %s lêers plaaslik</string>
@@ -244,7 +244,7 @@
     <string name="wants_to_share_a_file">wil \'n lêer deel</string>
     <string name="simultaneous_uploads_summary">Stel hoeveel Wi-Fi-deeloplaaisels jy op dieselfde tyd wil toelaat.</string>
     <string name="size">Grootte</string>
-    <string name="i_have_read_and_agree_to_the">Ek het die. Gelees en ingestem</string>
+
     <string name="media_type_images">Beelde</string>
     <string name="scanning">Afwerking - Skandering</string>
     <string name="delete_file_menu_action">Verwyder</string>
@@ -305,7 +305,7 @@
     <string name="thirty_days">30 dae</string>
     <string name="peer_http_upload_status_error">Fout</string>
     <string name="donation_thanks">Baie dankie vir die ondersteuning van FrostWire</string>
-    <string name="remove_ads_description">Geniet die advertensie-vrye ervaring, ondersteun FrostWire</string>
+
     <string name="build">build</string>
     <string name="crawl_cache_size">Crawl cache %1$.2fMB</string>
     <string name="wizard_previous">Vorige</string>
@@ -573,10 +573,10 @@
     <string name="stop_all_transfers">Dit sal alle oordragte stop</string>
     <string name="includes_3_day_free_trial">Sluit 3 dae gratis verhoor in. Aanbeveel</string>
     <string name="use_mobile_data_summary">Gebruik mobiele netwerk vir BitTorrent downloads. Data Oordrag koste kan van toepassing wees. Gebruik versigtig.</string>
-    <string name="intent_text">FrostWire is \'n peer-to-peer-program om slegs gemagtigde lêers te deel. Die installering en gebruik van die program vorm nie \'n lisensie vir die verkryging of verspreiding van ongemagtigde inhoud nie.</string>
+    <string name="intent_text">MediaTor is \'n peer-to-peer-program om slegs gemagtigde lêers te deel. Die installering en gebruik van die program vorm nie \'n lisensie vir die verkryging of verspreiding van ongemagtigde inhoud nie.</string>
     <string name="searching_indeterminate">Soek…</string>
     <string name="azureus_peer_manager_status_finishedin">Voltooi in</string>
-    <string name="tos_accept">Aanvaar</string>
+
     <string name="support">Ondersteuning</string>
     <string name="seeding_has_been_turned_off">Saai is afgeskakel</string>
     <string name="try_changing_your_nickname">Voer jou bynaam in</string>
@@ -622,7 +622,7 @@
     <string name="play_image_description">Play</string>
     <string name="cheaper_than_cigarettes">Goedkoper as sigarette</string>
     <string name="search_settings">Soekinstellings</string>
-    <string name="update_message">FrostWire het \'n nuwe PERFORMANCE UPDATE vir u afgelaai, gaan asseblief voort en raak die OK-knoppie as u dit nou wil installeer.</string>
+
     <string name="days_left">dae oor</string>
     <string name="media_player_failed">Media Player misluk</string>
     <string name="six_months">6 maande</string>
@@ -644,7 +644,7 @@
     <string name="vpn_client_PIA">Private Internet Access</string>
     <string name="file_information">Lêer inligting</string>
     <string name="keep_the_project_alive">Hou die projek in die lewe</string>
-    <string name="show_love">Love FrostWire?</string>
+
     <string name="remove_ads">Verwyder advertensies</string>
     <string name="your_connection_has_dropped_stopping_services">Jou Wifi-verbinding het gedaal. Stopdienste.</string>
     <string name="use_tpb_summary">TPB is magneet gebaseer, werk net op Wifi</string>

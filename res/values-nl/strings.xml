@@ -46,7 +46,7 @@
     <string name="settings_description">Instellingen Zoeken</string>
     <string name="clear_finished">Verwijder voltooide</string>
     <string name="support_free_software">Steun Gratis Software</string>
-    <string name="show_love">Hou je van FrostWire?</string>
+
     <string name="waiting">Wachten…</string>
     <string name="use_icons_to_browse">Gebruik de iconen om door de files heen te browsen.</string>
     <string name="type_to_filter_results">Typ om resultaten te filteren.</string>
@@ -83,7 +83,7 @@
     <string name="searching_for">Zoeken naar</string>
     <string name="search_for_type_files">Zoeken naar %s files</string>
     <string name="update_title">Update Tijd!</string>
-    <string name="update_message">FrostWire heeft een nieuwe PRESTATIE UPDATE voor je gedownload, ga verder en druk op de OK knop als je deze nu wilt installeren.</string>
+
     <string name="next_time">Volgende Keer</string>
     <string name="change_my_nickname">Verander mijn Nicknaam</string>
     <string name="try_changing_your_nickname">Vul je nicknaam in</string>
@@ -107,8 +107,8 @@
     <string name="stop_all_transfers_message">Dit zal alle doorlopende downloads annuleren, plus die in de wachtrij. Alle overgedragen downloads zullen verloren gaan. Weet je het zeker</string>
     <string name="files">files</string>
     <string name="touch_filetype_icon">Raak icoon aan om file type te veranderen</string>
-    <string name="tos_title">Gebruiksvoorwaarden</string>
-    <string name="tos_accept">Accepteer</string>
+
+
     <string name="tos_refuse">Weiger</string>
     <string name="downloads">Downloads</string>
 
@@ -313,7 +313,7 @@
     <string name="seeding_settings">Seeding Instellingen</string>
     <string name="seeding_settings_explanation">BitTorrent gebruikers op internet zullen file onderdelen kunnen downloaden van de data van jouw torrents seed.</string>
     <string name="seeding_wifi_settings_explanation">Alleen maar seeden als je een WiFi verbinding gebruikt. Vermijd extra kosten van je telefoonmaatschappij.</string>
-    <string name="intent_text">FrostWire is een peer-to-peer programma, enkel voor het delen van geautoriseerde files. Het installeren en gebruiken van het programma komt niet met een licentie voor het verkrijgen of distribueren van niet-geautoriseerde inhoud.</string>
+    <string name="intent_text">MediaTor is een peer-to-peer programma, enkel voor het delen van geautoriseerde files. Het installeren en gebruiken van het programma komt niet met een licentie voor het verkrijgen of distribueren van niet-geautoriseerde inhoud.</string>
     <string name="accept_intent">Ik zal FrostWire niet gebruiken om het copyright te overtreden</string>
     <string name="toast_on_disconnect">Niet verbonden met BitTorrent. Alle BitTorrent transfers zijn gestopt.</string>
     <string name="toast_on_connect">BitTorrent core gestart.</string>
@@ -421,7 +421,7 @@
     <string name="wifi_sharing">Wi-Fi Sharing</string>
     <string name="transfers_select_downloading">downloaden</string>
     <string name="free_apps">Gratis applicaties</string>
-    <string name="i_have_read_and_agree_to_the">Ik heb gelezen en ga akkoord met de</string>
+
     <string name="scanning">Afwerking - Scanning</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">Volgens uw instellingen schuin ik beginnen zaaien tenzij je op Wi-Fi. Het bestand zal klaar zijn voor het automatisch zaaien zijn als je terug naar een internet enabled Wi-Fi-netwerk.</string>
     <string name="checking_ellipsis">Controleren&#8230;</string>
@@ -449,7 +449,7 @@
     <string name="transfers_select_all">alle</string>
     <string name="thirty_days">30 dagen</string>
     <string name="donation_thanks">Dank je wel voor het ondersteunen van FrostWire</string>
-    <string name="remove_ads_description">Geniet van de ad-free ervaring, ondersteuning van FrostWire</string>
+
     <string name="crawl_cache_size">Crawl cachegeheugen %1$.2fMB</string>
     <string name="wifi_sharing_disabled">Sharing Wifi is uitgeschakeld.\n\nWifi sharing kan worden gebruikt om bestanden lokaal delen tussen FrostWire-apparaten aangesloten op hetzelfde Wi-Fi-netwerk.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Kom meer te weten.&lt;/a&gt;</string>
     <string name="pausing">Pauzeren</string>

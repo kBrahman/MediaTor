@@ -45,7 +45,6 @@ import zig.zak.media.tor.uxstats.UXStats;
 public abstract class SearchResultListAdapter extends AbstractListAdapter<SearchResult> {
 
     private static final int NO_FILE_TYPE = -1;
-    private final OnLinkClickListener linkListener;
     private final PreviewClickListener previewClickListener;
     private int fileType;
     private final ImageLoader thumbLoader;
@@ -55,7 +54,6 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
 
     protected SearchResultListAdapter(Context context) {
         super(context, R.layout.view_bittorrent_search_result_list_item);
-        this.linkListener = new OnLinkClickListener();
         this.previewClickListener = new PreviewClickListener(context, this);
         this.fileType = NO_FILE_TYPE;
         this.thumbLoader = ImageLoader.getInstance(context);
@@ -296,15 +294,6 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
         this.keywordFiltersPipeline.clear();
         cachedFilteredSearchResults = null;
         return filter();
-    }
-
-    private static class OnLinkClickListener implements OnClickListener {
-        @Override
-        public void onClick(View v) {
-            String url = (String) v.getTag();
-            UIUtils.openURL(v.getContext(), url);
-            UXStats.instance().log(UXAction.SEARCH_RESULT_SOURCE_VIEW);
-        }
     }
 
     public static class FilteredSearchResults {

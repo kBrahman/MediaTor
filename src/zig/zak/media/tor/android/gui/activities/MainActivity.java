@@ -58,7 +58,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.lang.ref.WeakReference;
 import java.lang.reflect.Method;
 import java.util.Stack;
 
@@ -121,7 +120,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     private SearchFragment search;
     private MyFilesFragment library;
     private TransfersFragment transfers;
-    private BroadcastReceiver mainBroadcastReceiver;
     private final LocalBroadcastReceiver localBroadcastReceiver;
     private TimerSubscription playerSubscription;
 
@@ -344,7 +342,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
             controller.startWizardActivity();
         }
         checkLastSeenVersionBuild();
-        registerMainBroadcastReceiver();
         syncNavigationMenu();
         updateNavigationMenu();
         //uncomment to test social links dialog
@@ -359,14 +356,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     protected void onPause() {
         super.onPause();
         localBroadcastReceiver.unregister(this);
-        if (mainBroadcastReceiver != null) {
-            try {
-                unregisterReceiver(mainBroadcastReceiver);
-            } catch (Throwable ignored) {
-                //oh well (the api doesn't provide a way to know if it's been registered before,
-                //seems like overkill keeping track of these ourselves.)
-            }
-        }
     }
 
     private SparseArray<DangerousPermissionsChecker> initPermissionsCheckers() {
@@ -380,12 +369,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         checkers.put(DangerousPermissionsChecker.ACCESS_COARSE_LOCATION_PERMISSIONS_REQUEST_CODE, accessCoarseLocationChecker);
         // add more permissions checkers if needed...
         return checkers;
-    }
-
-    private void registerMainBroadcastReceiver() {
-        mainBroadcastReceiver = new MainBroadcastReceiver(this);
-        IntentFilter bf = new IntentFilter(Constants.ACTION_NOTIFY_SDCARD_MOUNTED);
-        registerReceiver(mainBroadcastReceiver, bf);
     }
 
     @Override
@@ -437,10 +420,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         } else if (mToken == null && checker != null && !checker.noAccess()) {
             mToken = MusicUtils.bindToService(this, this);
         }
-    }
-
-    private void onNotifySdCardMounted() {
-        transfers.initStorageRelatedRichNotifications(null);
     }
 
     @Override
@@ -543,10 +522,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         }
     }
 
-    private void onLastDialogButtonPositive() {
-        finish();
-    }
-
     private void onShutdownDialogButtonPositive() {
         shutdown();
     }
@@ -596,14 +571,14 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         }
         if (fragment == null) {
             fragment = search;
-            setCheckedItem(R.id.menu_main_search);
+            setCheckedItem();
         }
         switchContent(fragment);
     }
 
-    private void setCheckedItem(int navMenuItemId) {
+    private void setCheckedItem() {
         if (navigationMenu != null) {
-            navigationMenu.updateCheckedItem(navMenuItemId);
+            navigationMenu.updateCheckedItem(R.id.menu_main_search);
         }
     }
 
@@ -867,21 +842,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
             IOUtils.closeQuietly(outStream);
         }
         return "file://" + target.getAbsolutePath();
-    }
-
-    private static final class MainBroadcastReceiver extends BroadcastReceiver {
-        private final WeakReference<MainActivity> activityRef;
-
-        MainBroadcastReceiver(MainActivity activity) {
-            activityRef = Ref.weak(activity);
-        }
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (Ref.alive(activityRef) && Constants.ACTION_NOTIFY_SDCARD_MOUNTED.equals(intent.getAction())) {
-                activityRef.get().onNotifySdCardMounted();
-            }
-        }
     }
 
     private final class LocalBroadcastReceiver extends BroadcastReceiver {

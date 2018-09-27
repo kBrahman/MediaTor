@@ -71,7 +71,7 @@
     <string name="multicast_discovery_summary">Yhdistä paikallinen Wifi ikäisensä kautta multicast (suositeltava)</string>
     <string name="max_concurrent_uploads">Suurin Samanaikainen lataukset</string>
     <string name="use_torlock">Käytä TorLock</string>
-    <string name="tos_title">Käyttöehdot</string>
+
     <string name="activity_downloads_name">Aktiivinen Lataukset</string>
     <string name="wait">Odota</string>
     <string name="summary_files_shared">Jakaminen %s tiedostot paikallisesti</string>
@@ -230,7 +230,7 @@
     <string name="send_my_geo_location_summary">Ping lähettää arvioidun maantieteellisen sijainnin löytää lähimmän ikäisensä.</string>
     <string name="wants_to_share_a_file">haluaa jakaa tiedoston</string>
     <string name="simultaneous_uploads_summary">Määrittää, montako Wi-Fi jakamisen lisäykset haluat sallia samanaikaisesti.</string>
-    <string name="i_have_read_and_agree_to_the">Olen lukenut ja hyväksyn</string>
+
     <string name="media_type_images">Kuvat</string>
     <string name="scanning">Viimeistely - Skannaus</string>
     <string name="delete_file_menu_action">Poistaa</string>
@@ -288,7 +288,7 @@
     <string name="thirty_days">30 päivää</string>
     <string name="peer_http_upload_status_error">Virhe</string>
     <string name="donation_thanks">Kiitos niin paljon tukeminen FrostWire</string>
-    <string name="remove_ads_description">Nauti ilman mainoksia kokemus, tukemaan FrostWire</string>
+
     <string name="crawl_cache_size">Crawl cache %1$.2fMB</string>
     <string name="wizard_previous">Edellinen</string>
     <string name="azureus_manager_item_downloading">Lataaminen</string>
@@ -531,10 +531,10 @@
     <string name="stop_all_transfers">Tämä pysäyttää kaikki siirrot</string>
     <string name="includes_3_day_free_trial">Sisältää 3 päivän maksuton oikeudenkäyntiä. Suositeltava</string>
     <string name="use_mobile_data_summary">Käytä matkapuhelinverkon BitTorrent latauksia. Data yliannostus saattaa periä. Käytä huolellisesti.</string>
-    <string name="intent_text">FrostWire on peer-to-peer ohjelma jakaa valtuutettujen vain tiedostot. Asennuksesta ja käytöstä ohjelma ei muodosta lisenssiä saamiseksi tai jakelevat luvatonta sisältöä.</string>
+    <string name="intent_text">MediaTor on peer-to-peer ohjelma jakaa valtuutettujen vain tiedostot. Asennuksesta ja käytöstä ohjelma ei muodosta lisenssiä saamiseksi tai jakelevat luvatonta sisältöä.</string>
     <string name="searching_indeterminate">Etsiä…</string>
     <string name="azureus_peer_manager_status_finishedin">Viimeistelty</string>
-    <string name="tos_accept">Hyväksy</string>
+
     <string name="support">Tuki</string>
     <string name="seeding_has_been_turned_off">Kylvö on katkaistu virta.</string>
     <string name="try_changing_your_nickname">Anna lempinimi</string>
@@ -577,7 +577,7 @@
     <string name="transfers_context_menu_stop_delete_data">Lopeta ja poistaa tietoja</string>
     <string name="cheaper_than_cigarettes">Halvempi kuin savukkeet</string>
     <string name="search_settings">Haku Asetukset</string>
-    <string name="update_message">FrostWire on ladannut uuden tehokkuuspäivitys sinulle, mene eteenpäin ja kosketa OK-painiketta, jos haluat asentaa sen nyt.</string>
+
     <string name="days_left">päiviä jäljellä</string>
     <string name="media_player_failed">Mediasoitin epäonnistui</string>
     <string name="six_months">6 kuukautta</string>
@@ -594,7 +594,7 @@
     <string name="ringtone_set">Ringtone Set</string>
     <string name="transfers">Siirrot</string>
     <string name="keep_the_project_alive">Pidä projekti elossa</string>
-    <string name="show_love">Rakkaus FrostWire?</string>
+
     <string name="remove_ads">Poista mainokset</string>
     <string name="your_connection_has_dropped_stopping_services">WiFi-yhteys on laskenut. Pysäyttäminen palvelut.</string>
     <string name="use_tpb_summary">TPB on magneetti pohjainen, toimii vain Wifi</string>

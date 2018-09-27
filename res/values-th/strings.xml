@@ -72,7 +72,7 @@
     <string name="multicast_discovery_summary">เชื่อมต่อไปยังเพื่อนร่วมงาน Wifi ท้องถิ่นผ่านหลายผู้รับ (แนะนำ)</string>
     <string name="max_concurrent_uploads">อัปโหลดพร้อมกันสูงสุด</string>
     <string name="use_torlock">ใช้ TorLock</string>
-    <string name="tos_title">ข้อกำหนดการใช้งาน</string>
+
     <string name="activity_downloads_name">ดาวน์โหลดที่ใช้งาน</string>
     <string name="wait">รอ</string>
     <string name="summary_files_shared">การแชร์ไฟล์ %s ในประเทศ</string>
@@ -228,7 +228,7 @@
     <string name="send_my_geo_location_summary">ปิงจะส่งตำแหน่งทางภูมิศาสตร์โดยประมาณของคุณที่จะหาเพื่อนที่อยู่ใกล้</string>
     <string name="wants_to_share_a_file">ต้องการแบ่งปันไฟล์</string>
     <string name="simultaneous_uploads_summary">กำหนดจำนวนภาพที่ส่ง Wi-Fi ร่วมกันคุณต้องการให้ในเวลาเดียวกัน</string>
-    <string name="i_have_read_and_agree_to_the">ฉันได้อ่านและยอมรับ</string>
+
     <string name="media_type_images">ภาพ</string>
     <string name="scanning">จบ - สแกน</string>
     <string name="delete_file_menu_action">ลบ</string>
@@ -285,7 +285,7 @@
     <string name="thirty_days">30 วัน</string>
     <string name="peer_http_upload_status_error">ความผิดพลาด</string>
     <string name="donation_thanks">ขอบคุณมากสำหรับการสนับสนุน FrostWire</string>
-    <string name="remove_ads_description">เพลิดเพลินไปกับประสบการณ์โฆษณาฟรีสนับสนุน FrostWire</string>
+
     <string name="crawl_cache_size">แคชรวบรวมข้อมูล %1$.2fMB</string>
     <string name="wizard_previous">ก่อน</string>
     <string name="azureus_manager_item_downloading">ดาวน์โหลด</string>
@@ -526,10 +526,10 @@
     <string name="stop_all_transfers">นี้จะหยุดการถ่ายโอนทั้งหมด</string>
     <string name="includes_3_day_free_trial">รวม 3 วันทดลองใช้ฟรี แนะนำ</string>
     <string name="use_mobile_data_summary">ใช้เครือข่ายโทรศัพท์มือถือสำหรับการดาวน์โหลด BitTorrent ค่าใช้จ่ายข้อมูลขีดอาจนำไปใช้ ใช้อย่างระมัดระวัง</string>
-    <string name="intent_text">FrostWire เป็นโปรแกรมแบบ peer-to-peer สำหรับการแชร์ไฟล์ได้รับอนุญาตเท่านั้น การติดตั้งและการใช้โปรแกรมไม่ก่อให้ใบอนุญาตสำหรับการได้รับหรือแจกจ่ายเนื้อหาไม่ได้รับอนุญาต</string>
+    <string name="intent_text">MediaTor เป็นโปรแกรมแบบ peer-to-peer สำหรับการแชร์ไฟล์ได้รับอนุญาตเท่านั้น การติดตั้งและการใช้โปรแกรมไม่ก่อให้ใบอนุญาตสำหรับการได้รับหรือแจกจ่ายเนื้อหาไม่ได้รับอนุญาต</string>
     <string name="searching_indeterminate">ค้นหา…</string>
     <string name="azureus_peer_manager_status_finishedin">เสร็จใน</string>
-    <string name="tos_accept">ยอมรับ</string>
+
     <string name="support">สนับสนุน</string>
     <string name="seeding_has_been_turned_off">เมล็ดถูกปิด</string>
     <string name="try_changing_your_nickname">ใส่ชื่อเล่นของคุณ</string>
@@ -572,7 +572,7 @@
     <string name="transfers_context_menu_stop_delete_data">หยุดและลบข้อมูล</string>
     <string name="cheaper_than_cigarettes">ราคาถูกกว่าบุหรี่</string>
     <string name="search_settings">ตั้งค่าการค้นหา</string>
-    <string name="update_message">FrostWire ได้ดาวน์โหลดการปรับปรุงใหม่ที่มีประสิทธิภาพสำหรับคุณโปรดไปข้างหน้าและสัมผัสปุ่ม OK ถ้าคุณต้องการที่จะติดตั้งได้ในขณะนี้</string>
+
     <string name="days_left">วันที่เหลือ</string>
     <string name="media_player_failed">เครื่องเล่นสื่อล้มเหลว</string>
     <string name="six_months">6 เดือน</string>
@@ -589,7 +589,7 @@
     <string name="ringtone_set">ตั้งเสียงเรียกเข้า</string>
     <string name="transfers">บริการรถรับส่ง</string>
     <string name="keep_the_project_alive">ให้โครงการยังมีชีวิตอยู่</string>
-    <string name="show_love">รัก FrostWire?</string>
+
     <string name="remove_ads">ลบโฆษณา</string>
     <string name="your_connection_has_dropped_stopping_services">การเชื่อมต่อไร้สายของคุณได้ลดลง หยุดให้บริการ</string>
     <string name="use_tpb_summary">TPB เป็นแม่เหล็กที่ใช้งานได้เฉพาะใน WiFi</string>

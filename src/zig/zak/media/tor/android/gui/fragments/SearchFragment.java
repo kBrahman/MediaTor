@@ -21,8 +21,6 @@ package zig.zak.media.tor.android.gui.fragments;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
@@ -36,11 +34,17 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.ConfigurationManager;
 import zig.zak.media.tor.android.core.Constants;
 import zig.zak.media.tor.android.gui.LocalSearchEngine;
-import zig.zak.media.tor.android.gui.adapters.OnFeedbackClickAdapter;
 import zig.zak.media.tor.android.gui.adapters.SearchResultListAdapter;
 import zig.zak.media.tor.android.gui.adapters.SearchResultListAdapter.FilteredSearchResults;
 import zig.zak.media.tor.android.gui.dialogs.HandpickedTorrentDownloadDialogOnFetch;
@@ -55,10 +59,7 @@ import zig.zak.media.tor.android.gui.util.ScrollListeners.FastScrollDisabledWhen
 import zig.zak.media.tor.android.gui.util.UIUtils;
 import zig.zak.media.tor.android.gui.views.AbstractDialog.OnDialogClickListener;
 import zig.zak.media.tor.android.gui.views.AbstractFragment;
-import zig.zak.media.tor.android.gui.views.ClickAdapter;
 import zig.zak.media.tor.android.gui.views.KeywordFilterDrawerView;
-import zig.zak.media.tor.android.gui.views.RichNotification;
-import zig.zak.media.tor.android.gui.views.RichNotificationActionLink;
 import zig.zak.media.tor.android.gui.views.SearchInputView;
 import zig.zak.media.tor.android.gui.views.SearchProgressView;
 import zig.zak.media.tor.android.gui.views.SwipeLayout;
@@ -80,20 +81,8 @@ import zig.zak.media.tor.util.Ref;
 import zig.zak.media.tor.uxstats.UXAction;
 import zig.zak.media.tor.uxstats.UXStats;
 
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import static zig.zak.media.tor.android.util.Asyncs.async;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class SearchFragment extends AbstractFragment implements MainFragment, OnDialogClickListener, SearchProgressView.CurrentQueryReporter, KeywordFilterDrawerView.KeywordFilterDrawerController, DrawerLayout.DrawerListener {
     private static final Logger LOG = Logger.getLogger(SearchFragment.class);
     private SearchResultListAdapter adapter;
@@ -461,7 +450,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         searchProgress.setProgressEnabled(false);
         showSearchView(getView());
         filterButton.reset(true); // hide=true
-        showRatingsReminder(getView());
         searchHeaderBanner.setBannerViewVisibility(SearchHeaderBanner.BannerType.ALL, false);
         keywordDetector.shutdownHistogramUpdateRequestDispatcher();
     }
@@ -537,29 +525,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
             UIUtils.showShortMessage(ctx, R.string.fetching_torrent_ellipsis);
         }
         new AsyncStartDownload(ctx, sr, message);
-    }
-
-    private void showRatingsReminder(View v) {
-        final RichNotification ratingReminder = findView(v, R.id.fragment_search_rating_reminder_notification);
-        ratingReminder.setVisibility(View.GONE);
-        final ConfigurationManager CM = ConfigurationManager.instance();
-        boolean alreadyRated = CM.getBoolean(Constants.PREF_KEY_GUI_ALREADY_RATED_US_IN_MARKET);
-        if (alreadyRated || ratingReminder.wasDismissed()) {
-            //LOG.info("SearchFragment.showRatingsReminder() aborted. alreadyRated="+alreadyRated + " wasDismissed=" + ratingReminder.wasDismissed());
-            return;
-        }
-        long installationTimestamp = CM.getLong(Constants.PREF_KEY_GUI_INSTALLATION_TIMESTAMP);
-        long daysInstalled = TimeUnit.MILLISECONDS.toDays(System.currentTimeMillis() - installationTimestamp);
-        if (installationTimestamp == -1 || daysInstalled < 5) {
-            //LOG.info("SearchFragment.showRatingsReminder() aborted. Too soon to show ratings reminder. daysInstalled=" + daysInstalled);
-            return;
-        }
-        ClickAdapter<SearchFragment> onRateAdapter = new OnRateClickAdapter(SearchFragment.this, ratingReminder, CM);
-        ratingReminder.setOnClickListener(onRateAdapter);
-        RichNotificationActionLink rateFrostWireActionLink = new RichNotificationActionLink(ratingReminder.getContext(), getString(R.string.love_frostwire), onRateAdapter);
-        RichNotificationActionLink sendFeedbackActionLink = new RichNotificationActionLink(ratingReminder.getContext(), getString(R.string.send_feedback), new OnFeedbackClickAdapter(this, ratingReminder, CM));
-        ratingReminder.updateActionLinks(rateFrostWireActionLink, sendFeedbackActionLink);
-        ratingReminder.setVisibility(View.VISIBLE);
     }
 
     private void uxLogAction(SearchResult sr) {
@@ -740,31 +705,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
             this.fsr.numFilteredPictures = 0;
             this.fsr.numFilteredTorrents = 0;
             this.fsr.numFilteredVideo = 0;
-        }
-    }
-
-    private final static class OnRateClickAdapter extends ClickAdapter<SearchFragment> {
-        private final WeakReference<RichNotification> ratingReminderRef;
-        private final ConfigurationManager CM;
-
-        OnRateClickAdapter(final SearchFragment owner, final RichNotification ratingReminder, final ConfigurationManager CM) {
-            super(owner);
-            ratingReminderRef = Ref.weak(ratingReminder);
-            this.CM = CM;
-        }
-
-        @Override
-        public void onClick(SearchFragment owner, View v) {
-            if (Ref.alive(ratingReminderRef)) {
-                ratingReminderRef.get().setVisibility(View.GONE);
-            }
-            CM.setBoolean(Constants.PREF_KEY_GUI_ALREADY_RATED_US_IN_MARKET, true);
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("market://details?id=" + Constants.APP_PACKAGE_NAME));
-            try {
-                owner.startActivity(intent);
-            } catch (Throwable ignored) {
-            }
         }
     }
 

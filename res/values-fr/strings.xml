@@ -47,7 +47,7 @@
     <string name="settings_description">Paramètres de recherche</string>
     <string name="clear_finished">Fichier effacé </string>
     <string name="support_free_software">Soutenez les logiciels gratuits</string>
-    <string name="show_love">Aimez-vous FrostWire?</string>
+
     <string name="waiting">Patientez…</string>
     <string name="use_icons_to_browse">Utilisez l\'icône pour parcourir les fichiers.</string>
     <string name="type_to_filter_results">Tapez sur le résultat du filtre.</string>
@@ -84,7 +84,7 @@
     <string name="searching_for">Rechercher</string>
     <string name="search_for_type_files">Rechercher %s fichiers</string>
     <string name="update_title">Actualiser l\'heure!</string>
-    <string name="update_message">FrostWire vous a téléchargé une nouvelle MISE A JOUR DE PERFORMANCE, veuillez toucher le bouton OK pour l’installer maintenant.</string>
+
     <string name="next_time">La prochaine fois</string>
     <string name="change_my_nickname">Changer mon pseudo</string>
     <string name="try_changing_your_nickname">Tapez votre pseudo</string>
@@ -108,8 +108,8 @@
     <string name="stop_all_transfers_message">Ceci arrêtera tous les téléchargements en cours et en attentes. Toutes les données transférées seront perdues. Êtes-vous sûr?</string>
     <string name="files">fichiers</string>
     <string name="touch_filetype_icon">Toucher l\'icône pour changer le type de fichier</string>
-    <string name="tos_title">Conditions d’utilisation</string>
-    <string name="tos_accept">Accepter</string>
+
+
     <string name="tos_refuse">Refuser</string>
     <string name="downloads">Téléchargements</string>
 
@@ -314,7 +314,7 @@
     <string name="seeding_settings">Paramètres d\'ensemencement </string>
     <string name="seeding_settings_explanation">Les utilisateurs BitTorrent sur Internet pourront télécharger le fragment de fichier venant des données de vos torrents.</string>
     <string name="seeding_wifi_settings_explanation">Ensemencer seulement sur une connexion WiFi. Evitez les frais supplémentaires de votre opérateur.</string>
-    <string name="intent_text">FrostWire est un programme par pair-a-pair de distribution de fichiers autorisés uniquement. L\'installation et l\'utilisation de ce programme ne vous donne pas l\'autorisation d\'obtenir ou de distribuer des contenus illégaux.</string>
+    <string name="intent_text">MediaTor est un programme par pair-a-pair de distribution de fichiers autorisés uniquement. L\'installation et l\'utilisation de ce programme ne vous donne pas l\'autorisation d\'obtenir ou de distribuer des contenus illégaux.</string>
     <string name="accept_intent">Je n\'utiliserai pas FrostWire pour une violation des droits d\'auteur </string>
     <string name="toast_on_disconnect">Déconnecter du BitTorrent. Tous les transferts BitTorrent se sont arrêtés.</string>
     <string name="toast_on_connect">La base BitTorrent a commencé.</string>
@@ -478,7 +478,7 @@
     <string name="one_time_purchase">Acheter une fois</string>
     <string name="activity_VPN">Connexion</string>
     <string name="one_year">1 an</string>
-    <string name="i_have_read_and_agree_to_the">J\'ai lu et accepté les</string>
+
     <string name="scanning">Finition - Scanning</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">Selon vos paramètres, je ne peux pas commencer le seeding, sauf si vous êtes sur une connexion Wi-Fi. Le fichier sera prêt pour l\'ensemencement automatiquement lorsque vous revenez à un internet activé réseau Wi-Fi.</string>
     <string name="checking_ellipsis">Vérification&#8230;</string>
@@ -495,7 +495,7 @@
     <string name="delete_files">Supprimer les fichiers</string>
     <string name="vpn_price">à partir de $%1$.2f par mois</string>
     <string name="thirty_days">30 jours</string>
-    <string name="remove_ads_description">Profitez de l\'expérience sans publicité, appuyer FrostWire</string>
+
     <string name="pausing">Pause</string>
     <string name="dummy_title_bold">[Gras Titre]</string>
     <string name="storage_picker_treeuri_cant_write">FrostWire ne peut pas écrire sur le chemin de stockage sélectionné</string>

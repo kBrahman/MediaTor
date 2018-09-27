@@ -46,7 +46,7 @@
     <string name="settings_description">Søg indstillinger</string>
     <string name="clear_finished">Slet færdig emne</string>
     <string name="support_free_software">Støt gratis software</string>
-    <string name="show_love">Kan lide FrostWire?</string>
+
     <string name="waiting">Venter…</string>
     <string name="use_icons_to_browse">Brug ikoner til gennemse filerne.</string>
     <string name="type_to_filter_results">Skriv for at filtrere resultater.</string>
@@ -83,7 +83,7 @@
     <string name="searching_for">Søgning for</string>
     <string name="search_for_type_files">Søg for %s filer</string>
     <string name="update_title">Opdater tid!</string>
-    <string name="update_message">FrostWire har hentet ny RESULTATER OPDATERING for dig, gå venligst videre og tryk på OK-knappen, hvis du ønsker at installere det nu.</string>
+
     <string name="next_time">Næste gang</string>
     <string name="change_my_nickname">Ændre mit Brugernavn</string>
     <string name="try_changing_your_nickname">Skriv dit brugernavn</string>
@@ -107,8 +107,8 @@
     <string name="stop_all_transfers_message">Dette vil annullere alle igangværende og i kø downloads. Alle overførte data vil gå tabt. Er du sikker?</string>
     <string name="files">filer</string>
     <string name="touch_filetype_icon">Tryk ikonet for at ændre filtypen</string>
-    <string name="tos_title">Brugervilkår</string>
-    <string name="tos_accept">Accept</string>
+
+
     <string name="tos_refuse">Afvis</string>
     <string name="downloads">Downloads</string>
 
@@ -313,7 +313,7 @@
     <string name="seeding_settings">Frø indstillinger</string>
     <string name="seeding_settings_explanation">BitTorrent-brugere på internettet vil være i stand til at downloade filer stykker af data dine torrents frø.</string>
     <string name="seeding_wifi_settings_explanation">Frø kun ved brug af en WiFi-forbindelse. Undgå ekstra gebyrer fra din udbyder.</string>
-    <string name="intent_text">FrostWire er et peer-to-peer program til at dele godkendte filer. Installation og brug af programmet udgør ikke tilladelse til at opnå eller distribution af uautoriseret indhold.</string>
+    <string name="intent_text">MediaTor er et peer-to-peer program til at dele godkendte filer. Installation og brug af programmet udgør ikke tilladelse til at opnå eller distribution af uautoriseret indhold.</string>
     <string name="accept_intent">Jeg vil ikke bruge FrostWire for krænkelse af ophavsretten</string>
     <string name="toast_on_disconnect">Frakoblet fra BitTorrent. Alle BitTorrent overførsler er stoppet.</string>
     <string name="toast_on_connect">BitTorrent core startede.</string>
@@ -422,7 +422,7 @@
     <string name="transfers_select_downloading">downloading</string>
 
     <string name="free_apps">Gratis Apps</string>
-    <string name="i_have_read_and_agree_to_the">Jeg har læst og accepterer</string>
+
     <string name="scanning">Efterbehandling - Scanning</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">I henhold til dine indstillinger kan jeg ikke starte såning medmindre du er på Wi-Fi. Filen vil være klar til såning automatisk, når du kommer tilbage til en internet aktiveret Wi-Fi-netværk.</string>
     <string name="checking_ellipsis">Kontrol&#8230;</string>
@@ -450,7 +450,7 @@
     <string name="transfers_select_all">alle</string>
     <string name="thirty_days">30 dage</string>
     <string name="donation_thanks">Tak så meget for at støtte FrostWire</string>
-    <string name="remove_ads_description">Nyd den annonce-fri oplevelse, støtter FrostWire</string>
+
     <string name="crawl_cache_size">Crawl cache %1$.2fMB</string>
     <string name="wifi_sharing_disabled">Wifi deling er slukket.\n\nWi-fi deling kan bruges til at dele filer lokalt mellem FrostWire baserede enheder tilsluttet det samme Wi-Fi-netværk.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Lær mere.&lt;/a&gt;</string>
     <string name="pausing">Pausing</string>

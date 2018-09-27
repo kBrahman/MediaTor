@@ -72,7 +72,7 @@
     <string name="multicast_discovery_summary">Свържете се с местните Wifi връстници чрез мултикаст (препоръчително)</string>
     <string name="max_concurrent_uploads">Максимални едновременни качени</string>
     <string name="use_torlock">Използвайте TorLock</string>
-    <string name="tos_title">Условия за ползване</string>
+
     <string name="activity_downloads_name">Активни изтегляния</string>
     <string name="wait">Изчакайте</string>
     <string name="summary_files_shared">Споделянето %s файлове локално</string>
@@ -228,7 +228,7 @@
     <string name="send_my_geo_location_summary">Pings ще изпрати приблизителното ви геолокация, за да намерите най-близките колеги.</string>
     <string name="wants_to_share_a_file">иска да споделите файл</string>
     <string name="simultaneous_uploads_summary">Определете колко качвания споделяне на Wi-Fi, които искате да се даде възможност по едно и също време.</string>
-    <string name="i_have_read_and_agree_to_the">Прочетох и съм съгласен с</string>
+
     <string name="media_type_images">Снимки</string>
     <string name="scanning">Довършителни - Сканиране</string>
     <string name="delete_file_menu_action">Изтрий</string>
@@ -285,7 +285,7 @@
     <string name="thirty_days">30 дни</string>
     <string name="peer_http_upload_status_error">Грешка</string>
     <string name="donation_thanks">Благодаря ви много за поддържаща FrostWire</string>
-    <string name="remove_ads_description">Насладете се на опита, без реклами, подкрепят FrostWire</string>
+
     <string name="crawl_cache_size">Crawl cache %1$.2fMB</string>
     <string name="wizard_previous">Предишна</string>
     <string name="azureus_manager_item_downloading">Свалянето</string>
@@ -526,10 +526,10 @@
     <string name="stop_all_transfers">Това ще спре всички трансфери</string>
     <string name="includes_3_day_free_trial">Включва три дни безплатно изпробване. Препоръчителна.</string>
     <string name="use_mobile_data_summary">Използвайте мобилна мрежа за BitTorrent файлове за изтегляне. може да ви таксува излишък на данни. Използвайте внимателно.</string>
-    <string name="intent_text">FrostWire е програма, партньорска към партньорската за споделяне само оторизирани файлове. Инсталиране и използване на програмата, не представлява лиценз за получаване или разпространяване на неразрешено съдържание.</string>
+    <string name="intent_text">MediaTor е програма, партньорска към партньорската за споделяне само оторизирани файлове. Инсталиране и използване на програмата, не представлява лиценз за получаване или разпространяване на неразрешено съдържание.</string>
     <string name="searching_indeterminate">търсене…</string>
     <string name="azureus_peer_manager_status_finishedin">Завършена през</string>
-    <string name="tos_accept">Приеми</string>
+
     <string name="support">Поддържа</string>
     <string name="seeding_has_been_turned_off">Сеене е изключен</string>
     <string name="try_changing_your_nickname">Въведете вашия псевдоним</string>
@@ -572,7 +572,7 @@
     <string name="transfers_context_menu_stop_delete_data">Спрете и изтриване на данни</string>
     <string name="cheaper_than_cigarettes">По-евтини от цигарите</string>
     <string name="search_settings">Настройки за търсенето</string>
-    <string name="update_message">FrostWire е изтеглен нов ИЗПЪЛНЕНИЕ АКТУАЛИЗАЦИЯ за вас, моля, продължете напред и докоснете бутона OK, ако искате да го инсталирате сега.</string>
+
     <string name="days_left">Оставащи дни</string>
     <string name="media_player_failed">Медия плеър провали</string>
     <string name="six_months">6 месеца</string>
@@ -589,7 +589,7 @@
     <string name="ringtone_set">Мелодия набор</string>
     <string name="transfers">Трансфери</string>
     <string name="keep_the_project_alive">Дръжте проекта жив!</string>
-    <string name="show_love">Любовта FrostWire?</string>
+
     <string name="remove_ads">Премахни рекламите</string>
     <string name="your_connection_has_dropped_stopping_services">Вашият Wifi връзка е намалял. Спиране услуги.</string>
     <string name="use_tpb_summary">TPB е магнит на основата, работи само на Wifi</string>

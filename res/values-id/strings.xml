@@ -46,7 +46,7 @@
     <string name="settings_description">Pengaturan pencarian</string>
     <string name="clear_finished">embersihan Selesai</string>
     <string name="support_free_software">Dukung Software Gratis</string>
-    <string name="show_love">Cinta dengan FrostWire?</string>
+
     <string name="waiting">Sedang Menunggu&#8230;</string>
     <string name="use_icons_to_browse">Gunakan ikon-ikon ini untuk menjelajahi arsip-arsip.</string>
     <string name="type_to_filter_results">Ketik untuk menapis hasil-hasilnya.</string>
@@ -83,7 +83,7 @@
     <string name="searching_for">Mencari</string>
     <string name="search_for_type_files">Mencari arsip-arsip %s</string>
     <string name="update_title">Perbarui Waktu!</string>
-    <string name="update_message">FrostWire telah mengunduh PEMBARUAN PENAMPILAN baru untuk Anda, silahkan teruskan dan sentuh tombol OK bila Anda ingin menginstalnya sekarang.</string>
+
     <string name="next_time">Lain Kali</string>
     <string name="change_my_nickname">Ubah nama panggilan saya</string>
     <string name="try_changing_your_nickname">Masukkan nama panggilan Anda</string>
@@ -107,8 +107,8 @@
     <string name="stop_all_transfers_message">Ini akan membatalkan semua unduhan yang sedang berlangsung dan yang antri. Semua data yang dipindahkan akan hilang. Apakah Anda yakin?</string>
     <string name="files">arsip-arsip</string>
     <string name="touch_filetype_icon">Sentuh ikon untuk mengubah tipe arsip</string>
-    <string name="tos_title">Ketentuan Penggunaan</string>
-    <string name="tos_accept">Terima</string>
+
+
     <string name="tos_refuse">Tolak</string>
     <string name="downloads">Unduhan-unduhan</string>
 
@@ -312,7 +312,7 @@
     <string name="seeding_settings">Pengaturan Seeding</string>
     <string name="seeding_settings_explanation">Para pengguna BitTorrent di internet akan bisa mengunduh potongan arsip-arsip dari data seed torrent Anda.</string>
     <string name="seeding_wifi_settings_explanation">Hanya seed ketika menggunakan koneksi WiFi. Hindari biaya tambahan dari operator Anda</string>
-    <string name="intent_text">FrostWire adalah program dari peer ke peer untuk berbagi arsip-arsip sah saja. Menginstal dan menggunakan program ini bukanlah lisensi untuk mendapatkan atau mendistribusikan konten yang tidak sah.</string>
+    <string name="intent_text">MediaTor adalah program dari peer ke peer untuk berbagi arsip-arsip sah saja. Menginstal dan menggunakan program ini bukanlah lisensi untuk mendapatkan atau mendistribusikan konten yang tidak sah.</string>
     <string name="accept_intent">Saya tidak akan menggunakan FrostWire untuk pelanggaran hak cipta.</string>
     <string name="toast_on_disconnect">Terputus dari BitTorrent. Semua pemindahan BitTorrent telah dihentikan.</string>
     <string name="toast_on_connect">Inti BitTorrent telah dimulai</string>
@@ -414,7 +414,7 @@
     <string name="transfers_select_downloading">downloading</string>
 
     <string name="free_apps">Aplikasi gratis</string>
-    <string name="i_have_read_and_agree_to_the">Saya telah membaca dan setuju dengan</string>
+
     <string name="scanning">Finishing - Scanning</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">Sesuai dengan pengaturan saya tidak bisa memulai penyemaian kecuali Anda berada di Wi-Fi. File akan siap untuk penyemaian secara otomatis ketika Anda kembali ke internet diaktifkan jaringan Wi-Fi.</string>
     <string name="checking_ellipsis">Memeriksa&#8230;</string>
@@ -444,7 +444,7 @@
     <string name="desktop_transfer_status_cancelled">Dibatalkan</string>
     <string name="thirty_days">30 hari</string>
     <string name="donation_thanks">Terima kasih banyak untuk mendukung FrostWire</string>
-    <string name="remove_ads_description">Nikmati pengalaman bebas iklan, mendukung FrostWire</string>
+
     <string name="crawl_cache_size">Crawl cache %1$.2fMB</string>
     <string name="wifi_sharing_disabled">Berbagi wifi off.\n\nWi-fi berbagi dapat digunakan untuk berbagi file secara lokal antara perangkat FrostWire bertenaga terhubung ke jaringan Wi-Fi yang sama.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Belajarlah lagi.&lt;/a&gt;</string>
     <string name="pausing">Berhenti</string>

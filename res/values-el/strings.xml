@@ -46,7 +46,7 @@
     <string name="settings_description">Ρυθμίσεις Αναζήτησης</string>
     <string name="clear_finished">Καθαρισμός Ολοκληρωμένων</string>
     <string name="support_free_software">Υποστήριξε το Ελεύθερο Λογισμικό</string>
-    <string name="show_love">Αγαπάς το FrostWire?</string>
+
     <string name="waiting">Περιμένουμε…</string>
     <string name="use_icons_to_browse">Χρησιμοποίησε τα εικονίδια για να δεις τα αρχεία.</string>
     <string name="type_to_filter_results">Πληκτρολόγησε για να φιλτράρεις τα αποτελέσματα.</string>
@@ -83,7 +83,7 @@
     <string name="searching_for">Αναζήτηση για</string>
     <string name="search_for_type_files">Αναζήτηση για %s αρχεία</string>
     <string name="update_title">Ώρα για ενημέρωση!</string>
-    <string name="update_message">Το FrostWire κατέβασε για σένα μία ΠΙΟ ΓΡΗΓΟΡΗ ΕΝΗΜΕΡΩΣΗ. Άγγιξε το OK για να την εγκαταστήσεις τώρα.</string>
+
     <string name="next_time">Αργότερα</string>
     <string name="change_my_nickname">Αλλαγή του ψευδώνυμού μου</string>
     <string name="try_changing_your_nickname">Γράψε το ψευδώνυμό σου</string>
@@ -107,8 +107,8 @@
     <string name="stop_all_transfers_message">Αυτό θα ακυρώσει όλα τα ενεργά και προγραμματισμένα downloads. Όλα τα δεδομένα που μεταφέρθηκαν θα χαθούν. Είσαι σίγουρος;</string>
     <string name="files">αρχεία</string>
     <string name="touch_filetype_icon">Άγγιξε το εικονίδιο για να αλλάξεις τον τύπο του αρχείου</string>
-    <string name="tos_title">Όροι Χρήσης</string>
-    <string name="tos_accept">Δέχομαι</string>
+
+
     <string name="tos_refuse">Αρνούμαι</string>
     <string name="downloads">Downloads</string>
 
@@ -482,7 +482,7 @@
     <string name="activity_VPN">Σύνδεση</string>
     <string name="one_year">1 χρόνος</string>
 
-    <string name="i_have_read_and_agree_to_the">Έχω διαβάσει και συμφωνώ με το</string>
+
     <string name="scanning">Φινίρισμα - Σάρωση</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">Σύμφωνα με τις ρυθμίσεις σας, δεν μπορώ να ξεκινήσετε τη σπορά, εκτός αν είστε σε Wi-Fi. Το αρχείο θα είναι έτοιμο για σπορά αυτόματα όταν γυρίσεις σε ένα internet ενεργοποιημένη δίκτυο Wi-Fi.</string>
     <string name="checking_ellipsis">Έλεγχος&#8230;</string>
@@ -498,7 +498,7 @@
     <string name="delete_files">διαγράψτε τα αρχεία</string>
     <string name="vpn_price">από $%1$.2f ανά μήνα</string>
     <string name="thirty_days">30 μέρες</string>
-    <string name="remove_ads_description">Απολαύστε το χωρίς διαφημίσεις εμπειρία, υποστηρίζουν FrostWire</string>
+
     <string name="pausing">Παύση</string>
     <string name="dummy_title_bold">[τολμηρό τίτλο]</string>
     <string name="storage_picker_treeuri_cant_write">FrostWire δεν μπορεί να γράψει για την επιλεγμένη διαδρομή αποθήκευσης</string>

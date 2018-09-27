@@ -35,11 +35,6 @@ import zig.zak.media.tor.android.core.Constants;
 import zig.zak.media.tor.android.gui.views.ClearableEditTextView.OnActionListener;
 import zig.zak.media.tor.util.Ref;
 
-/**
- * @author gubatron
- * @author aldenml
- *
- */
 public class SearchInputView extends LinearLayout {
     private final TextInputClickListener textInputListener;
     private final SuggestionsAdapter adapter;
@@ -51,12 +46,7 @@ public class SearchInputView extends LinearLayout {
     private final SparseArray<FileTypeTab> toFileTypeTab;
 
     private enum FileTypeTab {
-        TAB_AUDIO(Constants.FILE_TYPE_AUDIO, 0),
-        TAB_VIDEOS(Constants.FILE_TYPE_VIDEOS, 1),
-        TAB_PICTURES(Constants.FILE_TYPE_PICTURES, 2),
-        TAB_APPLICATIONS(Constants.FILE_TYPE_APPLICATIONS, 3),
-        TAB_DOCUMENTS(Constants.FILE_TYPE_DOCUMENTS, 4),
-        TAB_TORRENTS(Constants.FILE_TYPE_TORRENTS, 5);
+        TAB_AUDIO(Constants.FILE_TYPE_AUDIO, 0), TAB_VIDEOS(Constants.FILE_TYPE_VIDEOS, 1), TAB_PICTURES(Constants.FILE_TYPE_PICTURES, 2), TAB_APPLICATIONS(Constants.FILE_TYPE_APPLICATIONS, 3), TAB_DOCUMENTS(Constants.FILE_TYPE_DOCUMENTS, 4), TAB_TORRENTS(Constants.FILE_TYPE_TORRENTS, 5);
 
         final byte fileType;
         final int position;
@@ -88,7 +78,7 @@ public class SearchInputView extends LinearLayout {
     public void setShowKeyboardOnPaste(boolean show) {
         textInput.setShowKeyboardOnPaste(show);
     }
-    
+
     public void setOnSearchListener(OnSearchListener listener) {
         this.onSearchListener = listener;
     }
@@ -100,11 +90,11 @@ public class SearchInputView extends LinearLayout {
     public String getText() {
         return textInput.getText();
     }
-    
+
     public void setHint(String hint) {
         textInput.setHint(hint);
     }
-    
+
     public void setText(String text) {
         textInput.setText(text);
     }
@@ -164,7 +154,7 @@ public class SearchInputView extends LinearLayout {
         textInput.setListSelection(-1);
         textInput.dismissDropDown();
         adapter.discardLastResult();
-        String query = textInput.getText().toString().trim();
+        String query = textInput.getText().trim();
         if (query.length() > 0) {
             mediaTypeId = ConfigurationManager.instance().getLastMediaTypeFilter();
             tabItemFileTypeClick(mediaTypeId);
@@ -219,7 +209,7 @@ public class SearchInputView extends LinearLayout {
 
     public void switchToThe(boolean right) {
         int currentTabPosition = tabLayout.getSelectedTabPosition();
-        int nextTabPosition = (right ? ++currentTabPosition : --currentTabPosition ) % 6;
+        int nextTabPosition = (right ? ++currentTabPosition : --currentTabPosition) % 6;
         if (nextTabPosition == -1) {
             nextTabPosition = 5;
         }
@@ -233,7 +223,9 @@ public class SearchInputView extends LinearLayout {
 
     public interface OnSearchListener {
         void onSearch(View v, String query, int mediaTypeId);
+
         void onMediaTypeSelected(View v, int mediaTypeId);
+
         void onClear(View v);
     }
 

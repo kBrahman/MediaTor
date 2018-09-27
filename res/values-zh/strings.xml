@@ -46,7 +46,7 @@
     <string name="settings_description">搜索设置</string>
     <string name="clear_finished">清除完成</string>
     <string name="support_free_software">支持免费软件</string>
-    <string name="show_love">喜爱FrostWire?</string>
+
     <string name="waiting">等待?</string>
     <string name="use_icons_to_browse">使用图标浏览文件</string>
     <string name="type_to_filter_results">打字过滤结果</string>
@@ -83,7 +83,7 @@
     <string name="searching_for">搜索</string>
     <string name="search_for_type_files">搜索文件</string>
     <string name="update_title">更新时间!</string>
-    <string name="update_message">FrostWire已为您下载新的绩效考核包，如想现在安装，请按OK键。</string>
+
     <string name="next_time">下一次</string>
     <string name="change_my_nickname">修改昵称</string>
     <string name="try_changing_your_nickname">输入昵称</string>
@@ -107,8 +107,8 @@
     <string name="stop_all_transfers_message">这将会取消所有正在进行和列表中的下载项。所有下载数据会丢失。你确定?</string>
     <string name="files">文件</string>
     <string name="touch_filetype_icon">触摸图标选择文件类型</string>
-    <string name="tos_title">使用术语</string>
-    <string name="tos_accept">接受</string>
+
+
     <string name="tos_refuse">拒绝</string>
     <string name="downloads">下载</string>
 
@@ -312,7 +312,7 @@
     <string name="seeding_settings">播种设置</string>
     <string name="seeding_settings_explanation">互联网的比特流用户可以下载你的种子的大量数据。</string>
     <string name="seeding_wifi_settings_explanation">只有在使用无线连接时播种。避免载波的额外费用。</string>
-    <string name="intent_text">FrostWire是一个点对点的程序，只能共享授权文件。安装和使用程序无权获取或散布未经授权的内容。</string>
+    <string name="intent_text">MediaTor是一个点对点的程序，只能共享授权文件。安装和使用程序无权获取或散布未经授权的内容。</string>
     <string name="accept_intent">我不会侵犯版权使用FrostWire。</string>
     <string name="toast_on_disconnect">与比特流断开。所有比特流传输中断。</string>
     <string name="toast_on_connect">比特流核心启动.</string>
@@ -495,7 +495,7 @@
     <string name="one_time_purchase">一次性购买</string>
     <string name="activity_VPN">连接</string>
     <string name="one_year">1年</string>
-    <string name="i_have_read_and_agree_to_the">我已经阅读并且同意</string>
+
     <string name="scanning">完成 - 扫描</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">根据您的设置，我不能开始播种，除非你在Wi-Fi。 当您返回启用互联网的Wi-Fi网络时，该文件将可以自动播种.</string>
     <string name="ringtone_not_set">无法设置铃声</string>
@@ -507,7 +507,7 @@
     <string name="delete_files">删除文件</string>
     <string name="vpn_price">从 $%1$.2f 每月</string>
     <string name="thirty_days">30天</string>
-    <string name="remove_ads_description">享受无广告的体验，支持FrostWire</string>
+
     <string name="dummy_title_bold">[粗体标题]</string>
     <string name="storage_picker_treeuri_cant_write">FrostWire无法在所选的存储路径上写入</string>
     <string name="processing_payment">处理付款，在几秒钟内刷新</string>

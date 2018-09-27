@@ -70,7 +70,7 @@
     <string name="multicast_discovery_summary">Conectați-vă la colegii WiFi locale prin intermediul multicast (recomandat)</string>
     <string name="max_concurrent_uploads">Încărcările simultane maxime</string>
     <string name="use_torlock">Utilizați TorLock</string>
-    <string name="tos_title">Termeni de utilizare</string>
+
     <string name="activity_downloads_name">Descărcări active</string>
     <string name="wait">Aștepta</string>
     <string name="summary_files_shared">Împărţi %s fișiere la nivel local</string>
@@ -223,7 +223,7 @@
     <string name="send_my_geo_location_summary">Pings va trimite Geolocalizare aproximativă pentru a găsi cel mai apropiat colegii.</string>
     <string name="wants_to_share_a_file">vrea să împartă un fișier</string>
     <string name="simultaneous_uploads_summary">Setați modul în care multe încărcări de acces Wi-Fi de partajare pe care doriți să le permită în același timp.</string>
-    <string name="i_have_read_and_agree_to_the">Am citit si sunt de acord cu</string>
+
     <string name="media_type_images">Imagini</string>
     <string name="scanning">Finisarea - Scanarea</string>
     <string name="delete_file_menu_action">Șterge</string>
@@ -279,7 +279,7 @@
     <string name="thirty_days">30 de zile</string>
     <string name="peer_http_upload_status_error">Eroare</string>
     <string name="donation_thanks">Va multumesc foarte mult pentru sprijinirea FrostWire</string>
-    <string name="remove_ads_description">Bucurați-vă de experiența ad-free, suport FrostWire</string>
+
     <string name="crawl_cache_size">Crawl cache %1$.2fMB</string>
     <string name="wizard_previous">Anterior</string>
     <string name="azureus_manager_item_downloading">Descărcarea</string>
@@ -514,10 +514,10 @@
     <string name="stop_all_transfers">Acest lucru se va opri toate transferurile</string>
     <string name="includes_3_day_free_trial">Include 3 zi libera-proces. Recomandat</string>
     <string name="use_mobile_data_summary">Folosi rețeaua de telefonie mobilă pentru download-uri BitTorrent. Se pot aplica taxe de supradozare de date. Utilizați cu atenție.</string>
-    <string name="intent_text">FrostWire este un program peer-to-peer pentru partajarea numai fișiere autorizate. Instalarea și utilizarea programului nu constituie o licență pentru obținerea sau distribuirea de conținut neautorizat.</string>
+    <string name="intent_text">MediaTor este un program peer-to-peer pentru partajarea numai fișiere autorizate. Instalarea și utilizarea programului nu constituie o licență pentru obținerea sau distribuirea de conținut neautorizat.</string>
     <string name="searching_indeterminate">In cautarea…</string>
     <string name="azureus_peer_manager_status_finishedin">A terminat în</string>
-    <string name="tos_accept">Accept</string>
+
     <string name="support">Suport</string>
     <string name="seeding_has_been_turned_off">Însămânțarea a fost oprit</string>
     <string name="try_changing_your_nickname">Introduce-ti porecla</string>
@@ -560,7 +560,7 @@
     <string name="transfers_context_menu_stop_delete_data">Opriți-vă și ștergerea datelor</string>
     <string name="cheaper_than_cigarettes">Mai ieftin decât țigările</string>
     <string name="search_settings">Setări de căutare</string>
-    <string name="update_message">FrostWire a descărcat un nou update de performanță pentru tine, vă rugăm să mergeți mai departe și atingeți butonul OK dacă doriți să-l instalați acum.</string>
+
     <string name="days_left">zile de la stânga</string>
     <string name="media_player_failed">Media player nu a reușit</string>
     <string name="six_months">6 luni</string>
@@ -577,7 +577,7 @@
     <string name="ringtone_set">Setare ton de apel</string>
     <string name="transfers">Transferurile</string>
     <string name="keep_the_project_alive">A se păstra în viață proiectul</string>
-    <string name="show_love">Iubesc FrostWire?</string>
+
     <string name="remove_ads">Elimina anunțurile</string>
     <string name="your_connection_has_dropped_stopping_services">Conexiunea Wi-Fi a scăzut. Servicii de oprire.</string>
     <string name="use_tpb_summary">TPB este pe bază de magnet, funcționează numai pe Wi-Fi</string>

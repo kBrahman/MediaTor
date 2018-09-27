@@ -46,7 +46,7 @@
     <string name="settings_description">Ustawienia Wyszukiwania</string>
     <string name="clear_finished">Wyczyść Zakończone</string>
     <string name="support_free_software">Wspieraj Darmowy Program</string>
-    <string name="show_love">Lubisz FrostWire?</string>
+
     <string name="waiting">Proszę czekać…</string>
     <string name="use_icons_to_browse">Używaj ikon do przeglądania plików.</string>
     <string name="type_to_filter_results">Wpisz aby filtrować wyniki.</string>
@@ -83,7 +83,7 @@
     <string name="searching_for">Wyszukiwanie dla</string>
     <string name="search_for_type_files">Wyszukiwanie dla %s pliku</string>
     <string name="update_title">Czas Aktualizacji!</string>
-    <string name="update_message">FrostWire pobrał nową AKTUALIZACJĘ WYDAJNOŚCI, proszę przejść dalej i kliknąć przycisk OK, jeśli chcesz ją teraz zainstalować.</string>
+
     <string name="next_time">Następnym Razem</string>
     <string name="change_my_nickname">Zmień Nick</string>
     <string name="try_changing_your_nickname">Wprowadź swój Nick</string>
@@ -107,8 +107,8 @@
     <string name="stop_all_transfers_message">Spowoduje to anulowanie wszystkich bieżących pobierań i tych oczekujących w kolejce. Wszystkie przesyłane dane zostaną utracone. Jesteś tego pewny?</string>
     <string name="files">pliki</string>
     <string name="touch_filetype_icon">Dotknij ikonę, aby zmienić typ pliku</string>
-    <string name="tos_title">Warunki Użytkowania</string>
-    <string name="tos_accept">Akceptuj</string>
+
+
     <string name="tos_refuse">Odrzuć</string>
     <string name="downloads">Pobieraj</string>
 
@@ -313,7 +313,7 @@
     <string name="seeding_settings">Ustawienia Seedowania</string>
     <string name="seeding_settings_explanation">Użytkownicy BitTorrent w internecie będą mogli pobrać fragmenty plików danych twoich seedowanych torrentów.</string>
     <string name="seeding_wifi_settings_explanation">Seeduj tylko przez połączenie Wi-Fi. Unikaj dodatkowych opłat od swojego operatora.</string>
-    <string name="intent_text">FrostWire jest programem peer-to-peer dla udostępniania tylko autoryzowanych plików. Instalacja i obsługa programu nie jest równoznaczna z uzyskaniem licencji na dystrybucje nieautoryzowanych treści.</string>
+    <string name="intent_text">MediaTor jest programem peer-to-peer dla udostępniania tylko autoryzowanych plików. Instalacja i obsługa programu nie jest równoznaczna z uzyskaniem licencji na dystrybucje nieautoryzowanych treści.</string>
     <string name="accept_intent">Nie będę wykorzystywać FrostWire do naruszenia praw autorskich</string>
     <string name="toast_on_disconnect">Rozłączono z siecią BitTorrent. Wszystkie transfery BitTorrent zatrzymano.</string>
     <string name="toast_on_connect">BitTorrent rdzeń rozpoczęty.</string>
@@ -517,7 +517,7 @@
     <string name="one_time_purchase">Zakup jednorazowy</string>
     <string name="activity_VPN">Połączenie</string>
     <string name="one_year">1 rok</string>
-    <string name="i_have_read_and_agree_to_the">Przeczytałem i zgadzam się z</string>
+
     <string name="scanning">Kończę - Skanuję</string>
     <string name="according_to_settings_i_cant_seed_unless_wifi">Z twoich ustanień wynika że nie mogę rozpocząć seedowania kiedy Wi-Fi nie jest dostępna. Plik będzie gotowy do seedowania automatycznie kiedy powrócisz do sieci Wi-Fi z aktywnym połączeniem z internetem.</string>
     <string name="vpn_found">VPN znaleziony. Połączenie zaszyfrowane.</string>
@@ -527,7 +527,7 @@
     <string name="delete_files">Usuń pliki</string>
     <string name="vpn_price">od $%1$.2f na miesiąc</string>
     <string name="thirty_days">30 dni</string>
-    <string name="remove_ads_description">Sciągaj pliki i odtwarzaj muzykę bez reklam, wsparaj FrostWire</string>
+
     <string name="dummy_title_bold">[Bold Title]</string>
     <string name="storage_picker_treeuri_cant_write">FrostWire nie może zachować pliku na wybranej ścieżce zachowywania</string>
     <string name="processing_payment">Przyjmuję płatność, odśwież za kilka sekund</string>
