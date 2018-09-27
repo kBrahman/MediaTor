@@ -46,6 +46,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.andrew.apollo.utils.MusicUtils;
+
+import java.lang.ref.WeakReference;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.Constants;
 import zig.zak.media.tor.android.core.player.CoreMediaPlayer;
@@ -59,10 +64,6 @@ import zig.zak.media.tor.search.FileSearchResult;
 import zig.zak.media.tor.search.youtube.YouTubePackageSearchResult;
 import zig.zak.media.tor.util.Logger;
 import zig.zak.media.tor.util.Ref;
-
-import java.lang.ref.WeakReference;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 /**
  * @author gubatron
@@ -139,7 +140,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         isFullScreen = i.getBooleanExtra("isFullScreen", false);
 
         int mediaTypeStrId = audio ? R.string.audio : R.string.video;
-        setTitle(getString(R.string.media_preview, getString(mediaTypeStrId)) + " (buffering...)");
+        setTitle(getString(R.string.media_preview, getString(mediaTypeStrId)) + getString(R.string.buffering));
 
         final TextureView videoTexture = findView(R.id.activity_preview_player_videoview);
         videoTexture.setSurfaceTextureListener(this);

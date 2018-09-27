@@ -718,6 +718,6 @@
     <string name="title_activity_transfer_detail">Detalj prijenosa</string>
     <string name="piece_size_header">Veličina komada:</string>
     <string name="add_tracker">Dodaj tracker</string>
-    <string name="contact_us">Kontaktirajte nas</string>
+
 
 </resources>

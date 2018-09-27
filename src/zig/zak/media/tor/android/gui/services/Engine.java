@@ -185,8 +185,7 @@ public final class Engine implements IEngineService {
      * @param context This must be the application context, otherwise there will be a leak.
      */
     private void startEngineService(final Context context) {
-        Intent i = new Intent();
-        i.setClass(context, EngineService.class);
+        Intent i = new Intent(context,EngineService.class);
         try {
             context.startService(i);
             context.bindService(i, connection = new ServiceConnection() {
