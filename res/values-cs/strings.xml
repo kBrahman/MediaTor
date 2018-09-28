@@ -116,8 +116,8 @@
     <string name="set_as_wallpaper">Nastavit jako Tapetu</string>
     <string name="failed_to_set_wallpaper">Nepodařilo se nastavit Tapety</string>
     <string name="tell_others_chooser">Tweet / SMS / E-mail</string>
-    <string name="tell_others_subject">Máte FrostWire pro Android již?</string>
-    <string name="and_choose_what_filetypes_to_share">Ověřte si, jaké typy souborů chcete povolit k sdílení na FrostWire Mobile Network a pro nedaleké Wi-Fi desktopy.</string>
+    <string name="tell_others_subject">MáteMediaTorpro Android již?</string>
+    <string name="and_choose_what_filetypes_to_share">Ověřte si, jaké typy souborů chcete povolit k sdílení naMediaTorMobile Network a pro nedaleké Wi-Fi desktopy.</string>
     <string name="before_getting_started">Předtím, než začnete</string>
     <string name="user_connecting">Uživatelské Spojení</string>
     <string name="accept_connection_from">Akceptovat spojení</string>
@@ -129,7 +129,7 @@
     <string name="browse">Procházet</string>
     <string name="files_shared_by">soubory sdílené přes</string>
     <string name="mark_your_territory">Označte své území</string>
-    <string name="get_a_frostwire_tshirt">Získejte FrostWire Tričko</string>
+    <string name="get_a_frostwire_tshirt">ZískejteMediaTorTričko</string>
     <string name="internal_port">Vnitřní Port</string>
     <string name="external_port">Externí Port</string>
     <string name="device">Zařízení</string>
@@ -188,7 +188,7 @@
     <string name="long_press_for_batch_actions">Klepněte na jakýkoliv titul pro spuštění souboru</string>
     <string name="files_shared">Soubory Sdílené</string>
     <string name="share_finished_downloads">Sdílejte hotové soubory ke stažení na WiFi</string>
-    <string name="share_finished_downloads_summary">Dokončene stahování bude k dispozici ostatním uživatelů ve vašem FrostWire WiFi síti.</string>
+    <string name="share_finished_downloads_summary">Dokončene stahování bude k dispozici ostatním uživatelů ve vašemMediaTorWiFi síti.</string>
     <string name="are_you_sure_delete_files">Jste si jisti, že chcete smazat vybrané soubory?</string>
     <string name="searchable_activity_label">Aktivní Vyhledávání</string>
     <string name="search_hint">Vyhledat Obsah</string>
@@ -307,14 +307,14 @@
     <string name="wizard_previous">Předchozí</string>
     <string name="wizard_next">Další</string>
     <string name="wizard_finish">Konec</string>
-    <string name="welcome_to_frostwire">Vítejte na FrostWire %s</string>
+    <string name="welcome_to_frostwire">Vítejte na MediaTor</string>
     <string name="let_apos_s_set_you_up_before_we_begin_">Pojďme si nastavit si předtím, než začneme.</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">Jak vás vidí ostatní na lokální síti (WiFi)</string>
     <string name="seeding_settings">Seeding Nastavení</string>
     <string name="seeding_settings_explanation">BitTorrent uživatelé na internetu budou moci stáhnout soubor kusů dat vašeho torrent seed.</string>
     <string name="seeding_wifi_settings_explanation">Seed pouze při použití Wi-Fi připojení. Vyhněte se dodatečných poplatků od vašeho operátora.</string>
     <string name="intent_text">MediaTor je to program peer-to-peer pouze pro sdílení povolene souborů. Instalace a používání programu nepředstavuje pro získání licence nebo rozšiřování neoprávněného obsahu.</string>
-    <string name="accept_intent">Nebudu používat FrostWire pro porušení autorského práva</string>
+    <string name="accept_intent">Nebudu používatMediaTorpro porušení autorského práva</string>
     <string name="toast_on_disconnect">Odpojen od BitTorrent. Všechny transfery BitTorrent se zastavily.</string>
     <string name="toast_on_connect">BitTorrent jádro začalo.</string>
     <string name="seeds">Seeds</string>
@@ -361,7 +361,7 @@
     <string name="clear_search_cache">Vymazat mezipaměti vyhledávání</string>
     <string name="enable_wifi_sharing">WiFi Sdílení</string>
     <string name="drawer_close">Close navigační panel</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire je prohlížeč souborů a downloader app, a proto musí být schopen získat přístup k disku.\n\nAniž by svá oprávnění FrostWire nemůže fungovat.\n\nChcete to zkusit znovu?</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire je prohlížeč souborů a downloader app, a proto musí být schopen získat přístup k disku.\n\nAniž by svá oprávněníMediaTornemůže fungovat.\n\nChcete to zkusit znovu?</string>
     <string name="unprotected_connection">nechráněný</string>
     <string name="transfers_context_menu_copy_magnet_copied">Magnet zkopírovat do schránky</string>
     <string name="buy_uppercase">KOUPIT</string>
@@ -386,7 +386,7 @@
     <string name="paused">Pozastaveno</string>
     <string name="retry_search">Opakovat</string>
     <string name="the_file_could_not_be_seeded_bittorrent_will_remain_disconnected">Soubor nemohl být nasazená. BitTorrent zůstane odpojen.</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android smaže stažené soubory, pokud FrostWire odinstalování.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android smaže stažené soubory, pokudMediaTorodinstalování.</string>
     <string name="protected_connection">VPN-chráněné</string>
     <string name="use_eztv">Použít Eztv</string>
     <string name="cheaper_than_parking">Levnější než Parkování</string>
@@ -411,7 +411,7 @@
     <string name="player_paused_press_and_hold_to_stop">Hráč pozastaveno. (Tip: stiskněte a podržte pro zastavení)</string>
     <string name="menu_delete_shortcut_label">Del</string>
     <string name="magnet_url_added">Magnet URL přidána do převodů. (Magnety fungují nejlépe přes Wi-Fi)</string>
-    <string name="frostwire_shutting_down_no_permissions">Je nám líto, FrostWire nemůže pokračovat bez vašeho svolení pro přístup k disku.</string>
+    <string name="frostwire_shutting_down_no_permissions">Je nám líto,MediaTornemůže pokračovat bez vašeho svolení pro přístup k disku.</string>
     <string name="one_time_purchase">Koupit nyní!</string>
     <string name="activity_VPN">Spojení</string>
     <string name="use_youtube">Použít YouTube.com</string>
@@ -452,7 +452,7 @@
     <string name="donation_thanks">Děkuji moc pro podporu FrostWire</string>
 
     <string name="crawl_cache_size">Crawl cache %1$.2fMB</string>
-    <string name="wifi_sharing_disabled">Sdílení Wifi je vypnutý.\n\nSdílení WiFi lze použít ke sdílení souborů lokálně mezi FrostWire poháněných zařízeními připojenými ke stejné síti Wi-Fi.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Další informace.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">Sdílení Wifi je vypnutý.\n\nSdílení WiFi lze použít ke sdílení souborů lokálně meziMediaTorpoháněných zařízeními připojenými ke stejné síti Wi-Fi.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Další informace.&lt;/a&gt;</string>
     <string name="pausing">Pozastavení</string>
     <string name="dummy_title_bold">[Tučně Název]</string>
     <string name="anonymous_usage_statistics_summary">Odesílat anonymní statistiky používání. Žádné informace, které mohou vás osobně identifikovat budou uloženy na disk nebo zaslány prostřednictvím sítě.</string>
@@ -489,7 +489,7 @@
     <string name="transfers_context_resume_all_torrent_transfers">Obnoví veškeré převody torrent</string>
     <string name="free_download">Stažení zdarma</string>
     <string name="couldnt_share_file">Nemohl sdílení souboru. Divný nalezena cesta.</string>
-    <string name="learn_how_to_get_more_results">Zkuste FrostWire Plus pro další výsledky</string>
+    <string name="learn_how_to_get_more_results">ZkusteMediaTorPlus pro další výsledky</string>
     <string name="storage_setting_confirm_dialog_title">SD KARTA</string>
     <string name="no_trial_period_included">Žádné zkušební doba zahrnuty</string>
     <string name="cant_resume_torrent_transfers">Nelze obnovit torrent převody. Kontrola stavu "Nastavení"> "BitTorrent Connection Status"</string>
@@ -499,7 +499,7 @@
     <string name="current_plan">Současný plán</string>
     <string name="transfers_context_menu_copy_infohash">Kopie InfoHash</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">POZOR: Všechny soubory uložené FrostWire na SD kartě budou smazána operačním systémem Android, nikoli FrostWire, pokud jste odinstalovat.</string>
+    <string name="storage_setting_warning">POZOR: Všechny soubory uloženéMediaTorna SD kartě budou smazána operačním systémem Android, nikoli FrostWire, pokud jste odinstalovat.</string>
     <string name="sd_permission_no_accessible_path">Kterou jste vybrali v SD cesta není přístupný už ne. Stisknutím tlačítka OK výběr znovu.</string>
     <string name="select_deselect_all">Vyberte/Zrušit vše</string>
     <string name="canceling">Zrušení</string>
@@ -554,7 +554,7 @@
     <string name="donate_in_btc">Donate na bitcoins</string>
     <string name="torrent_transfer_paused_disconnected_from_bittorrent">Převod byl pozastaven, protože jste odpojeni. (Zkontrolujte připojení BitTorrent v Nastavení)</string>
     <string name="cheaper_than_beer">Levnější než pivo</string>
-    <string name="rating_reminder_description">Pokud máte rádi FrostWire prosím, chvilku nám sazby.</string>
+    <string name="rating_reminder_description">Pokud máte rádiMediaTorprosím, chvilku nám sazby.</string>
     <string name="free_sponsored_app">Volný Sponzorované App</string>
     <string name="includes_3_day_free_trial">Zahrnuje 3 denní free-trial. Doporučená</string>
     <string name="support">Podpora</string>
@@ -567,7 +567,7 @@
     <string name="get_ExpressVPN">Zíscat ExpressVPN</string>
     <string name="one_dollar">$1</string>
     <string name="enable_seeding">Aktivovat Setí</string>
-    <string name="storage_setting_confirm_dialog_text">Chápu, že všechny soubory stažené na kartu SD podle FrostWire budou vymazány operačním systémem Android ve chvíli, kdy aplikace FrostWire se odinstaluje z tohoto zařízení a nebudu držet FrostWire LLC odpovědnost za jakékoli soubory ztracené.</string>
+    <string name="storage_setting_confirm_dialog_text">Chápu, že všechny soubory stažené na kartu SD podleMediaTorbudou vymazány operačním systémem Android ve chvíli, kdy aplikaceMediaTorse odinstaluje z tohoto zařízení a nebudu držetMediaTorLLC odpovědnost za jakékoli soubory ztracené.</string>
     <string name="cant_open_file_does_not_exist">Nemohu otevřít %1$s, soubor neexistuje.</string>
     <string name="anonymous_usage_statistics">Anonymní statistiky používání</string>
     <string name="saving_to_sd_card">Ukládání na SD kartu.</string>
@@ -675,7 +675,7 @@
     <string name="transfer_detail_storage_header">Skladovací cesta:</string>
     <string name="seeding_time">Čas sečení</string>
     <string name="working">Pracovní</string>
-    <string name="one_file_shared">Jeden soubor byl sdílen na zařízeních FrostWire ve stejné síti Wi-Fi.</string>
+    <string name="one_file_shared">Jeden soubor byl sdílen na zařízeníchMediaTorve stejné síti Wi-Fi.</string>
     <string name="pieces">Kousky</string>
     <string name="upload_limit">Limit nahrávání</string>
     <string name="enter_valid_tracker_url_here">Zadejte zde platnou adresu URL trackeru</string>
@@ -698,7 +698,7 @@
     <string name="sequential_download">Sekvenční stahování</string>
     <string name="downloaded_n">Stažený %1$s / </string>
     <string name="transfer_detail_title_header">Název:</string>
-    <string name="n_files_shared">%d souborů bylo sdíleno s FrostWire zařízeními ve stejné síti Wi-Fi.</string>
+    <string name="n_files_shared">%d souborů bylo sdíleno sMediaTorzařízeními ve stejné síti Wi-Fi.</string>
     <string name="time_elapsed">Uplynulý čas</string>
     <string name="remove_tracker">Odstraňte tracker</string>
     <string name="comment">Komentář</string>

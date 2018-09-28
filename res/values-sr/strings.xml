@@ -123,8 +123,8 @@
     <string name="set_as_wallpaper">Поставите као позадину</string>
     <string name="failed_to_set_wallpaper">Фаилед то сет Валлпапер</string>
     <string name="tell_others_chooser">Твеет / СМС / Е-маил</string>
-    <string name="tell_others_subject">Добио FrostWire за Андроид још?</string>
-    <string name="and_choose_what_filetypes_to_share">Проверите које врсте фајлова желите да омогућите за дељење на FrostWire мобилне мреже и оближње је омогућен Ви рачунара.</string>
+    <string name="tell_others_subject">ДобиоMediaTorза Андроид још?</string>
+    <string name="and_choose_what_filetypes_to_share">Проверите које врсте фајлова желите да омогућите за дељење наMediaTorмобилне мреже и оближње је омогућен Ви рачунара.</string>
     <string name="before_getting_started">Пре него што почнете</string>
     <string name="user_connecting">Корисник повезивање</string>
     <string name="accept_connection_from">Прихвати везу са</string>
@@ -136,7 +136,7 @@
     <string name="browse">Прегледај</string>
     <string name="files_shared_by">Бр дели</string>
     <string name="mark_your_territory">Означити своју територију</string>
-    <string name="get_a_frostwire_tshirt">Набавите FrostWire Т-Схирт</string>
+    <string name="get_a_frostwire_tshirt">НабавитеMediaTorТ-Схирт</string>
     <string name="internal_port">Интерни порт</string>
     <string name="external_port">Спољни Лука</string>
     <string name="device">уређај</string>
@@ -325,14 +325,14 @@
     <string name="wizard_previous">Претходна</string>
     <string name="wizard_next">Следећи</string>
     <string name="wizard_finish">завршити</string>
-    <string name="welcome_to_frostwire">Велцоме то FrostWire %s</string>
+    <string name="welcome_to_frostwire">Велцоме то MediaTor</string>
     <string name="let_apos_s_set_you_up_before_we_begin_">Хајде да те подесите пре него што почнемо.</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">Како вас други виде на локалној мрежи (ВИ-ФИ)</string>
     <string name="seeding_settings">Сеединг Подешавања</string>
     <string name="seeding_settings_explanation">БитТоррент корисници на Интернету ће моћи да преузмете фајл делове података вашег семена торрентс.</string>
     <string name="seeding_wifi_settings_explanation">Семе само када се користи ВиФи везе. Избегавајте додатне трошкове од свог носиоца.</string>
     <string name="intent_text">MediaTor је програм пеер-то-пеер за дељење само овлашћеним фајлове. Инсталирање и коришћење програма не представља дозволу за добијање или дистрибуцију неовлашћеног садржаја.</string>
-    <string name="accept_intent">Нећу користити FrostWire за кршење ауторских права</string>
+    <string name="accept_intent">Нећу користитиMediaTorза кршење ауторских права</string>
     <string name="toast_on_disconnect">Искључен из БитТоррент. Све БитТоррент трансфери су престали.</string>
     <string name="toast_on_connect">Додато језгро почело.</string>
     <string name="seeds">Семе</string>
@@ -405,7 +405,7 @@
     <string name="use_frostclick">Користе FrostClick</string>
     <string name="delete_this_track">Делете тхис трацк</string>
     <string name="are_you_sure_delete_current_track">Да ли сте сигурни да желите да избришете тренутну нумеру?</string>
-    <string name="wifi_sharing_disabled">Дељење ви-фи искључен.\n\nДељење ви-фи може да се користи за дељење датотека локално између FrostWire платформи повезаних са истом Ви-Фи мрежом.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Сазнајте више.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">Дељење ви-фи искључен.\n\nДељење ви-фи може да се користи за дељење датотека локално измеђуMediaTorплатформи повезаних са истом Ви-Фи мрежом.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Сазнајте више.&lt;/a&gt;</string>
     <string name="turn_on_wifi_sharing">Укључите Вифи Делећи</string>
     <string name="are_you_sure_wifi_sharing_off">Искључивање Ви-Фи дељење ће све своје локално дељене датотеке недоступни другим корисницима на оближње Ви-Фи мреже.</string>
     <string name="anonymous_usage_statistics">Анонимни Статистика приступа</string>
@@ -457,15 +457,15 @@
     <string name="menu_space_shortcut_label">Space</string>
     <string name="cant_open_file_does_not_exist">Не могу да отворим %1$s, датотека не постоји.</string>
     <string name="saving_to_sd_card">Чување на СД картицу.</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Андроид ће избрисати преузете датотеке ако FrostWire деинсталира.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Андроид ће избрисати преузете датотеке акоMediaTorдеинсталира.</string>
     <string name="saving_to_internal_memory">Чување на интерну меморију</string>
     <string name="saving_to_internal_memory_description">Имате и СД картице (%1$s доступан)</string>
     <string name="device_memory">Уређаја Меморија</string>
     <string name="device_storage">Уређаја за складиштење</string>
     <string name="sdcard_storage">СД картица за складиштење</string>
-    <string name="storage_setting_warning">УПОЗОРЕЊЕ: Све датотеке сачуване од FrostWire на СД картици ће бити обрисани Андроид, а не FrostWire, ако деинсталирате апликацију.</string>
+    <string name="storage_setting_warning">УПОЗОРЕЊЕ: Све датотеке сачуване одMediaTorна СД картици ће бити обрисани Андроид, а не FrostWire, ако деинсталирате апликацију.</string>
     <string name="storage_setting_confirm_dialog_title">СД КАРТИЦА</string>
-    <string name="storage_setting_confirm_dialog_text">Разумем да ће све фајлове преузете на СД картицу од ФростВире бити избрисани са Андроид платформом у тренутку када апликација FrostWire деинсталиран из овог уређаја и нећу држати FrostWire ДОО одговоран за било које датотеке изгубљене.</string>
+    <string name="storage_setting_confirm_dialog_text">Разумем да ће све фајлове преузете на СД картицу од ФростВире бити избрисани са Андроид платформом у тренутку када апликацијаMediaTorдеинсталиран из овог уређаја и нећу држатиMediaTorДОО одговоран за било које датотеке изгубљене.</string>
     <string name="available">доступан</string>
     <string name="file_descriptor_sd_mounted">Ова датотека је избрисана са СД картице, или СД картица сте ставили је другачији.</string>
     <string name="file_descriptor_sd_unmounted">Ова датотека припада СД картицу, убаците га на уређају.</string>
@@ -497,10 +497,10 @@
     <string name="enable_dht">Омогући ДХТ</string>
     <string name="enable_dht_summary">Користите Дистрибутед хасх табелу да објави/Поиск Торрент вршњака</string>
     <string name="try_other_keywords">Покушајте мање/различите речи</string>
-    <string name="learn_how_to_get_more_results">Покушајте FrostWire Plus за више резултата</string>
+    <string name="learn_how_to_get_more_results">ПокушајтеMediaTorPlus за више резултата</string>
     <string name="action_menu_overflow_description">Више опција</string>
     <string name="rate_our_app">Оцените наш Апп</string>
-    <string name="rating_reminder_description">Ако волите FrostWire Одвојите мало времена да нас оцените.</string>
+    <string name="rating_reminder_description">Ако волитеMediaTorОдвојите мало времена да нас оцените.</string>
     <string name="love_frostwire">Лове FrostWire</string>
     <string name="send_feedback">Пошаљи повратне информације</string>
     <string name="choose_email_app">Изаберите емаил Апп…</string>
@@ -508,11 +508,11 @@
 
     <string name="thank_you">Хвала вам!</string>
     <string name="keep_in_touch">Останимо у контакту!</string>
-    <string name="frostwire_shutting_down_no_permissions">Жао ми је, FrostWire не може да настави без дозволе за приступ диску.</string>
+    <string name="frostwire_shutting_down_no_permissions">Жао ми је,MediaTorне може да настави без дозволе за приступ диску.</string>
     <string name="restarting">Поновно покретање…</string>
     <string name="restarting_summary">FrostWire ће се поново покренути сада одобрене дозволе да ступи на снагу</string>
     <string name="why_we_need_storage_permissions">Зашто нам је потребна дозвола за складиштење.</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire је апликација Филе Бровсер и Довнлоадер, тако да мора да буде у стању да приступи диску.\n\nБез своје дозволе FrostWire не може да функционише.\n\nЖелим да покушам поново?</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire је апликација Филе Бровсер и Довнлоадер, тако да мора да буде у стању да приступи диску.\n\nБез своје дозволеMediaTorне може да функционише.\n\nЖелим да покушам поново?</string>
     <string name="shutting_down">Искључивање…</string>
     <string name="help">Помоћ</string>
     <string name="request_again">Рекуест Опет</string>
@@ -530,7 +530,7 @@
     <string name="vpn_on_toast_notification">Ви сте повезани са ВПН.</string>
     <string name="vpn_off_toast_notification">Ваша веза не може бити приватна.</string>
     <string name="dht_contacts">ДХТ контакти</string>
-    <string name="notify_frostwire_is_running">Обавести ако FrostWire ради</string>
+    <string name="notify_frostwire_is_running">Обавести акоMediaTorради</string>
     <string name="notify_frostwire_is_running_summary">Показују сталну Андроид обавештење са статусом трансфера</string>
     <string name="invalid_filename">Непостојеће име фајла</string>
     <string name="storage_picker_treeuri_null">Не пут складиштење је изабран</string>

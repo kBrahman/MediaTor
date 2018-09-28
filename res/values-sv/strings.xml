@@ -55,7 +55,7 @@
     <string name="azureus_manager_item_ready">Väntar på andra torrents att köa</string>
     <string name="nickname">Smeknamn</string>
     <string name="drawer_close">Stäng navigeringspanelen</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire är en filhanterare och dataöverföring app, därför måste kunna komma åt din disk.\n\nUtan dina behörigheter FrostWire inte kan arbeta.\n\nVill du försöka igen?</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire är en filhanterare och dataöverföring app, därför måste kunna komma åt din disk.\n\nUtan dina behörigheterMediaTorinte kan arbeta.\n\nVill du försöka igen?</string>
     <string name="peer_http_upload_status_unknown">Okänd</string>
     <string name="unprotected_connection">oskyddad</string>
     <string name="video">Video</string>
@@ -113,7 +113,7 @@
     <string name="ten_dollars">$10</string>
     <string name="my_files">Mina filer</string>
     <string name="no_network_connection">Ingen nätverksanslutning</string>
-    <string name="and_choose_what_filetypes_to_share">Kontrollera vilka typer av filer som du vill aktivera för att dela på FrostWire Mobile Network och närliggande Wifi anslutna datorer.</string>
+    <string name="and_choose_what_filetypes_to_share">Kontrollera vilka typer av filer som du vill aktivera för att dela påMediaTorMobile Network och närliggande Wifi anslutna datorer.</string>
     <string name="delete_n_torrents_indexed">Raderade %d torrents indexeras</string>
     <string name="saving_to_internal_memory">Spara till internminnet</string>
     <string name="dialog_desktop_upload_request_text_text">%1$s vill skicka %2$s totalt %3$s</string>
@@ -133,7 +133,7 @@
     <string name="retry_search">Försök igen</string>
     <string name="the_file_could_not_be_seeded_bittorrent_will_remain_disconnected">Filen kunde inte seedas. BitTorrent förblir frånkopplad.</string>
     <string name="toggle_sharing_selected_files">Toggle Sharing</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android kommer att radera nedladdade filer om FrostWire avinstalleras .</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android kommer att radera nedladdade filer omMediaToravinstalleras .</string>
     <string name="please_connect">Anslut att använda denna funktion</string>
     <string name="protected_connection">VPN-skyddad</string>
     <string name="clear_finished">Klar Färdig</string>
@@ -152,7 +152,7 @@
     <string name="applications">Applikationer</string>
     <string name="the_file_could_not_be_seeded_enable_seeding">Filen kunde inte seedas. Aktivera sådd på inställningar.</string>
     <string name="media_type_video">Video</string>
-    <string name="accept_intent">Jag kommer inte att använda FrostWire för upphovsrättsintrång</string>
+    <string name="accept_intent">Jag kommer inte att användaMediaTorför upphovsrättsintrång</string>
     <string name="remove_torrent_and_data">Ta bort Torrent och data</string>
     <string name="seeding_settings">Seeding Inställningar</string>
     <string name="love_frostwire">Kärlek FrostWire</string>
@@ -195,8 +195,8 @@
     <string name="search_for_type_files">Sök efter %s filer</string>
     <string name="menu_delete_shortcut_label">Radera</string>
     <string name="magnet_url_added">Magnet URL läggs till överföringar. (Magneter fungerar bäst på Wi-Fi)</string>
-    <string name="share_finished_downloads_summary">Färdiga nedladdningar kommer att finnas tillgängliga för andra FrostWire användare på din Wi-Fi-nätverk.</string>
-    <string name="frostwire_shutting_down_no_permissions">Tyvärr, FrostWire kan inte fortsätta utan din tillåtelse att komma åt hårddisken.</string>
+    <string name="share_finished_downloads_summary">Färdiga nedladdningar kommer att finnas tillgängliga för andraMediaToranvändare på din Wi-Fi-nätverk.</string>
+    <string name="frostwire_shutting_down_no_permissions">Tyvärr,MediaTorkan inte fortsätta utan din tillåtelse att komma åt hårddisken.</string>
     <string name="http_download_status_uncompressing">Avkomprimering</string>
     <string name="one_time_purchase">En gång köp</string>
     <string name="send_file_using">Skicka fil med</string>
@@ -266,7 +266,7 @@
     <string name="copy">Kopiera</string>
     <string name="updating">Uppdatering</string>
     <string name="help_translate_frostwire">Hjälpa till att översätta FrostWire</string>
-    <string name="tell_others_subject">Fick FrostWire för Android ännu?</string>
+    <string name="tell_others_subject">FickMediaTorför Android ännu?</string>
     <string name="files_shared_by">filer som delas av</string>
     <string name="clear_messages">Tydliga budskap</string>
     <string name="best_value">Bästa värde</string>
@@ -295,7 +295,7 @@
     <string name="wizard_previous">Tidigare</string>
     <string name="azureus_manager_item_downloading">Nedladdning</string>
     <string name="there_is_n_torrents_indexed">Det finns %d torrents indexe</string>
-    <string name="wifi_sharing_disabled">Wi-fi delning är avstängd.\n\nWi-fi delning kan användas för att dela filer lokalt mellan FrostWire drivna enheter som är anslutna till samma Wi-Fi-nätverk.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Läs mer.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">Wi-fi delning är avstängd.\n\nWi-fi delning kan användas för att dela filer lokalt mellanMediaTordrivna enheter som är anslutna till samma Wi-Fi-nätverk.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Läs mer.&lt;/a&gt;</string>
     <string name="pausing">Pausa</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">Hur andra ser dig på det lokala nätverket (Wi-Fi)</string>
     <string name="yes_no_cancel_transfer_question">Är du säker på att du vill stoppa och ta bort denna hämtas från listan (inga data raderas)?</string>
@@ -378,7 +378,7 @@
     <string name="free_download">Gratis nedladdning</string>
     <string name="internet_discovery_summary">Ansluta till fjärr kamrater på Internet.</string>
     <string name="couldnt_share_file">Det gick inte att dela filen. Konstig väg hittas.</string>
-    <string name="learn_how_to_get_more_results">Försök FrostWire Plus för fler resultat</string>
+    <string name="learn_how_to_get_more_results">FörsökMediaTorPlus för fler resultat</string>
     <string name="use_mobile_data">Använd 3G/4G för BitTorrent</string>
     <string name="seeding_wifi_settings_explanation">Seed endast när du använder en WiFi-anslutning. Undvika extra avgifter från din operatör.</string>
     <string name="storage_setting_confirm_dialog_title">SD-KORT</string>
@@ -390,7 +390,7 @@
     <string name="seed_finished_torrents">Seed Kom Torrents</string>
     <string name="peer_http_upload_status_cancelled">Avbryts</string>
     <string name="send_bitcoin_tip">Skicka Bitcoin donation</string>
-    <string name="welcome_to_frostwire">Välkommen till FrostWire %s</string>
+    <string name="welcome_to_frostwire">Välkommen till MediaTor</string>
     <string name="bittorrent_off_data_saver_on">"BitTorrent off (Data Saver On)"</string>
     <string name="ad_free">Inga annonser</string>
     <string name="peer_http_upload_status_streaming">Streaming</string>
@@ -398,7 +398,7 @@
     <string name="transfers_context_menu_copy_infohash">Kopiera InfoHash</string>
     <string name="wanna_download_question">Vill du ladda ner?</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">VARNING: Alla filer som sparats genom FrostWire på SD-kortet kommer att raderas av Android, inte FrostWire, om du avinstallerar appen.</string>
+    <string name="storage_setting_warning">VARNING: Alla filer som sparats genomMediaTorpå SD-kortet kommer att raderas av Android, inte FrostWire, om du avinstallerar appen.</string>
     <string name="not_sharing_files">inte dela filer.</string>
     <string name="sd_permission_no_accessible_path">Den väg du valt i SD är inte längre kan nås. Tryck OK för att välja igen.</string>
     <string name="select_deselect_all">Välj/Avmarkera alla</string>
@@ -424,7 +424,7 @@
     <string name="error_no_internet_connection">Fel: Kontrollera Internet-anslutningen</string>
     <string name="azureus_manager_item_error">Fel</string>
     <string name="why_we_need_storage_permissions">Därför behöver vi lagrings behörigheter.</string>
-    <string name="get_a_frostwire_tshirt">Få en FrostWire T-shirt</string>
+    <string name="get_a_frostwire_tshirt">Få enMediaTorT-shirt</string>
     <string name="media_type_applications">Applikationer</string>
     <string name="invalid_filename">Ogiltigt filnamn</string>
     <string name="use_archiveorg">Använda Archive.org</string>
@@ -473,7 +473,7 @@
     <string name="loading">Läser in</string>
     <string name="downloading_metadata">Nedladdning av metadata</string>
     <string name="storage_preference_summary">Standardlagringsplatsen där filerna sparas.</string>
-    <string name="notify_frostwire_is_running">Meddela om FrostWire är igång</string>
+    <string name="notify_frostwire_is_running">Meddela omMediaTorär igång</string>
     <string name="bandwidth_usage_settings">Bandbredds användande</string>
     <string name="torrent_scheme_download_not_supported">Ladda ner stöds inte</string>
     <string name="app_shutdown_dlg_title">Stänga av</string>
@@ -525,7 +525,7 @@
     <string name="cheaper_than_beer">Billigare än öl</string>
     <string name="type_here_to_filter">Skriv här för att filtrera</string>
     <string name="block">Blockera</string>
-    <string name="rating_reminder_description">Om du älskar FrostWire ta en stund för att betygsätta oss.</string>
+    <string name="rating_reminder_description">Om du älskarMediaTorta en stund för att betygsätta oss.</string>
     <string name="please_update_to_v">Uppdatera till version %s</string>
     <string name="azureus_manager_item_finishing">Avslutning</string>
     <string name="free_sponsored_app">Fri Sponsrat App</string>
@@ -560,7 +560,7 @@
     <string name="try_valid_port_next_time">Prova en giltig port nästa gång 1000 och 65500</string>
     <string name="one_dollar">$1</string>
     <string name="enable_seeding">Aktivera sådd</string>
-    <string name="storage_setting_confirm_dialog_text">Jag förstår att alla filer som hämtats till SD-kortet från Frostwire kommer att tas bort av Android det ögonblick FrostWire programmet avinstalleras från enheten och jag kommer inte att hålla FrostWire LLC ansvarig för eventuella filer förlorade.</string>
+    <string name="storage_setting_confirm_dialog_text">Jag förstår att alla filer som hämtats till SD-kortet från Frostwire kommer att tas bort av Android det ögonblickMediaTorprogrammet avinstalleras från enheten och jag kommer inte att hållaMediaTorLLC ansvarig för eventuella filer förlorade.</string>
     <string name="simultaneous_uploads">Samtidig Wi-fi uppladdningar</string>
     <string name="cant_open_file_does_not_exist">Jag kan inte öppna %1$s, filen finns inte.</string>
     <string name="internet_discovery">Internet Discovery</string>

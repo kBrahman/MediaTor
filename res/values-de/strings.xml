@@ -21,7 +21,7 @@
 <resources>
     <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Offenlegung:</b> Obwohl für Ihre Downloads empfohlen, insbesondere beim Herunterladen oder Austausch sensibler Informationen (z. B. Bankgeschäfte) und bei der Nutzung öffentlicher Wi-Fi- oder mobiler Daten, <b>Sie brauchen nicht ein VPN Wire zu verwenden. </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>Hinweis:</b> Berühren angewendet Tags]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Ihre Privatsphäre ist ein Grundrecht</b>. Eine ungeschützte Verbindung bedeutet, dass alles, was Sie online tun, einschließlich <b>Downloads, Suchen, Nachrichten</b>, von jedem in Ihrem Netzwerk überwacht und abgefangen werden kann, z. Internet Service Provider, Hacker, Regierungen.<br><br><b>Wir empfehlen DRINGLICH, einen VPN-Dienst zu verwenden</b>. <br> Hier sind einige Optionen, die einen zuverlässigen Service bieten und gut mit FrostWire funktionieren:]]></string>
+    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Ihre Privatsphäre ist ein Grundrecht</b>. Eine ungeschützte Verbindung bedeutet, dass alles, was Sie online tun, einschließlich <b>Downloads, Suchen, Nachrichten</b>, von jedem in Ihrem Netzwerk überwacht und abgefangen werden kann, z. Internet Service Provider, Hacker, Regierungen.<br><br><b>Wir empfehlen DRINGLICH, einen VPN-Dienst zu verwenden</b>. <br> Hier sind einige Optionen, die einen zuverlässigen Service bieten und gut mitMediaTorfunktionieren:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Sie sind über ein VPN mit dem Internet verbunden. <br> <br> Wenn Sie es nicht bereits sind, empfehlen wir Ihnen, einen der folgenden Dienste zu verwenden, um Ihre Verbindung zu verschlüsseln und <b>Ihre Privatsphäre zu schützen</b>. ]]></string>
     <string name="activity_preferences_name">Einstellungen</string>
     <string name="activity_chat_named">Chat</string>
@@ -116,7 +116,7 @@
     <string name="set_as_wallpaper">Als Hintergrundbild einstellen</string>
     <string name="failed_to_set_wallpaper">Hintergrund-Einstellung ist fehlgeschlagen</string>
     <string name="tell_others_chooser">Tweet / SMS / E-Mail</string>
-    <string name="tell_others_subject">Ist FrostWire schon auf deinem Android?</string>
+    <string name="tell_others_subject">IstMediaTorschon auf deinem Android?</string>
     <string name="and_choose_what_filetypes_to_share">Überprüfe, welchen Dateitypen du die Freigabe auf dem FrostWire-Mobile-Network und naheliegenden WLAN-fähigen Desktops erlauben willst.</string>
     <string name="before_getting_started">Bevor du beginnst</string>
     <string name="user_connecting">Benutzerverbindung wird hergestellt</string>
@@ -129,7 +129,7 @@
     <string name="browse">Durchsuchen</string>
     <string name="files_shared_by">Dateien freigegeben von</string>
     <string name="mark_your_territory">Kennzeichne dein Gebiet</string>
-    <string name="get_a_frostwire_tshirt">Besorge dir ein FrostWire T-Shirt</string>
+    <string name="get_a_frostwire_tshirt">Besorge dir einMediaTorT-Shirt</string>
     <string name="internal_port">Interner Port</string>
     <string name="external_port">Externer Port</string>
     <string name="device">Gerät</string>
@@ -188,7 +188,7 @@
     <string name="long_press_for_batch_actions">Für Batchaktionen die jeweiligen Datei Titel antippen</string>
     <string name="files_shared">Freigegebene Dateien</string>
     <string name="share_finished_downloads">Abgeschlossene Downloads mit WLAN freigeben. </string>
-    <string name="share_finished_downloads_summary">Abgeschlossene Downloads sind für andere FrostWire Benutzern auf deinem WLAN-Netzwerk zugänglich.</string>
+    <string name="share_finished_downloads_summary">Abgeschlossene Downloads sind für andereMediaTorBenutzern auf deinem WLAN-Netzwerk zugänglich.</string>
     <string name="are_you_sure_delete_files">Bist du sicher, dass du die ausgewählten Dateien löschen willst?</string>
     <string name="searchable_activity_label">Durchsuchbare Aktivitäten</string>
     <string name="search_hint">Inhalt durchsuchen</string>
@@ -315,14 +315,14 @@
     <string name="wizard_previous">Voherige</string>
     <string name="wizard_next">Weiter</string>
     <string name="wizard_finish">Fertig</string>
-    <string name="welcome_to_frostwire">Willkomen bei FrostWire %s</string>
+    <string name="welcome_to_frostwire">Willkomen bei MediaTor</string>
     <string name="let_apos_s_set_you_up_before_we_begin_">Bevor wir anfangen, müssen wir erst einige Konfigurationen vornehmen.</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">Wie andere dich auf dem lokalen Netzerk sehen (WLAN)</string>
     <string name="seeding_settings">Seeden-Einstellungen</string>
     <string name="seeding_settings_explanation">Benutzer von BitTorrent im Internet können Dateiblocks der Daten herunterladen, die deine Torrents seeden.</string>
     <string name="seeding_wifi_settings_explanation">Nur dann seeden wenn du eine WLAN-Verbindung benutzt. Vermeide so extra Kosten deines Dienstleiters</string>
     <string name="intent_text">MediaTor ist ein Pee-to-Peer-Programm, alleinig für den Austausch von autorisierten Dateien bestimmt. Installation und Benutzung des Programms stellt weder eine Lizenz für den Erhalt noch für die Verteilung von nicht autorisierten Inhalten dar.</string>
-    <string name="accept_intent">Ich werde FrostWire nicht dazu benutzen, Verstöße gegen das Urheberrecht zu begehen.</string>
+    <string name="accept_intent">Ich werdeMediaTornicht dazu benutzen, Verstöße gegen das Urheberrecht zu begehen.</string>
     <string name="toast_on_disconnect">Verbindung mit BitTorrent abgebrochen. Alle BitTorrent-Übertragungen wurden gestoppt.</string>
     <string name="toast_on_connect">BitTorrent Kern gestartet.</string>
     <string name="seeds">Seeds</string>
@@ -591,7 +591,7 @@
     <string name="search_preferences">Sucheinstellungen</string>
     <string name="donate_your_time">Spenden Sie Ihre Zeit</string>
     <string name="distraction_free_search_results">Ablenkung Kostenlose Suche (Beta)</string>
-    <string name="help_translate_or_proofread_frostwire">Helfen Sie mit, FrostWire zu übersetzen oder zu korrigieren</string>
+    <string name="help_translate_or_proofread_frostwire">Helfen Sie mit,MediaTorzu übersetzen oder zu korrigieren</string>
     <string name="changelog">Änderungsprotokoll</string>
     <string name="cloud_download_aborted_on_mobile_data">Aktuelle Einstellung verhindert das Herunterladen, wenn nicht auf Wifi-Netzwerk</string>
     <string name="sharing_privacy_settings">Teilen und Datenschutz</string>

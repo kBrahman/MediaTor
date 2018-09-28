@@ -119,7 +119,7 @@
     <string name="set_as_wallpaper">Poner como fondo de pantalla</string>
     <string name="failed_to_set_wallpaper">No se pudo poner como fondo</string>
     <string name="tell_others_chooser">Tweet / SMS / Email</string>
-    <string name="tell_others_subject">¿Tienes FrostWire para Android?</string>
+    <string name="tell_others_subject">¿TienesMediaTorpara Android?</string>
     <string name="and_choose_what_filetypes_to_share">Revisa qué archivos quieres compartir en la Red Móvil de Frostwire y en los Equipos con Wi-Fi cercanos.</string>
     <string name="before_getting_started">Antes de empezar</string>
     <string name="user_connecting">Usuario conectándose</string>
@@ -191,7 +191,7 @@
     <string name="long_press_for_batch_actions">Toca cualquier archivo para las operaciones en grupo</string>
     <string name="files_shared">archivos compartidos</string>
     <string name="share_finished_downloads">Compartir las descargas terminadas en Wi-Fi</string>
-    <string name="share_finished_downloads_summary">Las descargas compartidas estarán disponibles para otros usuarios de FrostWire en tu red de Wi-Fi.</string>
+    <string name="share_finished_downloads_summary">Las descargas compartidas estarán disponibles para otros usuarios deMediaToren tu red de Wi-Fi.</string>
     <string name="are_you_sure_delete_files">¿Estás seguro de que quieres borrar los archivos seleccionados de tu dispositivo?</string>
     <string name="searchable_activity_label">Actividad de Búsqueda</string>
     <string name="search_hint">Contenido de Búsqueda</string>
@@ -311,14 +311,14 @@
     <string name="wizard_previous">Anterior</string>
     <string name="wizard_next">Siguiente</string>
     <string name="wizard_finish">Terminar</string>
-    <string name="welcome_to_frostwire">Bienvenido a FrostWire %s</string>
+    <string name="welcome_to_frostwire">Bienvenido a MediaTor</string>
     <string name="let_apos_s_set_you_up_before_we_begin_">Vamos a configurar antes de comenzar.</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">Cómo te ven los demás en la red local. (Wi-Fi)</string>
     <string name="seeding_settings">Preferencias para Compartir</string>
     <string name="seeding_settings_explanation">Los usuarios de BitTorrent en Internet podrán descargar trozos del archivo de los datos que tus torrents comparten.</string>
     <string name="seeding_wifi_settings_explanation">Comparte únicamente cuando uses una conexión de Wi-Fi. Así evitarás más cargos de la compañía telefónica. </string>
     <string name="intent_text">MediaTor es un programa de usuario a usuario para compartir archivos autorizados. La instalación y utilización del programa no constituye una licencia para la obtención y distribución del contenido no autorizado.</string>
-    <string name="accept_intent">No usaré FrostWire de manera que infrinja derechos de autor.</string>
+    <string name="accept_intent">No usaréMediaTorde manera que infrinja derechos de autor.</string>
     <string name="toast_on_disconnect">Desconectado de BitTorrent. Todas las transferencias han parado.</string>
     <string name="toast_on_connect">BitTorrent ha comenzado.</string>
     <string name="seeds">Semilla</string>
@@ -388,7 +388,7 @@
     <string name="use_frostclick">Usa FrostClick.com</string>
     <string name="delete_this_track">Eliminar esta canción</string>
     <string name="are_you_sure_delete_current_track">¿Seguro que quieres eliminar esta canción?</string>
-    <string name="wifi_sharing_disabled">Compartir por Wi-fi está apagado.\n\nEsta funcionalidad te permite compartir archivos con otros dispositivos que corren FrostWire conectados a la misma red Wi-fi.</string>
+    <string name="wifi_sharing_disabled">Compartir por Wi-fi está apagado.\n\nEsta funcionalidad te permite compartir archivos con otros dispositivos que correnMediaTorconectados a la misma red Wi-fi.</string>
     <string name="turn_on_wifi_sharing">Encender Compartido por Wi-Fi</string>
     <string name="are_you_sure_wifi_sharing_off">Si apagas el compartir archivos por Wi-Fi todos los archivos que has marcado como compartidos localmente no estarán disponibles a los usuarios conectados a esta red Wi-Fi.</string>
     <string name="anonymous_usage_statistics">Estadísticas de uso anónimo</string>
@@ -423,7 +423,7 @@
     <string name="use_tpb_summary">TPB está basado en magnets, funciona sólo con Wi-Fi</string>
     <string name="cant_open_file_does_not_exist">No puedo abrir %1$s, el archivo no existe.</string>
     <string name="saving_to_internal_memory_description">También tienes un SD Card (%1$s disp.)</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android borrará los archivos descargados si FrostWire es desinstalado.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android borrará los archivos descargados siMediaTores desinstalado.</string>
     <string name="device_memory">Memoria del dispositivo</string>
     <string name="please_check_connection_status_before_resuming_download">Por favor, revisa el estado de tu conexión a Internet antes de reanudar.</string>
     <string name="menu_space_shortcut_label">Espacio</string>
@@ -438,7 +438,7 @@
     <string name="available">disponible</string>
     <string name="storage_setting_confirm_dialog_title">TARJETA SD</string>
     <string name="cant_resume_torrent_transfers"> "Conectividad"</string>
-    <string name="storage_setting_warning">AVISO: Todos los archivos descargados por FrostWire en la tarjeta SD serán borrados por ANDROID si FrostWire es desinstalado.</string>
+    <string name="storage_setting_warning">AVISO: Todos los archivos descargados porMediaToren la tarjeta SD serán borrados por ANDROID siMediaTores desinstalado.</string>
     <string name="install_bitcoin_wallet">Instalar Cartera Bitcoin</string>
     <string name="device_storage">Almacenamiento del Dispositivo</string>
     <string name="file_descriptor_sd_mounted">Este archivo fue borrado de la tarjeta SD o la tarjeta que ha insertado es una diferente.</string>
@@ -448,7 +448,7 @@
     <string name="file_descriptor_sd_unmounted">Este archivo pertenece a una tarjeta SD, por favor insértela en su dispositivo.</string>
     <string name="torrent_transfer_paused_disconnected_from_bittorrent">La transferencia ha sido pausada porque se ha desconectado. (Revisa estado de conexión BitTorrent en Preferencias)</string>
     <string name="saving_to_internal_memory">Guardando en la Memoria Interna</string>
-    <string name="storage_setting_confirm_dialog_text">Entiendo que todos los archivos descargados a la tarjeta SD por FrostWire serán borrados POR ANDROID en el momento que la aplicación FrostWire sea desinstalada de este dispositivo y no voy a mantener a FrostWire LLC como responsable de archivos perdidos.</string>
+    <string name="storage_setting_confirm_dialog_text">Entiendo que todos los archivos descargados a la tarjeta SD porMediaTorserán borrados POR ANDROID en el momento que la aplicaciónMediaTorsea desinstalada de este dispositivo y no voy a mantener aMediaTorLLC como responsable de archivos perdidos.</string>
     <string name="saving_to_sd_card">Guardando en la tarjeta SD.</string>
     <string name="wifi_sharing_settings">Compartiendo en Wi-Fi</string>
     <string name="torrent_max_peers">Max Usuarios</string>
@@ -494,7 +494,7 @@
     <string name="transfers_context_menu_copy_magnet_copied">Magnet copiado al portapapeles</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash copiado al portapeles</string>
     <string name="remove_torrent_and_data">Eliminar Torrent y Archivos Descargados</string>
-    <string name="frostwire_shutting_down_no_permissions">Lo siento, FrostWire no puede continuar sin tu permiso de acceder al disco.</string>
+    <string name="frostwire_shutting_down_no_permissions">Lo siento,MediaTorno puede continuar sin tu permiso de acceder al disco.</string>
     <string name="shutting_down">Apagando…</string>
     <string name="why_we_need_storage_permissions">Por qué necesitamos permisos de almacenamiento.</string>
     <string name="restarting">Reiniciando…</string>
@@ -510,7 +510,7 @@
     <string name="notify_frostwire_is_running_summary">Mostrar una notificación permanente de Android con el estado de las transferencias.</string>
     <string name="frostwire_is_running">FrostWire está corriendo</string>
     <string name="invalid_filename">Nombre de archivo inválido</string>
-    <string name="notify_frostwire_is_running">Notificar cuándo FrostWire corre</string>
+    <string name="notify_frostwire_is_running">Notificar cuándoMediaTorcorre</string>
     <string name="dht_contacts">Contactos DHT</string>
     <string name="unprotected_connection">Conexión desprotegida</string>
     <string name="protect_my_privacy">Protege mi privacidad</string>
@@ -586,7 +586,7 @@
     <string name="advertisement">publicidad</string>
     <string name="all_free_downloads">Descargas Gratuitas</string>
 
-    <string name="frostwire_sticker_and_more">Calcomanías de FrostWire y más</string>
+    <string name="frostwire_sticker_and_more">Calcomanías deMediaTory más</string>
     <string name="wifi_networks_only_summary">Ahorra datos. Descarga solo si se establece la conexión Wi-Fi.</string>
     <string name="notifications_other_settings">Notificaciones y otros</string>
     <string name="wifi_networks_only">Solo redes Wi-Fi</string>
@@ -676,7 +676,7 @@
     <string name="transfer_detail_storage_header">Ruta de almacenamiento:</string>
     <string name="seeding_time">Tiempo compartiendo</string>
     <string name="working">Funcionando</string>
-    <string name="one_file_shared">Se ha compartido un archivo en dispositivos FrostWire en la misma red Wi-Fi.</string>
+    <string name="one_file_shared">Se ha compartido un archivo en dispositivosMediaToren la misma red Wi-Fi.</string>
     <string name="pieces">Piezas</string>
     <string name="upload_limit">Límite de subida</string>
     <string name="enter_valid_tracker_url_here">Ingrese una URL del rastreador válida aquí</string>
@@ -699,7 +699,7 @@
     <string name="sequential_download">Descarga secuencial</string>
     <string name="downloaded_n">Descargado %1$s / </string>
     <string name="transfer_detail_title_header">Nombre:</string>
-    <string name="n_files_shared">%d archivos se ha(n) compartido con dispositivos FrostWire en la misma red Wi-Fi.</string>
+    <string name="n_files_shared">%d archivos se ha(n) compartido con dispositivosMediaToren la misma red Wi-Fi.</string>
     <string name="time_elapsed">Tiempo transcurrido</string>
     <string name="remove_tracker">Remover tracker</string>
     <string name="comment">Comentario</string>

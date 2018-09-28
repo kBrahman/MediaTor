@@ -19,7 +19,7 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[ * למרות המומלץ עבור הורדות שלך,אתה לא צריך VPN להשתמש FrostWire ]]></string>
+    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[ * למרות המומלץ עבור הורדות שלך,אתה לא צריך VPN להשתמשMediaTor]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> גע בתגים שחלים על]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ אתה מחובר לאינטרנט באמצעות VPN. <br> <br>r אם אינך משתמש כבר, מומלץ להשתמש באחד מהשירותים הבאים כדי להצפין את החיבור שלך ו <b/> לשמור על הפרטיות שלך <b>. ]]></string>
 
@@ -55,7 +55,7 @@
     <string name="azureus_manager_item_ready">מחכה טורנטים אחרים לתור</string>
     <string name="nickname">כינוי</string>
     <string name="drawer_close">סגור את חלונית הניווט</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire היא תוכנת קובץ דפדפן Downloader, ולכן הוא צריך להיות מסוגל לגשת לדיסק שלך.\n\nללא הרשאות שלך FrostWire לא יכול לעבוד.\n\nרוצה לנסות שוב?</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire היא תוכנת קובץ דפדפן Downloader, ולכן הוא צריך להיות מסוגל לגשת לדיסק שלך.\n\nללא הרשאות שלךMediaTorלא יכול לעבוד.\n\nרוצה לנסות שוב?</string>
     <string name="peer_http_upload_status_unknown">לא ידוע</string>
     <string name="unprotected_connection">לא מוגן</string>
     <string name="video">וִידֵאוֹ</string>
@@ -101,7 +101,7 @@
     <string name="loading_all">טעינת כל</string>
     <string name="azureus_manager_item_allocating">הקצאה</string>
     <string name="app_shutdown_dlg_message">כיבוי רצון זה כל העברות ושירותי רקע. האם אתה בטוח?</string>
-    <string name="frostwire_sticker_and_more">מדבקות FrostWire ועוד</string>
+    <string name="frostwire_sticker_and_more">מדבקותMediaTorועוד</string>
     <string name="show_transfers_on_download_start">העברות הצג על התחל הורדה</string>
     <string name="sharing">שיתוף</string>
     <string name="send_feedback">שלח משוב</string>
@@ -113,7 +113,7 @@
     <string name="ten_dollars">$10</string>
     <string name="my_files">הקבצים שלי</string>
     <string name="no_network_connection">אין חיבור לרשת</string>
-    <string name="and_choose_what_filetypes_to_share">בדוק אילו סוגי קבצים ברצונך לאפשר לשיתוף ברשת הניידת FrostWire ו- Wifi הסמוך מופעלים שולחניים.</string>
+    <string name="and_choose_what_filetypes_to_share">בדוק אילו סוגי קבצים ברצונך לאפשר לשיתוף ברשת הניידתMediaTorו- Wifi הסמוך מופעלים שולחניים.</string>
     <string name="delete_n_torrents_indexed">%d הורדות שנמחקו באינדקס</string>
     <string name="saving_to_internal_memory">שמירת זיכרון פנימי</string>
     <string name="dialog_desktop_upload_request_text_text">%1$s wants to send you %2$s totalling %3$s</string>
@@ -133,7 +133,7 @@
     <string name="retry_search">נסה שוב</string>
     <string name="the_file_could_not_be_seeded_bittorrent_will_remain_disconnected">הקובץ לא להיות זרע. ביטורנט יישאר מנותק.</string>
     <string name="toggle_sharing_selected_files">Toggle Sharing</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android ימחק קבצים שהורדו אם FrostWire יוסר.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android ימחק קבצים שהורדו אםMediaTorיוסר.</string>
     <string name="please_connect">התחבר להשתמש בתכונה זו</string>
     <string name="protected_connection">VPN-מוגן</string>
     <string name="clear_finished">נקה סיום</string>
@@ -152,7 +152,7 @@
     <string name="applications">יישומי תוכנה</string>
     <string name="the_file_could_not_be_seeded_enable_seeding">הקובץ לא להיות זרע. אפשר זריעה על הגדרות.</string>
     <string name="media_type_video">וִידֵאוֹ</string>
-    <string name="accept_intent">אני לא אשתמש FrostWire בגין הפרת זכויות יוצרים</string>
+    <string name="accept_intent">אני לא אשתמשMediaTorבגין הפרת זכויות יוצרים</string>
     <string name="remove_torrent_and_data">הסר Torrent ונתונים</string>
     <string name="seeding_settings">הגדרות מתזמנות</string>
     <string name="love_frostwire">אהבת FrostWire</string>
@@ -195,8 +195,8 @@
     <string name="search_for_type_files">חיפוש עבור s% קבצים</string>
     <string name="menu_delete_shortcut_label">לִמְחוֹק</string>
     <string name="magnet_url_added">כתובת אתר מגנט הוסיף להעברות. (מגנטים פועלים בצורה הטובה ביותר על ה- Wi-Fi)</string>
-    <string name="share_finished_downloads_summary">הורדות סיום תהיינה זמינות למשתמשי FrostWire אחרים ברשת ה- Wi-Fi.</string>
-    <string name="frostwire_shutting_down_no_permissions">מצטערים, FrostWire לא יכול להמשיך ללא רשותך לגשת לדיסק.</string>
+    <string name="share_finished_downloads_summary">הורדות סיום תהיינה זמינות למשתמשיMediaTorאחרים ברשת ה- Wi-Fi.</string>
+    <string name="frostwire_shutting_down_no_permissions">מצטערים,MediaTorלא יכול להמשיך ללא רשותך לגשת לדיסק.</string>
     <string name="http_download_status_uncompressing">Uncompressing</string>
     <string name="one_time_purchase">רכישה חד פעמי</string>
     <string name="send_file_using">שלח קובץ באמצעות</string>
@@ -266,7 +266,7 @@
     <string name="copy">עותק</string>
     <string name="updating">עִדכּוּן</string>
     <string name="help_translate_frostwire">עזור לתרגם FrostWire</string>
-    <string name="tell_others_subject">יש FrostWire עבור אנדרואיד עדיין?</string>
+    <string name="tell_others_subject">ישMediaTorעבור אנדרואיד עדיין?</string>
     <string name="files_shared_by">קבצים משותפים על ידי</string>
     <string name="clear_messages">מסרים ברורים</string>
     <string name="best_value">בעל הערך הטוב ביותר</string>
@@ -295,7 +295,7 @@
     <string name="wizard_previous">קודם</string>
     <string name="azureus_manager_item_downloading">הורדת</string>
     <string name="there_is_n_torrents_indexed">יש d% הורדות יתווספו לאינדקס</string>
-    <string name="wifi_sharing_disabled">שיתוף חיבור אינטרנט אלחוטי כבוי.\n\nשיתוף חיבור אינטרנט אלחוטי יכול לשמש כדי לשתף קבצים באופן מקומי בין מכשירי מתח FrostWire מחובר לרשת Wi-Fi.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Learn more.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">שיתוף חיבור אינטרנט אלחוטי כבוי.\n\nשיתוף חיבור אינטרנט אלחוטי יכול לשמש כדי לשתף קבצים באופן מקומי בין מכשירי מתחMediaTorמחובר לרשת Wi-Fi.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Learn more.&lt;/a&gt;</string>
     <string name="pausing">השהיית</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">איך אחרים רואים אותך ברשת המקומית (Wi-Fi)</string>
     <string name="yes_no_cancel_transfer_question">האם אתה בטוח שאתה רוצה לעצור להסיר הורדה זו מהרשימה (לא נתונים יימחקו)?</string>
@@ -378,7 +378,7 @@
     <string name="free_download">הורדה חינמית</string>
     <string name="internet_discovery_summary">חבר עמיתים מרחוק באינטרנט.</string>
     <string name="couldnt_share_file">לא ניתן לשתף את הקובץ. נתיב מוזר מצא.</string>
-    <string name="learn_how_to_get_more_results">נסה FrostWire פלוס עבור תוצאות נוספות</string>
+    <string name="learn_how_to_get_more_results">נסהMediaTorפלוס עבור תוצאות נוספות</string>
     <string name="use_mobile_data">השתמש 3G/4G עבור ביטורנט</string>
     <string name="seeding_wifi_settings_explanation">זרע רק בעת שימוש בחיבור Wifi. הימנע חיובים נוספים מן הספק שלך.</string>
     <string name="storage_setting_confirm_dialog_title">כרטיס זיכרון</string>
@@ -390,7 +390,7 @@
     <string name="seed_finished_torrents">Torrents זרע גמור</string>
     <string name="peer_http_upload_status_cancelled">מבוטל</string>
     <string name="send_bitcoin_tip">שלח תרומה ביטקוין</string>
-    <string name="welcome_to_frostwire">ברוכים הבאים FrostWire %s</string>
+    <string name="welcome_to_frostwire">ברוכים הבאים MediaTor</string>
     <string name="bittorrent_off_data_saver_on">"BitTorrent off (Data Saver On)"</string>
     <string name="ad_free">ללא מודעות</string>
     <string name="peer_http_upload_status_streaming">Streaming</string>
@@ -398,7 +398,7 @@
     <string name="transfers_context_menu_copy_infohash">העתק InfoHash</string>
     <string name="wanna_download_question">רוצה להוריד?</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">אזהרה: כל הקבצים השמורים על ידי FrostWire על גבי כרטיס SD תימחק על ידי אנדרואיד, לא FrostWire, אם תסיר את האפליקציה.</string>
+    <string name="storage_setting_warning">אזהרה: כל הקבצים השמורים על ידיMediaTorעל גבי כרטיס SD תימחק על ידי אנדרואיד, לא FrostWire, אם תסיר את האפליקציה.</string>
     <string name="not_sharing_files">לא משתף את כל קבצים.</string>
     <string name="sd_permission_no_accessible_path">הנתיב שבחרת SD אינו נגיש עוד. לחץ על OK כדי לבחור שוב.</string>
     <string name="select_deselect_all">בחר / בטל בחירת הכל</string>
@@ -473,7 +473,7 @@
     <string name="loading">טוען</string>
     <string name="downloading_metadata">מטה הורדה</string>
     <string name="storage_preference_summary">מיקום אחסון ברירת המחדל שבו קבצים יישמרו.</string>
-    <string name="notify_frostwire_is_running">תודיע אם FrostWire פועל</string>
+    <string name="notify_frostwire_is_running">תודיע אםMediaTorפועל</string>
     <string name="bandwidth_usage_settings">שימוש רוחב</string>
     <string name="torrent_scheme_download_not_supported">הורד לא נתמך</string>
     <string name="app_shutdown_dlg_title">לכבות</string>
@@ -525,7 +525,7 @@
     <string name="cheaper_than_beer">זול יותר מאשר באר</string>
     <string name="type_here_to_filter">הקלד כאן כדי לסנן</string>
     <string name="block">Block</string>
-    <string name="rating_reminder_description">אם אתה אוהב FrostWire בבקשה לקחת רגע כדי לדרג אותנו.</string>
+    <string name="rating_reminder_description">אם אתה אוהבMediaTorבבקשה לקחת רגע כדי לדרג אותנו.</string>
     <string name="please_update_to_v">אנא עדכן לגרסה s%</string>
     <string name="azureus_manager_item_finishing">גימור</string>
     <string name="free_sponsored_app">חינם יישום ממומן</string>
@@ -560,7 +560,7 @@
     <string name="try_valid_port_next_time">נסה בפעם הבאה כניסה חוקית 1000 ו 65,500</string>
     <string name="one_dollar">$1</string>
     <string name="enable_seeding">אפשר מתזמן</string>
-    <string name="storage_setting_confirm_dialog_text">אני מבין כי כל הקבצים שהורדו לכרטיס SD ידי FrostWire יימחקו על ידי ANDROID הרגע יישום FrostWire יוסר מהמכשיר הזה ואני לא אקיים FrostWire LLC אחראית לכל קבצים לאיבוד.</string>
+    <string name="storage_setting_confirm_dialog_text">אני מבין כי כל הקבצים שהורדו לכרטיס SD ידיMediaTorיימחקו על ידי ANDROID הרגע יישוםMediaTorיוסר מהמכשיר הזה ואני לא אקייםMediaTorLLC אחראית לכל קבצים לאיבוד.</string>
     <string name="simultaneous_uploads">העלאות Wi-Fi סימולטני</string>
     <string name="cant_open_file_does_not_exist">אני לא יכול לפתוח %1$s, הקובץ אינו קיים.</string>
     <string name="internet_discovery">Internet Discovery</string>
@@ -671,8 +671,8 @@
     <string name="vpn_find_out_more">למידע נוסף</string>
     <string name="vpn_suggestion_nordvpn">NORDVPN \n ניסיון חינם ל -7 ימים</string>
     <string name="play_store_out_of_sync">חנות Google Play צריכה לסנכרן, המתן מספר דקות</string>
-    <string name="one_file_shared">קובץ אחד משותף למכשירי FrostWire באותה רשת Wi-Fi.</string>
-    <string name="n_files_shared">%d קבצים משותפים למכשירי FrostWire באותה רשת Wi-Fi.</string>
+    <string name="one_file_shared">קובץ אחד משותף למכשיריMediaTorבאותה רשת Wi-Fi.</string>
+    <string name="n_files_shared">%d קבצים משותפים למכשיריMediaTorבאותה רשת Wi-Fi.</string>
     <string name="uploaded">הועלה</string>
     <string name="trackers">עוקבים</string>
     <string name="source_type">מָקוֹר: %1$s</string>

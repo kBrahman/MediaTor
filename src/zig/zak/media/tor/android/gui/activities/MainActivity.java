@@ -40,6 +40,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.KeyEvent;
 import android.view.MenuItem;
@@ -51,6 +52,7 @@ import com.andrew.apollo.utils.MusicUtils.ServiceToken;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 import org.apache.commons.io.IOUtils;
 
@@ -108,6 +110,7 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     private static final String FRAGMENTS_STACK_KEY = "fragments_stack";
     private static final String CURRENT_FRAGMENT_KEY = "current_fragment";
     private static final String SHUTDOWN_DIALOG_ID = "shutdown_dialog";
+    private static final String TAG = MainActivity.class.getSimpleName();
     private static boolean firstTime = true;
     private boolean externalStoragePermissionsRequested = false;
 
@@ -124,6 +127,7 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     private TimerSubscription playerSubscription;
 
     private boolean shuttingdown = false;
+    private InterstitialAd ad;
 
     public MainActivity() {
         super(R.layout.activity_main);
@@ -155,6 +159,7 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     public void onBackPressed() {
         if (navigationMenu.isOpen()) {
             navigationMenu.hide();
+            return;
         } else if (fragmentsStack.size() > 1) {
             try {
                 fragmentsStack.pop();
@@ -162,12 +167,18 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
                 Fragment fragment = getFragmentManager().findFragmentById(id);
                 switchContent(fragment, false);
             } catch (Throwable e) {
-                finish();
+                e.printStackTrace();
+                super.onBackPressed();
             }
         }
         syncNavigationMenu();
         updateHeader(getCurrentFragment());
-        finish();
+
+        Log.i(TAG, "ad si loaded=>" + ad.isLoaded());
+        super.onBackPressed();
+        if (ad != null && ad.isLoaded()) {
+            ad.show();
+        }
     }
 
     public void shutdown() {
@@ -402,6 +413,9 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
             }
         });
         adView.loadAd(new AdRequest.Builder().build());
+        ad = new InterstitialAd(this);
+        ad.setAdUnitId(getString(R.string.int_id));
+        ad.loadAd(new AdRequest.Builder().build());
     }
 
     private void checkAccessCoarseLocationPermissions() {

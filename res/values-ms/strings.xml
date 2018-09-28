@@ -54,7 +54,7 @@
     <string name="azureus_manager_item_ready">Menunggu torrents lain beratur</string>
     <string name="nickname">Nama samaran</string>
     <string name="drawer_close">Tutup laci navigasi</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire adalah aplikasi pelayar fail dan Downloader, oleh itu ia perlu boleh mengakses cakera anda.\n\nTanpa keizinan anda FrostWire tidak boleh bekerja.\n\nIngin mencuba lagi?</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire adalah aplikasi pelayar fail dan Downloader, oleh itu ia perlu boleh mengakses cakera anda.\n\nTanpa keizinan andaMediaTortidak boleh bekerja.\n\nIngin mencuba lagi?</string>
     <string name="peer_http_upload_status_unknown">Tidak diketahui</string>
     <string name="unprotected_connection">tidak dilindungi</string>
     <string name="video">Video</string>
@@ -111,7 +111,7 @@
     <string name="ten_dollars">$10</string>
     <string name="my_files">Fail-fail saya</string>
     <string name="no_network_connection">Tiada Sambungan Rangkaian</string>
-    <string name="and_choose_what_filetypes_to_share">Semak apa jenis fail yang anda ingin untuk membolehkan untuk perkongsian di Rangkaian Mobile FrostWire dan Wifi berdekatan membolehkan Desktop.</string>
+    <string name="and_choose_what_filetypes_to_share">Semak apa jenis fail yang anda ingin untuk membolehkan untuk perkongsian di Rangkaian MobileMediaTordan Wifi berdekatan membolehkan Desktop.</string>
     <string name="delete_n_torrents_indexed">Dipadam %d torrents diindeks</string>
     <string name="saving_to_internal_memory">Menyimpan ke Memori Dalaman</string>
     <string name="dialog_desktop_upload_request_text_text">%1$s mahu menghantar %2$s berjumlah %3$s</string>
@@ -131,7 +131,7 @@
     <string name="retry_search">Cuba semula</string>
     <string name="the_file_could_not_be_seeded_bittorrent_will_remain_disconnected">Fail tidak boleh diletakkan sebagai pilihan. BitTorrent akan kekal diputuskan.</string>
     <string name="toggle_sharing_selected_files">Perkongsian Toggle</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android akan memadam fail yang dimuat turun jika FrostWire adalah pemasangan.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android akan memadam fail yang dimuat turun jikaMediaToradalah pemasangan.</string>
     <string name="please_connect">Sila sambung untuk menggunakan ciri-ciri ini</string>
     <string name="protected_connection">VPN yang dilindungi</string>
     <string name="clear_finished">Kosongkan selesai</string>
@@ -150,7 +150,7 @@
     <string name="applications">Aplikasi</string>
     <string name="the_file_could_not_be_seeded_enable_seeding">Fail tidak boleh diletakkan sebagai pilihan. Membolehkan pembenihan pada tetapan.</string>
     <string name="media_type_video">Video</string>
-    <string name="accept_intent">Saya tidak akan menggunakan FrostWire untuk pelanggaran hak cipta</string>
+    <string name="accept_intent">Saya tidak akan menggunakanMediaToruntuk pelanggaran hak cipta</string>
     <string name="remove_torrent_and_data">Buang Torrent dan Data</string>
     <string name="seeding_settings">Tetapan Pembenihan</string>
     <string name="love_frostwire">Cinta FrostWire</string>
@@ -192,8 +192,8 @@
     <string name="search_for_type_files">Cari %s fail</string>
     <string name="menu_delete_shortcut_label">Padam</string>
     <string name="magnet_url_added">URL Magnet ditambah kepada pemindahan. (Magnet bekerja terbaik pada Wi-Fi)</string>
-    <string name="share_finished_downloads_summary">Muat turun selesai akan disalurkan ke bahagian FrostWire lain pada rangkaian Wi-Fi anda.</string>
-    <string name="frostwire_shutting_down_no_permissions">Maaf, FrostWire tidak boleh terus tanpa kebenaran anda untuk mengakses cakera.</string>
+    <string name="share_finished_downloads_summary">Muat turun selesai akan disalurkan ke bahagianMediaTorlain pada rangkaian Wi-Fi anda.</string>
+    <string name="frostwire_shutting_down_no_permissions">Maaf,MediaTortidak boleh terus tanpa kebenaran anda untuk mengakses cakera.</string>
     <string name="http_download_status_uncompressing">Uncompressing</string>
     <string name="one_time_purchase">Satu Masa Pembelian</string>
     <string name="send_file_using">Hantar fail menggunakan</string>
@@ -261,7 +261,7 @@
     <string name="copy">Salinan</string>
     <string name="updating">Pengemaskinian</string>
     <string name="help_translate_frostwire">Membantu menterjemahkannya FrostWire</string>
-    <string name="tell_others_subject">Got FrostWire untuk Android lagi?</string>
+    <string name="tell_others_subject">GotMediaToruntuk Android lagi?</string>
     <string name="files_shared_by">fail yang dikongsi oleh</string>
     <string name="clear_messages">Mesej yang jelas</string>
     <string name="best_value">Nilai terbaik</string>
@@ -290,7 +290,7 @@
     <string name="wizard_previous">Sebelum</string>
     <string name="azureus_manager_item_downloading">Memuat turun</string>
     <string name="there_is_n_torrents_indexed">Terdapat %d torrents diindeks</string>
-    <string name="wifi_sharing_disabled">Perkongsian Wi-fi dimatikan.\n\nperkongsian Internet Tanpa Wayar boleh digunakan untuk berkongsi fail antara peranti tempatan FrostWire dikuasakan disambungkan kepada rangkaian Wi-Fi yang sama.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Ketahui lebih lanjut.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">Perkongsian Wi-fi dimatikan.\n\nperkongsian Internet Tanpa Wayar boleh digunakan untuk berkongsi fail antara peranti tempatanMediaTordikuasakan disambungkan kepada rangkaian Wi-Fi yang sama.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Ketahui lebih lanjut.&lt;/a&gt;</string>
     <string name="pausing">Berhenti</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">Bagaimana orang lain melihat anda pada rangkaian tempatan (Wi-Fi)</string>
     <string name="yes_no_cancel_transfer_question">Adakah anda pasti anda mahu berhenti dan mengalih keluar muat turun ini dari senarai (tiada data akan dipadamkan)?</string>
@@ -373,7 +373,7 @@
     <string name="free_download">Muat turun percuma</string>
     <string name="internet_discovery_summary">Sambung kepada rakan-rakan jauh di Internet.</string>
     <string name="couldnt_share_file">Tidak boleh berkongsi fail. jalan pelik dijumpai.</string>
-    <string name="learn_how_to_get_more_results">Cuba FrostWire Plus untuk lebih banyak keputusan</string>
+    <string name="learn_how_to_get_more_results">CubaMediaTorPlus untuk lebih banyak keputusan</string>
     <string name="use_mobile_data">Gunakan 3G/4G untuk BitTorrent</string>
     <string name="seeding_wifi_settings_explanation">Benih yang hanya apabila menggunakan sambungan Wifi. Mengelakkan caj tambahan daripada pembawa anda.</string>
     <string name="storage_setting_confirm_dialog_title">SD KAD</string>
@@ -385,7 +385,7 @@
     <string name="seed_finished_torrents">Benih yang Mendapat Torrents</string>
     <string name="peer_http_upload_status_cancelled">Dibatalkan</string>
     <string name="send_bitcoin_tip">Menghantar Bitcoin derma</string>
-    <string name="welcome_to_frostwire">Selamat datang ke FrostWire %s</string>
+    <string name="welcome_to_frostwire">Selamat datang ke MediaTor</string>
     <string name="bittorrent_off_data_saver_on">"BitTorrent off (Data Saver On)"</string>
     <string name="ad_free">Tanpa Iklan</string>
     <string name="peer_http_upload_status_streaming">Streaming</string>
@@ -393,7 +393,7 @@
     <string name="transfers_context_menu_copy_infohash">Salinan InfoHash</string>
     <string name="wanna_download_question">Ingin muat turun?</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">AMARAN: Semua fail yang disimpan oleh FrostWire ke dalam kad SD akan dihapuskan OLEH ANDROID, tidak FrostWire, jika anda membuang pemasangan aplikasi.</string>
+    <string name="storage_setting_warning">AMARAN: Semua fail yang disimpan olehMediaTorke dalam kad SD akan dihapuskan OLEH ANDROID, tidak FrostWire, jika anda membuang pemasangan aplikasi.</string>
     <string name="not_sharing_files">tidak berkongsi apa-apa fail.</string>
     <string name="sd_permission_no_accessible_path">Jalan yang anda pilih dalam SD tidak boleh diakses lagi. Tekan OK untuk memilih sekali lagi.</string>
     <string name="select_deselect_all">Pilih/Nyahpilih Semua</string>
@@ -419,7 +419,7 @@
     <string name="error_no_internet_connection">Ralat: Periksa sambungan Internet</string>
     <string name="azureus_manager_item_error">Ralat</string>
     <string name="why_we_need_storage_permissions">Mengapa kita perlu kebenaran penyimpanan.</string>
-    <string name="get_a_frostwire_tshirt">Dapatkan FrostWire T-Shirt</string>
+    <string name="get_a_frostwire_tshirt">DapatkanMediaTorT-Shirt</string>
     <string name="media_type_applications">Aplikasi</string>
     <string name="invalid_filename">Nama fail yang tidak sah</string>
     <string name="use_archiveorg">Gunakan Archive.org</string>
@@ -467,7 +467,7 @@
     <string name="loading">Pembebanan</string>
     <string name="downloading_metadata">Metadata memuat turun</string>
     <string name="storage_preference_summary">Lokasi simpanan lalai di mana fail akan disimpan.</string>
-    <string name="notify_frostwire_is_running">Maklumkan jika FrostWire sedang berjalan</string>
+    <string name="notify_frostwire_is_running">Maklumkan jikaMediaTorsedang berjalan</string>
     <string name="torrent_scheme_download_not_supported">Muat turun tidak disokong</string>
     <string name="app_shutdown_dlg_title">Menutup</string>
     <string name="dht_contacts">Kenalan DHT</string>
@@ -518,7 +518,7 @@
     <string name="cheaper_than_beer">Lebih murah daripada bir</string>
     <string name="type_here_to_filter">Taip di sini untuk menapis</string>
     <string name="block">Bongkah</string>
-    <string name="rating_reminder_description">Jika anda suka FrostWire sila ambil seketika untuk mengadar kami.</string>
+    <string name="rating_reminder_description">Jika anda sukaMediaTorsila ambil seketika untuk mengadar kami.</string>
     <string name="please_update_to_v">Sila kemas kini kepada versi %s</string>
     <string name="azureus_manager_item_finishing">Kemasan</string>
     <string name="free_sponsored_app">Aplikasi ditaja percuma</string>
@@ -553,7 +553,7 @@
     <string name="try_valid_port_next_time">Cuba masa depan pelabuhan sah 1000 dan 65500</string>
     <string name="one_dollar">$1</string>
     <string name="enable_seeding">Membolehkan Seeding</string>
-    <string name="storage_setting_confirm_dialog_text">Saya faham bahawa semua fail yang dimuat turun ke kad SD dengan FrostWire akan dipadam OLEH ANDROID masa ini permohonan FrostWire itu dipadam daripada peranti ini dan saya tidak akan mengadakan FrostWire LLC bertanggungjawab ke atas mana-mana fail hilang.</string>
+    <string name="storage_setting_confirm_dialog_text">Saya faham bahawa semua fail yang dimuat turun ke kad SD denganMediaTorakan dipadam OLEH ANDROID masa ini permohonanMediaToritu dipadam daripada peranti ini dan saya tidak akan mengadakanMediaTorLLC bertanggungjawab ke atas mana-mana fail hilang.</string>
     <string name="simultaneous_uploads">Serentak Wi-fi Tambahan</string>
     <string name="cant_open_file_does_not_exist">Saya tidak boleh membuka %1$s, fail tidak wujud.</string>
     <string name="internet_discovery">Internet Discovery</string>
@@ -678,7 +678,7 @@
     <string name="transfer_detail_storage_header">Laluan Penyimpanan:</string>
     <string name="seeding_time">Masa pembenihan</string>
     <string name="working">Bekerja</string>
-    <string name="one_file_shared">Satu fail telah dikongsi ke peranti FrostWire pada rangkaian Wi-Fi yang sama.</string>
+    <string name="one_file_shared">Satu fail telah dikongsi ke perantiMediaTorpada rangkaian Wi-Fi yang sama.</string>
     <string name="pieces">Keping</string>
     <string name="upload_limit">Had muat naik</string>
     <string name="enter_valid_tracker_url_here">Masukkan url pelacak yang sah di sini</string>
@@ -701,7 +701,7 @@
     <string name="sequential_download">Muat turun urutan</string>
     <string name="downloaded_n">Muat turun %1$s / </string>
     <string name="transfer_detail_title_header">Nama:</string>
-    <string name="n_files_shared">%d fail telah dikongsi ke peranti FrostWire pada rangkaian Wi-Fi yang sama.</string>
+    <string name="n_files_shared">%d fail telah dikongsi ke perantiMediaTorpada rangkaian Wi-Fi yang sama.</string>
     <string name="time_elapsed">Masa berlalu</string>
     <string name="remove_tracker">Padam tracker</string>
     <string name="comment">Komen</string>

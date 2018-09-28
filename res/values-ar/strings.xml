@@ -438,7 +438,7 @@
     <string name="player_paused_press_and_hold_to_stop">توقف لاعب. (نصيحة: اضغط باستمرار لإيقاف)</string>
     <string name="menu_delete_shortcut_label">Del</string>
     <string name="magnet_url_added">وأضاف URL جذب للنقل. (مغناطيس تعمل بشكل أفضل على واي فاي)</string>
-    <string name="frostwire_shutting_down_no_permissions">عذرا، برنامج FrostWire لا يمكن أن يستمر دون الحصول على إذن للوصول إلى القرص.</string>
+    <string name="frostwire_shutting_down_no_permissions">عذرا، برنامجMediaTorلا يمكن أن يستمر دون الحصول على إذن للوصول إلى القرص.</string>
     <string name="one_time_purchase">واحد شراء الوقت</string>
     <string name="activity_VPN">صلة</string>
     <string name="one_year">1 سنة</string>
@@ -473,7 +473,7 @@
 
     <string name="pausing">التوقف</string>
     <string name="dummy_title_bold">[عنوان عريض]</string>
-    <string name="storage_picker_treeuri_cant_write">لا يمكن برنامج FrostWire الكتابة على مسار التخزين المحدد</string>
+    <string name="storage_picker_treeuri_cant_write">لا يمكن برنامجMediaTorالكتابة على مسار التخزين المحدد</string>
     <string name="processing_payment">دفع التجهيز، وتجديد في بضع ثوان</string>
     <string name="my_music">الموسيقى</string>
     <string name="connection_header_title">حالة الإتصال:</string>
@@ -500,7 +500,7 @@
     <string name="transfers_context_resume_all_torrent_transfers">استئناف جميع عمليات نقل سيل</string>
     <string name="free_download">تحميل مجانا</string>
     <string name="couldnt_share_file">لا يمكن مشاركة الملف. العثور على مسار غريب.</string>
-    <string name="learn_how_to_get_more_results">محاولة برنامج FrostWire بلس لمزيد من النتائج</string>
+    <string name="learn_how_to_get_more_results">محاولة برنامجMediaTorبلس لمزيد من النتائج</string>
     <string name="storage_setting_confirm_dialog_title">بطاقة الذاكرة</string>
     <string name="no_trial_period_included">لا فترة تجريبية شملت</string>
     <string name="cant_resume_torrent_transfers">لا يمكن استئناف تحويل سيل. التحقق من حالة من "إعدادات"> "تورنت حالة الاتصال"</string>
@@ -509,13 +509,13 @@
     <string name="ad_free">خالية من الاعلانات</string>
     <string name="current_plan">الخطه الحاليه</string>
     <string name="transfers_context_menu_copy_infohash">نسخة InfoHash</string>
-    <string name="storage_setting_warning">تحذير: جميع الملفات المحفوظة من قبل برنامج FrostWire على بطاقة SD سيتم حذف بواسطة الروبوت، وليس برنامج FrostWire، إذا قمت بإلغاء تثبيت التطبيق.</string>
+    <string name="storage_setting_warning">تحذير: جميع الملفات المحفوظة من قبل برنامجMediaTorعلى بطاقة SD سيتم حذف بواسطة الروبوت، وليس برنامج FrostWire، إذا قمت بإلغاء تثبيت التطبيق.</string>
     <string name="sd_permission_no_accessible_path">المسار الذي حددته في التنمية المستدامة لا يمكن الوصول إليه بعد الآن. اضغط على موافق لتحديد مرة أخرى.</string>
     <string name="select_deselect_all">اختيار / الغاء اختيار جميع</string>
     <string name="canceling">إلغاء</string>
     <string name="get_vpn_client">الحصول على ExpressVPN</string>
     <string name="issue_with_tip_donation_uri">هناك شيء خاطئ مع عنوان الويب تلميح / تبرع</string>
-    <string name="frostwire_is_running">وبرنامج FrostWire تشغيل</string>
+    <string name="frostwire_is_running">وبرنامجMediaTorتشغيل</string>
     <string name="http_download_status_save_dir_error">حفظ الدليل غير موجود أو لا يمكن إنشاء</string>
     <string name="install_bitcoin_wallet">تثبيت بيتكوين محفظة</string>
     <string name="select_option_below">الخيار اختار:</string>
@@ -540,7 +540,7 @@
     <string name="cheaper_than_lattes">أرخص من اتيس</string>
     <string name="vpn_off_toast_notification">الاتصال قد لا تكون خاصة.</string>
     <string name="downloading_metadata">الفوقية تحميل</string>
-    <string name="notify_frostwire_is_running">يخطر إذا برنامج FrostWire بنظام التشغيل</string>
+    <string name="notify_frostwire_is_running">يخطر إذا برنامجMediaTorبنظام التشغيل</string>
     <string name="app_shutdown_dlg_title">اغلق</string>
     <string name="dht_contacts">الاتصالات DHT</string>
     <string name="action_menu_overflow_description">خيارات أخرى</string>
@@ -559,7 +559,7 @@
     <string name="donate_in_btc">تبرع في bitcoins</string>
     <string name="torrent_transfer_paused_disconnected_from_bittorrent">تم إيقاف نقل لأنك قطع الاتصال. (تحقق من اتصال تورنت في إعدادات)</string>
     <string name="cheaper_than_beer">أرخص من البيرة</string>
-    <string name="rating_reminder_description">إذا كنت تحب برنامج FrostWire يرجى ان نتوقف لحظة لتقيم لنا.</string>
+    <string name="rating_reminder_description">إذا كنت تحب برنامجMediaTorيرجى ان نتوقف لحظة لتقيم لنا.</string>
     <string name="free_sponsored_app">برعاية التطبيقات مجانا</string>
     <string name="includes_3_day_free_trial">ويشمل 3 يوم خالية من المحاكمة. موصى به</string>
     <string name="support">الدعم</string>
@@ -568,7 +568,7 @@
     <string name="thank_you">شكرا!</string>
     <string name="get_ExpressVPN">الحصول على ExpressVPN</string>
     <string name="enable_seeding">تمكين البذر</string>
-    <string name="storage_setting_confirm_dialog_text">وأنا أفهم أن جميع الملفات التي تم تحميلها على بطاقة الذاكرة الرقمية المؤمنة من قبل برنامج FrostWire سيتم حذف بواسطة الروبوت لحظة إلغاء تثبيت تطبيق برنامج FrostWire من هذا الجهاز وأنا لن يعقد برنامج FrostWire LLC مسؤولة عن أي الملفات المفقودة.</string>
+    <string name="storage_setting_confirm_dialog_text">وأنا أفهم أن جميع الملفات التي تم تحميلها على بطاقة الذاكرة الرقمية المؤمنة من قبل برنامجMediaTorسيتم حذف بواسطة الروبوت لحظة إلغاء تثبيت تطبيق برنامجMediaTorمن هذا الجهاز وأنا لن يعقد برنامجMediaTorLLC مسؤولة عن أي الملفات المفقودة.</string>
     <string name="cant_open_file_does_not_exist"> %1$s أستطيع أن \ ر فتح ، و عدم وجود الملف.</string>
     <string name="saving_to_sd_card">إنقاذ لبطاقة SD.</string>
     <string name="torrent_max_peers_summary">ماكس النبلاء</string>

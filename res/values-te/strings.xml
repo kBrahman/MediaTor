@@ -125,11 +125,11 @@
     <string name="activity_preferences_name">సెట్టింగులు</string>
     <string name="use_torrentdownloads">TorrentDownloads ఉపయోగించండి</string>
     <string name="ten_dollars">$10</string>
-    <string name="one_file_shared">అదే ఫైల్ FrostWire పరికరాల్లో అదే Wi-Fi నెట్వర్క్లో భాగస్వామ్యం చేయబడింది.</string>
+    <string name="one_file_shared">అదే ఫైల్MediaTorపరికరాల్లో అదే Wi-Fi నెట్వర్క్లో భాగస్వామ్యం చేయబడింది.</string>
     <string name="my_files">నా ఫైళ్ళు</string>
     <string name="pieces">పీసెస్</string>
     <string name="no_network_connection">నెట్వర్క్ కనెక్షన్ లేదు</string>
-    <string name="and_choose_what_filetypes_to_share">మీరు FrostWire మొబైల్ నెట్వర్క్ భాగస్వామ్య మరియు సమీపంలోని Wifi ఎనేబుల్ డెస్క్టాప్లు కోసం ఎనేబుల్ చేయాలనుకుంటున్నా ఫైళ్ల రకాల తనిఖీ.</string>
+    <string name="and_choose_what_filetypes_to_share">మీరుMediaTorమొబైల్ నెట్వర్క్ భాగస్వామ్య మరియు సమీపంలోని Wifi ఎనేబుల్ డెస్క్టాప్లు కోసం ఎనేబుల్ చేయాలనుకుంటున్నా ఫైళ్ల రకాల తనిఖీ.</string>
     <string name="delete_n_torrents_indexed">తొలగించిన %d టోరెంట్లను తొలగించారు</string>
     <string name="vpn_money_back_PIA">7 రోజుల డబ్బు తిరిగి హామీ</string>
     <string name="saving_to_internal_memory">అంతర్గత మెమరీకు సేవ్ చేస్తోంది</string>
@@ -175,7 +175,7 @@
     <string name="applications">Apps</string>
     <string name="the_file_could_not_be_seeded_enable_seeding">ఫైల్ సీడ్ చేయబడలేదు. సెట్టింగులలో సీడింగ్ ప్రారంభించు.</string>
     <string name="media_type_video">వీడియో</string>
-    <string name="accept_intent">నేను కాపీరైట్ ఉల్లంఘన కోసం FrostWire ఉపయోగించదు</string>
+    <string name="accept_intent">నేను కాపీరైట్ ఉల్లంఘన కోసంMediaTorఉపయోగించదు</string>
     <string name="remove_torrent_and_data">టొరెంట్ మరియు డేటాను తొలగించండి</string>
     <string name="date">తేదీ</string>
     <string name="seeding_settings">విత్తనాల సెట్టింగులు</string>
@@ -229,7 +229,7 @@
     <string name="magnet_url_added">మాగ్నెట్ URL బదిలీలకు జోడించబడింది. (Wi-Fi లో అయస్కాంతాలను ఉత్తమంగా పని చేస్తాయి)</string>
     <string name="would_you_like_to_seed_your_finished_torrent_transfers">మీరు మీ తుది టొరెంట్ బదిలీలను విత్తించాలనుకుంటున్నారా?</string>
     <string name="share_finished_downloads_summary">మీ Wi-Fi నెట్వర్క్లో ఇతర ఫ్రోస్ట్వైర్ వినియోగదారులకు పూర్తి డౌన్లోడ్లు అందుబాటులో ఉంటాయి.</string>
-    <string name="frostwire_shutting_down_no_permissions">క్షమించండి, FrostWire డిస్క్ను ప్రాప్యత చేయడానికి మీ అనుమతి లేకుండా కొనసాగించలేము.</string>
+    <string name="frostwire_shutting_down_no_permissions">క్షమించండి,MediaTorడిస్క్ను ప్రాప్యత చేయడానికి మీ అనుమతి లేకుండా కొనసాగించలేము.</string>
     <string name="torrent_transfer_paused_disconnected_from_bittorrent">మీరు డిస్కనెక్ట్ అయినందున బదిలీ పాజ్ చేయబడింది. (సెట్టింగులలో మీ బిటొరెంట్ కనెక్షన్ను తనిఖీ చేయండి)</string>
     <string name="status">స్థితి</string>
     <string name="one_time_purchase">ఒక సమయం కొనుగోలు</string>
@@ -349,10 +349,10 @@
     <string name="completed">పూర్తయింది</string>
     <string name="crawl_cache_size">క్రాల్ కాష్ %1$.2fMB</string>
     <string name="wizard_previous">మునుపటి</string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>మీ గోప్యత ప్రాథమిక మానవ హక్కు</b>. ఒక అసురక్షిత కనెక్షన్ మీరు ఆన్లైన్లో చేస్తున్న ప్రతిదాన్ని సూచిస్తుంది <b>డౌన్లోడ్లు, శోధనలు, సందేశం</b>, మీ నెట్వర్క్లో ఎవరినైనా పరిశీలించడం మరియు అడ్డగించడం చేయవచ్చు, ఉదా. ఇంటర్నెట్ సర్వీస్ ప్రొవైడర్లు, హ్యాకర్లు, ప్రభుత్వాలు.<br><br><b>మేము ఖచ్చితంగా VPN సేవను ఉపయోగించాలని సిఫార్సు చేస్తున్నాము</b>. <br> ఇక్కడ నమ్మకమైన సేవ అందించడానికి మరియు FrostWire బాగా పని కొన్ని ఎంపికలు ఉన్నాయి:]]></string>
+    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>మీ గోప్యత ప్రాథమిక మానవ హక్కు</b>. ఒక అసురక్షిత కనెక్షన్ మీరు ఆన్లైన్లో చేస్తున్న ప్రతిదాన్ని సూచిస్తుంది <b>డౌన్లోడ్లు, శోధనలు, సందేశం</b>, మీ నెట్వర్క్లో ఎవరినైనా పరిశీలించడం మరియు అడ్డగించడం చేయవచ్చు, ఉదా. ఇంటర్నెట్ సర్వీస్ ప్రొవైడర్లు, హ్యాకర్లు, ప్రభుత్వాలు.<br><br><b>మేము ఖచ్చితంగా VPN సేవను ఉపయోగించాలని సిఫార్సు చేస్తున్నాము</b>. <br> ఇక్కడ నమ్మకమైన సేవ అందించడానికి మరియుMediaTorబాగా పని కొన్ని ఎంపికలు ఉన్నాయి:]]></string>
     <string name="azureus_manager_item_downloading">డౌన్లోడ్ చేస్తోంది</string>
     <string name="there_is_n_torrents_indexed">ఇండెక్స్లో %d టోరెంట్ లు ఉన్నాయి</string>
-    <string name="wifi_sharing_disabled">Wi-Fi భాగస్వామ్యం ఆఫ్లో ఉంది.\n\nఅదే Wi-Fi నెట్వర్క్కి కనెక్ట్ చేయబడిన FrostWire ఆధారిత పరికరాల మధ్య ఫైళ్ళను పంచుకోవడానికి Wi-Fi భాగస్వామ్యాన్ని ఉపయోగించవచ్చు.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;ఇంకా నేర్చుకో.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">Wi-Fi భాగస్వామ్యం ఆఫ్లో ఉంది.\n\nఅదే Wi-Fi నెట్వర్క్కి కనెక్ట్ చేయబడినMediaTorఆధారిత పరికరాల మధ్య ఫైళ్ళను పంచుకోవడానికి Wi-Fi భాగస్వామ్యాన్ని ఉపయోగించవచ్చు.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;ఇంకా నేర్చుకో.&lt;/a&gt;</string>
     <string name="pausing">విరామం చేసే</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">ఇతరులు మిమ్మల్ని స్థానిక నెట్వర్క్లో (Wi-Fi) ఎలా చూస్తారు</string>
     <string name="yes_no_cancel_transfer_question">మీరు జాబితా నుండి ఈ డౌన్లోడ్ను ఖచ్చితంగా నిలిపివేయాలని మరియు తీసివేయాలనుకుంటున్నారా (డేటా తొలగించబడదు)?</string>
@@ -445,7 +445,7 @@
     <string name="peer_http_download_status_unknown">తెలియని</string>
     <string name="save_bandwidth">బ్యాండ్విడ్త్ను సేవ్ చేయి</string>
     <string name="accept_connection_from">నుండి కనెక్షన్ను అంగీకరించండి</string>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>ప్రకటన:</b> మీ డౌన్ లోడ్ కోసం సిఫారసు చేసినప్పటికీ, ముఖ్యంగా సున్నితమైన సమాచారాన్ని (ఉదా. బ్యాంకింగ్) డౌన్లోడ్ చేయడం లేదా మార్పిడి చేసేటప్పుడు మరియు పబ్లిక్ Wi-Fi లేదా మొబైల్ డేటాను ఉపయోగిస్తున్నప్పుడు, <b>మీకు FrostWire ఉపయోగించడానికి VPN అవసరం లేదు. </b>]]></string>
+    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>ప్రకటన:</b> మీ డౌన్ లోడ్ కోసం సిఫారసు చేసినప్పటికీ, ముఖ్యంగా సున్నితమైన సమాచారాన్ని (ఉదా. బ్యాంకింగ్) డౌన్లోడ్ చేయడం లేదా మార్పిడి చేసేటప్పుడు మరియు పబ్లిక్ Wi-Fi లేదా మొబైల్ డేటాను ఉపయోగిస్తున్నప్పుడు, <b>మీకుMediaTorఉపయోగించడానికి VPN అవసరం లేదు. </b>]]></string>
     <string name="transfers_context_resume_all_torrent_transfers">అన్ని torrent బదిలీలు పునఃప్రారంభించుము</string>
     <string name="no_data_check_internet_connection">నెట్వర్క్ అందుబాటులో లేదు, దయచేసి మీ ఇంటర్నెట్ కనెక్షన్ను తనిఖీ చేయండి.</string>
     <string name="seeing_less_results">తక్కువ లేదా ఫలితాలను చూడటం లేదా?</string>
@@ -465,7 +465,7 @@
     <string name="seed_finished_torrents">సీడ్ పూర్తి టోరెంట్స్</string>
     <string name="peer_http_upload_status_cancelled">రద్దు</string>
     <string name="send_bitcoin_tip">Bitcoin చిట్కా పంపండి</string>
-    <string name="welcome_to_frostwire">కు FrostWire స్వాగతం %s</string>
+    <string name="welcome_to_frostwire">కుMediaTorస్వాగతం %s</string>
     <string name="bittorrent_off_data_saver_on">"BitTorrent ఆఫ్ (డేటా సేవర్ ఆన్)"</string>
     <string name="ad_free">ప్రకటన రహిత</string>
     <string name="seeding_is_currently_disabled_in_settings">మీ సెట్టింగులలో ప్రస్తుతం నాటడం నిలిపివేయబడింది. మీరు ఈ ఫైల్ను భాగస్వామ్యం చేయడానికి మీ కోసం నాటడం ప్రారంభించాలనుకుంటున్నారా?</string>
@@ -475,7 +475,7 @@
     <string name="filter_by_keyword">కీవర్డ్ ద్వారా ఫిల్టర్ చేయండి…</string>
     <string name="wanna_download_question">డౌన్లోడ్ చేయాలనుకుంటున్నారా?</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">హెచ్చరిక: మీరు అన్ఇన్స్టాల్ చేసినట్లయితే, SD కార్డుపై FrostWire ద్వారా సేవ్ చేసిన అన్ని ఫైల్లు ANDROID నుండి తొలగించబడతాయి, ఫ్రోస్ట్వైర్ కాదు.</string>
+    <string name="storage_setting_warning">హెచ్చరిక: మీరు అన్ఇన్స్టాల్ చేసినట్లయితే, SD కార్డుపైMediaTorద్వారా సేవ్ చేసిన అన్ని ఫైల్లు ANDROID నుండి తొలగించబడతాయి, ఫ్రోస్ట్వైర్ కాదు.</string>
     <string name="not_sharing_files">ఏ ఫైళ్ళను భాగస్వామ్యం లేదు.</string>
     <string name="vpn_client_feature_3_PIA">ఘన మౌలిక సదుపాయాలు: ప్రపంచవ్యాప్తంగా కవరేజ్</string>
     <string name="select_deselect_all">అన్ని ఎంచుకోండి/ఎంపికను తీసివేయి</string>
@@ -490,7 +490,7 @@
     <string name="http_download_status_save_dir_error">డైరెక్టరీ సేవ్ లేదు లేదా సృష్టించబడదు</string>
     <string name="disconnected">డిస్కనెక్ట్</string>
     <string name="view_transfer_list_item_group_indicator_description">మరింత/తక్కువ సమాచారం</string>
-    <string name="n_files_shared">%d ఫైళ్ళు అదే Wi-Fi నెట్వర్క్లో FrostWire పరికరాలకు భాగస్వామ్యం చెయ్యబడ్డాయి.</string>
+    <string name="n_files_shared">%d ఫైళ్ళు అదే Wi-Fi నెట్వర్క్లోMediaTorపరికరాలకు భాగస్వామ్యం చెయ్యబడ్డాయి.</string>
     <string name="install_bitcoin_wallet">Bitcoin Wallet ను ఇన్స్టాల్ చేయండి</string>
     <string name="select_option_below">దిగువ ఎంపికను ఎంచుకోండి:</string>
     <string name="device_storage">పరికరం యొక్క నిల్వ</string>
@@ -503,7 +503,7 @@
     <string name="time_elapsed">సమయం అయిపోయింది</string>
     <string name="azureus_manager_item_error">లోపం</string>
     <string name="why_we_need_storage_permissions">మాకు నిల్వ అనుమతులు అవసరం ఎందుకు.</string>
-    <string name="get_a_frostwire_tshirt">ఒక FrostWire t షర్టు పొందండి</string>
+    <string name="get_a_frostwire_tshirt">ఒకMediaTort షర్టు పొందండి</string>
     <string name="media_type_applications">అప్లికేషన్స్</string>
     <string name="invalid_filename">చెల్లని ఫైల్ పేరు</string>
     <string name="use_archiveorg">Archive.org ఉపయోగించండి</string>
@@ -555,7 +555,7 @@
     <string name="delete_started_torrents">.torrent ఫైళ్లను తొలగించండి</string>
     <string name="search_header">శోధన</string>
     <string name="activity_chat_named">చాట్</string>
-    <string name="help_translate_or_proofread_frostwire">అనువదించడానికి లేదా సరిచూసుకున్నారు FrostWire సహాయం</string>
+    <string name="help_translate_or_proofread_frostwire">అనువదించడానికి లేదా సరిచూసుకున్నారుMediaTorసహాయం</string>
     <string name="loading">లోడ్</string>
     <string name="downloading_metadata">మెటాడేటాను డౌన్లోడ్ చేస్తోంది</string>
     <string name="storage_preference_summary">ఫైల్లు సేవ్ చేయబడే డిఫాల్ట్ నిల్వ స్థానం.</string>
@@ -661,7 +661,7 @@
     <string name="one_dollar">$1</string>
     <string name="vpn_client_feature_4_PIA">24/7 VPN మద్దతు</string>
     <string name="sd_permission_no_accessible_path">మీరు SD లో ఎంచుకున్న మార్గం ఇకపై అందుబాటులో ఉండదు. మళ్లీ ఎంచుకోవడానికి సరే నొక్కండి.</string>
-    <string name="storage_setting_confirm_dialog_text">FrostWire ద్వారా SD కార్డుకి డౌన్లోడ్ చేసిన అన్ని ఫైల్లు తొలగించబడతాయి మరియు ANDROID ఈ ఫ్రొస్ట్వైర్ అనువర్తనం ఈ పరికరం నుండి అన్ఇన్స్టాల్ చేయబడిన క్షణం నుండి తొలగించబడుతుంది మరియు కోల్పోయిన ఫైళ్ళకు నేను FrostWire LLC బాధ్యతను కలిగి ఉండదు.</string>
+    <string name="storage_setting_confirm_dialog_text">FrostWire ద్వారా SD కార్డుకి డౌన్లోడ్ చేసిన అన్ని ఫైల్లు తొలగించబడతాయి మరియు ANDROID ఈ ఫ్రొస్ట్వైర్ అనువర్తనం ఈ పరికరం నుండి అన్ఇన్స్టాల్ చేయబడిన క్షణం నుండి తొలగించబడుతుంది మరియు కోల్పోయిన ఫైళ్ళకు నేనుMediaTorLLC బాధ్యతను కలిగి ఉండదు.</string>
     <string name="simultaneous_uploads">ఒకేసారి Wi-Fi అప్లోడ్లు</string>
     <string name="use_magnet_summary">మాగ్నెట్ ఆధారిత, Wi-Fi లో మాత్రమే పనిచేస్తుంది</string>
     <string name="cant_open_file_does_not_exist">నేను తెరవలేను %1$s, ఫైల్ ఉనికిలో లేదు.</string>

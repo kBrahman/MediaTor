@@ -54,7 +54,7 @@
     <string name="azureus_manager_item_ready">Várakozás más torrentek a sorhoz</string>
     <string name="nickname">Becenév</string>
     <string name="drawer_close">Navigációs fiók bezárása</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire egy fájl böngésző és letöltő alkalmazás, ezért képesnek kell lennie, hogy hozzáférjen a lemezre.\n\nAnélkül, hogy a jogosultságok FrostWire nem tud dolgozni.\n\nMegpróbálod újra?</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire egy fájl böngésző és letöltő alkalmazás, ezért képesnek kell lennie, hogy hozzáférjen a lemezre.\n\nAnélkül, hogy a jogosultságokMediaTornem tud dolgozni.\n\nMegpróbálod újra?</string>
     <string name="peer_http_upload_status_unknown">Ismeretlen</string>
     <string name="unprotected_connection">védtelen</string>
     <string name="video">Videó</string>
@@ -110,7 +110,7 @@
     <string name="ten_dollars">$10</string>
     <string name="my_files">A fájljaim</string>
     <string name="no_network_connection">Nincs hálózati kapcsolat</string>
-    <string name="and_choose_what_filetypes_to_share">Ellenőrizze, hogy milyen típusú fájlokat szeretne engedélyezni megosztásra a FrostWire Mobile Network és a közeli Wi-Fi funkciót asztali.</string>
+    <string name="and_choose_what_filetypes_to_share">Ellenőrizze, hogy milyen típusú fájlokat szeretne engedélyezni megosztásra aMediaTorMobile Network és a közeli Wi-Fi funkciót asztali.</string>
     <string name="delete_n_torrents_indexed">Törölt %d torrentek indexelt</string>
     <string name="saving_to_internal_memory">Mentése a belső memóriába</string>
     <string name="dialog_desktop_upload_request_text_text">%1$s akar küldeni %2$s összesen %3$s</string>
@@ -130,7 +130,7 @@
     <string name="retry_search">Próbálja újra</string>
     <string name="the_file_could_not_be_seeded_bittorrent_will_remain_disconnected">A fájlt nem lehet magot. BitTorrent marad le.</string>
     <string name="toggle_sharing_selected_files">Toggle megosztása</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android törli a letöltött fájlokat, ha FrostWire eltávolításra kerül.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android törli a letöltött fájlokat, haMediaToreltávolításra kerül.</string>
     <string name="please_connect">Kérjük, csatlakozzon a funkció használatához</string>
     <string name="protected_connection">VPN-védett</string>
     <string name="clear_finished">Tiszta Kész</string>
@@ -149,7 +149,7 @@
     <string name="applications">Alkalmazások</string>
     <string name="the_file_could_not_be_seeded_enable_seeding">A fájlt nem lehet magot. Engedélyezze vetés a beállításokat.</string>
     <string name="media_type_video">Videó</string>
-    <string name="accept_intent">Nem fogom használni FrostWire a szerzői jogok megsértése</string>
+    <string name="accept_intent">Nem fogom használniMediaTora szerzői jogok megsértése</string>
     <string name="remove_torrent_and_data">Távolítsuk torrent és adat</string>
     <string name="seeding_settings">Vetés beállítások</string>
     <string name="love_frostwire">Szerelem FrostWire</string>
@@ -190,8 +190,8 @@
     <string name="search_for_type_files">Keresése %s fájlok</string>
     <string name="menu_delete_shortcut_label">Del</string>
     <string name="magnet_url_added">Magnet URL adunk át. (Mágnesek működnek a legjobban Wi-Fi)</string>
-    <string name="share_finished_downloads_summary">Kész letöltések lesz elérhető a többi FrostWire felhasználók a Wi-Fi hálózathoz.</string>
-    <string name="frostwire_shutting_down_no_permissions">Sajnos FrostWire nem tudja folytatni az Ön engedélye nélkül hozzáférni lemez.</string>
+    <string name="share_finished_downloads_summary">Kész letöltések lesz elérhető a többiMediaTorfelhasználók a Wi-Fi hálózathoz.</string>
+    <string name="frostwire_shutting_down_no_permissions">SajnosMediaTornem tudja folytatni az Ön engedélye nélkül hozzáférni lemez.</string>
     <string name="http_download_status_uncompressing">Kicsomagolása</string>
     <string name="one_time_purchase">Egy egyszeri vásárlás</string>
     <string name="send_file_using">Küldj fájlt</string>
@@ -257,7 +257,7 @@
     <string name="copy">Másolat</string>
     <string name="updating">Frissítése</string>
     <string name="help_translate_frostwire">Segíts lefordítani FrostWire</string>
-    <string name="tell_others_subject">Megvan FrostWire Android még?</string>
+    <string name="tell_others_subject">MegvanMediaTorAndroid még?</string>
     <string name="files_shared_by">fájlok által megosztott</string>
     <string name="clear_messages">Világos üzeneteket</string>
     <string name="best_value">Legjobb ár-érték</string>
@@ -286,7 +286,7 @@
     <string name="wizard_previous">Előző</string>
     <string name="azureus_manager_item_downloading">A letöltés</string>
     <string name="there_is_n_torrents_indexed">Van %d torrentek indexelt</string>
-    <string name="wifi_sharing_disabled">Wifi megosztás ki van kapcsolva.\n\nWi-fi megosztását is használható fájlok megosztására a helyi között FrostWire működő eszközök csatlakozik ugyanahhoz a Wi-Fi hálózathoz.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Tudj meg többet.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">Wifi megosztás ki van kapcsolva.\n\nWi-fi megosztását is használható fájlok megosztására a helyi közöttMediaTorműködő eszközök csatlakozik ugyanahhoz a Wi-Fi hálózathoz.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Tudj meg többet.&lt;/a&gt;</string>
     <string name="pausing">Szüneteltetése</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">Hogy mások látni a helyi hálózaton (WiFi)</string>
     <string name="yes_no_cancel_transfer_question">Biztosan le szeretné állítani és letöltés eltávolítása a listából (nincs adat törlődik)?</string>
@@ -367,7 +367,7 @@
     <string name="free_download">Ingyenes letöltés</string>
     <string name="internet_discovery_summary">Csatlakozás távoli társak az interneten.</string>
     <string name="couldnt_share_file">Nem sikerült megosztani a fájlt. Furcsa utat talált.</string>
-    <string name="learn_how_to_get_more_results">Próbálja FrostWire Plus további találatok</string>
+    <string name="learn_how_to_get_more_results">PróbáljaMediaTorPlus további találatok</string>
     <string name="use_mobile_data">Használja 3G/4G BitTorrent</string>
     <string name="seeding_wifi_settings_explanation">Seed csak Wi-Fi kapcsolattal. Extra költségek elkerülése érdekében a fuvarozó.</string>
     <string name="storage_setting_confirm_dialog_title">SD KÁRTYA</string>
@@ -379,7 +379,7 @@
     <string name="seed_finished_torrents">Seed kész torrentek</string>
     <string name="peer_http_upload_status_cancelled">Törölve</string>
     <string name="send_bitcoin_tip">Küldj Bitcoin adomány</string>
-    <string name="welcome_to_frostwire">Üdvözöljük a FrostWire %s</string>
+    <string name="welcome_to_frostwire">Üdvözöljük a MediaTor</string>
     <string name="bittorrent_off_data_saver_on">"BitTorrent off (Data Saver On)"</string>
     <string name="ad_free">Hirdetések nélkül</string>
     <string name="peer_http_upload_status_streaming">Streaming</string>
@@ -387,7 +387,7 @@
     <string name="transfers_context_menu_copy_infohash">Másolja infohash</string>
     <string name="wanna_download_question">Szeretné letölteni?</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">FIGYELMEZTETÉS: A mentett fájlok FrostWire az SD-kártya törlésre kerül az Android, nem FrostWire, ha eltávolítja az alkalmazást.</string>
+    <string name="storage_setting_warning">FIGYELMEZTETÉS: A mentett fájlokMediaToraz SD-kártya törlésre kerül az Android, nem FrostWire, ha eltávolítja az alkalmazást.</string>
     <string name="not_sharing_files">nem oszt meg semmilyen fájlt.</string>
     <string name="sd_permission_no_accessible_path">Az útvonal kiválasztott SD nem elérhető többé. Az OK gombbal válassza újra.</string>
     <string name="select_deselect_all">Jelölje be vagy törölje az összes</string>
@@ -412,7 +412,7 @@
     <string name="error_no_internet_connection">Hiba: Az internetkapcsolat ellenőrzése</string>
     <string name="azureus_manager_item_error">Hiba</string>
     <string name="why_we_need_storage_permissions">Miért van szükségünk tárolási engedélyeket.</string>
-    <string name="get_a_frostwire_tshirt">Kap egy FrostWire pólóval</string>
+    <string name="get_a_frostwire_tshirt">Kap egyMediaTorpólóval</string>
     <string name="media_type_applications">Alkalmazások</string>
     <string name="invalid_filename">Érvénytelen fáljnév</string>
     <string name="use_archiveorg">Használja Archive.org</string>
@@ -458,7 +458,7 @@
     <string name="loading">Betöltés</string>
     <string name="downloading_metadata">Letöltése metaadatok</string>
     <string name="storage_preference_summary">Az alapértelmezett tárolási helyet, ahol fájlok kerülnek mentésre.</string>
-    <string name="notify_frostwire_is_running">Értesítés, ha FrostWire fut</string>
+    <string name="notify_frostwire_is_running">Értesítés, haMediaTorfut</string>
     <string name="torrent_scheme_download_not_supported">A letöltés nem támogatott</string>
     <string name="app_shutdown_dlg_title">Üzemszünet</string>
     <string name="dht_contacts">DHT kapcsolatok</string>
@@ -508,7 +508,7 @@
     <string name="cheaper_than_beer">Olcsóbb, mint a sör</string>
     <string name="type_here_to_filter">Írja ide, hogy kiszűrje</string>
     <string name="block">Tömb</string>
-    <string name="rating_reminder_description">Ha szeretsz FrostWire kérjük, szánjon egy kis értékeléshez minket.</string>
+    <string name="rating_reminder_description">Ha szeretszMediaTorkérjük, szánjon egy kis értékeléshez minket.</string>
     <string name="please_update_to_v">Kérjük, frissítse az v. %s</string>
     <string name="azureus_manager_item_finishing">Végső</string>
     <string name="free_sponsored_app">Szabad Szponzorált alkalmazás</string>
@@ -543,7 +543,7 @@
     <string name="try_valid_port_next_time">Próbáld meg egy érvényes port legközelebb 1000 és 65500</string>
     <string name="one_dollar">$1</string>
     <string name="enable_seeding">Engedélyezze Seeding</string>
-    <string name="storage_setting_confirm_dialog_text">Tudomásul veszem, hogy az összes letöltött fájlokat az SD kártya által FrostWire törlésre kerül az Android a pillanatban a FrostWire alkalmazás eltávolítja az eszközről, és azt nem fogja FrostWire LLC felelőssé semmilyen fájl elveszett.</string>
+    <string name="storage_setting_confirm_dialog_text">Tudomásul veszem, hogy az összes letöltött fájlokat az SD kártya általMediaTortörlésre kerül az Android a pillanatban aMediaToralkalmazás eltávolítja az eszközről, és azt nem fogjaMediaTorLLC felelőssé semmilyen fájl elveszett.</string>
     <string name="simultaneous_uploads">Egyidejű Wifi Feltöltések</string>
     <string name="cant_open_file_does_not_exist">Nem tudom megnyitni %1$s, a fájl nem létezik.</string>
     <string name="internet_discovery">Internet Discovery</string>
@@ -675,7 +675,7 @@
     <string name="transfer_detail_storage_header">Tárolási útvonal:</string>
     <string name="seeding_time">Vetési idő</string>
     <string name="working">Dolgozó</string>
-    <string name="one_file_shared">Az egyik fájl megosztott a FrostWire eszközökön ugyanazon a Wi-Fi hálózaton.</string>
+    <string name="one_file_shared">Az egyik fájl megosztott aMediaToreszközökön ugyanazon a Wi-Fi hálózaton.</string>
     <string name="pieces">Darabok</string>
     <string name="upload_limit">Feltöltési limit</string>
     <string name="enter_valid_tracker_url_here">Adjon meg érvényes tracker url itt</string>
@@ -699,7 +699,7 @@
     <string name="sequential_download">Sorozatos letöltés</string>
     <string name="downloaded_n">Letöltött %1$s / </string>
     <string name="transfer_detail_title_header">Név:</string>
-    <string name="n_files_shared">%d fájl került megosztásra a FrostWire készülékekkel ugyanazon a Wi-Fi hálózaton.</string>
+    <string name="n_files_shared">%d fájl került megosztásra aMediaTorkészülékekkel ugyanazon a Wi-Fi hálózaton.</string>
     <string name="time_elapsed">Eltelt idő</string>
     <string name="remove_tracker">A tracker eltávolítása</string>
     <string name="comment">Megjegyzés</string>

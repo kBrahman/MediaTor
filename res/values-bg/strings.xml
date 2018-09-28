@@ -54,7 +54,7 @@
     <string name="azureus_manager_item_ready">В очакване на други торенти да се редят на опашка</string>
     <string name="nickname">Псевдоним</string>
     <string name="drawer_close">Затваряне на панела за навигация</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire е приложение за файлов браузър и изтегляне, затова тя трябва да бъде в състояние за достъп до вашия диск.\n\nБез да ви е разрешено да FrostWire не може да работи.\n\nИскате ли да опитате отново?</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire е приложение за файлов браузър и изтегляне, затова тя трябва да бъде в състояние за достъп до вашия диск.\n\nБез да ви е разрешено даMediaTorне може да работи.\n\nИскате ли да опитате отново?</string>
     <string name="peer_http_upload_status_unknown">Неизвестен</string>
     <string name="unprotected_connection">беззащитен</string>
     <string name="video">Видео</string>
@@ -111,7 +111,7 @@
     <string name="ten_dollars">$10</string>
     <string name="my_files">Моите файлове</string>
     <string name="no_network_connection">Няма връзка с мрежата</string>
-    <string name="and_choose_what_filetypes_to_share">Проверете какви типове файлове, които искате да се даде възможност за споделяне на FrostWire Mobile мрежа и в близост WiFi включен настолни компютри.</string>
+    <string name="and_choose_what_filetypes_to_share">Проверете какви типове файлове, които искате да се даде възможност за споделяне наMediaTorMobile мрежа и в близост WiFi включен настолни компютри.</string>
     <string name="delete_n_torrents_indexed">Изтрити %d торенти индексирани</string>
     <string name="saving_to_internal_memory">Спасяването на вътрешна памет</string>
     <string name="dialog_desktop_upload_request_text_text">%1$s иска да ви изпрати %2$s на обща стойност %3$s</string>
@@ -131,7 +131,7 @@
     <string name="retry_search">Повторен опит</string>
     <string name="the_file_could_not_be_seeded_bittorrent_will_remain_disconnected">Файлът не може да се засява. BitTorrent ще остане изключен.</string>
     <string name="toggle_sharing_selected_files">Toggle Sharing</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android ще изтрие изтеглените файлове, ако FrostWire е деинсталиран.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android ще изтрие изтеглените файлове, акоMediaTorе деинсталиран.</string>
     <string name="please_connect">Моля свържете да използвате тази функция</string>
     <string name="protected_connection">VPN-защитени</string>
     <string name="clear_finished">Ясно Завършен</string>
@@ -150,7 +150,7 @@
     <string name="applications">Приложения</string>
     <string name="the_file_could_not_be_seeded_enable_seeding">Файлът не може да се засява. Активиране на засяване на настройките.</string>
     <string name="media_type_video">Видео</string>
-    <string name="accept_intent">Аз няма да използва FrostWire за нарушаване на авторски права</string>
+    <string name="accept_intent">Аз няма да използваMediaTorза нарушаване на авторски права</string>
     <string name="remove_torrent_and_data">Премахване на торент и данни</string>
     <string name="seeding_settings">Сийдващите настройки</string>
     <string name="love_frostwire">Любовта FrostWire</string>
@@ -192,8 +192,8 @@
     <string name="search_for_type_files">Търсене на %s файлове</string>
     <string name="menu_delete_shortcut_label">Del</string>
     <string name="magnet_url_added">Магнит URL добавя към трансфери. (Магнити работят най-добре на Wi-Fi)</string>
-    <string name="share_finished_downloads_summary">Завършени сваляния ще бъдат достъпни за други потребители FrostWire на вашия Wi-Fi мрежа.</string>
-    <string name="frostwire_shutting_down_no_permissions">Съжаляваме, FrostWire не може да продължи без ваше разрешение за достъп до диск.</string>
+    <string name="share_finished_downloads_summary">Завършени сваляния ще бъдат достъпни за други потребителиMediaTorна вашия Wi-Fi мрежа.</string>
+    <string name="frostwire_shutting_down_no_permissions">Съжаляваме,MediaTorне може да продължи без ваше разрешение за достъп до диск.</string>
     <string name="http_download_status_uncompressing">Uncompressing</string>
     <string name="one_time_purchase">Един закупуване време</string>
     <string name="send_file_using">Изпращане на файл с помощта на</string>
@@ -261,7 +261,7 @@
     <string name="copy">Копие</string>
     <string name="updating">Обновяване</string>
     <string name="help_translate_frostwire">Помогнете за превода FrostWire</string>
-    <string name="tell_others_subject">Имаш FrostWire за Android все още?</string>
+    <string name="tell_others_subject">ИмашMediaTorза Android все още?</string>
     <string name="files_shared_by">файлове споделя от</string>
     <string name="clear_messages">Ясно съобщения</string>
     <string name="best_value">Най-ценно</string>
@@ -290,7 +290,7 @@
     <string name="wizard_previous">Предишна</string>
     <string name="azureus_manager_item_downloading">Свалянето</string>
     <string name="there_is_n_torrents_indexed">Има %d торенти индексирани</string>
-    <string name="wifi_sharing_disabled">споделяне Wifi е изключен.\n\nсподеляне на Wi-Fi може да се използва за споделяне на файлове на местно ниво между FrostWire задвижвани устройства, свързани към една и съща Wi-Fi мрежа.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Научете повече.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">споделяне Wifi е изключен.\n\nсподеляне на Wi-Fi може да се използва за споделяне на файлове на местно ниво междуMediaTorзадвижвани устройства, свързани към една и съща Wi-Fi мрежа.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Научете повече.&lt;/a&gt;</string>
     <string name="pausing">Пауза</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">Как другите ви виждат в локалната мрежа (Wi-Fi)</string>
     <string name="yes_no_cancel_transfer_question">Сигурни ли сте че искате да спрете и изтриете изтегления файл от списъка (няма данни ще бъдат изтрити)?</string>
@@ -373,7 +373,7 @@
     <string name="free_download">Безплатно сваляне</string>
     <string name="internet_discovery_summary">Се свързва с отдалечени връстници в интернет.</string>
     <string name="couldnt_share_file">Не може да споделите файла. Странни път намери.</string>
-    <string name="learn_how_to_get_more_results">Опитайте FrostWire Plus за по-добри резултати</string>
+    <string name="learn_how_to_get_more_results">ОпитайтеMediaTorPlus за по-добри резултати</string>
     <string name="use_mobile_data">Използвайте 3G/4G за BitTorrent</string>
     <string name="seeding_wifi_settings_explanation">Семе само при използване на безжична връзка. Избягвайте допълнителни такси от оператора си.</string>
     <string name="storage_setting_confirm_dialog_title">SD карта</string>
@@ -385,7 +385,7 @@
     <string name="seed_finished_torrents">Семе завърши торенти</string>
     <string name="peer_http_upload_status_cancelled">Отменен</string>
     <string name="send_bitcoin_tip">Изпратете дарение в bitcoins</string>
-    <string name="welcome_to_frostwire">Добре дошли в FrostWire %s</string>
+    <string name="welcome_to_frostwire">Добре дошли в MediaTor</string>
     <string name="bittorrent_off_data_saver_on">"BitTorrent off (Data Saver On)"</string>
     <string name="ad_free">Без реклами</string>
     <string name="peer_http_upload_status_streaming">Streaming</string>
@@ -393,7 +393,7 @@
     <string name="transfers_context_menu_copy_infohash">Копие InfoHash</string>
     <string name="wanna_download_question">Искате ли да свалите?</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">ВНИМАНИЕ: Всички файлове, записани от FrostWire върху SD картата ще бъде изтрит от ANDROID, не FrostWire, ако го деинсталирате.</string>
+    <string name="storage_setting_warning">ВНИМАНИЕ: Всички файлове, записани отMediaTorвърху SD картата ще бъде изтрит от ANDROID, не FrostWire, ако го деинсталирате.</string>
     <string name="not_sharing_files">не е споделяне на всякакви файлове.</string>
     <string name="sd_permission_no_accessible_path">Пътят, който сте избрали в SD не е достъпна вече. Натиснете OK, за да изберете отново.</string>
     <string name="select_deselect_all">Изберете/премахване на избора</string>
@@ -419,7 +419,7 @@
     <string name="error_no_internet_connection">Грешка: Проверете интернет връзката</string>
     <string name="azureus_manager_item_error">Грешка</string>
     <string name="why_we_need_storage_permissions">Защо имаме нужда от разрешения за съхранение.</string>
-    <string name="get_a_frostwire_tshirt">Вземете FrostWire T-Shirt</string>
+    <string name="get_a_frostwire_tshirt">ВземетеMediaTorT-Shirt</string>
     <string name="media_type_applications">Приложения</string>
     <string name="invalid_filename">Невалидно име на файла</string>
     <string name="use_archiveorg">Използвайте Archive.org</string>
@@ -467,7 +467,7 @@
     <string name="loading">Зареждане</string>
     <string name="downloading_metadata">Изтеглянето на метаданни</string>
     <string name="storage_preference_summary">Местоположението по подразбиране за съхранение, където файлове ще бъдат спасени.</string>
-    <string name="notify_frostwire_is_running">Изпращайте ако FrostWire е стартиран</string>
+    <string name="notify_frostwire_is_running">Изпращайте акоMediaTorе стартиран</string>
     <string name="torrent_scheme_download_not_supported">Свали не се поддържа</string>
     <string name="app_shutdown_dlg_title">Изключвам</string>
     <string name="dht_contacts">DHT контакти</string>
@@ -518,7 +518,7 @@
     <string name="cheaper_than_beer">По-евтини, отколкото бира</string>
     <string name="type_here_to_filter">Пишете тук, за да филтрирате</string>
     <string name="block">блокирам</string>
-    <string name="rating_reminder_description">Ако обичате FrostWire моля, отделете малко време, за да ни оцените.</string>
+    <string name="rating_reminder_description">Ако обичатеMediaTorмоля, отделете малко време, за да ни оцените.</string>
     <string name="please_update_to_v">Моля, обновете до версия. %s</string>
     <string name="azureus_manager_item_finishing">Довършителни</string>
     <string name="free_sponsored_app">Безплатна Спонсорирани на приложението</string>
@@ -553,7 +553,7 @@
     <string name="try_valid_port_next_time">Опитайте валиден порт следващия път 1000 и 65500</string>
     <string name="one_dollar">$1</string>
     <string name="enable_seeding">Активиране на посевния</string>
-    <string name="storage_setting_confirm_dialog_text">Разбирам, че всички файлове, свалени на SD карта с FrostWire ще бъде изтрит от ANDROID момента на прилагането FrostWire е деинсталиран от това устройство и аз не ще проведе FrostWire LLC носи отговорност за всички файлове изгубени.</string>
+    <string name="storage_setting_confirm_dialog_text">Разбирам, че всички файлове, свалени на SD карта сMediaTorще бъде изтрит от ANDROID момента на прилаганетоMediaTorе деинсталиран от това устройство и аз не ще проведеMediaTorLLC носи отговорност за всички файлове изгубени.</string>
     <string name="simultaneous_uploads">Едновременно Wi-Fi Качени</string>
     <string name="cant_open_file_does_not_exist">Не мога да отворя %1$s, файлът не съществува.</string>
     <string name="internet_discovery">Internet Discovery</string>
@@ -673,7 +673,7 @@
     <string name="transfer_detail_storage_header">Пътека за съхранение:</string>
     <string name="seeding_time">Време за сеене</string>
     <string name="working">Работна</string>
-    <string name="one_file_shared">Един файл бе споделен на FrostWire устройства в същата Wi-Fi мрежа.</string>
+    <string name="one_file_shared">Един файл бе споделен наMediaTorустройства в същата Wi-Fi мрежа.</string>
     <string name="pieces">Парчета</string>
     <string name="upload_limit">Лимит за качване</string>
     <string name="enter_valid_tracker_url_here">Въведете валиден URL адрес на тракера тук</string>
@@ -696,7 +696,7 @@
     <string name="sequential_download">Последователно изтегляне</string>
     <string name="downloaded_n">Изтеглили %1$s / </string>
     <string name="transfer_detail_title_header">Име:</string>
-    <string name="n_files_shared">%d файла бяха споделени на FrostWire устройства в същата Wi-Fi мрежа.</string>
+    <string name="n_files_shared">%d файла бяха споделени наMediaTorустройства в същата Wi-Fi мрежа.</string>
     <string name="time_elapsed">Изминало време</string>
     <string name="remove_tracker">Премахнете тракера</string>
     <string name="comment">Коментар</string>

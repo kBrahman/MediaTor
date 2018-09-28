@@ -116,8 +116,8 @@
     <string name="set_as_wallpaper">Đặt làm hình nền</string>
     <string name="failed_to_set_wallpaper">Thất bại khi thiết lập hình nền</string>
     <string name="tell_others_chooser">Tweet / SMS / Email</string>
-    <string name="tell_others_subject">Bạn đã thử FrostWire cho Android chưa?</string>
-    <string name="and_choose_what_filetypes_to_share">Đánh dấu những kiểu tập tin bạn muốn chia sẻ thông qua FrostWire Mobile Network và mạng Wifi ở gần đã bật Desktops.</string>
+    <string name="tell_others_subject">Bạn đã thửMediaTorcho Android chưa?</string>
+    <string name="and_choose_what_filetypes_to_share">Đánh dấu những kiểu tập tin bạn muốn chia sẻ thông quaMediaTorMobile Network và mạng Wifi ở gần đã bật Desktops.</string>
     <string name="before_getting_started">Trước khi bạn bắt đầu</string>
     <string name="user_connecting">Kết nối người dùng</string>
     <string name="accept_connection_from">Chấp nhận kết nối từ</string>
@@ -188,7 +188,7 @@
     <string name="long_press_for_batch_actions">Chạm vào bất cứ tựa đề tập tin để thực hiện chuỗi hành động</string>
     <string name="files_shared">Những tập tin đã được chia sẻ</string>
     <string name="share_finished_downloads">Chia sẻ những tải về đã hoàn thành lên WiFi</string>
-    <string name="share_finished_downloads_summary">Những tải về đã hoàn thành sẽ hiện hữu trên FrostWire của những người dùng khác trên mạng WiFi.</string>
+    <string name="share_finished_downloads_summary">Những tải về đã hoàn thành sẽ hiện hữu trênMediaTorcủa những người dùng khác trên mạng WiFi.</string>
     <string name="are_you_sure_delete_files">Bạn có chắc chắn muốn xóa những tập tin đã chọn?</string>
     <string name="searchable_activity_label">Hoạt động tìm kiếm</string>
     <string name="search_hint">Tìm kiếm nội dung</string>
@@ -307,14 +307,14 @@
     <string name="wizard_previous">Trở lại</string>
     <string name="wizard_next">Tiếp tục</string>
     <string name="wizard_finish">Hoàn thành</string>
-    <string name="welcome_to_frostwire">Chào mừng bạn đến với FrostWire %s</string>
+    <string name="welcome_to_frostwire">Chào mừng bạn đến với MediaTor</string>
     <string name="let_apos_s_set_you_up_before_we_begin_">Hãy để tôi giúp bạn thiết đặt trước khi chúng ta bắt đầu. Let\'s set you up before we begin.</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">Làm thế nào để người khác thấy bạn trên mạng cục bộ (WiFi)</string>
     <string name="seeding_settings">Thiết lập Seeding</string>
     <string name="seeding_settings_explanation">Người dùng BitTorrent trên Internet sẽ có thể tải về các phần tập tin dữ liệu của những torrent bạn đang seed.</string>
     <string name="seeding_wifi_settings_explanation">Chỉ Seed khi sử dụng kết nối WiFi. Tránh thêm phí từ nhà mạng.</string>
     <string name="intent_text">MediaTor là một chương trình chia sẻ mạng ngang hàng (peer-to-peer) các tập tin hợp pháp. Việc cài đặt và sử dụng chương trình sẽ không vi phạm bản quyền liên quan đến lưu trữ và chia sẻ nội dung trái phép.</string>
-    <string name="accept_intent">Tôi sẽ không dùng FrostWire cho mục đích vi phạm bản quyền</string>
+    <string name="accept_intent">Tôi sẽ không dùngMediaTorcho mục đích vi phạm bản quyền</string>
     <string name="toast_on_disconnect">Đã ngắt kết nối từ BitTorrent. Tất cả quá trình BitTorrent đã dừng lại.</string>
     <string name="toast_on_connect">Nhân Bittorent đã bắt đầu chạy.</string>
     <string name="seeds">Seeds</string>
@@ -361,7 +361,7 @@
     <string name="clear_search_cache">Bộ nhớ cache tìm kiếm</string>
     <string name="enable_wifi_sharing">Wi-Fi Sharing</string>
     <string name="drawer_close">Đóng ngăn điều hướng</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire là một ứng dụng trình duyệt tập tin và downloader, do đó nó cần để có thể truy cập vào ổ đĩa của bạn.\n\nNếu không có quyền của bạn FrostWire không thể làm việc.\n\nBạn có muốn thử một lần nữa?</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire là một ứng dụng trình duyệt tập tin và downloader, do đó nó cần để có thể truy cập vào ổ đĩa của bạn.\n\nNếu không có quyền của bạnMediaTorkhông thể làm việc.\n\nBạn có muốn thử một lần nữa?</string>
     <string name="unprotected_connection">không được bảo hộ</string>
     <string name="transfers_context_menu_copy_magnet_copied">Magnet sao chép vào clipboard</string>
     <string name="buy_uppercase">MUA</string>
@@ -386,7 +386,7 @@
     <string name="paused">Tạm dừng</string>
     <string name="retry_search">Thử lại</string>
     <string name="the_file_could_not_be_seeded_bittorrent_will_remain_disconnected">Các tập tin không thể được gieo. BitTorrent sẽ vẫn bị ngắt kết nối.</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android sẽ xóa các tập tin đã tải về nếu FrostWire được gỡ cài đặt.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android sẽ xóa các tập tin đã tải về nếuMediaTorđược gỡ cài đặt.</string>
     <string name="protected_connection">VPN được bảo vệ</string>
     <string name="use_eztv">Chọn Eztv</string>
     <string name="cheaper_than_parking">Rẻ hơn so với xe</string>
@@ -411,7 +411,7 @@
     <string name="player_paused_press_and_hold_to_stop">Máy nghe nhạc dừng lại. (Mẹo: Bấm và giữ để ngăn chặn)</string>
     <string name="menu_delete_shortcut_label">Del</string>
     <string name="magnet_url_added">URL Magnet thêm vào chuyển. (Nam châm làm việc tốt nhất trên Wi-Fi)</string>
-    <string name="frostwire_shutting_down_no_permissions">Xin lỗi, FrostWire không thể tiếp tục mà không cần sự cho phép của bạn để truy cập vào ổ đĩa.</string>
+    <string name="frostwire_shutting_down_no_permissions">Xin lỗi,MediaTorkhông thể tiếp tục mà không cần sự cho phép của bạn để truy cập vào ổ đĩa.</string>
     <string name="one_time_purchase">Một Thời gian mua</string>
     <string name="activity_VPN">Liên quan</string>
     <string name="use_youtube">Chọn YouTube.com</string>
@@ -452,7 +452,7 @@
     <string name="donation_thanks">Cảm ơn bạn rất nhiều vì đã hỗ trợ FrostWire</string>
 
     <string name="crawl_cache_size">Thu thập thông tin bộ nhớ cache %1$.2fMB</string>
-    <string name="wifi_sharing_disabled">Chia sẻ wifi tắt.\n\nchia sẻ Wi-fi có thể được sử dụng để chia sẻ tập tin cục bộ giữa các thiết bị FrostWire trợ kết nối với mạng Wi-Fi.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Tìm hiểu thêm.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">Chia sẻ wifi tắt.\n\nchia sẻ Wi-fi có thể được sử dụng để chia sẻ tập tin cục bộ giữa các thiết bịMediaTortrợ kết nối với mạng Wi-Fi.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Tìm hiểu thêm.&lt;/a&gt;</string>
     <string name="pausing">Tạm dừng</string>
     <string name="dummy_title_bold">[tiêu đề đậm]</string>
     <string name="anonymous_usage_statistics_summary">Gửi thống kê sử dụng ẩn danh. Không có thông tin cá nhân có thể xác định bạn sẽ được lưu trữ trên đĩa hoặc gửi qua mạng.</string>
@@ -489,7 +489,7 @@
     <string name="transfers_context_resume_all_torrent_transfers">Tiếp tục tất cả các chuyển torrent</string>
     <string name="free_download">Tải xuống miễn phí</string>
     <string name="couldnt_share_file">Không thể chia sẻ các tập tin. con đường kỳ lạ được tìm thấy.</string>
-    <string name="learn_how_to_get_more_results">Hãy thử FrostWire Plus cho kết quả hơn</string>
+    <string name="learn_how_to_get_more_results">Hãy thửMediaTorPlus cho kết quả hơn</string>
     <string name="storage_setting_confirm_dialog_title">THẺ SD</string>
     <string name="no_trial_period_included">Không có thời gian dùng thử bao gồm</string>
     <string name="cant_resume_torrent_transfers">Không thể tiếp tục chuyển torrent. Kiểm tra tình trạng của "Cài đặt"> "BitTorrent kết nối Status"</string>
@@ -499,7 +499,7 @@
     <string name="current_plan">Kế hoạch hiện tại</string>
     <string name="transfers_context_menu_copy_infohash">Sao chép Infohash</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">Chú ý: Tất cả các tập tin được lưu bởi FrostWire vào thẻ SD sẽ bị xóa BẰNG ANDROID, không FrostWire, nếu bạn gỡ bỏ cài đặt các ứng dụng.</string>
+    <string name="storage_setting_warning">Chú ý: Tất cả các tập tin được lưu bởiMediaTorvào thẻ SD sẽ bị xóa BẰNG ANDROID, không FrostWire, nếu bạn gỡ bỏ cài đặt các ứng dụng.</string>
     <string name="sd_permission_no_accessible_path">Đường dẫn bạn chọn trong SD không truy cập được nữa. Nhấn OK để chọn lại.</string>
     <string name="select_deselect_all">Chọn/Bỏ chọn tất cả</string>
     <string name="canceling">Hủy</string>
@@ -533,7 +533,7 @@
     <string name="vpn_off_toast_notification">Kết nối của bạn có thể không tin.</string>
     <string name="loading">Tải</string>
     <string name="downloading_metadata">siêu dữ liệu tải về</string>
-    <string name="notify_frostwire_is_running">Thông báo nếu FrostWire được chạy</string>
+    <string name="notify_frostwire_is_running">Thông báo nếuMediaTorđược chạy</string>
     <string name="torrent_scheme_download_not_supported">Tải không được hỗ trợ</string>
     <string name="app_shutdown_dlg_title">Tắt</string>
     <string name="dht_contacts">địa chỉ liên lạc DHT</string>
@@ -554,7 +554,7 @@
     <string name="donate_in_btc">Đóng góp trong Bitcoins</string>
     <string name="torrent_transfer_paused_disconnected_from_bittorrent">Việc chuyển giao đã được tạm dừng bởi vì bạn là ngắt kết nối. (Kiểm tra kết nối BitTorrent của bạn trong Cài đặt)</string>
     <string name="cheaper_than_beer">Rẻ hơn so với bia</string>
-    <string name="rating_reminder_description">Nếu bạn yêu thích FrostWire xin vui lòng mất một phút để đánh giá chúng tôi.</string>
+    <string name="rating_reminder_description">Nếu bạn yêu thíchMediaTorxin vui lòng mất một phút để đánh giá chúng tôi.</string>
     <string name="free_sponsored_app">Ứng dụng miễn phí được Tài trợ</string>
     <string name="includes_3_day_free_trial">Bao gồm 3 ngày dùng thử miễn phí. Đề xuất</string>
 
@@ -568,7 +568,7 @@
     <string name="get_ExpressVPN">Nhận ExpressVPN</string>
     <string name="one_dollar">$1</string>
     <string name="enable_seeding">Kích hoạt tính Seeding</string>
-    <string name="storage_setting_confirm_dialog_text">Tôi hiểu rằng tất cả các file tải về vào thẻ SD của FrostWire sẽ bị xóa BẰNG ANDROID thời điểm áp dụng FrostWire được gỡ bỏ cài đặt từ thiết bị này và tôi sẽ không giữ FrostWire LLC chịu trách nhiệm cho bất kỳ tập tin bị mất.</string>
+    <string name="storage_setting_confirm_dialog_text">Tôi hiểu rằng tất cả các file tải về vào thẻ SD củaMediaTorsẽ bị xóa BẰNG ANDROID thời điểm áp dụngMediaTorđược gỡ bỏ cài đặt từ thiết bị này và tôi sẽ không giữMediaTorLLC chịu trách nhiệm cho bất kỳ tập tin bị mất.</string>
     <string name="cant_open_file_does_not_exist">Tôi không thể mở %1$s, các tập tin không tồn tại.</string>
     <string name="anonymous_usage_statistics">Anonymous kê Cách sử dụng</string>
     <string name="saving_to_sd_card">Tiết kiệm đến thẻ SD.</string>
@@ -584,7 +584,7 @@
     <string name="keep_the_project_alive">Giữ dự án sống</string>
     <string name="remove_ads">Loại bỏ các quảng cáo</string>
     <string name="use_tpb_summary">TPB là nam châm dựa, chỉ hoạt động trên Wifi</string>
-    <string name="frostwire_sticker_and_more">Dán FrostWire và nhiều hơn nữa</string>
+    <string name="frostwire_sticker_and_more">DánMediaTorvà nhiều hơn nữa</string>
     <string name="wifi_networks_only_summary">Lưu dữ liệu. chỉ tải về nếu kết nối Wi-Fi được thiết lập. </string>
     <string name="notifications_other_settings">Thông báo và khác</string>
     <string name="wifi_networks_only">Mạng Wifi chỉ</string>
@@ -675,7 +675,7 @@
     <string name="transfer_detail_storage_header">Đường dẫn lưu trữ:</string>
     <string name="seeding_time">Thời gian gieo hạt</string>
     <string name="working">Đang làm việc</string>
-    <string name="one_file_shared">Một tệp đã được chia sẻ với các thiết bị FrostWire trên cùng một mạng Wi-Fi.</string>
+    <string name="one_file_shared">Một tệp đã được chia sẻ với các thiết bịMediaTortrên cùng một mạng Wi-Fi.</string>
     <string name="pieces">Miếng</string>
     <string name="upload_limit">Giới hạn tải lên</string>
     <string name="enter_valid_tracker_url_here">Nhập url tracker hợp lệ ở đây</string>
@@ -698,7 +698,7 @@
     <string name="sequential_download">Tải tuần tự</string>
     <string name="downloaded_n">Đã tải xuống %1$s / </string>
     <string name="transfer_detail_title_header">Tên:</string>
-    <string name="n_files_shared">%d tệp đã được chia sẻ với các thiết bị FrostWire trên cùng một mạng Wi-Fi.</string>
+    <string name="n_files_shared">%d tệp đã được chia sẻ với các thiết bịMediaTortrên cùng một mạng Wi-Fi.</string>
     <string name="time_elapsed">Thời gian trôi qua</string>
     <string name="remove_tracker">Xóa trình theo dõi</string>
     <string name="comment">Bình luận</string>

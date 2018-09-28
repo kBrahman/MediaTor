@@ -53,7 +53,7 @@
     <string name="azureus_manager_item_ready">Odotetaan muita torrentit jonoon</string>
     <string name="nickname">Lempinimi</string>
     <string name="drawer_close">Sulje navigointipaneeli</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire on tiedostoselain ja downloader app, joten se on voitava käyttää levyn.\n\nIlman käyttöoikeudet FrostWire ei voi toimia.\n\nHaluatko yrittää uudelleen?</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire on tiedostoselain ja downloader app, joten se on voitava käyttää levyn.\n\nIlman käyttöoikeudetMediaTorei voi toimia.\n\nHaluatko yrittää uudelleen?</string>
     <string name="peer_http_upload_status_unknown">Tuntematon</string>
     <string name="unprotected_connection">suojaamaton</string>
     <string name="video">Video</string>
@@ -111,7 +111,7 @@
     <string name="ten_dollars">$10</string>
     <string name="my_files">Tiedostoni</string>
     <string name="no_network_connection">Ei Verkkoyhteys</string>
-    <string name="and_choose_what_filetypes_to_share">Tarkista mitä tiedostotyyppejä haluat ottaa jaettaviksi FrostWire Mobile Network ja lähellä Wi-Fi-työpöytiä.</string>
+    <string name="and_choose_what_filetypes_to_share">Tarkista mitä tiedostotyyppejä haluat ottaa jaettaviksiMediaTorMobile Network ja lähellä Wi-Fi-työpöytiä.</string>
     <string name="delete_n_torrents_indexed">Poistettu %d torrentit indeksoitu</string>
     <string name="saving_to_internal_memory">Tallennus Sisäinen muisti</string>
     <string name="dialog_desktop_upload_request_text_text">%1$s haluaa lähettää sinulle %2$s yhteensä %3$s</string>
@@ -131,7 +131,7 @@
     <string name="retry_search">Yritä uudelleen</string>
     <string name="the_file_could_not_be_seeded_bittorrent_will_remain_disconnected">Tiedostoa ei kylvetään. BitTorrent pysyy irti.</string>
     <string name="toggle_sharing_selected_files">Toggle Sharing</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android poistaa ladattuja tiedostoja, jos FrostWire on poistettu.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android poistaa ladattuja tiedostoja, josMediaToron poistettu.</string>
     <string name="please_connect">Muodosta käyttää tätä ominaisuutta</string>
     <string name="protected_connection">VPN-suojattu</string>
     <string name="clear_finished">Kirkas akryyli</string>
@@ -150,7 +150,7 @@
     <string name="applications">Hakemukset ohjelmistojen</string>
     <string name="the_file_could_not_be_seeded_enable_seeding">Tiedostoa ei kylvetään. Ota kylvö asetuksista.</string>
     <string name="media_type_video">Video</string>
-    <string name="accept_intent">En käytä FrostWire tekijänoikeusrikkomuksesta</string>
+    <string name="accept_intent">En käytäMediaTortekijänoikeusrikkomuksesta</string>
     <string name="remove_torrent_and_data">Poista Torrent ja Data</string>
     <string name="seeding_settings">Kylvö Asetukset</string>
     <string name="love_frostwire">Rakkaus FrostWire</string>
@@ -193,8 +193,8 @@
     <string name="search_for_type_files">Hae %s tiedostojen</string>
     <string name="menu_delete_shortcut_label">Poistaa</string>
     <string name="magnet_url_added">Magnet URL lisätään siirtoja. (Magneetit toimivat parhaiten Wi-Fi)</string>
-    <string name="share_finished_downloads_summary">Valmiit lataukset ovat saatavilla muille FrostWire käyttäjien kanssa Wi-Fi-verkkoon.</string>
-    <string name="frostwire_shutting_down_no_permissions">Valitettavasti FrostWire ei voi jatkua ilman lupaa käyttää levylle.</string>
+    <string name="share_finished_downloads_summary">Valmiit lataukset ovat saatavilla muilleMediaTorkäyttäjien kanssa Wi-Fi-verkkoon.</string>
+    <string name="frostwire_shutting_down_no_permissions">ValitettavastiMediaTorei voi jatkua ilman lupaa käyttää levylle.</string>
     <string name="http_download_status_uncompressing">Uncompressing</string>
     <string name="one_time_purchase">Osta nyt</string>
     <string name="send_file_using">Lähetä tiedosto</string>
@@ -264,7 +264,7 @@
     <string name="copy">Kopio</string>
     <string name="updating">Päivittäminen</string>
     <string name="help_translate_frostwire">Auttaa kääntämään FrostWire</string>
-    <string name="tell_others_subject">Sai FrostWire Android vielä?</string>
+    <string name="tell_others_subject">SaiMediaTorAndroid vielä?</string>
     <string name="files_shared_by">jakamia tiedostoja</string>
     <string name="clear_messages">Selkeät viestit</string>
     <string name="best_value">Paras arvo</string>
@@ -293,7 +293,7 @@
     <string name="wizard_previous">Edellinen</string>
     <string name="azureus_manager_item_downloading">Lataaminen</string>
     <string name="there_is_n_torrents_indexed">On %d torrentit indeksoitu</string>
-    <string name="wifi_sharing_disabled">Wi-Fi jakaminen ei ole käytössä.\n\nWi-Fi jakaminen voidaan jakaa tiedostoja paikallisesti välillä FrostWire pohjaisia laitteita kytketty samaan Wi-Fi-verkkoon.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Lisätietoja.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">Wi-Fi jakaminen ei ole käytössä.\n\nWi-Fi jakaminen voidaan jakaa tiedostoja paikallisesti välilläMediaTorpohjaisia laitteita kytketty samaan Wi-Fi-verkkoon.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Lisätietoja.&lt;/a&gt;</string>
     <string name="pausing">Keskeytät</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">Miten muut näkevät sinut lähiverkossa (Wi-Fi)</string>
     <string name="yes_no_cancel_transfer_question">Oletko varma, että haluat lopettaa ja poistaa tämän ladattavan listasta (ei tiedot poistetaan)?</string>
@@ -376,7 +376,7 @@
     <string name="free_download">Ilmainen lataus</string>
     <string name="internet_discovery_summary">Yhdistä kauko ikäisensä Internetissä.</string>
     <string name="couldnt_share_file">Ei voitu jakaa tiedoston. Outo polku löytyy.</string>
-    <string name="learn_how_to_get_more_results">Kokeile FrostWire Plus lisää tuloksia</string>
+    <string name="learn_how_to_get_more_results">KokeileMediaTorPlus lisää tuloksia</string>
     <string name="use_mobile_data">Käytä 3G/4G BitTorrent</string>
     <string name="seeding_wifi_settings_explanation">Seed vain käytettäessä WiFi-yhteys. Vältä ylimääräisiä kuluja operaattorisi.</string>
     <string name="storage_setting_confirm_dialog_title">SD KORTTI</string>
@@ -388,7 +388,7 @@
     <string name="seed_finished_torrents">Seed Valmiit torrenteja</string>
     <string name="peer_http_upload_status_cancelled">Peruutettu</string>
     <string name="send_bitcoin_tip">Lähetä Bitcoin lahjoitus</string>
-    <string name="welcome_to_frostwire">Tervetuloa FrostWire %s</string>
+    <string name="welcome_to_frostwire">Tervetuloa MediaTor</string>
     <string name="bittorrent_off_data_saver_on">"BitTorrent off (Data Saver On)"</string>
     <string name="ad_free">Ilman Mainoksia</string>
     <string name="peer_http_upload_status_streaming">Streaming</string>
@@ -396,7 +396,7 @@
     <string name="transfers_context_menu_copy_infohash">Kopioi InfoHash</string>
     <string name="wanna_download_question">Haluatko ladata?</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">VAROITUS: Kaikki tiedostot tallennetaan FrostWire SD-kortin tiedot poistetaan Android, ei FrostWire, jos poistaa sovelluksen.</string>
+    <string name="storage_setting_warning">VAROITUS: Kaikki tiedostot tallennetaanMediaTorSD-kortin tiedot poistetaan Android, ei FrostWire, jos poistaa sovelluksen.</string>
     <string name="not_sharing_files">ei jaa tiedostot.</string>
     <string name="sd_permission_no_accessible_path">Polku valitsemasi SD-kortti ei ole käytettävissä enää. Paina OK valitaksesi uudelleen.</string>
     <string name="select_deselect_all">Valitse/Poista kaikki valinnat</string>
@@ -422,7 +422,7 @@
     <string name="error_no_internet_connection">Virhe: Tarkista Internet-yhteys</string>
     <string name="azureus_manager_item_error">Virhe</string>
     <string name="why_we_need_storage_permissions">Siksi tarvitaan varastointi käyttöoikeudet.</string>
-    <string name="get_a_frostwire_tshirt">Hanki FrostWire T-paita</string>
+    <string name="get_a_frostwire_tshirt">HankiMediaTorT-paita</string>
     <string name="media_type_applications">Hakemukset ohjelmistojen</string>
     <string name="invalid_filename">Virheellinen tiedostonimi</string>
     <string name="use_archiveorg">Käytä Archive.org</string>
@@ -471,7 +471,7 @@
     <string name="loading">Ladataan</string>
     <string name="downloading_metadata">Lataaminen metadata</string>
     <string name="storage_preference_summary">Oletuksena tallennuspaikka jossa tiedostot tallennetaan.</string>
-    <string name="notify_frostwire_is_running">Ilmoita, jos FrostWire on käynnissä</string>
+    <string name="notify_frostwire_is_running">Ilmoita, josMediaToron käynnissä</string>
     <string name="bandwidth_usage_settings">Kaistanleveyden käyttö</string>
     <string name="torrent_scheme_download_not_supported">Lataa ei tueta</string>
     <string name="app_shutdown_dlg_title">Sammuttaa</string>
@@ -523,7 +523,7 @@
     <string name="cheaper_than_beer">Halvempi kuin olut</string>
     <string name="type_here_to_filter">Kirjoita tähän suodattaa</string>
     <string name="block">Estä</string>
-    <string name="rating_reminder_description">Jos rakastat FrostWire Käytä hetki rate meille.</string>
+    <string name="rating_reminder_description">Jos rakastatMediaTorKäytä hetki rate meille.</string>
     <string name="please_update_to_v">Päivitä versioon %s</string>
     <string name="azureus_manager_item_finishing">Viimeistely</string>
     <string name="free_sponsored_app">Ilmainen Sponsoroidut App</string>
@@ -558,7 +558,7 @@
     <string name="try_valid_port_next_time">Kokeile kelvollinen portti ensi kerran 1000 ja 65500</string>
     <string name="one_dollar">$1</string>
     <string name="enable_seeding">Ota Seeding</string>
-    <string name="storage_setting_confirm_dialog_text">Ymmärrän, että kaikki ladatut tiedostot SD-kortille FrostWire poistetaan Android hetkellä FrostWire sovellus on poistettu tästä laitteesta ja minä pidä FrostWire LLC mistään tiedostoja menetetty.</string>
+    <string name="storage_setting_confirm_dialog_text">Ymmärrän, että kaikki ladatut tiedostot SD-kortilleMediaTorpoistetaan Android hetkelläMediaTorsovellus on poistettu tästä laitteesta ja minä pidäMediaTorLLC mistään tiedostoja menetetty.</string>
     <string name="simultaneous_uploads">Samanaikainen Wi-fi Lähetysten</string>
     <string name="cant_open_file_does_not_exist">En voi avata %1$s, tiedostoa ei ole olemassa.</string>
     <string name="internet_discovery">Internet Discovery</string>

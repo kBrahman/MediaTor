@@ -131,7 +131,7 @@
     <string name="my_files">माझ्या फायली</string>
     <string name="pieces">तुकडे</string>
     <string name="no_network_connection">नेटवर्क जोडणी नाही</string>
-    <string name="and_choose_what_filetypes_to_share">आपण FrostWire Mobile Network आणि जवळच्या WiFi सक्षम डेस्कटॉपवर सामायिक करण्यास कोणत्या प्रकारच्या फाइल्स सामायिक करू इच्छिता हे तपासा.</string>
+    <string name="and_choose_what_filetypes_to_share">आपणMediaTorMobile Network आणि जवळच्या WiFi सक्षम डेस्कटॉपवर सामायिक करण्यास कोणत्या प्रकारच्या फाइल्स सामायिक करू इच्छिता हे तपासा.</string>
     <string name="delete_n_torrents_indexed">हटवलेले %d टॉरेटर्स अनुक्रमित</string>
     <string name="vpn_money_back_PIA">सात दिवस पैसे परत हमी</string>
     <string name="saving_to_internal_memory">अंतर्गत मेमरी जतन करणे</string>
@@ -177,7 +177,7 @@
     <string name="applications">अॅप्स</string>
     <string name="the_file_could_not_be_seeded_enable_seeding">फाइलची वर्गवारी करणे शक्य नाही. सेटिंग्जवर बीजन सक्षम करा</string>
     <string name="media_type_video">व्हिडिओ</string>
-    <string name="accept_intent">मी कॉपीराइट उल्लंघनाबद्दल FrostWire वापर करणार नाही</string>
+    <string name="accept_intent">मी कॉपीराइट उल्लंघनाबद्दलMediaTorवापर करणार नाही</string>
     <string name="remove_torrent_and_data">टॉरेंट आणि डेटा काढा</string>
     <string name="date">तारीख</string>
     <string name="seeding_settings">बीजन सेटिंग्ज</string>
@@ -230,7 +230,7 @@
     <string name="active_time">सक्रिय वेळ</string>
     <string name="magnet_url_added">ट्रान्सफरसमध्ये मॅग्नेट URL जोडली (चुंबक वाई-फाईवर उत्कृष्ट कार्य करतात)</string>
     <string name="would_you_like_to_seed_your_finished_torrent_transfers">आपण आपल्या तयार जोराचा प्रवाह हस्तांतरण बियाणे आवडेल?</string>
-    <string name="share_finished_downloads_summary">पूर्ण झालेले डाउनलोड आपल्या Wi-Fi नेटवर्कवरील इतर FrostWire वापरकर्त्यांसाठी उपलब्ध असतील.</string>
+    <string name="share_finished_downloads_summary">पूर्ण झालेले डाउनलोड आपल्या Wi-Fi नेटवर्कवरील इतरMediaTorवापरकर्त्यांसाठी उपलब्ध असतील.</string>
     <string name="frostwire_shutting_down_no_permissions">क्षमस्व, डिस्क ऍक्सेस करण्यासाठी आपल्या परवानगीशिवाय फ्रॉस्टवायर पुढे जाऊ शकत नाही.</string>
     <string name="torrent_transfer_paused_disconnected_from_bittorrent">आपण डिस्कनेक्ट आहात म्हणून स्थानांतरणास विराम दिला गेला आहे. (सेटिंग्जमध्ये आपले बिटटोरेंट कनेक्शन तपासा)</string>
     <string name="status">स्थिती</string>
@@ -262,7 +262,7 @@
     <string name="transfers_select_completed">पूर्ण</string>
     <string name="nothing_is_currently_seeding">सध्या काहीच बीजन नाही</string>
     <string name="transfers_context_menu_pause_stop_all_transfers">सर्व हस्तांतरण थांबवा/थांबवा</string>
-    <string name="frostwire_start_engine_service_security_exception">परवानगी नसल्यामुळे FrostWire योग्यरितीने प्रारंभ करू शकले नाही कृपया आवश्यक परवानग्या मंजूर करा आणि अनुप्रयोग पुन्हा चालू करा</string>
+    <string name="frostwire_start_engine_service_security_exception">परवानगी नसल्यामुळेMediaTorयोग्यरितीने प्रारंभ करू शकले नाही कृपया आवश्यक परवानग्या मंजूर करा आणि अनुप्रयोग पुन्हा चालू करा</string>
     <string name="sharing_num_files">सामायिकरण %1$s प्रकारच्या फाईल्स %2$s</string>
     <string name="cancel_transfer">हस्तांतरण रद्द करा</string>
     <string name="support_frostwire">FrostWire समर्थन</string>
@@ -318,7 +318,7 @@
     <string name="updating">अद्यतनित करीत आहे</string>
     <string name="seeding_on">बीजन चालू</string>
     <string name="help_translate_frostwire">FrostWire अनुवाद मदत</string>
-    <string name="tell_others_subject">अद्याप Android साठी FrostWire मिळाले?</string>
+    <string name="tell_others_subject">अद्याप Android साठीMediaTorमिळाले?</string>
     <string name="files_shared_by">यांनी सामायिक केलेल्या फायली</string>
     <string name="file_extensions">फाईल विस्तार</string>
     <string name="clear_messages">संदेश साफ करा</string>
@@ -448,7 +448,7 @@
     <string name="peer_http_download_status_unknown">अज्ञात</string>
     <string name="save_bandwidth">बँडविड्थ जतन करा</string>
     <string name="accept_connection_from">पासून कनेक्शन स्वीकारा</string>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>प्रकटन:</b> आपल्या डाउनलोड्सकरिता शिफारस केलेले असले तरी विशेषत: जेव्हाही संवेदनशील माहिती (उदा. बँकिंग) डाउनलोड करता आणि त्यास सार्वजनिक वाय-फाय किंवा मोबाईल डेटा वापरताना, <b>आपण FrostWire वापरण्यासाठी एक VPN गरज नाही. </b>]]></string>
+    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>प्रकटन:</b> आपल्या डाउनलोड्सकरिता शिफारस केलेले असले तरी विशेषत: जेव्हाही संवेदनशील माहिती (उदा. बँकिंग) डाउनलोड करता आणि त्यास सार्वजनिक वाय-फाय किंवा मोबाईल डेटा वापरताना, <b>आपणMediaTorवापरण्यासाठी एक VPN गरज नाही. </b>]]></string>
     <string name="transfers_context_resume_all_torrent_transfers">सर्व जोराचा प्रवाह बदला</string>
     <string name="no_data_check_internet_connection">नेटवर्क अनुपलब्ध आहे, कृपया आपले इंटरनेट कनेक्शन तपासा.</string>
     <string name="seeing_less_results">कमी किंवा नाही परिणाम पाहून?</string>
@@ -478,7 +478,7 @@
     <string name="filter_by_keyword">कीवर्डद्वारे फिल्टर करा…</string>
     <string name="wanna_download_question">डाउनलोड करू इच्छिता?</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">चेतावणी: SD कार्डवरील FrostWire द्वारे जतन केलेल्या सर्व फायली हटविल्या जातील अॅन्ड्रोइड, FrostWire नुसार, आपण अॅप विस्थापित केल्यास.</string>
+    <string name="storage_setting_warning">चेतावणी: SD कार्डवरीलMediaTorद्वारे जतन केलेल्या सर्व फायली हटविल्या जातील अॅन्ड्रोइड,MediaTorनुसार, आपण अॅप विस्थापित केल्यास.</string>
     <string name="not_sharing_files">कोणत्याही फायली सामायिक करीत नाही</string>
     <string name="vpn_client_feature_3_PIA">सोलर इन्फ्रास्ट्रक्चर: जागतिक कव्हरेज</string>
     <string name="select_deselect_all">सर्व निवडा/निवड रद्द करा</string>
@@ -493,7 +493,7 @@
     <string name="http_download_status_save_dir_error">जतन करा निर्देशिका अस्तित्वात नाही किंवा तयार केली जाऊ शकत नाही</string>
     <string name="disconnected">डिस्कनेक्ट केले</string>
     <string name="view_transfer_list_item_group_indicator_description">अधिक/कमी माहिती</string>
-    <string name="n_files_shared">%d फाईल्स समान Wi-Fi नेटवर्क वर FrostWire साधने शेअर केले गेले.</string>
+    <string name="n_files_shared">%d फाईल्स समान Wi-Fi नेटवर्क वरMediaTorसाधने शेअर केले गेले.</string>
     <string name="install_bitcoin_wallet">स्थापित करा Bitcoin Wallet</string>
     <string name="select_option_below">खालील पर्याय निवडाः</string>
     <string name="device_storage">डिव्हाइसचे संचयन</string>
@@ -506,7 +506,7 @@
     <string name="time_elapsed">वेळ संपली</string>
     <string name="azureus_manager_item_error">त्रुटी</string>
     <string name="why_we_need_storage_permissions">आम्हाला स्टोरेज परवानग्याची आवश्यकता का आहे</string>
-    <string name="get_a_frostwire_tshirt">एक FrostWire टी-शर्ट मिळवा</string>
+    <string name="get_a_frostwire_tshirt">एकMediaTorटी-शर्ट मिळवा</string>
     <string name="media_type_applications">अनुप्रयोग</string>
     <string name="invalid_filename">अवैध फाइल नाव</string>
     <string name="use_archiveorg">Archive.org वापरा</string>
@@ -624,7 +624,7 @@
     <string name="type_here_to_filter">फिल्टर करण्यासाठी येथे टाइप करा</string>
     <string name="or">किंवा</string>
     <string name="block">ब्लॉक करा</string>
-    <string name="rating_reminder_description">आपण FrostWire प्रेम असेल तर आम्हाला रेट एक क्षण लागू करा.</string>
+    <string name="rating_reminder_description">आपणMediaTorप्रेम असेल तर आम्हाला रेट एक क्षण लागू करा.</string>
     <string name="please_update_to_v">कृपया आवृत्तीवर अद्यतनित करा %s</string>
     <string name="file_names">फाइल नावे</string>
     <string name="azureus_manager_item_finishing">समाप्त</string>

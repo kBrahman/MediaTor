@@ -388,7 +388,7 @@
     <string name="seed_finished_torrents">Seed Ferdig Torrenter</string>
     <string name="peer_http_upload_status_cancelled">Avbrutt</string>
     <string name="send_bitcoin_tip">Send Bitcoin donasjon</string>
-    <string name="welcome_to_frostwire">Velkommen til Frostwire %s</string>
+    <string name="welcome_to_frostwire">Velkommen til MediaTor</string>
     <string name="bittorrent_off_data_saver_on">"BitTorrent off (Data Saver On)"</string>
     <string name="ad_free">Ingen annonser</string>
     <string name="peer_http_upload_status_streaming">Streaming</string>

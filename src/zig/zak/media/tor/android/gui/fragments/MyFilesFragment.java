@@ -33,6 +33,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.view.ActionMode;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -47,17 +48,24 @@ import android.widget.TextView;
 
 import com.andrew.apollo.MusicPlaybackService;
 import com.andrew.apollo.utils.MusicUtils;
-import zig.zak.media.tor.android.AndroidPlatform;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import zig.zak.media.tor.R;
+import zig.zak.media.tor.android.AndroidPlatform;
 import zig.zak.media.tor.android.core.ConfigurationManager;
 import zig.zak.media.tor.android.core.Constants;
 import zig.zak.media.tor.android.core.FileDescriptor;
 import zig.zak.media.tor.android.gui.Librarian;
+import zig.zak.media.tor.android.gui.adapters.FileListAdapter;
 import zig.zak.media.tor.android.gui.adapters.menu.AddToPlaylistMenuAction;
 import zig.zak.media.tor.android.gui.adapters.menu.CopyMagnetMenuAction;
 import zig.zak.media.tor.android.gui.adapters.menu.DeleteAdapterFilesMenuAction;
 import zig.zak.media.tor.android.gui.adapters.menu.FileInformationAction;
-import zig.zak.media.tor.android.gui.adapters.FileListAdapter;
 import zig.zak.media.tor.android.gui.adapters.menu.OpenMenuAction;
 import zig.zak.media.tor.android.gui.adapters.menu.RenameFileMenuAction;
 import zig.zak.media.tor.android.gui.adapters.menu.SeedAction;
@@ -69,29 +77,17 @@ import zig.zak.media.tor.android.gui.util.UIUtils;
 import zig.zak.media.tor.android.gui.views.AbstractFragment;
 import zig.zak.media.tor.android.gui.views.SwipeLayout;
 import zig.zak.media.tor.util.Logger;
-import zig.zak.media.tor.util.Ref;
 import zig.zak.media.tor.uxstats.UXAction;
 import zig.zak.media.tor.uxstats.UXStats;
 
-import java.io.File;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 import static zig.zak.media.tor.android.util.Asyncs.async;
 
-/**
- * @author aldenml
- * @author gubatron
- * @author marcelinkaaa
- */
 public class MyFilesFragment extends AbstractFragment implements LoaderCallbacks<Object>, MainFragment {
 
     private static final Logger LOG = Logger.getLogger(MyFilesFragment.class);
     private static final int LOADER_FILES_ID = 0;
     private static final String EXTRA_LAST_FILE_TYPE_CLICKED = "com.frostwire.android.extra.byte.EXTRA_LAST_FILE_TYPE_CLICKED";
+    private static final String TAG = MyFilesFragment.class.getSimpleName();
 
     private final BroadcastReceiver broadcastReceiver;
 
@@ -112,29 +108,13 @@ public class MyFilesFragment extends AbstractFragment implements LoaderCallbacks
     private final SparseArray<Set<FileListAdapter.FileDescriptorItem>> checkedItemsMap;
 
 
-
     // given the byte:fileType as the index, this array will match the corresponding UXAction code.
     // no if's necessary, random access -> O(1)
-    private final int[] browseUXActions = {
-            UXAction.LIBRARY_BROWSE_FILE_TYPE_AUDIO,
-            UXAction.LIBRARY_BROWSE_FILE_TYPE_PICTURES,
-            UXAction.LIBRARY_BROWSE_FILE_TYPE_VIDEOS,
-            UXAction.LIBRARY_BROWSE_FILE_TYPE_DOCUMENTS,
-            UXAction.LIBRARY_BROWSE_FILE_TYPE_APPLICATIONS,
-            UXAction.LIBRARY_BROWSE_FILE_TYPE_RINGTONES,
-            UXAction.LIBRARY_BROWSE_FILE_TYPE_TORRENTS
-    };
+    private final int[] browseUXActions = {UXAction.LIBRARY_BROWSE_FILE_TYPE_AUDIO, UXAction.LIBRARY_BROWSE_FILE_TYPE_PICTURES, UXAction.LIBRARY_BROWSE_FILE_TYPE_VIDEOS, UXAction.LIBRARY_BROWSE_FILE_TYPE_DOCUMENTS, UXAction.LIBRARY_BROWSE_FILE_TYPE_APPLICATIONS, UXAction.LIBRARY_BROWSE_FILE_TYPE_RINGTONES, UXAction.LIBRARY_BROWSE_FILE_TYPE_TORRENTS};
 
-    private final byte[] tabPositionToFileType = new byte[] {
-            Constants.FILE_TYPE_AUDIO,
-            Constants.FILE_TYPE_RINGTONES,
-            Constants.FILE_TYPE_VIDEOS,
-            Constants.FILE_TYPE_PICTURES,
-            Constants.FILE_TYPE_DOCUMENTS,
-            Constants.FILE_TYPE_TORRENTS };
+    private final byte[] tabPositionToFileType = new byte[]{Constants.FILE_TYPE_AUDIO, Constants.FILE_TYPE_RINGTONES, Constants.FILE_TYPE_VIDEOS, Constants.FILE_TYPE_PICTURES, Constants.FILE_TYPE_DOCUMENTS, Constants.FILE_TYPE_TORRENTS};
 
-    private final int[] fileTypeToTabPosition = new int[] {
-            0,  // 0x0 Audio @ 0
+    private final int[] fileTypeToTabPosition = new int[]{0,  // 0x0 Audio @ 0
             3,  // 0x1 Picture @ 3
             2,  // 0x2 Video @ 2
             4,  // 0x3 Documents @ 4
@@ -315,6 +295,7 @@ public class MyFilesFragment extends AbstractFragment implements LoaderCallbacks
 
     @Override
     public View getHeader(Activity activity) {
+        Log.i(TAG, "getHeader");
         LayoutInflater inflater = LayoutInflater.from(activity);
         header = inflater.inflate(R.layout.view_my_files_header, null, false);
         headerTitle = header.findViewById(R.id.view_my_files_header_text_title);
@@ -421,7 +402,7 @@ public class MyFilesFragment extends AbstractFragment implements LoaderCallbacks
         try {
             loader.forceLoad();
         } catch (Throwable t) {
-            LOG.warn("createLoaderFiles(fileType="+fileType+") loader.forceLoad() failed. Continuing.", t);
+            LOG.warn("createLoaderFiles(fileType=" + fileType + ") loader.forceLoad() failed. Continuing.", t);
         }
         return loader;
     }
@@ -459,17 +440,13 @@ public class MyFilesFragment extends AbstractFragment implements LoaderCallbacks
         if (!isVisible()) {
             return;
         }
-
         final byte fileType = adapter != null ? adapter.getFileType() : Constants.FILE_TYPE_AUDIO;
-        if (isAdded() && isVisible()) {
+        if (isAdded() && isVisible() && headerTitle != null) {
             String fileTypeStr = getString(R.string.my_filetype, UIUtils.getFileTypeAsString(getResources(), fileType));
             headerTitle.setText(fileTypeStr);
             headerTotal.setText("");
         }
-
-        async(this, (f, ft) -> Librarian.instance().getNumFiles(f.getActivity(), ft),
-                fileType,
-                MyFilesFragment::updateHeaderPostTask);
+        async(this, (f, ft) -> Librarian.instance().getNumFiles(f.getActivity(), ft), fileType, MyFilesFragment::updateHeaderPostTask);
     }
 
     private void updateHeaderPostTask(byte fileType, int numFiles) {
@@ -651,13 +628,13 @@ public class MyFilesFragment extends AbstractFragment implements LoaderCallbacks
 
     private void switchToThe(boolean right) {
         int currentTabPosition = tabLayout.getSelectedTabPosition();
-        int nextTabPosition = (right ? ++currentTabPosition : --currentTabPosition ) % 6;
+        int nextTabPosition = (right ? ++currentTabPosition : --currentTabPosition) % 6;
         if (nextTabPosition == -1) {
             nextTabPosition = 5;
         }
         TabLayout.Tab tab = tabLayout.getTabAt(nextTabPosition);
         if (tab != null) {
-           tab.select();
+            tab.select();
         }
     }
 
@@ -693,8 +670,7 @@ public class MyFilesFragment extends AbstractFragment implements LoaderCallbacks
             if (numChecked == 0) {
                 hideAllMenuActions();
             } else if (numChecked > 0) {
-                FileListAdapter.FileDescriptorItem[] fileDescriptorItems =
-                        adapter.getChecked().toArray(new FileListAdapter.FileDescriptorItem[0]);
+                FileListAdapter.FileDescriptorItem[] fileDescriptorItems = adapter.getChecked().toArray(new FileListAdapter.FileDescriptorItem[0]);
                 if (fileDescriptorItems.length > 0) {
                     updateMenuActionsVisibility(fileDescriptorItems[0]);
                 }
@@ -705,8 +681,7 @@ public class MyFilesFragment extends AbstractFragment implements LoaderCallbacks
         @Override
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
             Activity context = getActivity();
-            FileListAdapter.FileDescriptorItem[] fileDescriptorItems =
-                    adapter.getChecked().toArray(new FileListAdapter.FileDescriptorItem[0]);
+            FileListAdapter.FileDescriptorItem[] fileDescriptorItems = adapter.getChecked().toArray(new FileListAdapter.FileDescriptorItem[0]);
             if (fileDescriptorItems.length == 0) {
                 return false;
             }
@@ -736,18 +711,10 @@ public class MyFilesFragment extends AbstractFragment implements LoaderCallbacks
                     new SetAsWallpaperMenuAction(context, fd).onClick();
                     break;
                 case R.id.fragment_my_files_action_mode_menu_copy_magnet:
-                    new CopyMagnetMenuAction(context,
-                            R.drawable.contextmenu_icon_magnet,
-                            R.string.transfers_context_menu_copy_magnet,
-                            R.string.transfers_context_menu_copy_magnet_copied,
-                            fd.filePath).onClick();
+                    new CopyMagnetMenuAction(context, R.drawable.contextmenu_icon_magnet, R.string.transfers_context_menu_copy_magnet, R.string.transfers_context_menu_copy_magnet_copied, fd.filePath).onClick();
                     break;
                 case R.id.fragment_my_files_action_mode_menu_copy_info_hash:
-                    new CopyMagnetMenuAction(context,
-                            R.drawable.contextmenu_icon_copy,
-                            R.string.transfers_context_menu_copy_infohash,
-                            R.string.transfers_context_menu_copy_infohash_copied,
-                            fd.filePath, false).onClick();
+                    new CopyMagnetMenuAction(context, R.drawable.contextmenu_icon_copy, R.string.transfers_context_menu_copy_infohash, R.string.transfers_context_menu_copy_infohash_copied, fd.filePath, false).onClick();
                     break;
                 case R.id.fragment_my_files_action_mode_menu_rename:
                     new RenameFileMenuAction(context, adapter, fd).onClick();
@@ -840,13 +807,7 @@ public class MyFilesFragment extends AbstractFragment implements LoaderCallbacks
                 LOG.info("LocalBroadcastReceiver.onReceive() aborted. Intent had no action.");
                 return;
             }
-            if (action.equals(Constants.ACTION_MEDIA_PLAYER_PLAY) ||
-                    action.equals(Constants.ACTION_MEDIA_PLAYER_STOPPED) ||
-                    action.equals(Constants.ACTION_MEDIA_PLAYER_PAUSED) ||
-                    action.equals(MusicPlaybackService.PLAYSTATE_CHANGED) ||
-                    action.equals(MusicPlaybackService.META_CHANGED) ||
-                    action.equals(MusicPlaybackService.SIMPLE_PLAYSTATE_STOPPED)
-                    ) {
+            if (action.equals(Constants.ACTION_MEDIA_PLAYER_PLAY) || action.equals(Constants.ACTION_MEDIA_PLAYER_STOPPED) || action.equals(Constants.ACTION_MEDIA_PLAYER_PAUSED) || action.equals(MusicPlaybackService.PLAYSTATE_CHANGED) || action.equals(MusicPlaybackService.META_CHANGED) || action.equals(MusicPlaybackService.SIMPLE_PLAYSTATE_STOPPED)) {
                 if (adapter != null) {
                     adapter.notifyDataSetChanged();
                 }

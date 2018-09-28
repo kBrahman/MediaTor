@@ -145,7 +145,7 @@
                 android:paddingTop="15dp"
                 android:textSize="@dimen/text_medium" />
 
-            <!-- Bullet - VPN not required for FrostWire but highly recommended -->
+            <!-- Bullet - VPN not required forMediaTorbut highly recommended -->
             <TextView
                 android:id="@+id/view_vpn_status_bullet_textview"
                 style="@style/VPNText"

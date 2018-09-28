@@ -306,7 +306,7 @@
     <string name="wizard_previous">先前</string>
     <string name="wizard_next">其次</string>
     <string name="wizard_finish">完成</string>
-    <string name="welcome_to_frostwire">欢迎来到FrostWire %s</string>
+    <string name="welcome_to_frostwire">欢迎来到MediaTor</string>
     <string name="let_apos_s_set_you_up_before_we_begin_">开始之前先认识一下.</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">在本地无线网络中，其他人如何看到你</string>
     <string name="seeding_settings">播种设置</string>
@@ -406,7 +406,7 @@
     <string name="desktop_transfer_status_cancelled">取消</string>
     <string name="donation_thanks">多謝您支持 FrostWire</string>
     <string name="crawl_cache_size">爬行緩存 %1$.2fMB</string>
-    <string name="wifi_sharing_disabled">Wi-Fi 共享關閉了。\n\nWi-Fi 共享可以用來在本地和連接相同 Wi-Fi 網絡，配備 FrostWire 的裝置分享檔案。\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;了解詳情。&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">Wi-Fi 共享關閉了。\n\nWi-Fi 共享可以用來在本地和連接相同 Wi-Fi 網絡，配備MediaTor的裝置分享檔案。\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;了解詳情。&lt;/a&gt;</string>
     <string name="pausing">暫停</string>
     <string name="azureus_manager_not_created">如果裝載了 SD 卡，即不能下載。</string>
     <string name="anonymous_usage_statistics_summary">發送匿名使用統計數據。所進行的內容搜索、分享或播放，以及能識別您的所有資料，都不會儲存在磁盤上，亦不會通過網絡傳送。</string>
@@ -431,7 +431,7 @@
     <string name="storage_setting_confirm_dialog_title">SD 卡</string>
     <string name="cant_resume_torrent_transfers">「連線」</string>
     <string name="twenty_five_dollars">$25 美元</string>
-    <string name="storage_setting_warning">警告：如果您卸載 FrostWire，通過 FrostWire 下載到 SD 卡的所有檔案將會被 ANDROID 刪除。</string>
+    <string name="storage_setting_warning">警告：如果您卸載 FrostWire，通過MediaTor下載到 SD 卡的所有檔案將會被 ANDROID 刪除。</string>
     <string name="canceling">取消中</string>
     <string name="http_download_status_save_dir_error">儲存目錄不存在或無法創建</string>
     <string name="install_bitcoin_wallet">安裝比特幣錢包 (Bitcoin Wallet)</string>
@@ -460,7 +460,7 @@
     <string name="donate_5">捐贈 $5 美元</string>
     <string name="use_frostclick">使用 FrostClick</string>
     <string name="one_dollar">$1 美元</string>
-    <string name="storage_setting_confirm_dialog_text">我明白，通過 FrostWire 下載到 SD 卡的所有檔案，都會在本裝置卸載 FrostWire 應用程式後被 ANDROID刪除，而我不會就任何的檔案損失要求 FrostWire LLC 負責。</string>
+    <string name="storage_setting_confirm_dialog_text">我明白，通過MediaTor下載到 SD 卡的所有檔案，都會在本裝置卸載MediaTor應用程式後被 ANDROID刪除，而我不會就任何的檔案損失要求MediaTorLLC 負責。</string>
     <string name="cant_open_file_does_not_exist">我無法打開 %1$s。該檔案不存在。</string>
     <string name="anonymous_usage_statistics">匿名使用統計數據</string>
     <string name="saving_to_sd_card">儲存到 SD 卡中。</string>
