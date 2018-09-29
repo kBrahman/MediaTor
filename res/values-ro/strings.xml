@@ -511,7 +511,7 @@
     <string name="azureus_manager_item_finishing">Finisare</string>
     <string name="free_sponsored_app">Gratuit App sponsorizate</string>
     <string name="now_on_port">Acum, pe portul</string>
-    <string name="stop_all_transfers">Acest lucru se va opri toate transferurile</string>
+
     <string name="includes_3_day_free_trial">Include 3 zi libera-proces. Recomandat</string>
     <string name="use_mobile_data_summary">Folosi rețeaua de telefonie mobilă pentru download-uri BitTorrent. Se pot aplica taxe de supradozare de date. Utilizați cu atenție.</string>
     <string name="intent_text">MediaTor este un program peer-to-peer pentru partajarea numai fișiere autorizate. Instalarea și utilizarea programului nu constituie o licență pentru obținerea sau distribuirea de conținut neautorizat.</string>

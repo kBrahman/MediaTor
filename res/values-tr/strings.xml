@@ -323,7 +323,7 @@
     <string name="back">Geri</string>
     <string name="input_text_hint">Ne arıyorsunuz? (Google\'dan İpuçları)</string>
     <string name="are_you_sure">Emin misiniz?</string>
-    <string name="stop_all_transfers">Bu bütün transferleri durduracaktır</string>
+
     <string name="clear_complete_transfers">Bu bütün bitmiş transferleri temizleyecektir</string>
     <string name="playing_song_name">Çalıyor: %s</string>
     <string name="invalid_torrent_file">Geçersiz Torrent Dosyası</string>

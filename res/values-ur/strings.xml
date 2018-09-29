@@ -101,7 +101,7 @@
     <string name="size_unknown">نامعلوم سائز</string>
     <string name="back">واپس</string>
     <string name="are_you_sure">تمہیں یقین ہے؟</string>
-    <string name="stop_all_transfers">یہ تمام کی منتقلی روک دے گا</string>
+
     <string name="storage_preference_title">سٹوریج کی جگہ منتخب کریں</string>
     <string name="storage_preference_summary">آپ کے ڈونلوڈ کس جگہ پہ رکھی جاے </string>
     <string name="loading">لوڈ ہو رہا ہے</string>

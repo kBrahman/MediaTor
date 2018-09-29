@@ -324,7 +324,7 @@
     <string name="back">Kembali</string>
     <string name="input_text_hint">Apa yang sedang Anda cari? (Petunjuk dari Google)</string>
     <string name="are_you_sure">Apakah Anda yakin?</string>
-    <string name="stop_all_transfers">Ini akan menghentikan semua transfer</string>
+
     <string name="clear_complete_transfers">Ini akan membersihkan semua transfer yang telah selesai</string>
     <string name="playing_song_name">Memainkan %s</string>
     <string name="invalid_torrent_file">Arsip Torrent Tidak Valid</string>

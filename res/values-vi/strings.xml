@@ -325,7 +325,7 @@
     <string name="back">Trở lại</string>
     <string name="input_text_hint">Bạn muốn tìm cái gì? (Gợi ý bởi Google)</string>
     <string name="are_you_sure">Bạn chắc chứ?</string>
-    <string name="stop_all_transfers">Hành động này sẽ dừng mọi truyền tải</string>
+
     <string name="clear_complete_transfers">Hành động này sẽ xóa hết tất cả những quá trình truyền tải đã hoàn thành</string>
     <string name="playing_song_name">Đang chơi %s</string>
     <string name="invalid_torrent_file">Tập tin Torrent lỗi</string>

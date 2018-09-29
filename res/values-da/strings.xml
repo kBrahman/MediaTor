@@ -325,7 +325,7 @@
     <string name="back">Tilbage</string>
     <string name="input_text_hint">Hvad søger du efter? (råd af Google)</string>
     <string name="are_you_sure">Er du sikker?</string>
-    <string name="stop_all_transfers">Dette vil stoppe alle overførsler</string>
+
     <string name="clear_complete_transfers">Dette vil fjerne alle de færdige overførsler</string>
     <string name="playing_song_name">Spiller %s</string>
     <string name="invalid_torrent_file">Ugyldig Torrent Fil</string>

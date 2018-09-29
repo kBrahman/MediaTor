@@ -523,7 +523,7 @@
     <string name="azureus_manager_item_finishing">จบ</string>
     <string name="free_sponsored_app">ผู้สนับสนุนฟรีซอฟแวร์</string>
     <string name="now_on_port">ตอนนี้ในพอร์ต</string>
-    <string name="stop_all_transfers">นี้จะหยุดการถ่ายโอนทั้งหมด</string>
+
     <string name="includes_3_day_free_trial">รวม 3 วันทดลองใช้ฟรี แนะนำ</string>
     <string name="use_mobile_data_summary">ใช้เครือข่ายโทรศัพท์มือถือสำหรับการดาวน์โหลด BitTorrent ค่าใช้จ่ายข้อมูลขีดอาจนำไปใช้ ใช้อย่างระมัดระวัง</string>
     <string name="intent_text">MediaTor เป็นโปรแกรมแบบ peer-to-peer สำหรับการแชร์ไฟล์ได้รับอนุญาตเท่านั้น การติดตั้งและการใช้โปรแกรมไม่ก่อให้ใบอนุญาตสำหรับการได้รับหรือแจกจ่ายเนื้อหาไม่ได้รับอนุญาต</string>

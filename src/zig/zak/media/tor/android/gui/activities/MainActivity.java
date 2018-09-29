@@ -173,8 +173,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         }
         syncNavigationMenu();
         updateHeader(getCurrentFragment());
-
-        Log.i(TAG, "ad si loaded=>" + ad.isLoaded());
         super.onBackPressed();
         if (ad != null && ad.isLoaded()) {
             ad.show();

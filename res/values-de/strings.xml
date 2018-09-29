@@ -333,7 +333,7 @@
     <string name="back">Zurück</string>
     <string name="input_text_hint">Wonach suchst du? (Tipps von Google)</string>
     <string name="are_you_sure">Bist du sicher?</string>
-    <string name="stop_all_transfers">Das stoppt alle Übertragungen</string>
+
     <string name="clear_complete_transfers">Das löscht alle abgeschlossenen Übertragungen</string>
     <string name="playing_song_name">Jetzt Spielt %s</string>
     <string name="invalid_torrent_file">Ungültige Torrent-Datei</string>

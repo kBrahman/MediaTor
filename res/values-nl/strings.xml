@@ -325,7 +325,7 @@
     <string name="back">Terug</string>
     <string name="input_text_hint">Waar ben je naar op zoek? (hints van Google)</string>
     <string name="are_you_sure">Weet je het zeker?</string>
-    <string name="stop_all_transfers">Dit zal alle transfers stoppen</string>
+
     <string name="clear_complete_transfers">Dit zal alle voltooide transfers verwijderen</string>
     <string name="playing_song_name">Spelen %s</string>
     <string name="invalid_torrent_file">Ongeldige Torrent File</string>

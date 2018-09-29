@@ -523,7 +523,7 @@
     <string name="azureus_manager_item_finishing">Dokončovacie</string>
     <string name="free_sponsored_app">Voľný Sponzorované Aplikácia</string>
     <string name="now_on_port">Teraz na porte</string>
-    <string name="stop_all_transfers">Tým sa zastaví všetky prevody</string>
+
     <string name="includes_3_day_free_trial">Zahŕňa 3 denné free-trial. Odporúčaná</string>
     <string name="use_mobile_data_summary">Používať mobilný sieť pre sťahovanie BitTorrent. môže požiadať údaje zbytočným poplatkom. Používať opatrne.</string>
     <string name="intent_text">MediaTor je program peer-to-peer pre zdieľanie súborov iba oprávnená. Inštalácia a používanie programu nepredstavuje licenciu pre získavanie alebo rozširovanie neoprávneného obsahu.</string>

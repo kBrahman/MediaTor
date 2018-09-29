@@ -306,7 +306,7 @@
     <string name="back">पीछे</string>
     <string name="input_text_hint">आप क्या देख रहे हो? (गूगल द्वारा संकेत) </string>
     <string name="are_you_sure">क्या आपको यकीन है?</string>
-    <string name="stop_all_transfers">इससे सब हस्तांतरण बंद हो जाएगा</string>
+
     <string name="clear_complete_transfers">इससे सब समाप्त स्थानान्तरण  साफ हो जाएगा</string>
     <string name="playing_song_name">खेल रहें हैं  %s</string>
     <string name="invalid_torrent_file">अवैध टॉरेंट फ़ाइल</string>

@@ -329,7 +329,7 @@
     <string name="back">Atrás</string>
     <string name="input_text_hint">¿Qué estás buscando? (consejos de Google)</string>
     <string name="are_you_sure">¿Estás seguro?</string>
-    <string name="stop_all_transfers">Esto parará todas las transferencias</string>
+
     <string name="clear_complete_transfers">Esto borrará todas las transferencias terminadas</string>
     <string name="playing_song_name">Reproduciendo %s</string>
     <string name="invalid_torrent_file">Archivo de Torrent Inválido</string>

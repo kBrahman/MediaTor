@@ -307,7 +307,7 @@
     <string name="back">Назад</string>
     <string name="input_text_hint">Что Вы ищете? (подсказки от Google)</string>
     <string name="are_you_sure">Вы уверены?</string>
-    <string name="stop_all_transfers">Это остановит все передачи</string>
+
     <string name="clear_complete_transfers">Это очистит все завершенные передачи</string>
     <string name="playing_song_name">Проигрывается %s</string>
     <string name="invalid_torrent_file">Недействительный торрент</string>

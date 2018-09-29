@@ -324,7 +324,7 @@
     <string name="back">返回</string>
     <string name="input_text_hint">你在寻找什么? (谷歌提示)</string>
     <string name="are_you_sure">你确定?</string>
-    <string name="stop_all_transfers">这样会导致所有传输停止</string>
+
     <string name="clear_complete_transfers">这样会清除所有完成的传输</string>
     <string name="playing_song_name">播放 %s</string>
     <string name="invalid_torrent_file">无效种子文件</string>

@@ -343,7 +343,7 @@
     <string name="back">Назад</string>
     <string name="input_text_hint">Шта тражите? (наговештаји би Гоогле)</string>
     <string name="are_you_sure">Да ли сте сигурни?</string>
-    <string name="stop_all_transfers">То ће зауставити све трансфере</string>
+
     <string name="clear_complete_transfers">Ово ће очистити све готове трансфере</string>
     <string name="playing_song_name">Плаиинг %s</string>
     <string name="invalid_torrent_file">Торрент невазан</string>

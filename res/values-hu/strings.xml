@@ -513,7 +513,7 @@
     <string name="azureus_manager_item_finishing">Végső</string>
     <string name="free_sponsored_app">Szabad Szponzorált alkalmazás</string>
     <string name="now_on_port">Asszisztenst port</string>
-    <string name="stop_all_transfers">Ez leállítja az összes transzfer</string>
+
     <string name="includes_3_day_free_trial">Tartalmaz 3 napos próbaverzióját. Ajánlott</string>
     <string name="use_mobile_data_summary">Használja a mobil hálózat BitTorrent letöltések. Az adatok felesleget díjak merülhetnek fel. Használja óvatosan.</string>
     <string name="intent_text">MediaTor egy peer-to-peer programok megosztása engedélyezett fájlokon. Telepítése és a program használata nem jelent engedélyt megszerzésére vagy terjesztése nem engedélyezett tartalom.</string>

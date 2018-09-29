@@ -528,7 +528,7 @@
     <string name="azureus_manager_item_finishing">Ferdigbehandling</string>
     <string name="free_sponsored_app">Gratis sponset program</string>
     <string name="now_on_port">Nå på port</string>
-    <string name="stop_all_transfers">Dette vil stoppe alle overføringer</string>
+
     <string name="includes_3_day_free_trial">Inkluderer 3 dagers gratis prøveperiode. Anbefalt</string>
     <string name="use_mobile_data_summary">Bruk mobilnett for BitTorrent-nedlastinger. Data Overskudds kan påløpe. Bruk nøye.</string>
     <string name="intent_text">MediaTor er et peer-to-peer program for deling av autoriserte filer. Installere og bruke programmet utgjør ikke en lisens for å skaffe og distribuering av uautorisert innhold.</string>

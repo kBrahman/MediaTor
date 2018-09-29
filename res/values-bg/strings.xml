@@ -523,7 +523,7 @@
     <string name="azureus_manager_item_finishing">Довършителни</string>
     <string name="free_sponsored_app">Безплатна Спонсорирани на приложението</string>
     <string name="now_on_port">Сега на порт</string>
-    <string name="stop_all_transfers">Това ще спре всички трансфери</string>
+
     <string name="includes_3_day_free_trial">Включва три дни безплатно изпробване. Препоръчителна.</string>
     <string name="use_mobile_data_summary">Използвайте мобилна мрежа за BitTorrent файлове за изтегляне. може да ви таксува излишък на данни. Използвайте внимателно.</string>
     <string name="intent_text">MediaTor е програма, партньорска към партньорската за споделяне само оторизирани файлове. Инсталиране и използване на програмата, не представлява лиценз за получаване или разпространяване на неразрешено съдържание.</string>

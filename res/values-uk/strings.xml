@@ -513,7 +513,7 @@
     <string name="azureus_manager_item_finishing">Оздоблювальні</string>
     <string name="free_sponsored_app">Безкоштовні Рекламні додатки</string>
     <string name="now_on_port">В даний час на порту</string>
-    <string name="stop_all_transfers">Це зупинить всі трансфери</string>
+
     <string name="includes_3_day_free_trial">Включає в себе 3-х днів безкоштовної пробної версії. Рекомендується.</string>
     <string name="use_mobile_data_summary">Використовуйте мобільну мережу для завантаження BitTorrent. збори Надлишкові дані можуть застосовуватися. Будьте обережні, працюючи.</string>
     <string name="intent_text">MediaTor це програма рівноправних вузлів ЛВС для спільного використання тільки дозволених файлів. Установка і використання програми не є ліцензією на отримання або розповсюдження несанкціонованого контенту.</string>

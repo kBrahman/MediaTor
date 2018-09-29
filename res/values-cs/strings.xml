@@ -325,7 +325,7 @@
     <string name="back">Zpět</string>
     <string name="input_text_hint">Co hledáte? (rady od Google)</string>
     <string name="are_you_sure">Jste si jisti?</string>
-    <string name="stop_all_transfers">Tím se zastaví všechny transfery</string>
+
     <string name="clear_complete_transfers">Tím se odstraní všechny dokončene transfery</string>
     <string name="playing_song_name">Přehrávání %s</string>
     <string name="invalid_torrent_file">Neplatný Torrent</string>

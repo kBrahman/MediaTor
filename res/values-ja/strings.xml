@@ -333,7 +333,7 @@
     <string name="back">戻る</string>
     <string name="input_text_hint">何をお探しですか？(Googleによるヒント)</string>
     <string name="are_you_sure">よろしいですか？</string>
-    <string name="stop_all_transfers">これによってすべての送信が中断されます。</string>
+
     <string name="clear_complete_transfers">これによってすべての送信済み物をクリアされます。</string>
     <string name="playing_song_name">%sを再生中</string>
     <string name="invalid_torrent_file">無効なトレントファイル</string>

@@ -31,16 +31,16 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(rootProject.file("keystore.properties").newDataInputStream())
 android {
 
-    compileSdkVersion 27
+    compileSdkVersion 28
     buildToolsVersion "28.0.2"
 
     defaultConfig {
         applicationId "zig.zak.media.tor"
-        versionCode 8
-        versionName "1.7"
+        versionCode 9
+        versionName "1.8"
         multiDexEnabled true
         minSdkVersion 17
-        targetSdkVersion 27
+        targetSdkVersion 28
     }
 
     compileOptions {
@@ -95,11 +95,11 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:design:27.1.1'
-    implementation 'com.android.support:animated-vector-drawable:27.1.1'
-    implementation 'com.android.support:customtabs:27.1.1'
-    implementation 'com.android.support:exifinterface:27.1.1'
-    implementation 'com.android.support:preference-v7:27.1.1'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:animated-vector-drawable:28.0.0'
+    implementation 'com.android.support:customtabs:28.0.0'
+    implementation 'com.android.support:exifinterface:28.0.0'
+    implementation 'com.android.support:preference-v7:28.0.0'
     implementation 'com.squareup.picasso:picasso:3.0.0-SNAPSHOT'
     implementation 'com.frostwire:jlibtorrent-android-arm:1.2.0.18-RC11'
     implementation 'com.frostwire:jlibtorrent-android-x86:1.2.0.18-RC11'

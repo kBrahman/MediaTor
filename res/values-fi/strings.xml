@@ -528,7 +528,7 @@
     <string name="azureus_manager_item_finishing">Viimeistely</string>
     <string name="free_sponsored_app">Ilmainen Sponsoroidut App</string>
     <string name="now_on_port">Nyt portti</string>
-    <string name="stop_all_transfers">Tämä pysäyttää kaikki siirrot</string>
+
     <string name="includes_3_day_free_trial">Sisältää 3 päivän maksuton oikeudenkäyntiä. Suositeltava</string>
     <string name="use_mobile_data_summary">Käytä matkapuhelinverkon BitTorrent latauksia. Data yliannostus saattaa periä. Käytä huolellisesti.</string>
     <string name="intent_text">MediaTor on peer-to-peer ohjelma jakaa valtuutettujen vain tiedostot. Asennuksesta ja käytöstä ohjelma ei muodosta lisenssiä saamiseksi tai jakelevat luvatonta sisältöä.</string>

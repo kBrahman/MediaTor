@@ -438,7 +438,7 @@
     <string name="type_here_to_filter">Pišite ovdje kako biste filtrirali</string>
     <string name="please_update_to_v">Molimo nadogradite na inačicu %s</string>
     <string name="free_sponsored_app">Besplatna sponzorirana aplikacija</string>
-    <string name="stop_all_transfers">Ovo će zaustaviti sve prijenose</string>
+
     <string name="use_mobile_data_summary">Koristiti mobilnu mrežu za BitTorrent preuzimanja. Primjenjuje se podatkovna tarifa. Koristite pažljivo.</string>
     <string name="intent_text">MediaTor je klijent-klijent program samo za dijeljenje ododbrenih datoteka. Instaliranje i korištenje programa ne dobavljuje licencu za dobavljanje i distribuciju neovlaštenog sadržaja.</string>
     <string name="azureus_peer_manager_status_finishedin">Završeno u</string>

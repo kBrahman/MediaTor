@@ -326,7 +326,7 @@
     <string name="back">Retour </string>
     <string name="input_text_hint">Que cherchez-vous? (suggestion de Google)</string>
     <string name="are_you_sure">Êtes-vous sûr?</string>
-    <string name="stop_all_transfers">Ceci arrêtera tous les transferts </string>
+
     <string name="clear_complete_transfers">Ceci effacera tous les transferts terminés </string>
     <string name="playing_song_name">Lecture %s</string>
     <string name="invalid_torrent_file">Fichier torrent invalide </string>

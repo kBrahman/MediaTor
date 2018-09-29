@@ -328,7 +328,7 @@
     <string name="back">Πίσω</string>
     <string name="input_text_hint">Τι ψάχνεις; (hints από το Google)</string>
     <string name="are_you_sure">Είσαι σίγουρος;</string>
-    <string name="stop_all_transfers">Αυτό θα σταματήσει όλες τις μεταφορές</string>
+
     <string name="clear_complete_transfers">Αυτό θα καθαρίσει όλες τις ολοκληρωμένες μεταφορές</string>
     <string name="playing_song_name">Αναπαραγωγή %s</string>
     <string name="invalid_torrent_file">Μη έγκυρο όνομα Torrent</string>

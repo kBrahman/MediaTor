@@ -325,7 +325,7 @@
     <string name="back">이전</string>
     <string name="input_text_hint">무엇을 찾으십니까? (구글 힌트)</string>
     <string name="are_you_sure">확실하신가요?</string>
-    <string name="stop_all_transfers">모든 트랜스퍼를 중지합니다.</string>
+
     <string name="clear_complete_transfers">완료된 트랜스퍼 모두 비우기</string>
     <string name="playing_song_name">재생중 %s</string>
     <string name="invalid_torrent_file">유효하지 않은 토렌트 파일</string>

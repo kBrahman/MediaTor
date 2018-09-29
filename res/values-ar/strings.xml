@@ -323,7 +323,7 @@
     <string name="back">العودة</string>
     <string name="input_text_hint">(ما الذي تبحث عنه (تلميحات من غوغل</string>
     <string name="are_you_sure">هل أنت متأكد</string>
-    <string name="stop_all_transfers">هذا سوف يوقف جميع الملفات المنقولة</string>
+
     <string name="clear_complete_transfers">هذا سوف يمسح جميع الملفات المستكمل نقلها</string>
     <string name="playing_song_name">تشغيل %s</string>
     <string name="invalid_torrent_file">ملف تورينت غير صالح</string>
