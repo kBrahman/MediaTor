@@ -352,7 +352,7 @@
     <string name="new_port_saved">New Port הציל</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash הועתק ללוח</string>
     <string name="turn_on_wifi_sharing">הפעל שיתוף Wifi</string>
-    <string name="vpn_on_toast_notification">אתה מחובר ל- VPN.</string>
+
     <string name="haptic_feedback">Haptic Feedback</string>
     <string name="pictures">תמונות</string>
     <string name="yes_no_cancel_transfer_question_cloud">האם אתה בטוח שאתה רוצה לעצור להסיר הורדה זו מהרשימה?</string>

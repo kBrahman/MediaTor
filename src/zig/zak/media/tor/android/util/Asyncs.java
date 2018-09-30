@@ -28,9 +28,6 @@ import zig.zak.media.tor.util.Ref;
 
 /**
  * Utility class for asynchronous task in the background.
- *
- * @author gubatron
- * @author aldenml
  */
 @SuppressWarnings("unchecked")
 public final class Asyncs {

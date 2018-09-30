@@ -341,7 +341,7 @@
     <string name="new_port_saved">Новы порт захаваны</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash капіюецца ў буфер абмену</string>
     <string name="turn_on_wifi_sharing">Уключыце Wi-Fi агульнага доступу</string>
-    <string name="vpn_on_toast_notification">Вы падлучаныя да VPN.</string>
+
     <string name="haptic_feedback">Виброотклик</string>
     <string name="pictures">Фатаграфіі</string>
     <string name="yes_no_cancel_transfer_question_cloud">Вы ўпэўненыя, што хочаце спыніць і выдаліць гэтую загрузку са спісу?</string>

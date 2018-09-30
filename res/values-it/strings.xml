@@ -476,7 +476,7 @@
     <string name="use_yify">Utilizzare Yify</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash copiato negli appunti</string>
     <string name="turn_on_wifi_sharing">Attivare la condivisione del WiFi</string>
-    <string name="vpn_on_toast_notification">È entrato in contatto con una rete VPN.</string>
+
     <string name="yes_no_cancel_transfer_question_cloud">Sei sicuro di voler fermare e rimuovere questo download dalla lista?</string>
     <string name="bittorrent_is_currently_disconnected_would_you_like_me_to_start_it_for_you">Bittorrent è scollegato. Vuoi che me per iniziare per voi?</string>
     <string name="shutting_down">Spegnere…</string>

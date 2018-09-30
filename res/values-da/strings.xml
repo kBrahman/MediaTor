@@ -477,7 +477,7 @@
     <string name="use_yify">Brug Yify</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash kopieret til udklipsholderen</string>
     <string name="turn_on_wifi_sharing">Slå Wifi Deling</string>
-    <string name="vpn_on_toast_notification">Du har forbindelse til et VPN.</string>
+
     <string name="haptic_feedback">Haptic Feedback</string>
     <string name="yes_no_cancel_transfer_question_cloud">Er du sikker på du vil stoppe og fjernes overførslen fra listen?</string>
     <string name="bittorrent_is_currently_disconnected_would_you_like_me_to_start_it_for_you">Bittorrent er afbrudt. Vil du have mig til at starte den for dig?</string>

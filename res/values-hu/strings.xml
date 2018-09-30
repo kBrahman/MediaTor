@@ -342,7 +342,7 @@
     <string name="new_port_saved">Új port mentett</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash vágólapra másolva</string>
     <string name="turn_on_wifi_sharing">WiFi bekapcsolása megosztása</string>
-    <string name="vpn_on_toast_notification">Te VPN-hez.</string>
+
     <string name="haptic_feedback">Rezgő visszajelzés</string>
     <string name="pictures">Képek</string>
     <string name="yes_no_cancel_transfer_question_cloud">Biztosan le szeretné állítani és letöltés eltávolítása a listáról?</string>

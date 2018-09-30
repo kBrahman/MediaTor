@@ -477,7 +477,7 @@
     <string name="use_yify">Chọn Yify</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash sao chép vào clipboard</string>
     <string name="turn_on_wifi_sharing">Bật Wifi Sharing</string>
-    <string name="vpn_on_toast_notification">Bạn đang kết nối tới một VPN.</string>
+
     <string name="haptic_feedback">Phản hồi Haptic</string>
     <string name="yes_no_cancel_transfer_question_cloud">Bạn có chắc chắn muốn dừng lại và loại bỏ download từ danh sách?</string>
     <string name="bittorrent_is_currently_disconnected_would_you_like_me_to_start_it_for_you">Bittorrent là bị ngắt kết nối. Bạn có muốn tôi để bắt đầu nó cho bạn?</string>

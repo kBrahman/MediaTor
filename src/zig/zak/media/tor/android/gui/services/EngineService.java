@@ -254,7 +254,7 @@ public class EngineService extends Service implements IEngineService {
                     .setWhen(System.currentTimeMillis())
                     .setContentText(getString(R.string.download_finished))
                     .setContentTitle(getString(R.string.download_finished))
-                    .setSmallIcon(getNotificationIcon())
+                    .setSmallIcon(R.mipmap.ic_launcher_round)
                     .setContentIntent(pi)
                     .build();
             notification.vibrate = ConfigurationManager.instance().vibrateOnFinishedDownload() ? VENEZUELAN_VIBE : null;
@@ -287,10 +287,6 @@ public class EngineService extends Service implements IEngineService {
         public EngineService getService() {
             return EngineService.this;
         }
-    }
-
-    private int getNotificationIcon() {
-        return R.drawable.frostwire_notification_flat;
     }
 
     private void stopPermanentNotificationUpdates() {

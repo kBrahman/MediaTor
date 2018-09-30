@@ -347,7 +347,7 @@
     <string name="new_port_saved">Нов порт спасени</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash копиран в клипборда</string>
     <string name="turn_on_wifi_sharing">Включете Wifi Sharing</string>
-    <string name="vpn_on_toast_notification">Вие сте свързани с VPN.</string>
+
     <string name="haptic_feedback">Haptic обратна връзка</string>
     <string name="pictures">Снимки</string>
     <string name="yes_no_cancel_transfer_question_cloud">Сигурни ли сте че искате да спрете и изтриете изтегления файл от списъка?</string>

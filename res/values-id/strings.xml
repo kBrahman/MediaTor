@@ -472,7 +472,7 @@
     <string name="use_yify">Gunakan Yify</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash disalin ke clipboard</string>
     <string name="turn_on_wifi_sharing">Aktifkan Wifi Sharing</string>
-    <string name="vpn_on_toast_notification">Anda terhubung ke VPN.</string>
+
     <string name="haptic_feedback">Haptic Feedback</string>
     <string name="yes_no_cancel_transfer_question_cloud">Apakah Anda yakin ingin berhenti dan menghapus download ini dari daftar?</string>
     <string name="desktop_transfer_status_transferring">Mentransfer</string>

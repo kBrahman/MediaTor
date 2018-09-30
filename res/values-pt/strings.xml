@@ -524,7 +524,7 @@
     <string name="check_internet_connection">Verifique a conexão de Internet</string>
     <string name="cheaper_than_coffee">Mais barato do que o café</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash copiado para o clipboard</string>
-    <string name="vpn_on_toast_notification">Você está conectado a uma VPN.</string>
+
     <string name="bittorrent_is_currently_disconnected_would_you_like_me_to_start_it_for_you">Bittorrent é desconectado. Você gostaria que eu iniciá-lo para você?</string>
     <string name="shutting_down">Desligando…</string>
     <string name="learn_more">Saber mais</string>

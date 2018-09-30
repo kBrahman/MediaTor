@@ -195,7 +195,7 @@
     <string name="cloud_downloads_coming">క్షమించండి: ఇక్కడ నుండి క్లౌడ్ డౌన్లోడ్లు ప్రారంభించడం మరింత నవీకరణలలో అందుబాటులో ఉంటుంది.</string>
     <string name="menu_space_shortcut_label">స్థలం</string>
     <string name="connected_using_dataplan">డేటా ప్లాన్ను ఉపయోగించి కనెక్ట్ చేయబడింది</string>
-    <string name="vpn_on_toast_notification">మీరు VPN కు కనెక్ట్ చేయబడ్డారు.</string>
+
     <string name="tip_rename_your_files">తప్పనిసరిగా తెలుసుకోవాలి: ఫైల్లను పేరు మార్చండి, అందువల్ల వాటిని కనుగొనవచ్చు</string>
     <string name="donate_10">$10 దానం</string>
     <string name="disconnect">డిస్కనెక్ట్</string>

@@ -549,7 +549,7 @@
     <string name="finishing">仕上げ</string>
     <string name="check_internet_connection">インターネット接続を確認する</string>
     <string name="cheaper_than_coffee">コーヒーよりも安い</string>
-    <string name="vpn_on_toast_notification">あなたはVPNに接続しています。</string>
+
     <string name="haptic_feedback">触覚フィードバック</string>
     <string name="bittorrent_is_currently_disconnected_would_you_like_me_to_start_it_for_you">Bittorrentが接続されていません。 私はあなたのためにそれを始めたいですか？</string>
     <string name="save_bandwidth">帯域幅を節約する</string>

@@ -197,7 +197,7 @@
     <string name="cloud_downloads_coming">क्षमस्व: येथून क्लाऊड डाउनलोड प्रारंभ करणे पुढील अद्यतनांवर उपलब्ध असेल.</string>
     <string name="menu_space_shortcut_label">स्पेस</string>
     <string name="connected_using_dataplan">डेटा प्लॅन वापरून कनेक्ट केले</string>
-    <string name="vpn_on_toast_notification">आपण एका VPN शी कनेक्ट केलेले आहे.</string>
+
     <string name="tip_rename_your_files">माहिती: फाइल्स पुनर्नामित करा म्हणजे ते आढळू शकतील</string>
     <string name="donate_10">दान करा $10</string>
     <string name="disconnect">डिस्कनेक्ट करा</string>

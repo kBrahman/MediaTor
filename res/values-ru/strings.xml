@@ -517,7 +517,7 @@
     <string name="finishing">Отделочные</string>
     <string name="check_internet_connection">Проверьте подключение к Интернету</string>
     <string name="cheaper_than_coffee">Дешевле, чем кофе</string>
-    <string name="vpn_on_toast_notification">Вы подключены к VPN.</string>
+
     <string name="haptic_feedback">Haptic Feedback</string>
     <string name="bittorrent_is_currently_disconnected_would_you_like_me_to_start_it_for_you">Bittorrent отключен. Вы хотите, чтобы я начал это для вас?</string>
     <string name="learn_more">Выучить больше</string>

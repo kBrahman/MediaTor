@@ -518,7 +518,7 @@
     <string name="check_internet_connection">检查互联网连接</string>
     <string name="cheaper_than_coffee">比咖啡便宜</string>
     <string name="transfers_context_menu_copy_infohash_copied">信息哈希已复制到剪贴板</string>
-    <string name="vpn_on_toast_notification">您已连接到VPN。</string>
+
     <string name="haptic_feedback">触觉反馈</string>
     <string name="bittorrent_is_currently_disconnected_would_you_like_me_to_start_it_for_you">Bittorrent已断开连接。 你想让我为你开始吗？</string>
     <string name="shutting_down">正在关闭…</string>

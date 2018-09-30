@@ -525,7 +525,7 @@
     <string name="vpn_price">desde $%1$.2f dólares mensuales</string>
     <string name="connection_header_title">Estado de conexión:</string>
     <string name="check_internet_connection">Comprobar conexión de Internet</string>
-    <string name="vpn_on_toast_notification">Estás conectado a un VPN.</string>
+
     <string name="learn_more">Conoce más</string>
     <string name="bittorrent_off_data_saver_on">"BitTorrent apagado (Ahorrar datos encendido)"</string>
     <string name="get_vpn_client">Obtén ExpressVPN</string>

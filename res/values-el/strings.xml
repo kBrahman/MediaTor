@@ -513,7 +513,7 @@
     <string name="check_internet_connection">Ελέγξτε τη σύνδεση στο Internet</string>
     <string name="cheaper_than_coffee">Φθηνότερο από καφέ</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash αντιγραφεί στο πρόχειρο</string>
-    <string name="vpn_on_toast_notification">Έχετε συνδεθεί σε ένα VPN.</string>
+
     <string name="haptic_feedback">Haptic Feedback</string>
     <string name="yes_no_cancel_transfer_question_cloud">Είστε βέβαιοι ότι θέλετε να σταματήσετε και να αφαιρέσετε αυτό το στοιχείο λήψης από τη λίστα;</string>
     <string name="bittorrent_is_currently_disconnected_would_you_like_me_to_start_it_for_you">Bittorrent είναι αποσυνδεδεμένο. Θα θέλατε να το ξεκινήσει για σας;</string>

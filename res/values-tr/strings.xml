@@ -489,7 +489,7 @@
     <string name="cheaper_than_coffee">Kahve\'den daha ucuz</string>
     <string name="use_yify">Yify\'u Kullan</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash panoya kopyalandı</string>
-    <string name="vpn_on_toast_notification">Bir VPN\'ye bağlısınız.</string>
+
     <string name="haptic_feedback">Dokunsal geribildirim</string>
     <string name="yes_no_cancel_transfer_question_cloud">Bu indirmeyi listeden durdurup kaldırmak istediğinizden emin misiniz?</string>
     <string name="bittorrent_is_currently_disconnected_would_you_like_me_to_start_it_for_you">Bittorrent bağlantısı kesildi. Senin için başlatmamı ister misin?</string>

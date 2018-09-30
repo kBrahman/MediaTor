@@ -483,7 +483,7 @@
     <string name="cheaper_than_coffee">Günstiger als Kaffee</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash Zwischenablage kopiert</string>
     <string name="turn_on_wifi_sharing">Schalten Sie Wifi-Sharing</string>
-    <string name="vpn_on_toast_notification">Sie sind mit einem VPN verbunden.</string>
+
     <string name="yes_no_cancel_transfer_question_cloud">Sind Sie sicher, dass Sie aufhören wollen und entfernen Sie diesen Download aus der Liste?</string>
     <string name="bittorrent_is_currently_disconnected_would_you_like_me_to_start_it_for_you">Bittorrent ist nicht angeschlossen. Möchten Sie mir, es für Sie zu starten?</string>
     <string name="shutting_down">Herunterfahren…</string>

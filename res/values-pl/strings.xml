@@ -538,7 +538,7 @@
     <string name="finishing">Kończę</string>
     <string name="check_internet_connection">Sprawdź połączenie z internetem</string>
     <string name="cheaper_than_coffee">Tańszy niż Kawa</string>
-    <string name="vpn_on_toast_notification">Jesteś połączony z VPN.</string>
+
     <string name="haptic_feedback">Wibracja</string>
     <string name="bittorrent_is_currently_disconnected_would_you_like_me_to_start_it_for_you">Bittorrent jest wyłączony. Czy mam go włączyć dla ciebie?</string>
     <string name="save_bandwidth">Oszczędzaj Bandwidth</string>

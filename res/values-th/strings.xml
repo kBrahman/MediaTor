@@ -347,7 +347,7 @@
     <string name="new_port_saved">พอร์ตใหม่ที่บันทึกไว้</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash คัดลอกไปที่คลิปบอร์ด</string>
     <string name="turn_on_wifi_sharing">Turn on Wi-fi Sharing</string>
-    <string name="vpn_on_toast_notification">คุณเชื่อมต่อกับ VPN</string>
+
     <string name="haptic_feedback">สัมผัสความคิดเห็น</string>
     <string name="pictures">ภาพ</string>
     <string name="yes_no_cancel_transfer_question_cloud">คุณแน่ใจหรือไม่ว่าคุณต้องการที่จะหยุดและเอาดาวน์โหลดนี้ออกจากรายการหรือไม่</string>

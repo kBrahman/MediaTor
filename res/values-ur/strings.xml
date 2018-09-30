@@ -383,7 +383,7 @@
     <string name="new_port_saved">نئی بندرگاہ بچایا</string>
     <string name="transfers_context_menu_copy_infohash_copied">کلپ بورڈ پر کاپی Infohash</string>
     <string name="turn_on_wifi_sharing">وائی فائی کا اشتراک آن</string>
-    <string name="vpn_on_toast_notification">آپ کو ایک وی پی این سے منسلک ہیں.</string>
+
     <string name="haptic_feedback">haptic کی رائے</string>
     <string name="yes_no_cancel_transfer_question_cloud">آپ کو روکنے اور فہرست میں سے یہ ڈاؤن لوڈ ہٹانے کے لیے چاہتے ہیں؟</string>
     <string name="desktop_transfer_status_transferring">منتقلی</string>

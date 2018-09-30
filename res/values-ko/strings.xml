@@ -473,7 +473,7 @@
     <string name="use_yify">Yify사용</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash가 클립 보드에 복사 됨</string>
     <string name="turn_on_wifi_sharing">Wi-Fi 공유 사용 설정</string>
-    <string name="vpn_on_toast_notification">VPN에 연결되어 있습니다.</string>
+
     <string name="haptic_feedback">햅틱 피드백</string>
     <string name="yes_no_cancel_transfer_question_cloud">이 다운로드를 중지하고 목록에서 제거 하시겠습니까?</string>
     <string name="desktop_transfer_status_transferring">이전 중</string>

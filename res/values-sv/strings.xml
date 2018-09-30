@@ -352,7 +352,7 @@
     <string name="new_port_saved">Ny port sparas</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash kopieras till Windows urklipp</string>
     <string name="turn_on_wifi_sharing">Slå på WiFi delning</string>
-    <string name="vpn_on_toast_notification">Du är ansluten till ett VPN.</string>
+
     <string name="haptic_feedback">Haptic Feedback</string>
     <string name="pictures">Bilder</string>
     <string name="yes_no_cancel_transfer_question_cloud">Är du säker på att du vill stoppa och ta bort denna hämtning från listan?</string>

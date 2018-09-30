@@ -350,7 +350,7 @@
     <string name="new_port_saved">Uusi portti tallennettu</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash kopioitu leikepöydälle</string>
     <string name="turn_on_wifi_sharing">Kytke WiFi Jakaminen</string>
-    <string name="vpn_on_toast_notification">Olet yhteydessä VPN.</string>
+
     <string name="haptic_feedback">Haptic Feedback</string>
     <string name="pictures">Kuvat</string>
     <string name="yes_no_cancel_transfer_question_cloud">Oletko varma, että haluat lopettaa ja poistaa tämän ladattavan listasta?</string>

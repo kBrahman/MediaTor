@@ -347,7 +347,7 @@
     <string name="new_port_saved">Pelabuhan baru disimpan</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash disalin ke clipboard</string>
     <string name="turn_on_wifi_sharing">Hidupkan Perkongsian Wifi</string>
-    <string name="vpn_on_toast_notification">Anda telah disambungkan ke VPN.</string>
+
     <string name="haptic_feedback">Haptic Feedback</string>
     <string name="pictures">Gambar</string>
     <string name="yes_no_cancel_transfer_question_cloud">Adakah anda pasti anda mahu berhenti dan mengalih keluar muat turun ini dari senarai?</string>

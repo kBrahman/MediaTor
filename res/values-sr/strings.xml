@@ -527,7 +527,7 @@
     <string name="vpn_price">од $%1$.2f месечно</string>
     <string name="vpn_what_you_get_with">What do you get with </string>
     <string name="get_vpn_client">Гет ExpressVPN</string>
-    <string name="vpn_on_toast_notification">Ви сте повезани са ВПН.</string>
+
     <string name="vpn_off_toast_notification">Ваша веза не може бити приватна.</string>
     <string name="dht_contacts">ДХТ контакти</string>
     <string name="notify_frostwire_is_running">Обавести акоMediaTorради</string>

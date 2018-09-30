@@ -510,7 +510,7 @@
     <string name="check_internet_connection">Vérifiez la connexion Internet</string>
     <string name="cheaper_than_coffee">Moins cher que le café</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash copié dans le presse-papiers</string>
-    <string name="vpn_on_toast_notification">Vous êtes connecté à un VPN.</string>
+
     <string name="yes_no_cancel_transfer_question_cloud">Etes-vous sûr de vouloir arrêter et supprimer ce téléchargement de la liste?</string>
     <string name="bittorrent_is_currently_disconnected_would_you_like_me_to_start_it_for_you">Bittorrent est déconnecté. Voulez-vous que je commence pour vous?</string>
     <string name="shutting_down">Éteindre…</string>

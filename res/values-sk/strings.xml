@@ -347,7 +347,7 @@
     <string name="new_port_saved">New Port uložené</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash skopírovať do schránky</string>
     <string name="turn_on_wifi_sharing">Zapnúť Wifi zdieľanie</string>
-    <string name="vpn_on_toast_notification">Ste pripojení k sieti VPN.</string>
+
     <string name="haptic_feedback">Hmatová odozva</string>
     <string name="pictures">Obrázky</string>
     <string name="yes_no_cancel_transfer_question_cloud">Ste si istí, že chcete zastaviť a odstrániť toto sťahovanie zo zoznamu?</string>

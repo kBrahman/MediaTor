@@ -477,7 +477,7 @@
     <string name="use_yify">Použít Yify</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash zkopírovat do schránky</string>
     <string name="turn_on_wifi_sharing">Zapnout Wifi sdílení</string>
-    <string name="vpn_on_toast_notification">Jste připojeni k síti VPN.</string>
+
     <string name="haptic_feedback">Haptic Feedback</string>
     <string name="yes_no_cancel_transfer_question_cloud">Jste si jisti, že chcete zastavit a odstranit toto stahování ze seznamu?</string>
     <string name="bittorrent_is_currently_disconnected_would_you_like_me_to_start_it_for_you">Bittorrent je odpojen. Chtěli byste, abych jej spustit pro vás?</string>

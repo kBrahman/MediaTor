@@ -542,7 +542,7 @@
     <string name="finishing">Dorada</string>
     <string name="check_internet_connection">Provjerite internetsku vezu</string>
     <string name="cheaper_than_coffee">Jeftinije od kave</string>
-    <string name="vpn_on_toast_notification">Vi ste povezani s VPN-om.</string>
+
     <string name="haptic_feedback">Dodirna povratna informacija</string>
     <string name="bittorrent_is_currently_disconnected_would_you_like_me_to_start_it_for_you">Bittorrent je isključen. Želite li da ga pokrenuti za vas?</string>
     <string name="search_preferences">Postavke za pretraživanje</string>

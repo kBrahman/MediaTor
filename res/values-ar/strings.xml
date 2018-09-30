@@ -489,7 +489,7 @@
     <string name="cheaper_than_coffee">أرخص من القهوة</string>
     <string name="use_yify">استخدام Yify</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash نسخها إلى الحافظة</string>
-    <string name="vpn_on_toast_notification">كنت متصلا VPN.</string>
+
     <string name="haptic_feedback">استجابة لمسية</string>
     <string name="yes_no_cancel_transfer_question_cloud">هل أنت متأكد أنك تريد إيقاف وإزالة هذا التنزيل من القائمة؟</string>
     <string name="bittorrent_is_currently_disconnected_would_you_like_me_to_start_it_for_you">تورنت قطع الاتصال. هل تريد مني أن يبدأ ذلك بالنسبة لك؟</string>

@@ -40,7 +40,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.util.SparseArray;
 import android.view.KeyEvent;
 import android.view.MenuItem;
@@ -393,7 +392,7 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.Theme_FrostWire);
+        setTheme(R.style.Theme_MediaTor);
         super.onCreate(savedInstanceState);
         if (!ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_GUI_TOS_ACCEPTED)) {
             return;

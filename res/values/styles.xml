@@ -532,7 +532,7 @@
 
     <!-- Wizard Activity -->
 
-    <style name="WizardActivity" parent="Theme.FrostWire">
+    <style name="WizardActivity" parent="Theme.MediaTor">
         <item name="android:textColorSecondary">@color/app_text_wizard</item>
         <item name="android:windowBackground">@color/app_background</item>
     </style>
@@ -750,7 +750,7 @@
 
 
     <!-- Scrollview Style -->
-    <style name="scrollbar_default_style" parent="Theme.FrostWire">
+    <style name="scrollbar_default_style" parent="Theme.MediaTor">
         <item name="android:overScrollHeader">@null</item>
         <item name="android:overScrollFooter">@null</item>
         <item name="android:fadeScrollbars">true</item>

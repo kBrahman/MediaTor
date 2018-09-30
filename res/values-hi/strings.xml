@@ -450,7 +450,7 @@
     <string name="use_yify">उपयोग Yify</string>
     <string name="transfers_context_menu_copy_infohash_copied">जानकारी हैश क्लिपबोर्ड करने के लिए नकल</string>
     <string name="turn_on_wifi_sharing">वाईफ़ाई शेयरिंग चालू करें</string>
-    <string name="vpn_on_toast_notification">आप एक वीपीएन से जुड़े रहे हैं।</string>
+
     <string name="haptic_feedback">हप्टिक राय</string>
     <string name="yes_no_cancel_transfer_question_cloud">तुम बंद करो और सूची से यह डाउनलोड निकालना चाहते हैं, आप सुनिश्चित हैं?</string>
     <string name="desktop_transfer_status_transferring">स्थानांतरण करने</string>

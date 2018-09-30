@@ -340,7 +340,7 @@
     <string name="new_port_saved">Noul Port salvat</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash copiat în clipboard</string>
     <string name="turn_on_wifi_sharing">Activați Wi-Fi Partajare</string>
-    <string name="vpn_on_toast_notification">Sunteți conectat la o rețea VPN.</string>
+
     <string name="haptic_feedback">Feedback-ul haptic</string>
     <string name="pictures">Imagini</string>
     <string name="yes_no_cancel_transfer_question_cloud">Sunteți sigur că doriți să opriți și să eliminați această descărcare de pe listă?</string>

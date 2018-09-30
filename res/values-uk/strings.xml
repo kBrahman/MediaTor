@@ -342,7 +342,7 @@
     <string name="new_port_saved">Новий порт збережений</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash копіюється в буфер обміну</string>
     <string name="turn_on_wifi_sharing">Увімкніть Wi-Fi загального доступу</string>
-    <string name="vpn_on_toast_notification">Ви підключені до VPN.</string>
+
     <string name="haptic_feedback">Тактильного зворотного зв\'язку</string>
     <string name="pictures">Фотографії</string>
     <string name="yes_no_cancel_transfer_question_cloud">Ви впевнені, що хочете зупинити і видалити це завантаження зі списку?</string>
