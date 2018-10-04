@@ -22,10 +22,18 @@ import android.content.Context;
 import android.view.ViewConfiguration;
 
 import com.andrew.apollo.cache.ImageCache;
+
+import org.apache.commons.io.FileUtils;
+
+import java.io.File;
+import java.lang.ref.WeakReference;
+import java.lang.reflect.Field;
+import java.util.Locale;
+import java.util.Random;
+
 import zig.zak.media.tor.android.AndroidPlatform;
 import zig.zak.media.tor.android.core.ConfigurationManager;
 import zig.zak.media.tor.android.core.Constants;
-import zig.zak.media.tor.android.gui.services.Engine;
 import zig.zak.media.tor.android.gui.views.AbstractActivity;
 import zig.zak.media.tor.android.util.ImageLoader;
 import zig.zak.media.tor.bittorrent.BTContext;
@@ -36,14 +44,6 @@ import zig.zak.media.tor.search.CrawlPagedWebSearchPerformer;
 import zig.zak.media.tor.search.LibTorrentMagnetDownloader;
 import zig.zak.media.tor.util.Logger;
 import zig.zak.media.tor.util.Ref;
-
-import org.apache.commons.io.FileUtils;
-
-import java.io.File;
-import java.lang.ref.WeakReference;
-import java.lang.reflect.Field;
-import java.util.Locale;
-import java.util.Random;
 
 import static zig.zak.media.tor.android.util.Asyncs.async;
 import static zig.zak.media.tor.android.util.RunStrict.runStrict;
@@ -59,21 +59,12 @@ public class MainApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
         runStrict(this::onCreateSafe);
-
         Platforms.set(new AndroidPlatform(this));
-
-        Engine.instance().onApplicationCreate(this);
-
         new Thread(new BTEngineInitializer(Ref.weak(this))).start();
-
         ImageLoader.start(this);
-
         async(this, this::initializeCrawlPagedWebSearchPerformer);
-
         async(LocalSearchEngine::instance);
-
         async(MainApplication::cleanTemp);
     }
 

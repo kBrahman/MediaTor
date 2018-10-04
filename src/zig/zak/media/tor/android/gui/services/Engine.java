@@ -31,6 +31,10 @@ import android.os.Looper;
 import android.os.Vibrator;
 import android.telephony.TelephonyManager;
 
+import java.io.File;
+import java.lang.ref.WeakReference;
+import java.util.concurrent.ExecutorService;
+
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.ConfigurationManager;
 import zig.zak.media.tor.android.core.Constants;
@@ -40,16 +44,8 @@ import zig.zak.media.tor.android.gui.services.EngineService.EngineServiceBinder;
 import zig.zak.media.tor.android.gui.util.UIUtils;
 import zig.zak.media.tor.util.Ref;
 
-import java.io.File;
-import java.lang.ref.WeakReference;
-import java.util.concurrent.ExecutorService;
-
 import static zig.zak.media.tor.android.util.Asyncs.async;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class Engine implements IEngineService {
 
     private static final ExecutorService MAIN_THREAD_POOL = new EngineThreadPool();
@@ -128,8 +124,7 @@ public final class Engine implements IEngineService {
                 service.startServices(wasShutdown);
             }
             if (wasShutdown) {
-                async(new EngineApplicationRefsHolder(this, getApplication()),
-                      Engine::engineServiceStarter);
+                async(new EngineApplicationRefsHolder(this, getApplication()), Engine::engineServiceStarter);
             }
             wasShutdown = false;
         } else {
@@ -185,7 +180,7 @@ public final class Engine implements IEngineService {
      * @param context This must be the application context, otherwise there will be a leak.
      */
     private void startEngineService(final Context context) {
-        Intent i = new Intent(context,EngineService.class);
+        Intent i = new Intent(context, EngineService.class);
         try {
             context.startService(i);
             context.bindService(i, connection = new ServiceConnection() {
@@ -206,7 +201,7 @@ public final class Engine implements IEngineService {
             }, 0);
         } catch (SecurityException execution) {
             Handler handler = new Handler(Looper.getMainLooper());
-            handler.post(()->UIUtils.showLongMessage(context, R.string.frostwire_start_engine_service_security_exception));
+            handler.post(() -> UIUtils.showLongMessage(context, R.string.frostwire_start_engine_service_security_exception));
             execution.printStackTrace();
         }
     }
@@ -289,6 +284,7 @@ public final class Engine implements IEngineService {
     private class EngineApplicationRefsHolder {
         WeakReference<Engine> engineRef;
         WeakReference<Application> appRef;
+
         EngineApplicationRefsHolder(Engine engine, Application application) {
             engineRef = Ref.weak(engine);
             appRef = Ref.weak(application);

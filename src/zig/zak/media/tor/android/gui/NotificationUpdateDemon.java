@@ -40,14 +40,11 @@ import zig.zak.media.tor.util.Logger;
 
 import static zig.zak.media.tor.android.util.Asyncs.async;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class NotificationUpdateDemon implements TimerObserver {
 
     private static final Logger LOG = Logger.getLogger(NotificationUpdateDemon.class);
     private static final int FROSTWIRE_STATUS_NOTIFICATION_UPDATE_INTERVAL_IN_SECS = 5;
+    private static final String CHANNEL_ID = "Media_Tor_channel";
 
     private final Context mParentContext;
     private TimerSubscription mTimerSubscription;
@@ -145,9 +142,11 @@ public final class NotificationUpdateDemon implements TimerObserver {
         if (!ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_GUI_ENABLE_PERMANENT_STATUS_NOTIFICATION)) {
             return;
         }
-
-        RemoteViews remoteViews = new RemoteViews(mParentContext.getPackageName(),
-                R.layout.view_permanent_status_notification);
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        //            NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, "Taxor", IMPORTANCE_DEFAULT);
+        //            ((NotificationManager) mParentContext.getSystemService(Context.NOTIFICATION_SERVICE)).createNotificationChannel(mChannel);
+        //        }
+        RemoteViews remoteViews = new RemoteViews(mParentContext.getPackageName(), R.layout.view_permanent_status_notification);
 
         PendingIntent showFrostWireIntent = createShowFrostwireIntent();
         PendingIntent shutdownIntent = createShutdownIntent();
@@ -166,24 +165,20 @@ public final class NotificationUpdateDemon implements TimerObserver {
         notificationObject = notification;
     }
 
+    public Notification getNotificationObject() {
+        return notificationObject;
+    }
+
     private PendingIntent createShowFrostwireIntent() {
-        return PendingIntent.getActivity(mParentContext,
-                0,
-                new Intent(mParentContext,
-                        MainActivity.class).
-                        setAction(Constants.ACTION_SHOW_TRANSFERS).
-                        addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK),
-                0);
+        return PendingIntent.getActivity(mParentContext, 0, new Intent(mParentContext, MainActivity.class).
+                setAction(Constants.ACTION_SHOW_TRANSFERS).
+                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK), 0);
     }
 
     private PendingIntent createShutdownIntent() {
-        return PendingIntent.getActivity(mParentContext,
-                1,
-                new Intent(mParentContext,
-                        MainActivity.class).
-                        setAction(Constants.ACTION_REQUEST_SHUTDOWN).
-                        addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK),
-                0);
+        return PendingIntent.getActivity(mParentContext, 1, new Intent(mParentContext, MainActivity.class).
+                setAction(Constants.ACTION_REQUEST_SHUTDOWN).
+                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK), 0);
     }
 
     @Override

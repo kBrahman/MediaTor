@@ -30,6 +30,14 @@ import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 
+import com.frostwire.jlibtorrent.Vectors;
+import com.frostwire.jlibtorrent.swig.bloom_filter_256;
+import com.frostwire.jlibtorrent.swig.byte_vector;
+import com.frostwire.jlibtorrent.swig.sha1_hash;
+
+import java.io.File;
+
+import okhttp3.ConnectionPool;
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.ConfigurationManager;
 import zig.zak.media.tor.android.core.Constants;
@@ -39,24 +47,12 @@ import zig.zak.media.tor.android.gui.activities.MainActivity;
 import zig.zak.media.tor.android.gui.transfers.TransferManager;
 import zig.zak.media.tor.android.util.SystemUtils;
 import zig.zak.media.tor.bittorrent.BTEngine;
-import com.frostwire.jlibtorrent.Vectors;
-import com.frostwire.jlibtorrent.swig.bloom_filter_256;
-import com.frostwire.jlibtorrent.swig.byte_vector;
-import com.frostwire.jlibtorrent.swig.sha1_hash;
 import zig.zak.media.tor.util.Hex;
 import zig.zak.media.tor.util.Logger;
 import zig.zak.media.tor.util.http.OKHTTPClient;
 
-import java.io.File;
-
-import okhttp3.ConnectionPool;
-
 import static zig.zak.media.tor.android.util.Asyncs.async;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public class EngineService extends Service implements IEngineService {
     private static final Logger LOG = Logger.getLogger(EngineService.class);
     private final static long[] VENEZUELAN_VIBE = buildVenezuelanVibe();
@@ -108,6 +104,10 @@ public class EngineService extends Service implements IEngineService {
         LOG.info("FrostWire's EngineService started by this intent:");
         LOG.info("FrostWire:" + intent.toString());
         LOG.info("FrostWire: flags:" + flags + " startId: " + startId);
+        if (notificationUpdateDemon == null) {
+            notificationUpdateDemon = new NotificationUpdateDemon(getApplicationContext());
+        }
+        startForeground(1, notificationUpdateDemon.getNotificationObject());
         async(this, EngineService::startPermanentNotificationUpdatesTask);
         return START_STICKY;
     }
@@ -250,13 +250,7 @@ public class EngineService extends Service implements IEngineService {
             i.putExtra(Constants.EXTRA_DOWNLOAD_COMPLETE_PATH, file.getAbsolutePath());
             PendingIntent pi = PendingIntent.getActivity(context, 0, i, PendingIntent.FLAG_UPDATE_CURRENT);
             NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            Notification notification = new NotificationCompat.Builder(context, Constants.FROSTWIRE_NOTIFICATION_CHANNEL_ID)
-                    .setWhen(System.currentTimeMillis())
-                    .setContentText(getString(R.string.download_finished))
-                    .setContentTitle(getString(R.string.download_finished))
-                    .setSmallIcon(R.mipmap.ic_launcher_round)
-                    .setContentIntent(pi)
-                    .build();
+            Notification notification = new NotificationCompat.Builder(context, Constants.FROSTWIRE_NOTIFICATION_CHANNEL_ID).setWhen(System.currentTimeMillis()).setContentText(getString(R.string.download_finished)).setContentTitle(getString(R.string.download_finished)).setSmallIcon(R.mipmap.ic_launcher_round).setContentIntent(pi).build();
             notification.vibrate = ConfigurationManager.instance().vibrateOnFinishedDownload() ? VENEZUELAN_VIBE : null;
             notification.number = TransferManager.instance().getDownloadsToReview();
             notification.flags |= Notification.FLAG_AUTO_CANCEL;
@@ -392,9 +386,6 @@ public class EngineService extends Service implements IEngineService {
 
     private static void startPermanentNotificationUpdatesTask(EngineService engineService) {
         try {
-            if (engineService.notificationUpdateDemon == null) {
-                engineService.notificationUpdateDemon = new NotificationUpdateDemon(engineService.getApplicationContext());
-            }
             engineService.notificationUpdateDemon.start();
         } catch (Throwable t) {
             LOG.warn(t.getMessage(), t);

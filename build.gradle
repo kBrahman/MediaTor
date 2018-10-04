@@ -24,11 +24,11 @@ repositories {
         dirs 'libs'
     }
 }
-
 def localProperties = new Properties()
 localProperties.load(rootProject.file('local.properties').newDataInputStream())
 def keystoreProperties = new Properties()
 keystoreProperties.load(rootProject.file("keystore.properties").newDataInputStream())
+
 android {
 
     compileSdkVersion 28
@@ -36,8 +36,8 @@ android {
 
     defaultConfig {
         applicationId "zig.zak.media.tor"
-        versionCode 10
-        versionName "1.9"
+        versionCode 11
+        versionName "1.10"
         multiDexEnabled true
         minSdkVersion 17
         targetSdkVersion 28
@@ -105,6 +105,6 @@ dependencies {
     implementation 'com.frostwire:jlibtorrent-android-x86:1.2.0.18-RC11'
     implementation 'com.google.android:flexbox:1.0.0'
     implementation(name: 'presage-moat-3.0.23-3.0.14', ext: 'aar')
-    implementation 'com.google.android.gms:play-services-ads:15.0.1'
+    implementation 'com.google.android.gms:play-services-ads:16.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 }
