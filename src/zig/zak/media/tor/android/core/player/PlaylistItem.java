@@ -34,7 +34,7 @@ public class PlaylistItem {
 
     @Override
     public boolean equals(Object o) {
-        return o != null && o instanceof PlaylistItem && fd.equals(((PlaylistItem) o).fd);
+        return o instanceof PlaylistItem && fd.equals(((PlaylistItem) o).fd);
     }
 
     @Override

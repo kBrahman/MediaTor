@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package zig.zak.media.tor.android.gui.activities;
+package zig.zak.media.tor.android.gui.activity;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -173,7 +173,9 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         }
 
         final Button downloadButton = findView(R.id.activity_preview_player_download_button);
-        downloadButton.setOnClickListener(v -> onDownloadButtonClick());
+        if (artistName.getText().toString().contains("YouTube"))
+            downloadButton.setVisibility(View.GONE);
+        else downloadButton.setOnClickListener(v -> onDownloadButtonClick());
 
         if (isFullScreen) {
             isFullScreen = false; //so it will make it full screen on what was an orientation change.

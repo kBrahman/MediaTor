@@ -25,7 +25,7 @@ import com.andrew.apollo.utils.MusicUtils;
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.Constants;
 import zig.zak.media.tor.android.core.FileDescriptor;
-import zig.zak.media.tor.android.gui.activities.ImageViewerActivity;
+import zig.zak.media.tor.android.gui.activity.ImageViewerActivity;
 import zig.zak.media.tor.android.gui.fragments.ImageViewerFragment;
 import zig.zak.media.tor.android.gui.transfers.TransferManager;
 import zig.zak.media.tor.android.gui.util.UIUtils;

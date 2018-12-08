@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package zig.zak.media.tor.android.gui.activities;
+package zig.zak.media.tor.android.gui.activity;
 
 import android.content.Intent;
 import android.graphics.Color;

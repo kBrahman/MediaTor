@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package zig.zak.media.tor.android.gui.activities;
+package zig.zak.media.tor.android.gui.activity;
 
 import android.app.ActionBar;
 import android.app.Dialog;
@@ -69,8 +69,8 @@ import zig.zak.media.tor.android.core.ConfigurationManager;
 import zig.zak.media.tor.android.core.Constants;
 import zig.zak.media.tor.android.gui.LocalSearchEngine;
 import zig.zak.media.tor.android.gui.NetworkManager;
-import zig.zak.media.tor.android.gui.activities.internal.MainController;
-import zig.zak.media.tor.android.gui.activities.internal.NavigationMenu;
+import zig.zak.media.tor.android.gui.activity.internal.MainController;
+import zig.zak.media.tor.android.gui.activity.internal.NavigationMenu;
 import zig.zak.media.tor.android.gui.dialogs.HandpickedTorrentDownloadDialogOnFetch;
 import zig.zak.media.tor.android.gui.dialogs.NewTransferDialog;
 import zig.zak.media.tor.android.gui.dialogs.SDPermissionDialog;
@@ -99,10 +99,7 @@ import zig.zak.media.tor.uxstats.UXStats;
 import static com.andrew.apollo.utils.MusicUtils.musicPlaybackService;
 import static zig.zak.media.tor.android.util.Asyncs.async;
 
-/**
- * @author gubatron
- * @author aldenml
- */
+
 public class MainActivity extends AbstractActivity implements OnDialogClickListener, ServiceConnection, ActivityCompat.OnRequestPermissionsResultCallback {
 
     private static final Logger LOG = Logger.getLogger(MainActivity.class);

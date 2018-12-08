@@ -63,15 +63,6 @@
             android:text="@string/dummy_size"/>
 
         <TextView
-            android:id="@+id/view_bittorrent_search_result_list_item_text_extra"
-            style="@style/ListItemExt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@id/view_bittorrent_search_result_list_item_file_size"
-            android:layout_toRightOf="@id/view_bittorrent_search_result_list_item_file_size"
-            android:text="@string/dummy_extra"/>
-
-        <TextView
             android:id="@+id/view_bittorrent_search_result_list_item_text_seeds"
             style="@style/ListItemExtra"
             android:layout_width="wrap_content"

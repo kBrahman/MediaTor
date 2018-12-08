@@ -23,7 +23,7 @@ import android.content.Intent;
 import android.view.View;
 
 import zig.zak.media.tor.R;
-import zig.zak.media.tor.android.gui.activities.TransferDetailActivity;
+import zig.zak.media.tor.android.gui.activity.TransferDetailActivity;
 import zig.zak.media.tor.android.gui.util.UIUtils;
 import zig.zak.media.tor.android.gui.views.MenuAction;
 import zig.zak.media.tor.util.Ref;

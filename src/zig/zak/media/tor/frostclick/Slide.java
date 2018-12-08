@@ -18,15 +18,7 @@
 
 package zig.zak.media.tor.frostclick;
 
-/**
- * @author gubatron
- * @author aldenml
- *
- */
 public class Slide {
-
-    /** Download the torrent file */
-    public static final int DOWNLOAD_METHOD_TORRENT = 1;
 
     /** Download the file via HTTP */
     public static final int DOWNLOAD_METHOD_HTTP = 2;

@@ -27,7 +27,7 @@ import android.widget.TextView;
 
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.Constants;
-import zig.zak.media.tor.android.gui.activities.MainActivity;
+import zig.zak.media.tor.android.gui.activity.MainActivity;
 import zig.zak.media.tor.android.gui.transfers.UIBittorrentDownload;
 import zig.zak.media.tor.android.gui.util.UIUtils;
 import zig.zak.media.tor.android.gui.views.AbstractDialog;

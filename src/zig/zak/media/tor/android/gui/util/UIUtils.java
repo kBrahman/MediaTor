@@ -56,7 +56,7 @@ import zig.zak.media.tor.android.core.Constants;
 import zig.zak.media.tor.android.core.FileDescriptor;
 import zig.zak.media.tor.android.core.player.CoreMediaPlayer;
 import zig.zak.media.tor.android.gui.Librarian;
-import zig.zak.media.tor.android.gui.activities.MainActivity;
+import zig.zak.media.tor.android.gui.activity.MainActivity;
 import zig.zak.media.tor.android.gui.dialogs.YesNoDialog;
 import zig.zak.media.tor.android.gui.services.Engine;
 import zig.zak.media.tor.android.gui.views.EditTextDialog;

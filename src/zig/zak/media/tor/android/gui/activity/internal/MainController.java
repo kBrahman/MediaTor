@@ -15,16 +15,16 @@
  * limitations under the License.
  */
 
-package zig.zak.media.tor.android.gui.activities.internal;
+package zig.zak.media.tor.android.gui.activity.internal;
 
 import android.app.Fragment;
 import android.content.Intent;
 
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.ConfigurationManager;
-import zig.zak.media.tor.android.gui.activities.MainActivity;
-import zig.zak.media.tor.android.gui.activities.SettingsActivity;
-import zig.zak.media.tor.android.gui.activities.WizardActivity;
+import zig.zak.media.tor.android.gui.activity.MainActivity;
+import zig.zak.media.tor.android.gui.activity.SettingsActivity;
+import zig.zak.media.tor.android.gui.activity.WizardActivity;
 import zig.zak.media.tor.android.gui.fragments.MyFilesFragment;
 import zig.zak.media.tor.android.gui.fragments.TransfersFragment;
 import zig.zak.media.tor.android.gui.fragments.TransfersFragment.TransferStatus;

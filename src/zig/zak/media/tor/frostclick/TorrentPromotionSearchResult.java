@@ -18,16 +18,12 @@
 
 package zig.zak.media.tor.frostclick;
 
+import org.apache.commons.io.FilenameUtils;
+
 import zig.zak.media.tor.licenses.License;
 import zig.zak.media.tor.licenses.Licenses;
 import zig.zak.media.tor.search.torrent.TorrentSearchResult;
 
-import org.apache.commons.io.FilenameUtils;
-
-/**
- * @author gubatron
- * @author aldenml
- */
 public class TorrentPromotionSearchResult implements TorrentSearchResult {
 
     private static final String FROSTCLICK_VENDOR = "FrostClick";

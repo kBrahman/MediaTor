@@ -21,7 +21,7 @@ package zig.zak.media.tor.android.gui.tasks;
 import android.content.Context;
 
 import zig.zak.media.tor.R;
-import zig.zak.media.tor.android.gui.activities.MainActivity;
+import zig.zak.media.tor.android.gui.activity.MainActivity;
 import zig.zak.media.tor.android.gui.dialogs.ConfirmSoundcloudDownloadDialog;
 import zig.zak.media.tor.android.gui.util.UIUtils;
 import zig.zak.media.tor.android.util.Asyncs;

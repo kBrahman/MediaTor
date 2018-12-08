@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package zig.zak.media.tor.android.gui.activities;
+package zig.zak.media.tor.android.gui.activity;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;

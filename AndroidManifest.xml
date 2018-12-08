@@ -32,7 +32,7 @@
         android:label="@string/application_label"
         android:theme="@style/Theme.MediaTor">
         <activity
-            android:name=".android.gui.activities.MainActivity"
+            android:name=".android.gui.activity.MainActivity"
             android:label="@string/application_label"
             android:launchMode="singleTask"
             android:protectionLevel="dangerous"
@@ -93,26 +93,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".android.gui.activities.WizardActivity"
+            android:name=".android.gui.activity.WizardActivity"
             android:label="@string/application_label"
             android:theme="@style/WizardActivity"/>
         <activity
-            android:name=".android.gui.activities.SettingsActivity"
+            android:name=".android.gui.activity.SettingsActivity"
             android:label="@string/activity_preferences_name"/>
         <activity
-            android:name=".android.gui.activities.ImageViewerActivity"
+            android:name=".android.gui.activity.ImageViewerActivity"
             android:label="@string/picture"/>
         <activity
-            android:name=".android.gui.activities.PreviewPlayerActivity"
+            android:name=".android.gui.activity.PreviewPlayerActivity"
             android:configChanges="screenSize"
             android:label="@string/playing"/>
         <activity
-            android:name=".android.gui.activities.VPNStatusDetailActivity"
+            android:name=".android.gui.activity.VPNStatusDetailActivity"
             android:excludeFromRecents="true"
             android:label="@string/activity_VPN"
             android:noHistory="true"/>
         <activity
-            android:name=".android.gui.activities.TransferDetailActivity"
+            android:name=".android.gui.activity.TransferDetailActivity"
             android:label="@string/title_activity_transfer_detail"/>
 
         <!-- apollo activities -->
@@ -244,5 +244,8 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths"/>
         </provider>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/app_id"/>
     </application>
 </manifest>

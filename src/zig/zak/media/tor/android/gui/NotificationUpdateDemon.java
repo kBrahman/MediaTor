@@ -30,7 +30,7 @@ import android.widget.RemoteViews;
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.ConfigurationManager;
 import zig.zak.media.tor.android.core.Constants;
-import zig.zak.media.tor.android.gui.activities.MainActivity;
+import zig.zak.media.tor.android.gui.activity.MainActivity;
 import zig.zak.media.tor.android.gui.transfers.TransferManager;
 import zig.zak.media.tor.android.gui.util.UIUtils;
 import zig.zak.media.tor.android.gui.views.TimerObserver;

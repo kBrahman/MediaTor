@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.SystemClock;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,7 +20,7 @@ import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.Constants;
 import zig.zak.media.tor.android.core.MediaType;
 import zig.zak.media.tor.android.gui.LocalSearchEngine;
-import zig.zak.media.tor.android.gui.activities.PreviewPlayerActivity;
+import zig.zak.media.tor.android.gui.activity.PreviewPlayerActivity;
 import zig.zak.media.tor.android.gui.util.UIUtils;
 import zig.zak.media.tor.android.gui.views.AbstractListAdapter;
 import zig.zak.media.tor.android.gui.views.ClickAdapter;
@@ -39,8 +38,6 @@ import zig.zak.media.tor.search.youtube.YouTubeCrawledSearchResult;
 import zig.zak.media.tor.search.youtube.YouTubeCrawledStreamableSearchResult;
 import zig.zak.media.tor.search.youtube.YouTubePackageSearchResult;
 import zig.zak.media.tor.util.Ref;
-import zig.zak.media.tor.uxstats.UXAction;
-import zig.zak.media.tor.uxstats.UXStats;
 
 public abstract class SearchResultListAdapter extends AbstractListAdapter<SearchResult> {
 
@@ -91,9 +88,6 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
         if (sr instanceof TorrentSearchResult) {
             populateTorrentPart(view, (TorrentSearchResult) sr);
         }
-        if (sr instanceof YouTubeCrawledSearchResult) {
-            populateYouTubePart(view, (YouTubeCrawledSearchResult) sr);
-        }
 
         maybeMarkTitleOpened(view, sr);
         populateThumbnail(view, sr);
@@ -122,10 +116,6 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
         } else {
             fileSize.setText("...");
         }
-
-        TextView extra = findView(view, R.id.view_bittorrent_search_result_list_item_text_extra);
-        extra.setText(FilenameUtils.getExtension(sr.getFilename()));
-
         TextView seeds = findView(view, R.id.view_bittorrent_search_result_list_item_text_seeds);
         seeds.setText("");
 
@@ -152,11 +142,6 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
             overlayView.setVisibility(View.GONE);
             overlayView.setPlaybackState(MediaPlaybackOverlayPainter.MediaPlaybackState.NONE);
         }
-    }
-
-    private void populateYouTubePart(View view, YouTubeCrawledSearchResult sr) {
-        TextView extra = findView(view, R.id.view_bittorrent_search_result_list_item_text_extra);
-        extra.setText(FilenameUtils.getExtension(sr.getFilename()));
     }
 
     private void populateTorrentPart(View view, TorrentSearchResult sr) {

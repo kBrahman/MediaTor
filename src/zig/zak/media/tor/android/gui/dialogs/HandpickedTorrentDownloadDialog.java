@@ -26,7 +26,7 @@ import android.view.ViewGroup;
 
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.MediaType;
-import zig.zak.media.tor.android.gui.activities.MainActivity;
+import zig.zak.media.tor.android.gui.activity.MainActivity;
 import zig.zak.media.tor.android.gui.services.Engine;
 import zig.zak.media.tor.android.gui.transfers.TorrentFetcherDownload;
 import zig.zak.media.tor.android.gui.transfers.TransferManager;

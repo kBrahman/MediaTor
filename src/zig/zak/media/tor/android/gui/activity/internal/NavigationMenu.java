@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-package zig.zak.media.tor.android.gui.activities.internal;
+package zig.zak.media.tor.android.gui.activity.internal;
 
 import android.app.Fragment;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Handler;
 import android.os.Looper;
@@ -34,7 +33,7 @@ import android.widget.TextView;
 
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.Constants;
-import zig.zak.media.tor.android.gui.activities.MainActivity;
+import zig.zak.media.tor.android.gui.activity.MainActivity;
 import zig.zak.media.tor.android.gui.fragments.TransfersFragment;
 import zig.zak.media.tor.android.gui.services.Engine;
 import zig.zak.media.tor.android.gui.util.UIUtils;
