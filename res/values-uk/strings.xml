@@ -54,7 +54,7 @@
     <string name="azureus_manager_item_ready">В очікуванні інших торрентів в черги</string>
     <string name="nickname">Нік</string>
     <string name="drawer_close">Закрити панель навігації</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire є файловий браузер і додаток-завантажувач, тому він повинен бути в змозі отримати доступ до диска.\n\nБез ваших дозволівMediaTorне може працювати.\n\nХочете спробувати ще раз?</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire є файловий браузер і додаток-завантажувач, тому він повинен бути в змозі отримати доступ до диска.\n\nБез ваших дозволів MediaTor не може працювати.\n\nХочете спробувати ще раз?</string>
     <string name="peer_http_upload_status_unknown">Невідомий</string>
     <string name="unprotected_connection">незахищений</string>
     <string name="video">Відео</string>
@@ -110,7 +110,7 @@
     <string name="ten_dollars">$10</string>
     <string name="my_files">Мої файли</string>
     <string name="no_network_connection">Немає підключення до мережі</string>
-    <string name="and_choose_what_filetypes_to_share">Перевірте, які типи файлів, які ви хочете включити для спільного використання в мережі мобільного зв\'язкуMediaTorі прилеглих Wi-Fi з підтримкою настільних комп\'ютерів.</string>
+    <string name="and_choose_what_filetypes_to_share">Перевірте, які типи файлів, які ви хочете включити для спільного використання в мережі мобільного зв\'язку MediaTor і прилеглих Wi-Fi з підтримкою настільних комп\'ютерів.</string>
     <string name="delete_n_torrents_indexed">Вилучені %d торрентів індексуватися</string>
     <string name="saving_to_internal_memory">Збереження у внутрішню пам\'ять</string>
     <string name="dialog_desktop_upload_request_text_text">%1$s хоче відправити вам %2$s на загальну суму %3$s</string>
@@ -130,7 +130,7 @@
     <string name="retry_search">Будь ласка, спробуйте</string>
     <string name="the_file_could_not_be_seeded_bittorrent_will_remain_disconnected">Файл не може бути посіяні. BitTorrent залишатиметься відключений.</string>
     <string name="toggle_sharing_selected_files">Перемикання загального доступу</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android буде стерти завантажені файли, якщоMediaTorвидаляється.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android буде стерти завантажені файли, якщо MediaTor видаляється.</string>
     <string name="please_connect">Підключайте Щоб скористатися цією функцією</string>
     <string name="protected_connection">VPN-захищений</string>
     <string name="clear_finished">Ясно Закінчено</string>
@@ -149,7 +149,7 @@
     <string name="applications">Додатки</string>
     <string name="the_file_could_not_be_seeded_enable_seeding">Файл не може бути посіяні. Включення сідування налаштувань</string>
     <string name="media_type_video">Відео</string>
-    <string name="accept_intent">Я не буду використовуватиMediaTorза порушення авторських прав</string>
+    <string name="accept_intent">Я не буду використовувати MediaTor за порушення авторських прав</string>
     <string name="remove_torrent_and_data">Видалити Torrent і дані</string>
     <string name="seeding_settings">Посів Налаштування</string>
     <string name="love_frostwire">Любов FrostWire</string>
@@ -191,7 +191,7 @@
     <string name="menu_delete_shortcut_label">Del</string>
     <string name="magnet_url_added">Магніт URL доданий до передачам. (Магніти найкраще працюють на Wi-Fi)</string>
     <string name="share_finished_downloads_summary">Завершення завантаження будуть доступні іншим користувачам Frostwire в мережі Wi-Fi.</string>
-    <string name="frostwire_shutting_down_no_permissions">На жаль,MediaTorне може тривати без вашої згоди на доступ до диска.</string>
+    <string name="frostwire_shutting_down_no_permissions">На жаль, MediaTor не може тривати без вашої згоди на доступ до диска.</string>
     <string name="http_download_status_uncompressing">Uncompressing</string>
     <string name="one_time_purchase">Свого часу покупки</string>
     <string name="send_file_using">Відправити файл за допомогою</string>
@@ -257,7 +257,7 @@
     <string name="copy">Копіювати</string>
     <string name="updating">Оновлення</string>
     <string name="help_translate_frostwire">Допоможіть перевести FrostWire</string>
-    <string name="tell_others_subject">ОтрималиMediaTorдля Android ще?</string>
+    <string name="tell_others_subject">Отримали MediaTor для Android ще?</string>
     <string name="files_shared_by">файли поділяють</string>
     <string name="clear_messages">Скидання повідомлень</string>
     <string name="best_value">Найкраща ціна</string>
@@ -286,7 +286,7 @@
     <string name="wizard_previous">Попередній</string>
     <string name="azureus_manager_item_downloading">Завантаження</string>
     <string name="there_is_n_torrents_indexed">Існує %d торрентів індексуватися.</string>
-    <string name="wifi_sharing_disabled">Спільне використання Wi-Fi вимкнений.\n\nСпільне використання Wi-Fi можна використовувати для обміну файлами між локальноMediaTorхарчуванням пристроїв, підключених до тієї ж мережі Wi-Fi.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Вивчайте більше.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">Спільне використання Wi-Fi вимкнений.\n\nСпільне використання Wi-Fi можна використовувати для обміну файлами між локально MediaTor харчуванням пристроїв, підключених до тієї ж мережі Wi-Fi.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Вивчайте більше.&lt;/a&gt;</string>
     <string name="pausing">Призупинення</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">Як інші бачать вас в локальній мережі (Wi-Fi)</string>
     <string name="yes_no_cancel_transfer_question">Ви впевнені, що хочете зупинити і видалити це завантаження зі списку (ніякі дані не будуть видалені)?</string>
@@ -367,7 +367,7 @@
     <string name="free_download">Безкоштовне завантаження</string>
     <string name="internet_discovery_summary">Підключення до віддалених аналогам в мережі Інтернет.</string>
     <string name="couldnt_share_file">Неможливо розділити файл. Дивний шлях знайдений.</string>
-    <string name="learn_how_to_get_more_results">СпробуйтеMediaTorPlus для більшої кількості результатів</string>
+    <string name="learn_how_to_get_more_results">Спробуйте MediaTor Plus для більшої кількості результатів</string>
     <string name="use_mobile_data">Використання 3G/4G для BitTorrent</string>
     <string name="seeding_wifi_settings_explanation">Насіння тільки при використанні Wi-Fi з\'єднання. Уникайте додаткових витрат вашого оператора мобільного зв\'язку.</string>
     <string name="storage_setting_confirm_dialog_title">SD карта</string>
@@ -387,7 +387,7 @@
     <string name="transfers_context_menu_copy_infohash">Копіювати InfoHash</string>
     <string name="wanna_download_question">Хочете завантажити?</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">УВАГА: Всі файли, збережені за допомогоюMediaTorна SD-карті будуть видалені Android, а не FrostWire, якщо ви видалите додаток.</string>
+    <string name="storage_setting_warning">УВАГА: Всі файли, збережені за допомогою MediaTor на SD-карті будуть видалені Android, а не FrostWire, якщо ви видалите додаток.</string>
     <string name="not_sharing_files">не поділяє будь-які файли.</string>
     <string name="sd_permission_no_accessible_path">Ви вибрали в SD шлях недоступний більше. Натисніть кнопку OK, щоб вибрати знову.</string>
     <string name="select_deselect_all">Вибрати/Очистити все</string>
@@ -412,7 +412,7 @@
     <string name="error_no_internet_connection">Помилка: Перевірте з\'єднання з Інтернетом</string>
     <string name="azureus_manager_item_error">Помилка</string>
     <string name="why_we_need_storage_permissions">Навіщо нам потрібні права зберігання.</string>
-    <string name="get_a_frostwire_tshirt">ОтриматиMediaTorфутболку</string>
+    <string name="get_a_frostwire_tshirt">Отримати MediaTor футболку</string>
     <string name="media_type_applications">Додатки</string>
     <string name="invalid_filename">Неправильне ім\'я файлу</string>
     <string name="use_archiveorg">користування Archive.org</string>
@@ -458,7 +458,7 @@
     <string name="loading">Загрузка</string>
     <string name="downloading_metadata">Завантаження метаданих</string>
     <string name="storage_preference_summary">Розташування за замовчуванням для зберігання, де будуть збережені файли.</string>
-    <string name="notify_frostwire_is_running">Повідомте, якщоMediaTorпрацює</string>
+    <string name="notify_frostwire_is_running">Повідомте, якщо MediaTor працює</string>
     <string name="torrent_scheme_download_not_supported">Завантажити не підтримується</string>
     <string name="app_shutdown_dlg_title">Закрити</string>
     <string name="dht_contacts">DHT контакти</string>
@@ -508,7 +508,7 @@
     <string name="cheaper_than_beer">Дешевше, ніж пиво</string>
     <string name="type_here_to_filter">Введіть фільтр</string>
     <string name="block">блок</string>
-    <string name="rating_reminder_description">Якщо ви любитеMediaTorласка, знайдіть час, щоб оцінити нас.</string>
+    <string name="rating_reminder_description">Якщо ви любите MediaTor ласка, знайдіть час, щоб оцінити нас.</string>
     <string name="please_update_to_v">Оновлення до v. %s</string>
     <string name="azureus_manager_item_finishing">Оздоблювальні</string>
     <string name="free_sponsored_app">Безкоштовні Рекламні додатки</string>
@@ -543,7 +543,7 @@
     <string name="try_valid_port_next_time">Спробуйте наступного разу, коли діючий порт 1000 і 65500</string>
     <string name="one_dollar">$1</string>
     <string name="enable_seeding">включити посів</string>
-    <string name="storage_setting_confirm_dialog_text">Я розумію, що всі файли, завантажені на карту пам\'яті SD за допомогоюMediaTorбудуть видалені ANDROID момент додатокMediaTorвидаляється з цього пристрою, і я не буду триматиMediaTorLLC несе відповідальність за будь-які файли втрачені.</string>
+    <string name="storage_setting_confirm_dialog_text">Я розумію, що всі файли, завантажені на карту пам\'яті SD за допомогою MediaTor будуть видалені ANDROID момент додаток MediaTor видаляється з цього пристрою, і я не буду тримати MediaTor LLC несе відповідальність за будь-які файли втрачені.</string>
     <string name="simultaneous_uploads">Одночасні Wifi Завантаження</string>
     <string name="cant_open_file_does_not_exist">Я не можу відкрити %1$s, файл не існує.</string>
     <string name="internet_discovery">Internet Discovery</string>
@@ -676,7 +676,7 @@
     <string name="transfer_detail_storage_header">Шлях до зберігання:</string>
     <string name="seeding_time">Час сіяння</string>
     <string name="working">Робочий</string>
-    <string name="one_file_shared">Один файл був надісланий на пристроїMediaTorв тій же мережі Wi-Fi.</string>
+    <string name="one_file_shared">Один файл був надісланий на пристрої MediaTor в тій же мережі Wi-Fi.</string>
     <string name="pieces">Шматки</string>
     <string name="upload_limit">Ліміт завантаження</string>
     <string name="enter_valid_tracker_url_here">Введіть дійсний URL-адресу трекера тут</string>
@@ -699,7 +699,7 @@
     <string name="sequential_download">Послідовне завантаження</string>
     <string name="downloaded_n">Завантажено %1$s / </string>
     <string name="transfer_detail_title_header">Ім\'я:</string>
-    <string name="n_files_shared">%d файлів було надіслано на пристроїMediaTorв тій же мережі Wi-Fi.</string>
+    <string name="n_files_shared">%d файлів було надіслано на пристрої MediaTor в тій же мережі Wi-Fi.</string>
     <string name="time_elapsed">Час минув</string>
     <string name="remove_tracker">Видалити трекер</string>
     <string name="comment">Коментар</string>

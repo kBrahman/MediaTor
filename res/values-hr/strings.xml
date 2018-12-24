@@ -114,8 +114,8 @@
     <string name="set_as_wallpaper">Postaviti kao pozadinu</string>
     <string name="failed_to_set_wallpaper">Nemoguce postaviti pozadinsku sliku</string>
     <string name="tell_others_chooser">Tweet / SMS / Email</string>
-    <string name="tell_others_subject">Imate liMediaTorza Android?</string>
-    <string name="and_choose_what_filetypes_to_share">Provjerite kakve tipove dokumenata želite omogućiti za dijeljenje naMediaTormobilnoj mreži i obližnjim Wi-Fi omogućenim računalima.</string>
+    <string name="tell_others_subject">Imate li MediaTor za Android?</string>
+    <string name="and_choose_what_filetypes_to_share">Provjerite kakve tipove dokumenata želite omogućiti za dijeljenje na MediaTor mobilnoj mreži i obližnjim Wi-Fi omogućenim računalima.</string>
     <string name="before_getting_started">Prije nego započnete</string>
     <string name="user_connecting">Korisnik se povezuje</string>
     <string name="accept_connection_from">Prihvatiti konekciju od</string>
@@ -127,7 +127,7 @@
     <string name="browse">Pregledati</string>
     <string name="files_shared_by">Dokumenti dijeljeni od</string>
     <string name="mark_your_territory">Obilježite vaš teritorij</string>
-    <string name="get_a_frostwire_tshirt">NabaviteMediaTormajicu</string>
+    <string name="get_a_frostwire_tshirt">Nabavite MediaTor majicu</string>
     <string name="internal_port">Interni port</string>
     <string name="external_port">Eksterni port</string>
     <string name="device">Uredaj</string>
@@ -298,7 +298,7 @@
     <string name="delete_n_torrents_indexed">Obrisano %d indeksiranih torrenata</string>
     <string name="dialog_desktop_upload_request_text_text">%1$s vam želi poslati %2$s ukupno %3$s</string>
     <string name="please_check_connection_status_before_resuming_download">Molimo provjerite status vaše internetske veze prije nastavka.</string>
-    <string name="accept_intent">Neću koristitiMediaTorza kršenje autorskih prava</string>
+    <string name="accept_intent">Neću koristiti MediaTor za kršenje autorskih prava</string>
     <string name="toast_on_connect">BitTorrent jezgra pokrenuta.</string>
     <string name="cloud_downloads_coming">Oprostite: pokretanje preuzimanja u oblaku odavde biti će dostupno u nadolazećim nadogradnjama.</string>
     <string name="menu_space_shortcut_label">Razmak</string>
@@ -311,7 +311,7 @@
     <string name="failed_to_add_download">Nije moguće dodati preuzimanje</string>
     <string name="my_filetype">Moje %s</string>
     <string name="torrent_max_download_speed_summary">Maksimalna brzina preuzimanja</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android će obrisati preuzete datoteke ako jeMediaTordeinstaliran.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android će obrisati preuzete datoteke ako je MediaTor deinstaliran.</string>
     <string name="device_memory">Memorija uređaja</string>
     <string name="wifi_sharing_settings">Wi-Fi postavke dijeljenja</string>
     <string name="app_shutdown_dlg_message">Ovo će ugasiti sve prijenose i servise u pozadini. Jeste li sigurni?</string>
@@ -324,7 +324,7 @@
     <string name="are_you_sure_delete_files">Jeste li sigurni da želite PERMANENTNO OBRISATI odabrane datoteke sa vašeg uređaja?</string>
     <string name="menu_delete_shortcut_label">Del</string>
     <string name="magnet_url_added">Magnet URL dodan u prijenose. (magneti najbolje rade na Wi-Fiu)</string>
-    <string name="share_finished_downloads_summary">Završena preuzimanja će biti dostupna ostalimMediaTorkorisnicima na vašoj Wi-Fi mreži.</string>
+    <string name="share_finished_downloads_summary">Završena preuzimanja će biti dostupna ostalim MediaTor korisnicima na vašoj Wi-Fi mreži.</string>
     <string name="or_enter_url">ili unesite URL</string>
     <string name="http_download_status_uncompressing">Dekompresiram</string>
     <string name="yes_no_cancel_delete_transfer_question">Jeste li sigurni da želite odbaciti ovo preuzimanje (preuzete datoteke će biti izbrisane)?</string>
@@ -361,7 +361,7 @@
     <string name="transfers_select_all">svi</string>
     <string name="crawl_cache_size">Crawl cache %1$.2fMB</string>
     <string name="there_is_n_torrents_indexed">%d torrenata indeksirano</string>
-    <string name="wifi_sharing_disabled">Wi-Fi dijeljenje je ugašeno.\n\nWi-Fi dijeljenje se može koristiti za lokalno dijeljenje datoteka izmeđuMediaToruređaja spojenih na istu Wi-Fi mrežu.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Saznaj više.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">Wi-Fi dijeljenje je ugašeno.\n\nWi-Fi dijeljenje se može koristiti za lokalno dijeljenje datoteka između MediaTor uređaja spojenih na istu Wi-Fi mrežu.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Saznaj više.&lt;/a&gt;</string>
     <string name="pausing">Pauziram</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">Kako vas ostali vide na lokalnoj mreži (Wi-Fi)</string>
     <string name="yes_no_cancel_transfer_question">Jeste li sigurni da želite zaustaviti i obrisati ovo preuzimanje sa liste (podatci neće biti obrisani)?</string>
@@ -396,7 +396,7 @@
     <string name="seed_finished_torrents">Dijeli završene torrente</string>
     <string name="welcome_to_frostwire">Dobrodošli u MediaTor</string>
     <string name="wanna_download_question">Želite li preuzeti?</string>
-    <string name="storage_setting_warning">UPOZORENJE: Sve datoteke kojeMediaTorpreuzme na SD karticu će ANDROID obrisati ako deinstalirate FrostWire.</string>
+    <string name="storage_setting_warning">UPOZORENJE: Sve datoteke koje MediaTor preuzme na SD karticu će ANDROID obrisati ako deinstalirate FrostWire.</string>
     <string name="cancel_menu_action">Zaustavi prijenose</string>
     <string name="canceling">Zaustavljam</string>
     <string name="sent_file_to_chat">Datoteka poslana u Chat</string>
@@ -452,7 +452,7 @@
     <string name="torrent_max_upload_speed">Maksimalna brzina slanja</string>
     <string name="download_type_not_supported">Tip preuzimanja nije podržan</string>
     <string name="clear_torrent_index">Očisti indeks torrenata</string>
-    <string name="storage_setting_confirm_dialog_text">Razumijem da će ANDROID obrisati sve datoteke kojeMediaTorpreuzme na SD karticu kada seMediaToraplikacija deinstalirasa ovog uređaja I da neću teretitiMediaTorLLC za bilo koje izgubljene datoteke.</string>
+    <string name="storage_setting_confirm_dialog_text">Razumijem da će ANDROID obrisati sve datoteke koje MediaTor preuzme na SD karticu kada se MediaTor aplikacija deinstalirasa ovog uređaja I da neću teretiti MediaTor LLC za bilo koje izgubljene datoteke.</string>
     <string name="cant_open_file_does_not_exist">Ne mogu otvoriti %1$s, datoteka ne postiji.</string>
     <string name="internet_discovery">Internetsko otkrivanje</string>
     <string name="anonymous_usage_statistics">Anonimne statistike korištenja</string>
@@ -478,18 +478,18 @@
     <string name="restarting">Ponovno pokrećem…</string>
     <string name="keep_in_touch">Ostanite u kontaktu!</string>
     <string name="action_menu_overflow_description">Više opcija</string>
-    <string name="learn_how_to_get_more_results">PokušajteMediaTorPlus za više rezultata</string>
+    <string name="learn_how_to_get_more_results">Pokušajte MediaTor Plus za više rezultata</string>
     <string name="media_preview">%s pregled</string>
     <string name="send_tip_donation">Pošaljite napojnicu ili donaciju</string>
-    <string name="rating_reminder_description">Ako voliteMediaTormolimo odvojite trenutak da nas ocijenite.</string>
+    <string name="rating_reminder_description">Ako volite MediaTor molimo odvojite trenutak da nas ocijenite.</string>
     <string name="transfers_context_menu_copy_magnet">Kopiraj magnet poveznicu</string>
     <string name="try_other_keywords">Pokušajte manje/ostale ključne riječi</string>
     <string name="thank_you">Hvala Vam!</string>
     <string name="restarting_summary">FrostWire će se sada ponovno pokrenuti kako bi dozvole stupile na snagu</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire je preglednik datoteka i aplikacija za preuzimanje te treba imati pristup vašem disku.\n\nBez vaše dozvoleMediaTorne može raditi.\n\nŽelite li pokušati ponovno?</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire je preglednik datoteka i aplikacija za preuzimanje te treba imati pristup vašem disku.\n\nBez vaše dozvole MediaTor ne može raditi.\n\nŽelite li pokušati ponovno?</string>
     <string name="transfers_context_menu_copy_magnet_copied">Magnet kopiran u međuspremnik</string>
     <string name="wifi_seeding_has_been_turned_off">Wi-Fi nije dostupan, dijeljenje je ugašeno</string>
-    <string name="frostwire_shutting_down_no_permissions">Oprostite,MediaTorne može nastaviti bez vaše dozvole za pristup disku.</string>
+    <string name="frostwire_shutting_down_no_permissions">Oprostite, MediaTor ne može nastaviti bez vaše dozvole za pristup disku.</string>
     <string name="enable_dht_summary">Koristi DHT za najavu/traženje torrent peerova</string>
     <string name="transfers_context_menu_copy_infohash_copied">Infohash je kopiran u međuspremnik</string>
     <string name="issue_with_tip_donation_uri">Nešto nije u redu s vašom adresom za napojnice/donacije</string>
@@ -572,7 +572,7 @@
     <string name="cheaper_than_lattes">Jeftinije nego lattes</string>
     <string name="vpn_off_toast_notification">Vaša veza ne može biti privatna.</string>
     <string name="help_translate_or_proofread_frostwire">Pomozite u prijevodu ili korekturu FrostWire</string>
-    <string name="notify_frostwire_is_running">Obavijesti akoMediaTorje pokrenut</string>
+    <string name="notify_frostwire_is_running">Obavijesti ako MediaTor je pokrenut</string>
     <string name="dht_contacts">DHT kontakti</string>
     <string name="changelog">Changelog</string>
     <string name="terms_of_use">Uvjeti korištenja</string>
@@ -671,8 +671,8 @@
     <string name="vpn_find_out_more">Saznaj više</string>
     <string name="vpn_suggestion_nordvpn">NORDVPN \n Besplatno 7-dnevno probno razdoblje</string>
     <string name="play_store_out_of_sync">Trgovina Google Play treba sinkronizirati, pričekajte nekoliko minuta</string>
-    <string name="one_file_shared">Jedna je datoteka podijeljena sMediaToruređajima na istoj Wi-Fi mreži.</string>
-    <string name="n_files_shared">Dijeljeno je %d datotekaMediaToruređajima na istoj Wi-Fi mreži.</string>
+    <string name="one_file_shared">Jedna je datoteka podijeljena s MediaTor uređajima na istoj Wi-Fi mreži.</string>
+    <string name="n_files_shared">Dijeljeno je %d datoteka MediaTor uređajima na istoj Wi-Fi mreži.</string>
     <string name="uploaded">Preneseni</string>
     <string name="trackers">Trackers</string>
     <string name="source_type">Izvor: %1$s</string>

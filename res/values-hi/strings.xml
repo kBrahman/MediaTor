@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[प्रकटीकरण हालांकि अपने डाउनलोड के लिए सिफारिश की, <b>आपMediaTorका उपयोग करने के लिए एक वीपीएन जरूरत नहीं है। </b>]]></string>
+    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[प्रकटीकरण हालांकि अपने डाउनलोड के लिए सिफारिश की, <b>आप MediaTor का उपयोग करने के लिए एक वीपीएन जरूरत नहीं है। </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> लागू टैग को स्पर्श करें]]></string>
     <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>आपकी गोपनीयता एक मौलिक मानव अधिकार है</b>. एक असुरक्षित कनेक्शन का अर्थ है कि आप <b>डाउनलोड, खोज, संदेश</b> सहित ऑनलाइन सबकुछ करते हैं, आपके नेटवर्क पर किसी भी व्यक्ति द्वारा निगरानी और अवरोध किया जा सकता है, उदा। इंटरनेट सेवा प्रदाता, हैकर्स, सरकारें।<br><br><b>हम दृढ़ता से एक वीपीएन सेवा का उपयोग करने की सलाह देते हैं</b>. <br> यहां कुछ विकल्प हैं जो विश्वसनीय सेवा प्रदान करते हैं और फ्रॉस्टवायर के साथ अच्छी तरह से काम करते हैं:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ आप एक वीपीएन का उपयोग कर इंटरनेट से जुड़े हुए हैं।<br><br> यदि आप पहले से नहीं हैं, तो हम आपके कनेक्शन को एन्क्रिप्ट करने के लिए नीचे दी गई सेवाओं में से एक का उपयोग करने की सलाह देते हैं और <b>अपनी गोपनीयता की रक्षा करें</b>। ]]></string>
@@ -325,7 +325,7 @@
     <string name="clear_search_cache">साफ खोज कैश</string>
     <string name="enable_wifi_sharing">वाईफ़ाई शेयरिंग</string>
     <string name="drawer_close">बंद नेविगेशन दराज</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire, एक फ़ाइल ब्राउज़र और डाउनलोडर app है इसलिए इसे अपने डिस्क का उपयोग करने में सक्षम होने की जरूरत\n\nआपकी अनुमति के बिनाMediaTorकाम नहीं कर सकता।\n\nफिर से कोशिश करना चाहते हैं?</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire, एक फ़ाइल ब्राउज़र और डाउनलोडर app है इसलिए इसे अपने डिस्क का उपयोग करने में सक्षम होने की जरूरत\n\nआपकी अनुमति के बिना MediaTor काम नहीं कर सकता।\n\nफिर से कोशिश करना चाहते हैं?</string>
     <string name="unprotected_connection">अरक्षित</string>
     <string name="transfers_context_menu_copy_magnet_copied">चुंबक क्लिपबोर्ड करने के लिए नकल</string>
     <string name="buy_uppercase">खरीदें</string>
@@ -353,7 +353,7 @@
     <string name="paused">रोके गए</string>
     <string name="retry_search">पुन: प्रयास करें</string>
     <string name="the_file_could_not_be_seeded_bittorrent_will_remain_disconnected">फ़ाइल वरीयता प्राप्त नहीं किया जा सकता है। BitTorrent काट दिया रहेगा।</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">एंड्रॉयड डाउनलोड की फ़ाइलें मिटा देगा यदिMediaTorरद्द की है।</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">एंड्रॉयड डाउनलोड की फ़ाइलें मिटा देगा यदि MediaTor रद्द की है।</string>
     <string name="protected_connection">वीपीएन की रक्षा की</string>
     <string name="use_eztv">उपयोग Eztv</string>
     <string name="reject">अस्वीकार</string>
@@ -380,7 +380,7 @@
     <string name="player_paused_press_and_hold_to_stop">प्लेयर रुका हुआ है। (सुझाव: प्रेस और बंद करने के लिए पकड़)</string>
     <string name="menu_delete_shortcut_label">मिटाना</string>
     <string name="magnet_url_added">चुंबक यूआरएल स्थानान्तरण के लिए कहा। (मैग्नेट वाई-फाई पर सबसे अच्छा काम करते हैं)</string>
-    <string name="frostwire_shutting_down_no_permissions">क्षमा करें,MediaTorडिस्क का उपयोग करने के लिए आपकी अनुमति के बिना जारी नहीं रख सकते।</string>
+    <string name="frostwire_shutting_down_no_permissions">क्षमा करें, MediaTor डिस्क का उपयोग करने के लिए आपकी अनुमति के बिना जारी नहीं रख सकते।</string>
     <string name="http_download_status_uncompressing">Uncompressing</string>
     <string name="one_time_purchase">एक बार खरीदे</string>
     <string name="activity_VPN">संबंध</string>
@@ -421,10 +421,10 @@
     <string name="transfers_select_all">सब</string>
     <string name="desktop_transfer_status_cancelled">रद्द</string>
     <string name="thirty_days">तीस दिन</string>
-    <string name="donation_thanks">आपMediaTorसहायक लिए बहुत बहुत धन्यवाद</string>
+    <string name="donation_thanks">आप MediaTor सहायक लिए बहुत बहुत धन्यवाद</string>
 
     <string name="crawl_cache_size">क्रॉल कैश %1$.2fMB</string>
-    <string name="wifi_sharing_disabled">वाईफ़ाई बंटवारे बंद है।\n\nवाई-फाई के बंटवारे ही वाई-फाई नेटवर्क से जुड़ेMediaTorसंचालित उपकरणों के बीच स्थानीय स्तर पर फ़ाइलों को साझा करने के लिए इस्तेमाल किया जा सकता है।\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;और अधिक जानें।&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">वाईफ़ाई बंटवारे बंद है।\n\nवाई-फाई के बंटवारे ही वाई-फाई नेटवर्क से जुड़े MediaTor संचालित उपकरणों के बीच स्थानीय स्तर पर फ़ाइलों को साझा करने के लिए इस्तेमाल किया जा सकता है।\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;और अधिक जानें।&lt;/a&gt;</string>
     <string name="pausing">रोकना</string>
     <string name="azureus_manager_not_created">डाउनलोड एसडी कार्ड के साथ नहीं बनाया जा सकता मुहिम शुरू</string>
     <string name="dummy_title_bold">[बोल्ड शीर्षक]</string>
@@ -463,7 +463,7 @@
     <string name="transfers_context_resume_all_torrent_transfers">सभी धार स्थानान्तरण फिर से शुरू</string>
     <string name="free_download">मुफ्त डाउनलोड</string>
     <string name="couldnt_share_file">फ़ाइल का हिस्सा नहीं हो सका। अजीब पथ पाया।</string>
-    <string name="learn_how_to_get_more_results">अधिक परिणामों के लिए प्रयास करेंMediaTorप्लस</string>
+    <string name="learn_how_to_get_more_results">अधिक परिणामों के लिए प्रयास करें MediaTor प्लस</string>
     <string name="storage_setting_confirm_dialog_title">एसडी कार्ड</string>
     <string name="no_trial_period_included">कोई परीक्षण अवधि शामिल</string>
     <string name="cant_resume_torrent_transfers">धार स्थानान्तरण फिर से शुरू नहीं कर सकते। की स्थिति की जाँच "सेटिंग्स" > "BitTorrent कनेक्शन स्थिति"</string>
@@ -473,7 +473,7 @@
     <string name="current_plan">वर्तमान योजना</string>
     <string name="transfers_context_menu_copy_infohash">कॉपी जानकारी हैश</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">चेतावनी: सभी फाइलों को एसडी कार्ड परMediaTorसे बचाया, एंड्रॉयड, नहींMediaTorद्वारा हटा दिया जाएगा आप अनुप्रयोग की स्थापना रद्द करें।</string>
+    <string name="storage_setting_warning">चेतावनी: सभी फाइलों को एसडी कार्ड पर MediaTor से बचाया, एंड्रॉयड, नहीं MediaTor द्वारा हटा दिया जाएगा आप अनुप्रयोग की स्थापना रद्द करें।</string>
     <string name="sd_permission_no_accessible_path">पथ आप एसडी में चुने गए अब और सुलभ नहीं है। फिर से चयन करने के लिए प्रेस ठीक है।</string>
     <string name="select_deselect_all">का चयन करें /अचयनित सभी</string>
     <string name="canceling">रद्द</string>
@@ -507,7 +507,7 @@
     <string name="loading">लोड हो रहा है</string>
     <string name="downloading_metadata">तत्व आंकड़े डाउन लोड हो रहे हैं</string>
     <string name="storage_preference_summary">जहां फाइलों को सहेज लिया जाएगा डिफ़ॉल्ट भंडारण स्थान।</string>
-    <string name="notify_frostwire_is_running">यदिMediaTorचल रहा है |</string>
+    <string name="notify_frostwire_is_running">यदि MediaTor चल रहा है |</string>
     <string name="torrent_scheme_download_not_supported">डाउनलोड समर्थित नहीं</string>
     <string name="app_shutdown_dlg_title">बंद करना</string>
     <string name="dht_contacts">DHT संपर्क</string>
@@ -532,7 +532,7 @@
     <string name="torrent_transfer_paused_disconnected_from_bittorrent">क्योंकि तुम काट रहे हैं हस्तांतरण रुका किया गया है। (सेटिंग्स में अपने बिट कनेक्शन की जांच करें)</string>
     <string name="cheaper_than_beer">बियर की तुलना में सस्ता</string>
     <string name="block">खंड</string>
-    <string name="rating_reminder_description">आपMediaTorप्यार तो एक पल के लिए हमें दर करने के लिए ले कृपया।</string>
+    <string name="rating_reminder_description">आप MediaTor प्यार तो एक पल के लिए हमें दर करने के लिए ले कृपया।</string>
     <string name="free_sponsored_app">फ्री प्रायोजित अनुप्रयोग</string>
     <string name="includes_3_day_free_trial">3 दिन नि: शुल्क परीक्षण भी शामिल है। सिफारिश की</string>
     <string name="support">समर्थन</string>
@@ -545,7 +545,7 @@
     <string name="get_ExpressVPN">पाना ExpressVPN</string>
     <string name="one_dollar">$1</string>
     <string name="enable_seeding">सीडिंग सक्षम करें</string>
-    <string name="storage_setting_confirm_dialog_text">मैं समझता हूँ किMediaTorद्वारा एसडी कार्ड डाउनलोड सभी फाइलों एंड्रॉयड द्वारा पलMediaTorआवेदन इस डिवाइस से रद्द की है हटा दिया जाएगा और मैं पकड़MediaTorLLC खो किसी भी फाइल के लिए उत्तरदायी नहीं होगा।</string>
+    <string name="storage_setting_confirm_dialog_text">मैं समझता हूँ कि MediaTor द्वारा एसडी कार्ड डाउनलोड सभी फाइलों एंड्रॉयड द्वारा पल MediaTor आवेदन इस डिवाइस से रद्द की है हटा दिया जाएगा और मैं पकड़ MediaTor LLC खो किसी भी फाइल के लिए उत्तरदायी नहीं होगा।</string>
     <string name="cant_open_file_does_not_exist">मुझसे नहीं खुल रहा %1$s, फ़ाइल मौजूद नहीं है।</string>
     <string name="anonymous_usage_statistics">अनाम उपयोग आंकड़े</string>
     <string name="saving_to_sd_card">एसडी कार्ड के लिए सहेजा जा रहा है।</string>
@@ -572,7 +572,7 @@
     <string name="donate_your_time">अपने समय दान</string>
     <string name="advertisement">विज्ञापन</string>
     <string name="distraction_free_search_results">व्याकुलता मुक्त खोज (बीटा)</string>
-    <string name="help_translate_or_proofread_frostwire">अनुवाद करने में या ठीक करनाMediaTorमदद</string>
+    <string name="help_translate_or_proofread_frostwire">अनुवाद करने में या ठीक करना MediaTor मदद</string>
     <string name="changelog">चैंज</string>
     <string name="cloud_download_aborted_on_mobile_data">वर्तमान सेटिंग डाउनलोडिंग वाईफाई नेटवर्क पर जब नहीं रोकता</string>
     <string name="sharing_privacy_settings">साझा करना और गोपनीयता</string>

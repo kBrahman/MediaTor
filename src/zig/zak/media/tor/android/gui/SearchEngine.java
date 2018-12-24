@@ -19,6 +19,9 @@ package zig.zak.media.tor.android.gui;
 
 import android.os.Build;
 
+import java.util.Arrays;
+import java.util.List;
+
 import zig.zak.media.tor.android.core.ConfigurationManager;
 import zig.zak.media.tor.android.core.Constants;
 import zig.zak.media.tor.search.SearchPerformer;
@@ -33,17 +36,11 @@ import zig.zak.media.tor.search.torlock.TorLockSearchPerformer;
 import zig.zak.media.tor.search.torrentdownloads.TorrentDownloadsSearchPerformer;
 import zig.zak.media.tor.search.tpb.TPBSearchPerformer;
 import zig.zak.media.tor.search.yify.YifySearchPerformer;
-import zig.zak.media.tor.search.youtube.YouTubeSearchPerformer;
 import zig.zak.media.tor.search.zooqle.ZooqleSearchPerformer;
 
-import java.util.Arrays;
-import java.util.List;
-
 /**
- * 
  * @author gubatron
  * @author aldenml
- *
  */
 public abstract class SearchEngine {
 
@@ -98,17 +95,11 @@ public abstract class SearchEngine {
         }
         if (!oneEnabled) {
             SearchEngine engineToEnable;
-            if (Constants.IS_GOOGLE_PLAY_DISTRIBUTION && !Constants.IS_BASIC_AND_DEBUG) {
-                engineToEnable = EZTV;
-            } else {
-                engineToEnable = YOUTUBE;
-            }
+            engineToEnable = EZTV;
 
             // null check in case the logic above changes
-            if (engineToEnable != null) {
-                String prefKey = engineToEnable.getPreferenceKey();
-                ConfigurationManager.instance().setBoolean(prefKey, true);
-            }
+            String prefKey = engineToEnable.getPreferenceKey();
+            ConfigurationManager.instance().setBoolean(prefKey, true);
         }
 
         return ALL_ENGINES;
@@ -132,13 +123,6 @@ public abstract class SearchEngine {
         @Override
         public SearchPerformer getPerformer(long token, String keywords) {
             return new ZooqleSearchPerformer("zooqle.com", token, keywords, DEFAULT_TIMEOUT);
-        }
-    };
-
-    public static final SearchEngine YOUTUBE = new SearchEngine("YouTube", Constants.PREF_KEY_SEARCH_USE_YOUTUBE) {
-        @Override
-        public SearchPerformer getPerformer(long token, String keywords) {
-            return new YouTubeSearchPerformer("www.youtube.com", token, keywords, DEFAULT_TIMEOUT);
         }
     };
 
@@ -212,17 +196,5 @@ public abstract class SearchEngine {
         }
     };
 
-    private static final List<SearchEngine> ALL_ENGINES = Arrays.asList(
-            YIFY,
-            YOUTUBE,
-            FROSTCLICK,
-            ZOOQLE,
-            TPB,
-            SOUNCLOUD,
-            ARCHIVE,
-            PIXABAY,
-            TORLOCK,
-            TORRENTDOWNLOADS,
-            LIMETORRENTS,
-            EZTV);
+    private static final List<SearchEngine> ALL_ENGINES = Arrays.asList(YIFY, FROSTCLICK, ZOOQLE, TPB, SOUNCLOUD, ARCHIVE, PIXABAY, TORLOCK, TORRENTDOWNLOADS, LIMETORRENTS, EZTV);
 }

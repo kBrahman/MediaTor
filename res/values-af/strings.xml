@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Raak toegepaste etikette aan]]></string>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Openbaarmaking:</b> Alhoewel dit aanbeveel word vir jou aflaai, veral wanneer sensitiewe inligting (bv. bankdienste) afgelaai of verruil word en tydens die gebruik van openbare Wi-Fi- of mobiele data, <b> het jy nie \'n Skynprivaatnetwerk nodig omMediaTorte gebruik nie.</b>]]></string>
+    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Openbaarmaking:</b> Alhoewel dit aanbeveel word vir jou aflaai, veral wanneer sensitiewe inligting (bv. bankdienste) afgelaai of verruil word en tydens die gebruik van openbare Wi-Fi- of mobiele data, <b> het jy nie \'n Skynprivaatnetwerk nodig om MediaTor te gebruik nie.</b>]]></string>
     <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>U privaatheid is \'n fundamentele mensereg</b>. \'N Onbeskermde verbinding beteken alles wat jy aanlyn doen, insluitend <b>navrae, boodskappe en aflaaisels</b>, kan deur enigiemand op u netwerk gemonitor en opgesny word, bv. Internet Diensverskaffers, hackers, regerings.<br><br><b>Ons beveel sterk aan om \'n Skynprivaatnetwerkdiens te gebruik</b>. <br> Hier is \'n paar opsies wat betroubare diens lewer en goed werk met FrostWire:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Jy is gekoppel aan die internet deur \'n Skynprivaatnetwerk te gebruik. <br><br> As jy nie reeds is nie, beveel ons aan om een van die onderstaande dienste te gebruik om jou verbinding te enkripteer en <b>jou privaatheid te beveilig</b>. ]]></string>
     <string name="vpn_not_found">Geen VPN. Oorweeg enkripsieverbinding.</string>
@@ -40,7 +40,7 @@
     <string name="azureus_manager_item_ready">Wag vir ander torrents om te wag</string>
     <string name="nickname">Bynaam</string>
     <string name="drawer_close">Maak die navigasielaaier toe</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire is \'n lêerblaaier en aflaaiprogram, daarom moet jy toegang hê tot jou skyf.\n\nSonder jou toestemming kanMediaTornie werk nie.\n\nWil jy weer probeer?</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire is \'n lêerblaaier en aflaaiprogram, daarom moet jy toegang hê tot jou skyf.\n\nSonder jou toestemming kan MediaTor nie werk nie.\n\nWil jy weer probeer?</string>
     <string name="fix_instructions">Sien support.frostwire.com vir inligting en regstellings</string>
     <string name="peer_http_upload_status_unknown">Onbekend</string>
     <string name="the_more_you_give_the_more_you_receive">Hoe meer jy gee, hoe meer jy ontvang</string>
@@ -128,7 +128,7 @@
     <string name="seed_all_finished">Saad Alles Voltooi</string>
     <string name="exclude">Uitsluit</string>
     <string name="toggle_sharing_selected_files">Toggle Sharing</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android sal afgelaaide lêers uitvee asMediaTorverwyder word.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android sal afgelaaide lêers uitvee as MediaTor verwyder word.</string>
     <string name="wifi_sharing">Wi-Fi-deel</string>
     <string name="search_preferences_one_engine_checked_always">By verstek moet een soekenjin te alle tye nagegaan word</string>
     <string name="please_connect">Koppel asseblief om hierdie funksie te gebruik</string>
@@ -151,7 +151,7 @@
     <string name="applications">Apps</string>
     <string name="the_file_could_not_be_seeded_enable_seeding">Die lêer kon nie geplant word nie. Aktiveer saai op instellings.</string>
     <string name="media_type_video">Video</string>
-    <string name="accept_intent">Ek sal nieMediaTorgebruik vir kopieregskending nie</string>
+    <string name="accept_intent">Ek sal nie MediaTor gebruik vir kopieregskending nie</string>
     <string name="remove_torrent_and_data">Verwyder Torrent en Data</string>
     <string name="date">Datum</string>
     <string name="seeding_settings">Saai instellings</string>
@@ -200,7 +200,7 @@
     <string name="magnet_url_added">Magneet URL bygevoeg aan oordragte. (Magnete werk die beste op Wi-Fi)</string>
     <string name="would_you_like_to_seed_your_finished_torrent_transfers">Wil jy jou voltooide torrent-oordragte saad?</string>
     <string name="share_finished_downloads_summary">Voltooide aflaaie sal beskikbaar wees vir ander FrostWire-gebruikers op u Wi-Fi-netwerk.</string>
-    <string name="frostwire_shutting_down_no_permissions">Jammer,MediaTorkan nie voortgaan sonder jou toestemming om toegang tot die skyf te verkry nie.</string>
+    <string name="frostwire_shutting_down_no_permissions">Jammer, MediaTor kan nie voortgaan sonder jou toestemming om toegang tot die skyf te verkry nie.</string>
     <string name="torrent_transfer_paused_disconnected_from_bittorrent">Die oordrag is onderbreek omdat jy Ontkoppel is. (Gaan jou BitTorrent-verbinding in Instellings)</string>
     <string name="http_download_status_uncompressing">Uncompressing</string>
     <string name="one_time_purchase">Eenmalige aankoop</string>
@@ -277,8 +277,8 @@
     <string name="desktop_transfer_status_complete">Volledige</string>
     <string name="copy">Kopie</string>
     <string name="updating">Opdatering</string>
-    <string name="help_translate_frostwire">Help omMediaTorte vertaal</string>
-    <string name="tell_others_subject">Het jyMediaTorvir Android nog?</string>
+    <string name="help_translate_frostwire">Help om MediaTor te vertaal</string>
+    <string name="tell_others_subject">Het jy MediaTor vir Android nog?</string>
     <string name="files_shared_by">lêers gedeel deur</string>
     <string name="file_extensions">Lêeruitbreidings</string>
     <string name="clear_messages">Vee boodskappe uit</string>
@@ -427,7 +427,7 @@
     <string name="filter_by_keyword">Filter volgens sleutelwoord…</string>
     <string name="wanna_download_question">Wil jy aflaai?</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">WAARSKUWING: Alle lêers wat deurMediaTorgestoor is op die SD-kaart sal uitgevee word deur ANDROID, nieMediaTornie, as jy die program verwyder.</string>
+    <string name="storage_setting_warning">WAARSKUWING: Alle lêers wat deur MediaTor gestoor is op die SD-kaart sal uitgevee word deur ANDROID, nie MediaTor nie, as jy die program verwyder.</string>
     <string name="not_sharing_files">deel nie enige lêers nie.</string>
     <string name="vpn_client_feature_3_PIA">Vaste infrastruktuur: wêreldwye dekking</string>
     <string name="select_deselect_all">Kies/ontkies alles</string>
@@ -453,7 +453,7 @@
     <string name="error_no_internet_connection">Fout: Gaan na internet konneksie</string>
     <string name="azureus_manager_item_error">Fout</string>
     <string name="why_we_need_storage_permissions">Hoekom benodig ons stoorregte.</string>
-    <string name="get_a_frostwire_tshirt">Kry \'nMediaTorT-shirt</string>
+    <string name="get_a_frostwire_tshirt">Kry \'n MediaTor T-shirt</string>
     <string name="media_type_applications">Aansoeke</string>
     <string name="invalid_filename">Ongeldige lêernaam</string>
     <string name="use_archiveorg">Gebruik Archive.org</string>
@@ -502,11 +502,11 @@
     <string name="delete_started_torrents">Verwyder .torrent lêers</string>
     <string name="search_header">Soek</string>
     <string name="activity_chat_named">Chat</string>
-    <string name="help_translate_or_proofread_frostwire">Help omMediaTorte vertaal of te proeflees</string>
+    <string name="help_translate_or_proofread_frostwire">Help om MediaTor te vertaal of te proeflees</string>
     <string name="loading">Laai</string>
     <string name="downloading_metadata">Laai van metadata</string>
     <string name="storage_preference_summary">Die verstek stoorplek waar lêers gestoor gaan word.</string>
-    <string name="notify_frostwire_is_running">Stel in kennis ofMediaToraan die gang is</string>
+    <string name="notify_frostwire_is_running">Stel in kennis of MediaTor aan die gang is</string>
     <string name="bandwidth_usage_settings">Bandwydte gebruik</string>
     <string name="torrent_scheme_download_not_supported">Laai nie ondersteun nie</string>
     <string name="transfers_context_seed_all_transfers">Skep al die voltooide oordragte</string>
@@ -601,7 +601,7 @@
     <string name="one_dollar">$1</string>
     <string name="vpn_client_feature_4_PIA">24/7 Skynprivaatnetwerkondersteuning</string>
     <string name="sd_permission_no_accessible_path">Die pad wat jy in die SD gekies het, is nie meer toeganklik nie. Druk OK om weer te kies.</string>
-    <string name="storage_setting_confirm_dialog_text">Ek verstaan dat alle lêers wat deurMediaTorna die SD-kaart afgelaai word, deur ANDROID verwyder sal word sodra die FrostWire-toepassing van hierdie toestel verwyder is en ek sal nieMediaTorLLC aanspreeklik hou vir enige verlore lêers nie.</string>
+    <string name="storage_setting_confirm_dialog_text">Ek verstaan dat alle lêers wat deur MediaTor na die SD-kaart afgelaai word, deur ANDROID verwyder sal word sodra die FrostWire-toepassing van hierdie toestel verwyder is en ek sal nie MediaTor LLC aanspreeklik hou vir enige verlore lêers nie.</string>
     <string name="simultaneous_uploads">Gelyktydige Wi-fi Uploads</string>
     <string name="use_magnet_summary">Magneet gebaseer, werk net op Wifi</string>
     <string name="cant_open_file_does_not_exist">Ek kan nie oopmaak nie %1$s, die lêer bestaan nie.</string>

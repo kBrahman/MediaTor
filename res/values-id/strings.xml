@@ -116,8 +116,8 @@
     <string name="set_as_wallpaper">Atur sebagai Wallpaper</string>
     <string name="failed_to_set_wallpaper">Gagal mengatur Wallpaper</string>
     <string name="tell_others_chooser">Tweet / SMS /Email</string>
-    <string name="tell_others_subject">Sudahkah mendapatkanMediaToruntuk Android?</string>
-    <string name="and_choose_what_filetypes_to_share">Periksa jenis-jenis arsip yang ingin Anda aktifkan untuk berbagi dalam Jaringan PonselMediaTordan Wi-Fi Dekstop tidak aktif terdekat.</string>
+    <string name="tell_others_subject">Sudahkah mendapatkan MediaTor untuk Android?</string>
+    <string name="and_choose_what_filetypes_to_share">Periksa jenis-jenis arsip yang ingin Anda aktifkan untuk berbagi dalam Jaringan Ponsel MediaTor dan Wi-Fi Dekstop tidak aktif terdekat.</string>
     <string name="before_getting_started">Sebelum Anda memulai</string>
     <string name="user_connecting">Pengguna sedang menyambungkan</string>
     <string name="accept_connection_from">Terima sambungan dari</string>
@@ -188,7 +188,7 @@
     <string name="long_press_for_batch_actions">Sentuh judul arsip apapun untuk tindakan instalasi.</string>
     <string name="files_shared">Arsip-arsip sudah dibagi</string>
     <string name="share_finished_downloads">Berbagi Unduhan yang sudah selesai melalui Wi-Fi</string>
-    <string name="share_finished_downloads_summary">Unduhan yang telah selesai akan tersedia untuk penggunaMediaTorlainnya di jaringan WiFi Anda</string>
+    <string name="share_finished_downloads_summary">Unduhan yang telah selesai akan tersedia untuk pengguna MediaTor lainnya di jaringan WiFi Anda</string>
     <string name="are_you_sure_delete_files">Apakah Anda yakin untuk menghapus Arsip-arsip terpilih?</string>
     <string name="searchable_activity_label">Aktifitas yang Bisa Dicari</string>
     <string name="search_hint">Konten Pencarian</string>
@@ -313,7 +313,7 @@
     <string name="seeding_settings_explanation">Para pengguna BitTorrent di internet akan bisa mengunduh potongan arsip-arsip dari data seed torrent Anda.</string>
     <string name="seeding_wifi_settings_explanation">Hanya seed ketika menggunakan koneksi WiFi. Hindari biaya tambahan dari operator Anda</string>
     <string name="intent_text">MediaTor adalah program dari peer ke peer untuk berbagi arsip-arsip sah saja. Menginstal dan menggunakan program ini bukanlah lisensi untuk mendapatkan atau mendistribusikan konten yang tidak sah.</string>
-    <string name="accept_intent">Saya tidak akan menggunakanMediaToruntuk pelanggaran hak cipta.</string>
+    <string name="accept_intent">Saya tidak akan menggunakan MediaTor untuk pelanggaran hak cipta.</string>
     <string name="toast_on_disconnect">Terputus dari BitTorrent. Semua pemindahan BitTorrent telah dihentikan.</string>
     <string name="toast_on_connect">Inti BitTorrent telah dimulai</string>
     <string name="seeds">Seed</string>
@@ -348,7 +348,7 @@
     <string name="clear_search_cache">Jelas search cache</string>
     <string name="enable_wifi_sharing">Wi-Fi Sharing</string>
     <string name="drawer_close">Tutup laci navigasi</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire adalah peramban berkas dan downloader aplikasi, oleh karena itu perlu untuk dapat mengakses disk Anda.\n\nTanpa izin AndaMediaTortidak bisa bekerja.\n\nIngin mencoba lagi?</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire adalah peramban berkas dan downloader aplikasi, oleh karena itu perlu untuk dapat mengakses disk Anda.\n\nTanpa izin Anda MediaTor tidak bisa bekerja.\n\nIngin mencoba lagi?</string>
     <string name="unprotected_connection">tak terlindung</string>
     <string name="transfers_context_menu_copy_magnet_copied">Magnet disalin ke papan klip</string>
     <string name="buy_uppercase">MEMBELI</string>
@@ -375,7 +375,7 @@
     <string name="paused">Berhenti</string>
     <string name="retry_search">Mencoba kembali</string>
     <string name="the_file_could_not_be_seeded_bittorrent_will_remain_disconnected">File tidak bisa diunggulkan. BitTorrent akan tetap terputus.</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android akan menghapus file yang didownload jikaMediaTordihapus.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android akan menghapus file yang didownload jika MediaTor dihapus.</string>
     <string name="protected_connection">VPN-dilindungi</string>
     <string name="use_eztv">Gunakan Eztv</string>
     <string name="reject">Menolak</string>
@@ -402,7 +402,7 @@
     <string name="player_paused_press_and_hold_to_stop">Pemain jeda. (Tip: Tekan dan tahan untuk menghentikan)</string>
     <string name="menu_delete_shortcut_label">Del</string>
     <string name="magnet_url_added">URL magnet ditambahkan ke transfer. (Magnet bekerja terbaik untuk Wi-Fi)</string>
-    <string name="frostwire_shutting_down_no_permissions">Maaf,MediaTortidak dapat melanjutkan tanpa izin Anda untuk mengakses disk.</string>
+    <string name="frostwire_shutting_down_no_permissions">Maaf, MediaTor tidak dapat melanjutkan tanpa izin Anda untuk mengakses disk.</string>
     <string name="http_download_status_uncompressing">Uncompressing</string>
     <string name="one_time_purchase">Satu kali membeli</string>
     <string name="activity_VPN">Koneksi</string>
@@ -446,7 +446,7 @@
     <string name="donation_thanks">Terima kasih banyak untuk mendukung FrostWire</string>
 
     <string name="crawl_cache_size">Crawl cache %1$.2fMB</string>
-    <string name="wifi_sharing_disabled">Berbagi wifi off.\n\nWi-fi berbagi dapat digunakan untuk berbagi file secara lokal antara perangkatMediaTorbertenaga terhubung ke jaringan Wi-Fi yang sama.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Belajarlah lagi.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">Berbagi wifi off.\n\nWi-fi berbagi dapat digunakan untuk berbagi file secara lokal antara perangkat MediaTor bertenaga terhubung ke jaringan Wi-Fi yang sama.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Belajarlah lagi.&lt;/a&gt;</string>
     <string name="pausing">Berhenti</string>
     <string name="azureus_manager_not_created">Download tidak dapat dibuat dengan kartu SD terpasang</string>
     <string name="dummy_title_bold">[Judul Bold]</string>
@@ -485,7 +485,7 @@
     <string name="transfers_context_resume_all_torrent_transfers">Melanjutkan semua transfer torrent</string>
     <string name="free_download">Free Download</string>
     <string name="couldnt_share_file">Tidak bisa berbagi file. jalan aneh ditemukan.</string>
-    <string name="learn_how_to_get_more_results">CobaMediaTorPlus untuk hasil yang lebih</string>
+    <string name="learn_how_to_get_more_results">Coba MediaTor Plus untuk hasil yang lebih</string>
     <string name="storage_setting_confirm_dialog_title">KARTU SD</string>
     <string name="no_trial_period_included">Tidak ada masa percobaan termasuk</string>
     <string name="cant_resume_torrent_transfers">Tidak dapat melanjutkan transfer torrent. Memeriksa status "Preferensi" > "BitTorrent Connection Status"</string>
@@ -495,7 +495,7 @@
     <string name="current_plan">Rencana saat ini.</string>
     <string name="transfers_context_menu_copy_infohash">Salinan InfoHash</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">PERINGATAN: Semua file yang disimpan olehMediaTorke kartu SD akan dihapus BY ANDROID, tidak FrostWire, jika Anda menghapus aplikasi.</string>
+    <string name="storage_setting_warning">PERINGATAN: Semua file yang disimpan oleh MediaTor ke kartu SD akan dihapus BY ANDROID, tidak FrostWire, jika Anda menghapus aplikasi.</string>
     <string name="sd_permission_no_accessible_path">Jalan yang Anda pilih di SD tersebut tidak dapat diakses lagi. Tekan OK untuk memilih lagi.</string>
     <string name="select_deselect_all">Pilih/Tdk Pilih Semua</string>
     <string name="canceling">Membatalkan</string>
@@ -529,7 +529,7 @@
     <string name="vpn_off_toast_notification">Koneksi Anda mungkin tidak pribadi.</string>
     <string name="loading">Pemuatan</string>
     <string name="downloading_metadata">Downloading metadata</string>
-    <string name="notify_frostwire_is_running">Beritahu jikaMediaTorberjalan</string>
+    <string name="notify_frostwire_is_running">Beritahu jika MediaTor berjalan</string>
     <string name="torrent_scheme_download_not_supported">Ambil tidak didukung</string>
     <string name="app_shutdown_dlg_title">Matikan</string>
     <string name="dht_contacts">DHT kontak</string>
@@ -553,7 +553,7 @@
     <string name="torrent_transfer_paused_disconnected_from_bittorrent">Transfer telah berhenti karena Anda terputus. (Periksa koneksi BitTorrent Anda di Preferensi)</string>
     <string name="cheaper_than_beer">Lebih murah daripada bir</string>
     <string name="block">Blok</string>
-    <string name="rating_reminder_description">Jika Anda menyukaiMediaTorsilakan luangkan waktu untuk menilai kita.</string>
+    <string name="rating_reminder_description">Jika Anda menyukai MediaTor silakan luangkan waktu untuk menilai kita.</string>
     <string name="free_sponsored_app">Free Sponsored App</string>
     <string name="includes_3_day_free_trial">Termasuk 3 hari bebas-sidang. Direkomendasikan</string>
     <string name="support">Mendukung</string>
@@ -566,7 +566,7 @@
     <string name="get_ExpressVPN">Dapatkan ExpressVPN</string>
     <string name="one_dollar">$1</string>
     <string name="enable_seeding">Aktifkan Seeding</string>
-    <string name="storage_setting_confirm_dialog_text">Saya memahami bahwa semua file yang didownload ke SD Card denganMediaTorakan dihapus BY ANDROID saat aplikasiMediaToruninstall dari perangkat ini dan saya tidak akan terusMediaTorLLC jawab atas file yang hilang.</string>
+    <string name="storage_setting_confirm_dialog_text">Saya memahami bahwa semua file yang didownload ke SD Card dengan MediaTor akan dihapus BY ANDROID saat aplikasi MediaTor uninstall dari perangkat ini dan saya tidak akan terus MediaTor LLC jawab atas file yang hilang.</string>
     <string name="cant_open_file_does_not_exist">Saya tidak bisa membuka %1$s, file tidak ada.</string>
     <string name="anonymous_usage_statistics">Statistik Penggunaan Anonim</string>
     <string name="saving_to_sd_card">Menyimpan ke kartu SD.</string>
@@ -670,7 +670,7 @@
     <string name="vpn_find_out_more">Temukan lebih banyak lagi</string>
     <string name="vpn_suggestion_nordvpn">NORDVPN \n Uji coba 7 hari gratis</string>
     <string name="play_store_out_of_sync">Play Store perlu melakukan sinkronisasi, tunggu beberapa menit</string>
-    <string name="one_file_shared">Satu file telah dibagikan ke perangkatMediaTordi jaringan Wi-Fi yang sama.</string>
+    <string name="one_file_shared">Satu file telah dibagikan ke perangkat MediaTor di jaringan Wi-Fi yang sama.</string>
 
 
     <string name="uploaded">Diunggah</string>
@@ -702,7 +702,7 @@
     <string name="sequential_download">Unduhan berurutan</string>
     <string name="downloaded_n">Mengunduh %1$s / </string>
     <string name="transfer_detail_title_header">Nama:</string>
-    <string name="n_files_shared">%d perkintalan telah dibagikan ke perangkatMediaTordi jaringan Wi-Fi yang sama.</string>
+    <string name="n_files_shared">%d perkintalan telah dibagikan ke perangkat MediaTor di jaringan Wi-Fi yang sama.</string>
     <string name="time_elapsed">Waktu berlalu</string>
     <string name="remove_tracker">Hapus pelacak</string>
     <string name="comment">Komentar</string>

@@ -116,8 +116,8 @@
     <string name="set_as_wallpaper">Sæt som Baggrund</string>
     <string name="failed_to_set_wallpaper">Kunne ikke sætte Baggrund</string>
     <string name="tell_others_chooser">Tweet / SMS / Email</string>
-    <string name="tell_others_subject">FikMediaTorfor Android endnu?</string>
-    <string name="and_choose_what_filetypes_to_share">Kontroller hvilke typer filer du vil aktivere til deling påMediaTorMobile Network og nærliggende Wi-Fi aktiveret pc\'er</string>
+    <string name="tell_others_subject">Fik MediaTor for Android endnu?</string>
+    <string name="and_choose_what_filetypes_to_share">Kontroller hvilke typer filer du vil aktivere til deling på MediaTor Mobile Network og nærliggende Wi-Fi aktiveret pc\'er</string>
     <string name="before_getting_started">Før du kommer i gang</string>
     <string name="user_connecting">Bruger forbindning</string>
     <string name="accept_connection_from">Accept forbindelse fra</string>
@@ -129,7 +129,7 @@
     <string name="browse">Browse</string>
     <string name="files_shared_by">filer der deles af</string>
     <string name="mark_your_territory">Marker dit område</string>
-    <string name="get_a_frostwire_tshirt">Få enMediaTorT-shirt</string>
+    <string name="get_a_frostwire_tshirt">Få en MediaTor T-shirt</string>
     <string name="internal_port">Intern Port</string>
     <string name="external_port">Ekstern Port</string>
     <string name="device">Enheden</string>
@@ -188,7 +188,7 @@
     <string name="long_press_for_batch_actions">Tryk på en fil titel for flere handlinger</string>
     <string name="files_shared">Filer delt</string>
     <string name="share_finished_downloads">Del udført downloads på WiFi</string>
-    <string name="share_finished_downloads_summary">Udført downloads vil være tilgængelige for andreMediaTorbrugere på dit WiFi netværk.</string>
+    <string name="share_finished_downloads_summary">Udført downloads vil være tilgængelige for andre MediaTor brugere på dit WiFi netværk.</string>
     <string name="are_you_sure_delete_files">Er du sikker på du ønsker at slette de valgte filer?</string>
     <string name="searchable_activity_label">Søgbar aktivitet</string>
     <string name="search_hint">Søg indhold</string>
@@ -314,7 +314,7 @@
     <string name="seeding_settings_explanation">BitTorrent-brugere på internettet vil være i stand til at downloade filer stykker af data dine torrents frø.</string>
     <string name="seeding_wifi_settings_explanation">Frø kun ved brug af en WiFi-forbindelse. Undgå ekstra gebyrer fra din udbyder.</string>
     <string name="intent_text">MediaTor er et peer-to-peer program til at dele godkendte filer. Installation og brug af programmet udgør ikke tilladelse til at opnå eller distribution af uautoriseret indhold.</string>
-    <string name="accept_intent">Jeg vil ikke brugeMediaTorfor krænkelse af ophavsretten</string>
+    <string name="accept_intent">Jeg vil ikke bruge MediaTor for krænkelse af ophavsretten</string>
     <string name="toast_on_disconnect">Frakoblet fra BitTorrent. Alle BitTorrent overførsler er stoppet.</string>
     <string name="toast_on_connect">BitTorrent core startede.</string>
     <string name="seeds">Frø</string>
@@ -361,7 +361,7 @@
     <string name="clear_search_cache">Ryd søgning cache</string>
     <string name="enable_wifi_sharing">Wifi Deling</string>
     <string name="drawer_close">Luk navigation skuffe</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire er en fil browser og downloader app, derfor er det nødvendigt at kunne få adgang til din harddisk.\n\nUden dine tilladelserMediaTorikke kan arbejde.\n\nVil du prøve igen?</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire er en fil browser og downloader app, derfor er det nødvendigt at kunne få adgang til din harddisk.\n\nUden dine tilladelser MediaTor ikke kan arbejde.\n\nVil du prøve igen?</string>
     <string name="unprotected_connection">ubeskyttet</string>
     <string name="transfers_context_menu_copy_magnet_copied">Magnet kopieret til udklipsholderen</string>
     <string name="buy_uppercase">KØBE</string>
@@ -386,7 +386,7 @@
     <string name="paused">Midlertidigt afbrudt</string>
     <string name="retry_search">Prøv igen</string>
     <string name="the_file_could_not_be_seeded_bittorrent_will_remain_disconnected">Filen kunne ikke seedet. BitTorrent forbliver afbrudt.</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android vil slette downloadede filer, hvisMediaTorafinstalleres.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android vil slette downloadede filer, hvis MediaTor afinstalleres.</string>
     <string name="protected_connection">VPN-beskyttet</string>
     <string name="use_eztv">Brug Eztv</string>
     <string name="cheaper_than_parking">Billigere end parkering</string>
@@ -411,7 +411,7 @@
     <string name="player_paused_press_and_hold_to_stop">Player sat på pause. (Tip: Tryk og hold for at stoppe)</string>
     <string name="menu_delete_shortcut_label">Del</string>
     <string name="magnet_url_added">Magnet URL tilføjet til overførsler. (Magneter virker bedst på Wi-Fi)</string>
-    <string name="frostwire_shutting_down_no_permissions">Beklager,MediaTorkan ikke fortsætte uden din tilladelse til at få adgang disk.</string>
+    <string name="frostwire_shutting_down_no_permissions">Beklager, MediaTor kan ikke fortsætte uden din tilladelse til at få adgang disk.</string>
     <string name="one_time_purchase">Køb nu!</string>
     <string name="activity_VPN">Forbindelse</string>
     <string name="use_youtube">Brug YouTube.com</string>
@@ -452,7 +452,7 @@
     <string name="donation_thanks">Tak så meget for at støtte FrostWire</string>
 
     <string name="crawl_cache_size">Crawl cache %1$.2fMB</string>
-    <string name="wifi_sharing_disabled">Wifi deling er slukket.\n\nWi-fi deling kan bruges til at dele filer lokalt mellemMediaTorbaserede enheder tilsluttet det samme Wi-Fi-netværk.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Lær mere.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">Wifi deling er slukket.\n\nWi-fi deling kan bruges til at dele filer lokalt mellem MediaTor baserede enheder tilsluttet det samme Wi-Fi-netværk.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Lær mere.&lt;/a&gt;</string>
     <string name="pausing">Pausing</string>
     <string name="dummy_title_bold">[Fed Titel]</string>
     <string name="anonymous_usage_statistics_summary">Send anonyme brugsstatistikker. Ingen oplysninger, der personligt kan identificere dig vil blive gemt på disk eller sendes via netværket.</string>
@@ -489,7 +489,7 @@
     <string name="transfers_context_resume_all_torrent_transfers">Genoptag alle torrent overførsler</string>
     <string name="free_download">Gratis download</string>
     <string name="couldnt_share_file">Kunne ikke dele filen. Weird sti fundet.</string>
-    <string name="learn_how_to_get_more_results">PrøvMediaTorPlus for flere resultater</string>
+    <string name="learn_how_to_get_more_results">Prøv MediaTor Plus for flere resultater</string>
     <string name="storage_setting_confirm_dialog_title">SD KORT</string>
     <string name="no_trial_period_included">Ingen prøveperiode inkluderet</string>
     <string name="cant_resume_torrent_transfers">Kan ikke genoptage torrent overførsler. Kontrollér status af "Indstillinger"> "BitTorrent Connection status"</string>
@@ -499,7 +499,7 @@
     <string name="current_plan">Aktuel plan</string>
     <string name="transfers_context_menu_copy_infohash">Kopier InfoHash</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">ADVARSEL: Alle filer gemt afMediaTorpå SD-kortet vil blive slettet Android, ikke FrostWire, hvis du afinstallerer den app.</string>
+    <string name="storage_setting_warning">ADVARSEL: Alle filer gemt af MediaTor på SD-kortet vil blive slettet Android, ikke FrostWire, hvis du afinstallerer den app.</string>
     <string name="sd_permission_no_accessible_path">Stien du valgte i SD er ikke tilgængelig længere. Tryk på OK for at vælge igen.</string>
     <string name="select_deselect_all">Vælg/Fravælg alle</string>
     <string name="canceling">Annullering</string>
@@ -533,7 +533,7 @@
     <string name="vpn_off_toast_notification">Din forbindelse kan ikke være privat.</string>
     <string name="loading">Ilægning</string>
     <string name="downloading_metadata">Download af metadata</string>
-    <string name="notify_frostwire_is_running">Informer, hvisMediaTorkører</string>
+    <string name="notify_frostwire_is_running">Informer, hvis MediaTor kører</string>
     <string name="torrent_scheme_download_not_supported">Hent ikke understøttet</string>
     <string name="app_shutdown_dlg_title">Shutdown</string>
     <string name="dht_contacts">DHT kontakter</string>
@@ -554,7 +554,7 @@
     <string name="donate_in_btc">Doner i bitcoins</string>
     <string name="torrent_transfer_paused_disconnected_from_bittorrent">Overførslen er blevet sat på pause, fordi du er Afbrudt. (Check din BitTorrent-forbindelse i Indstillinger)</string>
     <string name="cheaper_than_beer">Billigere end øl</string>
-    <string name="rating_reminder_description">Hvis du elskerMediaTordu tage et øjeblik til at bedømme os.</string>
+    <string name="rating_reminder_description">Hvis du elsker MediaTor du tage et øjeblik til at bedømme os.</string>
     <string name="free_sponsored_app">Gratis Sponsoreret App</string>
     <string name="includes_3_day_free_trial">Inkluderer tre dage gratis prøveversion. Anbefalede</string>
     <string name="support">Støtte</string>
@@ -567,7 +567,7 @@
     <string name="get_ExpressVPN">Hent ExpressVPN</string>
     <string name="one_dollar">$1</string>
     <string name="enable_seeding">Aktivér Seedning</string>
-    <string name="storage_setting_confirm_dialog_text">Jeg forstår, at alle filer downloadet til SD-kort afMediaTorvil blive slettet Android det øjeblikMediaTorprogrammet er afinstalleret fra denne enhed, og jeg vil ikke holdeMediaTorLLC ansvarlig for eventuelle filer tabt.</string>
+    <string name="storage_setting_confirm_dialog_text">Jeg forstår, at alle filer downloadet til SD-kort af MediaTor vil blive slettet Android det øjeblik MediaTor programmet er afinstalleret fra denne enhed, og jeg vil ikke holde MediaTor LLC ansvarlig for eventuelle filer tabt.</string>
     <string name="cant_open_file_does_not_exist">Jeg kan ikke åbne %1$s, er filen ikke eksisterer.</string>
     <string name="anonymous_usage_statistics">Anonyme Usage Statistics</string>
     <string name="saving_to_sd_card">Lagring på SD-kort.</string>

@@ -114,7 +114,7 @@
     <string name="set_as_wallpaper">Duvar-kağıdı olarak ayarla</string>
     <string name="failed_to_set_wallpaper">Duvar-kağıdı olarak ayarlanamadı</string>
     <string name="tell_others_chooser">Twit\'le / SMS Çek / E-posta Gönder</string>
-    <string name="tell_others_subject">Henüz Android içinMediaToredinmediniz mi?</string>
+    <string name="tell_others_subject">Henüz Android için MediaTor edinmediniz mi?</string>
     <string name="and_choose_what_filetypes_to_share">FrostWire Mobil Ağlında ve yakınlardaki Wi-Fi özellikli Masaüstü Bilgisayarlarda hangi tür dosyaları paylaşıma açmak isteriniz, buradan gözatın.</string>
     <string name="before_getting_started">Başlamadan önce</string>
     <string name="user_connecting">Kullanıcı bağlanıyor</string>
@@ -127,7 +127,7 @@
     <string name="browse">Gözat</string>
     <string name="files_shared_by">dosya paylaşan:</string>
     <string name="mark_your_territory">Bölgenizi İşaretleyin</string>
-    <string name="get_a_frostwire_tshirt">BirMediaTorTişörtü edinin</string>
+    <string name="get_a_frostwire_tshirt">Bir MediaTor Tişörtü edinin</string>
     <string name="internal_port">Dahili Port</string>
     <string name="external_port">Harici Port</string>
     <string name="device">Cihaz</string>
@@ -186,7 +186,7 @@
     <string name="long_press_for_batch_actions">Toplu işlemler için herhangi bir dosyaya dokunun</string>
     <string name="files_shared">dosya paylaştırıldı</string>
     <string name="share_finished_downloads">Tamamlanmış indirmeleri WiFi üzerinde paylaştırın</string>
-    <string name="share_finished_downloads_summary">Tamamlanmış indirmeler diğerMediaTorkullanıcılarına WiFi ağınız üzerinden ulaşılabilir durumdadır.</string>
+    <string name="share_finished_downloads_summary">Tamamlanmış indirmeler diğer MediaTor kullanıcılarına WiFi ağınız üzerinden ulaşılabilir durumdadır.</string>
     <string name="are_you_sure_delete_files">Seçilen dosyaları silmek istediğinize emin misiniz?</string>
     <string name="searchable_activity_label">Aranabilir Aktivite</string>
     <string name="search_hint">İçerik Ara</string>
@@ -355,7 +355,7 @@
     <string name="donate_10">10$ Bağışla</string>
     <string name="donate_25">Donate $25</string>
     <string name="one_file_shared" >Aynı Wi-Fi ağı üzerinden Frostwire cihazlarına sadece bir dosya paylaşıldı.</string>
-    <string name="n_files_shared" >%d dosyaları aynı Wi-Fi ağı üzerindenMediaTorcihazlarına paylaşıldı.</string>
+    <string name="n_files_shared" >%d dosyaları aynı Wi-Fi ağı üzerinden MediaTor cihazlarına paylaşıldı.</string>
     <string name="playing_now_colon">Şimdi oynama:</string>
     <string name="my_filetype">Bana ait %s</string>
     <string name="paused">Durdu</string>
@@ -383,7 +383,7 @@
     <string name="use_frostclick">FrostClick\'i Kullanın</string>
     <string name="delete_this_track">Bu şarkıyı sil</string>
     <string name="are_you_sure_delete_current_track">Bu mevcut şarkıyı silmek istediğinize emin misiniz?</string>
-    <string name="wifi_sharing_disabled">Wireless paylaşımı kapalı.\n\nWireless paylaşımı aynı Wireless ağına bağlananMediaTorile güçlendirilen cihazlar arasında yerel olarak dosya paylamakiçin kullanılır.</string>
+    <string name="wifi_sharing_disabled">Wireless paylaşımı kapalı.\n\nWireless paylaşımı aynı Wireless ağına bağlanan MediaTor ile güçlendirilen cihazlar arasında yerel olarak dosya paylamakiçin kullanılır.</string>
     <string name="turn_on_wifi_sharing">Wireless Paylaşımını Aç</string>    
     <string name="are_you_sure_wifi_sharing_off">Wireless paylaşımını kapatmak, yakındaki Wireless ağındaki diğer kullanıcılara yerel olarak paylaştığınız tüm dosyalarınızı erişilmez yapacaktır.</string>
     <string name="anonymous_usage_statistics">Anonim Kullanım İstatistikleri</string>
@@ -438,7 +438,7 @@
     <string name="player_paused_press_and_hold_to_stop">Oyuncu durdu. (İpucu: durdurmak için basılı tutun)</string>
     <string name="menu_delete_shortcut_label">Del</string>
     <string name="magnet_url_added">Mıknatıs URL\'leri transferlere eklendi. (Mıknatıslar Kablosuz ağda en iyi şekilde çalışır)</string>
-    <string name="frostwire_shutting_down_no_permissions">Üzgünüz,MediaTordiske erişim izniniz olmadan devam edemez.</string>
+    <string name="frostwire_shutting_down_no_permissions">Üzgünüz, MediaTor diske erişim izniniz olmadan devam edemez.</string>
     <string name="one_time_purchase">Bir Kez Satın Alma</string>
     <string name="activity_VPN">Bağlantı</string>
     <string name="one_year">1 yıl</string>
@@ -500,7 +500,7 @@
     <string name="transfers_context_resume_all_torrent_transfers">Tüm torrent transferlerini devam ettirin</string>
     <string name="free_download">Bedava indir</string>
     <string name="couldnt_share_file">Dosya paylaşılamadı. Garip yol bulundu.</string>
-    <string name="learn_how_to_get_more_results">Daha fazla sonuç içinMediaTorPlus\'ı deneyin</string>
+    <string name="learn_how_to_get_more_results">Daha fazla sonuç için MediaTor Plus\'ı deneyin</string>
     <string name="storage_setting_confirm_dialog_title">SD KARTI</string>
     <string name="no_trial_period_included">Deneme süresi dahil değil</string>
     <string name="cant_resume_torrent_transfers">Torrent aktarımlarına devam edilemiyor. "Ayarlar"> "BitTorrent Bağlantı Durumu" durumunu kontrol edin</string>
@@ -509,7 +509,7 @@
     <string name="ad_free">Reklamsız</string>
     <string name="current_plan">Mevcut plan</string>
     <string name="transfers_context_menu_copy_infohash">InfoHash\'ı kopyala</string>
-    <string name="storage_setting_warning">UYARI: Uygulamayı kaldırırsanız,MediaTortarafından SD karta kaydedilen tüm dosyalarMediaTordeğil, ANDROID tarafından silinir.</string>
+    <string name="storage_setting_warning">UYARI: Uygulamayı kaldırırsanız, MediaTor tarafından SD karta kaydedilen tüm dosyalar MediaTor değil, ANDROID tarafından silinir.</string>
     <string name="sd_permission_no_accessible_path">SD\'de seçtiğiniz yola artık erişilemiyor. Tekrar seçmek için Tamam düğmesine basın.</string>
     <string name="select_deselect_all">Tümünü Seç/Seçimi İptal Et</string>
     <string name="canceling">İptal</string>
@@ -568,7 +568,7 @@
     <string name="thank_you">Sağol!</string>
     <string name="get_ExpressVPN">ExpressVPN\'yi alın</string>
     <string name="enable_seeding">Yeşillendirmeyi Etkinleştir</string>
-    <string name="storage_setting_confirm_dialog_text">FrostWire tarafından SD Karta indirilen tüm dosyaların,MediaToruygulaması bu cihazdan kaldırıldığı andan ANDROID tarafından silineceğini ve kaybolan dosyalar içinMediaTorLLC\'nin sorumluluğunu üstlenmem gerektiğini anlıyorum.</string>
+    <string name="storage_setting_confirm_dialog_text">FrostWire tarafından SD Karta indirilen tüm dosyaların, MediaTor uygulaması bu cihazdan kaldırıldığı andan ANDROID tarafından silineceğini ve kaybolan dosyalar için MediaTor LLC\'nin sorumluluğunu üstlenmem gerektiğini anlıyorum.</string>
     <string name="cant_open_file_does_not_exist">Açamıyorum %1$s, dosya yok.</string>
     <string name="saving_to_sd_card">SD karta kaydetme.</string>
     <string name="torrent_max_peers_summary">Maksimum Akranlar</string>
@@ -693,7 +693,7 @@
     <string name="edit_tracker">İzleyiciyi düzenle</string>
     <string name="down_speed">İndirme hızı</string>
     <string name="completed">Tamamlanan</string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Gizliliğiniz temel bir insan hakkıdır</b>. Korumasız bir bağlantı, <b>indirmeler, aramalar, mesajlaşma</b> dahil olmak üzere çevrimiçi olarak yaptığınız her şey anlamına gelir, ağınızdaki herhangi bir kişi tarafından izlenebilir ve yakalanabilir, ör. İnternet Servis Sağlayıcıları, bilgisayar korsanları, hükümetler.<br><br><b>VPN hizmeti kullanmanızı şiddetle tavsiye ediyoruz</b>. <br> İşte güvenilir hizmet veren veMediaTorile iyi çalışan bazı seçenekler:]]></string>
+    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Gizliliğiniz temel bir insan hakkıdır</b>. Korumasız bir bağlantı, <b>indirmeler, aramalar, mesajlaşma</b> dahil olmak üzere çevrimiçi olarak yaptığınız her şey anlamına gelir, ağınızdaki herhangi bir kişi tarafından izlenebilir ve yakalanabilir, ör. İnternet Servis Sağlayıcıları, bilgisayar korsanları, hükümetler.<br><br><b>VPN hizmeti kullanmanızı şiddetle tavsiye ediyoruz</b>. <br> İşte güvenilir hizmet veren ve MediaTor ile iyi çalışan bazı seçenekler:]]></string>
     <string name="downloaded">İndirildi</string>
     <string name="n_peers">%1$d akranlar</string>
     <string name="sequential_download">Sıralı indirme</string>

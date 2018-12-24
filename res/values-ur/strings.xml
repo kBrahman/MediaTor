@@ -19,7 +19,7 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[افشا: اگرچہ آپ کے ڈاؤن لوڈ کے لئے سفارش کی گئی ہے، آپ کوMediaTorاستعمال کرنے کے لئے ایک وی پی این کی ضرورت نہیں ہے.]]></string>
+    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[افشا: اگرچہ آپ کے ڈاؤن لوڈ کے لئے سفارش کی گئی ہے، آپ کو MediaTor استعمال کرنے کے لئے ایک وی پی این کی ضرورت نہیں ہے.]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>معلومات:</b> ایپلی کیشنز کو ٹچ کریں]]></string>
     <string name="activity_preferences_name">ترتیبات</string>
     <string name="activity_chat_named">بات چیت</string>
@@ -56,7 +56,7 @@
     <string name="choose_wifi_network">ایک وائی فائی نیٹ ورک کا انتخاب کریں</string>
     <string name="cant_open_file">معاف  کریں یہ فائل کھولنیں نہیں اتی </string>
     <string name="share_finished_downloads">مکمل ڈاونلوڈ کو وایفاے پہ تقسیم کریں</string>
-    <string name="share_finished_downloads_summary">مکمل ڈاونلوڈ آپ کے وایفاۓ پہ اورMediaTorاستعمال کرنے والوں کو دستیاب ہوں گے</string>
+    <string name="share_finished_downloads_summary">مکمل ڈاونلوڈ آپ کے وایفاۓ پہ اور MediaTor استعمال کرنے والوں کو دستیاب ہوں گے</string>
     <string name="are_you_sure_delete_files">کیا آپ واقعی چنی گئی فائلوں کو ہمیشہ کے لئے ختم کرنا چاہتے ہیں؟</string>
     <string name="mobile_data">موبائل ڈیٹا</string>
     <string name="azureus_manager_item_checking">چیکنگ</string>
@@ -135,7 +135,7 @@
     <string name="azureus_manager_item_ready">دیگر بارشیں قطار کا انتظار ہے</string>
     <string name="nickname">عرفیت</string>
     <string name="drawer_close">بند کریں نیویگیشن دراز</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire، ایک فائل براؤزر اور ڈاؤنلوڈر اپلی کیشن ہے اس وجہ سے یہ آپ کی ڈسک تک رسائی حاصل کرنے کے قابل ہو جائے کرنے کی ضرورت ہے.\n\nآپ اجازتوں بغیرMediaTorکام نہیں کر سکتے.\n\nدوبارہ کوشش کرنا چاہتے ہیں؟</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire، ایک فائل براؤزر اور ڈاؤنلوڈر اپلی کیشن ہے اس وجہ سے یہ آپ کی ڈسک تک رسائی حاصل کرنے کے قابل ہو جائے کرنے کی ضرورت ہے.\n\nآپ اجازتوں بغیر MediaTor کام نہیں کر سکتے.\n\nدوبارہ کوشش کرنا چاہتے ہیں؟</string>
     <string name="peer_http_upload_status_unknown">نامعلوم</string>
     <string name="unprotected_connection">غیر محفوظ</string>
     <string name="download">لوڈ</string>
@@ -182,7 +182,7 @@
     <string name="use_torrentdownloads">استعمال TorrentDownloads</string>
     <string name="ten_dollars">$10</string>
     <string name="my_files">میری فائلوں</string>
-    <string name="and_choose_what_filetypes_to_share">آپMediaTorموبائل نیٹ ورک پر اشتراک اور قریبی وائی فائی ڈیسک ٹاپ کا فعال کے لئے کو چالو کرنے کے لئے پسند کروں گا کیا فائلوں کی اقسام چیک کریں.</string>
+    <string name="and_choose_what_filetypes_to_share">آپ MediaTor موبائل نیٹ ورک پر اشتراک اور قریبی وائی فائی ڈیسک ٹاپ کا فعال کے لئے کو چالو کرنے کے لئے پسند کروں گا کیا فائلوں کی اقسام چیک کریں.</string>
     <string name="delete_n_torrents_indexed">حذف شدہ d% بارشیں حساب سے ترتیب</string>
     <string name="saving_to_internal_memory">اندرونی میموری محفوظ کر رہا ہے</string>
     <string name="dialog_desktop_upload_request_text_text">%1$s wants to send you %2$s totalling %3$s</string>
@@ -200,7 +200,7 @@
     <string name="retry_search">دوبارہ کوشش کریں</string>
     <string name="the_file_could_not_be_seeded_bittorrent_will_remain_disconnected">فائل کو ترجیح نہیں ہوسکی. BitTorrent کے منقطع رہے گا.</string>
     <string name="toggle_sharing_selected_files">ٹوگل شیئرنگ</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">اگرMediaTorان انسٹال کیا جاتا ہے لوڈ، اتارنا Android ڈاؤن لوڈ فائلوں کو مٹا دے گا.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">اگر MediaTor ان انسٹال کیا جاتا ہے لوڈ، اتارنا Android ڈاؤن لوڈ فائلوں کو مٹا دے گا.</string>
     <string name="please_connect">اس خصوصیت کو استعمال کرنے کے لئے رابطہ قائم کریں</string>
     <string name="protected_connection">VPN کے ذریعہ محفوظ</string>
     <string name="use_eztv">استعمال Eztv</string>
@@ -217,7 +217,7 @@
     <string name="youtube_download_status_verifying">توثیق کرنے سے</string>
     <string name="the_file_could_not_be_seeded_enable_seeding">فائل کو ترجیح نہیں ہوسکی. ترتیبات پر بوائ فعال.</string>
     <string name="media_type_video">ویڈیو</string>
-    <string name="accept_intent">میں کاپی رائٹ کی خلاف ورزی کے لئےMediaTorاستعمال نہیں کرے گا</string>
+    <string name="accept_intent">میں کاپی رائٹ کی خلاف ورزی کے لئے MediaTor استعمال نہیں کرے گا</string>
     <string name="remove_torrent_and_data">اوپر اور ڈیٹا کو ہٹا دیں</string>
     <string name="seeding_settings">بوائ ترتیبات</string>
     <string name="love_frostwire">FrostWire محبت</string>
@@ -252,7 +252,7 @@
     <string name="search_for_type_files">%s فائلوں کے لیے تلاش</string>
     <string name="menu_delete_shortcut_label">حذف کریں</string>
     <string name="magnet_url_added">مقناطیس URL کی منتقلی میں شامل کر دیا. (میگنےٹ وائی فائی پر بہترین کام کریں)</string>
-    <string name="frostwire_shutting_down_no_permissions">معذرت،MediaTorڈسک تک رسائی کے لئے آپ کی اجازت کے بغیر جاری نہیں کر سکتے.</string>
+    <string name="frostwire_shutting_down_no_permissions">معذرت، MediaTor ڈسک تک رسائی کے لئے آپ کی اجازت کے بغیر جاری نہیں کر سکتے.</string>
     <string name="http_download_status_uncompressing">Uncompressing</string>
     <string name="one_time_purchase">ایک وقت خریداری</string>
     <string name="send_file_using">کا استعمال کرتے ہوئے فائل بھیجیں</string>
@@ -310,7 +310,7 @@
     <string name="desktop_transfer_status_complete">مکمل</string>
     <string name="updating">اپ ڈیٹ ہو</string>
     <string name="help_translate_frostwire">FrostWire ترجمہ کرنے میں مدد</string>
-    <string name="tell_others_subject">ابھی تک لوڈ، اتارنا Android کے لئےMediaTorملا؟</string>
+    <string name="tell_others_subject">ابھی تک لوڈ، اتارنا Android کے لئے MediaTor ملا؟</string>
     <string name="files_shared_by">کی طرف سے مشترکہ فائلوں</string>
     <string name="clear_messages">واضح پیغامات</string>
     <string name="best_value">بہترین قیمت</string>
@@ -334,7 +334,7 @@
 
     <string name="wizard_previous">پچھلا</string>
     <string name="there_is_n_torrents_indexed">حساب سے ترتیب d% بارشیں نہیں ہے</string>
-    <string name="wifi_sharing_disabled">Wi-fi sharing is off.\n\nWi-fi sharing can be used to share files locally betweenMediaTorpowered devices connected to the same Wi-Fi network.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Learn more.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">Wi-fi sharing is off.\n\nWi-fi sharing can be used to share files locally between MediaTor powered devices connected to the same Wi-Fi network.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Learn more.&lt;/a&gt;</string>
     <string name="pausing">موقوف</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">کس طرح دوسروں کے مقامی نیٹ ورک پر آپ کو دیکھ کر (وائی فائی)</string>
     <string name="yes_no_cancel_transfer_question">آپ کو روکنے اور فہرست میں سے یہ ڈاؤن لوڈ ہٹانے کے لیے چاہتے ہیں (کوئی ڈیٹا مٹا دیا جائے گا)؟</string>
@@ -405,7 +405,7 @@
     <string name="free_download">مفت ڈاؤنلوڈ</string>
     <string name="internet_discovery_summary">انٹرنیٹ پر ریموٹ ساتھیوں سے منسلک ہوں.</string>
     <string name="couldnt_share_file">فائل کا اشتراک نہیں کر سکا. عجیب راستہ مل گیا.</string>
-    <string name="learn_how_to_get_more_results">زیادہ نتائج کے لئےMediaTorپلس کوشش</string>
+    <string name="learn_how_to_get_more_results">زیادہ نتائج کے لئے MediaTor پلس کوشش</string>
     <string name="seeding_wifi_settings_explanation">ایک وائی فائی کنکشن کا استعمال کرتے ہوئے صرف اس وقت جب بیجوں. اپنے موبائل نیٹ ورک سے اضافی چارجز سے بچنے.</string>
     <string name="storage_setting_confirm_dialog_title">ایسڈی کارڈ</string>
     <string name="before_getting_started">آپ کو شروع کرنے سے پہلے</string>
@@ -421,7 +421,7 @@
     <string name="transfers_context_menu_copy_infohash">کاپی InfoHash</string>
     <string name="wanna_download_question">اتارنا کرنے کے لئے چاہتے ہیں؟</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">انتباہ: آپ کو اے پی پی ان انسٹال ہے تو SD کارڈ پرMediaTorطرف سے محفوظ تمام فائلوں، ANDROID، نہMediaTorطرف سے خارج کر دیا جائے گا.</string>
+    <string name="storage_setting_warning">انتباہ: آپ کو اے پی پی ان انسٹال ہے تو SD کارڈ پر MediaTor طرف سے محفوظ تمام فائلوں، ANDROID، نہ MediaTor طرف سے خارج کر دیا جائے گا.</string>
     <string name="not_sharing_files">کسی بھی فائلوں کا اشتراک نہیں کر رہا ہے.</string>
     <string name="sd_permission_no_accessible_path">راستہ آپ SD میں منتخب نہیں قابل رسائی نہیں ہے. OK دبائیں دوبارہ منتخب کرنے کے لیے.</string>
     <string name="select_deselect_all">منتخب کریں / غیر منتخب کریں: تمام</string>
@@ -446,7 +446,7 @@
     <string name="error_no_internet_connection">خرابی: انٹرنیٹ کنکشن چیک کریں</string>
     <string name="azureus_manager_item_error">خرابی</string>
     <string name="why_we_need_storage_permissions">ہم کیوں اسٹوریج اجازت کی ضرورت.</string>
-    <string name="get_a_frostwire_tshirt">ایکMediaTorٹی شرٹ حاصل</string>
+    <string name="get_a_frostwire_tshirt">ایک MediaTor ٹی شرٹ حاصل</string>
     <string name="media_type_applications">درخواستیں</string>
     <string name="invalid_filename">غلط فائل کا نام</string>
     <string name="use_archiveorg">استعمال Archive.org</string>
@@ -485,9 +485,9 @@
     <string name="hints_by_google">گوگل کی طرف اشارہ</string>
     <string name="ringtone">رنگ ٹونز</string>
     <string name="vpn_off_toast_notification">آپ کا کنکشن نجی نہیں ہو سکتا.</string>
-    <string name="help_translate_or_proofread_frostwire">ترجمہ یا تصحیح املاءMediaTorمدد</string>
+    <string name="help_translate_or_proofread_frostwire">ترجمہ یا تصحیح املاء MediaTor مدد</string>
     <string name="downloading_metadata">ڈاؤن لوڈ ہو میٹاڈیٹا</string>
-    <string name="notify_frostwire_is_running">اگرMediaTorچل رہا ہے مطلع کریں</string>
+    <string name="notify_frostwire_is_running">اگر MediaTor چل رہا ہے مطلع کریں</string>
     <string name="torrent_scheme_download_not_supported">لوڈ سہولت نہیں</string>
     <string name="app_shutdown_dlg_title">بند</string>
     <string name="dht_contacts">DHT کانٹیکٹس</string>
@@ -531,7 +531,7 @@
     <string name="cheaper_than_beer">بیئر سے سستا</string>
     <string name="type_here_to_filter">فلٹر کرنے یہاں ٹائپ کریں</string>
     <string name="block">بند کرنا</string>
-    <string name="rating_reminder_description">آپMediaTorمحبت ہے تو ہمیں شرح کے لئے ایک لمحے لے لو.</string>
+    <string name="rating_reminder_description">آپ MediaTor محبت ہے تو ہمیں شرح کے لئے ایک لمحے لے لو.</string>
     <string name="please_update_to_v">ورژن پر اپ ڈیٹ کریں s%</string>
     <string name="free_sponsored_app">مفت سپانسر اپلی</string>
     <string name="now_on_port">ابھی بندرگاہ پر</string>
@@ -559,7 +559,7 @@
     <string name="try_valid_port_next_time">درست پورٹ اگلی بار کوشش 1000 اور 65500</string>
     <string name="one_dollar">$1</string>
     <string name="enable_seeding">بوائ فعال</string>
-    <string name="storage_setting_confirm_dialog_text">میں تمام فائلوںMediaTorطرف ایسڈی کارڈ پر ڈاؤن لوڈ Android سے خارج کر دیا جائے گا اس لمحےMediaTorدرخواست اس آلہ سے ان انسٹال ہے اور میں کھو کسی بھی فائلوں کے لئےMediaTorLLC ذمہ دار نہیں ہوں گے سمجھنے.</string>
+    <string name="storage_setting_confirm_dialog_text">میں تمام فائلوں MediaTor طرف ایسڈی کارڈ پر ڈاؤن لوڈ Android سے خارج کر دیا جائے گا اس لمحے MediaTor درخواست اس آلہ سے ان انسٹال ہے اور میں کھو کسی بھی فائلوں کے لئے MediaTor LLC ذمہ دار نہیں ہوں گے سمجھنے.</string>
     <string name="simultaneous_uploads">بیک وقت وائی فائی اپ لوڈز</string>
     <string name="cant_open_file_does_not_exist">I %1$s نہیں کھول سکتے، فائل موجود نہیں ہے.</string>
     <string name="internet_discovery">انٹرنیٹ ڈسکوری</string>
@@ -672,7 +672,7 @@
     <string name="transfer_detail_storage_header">اسٹوریج کا راستہ:</string>
     <string name="seeding_time">بار بار</string>
     <string name="working">کام کرنا</string>
-    <string name="one_file_shared">اسی فائل میںMediaTorآلات کو ایک ہی وائی فائی نیٹ ورک پر اشتراک کیا گیا ہے.</string>
+    <string name="one_file_shared">اسی فائل میں MediaTor آلات کو ایک ہی وائی فائی نیٹ ورک پر اشتراک کیا گیا ہے.</string>
     <string name="pieces">ٹکڑے</string>
     <string name="upload_limit">حد تک اپ لوڈ کریں</string>
     <string name="enter_valid_tracker_url_here">یہاں درست ٹریکر یو آر ایل درج کریں</string>
@@ -695,7 +695,7 @@
     <string name="sequential_download">منظوری ڈاؤن لوڈ</string>
     <string name="downloaded_n">%1$s ڈاؤن لوڈ کردہ / </string>
     <string name="transfer_detail_title_header">نام:</string>
-    <string name="n_files_shared">%d فائلوں کو اسی وائی فائی نیٹ ورک پرMediaTorآلات میں اشتراک کیا گیا ہے.</string>
+    <string name="n_files_shared">%d فائلوں کو اسی وائی فائی نیٹ ورک پر MediaTor آلات میں اشتراک کیا گیا ہے.</string>
     <string name="time_elapsed">وقت گزر گیا</string>
     <string name="remove_tracker">ٹریکر کو ہٹا دیں</string>
     <string name="comment">تبصرہ</string>
@@ -712,7 +712,7 @@
     <string name="title_activity_transfer_detail">منتقلی کی تفصیل</string>
     <string name="piece_size_header">ٹکڑا سائز:</string>
     <string name="add_tracker">ٹریکر شامل کریں</string>
-    <string name="frostwire_start_engine_service_security_exception">اجازت کی کمی کی وجہ سےMediaTorمناسب طریقے سے شروع نہیں کیا جا سکا. براہ کرم ضروری اجازتوں کی درخواست کریں اور درخواست کو دوبارہ شروع کریں</string>
+    <string name="frostwire_start_engine_service_security_exception">اجازت کی کمی کی وجہ سے MediaTor مناسب طریقے سے شروع نہیں کیا جا سکا. براہ کرم ضروری اجازتوں کی درخواست کریں اور درخواست کو دوبارہ شروع کریں</string>
     <string name="vpn_find_out_more">مزید تلاش کرو</string>
     <string name="vpn_suggestion_nordvpn">NORDVPN \n مفت 7 دن کی آزمائش</string>
     <string name="play_store_out_of_sync">Google Play Store کو مطابقت پذیر کرنے کی ضرورت ہے، چند منٹ انتظار کریں</string>

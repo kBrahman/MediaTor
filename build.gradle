@@ -36,8 +36,8 @@ android {
 
     defaultConfig {
         applicationId "zig.zak.media.tor"
-        versionCode 12
-        versionName "1.11"
+        versionCode 13
+        versionName "1.12"
         multiDexEnabled true
         minSdkVersion 17
         targetSdkVersion 28

@@ -116,8 +116,8 @@
     <string name="set_as_wallpaper">Ορισμός ως Φόντο</string>
     <string name="failed_to_set_wallpaper">Αποτύχαμε να το θέσουμε ως Φόντο</string>
     <string name="tell_others_chooser">Tweet / SMS / Email</string>
-    <string name="tell_others_subject">Έχεις τοMediaTorγια Android ή όχι ακόμα;</string>
-    <string name="and_choose_what_filetypes_to_share">Διάλεξε τους τύπους αρχείων που θες να μοιράζεσαι στοMediaTorMobile Network και σε κοντινούς υπολογιστές με ασύρματη σύνδεση.</string>
+    <string name="tell_others_subject">Έχεις το MediaTor για Android ή όχι ακόμα;</string>
+    <string name="and_choose_what_filetypes_to_share">Διάλεξε τους τύπους αρχείων που θες να μοιράζεσαι στο MediaTor Mobile Network και σε κοντινούς υπολογιστές με ασύρματη σύνδεση.</string>
     <string name="before_getting_started">Πριν ξεκινήσουμε</string>
     <string name="user_connecting">Ο χρήστης συνδέεται</string>
     <string name="accept_connection_from">Αποδοχή σύνδεσης από</string>
@@ -188,7 +188,7 @@
     <string name="long_press_for_batch_actions">Άγγιξε οποιοδήποτε τίτλο αρχείου για μαζικές ενέργειες</string>
     <string name="files_shared">αρχεία μοιράζονται</string>
     <string name="share_finished_downloads">Μοιράσου τα ολοκληρωμένα downloads στο ασύρματο δίκτυο</string>
-    <string name="share_finished_downloads_summary">Τα ολοκληρωμένα downloads θα είναι διαθέσιμα σε άλλους χρήστεςMediaTorστο ασύρματο δίκτυό σου.</string>
+    <string name="share_finished_downloads_summary">Τα ολοκληρωμένα downloads θα είναι διαθέσιμα σε άλλους χρήστες MediaTor στο ασύρματο δίκτυό σου.</string>
     <string name="are_you_sure_delete_files">Θέλεις σίγουρα να ΔΙΑΓΡΑΨΕΙΣ ΓΙΑ ΠΑΝΤΑ τα επιλεγμένα αρχεία από τη συσκευή σου;</string>
     <string name="searchable_activity_label">Αναζητήσιμη Δραστηριότητα</string>
     <string name="search_hint">Αναζήτηση Περιεχομένου</string>
@@ -316,8 +316,8 @@
     <string name="seeding_settings">Ρυθμίσεις Μοιράσματος</string>
     <string name="seeding_settings_explanation">Οι χρήστες BitTorrent στο internet θα μπορούν να κατεβάσουν κομμάτια από τα αρχεία τα οποία το torrent μοιράζεται.</string>
     <string name="seeding_wifi_settings_explanation">Να μοιράζεσαι μόνο όταν χρησιμοποιείται ασύρματη σύνδεση. Αποφεύγει επιπλέον χρεώσεις από την εταιρεία κινητής τηλεφωνίας.</string>
-    <string name="intent_text">ΤοMediaTorείναι ένα peer-to-peer πρόγραμμα για να μοιράζεσαι μόνο αρχεία για τα οποία έχεις άδεια. Η εγκατάσταση του προγράμματος δεν αποτελεί άδεια για να κατεβάσεις ή να μοιράσεις περιεχόμενο για το οποίο δεν έχεις άδεια από πριν.</string>
-    <string name="accept_intent">Δεν θα χρησιμοποιήσω τοMediaTorγια να παραβιάσω πνευματικά δικαιώματα</string>
+    <string name="intent_text">Το MediaTor είναι ένα peer-to-peer πρόγραμμα για να μοιράζεσαι μόνο αρχεία για τα οποία έχεις άδεια. Η εγκατάσταση του προγράμματος δεν αποτελεί άδεια για να κατεβάσεις ή να μοιράσεις περιεχόμενο για το οποίο δεν έχεις άδεια από πριν.</string>
+    <string name="accept_intent">Δεν θα χρησιμοποιήσω το MediaTor για να παραβιάσω πνευματικά δικαιώματα</string>
     <string name="toast_on_disconnect">Αποσυνδεθήκαμε από το BitTorrent. Όλες οι μεταφορές BitTorrent σταμάτησαν.</string>
     <string name="toast_on_connect">Το σύστημα BitTorrent ξεκίνησε.</string>
     <string name="seeds">Seeds</string>
@@ -360,8 +360,8 @@
     <string name="donate_5">Δωρεά $5</string>
     <string name="donate_10">Δωρεά $10</string>
     <string name="donate_25">Δωρεά $25</string>
-    <string name="one_file_shared" >Ένα αρχείο μοιράστηκε σε συσκευέςMediaTorστο ίδιο ασύρματο δίκτυο.</string>
-    <string name="n_files_shared" >%d αρχεία μοιράστηκαν σε συσκευέςMediaTorστο ίδιο ασύρματο δίκτυο.</string>
+    <string name="one_file_shared" >Ένα αρχείο μοιράστηκε σε συσκευές MediaTor στο ίδιο ασύρματο δίκτυο.</string>
+    <string name="n_files_shared" >%d αρχεία μοιράστηκαν σε συσκευές MediaTor στο ίδιο ασύρματο δίκτυο.</string>
     <string name="playing_now_colon">Παίζει τώρα:</string>
     <string name="my_filetype">Ο %s μου</string>
     <string name="paused">Παύση</string>
@@ -389,7 +389,7 @@
     <string name="use_frostclick">Χρήση FrostClick</string>
     <string name="delete_this_track">Διαγραφή αυτού του τραγουδιού</string>
     <string name="are_you_sure_delete_current_track">Σίγουρα θέλεις να διαγράψεις το τρέχον τραγούδι;</string>
-    <string name="wifi_sharing_disabled">Το ασύρματο μοίρασμα είναι απενεργοποιημένο.\n\nΤο ασύρματο μοίρασμα μπορεί να χρησιμοποιηθεί για να μοιράζεσαι αρχεία τοπικά με άλλες συσκευέςMediaTorπου είναι συνδεδεμένες στο ίδιο ασύρματο δίκτυο.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Μάθε περισσότερα.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">Το ασύρματο μοίρασμα είναι απενεργοποιημένο.\n\nΤο ασύρματο μοίρασμα μπορεί να χρησιμοποιηθεί για να μοιράζεσαι αρχεία τοπικά με άλλες συσκευές MediaTor που είναι συνδεδεμένες στο ίδιο ασύρματο δίκτυο.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Μάθε περισσότερα.&lt;/a&gt;</string>
     <string name="turn_on_wifi_sharing">Ενεργοποίηση Ασύρματου Μοιράσματος</string>    
     <string name="are_you_sure_wifi_sharing_off">Αν απενεργοποιήσεις το ασύρματο μοίρασμα, όλα τα τοπικά μοιραζόμενα αρχεία δεν θα είναι διαθέσιμα σε άλλους χρήστες στα κοντινά ασύρματα δίκτυα.</string>
     <string name="anonymous_usage_statistics">Ανώνυμα Στατιστικά Χρήστης</string>
@@ -434,15 +434,15 @@
     <string name="menu_space_shortcut_label">Space</string>
     <string name="cant_open_file_does_not_exist">Δεν μπορώ να ανοίξω το %1$s, το αρχείο δεν υπάρχει.</string>
     <string name="saving_to_sd_card">Αποθήκευση στην κάρτα SD.</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Το Android θα διαγράψει όλα τα κατεβασμένα αρχεία αν τοMediaTorαπεγκατασταθεί.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Το Android θα διαγράψει όλα τα κατεβασμένα αρχεία αν το MediaTor απεγκατασταθεί.</string>
     <string name="saving_to_internal_memory">Αποθήκευση στην Εσωτερική Μνήμη</string>
     <string name="saving_to_internal_memory_description">Έχεις και μία κάρτα SD (%1$s διαθέσιμα)</string>
     <string name="device_memory">Μνήμη Συσκευής</string>
     <string name="device_storage">Αποθηκευτικός Χώρος Συσκευής</string>
     <string name="sdcard_storage">Αποθηκευτικός Χώρος SD</string>
-    <string name="storage_setting_warning">ΠΡΟΣΟΧΗ: Όλα τα αρχεία που έχουν κατέβει από τοMediaTorστην κάρτα SD θα διαγραφούν από ΤΟ ANDROID αν απεγκαταστήσεις το FrostWire.</string>
+    <string name="storage_setting_warning">ΠΡΟΣΟΧΗ: Όλα τα αρχεία που έχουν κατέβει από το MediaTor στην κάρτα SD θα διαγραφούν από ΤΟ ANDROID αν απεγκαταστήσεις το FrostWire.</string>
     <string name="storage_setting_confirm_dialog_title">ΚΑΡΤΑ SD</string>
-    <string name="storage_setting_confirm_dialog_text">Κατάλαβα ότι όλα τα αρχεία που κατέβηκαν στην κάρτα SD από τοMediaTorθα διαγραφούν από ΤΟ ANDROID τη στιγμή που η εφαρμογή τουMediaTorαπεγκατασταθεί από αυτή τη συσκευή και δεν θα θεωρήσω υπεύθυνη τηνMediaTorLLC για όσα αρχεία χαθούν.</string>
+    <string name="storage_setting_confirm_dialog_text">Κατάλαβα ότι όλα τα αρχεία που κατέβηκαν στην κάρτα SD από το MediaTor θα διαγραφούν από ΤΟ ANDROID τη στιγμή που η εφαρμογή του MediaTor απεγκατασταθεί από αυτή τη συσκευή και δεν θα θεωρήσω υπεύθυνη την MediaTor LLC για όσα αρχεία χαθούν.</string>
     <string name="available">διαθέσιμα</string>
     <string name="file_descriptor_sd_mounted">Αυτό το αρχείο διαγράφηκε από την κάρτα SD ή έχεις βάλει μία άλλη κάρτα SD.</string>
     <string name="file_descriptor_sd_unmounted">Αυτό το αρχείο ανήκει σε μία κάρτα SD, παρακαλώ βάλ\' τη στη συσκευή σου.</string>
@@ -456,7 +456,7 @@
     <string name="torrent_max_peers">Max Peers</string>
     <string name="request_again">Ζητήστε πάλι</string>
     <string name="restarting_summary">FrostWire θα επανεκκινήσει δεδομένο δικαιώματα για να τεθεί σε ισχύ</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire είναι ένα πρόγραμμα περιήγησης αρχείων και κατέβασα την εφαρμογή, ως εκ τούτου, πρέπει να είναι σε θέση να έχουν πρόσβαση στο δίσκο σας.\n\nΧωρίς δικαιώματα σαςMediaTorδεν μπορεί να λειτουργήσει.\n\nΘέλετε να δοκιμάσετε ξανά;</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire είναι ένα πρόγραμμα περιήγησης αρχείων και κατέβασα την εφαρμογή, ως εκ τούτου, πρέπει να είναι σε θέση να έχουν πρόσβαση στο δίσκο σας.\n\nΧωρίς δικαιώματα σας MediaTor δεν μπορεί να λειτουργήσει.\n\nΘέλετε να δοκιμάσετε ξανά;</string>
     <string name="unprotected_connection">απροστάτευτος</string>
     <string name="transfers_context_menu_copy_magnet_copied">Μαγνήτης αντιγραφεί στο πρόχειρο</string>
     <string name="buy_uppercase">ΑΓΟΡΆ</string>
@@ -477,7 +477,7 @@
     <string name="love_frostwire">H αγάπη FrostWire</string>
     <string name="help">Help</string>
     <string name="vpn_what_you_get_with">Τι παίρνετε με </string>
-    <string name="frostwire_shutting_down_no_permissions">Συγνώμη,MediaTorδεν μπορεί να συνεχιστεί χωρίς την άδειά σας για να αποκτήσετε πρόσβαση στο δίσκο.</string>
+    <string name="frostwire_shutting_down_no_permissions">Συγνώμη, MediaTor δεν μπορεί να συνεχιστεί χωρίς την άδειά σας για να αποκτήσετε πρόσβαση στο δίσκο.</string>
     <string name="one_time_purchase">Αγορασε τωρα!</string>
     <string name="activity_VPN">Σύνδεση</string>
     <string name="one_year">1 χρόνος</string>
@@ -522,7 +522,7 @@
     <string name="save_bandwidth">Αποθήκευση εύρος ζώνης</string>
     <string name="free_download">Δωρεάν κατέβασμα</string>
     <string name="couldnt_share_file">Δεν ήταν δυνατή η κοινή χρήση του αρχείου. Περίεργο πορεία βρέθηκε.</string>
-    <string name="learn_how_to_get_more_results">ΔοκιμάστεMediaTorPlus για περισσότερα αποτελέσματα</string>
+    <string name="learn_how_to_get_more_results">Δοκιμάστε MediaTor Plus για περισσότερα αποτελέσματα</string>
     <string name="no_trial_period_included">Δεν δοκιμαστική περίοδο περιλαμβάνονται</string>
     <string name="send_bitcoin_tip">Αποστολή Bitcoin Συμβουλή</string>
     <string name="bittorrent_off_data_saver_on">"BitTorrent off (Data Saver On)"</string>
@@ -554,7 +554,7 @@
     <string name="cheaper_than_lattes">Φθηνότερο από καφέ με γάλα</string>
     <string name="vpn_off_toast_notification">Η σύνδεσή σας δεν μπορεί να είναι ιδιωτικό.</string>
     <string name="downloading_metadata">Κατεβάζοντας μεταδεδομένα</string>
-    <string name="notify_frostwire_is_running">Ειδοποίηση ανMediaTorείναι σε λειτουργία</string>
+    <string name="notify_frostwire_is_running">Ειδοποίηση αν MediaTor είναι σε λειτουργία</string>
     <string name="app_shutdown_dlg_title">Κλείσιμο</string>
     <string name="dht_contacts">επαφές DHT</string>
     <string name="action_menu_overflow_description">Περισσότερες επιλογές</string>
@@ -566,7 +566,7 @@
     <string name="send_tip_donation">Αποστολή δωρεά</string>
     <string name="enable_experimental">Πειραματικά Χαρακτηριστικά</string>
     <string name="cheaper_than_beer">Φθηνότερο από μπύρα</string>
-    <string name="rating_reminder_description">Αν αγαπάτε τονMediaTorαφιερώστε λίγο χρόνο για να μας αξιολογήσετε.</string>
+    <string name="rating_reminder_description">Αν αγαπάτε τον MediaTor αφιερώστε λίγο χρόνο για να μας αξιολογήσετε.</string>
     <string name="free_sponsored_app">Δωρεάν App Σύνδεσμοι</string>
     <string name="includes_3_day_free_trial">Περιλαμβάνει τρεις ημέρες δωρεάν δοκιμής. συνιστάται</string>
     <string name="support">Υποστήριξη</string>
@@ -671,7 +671,7 @@
     <string name="seeding_is_currently_disabled">Η σπορά είναι αυτή τη στιγμή απενεργοποιημένη</string>
     <string name="could_not_open_transfer_detail_invalid_infohash">Δεν ήταν δυνατό να ανοίξει Λεπτομέρειες μεταφοράς, μη έγκυρη InfoHash</string>
     <string name="invalid_tracker_url">Μη έγκυρη διεύθυνση URL παρακολούθησης</string>
-    <string name="frostwire_start_engine_service_security_exception">ΤοMediaTorδεν μπορούσε να ξεκινήσει σωστά λόγω έλλειψης αδειών. Παραχωρήστε τα απαιτούμενα δικαιώματα και κάντε επανεκκίνηση της εφαρμογής</string>
+    <string name="frostwire_start_engine_service_security_exception">Το MediaTor δεν μπορούσε να ξεκινήσει σωστά λόγω έλλειψης αδειών. Παραχωρήστε τα απαιτούμενα δικαιώματα και κάντε επανεκκίνηση της εφαρμογής</string>
     <string name="vpn_find_out_more">Βρες περισσότερα</string>
     <string name="uploaded">Μεταφορτώθηκε</string>
     <string name="trackers">Trackers</string>

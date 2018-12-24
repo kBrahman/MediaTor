@@ -101,8 +101,8 @@
     <string name="set_as_wallpaper">Set as Wallpaper</string>
     <string name="failed_to_set_wallpaper">Failed to set Wallpaper</string>
     <string name="tell_others_chooser">Tweet / SMS / Email</string>
-    <string name="tell_others_subject">GotMediaTorfor Android yet?</string>
-    <string name="and_choose_what_filetypes_to_share">Check what types of files you\'d like to enable for sharing on theMediaTorMobile Network and nearby Wi-Fi enabled Desktops.</string>
+    <string name="tell_others_subject">Got  MediaTor  for Android yet?</string>
+    <string name="and_choose_what_filetypes_to_share">Check what types of files you\'d like to enable for sharing on the  MediaTor  Mobile Network and nearby Wi-Fi enabled Desktops.</string>
     <string name="before_getting_started">Before you get started</string>
     <string name="user_connecting">User connecting</string>
     <string name="accept_connection_from">Accept connection from</string>
@@ -114,7 +114,7 @@
     <string name="browse">Browse</string>
     <string name="files_shared_by">files shared by</string>
     <string name="mark_your_territory">Mark your Territory</string>
-    <string name="get_a_frostwire_tshirt">Get aMediaTorT-Shirt</string>
+    <string name="get_a_frostwire_tshirt">Get a MediaTor T-Shirt</string>
     <string name="internal_port">Internal Port</string>
     <string name="external_port">External Port</string>
     <string name="device">Device</string>
@@ -173,7 +173,7 @@
     <string name="long_press_for_batch_actions">Touch any file title for batch actions</string>
     <string name="files_shared">files shared</string>
     <string name="share_finished_downloads">Share finished downloads on Wi-Fi</string>
-    <string name="share_finished_downloads_summary">Finished downloads will be available to otherMediaTorusers on your Wi-Fi network.</string>
+    <string name="share_finished_downloads_summary">Finished downloads will be available to other MediaTor users on your Wi-Fi network.</string>
     <string name="are_you_sure_delete_files">Are you sure you want to PERMANENTLY DELETE the selected files from your device?</string>
     <string name="are_you_sure_delete_playlist">Are you sure you want to delete the %s playlist</string>
     <string name="delete_files">Delete files</string>
@@ -329,14 +329,14 @@
     <string name="wizard_next">Next</string>
     <string name="wizard_finish">Finish</string>
     <string name="dummy_content_description" translatable="false">[dummy description]</string>
-    <string name="welcome_to_frostwire">Welcome to MediaTor</string>
+    <string name="welcome_to_frostwire">Welcome to  MediaTor </string>
     <string name="let_apos_s_set_you_up_before_we_begin_">Let\'s set you up before we begin.</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">How others see you on the local network (Wi-Fi)</string>
     <string name="seeding_settings">Seeding Settings</string>
     <string name="seeding_settings_explanation">BitTorrent users on the internet will be able to download file chunks of the data your torrents seed.</string>
     <string name="seeding_wifi_settings_explanation">Seed only when using a Wi-Fi connection. Avoid extra charges from your carrier.</string>
-    <string name="intent_text">MediaTor is a peer-to-peer program for sharing authorized files only. Installing and using the program does not constitute a license for obtaining or distributing unauthorized content.</string>
-    <string name="accept_intent">I will not useMediaTorfor copyright infringement</string>
+    <string name="intent_text"> MediaTor  is a peer-to-peer program for sharing authorized files only. Installing and using the program does not constitute a license for obtaining or distributing unauthorized content.</string>
+    <string name="accept_intent">I will not use MediaTor for copyright infringement</string>
     <string name="toast_on_disconnect">Disconnected from BitTorrent. All BitTorrent transfers have stopped.</string>
     <string name="toast_on_connect">BitTorrent core started.</string>
     <string name="seeds">Seeds</string>
@@ -382,8 +382,8 @@
     <string name="donate_10">Donate $10</string>
     <string name="donate_25">Donate $25</string>
     <string name="couldnt_share_file">Could not share the file. Weird path found.</string>
-    <string name="one_file_shared">One file has been shared toMediaTordevices on the same Wi-Fi network.</string>
-    <string name="n_files_shared">%d files has been shared toMediaTordevices on the same Wi-Fi network.</string>
+    <string name="one_file_shared">One file has been shared to MediaTor devices on the same Wi-Fi network.</string>
+    <string name="n_files_shared">%d files has been shared to MediaTor devices on the same Wi-Fi network.</string>
     <string name="playing_now_colon">Playing now:</string>
     <string name="my_filetype">My %s</string>
     <string name="paused">Paused</string>
@@ -411,7 +411,7 @@
     <string name="use_frostclick">Use FrostClick</string>
     <string name="delete_this_track">Delete this track</string>
     <string name="are_you_sure_delete_current_track">Are you sure you want to delete the current track?</string>
-    <string name="wifi_sharing_disabled">Wi-fi sharing is off.\n\nWi-fi sharing can be used to share files locally betweenMediaTorpowered devices connected to the same Wi-Fi network.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Learn more.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">Wi-fi sharing is off.\n\nWi-fi sharing can be used to share files locally between MediaTor powered devices connected to the same Wi-Fi network.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Learn more.&lt;/a&gt;</string>
     <string name="turn_on_wifi_sharing">Turn on Wi-fi Sharing</string>
     <string name="are_you_sure_wifi_sharing_off">Turning off Wi-Fi sharing will make all your locally shared files unavailable to other users on the nearby Wi-Fi network.</string>
     <string name="anonymous_usage_statistics">Anonymous Usage Statistics</string>
@@ -473,15 +473,15 @@
     <string name="menu_space_shortcut_label">Space</string>
     <string name="cant_open_file_does_not_exist">I can\'t open %1$s, the file does not exist.</string>
     <string name="saving_to_sd_card">Saving to SD card.</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android will erase downloaded files ifMediaToris uninstalled.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android will erase downloaded files if MediaTor is uninstalled.</string>
     <string name="saving_to_internal_memory">Saving to Internal Memory</string>
     <string name="saving_to_internal_memory_description">You also have an SD card (%1$s free)</string>
     <string name="device_memory">Device\'s Memory</string>
     <string name="device_storage">Device\'s Storage</string>
     <string name="sdcard_storage">SD\'s Storage</string>
-    <string name="storage_setting_warning">WARNING: All files saved byMediaToronto the SD card will be deleted BY ANDROID, not FrostWire, if you uninstall the app.</string>
+    <string name="storage_setting_warning">WARNING: All files saved by MediaTor onto the SD card will be deleted BY ANDROID, not FrostWire, if you uninstall the app.</string>
     <string name="storage_setting_confirm_dialog_title">SD CARD</string>
-    <string name="storage_setting_confirm_dialog_text">I understand that all files downloaded to the SD Card byMediaTorwill be deleted BY ANDROID the moment theMediaTorapplication is uninstalled from this device and I will not holdMediaTorLLC liable for any files lost.</string>
+    <string name="storage_setting_confirm_dialog_text">I understand that all files downloaded to the SD Card by MediaTor will be deleted BY ANDROID the moment the MediaTor application is uninstalled from this device and I will not hold MediaTor LLC liable for any files lost.</string>
     <string name="available">available</string>
     <string name="file_descriptor_sd_mounted">This file was deleted from the SD card, or the SD card you have inserted is a different one.</string>
     <string name="file_descriptor_sd_unmounted">This file belongs to an SD card, please insert it on your device.</string>
@@ -520,7 +520,7 @@
     <string name="learn_how_to_get_more_results">Learn how to get more results</string>
     <string name="action_menu_overflow_description">More options</string>
     <string name="rate_our_app">Rate our App</string>
-    <string name="rating_reminder_description">If you loveMediaTorplease take a moment to rate us.</string>
+    <string name="rating_reminder_description">If you love MediaTor please take a moment to rate us.</string>
     <string name="love_frostwire">Love FrostWire</string>
     <string name="send_feedback">Send Feedback</string>
     <string name="choose_email_app">Choose an Email App…</string>
@@ -528,11 +528,11 @@
 
     <string name="thank_you">Thank you!</string>
     <string name="keep_in_touch">Keep in touch!</string>
-    <string name="frostwire_shutting_down_no_permissions">Sorry,MediaTorcan\'t continue without your permission to access disk.</string>
+    <string name="frostwire_shutting_down_no_permissions">Sorry, MediaTor can\'t continue without your permission to access disk.</string>
     <string name="restarting">Restarting…</string>
     <string name="restarting_summary">FrostWire will restart now for granted permissions to take effect</string>
     <string name="why_we_need_storage_permissions">Why we need storage permissions.</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire is a file browser and downloader app, therefore it needs to be able to access your disk.\n\nWithout your permissionsMediaTorcannot work.\n\nWant to try again?</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire is a file browser and downloader app, therefore it needs to be able to access your disk.\n\nWithout your permissions MediaTor cannot work.\n\nWant to try again?</string>
     <string name="shutting_down">Shutting down…</string>
     <string name="help">Help</string>
     <string name="request_again">Request Again</string>
@@ -564,7 +564,7 @@
     <string name="vpn_client_feature_4_PIA">24/7 VPN Support</string>
     <string name="vpn_off_toast_notification">Your connection may not be private.</string>
     <string name="dht_contacts">DHT contacts</string>
-    <string name="notify_frostwire_is_running">Notify ifMediaToris running</string>
+    <string name="notify_frostwire_is_running">Notify if MediaTor is running</string>
     <string name="notify_frostwire_is_running_summary">Show a permanent Android notification with status of transfers</string>
     <string name="invalid_filename">Invalid file name</string>
     <string name="storage_picker_treeuri_null">No storage path was selected</string>
@@ -688,7 +688,7 @@
     <string name="transfer_detail_size_dummy" translatable="false">56MB</string>
     <string name="transfer_detail_speed_small_dummy" translatable="false">56Kb</string>
     <string name="transfer_detail_date_dummy" translatable="false">Sept. 2, 2017</string>
-    <string name="transfer_detail_comment_dummy" translatable="false">Torrent file created withMediaTorhttp://www.frostwire.com</string>
+    <string name="transfer_detail_comment_dummy" translatable="false">Torrent file created with  MediaTor  http://www.frostwire.com</string>
     <string name="transfer_detail_number_of_number_dummy" translatable="false">0 of 54</string>
     <string name="transfer_detail_speed_dummy" translatable="false">0.0 Kb/s</string>
     <string name="transfer_detail_download_size_dummy" translatable="false">14MB/14MB</string>

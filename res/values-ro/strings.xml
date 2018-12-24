@@ -52,7 +52,7 @@
     <string name="azureus_manager_item_ready">În așteptare pentru alte torrent la coadă</string>
     <string name="nickname">Poreclă</string>
     <string name="drawer_close">Închide sertar de navigare</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire este o aplicație browser de fișiere și downloader, prin urmare, acesta trebuie să fie capabil de a accesa discul.\n\nFără a permisiunile dvs.MediaTornu poate funcționa.\n\nDoriți să încercați din nou?</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire este o aplicație browser de fișiere și downloader, prin urmare, acesta trebuie să fie capabil de a accesa discul.\n\nFără a permisiunile dvs. MediaTor nu poate funcționa.\n\nDoriți să încercați din nou?</string>
     <string name="peer_http_upload_status_unknown">Necunoscut</string>
     <string name="unprotected_connection">neprotejat</string>
     <string name="video">Video</string>
@@ -108,7 +108,7 @@
     <string name="ten_dollars">$10</string>
     <string name="my_files">Fișierele mele</string>
     <string name="no_network_connection">Nicio conexiune la rețea</string>
-    <string name="and_choose_what_filetypes_to_share">Verifica ce tipuri de fișiere pe care doriți să le activați pentru distribuirea pe mobil RețeauaMediaTorși în apropiere de acces Wi-Fi activat desktop-uri.</string>
+    <string name="and_choose_what_filetypes_to_share">Verifica ce tipuri de fișiere pe care doriți să le activați pentru distribuirea pe mobil Rețeaua MediaTor și în apropiere de acces Wi-Fi activat desktop-uri.</string>
     <string name="delete_n_torrents_indexed">Șterse %d de torentele indexate.</string>
     <string name="saving_to_internal_memory">Se salvează în memoria internă</string>
     <string name="dialog_desktop_upload_request_text_text">%1$s vrea să vă trimită %2$s în valoare totală %3$s</string>
@@ -128,7 +128,7 @@
     <string name="retry_search">Reîncerca</string>
     <string name="the_file_could_not_be_seeded_bittorrent_will_remain_disconnected">Fișierul nu a putut fi însămânțate. BitTorrent va rămâne deconectat.</string>
     <string name="toggle_sharing_selected_files">Toggle Sharing</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android va șterge fișierele descărcate în cazul în careMediaToreste dezinstalat.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android va șterge fișierele descărcate în cazul în care MediaTor este dezinstalat.</string>
     <string name="please_connect">Vă rugăm să vă conectați pentru a utiliza această caracteristică</string>
     <string name="protected_connection">Protejat printr-un VPN</string>
     <string name="clear_finished">Șterge Terminat</string>
@@ -147,7 +147,7 @@
     <string name="applications">Apps</string>
     <string name="the_file_could_not_be_seeded_enable_seeding">Fișierul nu a putut fi însămânțate. Activați însămânțarea setărilor.</string>
     <string name="media_type_video">Video</string>
-    <string name="accept_intent">Eu nu voi folosiMediaTorpentru încălcarea drepturilor de autor</string>
+    <string name="accept_intent">Eu nu voi folosi MediaTor pentru încălcarea drepturilor de autor</string>
     <string name="remove_torrent_and_data">Eliminați datele și torrent</string>
     <string name="seeding_settings">Setări insamintare</string>
     <string name="love_frostwire">Iubesc FrostWire</string>
@@ -189,7 +189,7 @@
     <string name="menu_delete_shortcut_label">Del</string>
     <string name="magnet_url_added">URL-ul magnet adăugat la transferuri. (Magneți funcționează cel mai bine pe Wi-Fi)</string>
     <string name="share_finished_downloads_summary">Download-uri terminate vor fi disponibile altor utilizatori Frostwire în rețeaua Wi-Fi.</string>
-    <string name="frostwire_shutting_down_no_permissions">Ne pare rău,MediaTornu poate continua fără permisiunea dvs. pentru a avea acces pe disc.</string>
+    <string name="frostwire_shutting_down_no_permissions">Ne pare rău, MediaTor nu poate continua fără permisiunea dvs. pentru a avea acces pe disc.</string>
     <string name="http_download_status_uncompressing">Decomprimare</string>
     <string name="one_time_purchase">Timp de o achiziție</string>
     <string name="send_file_using">Trimitere fișier utilizând</string>
@@ -284,7 +284,7 @@
     <string name="wizard_previous">Anterior</string>
     <string name="azureus_manager_item_downloading">Descărcarea</string>
     <string name="there_is_n_torrents_indexed">Exista de %d de torenți indexate</string>
-    <string name="wifi_sharing_disabled">WiFi de partajare este dezactivată.\n\nWiFi de partajare poate fi folosit pentru a partaja fișiere local între dispozitivele alimentateMediaTorconectate la aceeași rețea Wi-Fi.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Află mai multe.&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">WiFi de partajare este dezactivată.\n\nWiFi de partajare poate fi folosit pentru a partaja fișiere local între dispozitivele alimentate MediaTor conectate la aceeași rețea Wi-Fi.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;Află mai multe.&lt;/a&gt;</string>
     <string name="pausing">Întrerupând</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">Cum te vezi pe alții în rețeaua locală (Wi-Fi)</string>
     <string name="yes_no_cancel_transfer_question">Sunteți sigur că doriți să opriți și să eliminați această descărcare din listă (nu există date vor fi șterse)?</string>
@@ -365,7 +365,7 @@
     <string name="free_download">Descărcare gratuită</string>
     <string name="internet_discovery_summary">Conectați-vă la colegii de la distanță de pe Internet.</string>
     <string name="couldnt_share_file">Nu a putut împărtăși fișierul. Cale ciudat găsită.</string>
-    <string name="learn_how_to_get_more_results">ÎncercațiMediaTorPlus pentru mai multe rezultate</string>
+    <string name="learn_how_to_get_more_results">Încercați MediaTor Plus pentru mai multe rezultate</string>
     <string name="use_mobile_data">Utilizați 3G/4G pentru BitTorrent</string>
     <string name="seeding_wifi_settings_explanation">Semințelor numai atunci când se utilizează o conexiune Wi-Fi. Evita taxele suplimentare de la operatorul dvs.</string>
     <string name="storage_setting_confirm_dialog_title">CARD SD</string>
@@ -385,7 +385,7 @@
     <string name="transfers_context_menu_copy_infohash">Copiere InfoHash</string>
     <string name="wanna_download_question">Doriți să descărcați?</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">ATENȚIE: Toate fișierele salvate de cătreMediaTorpe card SD va fi șters de către ANDROID, nu FrostWire, dacă dezinstalați aplicația.</string>
+    <string name="storage_setting_warning">ATENȚIE: Toate fișierele salvate de către MediaTor pe card SD va fi șters de către ANDROID, nu FrostWire, dacă dezinstalați aplicația.</string>
     <string name="not_sharing_files">nu este de partajare orice fișiere</string>
     <string name="sd_permission_no_accessible_path">Calea pe care ați selectat în SD nu mai este accesibil. Apăsați OK pentru a selecta din nou.</string>
     <string name="select_deselect_all">Selectare/Deselectare Toate</string>
@@ -410,7 +410,7 @@
     <string name="error_no_internet_connection">Eroare: Verificați conexiunea la Internet</string>
     <string name="azureus_manager_item_error">Eroare</string>
     <string name="why_we_need_storage_permissions">De ce avem nevoie de permisiuni de stocare.</string>
-    <string name="get_a_frostwire_tshirt">Obține unMediaTorT-Shirt</string>
+    <string name="get_a_frostwire_tshirt">Obține un MediaTor T-Shirt</string>
     <string name="media_type_applications">Aplicatii</string>
     <string name="invalid_filename">Nume invalid</string>
     <string name="use_archiveorg">Utilizați Archive.org</string>
@@ -456,7 +456,7 @@
     <string name="loading">De încărcare</string>
     <string name="downloading_metadata">Se descarcă metadate</string>
     <string name="storage_preference_summary">Locația de stocare implicită în cazul în care fișierele vor fi salvate.</string>
-    <string name="notify_frostwire_is_running">Notificare dacăMediaTorse execută</string>
+    <string name="notify_frostwire_is_running">Notificare dacă MediaTor se execută</string>
     <string name="torrent_scheme_download_not_supported">Descărcare nu este acceptată</string>
     <string name="app_shutdown_dlg_title">Închide</string>
     <string name="dht_contacts">Contacte DHT</string>
@@ -541,7 +541,7 @@
     <string name="try_valid_port_next_time">Încercați o data viitoare port valid 1000 și 65500</string>
     <string name="one_dollar">$1</string>
     <string name="enable_seeding">Activați însămânțarea</string>
-    <string name="storage_setting_confirm_dialog_text">Am înțeles că toate fișierele descărcate pe cardul SD deMediaTorva fi șters de către ANDROID momentul în care aplicațiaMediaToreste dezinstalat de pe acest dispozitiv și nu va dețineMediaTorLLC răspunzătoare pentru fișierele pierdute.</string>
+    <string name="storage_setting_confirm_dialog_text">Am înțeles că toate fișierele descărcate pe cardul SD de MediaTor va fi șters de către ANDROID momentul în care aplicația MediaTor este dezinstalat de pe acest dispozitiv și nu va deține MediaTor LLC răspunzătoare pentru fișierele pierdute.</string>
     <string name="simultaneous_uploads">Simultană Wi-Fi încărcările</string>
     <string name="cant_open_file_does_not_exist">Nu pot deschide %1$s, fișierul nu există.</string>
     <string name="internet_discovery">Descoperire Internet</string>
@@ -675,7 +675,7 @@
     <string name="transfer_detail_storage_header">Cale de stocare:</string>
     <string name="seeding_time">Timpul de însămânțare</string>
     <string name="working">Lucru</string>
-    <string name="one_file_shared">Un fișier a fost partajat dispozitivelorMediaTordin aceeași rețea Wi-Fi.</string>
+    <string name="one_file_shared">Un fișier a fost partajat dispozitivelor MediaTor din aceeași rețea Wi-Fi.</string>
     <string name="pieces">Piese</string>
     <string name="upload_limit">Limită de încărcare</string>
     <string name="enter_valid_tracker_url_here">Introduceți URL-ul trackerului valabil aici</string>
@@ -699,7 +699,7 @@
     <string name="sequential_download">Descărcare secvențială</string>
     <string name="downloaded_n">Descarcat %1$s / </string>
     <string name="transfer_detail_title_header">Name:</string>
-    <string name="n_files_shared">%d fișierele au fost distribuite dispozitivelorMediaTordin aceeași rețea Wi-Fi.</string>
+    <string name="n_files_shared">%d fișierele au fost distribuite dispozitivelor MediaTor din aceeași rețea Wi-Fi.</string>
     <string name="time_elapsed">Timpul scurs</string>
     <string name="remove_tracker">Eliminați tracker-ul</string>
     <string name="comment">Cometariu</string>

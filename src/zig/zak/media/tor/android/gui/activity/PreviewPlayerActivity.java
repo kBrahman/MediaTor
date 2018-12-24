@@ -29,6 +29,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.Menu;
@@ -72,6 +73,7 @@ import zig.zak.media.tor.util.Ref;
 public final class PreviewPlayerActivity extends AbstractActivity implements AbstractDialog.OnDialogClickListener, TextureView.SurfaceTextureListener, MediaPlayer.OnBufferingUpdateListener, MediaPlayer.OnCompletionListener, MediaPlayer.OnPreparedListener, MediaPlayer.OnVideoSizeChangedListener, MediaPlayer.OnInfoListener, AudioManager.OnAudioFocusChangeListener {
 
     private static final Logger LOG = Logger.getLogger(PreviewPlayerActivity.class);
+    private static final String TAG = PreviewPlayerActivity.class.getSimpleName();
     public static WeakReference<FileSearchResult> srRef;
 
     private MediaPlayer androidMediaPlayer;
@@ -420,6 +422,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         Thread t = new Thread("PreviewPlayerActivity-onSurfaceTextureAvailable") {
             @Override
             public void run() {
+                Log.i(TAG, "stream url=>" + streamUrl);
                 final String url = getFinalUrl(streamUrl);
                 final Uri uri = Uri.parse(url);
                 androidMediaPlayer = new MediaPlayer();

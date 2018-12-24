@@ -31,11 +31,6 @@ import zig.zak.media.tor.android.StoragePicker;
 import zig.zak.media.tor.android.gui.fragments.preference.ApplicationFragment;
 import zig.zak.media.tor.android.gui.views.AbstractActivity;
 
-/**
- * @author gubatron
- * @author aldenml
- * @author grzesiekrzaca
- */
 public final class SettingsActivity extends AbstractActivity implements PreferenceFragment.OnPreferenceStartFragmentCallback {
 
     /**
@@ -123,7 +118,6 @@ public final class SettingsActivity extends AbstractActivity implements Preferen
         transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         transaction.replace(R.id.activity_settings_content, f, fragmentName);
         transaction.commitAllowingStateLoss();
-
         if (title != null) {
             setTitle(title);
         }

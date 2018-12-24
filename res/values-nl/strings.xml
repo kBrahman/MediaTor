@@ -19,7 +19,7 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[Informatie: Hoewel aanbevolen voor je downloads, <b>u geen VPN nodigMediaTorgebruiken. </b>]]></string>
+    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[Informatie: Hoewel aanbevolen voor je downloads, <b>u geen VPN nodig MediaTor gebruiken. </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Raak toegepaste tags aan]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ U bent verbonden met internet via een VPN. <br><br> Als u dit nog niet doet, raden we u aan een van de onderstaande services te gebruiken om uw verbinding te versleutelen en <b>uw privacy te beschermen</b>. ]]></string>
     <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Uw privacy is een fundamenteel mensenrecht</b>. Een onbeveiligde verbinding betekent dat alles wat u online doet, inclusief <b>downloads, zoekopdrachten, berichten</b>, kan worden gecontroleerd en onderschept door iedereen in uw netwerk, bijvoorbeeld Internetproviders, hackers, overheden.<br><br><b>We raden ten stelligste aan een VPN-service te gebruiken</b>. <br> Hier zijn enkele opties die betrouwbare service bieden en goed werken met FrostWire:]]></string>
@@ -116,8 +116,8 @@
     <string name="set_as_wallpaper">Stel in als Wallpaper</string>
     <string name="failed_to_set_wallpaper">Instellen als Wallpaper mislukt</string>
     <string name="tell_others_chooser">Tweet / SMS / Email</string>
-    <string name="tell_others_subject">Heb je alMediaTorvoor Android?</string>
-    <string name="and_choose_what_filetypes_to_share">Bekijk wat voor file types je wilt gaan delen op hetMediaTorMobiele Netwerk en nabije Desktops met Wi-Fi.</string>
+    <string name="tell_others_subject">Heb je al MediaTor voor Android?</string>
+    <string name="and_choose_what_filetypes_to_share">Bekijk wat voor file types je wilt gaan delen op het MediaTor Mobiele Netwerk en nabije Desktops met Wi-Fi.</string>
     <string name="before_getting_started">Voordat je begint</string>
     <string name="user_connecting">Gebruiker maakt verbinding</string>
     <string name="accept_connection_from">Accepteer verbinding van</string>
@@ -129,7 +129,7 @@
     <string name="browse">Browse</string>
     <string name="files_shared_by">files gedeeld door</string>
     <string name="mark_your_territory">Markeer jouw Territorium</string>
-    <string name="get_a_frostwire_tshirt">Krijg eenMediaTorT-Shirt</string>
+    <string name="get_a_frostwire_tshirt">Krijg een MediaTor T-Shirt</string>
     <string name="internal_port">Interne Poort</string>
     <string name="external_port">Externe Poort</string>
     <string name="device">Apparaat</string>
@@ -188,7 +188,7 @@
     <string name="long_press_for_batch_actions">Raak elke filenaam aan voor groepsacties</string>
     <string name="files_shared">files gedeeld</string>
     <string name="share_finished_downloads">Deel voltooide downloads op WiFi</string>
-    <string name="share_finished_downloads_summary">Voltooide downloads zullen beschikbaar zijn voor andereMediaTorgebruikers op je WiFi netwerk.</string>
+    <string name="share_finished_downloads_summary">Voltooide downloads zullen beschikbaar zijn voor andere MediaTor gebruikers op je WiFi netwerk.</string>
     <string name="are_you_sure_delete_files">Weet je zeker dat je de geselecteerde files wilt verwijderen?</string>
     <string name="searchable_activity_label">Zoekbare Activiteit</string>
     <string name="search_hint">Zoek Inhoud</string>
@@ -314,7 +314,7 @@
     <string name="seeding_settings_explanation">BitTorrent gebruikers op internet zullen file onderdelen kunnen downloaden van de data van jouw torrents seed.</string>
     <string name="seeding_wifi_settings_explanation">Alleen maar seeden als je een WiFi verbinding gebruikt. Vermijd extra kosten van je telefoonmaatschappij.</string>
     <string name="intent_text">MediaTor is een peer-to-peer programma, enkel voor het delen van geautoriseerde files. Het installeren en gebruiken van het programma komt niet met een licentie voor het verkrijgen of distribueren van niet-geautoriseerde inhoud.</string>
-    <string name="accept_intent">Ik zalMediaTorniet gebruiken om het copyright te overtreden</string>
+    <string name="accept_intent">Ik zal MediaTor niet gebruiken om het copyright te overtreden</string>
     <string name="toast_on_disconnect">Niet verbonden met BitTorrent. Alle BitTorrent transfers zijn gestopt.</string>
     <string name="toast_on_connect">BitTorrent core gestart.</string>
     <string name="seeds">Seeds</string>
@@ -361,7 +361,7 @@
     <string name="clear_search_cache">Duidelijke zoeken cachegeheugen</string>
     <string name="enable_wifi_sharing">Wi-Fi Sharing</string>
     <string name="drawer_close">Sluiten navigatielade</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire is een bestand browser en downloader app, dus het moet in staat zijn om toegang tot uw schijf.\n\nZonder uw rechtenMediaTorniet kunnen werken.\n\nWil je nog eens proberen?</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire is een bestand browser en downloader app, dus het moet in staat zijn om toegang tot uw schijf.\n\nZonder uw rechten MediaTor niet kunnen werken.\n\nWil je nog eens proberen?</string>
     <string name="unprotected_connection">onbeschermd</string>
     <string name="transfers_context_menu_copy_magnet_copied">Magneet gekopieerd naar het klembord</string>
     <string name="buy_uppercase">KOPEN</string>
@@ -386,7 +386,7 @@
     <string name="paused">Onderbroken</string>
     <string name="retry_search">Opnieuw proberen</string>
     <string name="the_file_could_not_be_seeded_bittorrent_will_remain_disconnected">Het bestand kan niet worden gezaaid. BitTorrent wordt losgekoppeld blijven.</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android zal de gedownloade bestanden wissen alsMediaTorwordt verwijderd.</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android zal de gedownloade bestanden wissen als MediaTor wordt verwijderd.</string>
     <string name="protected_connection">VPN-beschermde</string>
     <string name="use_eztv">Gebruik Eztv</string>
     <string name="cheaper_than_parking">Goedkoper dan parkeren</string>
@@ -411,7 +411,7 @@
     <string name="player_paused_press_and_hold_to_stop">Speler pauze. (Tip: Houd ingedrukt om te stoppen)</string>
     <string name="menu_delete_shortcut_label">Verwijder</string>
     <string name="magnet_url_added">Magneet URL toegevoegd aan transfers. (Magneten werken het beste op Wifi)</string>
-    <string name="frostwire_shutting_down_no_permissions">Sorry,MediaTorkan niet doorgaan zonder uw toestemming om toegang te krijgen tot de schijf.</string>
+    <string name="frostwire_shutting_down_no_permissions">Sorry, MediaTor kan niet doorgaan zonder uw toestemming om toegang te krijgen tot de schijf.</string>
     <string name="one_time_purchase">Eenmalige Aankoop</string>
     <string name="activity_VPN">Verbinding</string>
     <string name="use_youtube">Gebruik YouTube.com</string>
@@ -487,7 +487,7 @@
     <string name="transfers_context_resume_all_torrent_transfers">Hervat alle torrent transfers</string>
     <string name="free_download">Gratis download</string>
     <string name="couldnt_share_file">Kan het bestand niet delen. gevonden raar pad.</string>
-    <string name="learn_how_to_get_more_results">ProbeerMediaTorPlus voor meer resultaten</string>
+    <string name="learn_how_to_get_more_results">Probeer MediaTor Plus voor meer resultaten</string>
     <string name="storage_setting_confirm_dialog_title">SD-KAART</string>
     <string name="no_trial_period_included">Geen proefperiode inbegrepen</string>
     <string name="cant_resume_torrent_transfers">Kan niet hervatten torrent transfers. Controleer de status van "Instellingen" > "BitTorrent Connection Status"</string>
@@ -497,7 +497,7 @@
     <string name="current_plan">Huidige plan</string>
     <string name="transfers_context_menu_copy_infohash">Kopieer InfoHash</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">WAARSCHUWING: Alle bestanden die zijn opgeslagen doorMediaTorop de SD-kaart worden gewist door Android, niet FrostWire, als je de app te verwijderen.</string>
+    <string name="storage_setting_warning">WAARSCHUWING: Alle bestanden die zijn opgeslagen door MediaTor op de SD-kaart worden gewist door Android, niet FrostWire, als je de app te verwijderen.</string>
     <string name="sd_permission_no_accessible_path">Het pad dat u in de SD geselecteerde is niet meer toegankelijk. Druk op OK om opnieuw te selecteren.</string>
     <string name="select_deselect_all">Selecteer/Wis alles</string>
     <string name="canceling">Annuleren</string>
@@ -530,7 +530,7 @@
     <string name="vpn_off_toast_notification">Uw verbinding kan niet privé zijn.</string>
     <string name="loading">Het laden</string>
     <string name="downloading_metadata">Het downloaden van metadata</string>
-    <string name="notify_frostwire_is_running">Houd alsMediaTorwordt uitgevoerd</string>
+    <string name="notify_frostwire_is_running">Houd als MediaTor wordt uitgevoerd</string>
     <string name="torrent_scheme_download_not_supported">Downloaden niet ondersteund</string>
     <string name="app_shutdown_dlg_title">Afsluiten</string>
     <string name="dht_contacts">DHT contacten</string>
@@ -551,7 +551,7 @@
     <string name="donate_in_btc">Doneren in Bitcoins</string>
     <string name="torrent_transfer_paused_disconnected_from_bittorrent">De overdracht is onderbroken omdat u Disconnected bent. (Controleer uw BitTorrent-verbinding in instellingen)</string>
     <string name="cheaper_than_beer">Goedkoper dan bier</string>
-    <string name="rating_reminder_description">Als u houdt vanMediaTorneem even de tijd om ons te geven.</string>
+    <string name="rating_reminder_description">Als u houdt van MediaTor neem even de tijd om ons te geven.</string>
     <string name="free_sponsored_app">Gratis gesponsorde App</string>
     <string name="includes_3_day_free_trial">Inclusief 3 dagen gratis trial. Aanbevolen</string>
     <string name="support">Ondersteuning</string>
@@ -564,7 +564,7 @@
     <string name="get_ExpressVPN">Krijg ExpressVPN</string>
     <string name="one_dollar">$1</string>
     <string name="enable_seeding">Inschakelen Zaaien</string>
-    <string name="storage_setting_confirm_dialog_text">Ik begrijp dat alle bestanden op de SD-kaart gedownload doorMediaTorwordt verwijderd door Android het moment dat deMediaToraanvraag wordt verwijderd van dit apparaat en ik zal niet in het bezitMediaTorLLC aansprakelijk voor alle bestanden verloren gaan.</string>
+    <string name="storage_setting_confirm_dialog_text">Ik begrijp dat alle bestanden op de SD-kaart gedownload door MediaTor wordt verwijderd door Android het moment dat de MediaTor aanvraag wordt verwijderd van dit apparaat en ik zal niet in het bezit MediaTor LLC aansprakelijk voor alle bestanden verloren gaan.</string>
     <string name="cant_open_file_does_not_exist">Ik kan niet openen %1$s, het bestand bestaat niet.</string>
     <string name="anonymous_usage_statistics">Anonieme gebruiksstatistieken</string>
     <string name="saving_to_sd_card">Opslaan op SD-kaart.</string>

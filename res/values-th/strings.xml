@@ -54,7 +54,7 @@
     <string name="azureus_manager_item_ready">การรอคอยสำหรับเพลงอื่น ๆ ที่จะคิว</string>
     <string name="nickname">ชื่อเล่น</string>
     <string name="drawer_close">ปิดลิ้นชักการนำทาง</string>
-    <string name="why_we_need_storage_permissions_summary">FrostWire เป็นเบราว์เซอร์ของไฟล์และดาวน์โหลดแอพพลิเคจึงต้องการที่จะสามารถเข้าถึงดิสก์ของคุณ\n\nโดยไม่ต้องสิทธิ์ของคุณMediaTorไม่สามารถทำงานได้\n\nต้องการที่จะลองอีกครั้งหรือไม่</string>
+    <string name="why_we_need_storage_permissions_summary">FrostWire เป็นเบราว์เซอร์ของไฟล์และดาวน์โหลดแอพพลิเคจึงต้องการที่จะสามารถเข้าถึงดิสก์ของคุณ\n\nโดยไม่ต้องสิทธิ์ของคุณ MediaTor ไม่สามารถทำงานได้\n\nต้องการที่จะลองอีกครั้งหรือไม่</string>
     <string name="peer_http_upload_status_unknown">ไม่ทราบ</string>
     <string name="unprotected_connection">ไม่มีการป้องกัน</string>
     <string name="video">วีดีโอ</string>
@@ -99,7 +99,7 @@
     <string name="loading_all">โหลดทั้งหมด</string>
     <string name="azureus_manager_item_allocating">การจัดสรร</string>
     <string name="app_shutdown_dlg_message">นี้จะปิดการโอนและบริการทั้งหมดพื้นหลัง คุณแน่ใจไหม?</string>
-    <string name="frostwire_sticker_and_more">สติกเกอร์MediaTorและอื่น ๆ</string>
+    <string name="frostwire_sticker_and_more">สติกเกอร์ MediaTor และอื่น ๆ</string>
     <string name="show_transfers_on_download_start">แสดงการโอนเงินในการดาวน์โหลดเริ่มต้น</string>
     <string name="sharing">ใช้งานร่วมกัน</string>
     <string name="send_feedback">ส่งความคิดเห็น</string>
@@ -111,7 +111,7 @@
     <string name="ten_dollars">$10</string>
     <string name="my_files">ไฟล์ของฉัน</string>
     <string name="no_network_connection">ไม่มีการเชื่อมต่อเครือข่าย</string>
-    <string name="and_choose_what_filetypes_to_share">ตรวจสอบสิ่งที่ประเภทของไฟล์ที่คุณต้องการเปิดใช้งานสำหรับการแชร์บนเครือข่ายมือถือและ WiFiMediaTorอยู่บริเวณใกล้เคียงเปิดการใช้งานเดสก์ท็</string>
+    <string name="and_choose_what_filetypes_to_share">ตรวจสอบสิ่งที่ประเภทของไฟล์ที่คุณต้องการเปิดใช้งานสำหรับการแชร์บนเครือข่ายมือถือและ WiFi MediaTor อยู่บริเวณใกล้เคียงเปิดการใช้งานเดสก์ท็</string>
     <string name="delete_n_torrents_indexed">ที่ถูกลบ %d torrents การจัดทำดัชนี</string>
     <string name="saving_to_internal_memory">บันทึกลงหน่วยความจำภายใน</string>
     <string name="dialog_desktop_upload_request_text_text">%1$s ต้องการส่ง %2$s รวมเป็นเงินทั้งสิ้น %3$s</string>
@@ -131,7 +131,7 @@
     <string name="retry_search">ลองใหม่อีกครั้ง</string>
     <string name="the_file_could_not_be_seeded_bittorrent_will_remain_disconnected">ไฟล์ที่ไม่สามารถเมล็ด BitTorrent จะยังคงตัดการเชื่อมต่อ</string>
     <string name="toggle_sharing_selected_files">สลับการใช้งานร่วมกัน</string>
-    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android จะลบไฟล์ที่ดาวน์โหลดMediaTorถ้ายกเลิกการติดตั้ง</string>
+    <string name="android_will_erase_files_if_frostwire_is_uninstalled">Android จะลบไฟล์ที่ดาวน์โหลด MediaTor ถ้ายกเลิกการติดตั้ง</string>
     <string name="please_connect">โปรดเชื่อมต่อเพื่อใช้คุณลักษณะนี้</string>
     <string name="protected_connection">VPN ที่มีการป้องกัน</string>
     <string name="clear_finished">ล้างเสร็จสิ้น</string>
@@ -150,7 +150,7 @@
     <string name="applications">ปพลิเคชัน</string>
     <string name="the_file_could_not_be_seeded_enable_seeding">ไฟล์ที่ไม่สามารถเมล็ด เปิดใช้งานการเพาะกับการตั้งค่า</string>
     <string name="media_type_video">วีดีโอ</string>
-    <string name="accept_intent">ฉันจะไม่ใช้MediaTorการละเมิดลิขสิทธิ์</string>
+    <string name="accept_intent">ฉันจะไม่ใช้ MediaTor การละเมิดลิขสิทธิ์</string>
     <string name="remove_torrent_and_data">นำ Torrent และข้อมูล</string>
     <string name="seeding_settings">การตั้งค่าการเพาะ</string>
     <string name="love_frostwire">รัก FrostWire</string>
@@ -192,8 +192,8 @@
     <string name="search_for_type_files">ค้นหา %s ไฟล์</string>
     <string name="menu_delete_shortcut_label">ลบ</string>
     <string name="magnet_url_added">URL แม่เหล็กเพิ่มให้กับการถ่ายโอน (แม่เหล็กทำงานได้ดีที่สุดบน Wi-Fi)</string>
-    <string name="share_finished_downloads_summary">การดาวน์โหลดเสร็จสิ้นจะสามารถใช้ได้กับผู้ใช้งานMediaTorอื่น ๆ บนเครือข่าย Wi-Fi ของคุณ</string>
-    <string name="frostwire_shutting_down_no_permissions">ขออภัยMediaTorไม่สามารถดำเนินการไม่ได้รับอนุญาตในการเข้าถึงดิสก์</string>
+    <string name="share_finished_downloads_summary">การดาวน์โหลดเสร็จสิ้นจะสามารถใช้ได้กับผู้ใช้งาน MediaTor อื่น ๆ บนเครือข่าย Wi-Fi ของคุณ</string>
+    <string name="frostwire_shutting_down_no_permissions">ขออภัย MediaTor ไม่สามารถดำเนินการไม่ได้รับอนุญาตในการเข้าถึงดิสก์</string>
     <string name="http_download_status_uncompressing">Uncompressing</string>
     <string name="one_time_purchase">หนึ่งซื้อเวลา</string>
     <string name="send_file_using">ส่งไฟล์โดยใช้</string>
@@ -261,7 +261,7 @@
     <string name="copy">สำเนา</string>
     <string name="updating">อัปเดต</string>
     <string name="help_translate_frostwire">ช่วยแปล FrostWire</string>
-    <string name="tell_others_subject">มีMediaTorสำหรับ Android ยัง?</string>
+    <string name="tell_others_subject">มี MediaTor สำหรับ Android ยัง?</string>
     <string name="files_shared_by">ไฟล์ที่ใช้ร่วมกันโดย</string>
     <string name="clear_messages">ข้อความที่ชัดเจน</string>
     <string name="best_value">ค่าที่ดีที่สุด</string>
@@ -290,7 +290,7 @@
     <string name="wizard_previous">ก่อน</string>
     <string name="azureus_manager_item_downloading">ดาวน์โหลด</string>
     <string name="there_is_n_torrents_indexed">มี %d torrents การจัดทำดัชนี</string>
-    <string name="wifi_sharing_disabled">แบ่งปัน Wi-Fi ปิด\n\nแบ่งปัน Wi-Fi สามารถใช้ในการแชร์ไฟล์ในประเทศระหว่างMediaTorอุปกรณ์ที่เชื่อมต่อกับเครือข่าย Wi-Fi ที่ขับเคลื่อน\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;เรียนรู้เพิ่มเติม&lt;/a&gt;</string>
+    <string name="wifi_sharing_disabled">แบ่งปัน Wi-Fi ปิด\n\nแบ่งปัน Wi-Fi สามารถใช้ในการแชร์ไฟล์ในประเทศระหว่าง MediaTor อุปกรณ์ที่เชื่อมต่อกับเครือข่าย Wi-Fi ที่ขับเคลื่อน\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;เรียนรู้เพิ่มเติม&lt;/a&gt;</string>
     <string name="pausing">การหยุดชั่วคราว</string>
     <string name="how_others_see_you_on_the_local_network_wifi_">วิธีการอื่น ๆ เห็นคุณบนเครือข่ายท้องถิ่น (Wi-Fi)</string>
     <string name="yes_no_cancel_transfer_question">คุณแน่ใจหรือไม่ว่าคุณต้องการที่จะหยุดและเอาดาวน์โหลดนี้ออกจากรายการ (ไม่มีข้อมูลที่จะถูกลบ)?</string>
@@ -373,7 +373,7 @@
     <string name="free_download">ดาวน์โหลดฟรี</string>
     <string name="internet_discovery_summary">เชื่อมต่อไปยังเพื่อนที่ห่างไกลบนอินเทอร์เน็ต</string>
     <string name="couldnt_share_file">ไม่สามารถแชร์ไฟล์ เส้นทางแปลกพบ</string>
-    <string name="learn_how_to_get_more_results">ลองMediaTorPlus สำหรับผลการค้นหาเพิ่มเติม</string>
+    <string name="learn_how_to_get_more_results">ลอง MediaTor Plus สำหรับผลการค้นหาเพิ่มเติม</string>
     <string name="use_mobile_data">ใช้ 3G/4G สำหรับ BitTorrent</string>
     <string name="seeding_wifi_settings_explanation">เมล็ดพันธุ์เฉพาะเมื่อใช้การเชื่อมต่อ WiFi หลีกเลี่ยงค่าใช้จ่ายเพิ่มเติมจากผู้ให้บริการของคุณ</string>
     <string name="storage_setting_confirm_dialog_title">SD CARD</string>
@@ -393,7 +393,7 @@
     <string name="transfers_context_menu_copy_infohash">คัดลอก InfoHash</string>
     <string name="wanna_download_question">ต้องการที่จะดาวน์โหลด?</string>
     <string name="twenty_five_dollars">$25</string>
-    <string name="storage_setting_warning">คำเตือน: ไฟล์ทั้งหมดที่บันทึกไว้โดยMediaTorลงบนการ์ด SD จะถูกลบโดย Android ไม่MediaTorถ้าคุณถอนการติดตั้งแอพพลิเค</string>
+    <string name="storage_setting_warning">คำเตือน: ไฟล์ทั้งหมดที่บันทึกไว้โดย MediaTor ลงบนการ์ด SD จะถูกลบโดย Android ไม่ MediaTor ถ้าคุณถอนการติดตั้งแอพพลิเค</string>
     <string name="not_sharing_files">ไม่ได้มีการแชร์ไฟล์ใด ๆ</string>
     <string name="sd_permission_no_accessible_path">เส้นทางที่คุณเลือกไว้ใน SD ไม่สามารถเข้าถึงได้อีกต่อไป กดปุ่ม OK เพื่อเลือกอีกครั้ง</string>
     <string name="select_deselect_all">เลือก/ยกเลิกการเลือกทั้งหมด</string>
@@ -419,7 +419,7 @@
     <string name="error_no_internet_connection">ข้อผิดพลาด: ตรวจสอบการเชื่อมต่ออินเทอร์เน็ต</string>
     <string name="azureus_manager_item_error">ความผิดพลาด</string>
     <string name="why_we_need_storage_permissions">ทำไมเราต้องมีสิทธิ์การจัดเก็บข้อมูล</string>
-    <string name="get_a_frostwire_tshirt">ได้รับMediaTorเสื้อยืด</string>
+    <string name="get_a_frostwire_tshirt">ได้รับ MediaTor เสื้อยืด</string>
     <string name="media_type_applications">การประยุกต์ใช้งาน</string>
     <string name="invalid_filename">ชื่อไฟล์ที่ไม่ถูกต้อง</string>
     <string name="use_archiveorg">ใช้ Archive.org</string>
@@ -467,7 +467,7 @@
     <string name="loading">กำลังโหลด</string>
     <string name="downloading_metadata">เมตาดาต้าดาวน์โหลด</string>
     <string name="storage_preference_summary">สถานที่จัดเก็บค่าเริ่มต้นที่ไฟล์จะถูกบันทึกไว้</string>
-    <string name="notify_frostwire_is_running">แจ้งถ้าMediaTorกำลังทำงาน</string>
+    <string name="notify_frostwire_is_running">แจ้งถ้า MediaTor กำลังทำงาน</string>
     <string name="torrent_scheme_download_not_supported">ดาวน์โหลดได้รับการสนับสนุน</string>
     <string name="app_shutdown_dlg_title">ปิดตัวลง</string>
     <string name="dht_contacts">รายชื่อ DHT</string>
@@ -518,7 +518,7 @@
     <string name="cheaper_than_beer">ราคาถูกกว่าเบียร์</string>
     <string name="type_here_to_filter">พิมพ์ที่นี่เพื่อกรอง</string>
     <string name="block">กลุ่ม</string>
-    <string name="rating_reminder_description">ถ้าคุณรักMediaTorโปรดใช้เวลาสักครู่ให้คะแนนเรา</string>
+    <string name="rating_reminder_description">ถ้าคุณรัก MediaTor โปรดใช้เวลาสักครู่ให้คะแนนเรา</string>
     <string name="please_update_to_v">โปรดอัปเดตเวอร์ชัน %s</string>
     <string name="azureus_manager_item_finishing">จบ</string>
     <string name="free_sponsored_app">ผู้สนับสนุนฟรีซอฟแวร์</string>
@@ -553,7 +553,7 @@
     <string name="try_valid_port_next_time">Tลองพอร์ตที่ถูกต้องในครั้งถัดไป 1000 และ 65500</string>
     <string name="one_dollar">$1</string>
     <string name="enable_seeding">เปิดใช้เมล็ด</string>
-    <string name="storage_setting_confirm_dialog_text">ผมเข้าใจว่าทุกไฟล์ที่ดาวน์โหลดไปใน SD Card โดยMediaTorจะถูกลบโดย Android ขณะที่แอปพลิเคMediaTorยกเลิกการติดตั้งจากอุปกรณ์นี้และฉันจะไม่ถือMediaTorLLC รับผิดชอบต่อการสูญเสียไฟล์ใด ๆ</string>
+    <string name="storage_setting_confirm_dialog_text">ผมเข้าใจว่าทุกไฟล์ที่ดาวน์โหลดไปใน SD Card โดย MediaTor จะถูกลบโดย Android ขณะที่แอปพลิเค MediaTor ยกเลิกการติดตั้งจากอุปกรณ์นี้และฉันจะไม่ถือ MediaTor LLC รับผิดชอบต่อการสูญเสียไฟล์ใด ๆ</string>
     <string name="simultaneous_uploads">พร้อมกันการเชื่อมต่อ Wi-Fi อัปโหลด</string>
     <string name="cant_open_file_does_not_exist">ฉันไม่สามารถเปิด %1$s, ไฟล์ไม่ได้อยู่.</string>
     <string name="internet_discovery">การสำรวจอินเทอร์เน็ต</string>
@@ -673,8 +673,8 @@
     <string name="vpn_find_out_more">หาข้อมูลเพิ่มเติม</string>
     <string name="vpn_suggestion_nordvpn">NORDVPN \n การทดลองใช้ฟรี 7 วัน</string>
     <string name="play_store_out_of_sync">Google Play สโตร์ต้องซิงโครไนซ์รอสักครู่</string>
-    <string name="one_file_shared">ไฟล์หนึ่งไฟล์ถูกแชร์กับอุปกรณ์MediaTorบนเครือข่าย Wi-Fi เดียวกัน</string>
-    <string name="n_files_shared">มีการแชร์ไฟล์ %d ไฟล์กับอุปกรณ์MediaTorบนเครือข่าย Wi-Fi เดียวกัน</string>
+    <string name="one_file_shared">ไฟล์หนึ่งไฟล์ถูกแชร์กับอุปกรณ์ MediaTor บนเครือข่าย Wi-Fi เดียวกัน</string>
+    <string name="n_files_shared">มีการแชร์ไฟล์ %d ไฟล์กับอุปกรณ์ MediaTor บนเครือข่าย Wi-Fi เดียวกัน</string>
 
 
     <string name="uploaded">ที่อัปโหลด</string>
