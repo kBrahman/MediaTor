@@ -72,6 +72,7 @@ import zig.zak.media.tor.search.KeywordFilter;
 import zig.zak.media.tor.search.SearchError;
 import zig.zak.media.tor.search.SearchListener;
 import zig.zak.media.tor.search.SearchResult;
+import zig.zak.media.tor.search.soundcloud.SoundcloudSearchResult;
 import zig.zak.media.tor.search.torrent.AbstractTorrentSearchResult;
 import zig.zak.media.tor.search.torrent.TorrentCrawledSearchResult;
 import zig.zak.media.tor.search.torrent.TorrentSearchResult;
@@ -256,7 +257,9 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
             adapter = new SearchResultListAdapter(getActivity()) {
                 @Override
                 protected void searchResultClicked(SearchResult sr) {
-                    startTransfer(sr, getString(R.string.download_added_to_queue));
+                    if (!(sr instanceof SoundcloudSearchResult)) {
+                        startTransfer(sr, getString(R.string.download_added_to_queue));
+                    }
                 }
             };
             LocalSearchEngine.instance().setListener(new LocalSearchEngineListener(this));

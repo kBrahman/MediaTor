@@ -19,18 +19,6 @@ package zig.zak.media.tor.android.gui;
 
 import android.text.Html;
 
-import zig.zak.media.tor.android.gui.views.AbstractListAdapter;
-import zig.zak.media.tor.search.CrawlPagedWebSearchPerformer;
-import zig.zak.media.tor.search.CrawledSearchResult;
-import zig.zak.media.tor.search.FileSearchResult;
-import zig.zak.media.tor.search.SearchError;
-import zig.zak.media.tor.search.SearchListener;
-import zig.zak.media.tor.search.SearchManager;
-import zig.zak.media.tor.search.SearchPerformer;
-import zig.zak.media.tor.search.SearchResult;
-import zig.zak.media.tor.search.youtube.YouTubeCrawledSearchResult;
-import zig.zak.media.tor.util.StringUtils;
-
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,6 +29,17 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
+
+import zig.zak.media.tor.android.gui.views.AbstractListAdapter;
+import zig.zak.media.tor.search.CrawlPagedWebSearchPerformer;
+import zig.zak.media.tor.search.CrawledSearchResult;
+import zig.zak.media.tor.search.FileSearchResult;
+import zig.zak.media.tor.search.SearchError;
+import zig.zak.media.tor.search.SearchListener;
+import zig.zak.media.tor.search.SearchManager;
+import zig.zak.media.tor.search.SearchPerformer;
+import zig.zak.media.tor.search.SearchResult;
+import zig.zak.media.tor.util.StringUtils;
 
 /**
  * @author gubatron
@@ -154,8 +153,7 @@ public final class LocalSearchEngine {
 
     private void onResults(long token, List<? extends SearchResult> results) {
         if (token == currentSearchToken) { // one more additional protection
-            @SuppressWarnings("unchecked")
-            List<SearchResult> filtered = filter(results);
+            @SuppressWarnings("unchecked") List<SearchResult> filtered = filter(results);
 
             if (!filtered.isEmpty()) {
                 if (listener != null) {
@@ -192,12 +190,7 @@ public final class LocalSearchEngine {
         try {
             for (SearchResult sr : results) {
                 if (sr instanceof CrawledSearchResult) {
-                    if (sr instanceof YouTubeCrawledSearchResult) {
-                        // special case for flv files
-                        if (!((YouTubeCrawledSearchResult) sr).getFilename().endsWith(".flv")) {
-                            list.add(sr);
-                        }
-                    } else if (filter(new LinkedList<>(currentSearchTokens), sr)) {
+                    if (filter(new LinkedList<>(currentSearchTokens), sr)) {
                         list.add(sr);
                     }
                 } else {

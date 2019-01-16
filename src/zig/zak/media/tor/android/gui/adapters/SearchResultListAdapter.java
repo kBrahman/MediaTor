@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -48,6 +49,7 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
     private final List<KeywordFilter> keywordFiltersPipeline;
     private final AtomicLong lastFilterCallTimestamp = new AtomicLong();
     private FilteredSearchResults cachedFilteredSearchResults = null;
+    public static final String IS_SOUND_CLOUD = "is_sound_cloud";
 
     protected SearchResultListAdapter(Context context) {
         super(context, R.layout.view_bittorrent_search_result_list_item);
@@ -332,6 +334,7 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
     }
 
     private static final class PreviewClickListener extends ClickAdapter<Context> {
+        private static final String TAG = PreviewClickListener.class.getSimpleName();
         final WeakReference<SearchResultListAdapter> adapterRef;
 
         PreviewClickListener(Context ctx, SearchResultListAdapter adapter) {
@@ -357,6 +360,10 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
                 i.putExtra("streamUrl", sr.getStreamUrl());
                 i.putExtra("audio", isAudio(sr));
                 i.putExtra("hasVideo", hasVideo(sr));
+                if (sr instanceof SoundcloudSearchResult) {
+                    Log.i(TAG, "instance of sound cloud");
+                    i.putExtra(IS_SOUND_CLOUD, true);
+                }
                 ctx.startActivity(i);
             }
         }

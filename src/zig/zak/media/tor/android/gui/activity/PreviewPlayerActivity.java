@@ -66,6 +66,9 @@ import zig.zak.media.tor.search.youtube.YouTubePackageSearchResult;
 import zig.zak.media.tor.util.Logger;
 import zig.zak.media.tor.util.Ref;
 
+import static zig.zak.media.tor.android.gui.adapters.SearchResultListAdapter.IS_SOUND_CLOUD;
+
+
 /**
  * @author gubatron
  * @author aldenml
@@ -87,9 +90,20 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
     private boolean isFullScreen = false;
     private boolean videoSizeSetupDone = false;
     private boolean changedActionBarTitleToNonBuffering = false;
+    private boolean isSoundCloud;
 
     public PreviewPlayerActivity() {
         super(R.layout.activity_preview_player);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        isSoundCloud = getIntent().getBooleanExtra(IS_SOUND_CLOUD, false);
+        Log.i(TAG, "is sound cloud=>" + isSoundCloud);
+        if (isSoundCloud) {
+            findView(R.id.activity_preview_player_download_button).setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -106,20 +120,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
             fullscreenMenu.setVisible(!audio);  //userRegistered is boolean, pointing if the user has registered or not.
         }
         return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.activity_preview_player_menu_fullscreen:
-                final TextureView videoTexture = findView(R.id.activity_preview_player_videoview);
-                toggleFullScreen(videoTexture);
-
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -203,8 +203,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
     }
 
     private void onVideoViewPrepared(final ImageView img) {
-        final Button downloadButton = findView(R.id.activity_preview_player_download_button);
-        downloadButton.setVisibility(!isFullScreen ? View.VISIBLE : View.GONE);
         if (!audio) {
             img.setVisibility(View.GONE);
         }
