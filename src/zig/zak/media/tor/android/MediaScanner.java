@@ -25,11 +25,9 @@ import android.net.Uri;
 import android.os.SystemClock;
 
 import zig.zak.media.tor.util.Logger;
-import zig.zak.media.tor.util.Ref;
 
 import org.apache.commons.io.IOUtils;
 
-import java.lang.ref.WeakReference;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
