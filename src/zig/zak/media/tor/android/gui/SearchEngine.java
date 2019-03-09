@@ -31,7 +31,7 @@ import zig.zak.media.tor.search.frostclick.FrostClickSearchPerformer;
 import zig.zak.media.tor.search.frostclick.UserAgent;
 import zig.zak.media.tor.search.limetorrents.LimeTorrentsSearchPerformer;
 import zig.zak.media.tor.search.pixabay.PixabaySearchPerformer;
-import zig.zak.media.tor.search.soundcloud.SoundcloudSearchPerformer;
+import zig.zak.media.tor.search.soundcloud.SoundCloudSearchPerformer;
 import zig.zak.media.tor.search.torlock.TorLockSearchPerformer;
 import zig.zak.media.tor.search.torrentdownloads.TorrentDownloadsSearchPerformer;
 import zig.zak.media.tor.search.tpb.TPBSearchPerformer;
@@ -129,7 +129,7 @@ public abstract class SearchEngine {
     public static final SearchEngine SOUNCLOUD = new SearchEngine("Soundcloud", Constants.PREF_KEY_SEARCH_USE_SOUNDCLOUD) {
         @Override
         public SearchPerformer getPerformer(long token, String keywords) {
-            return new SoundcloudSearchPerformer("api.sndcdn.com", token, keywords, DEFAULT_TIMEOUT);
+            return new SoundCloudSearchPerformer("api.sndcdn.com", token, keywords, DEFAULT_TIMEOUT);
         }
     };
 

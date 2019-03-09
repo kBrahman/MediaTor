@@ -25,8 +25,8 @@ import zig.zak.media.tor.android.gui.activity.MainActivity;
 import zig.zak.media.tor.android.gui.dialogs.ConfirmSoundcloudDownloadDialog;
 import zig.zak.media.tor.android.gui.util.UIUtils;
 import zig.zak.media.tor.android.util.Asyncs;
-import zig.zak.media.tor.search.soundcloud.SoundcloudSearchPerformer;
-import zig.zak.media.tor.search.soundcloud.SoundcloudSearchResult;
+import zig.zak.media.tor.search.soundcloud.SoundCloudSearchPerformer;
+import zig.zak.media.tor.search.soundcloud.SoundCloudSearchResult;
 import zig.zak.media.tor.util.HttpClientFactory;
 import zig.zak.media.tor.util.Logger;
 import zig.zak.media.tor.util.http.HttpClient;
@@ -46,24 +46,24 @@ public final class AsyncDownloadSoundcloudFromUrl {
         Asyncs.async(ctx, AsyncDownloadSoundcloudFromUrl::doInBackground, soundcloudUrl, AsyncDownloadSoundcloudFromUrl::onPostExecute);
     }
 
-    private static List<SoundcloudSearchResult> doInBackground(final Context context, final String soundcloudUrl) {
-        List<SoundcloudSearchResult> results = new ArrayList<>();
+    private static List<SoundCloudSearchResult> doInBackground(final Context context, final String soundcloudUrl) {
+        List<SoundCloudSearchResult> results = new ArrayList<>();
         try {
             String url = soundcloudUrl;
             if (soundcloudUrl.contains("?in=")) {
                 url = soundcloudUrl.substring(0, url.indexOf("?in="));
             }
-            String resolveURL = SoundcloudSearchPerformer.resolveUrl(url);
+            String resolveURL = SoundCloudSearchPerformer.resolveUrl(url);
             HttpClient client = HttpClientFactory.getInstance(HttpClientFactory.HttpContext.DOWNLOAD);
             String json = client.get(resolveURL, 10000);
-            results = SoundcloudSearchPerformer.fromJson(json);
+            results = SoundCloudSearchPerformer.fromJson(json);
         } catch (Throwable e) {
             e.printStackTrace();
         }
         return results;
     }
 
-    private static void onPostExecute(Context ctx, final String soundcloudUrl, List<SoundcloudSearchResult> results) {
+    private static void onPostExecute(Context ctx, final String soundcloudUrl, List<SoundCloudSearchResult> results) {
         if (ctx != null && !results.isEmpty()) {
             MainActivity activity = (MainActivity) ctx;
             ConfirmSoundcloudDownloadDialog dlg = createConfirmListDialog(ctx, results);
@@ -71,7 +71,7 @@ public final class AsyncDownloadSoundcloudFromUrl {
         }
     }
 
-    private static ConfirmSoundcloudDownloadDialog createConfirmListDialog(Context ctx, List<SoundcloudSearchResult> results) {
+    private static ConfirmSoundcloudDownloadDialog createConfirmListDialog(Context ctx, List<SoundCloudSearchResult> results) {
         String title = ctx.getString(R.string.confirm_download);
         String whatToDownload = ctx.getString((results.size() > 1) ? R.string.playlist : R.string.track);
         String totalSize = UIUtils.getBytesInHuman(getTotalSize(results));
@@ -81,9 +81,9 @@ public final class AsyncDownloadSoundcloudFromUrl {
         return ConfirmSoundcloudDownloadDialog.newInstance(ctx, title, text, results);
     }
 
-    private static long getTotalSize(List<SoundcloudSearchResult> results) {
+    private static long getTotalSize(List<SoundCloudSearchResult> results) {
         long totalSizeInBytes = 0;
-        for (SoundcloudSearchResult sr : results) {
+        for (SoundCloudSearchResult sr : results) {
             totalSizeInBytes += sr.getSize();
         }
         return totalSizeInBytes;

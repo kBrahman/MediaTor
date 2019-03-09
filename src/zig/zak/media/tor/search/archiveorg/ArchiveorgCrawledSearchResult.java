@@ -18,20 +18,14 @@
 
 package zig.zak.media.tor.search.archiveorg;
 
-import java.util.Locale;
-
-import zig.zak.media.tor.util.UrlUtils;
 import org.apache.commons.io.FilenameUtils;
+
+import java.util.Locale;
 
 import zig.zak.media.tor.search.AbstractCrawledSearchResult;
 import zig.zak.media.tor.search.HttpSearchResult;
+import zig.zak.media.tor.util.UrlUtils;
 
-/**
- * 
- * @author gubatron
- * @author aldenml
- *
- */
 public class ArchiveorgCrawledSearchResult extends AbstractCrawledSearchResult implements HttpSearchResult {
 
     private static final String DOWNLOAD_URL = "http://%s/download/%s/%s";

@@ -23,7 +23,7 @@ import zig.zak.media.tor.mp3.ID3Wrapper;
 import zig.zak.media.tor.mp3.ID3v1Tag;
 import zig.zak.media.tor.mp3.ID3v23Tag;
 import zig.zak.media.tor.mp3.Mp3File;
-import zig.zak.media.tor.search.soundcloud.SoundcloudSearchResult;
+import zig.zak.media.tor.search.soundcloud.SoundCloudSearchResult;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -38,9 +38,9 @@ public class SoundcloudDownload extends HttpDownload {
 
     private static final long COVERART_FETCH_THRESHOLD = 20971520; //20MB
 
-    private final SoundcloudSearchResult sr;
+    private final SoundCloudSearchResult sr;
 
-    public SoundcloudDownload(SoundcloudSearchResult sr) {
+    public SoundcloudDownload(SoundCloudSearchResult sr) {
         super(convert(sr));
         this.sr = sr;
     }
@@ -51,7 +51,7 @@ public class SoundcloudDownload extends HttpDownload {
         super.onFinishing();
     }
 
-    private static void downloadAndUpdateCoverArt(SoundcloudSearchResult sr, File file) {
+    private static void downloadAndUpdateCoverArt(SoundCloudSearchResult sr, File file) {
         if (file != null && file.exists() && file.length() <= COVERART_FETCH_THRESHOLD) {
             byte[] cover = downloadCoverArt(sr.getThumbnailUrl());
             if (cover != null && cover.length > 0) {
@@ -80,7 +80,7 @@ public class SoundcloudDownload extends HttpDownload {
         return null;
     }
 
-    private static boolean setAlbumArt(SoundcloudSearchResult sr, byte[] cover, String inPath, String outPath) {
+    private static boolean setAlbumArt(SoundCloudSearchResult sr, byte[] cover, String inPath, String outPath) {
         try {
             Mp3File mp3 = new Mp3File(inPath);
 
@@ -104,7 +104,7 @@ public class SoundcloudDownload extends HttpDownload {
         }
     }
 
-    private static Info convert(SoundcloudSearchResult sr) {
+    private static Info convert(SoundCloudSearchResult sr) {
         return new Info(sr.getStreamUrl(), sr.getFilename(), sr.getDisplayName(), sr.getSize());
     }
 }

@@ -7,7 +7,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.0'
+        classpath 'com.android.tools.build:gradle:3.3.2'
     }
 }
 
@@ -35,12 +35,13 @@ android {
 
     defaultConfig {
         applicationId "zig.zak.media.tor"
-        versionCode 15
-        versionName "1.14"
+        versionCode 16
+        versionName "1.15"
         multiDexEnabled true
         minSdkVersion 17
         targetSdkVersion 28
         buildConfigField "String", "PIXA_KEY", localProperties["pixa_key"]
+        buildConfigField "String", "SOUND_CLOUD_KEY", localProperties["sound_cloud_key"]
     }
 
     compileOptions {

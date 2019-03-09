@@ -18,10 +18,6 @@
 
 package zig.zak.media.tor.search.soundcloud;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 final class SoundcloudItem {
 
     public int id;
@@ -36,5 +32,4 @@ final class SoundcloudItem {
     public String created_at;
     public boolean downloadable;
     public String download_url;
-    public long original_content_size;
 }

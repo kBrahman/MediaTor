@@ -33,7 +33,7 @@ import zig.zak.media.tor.search.FileSearchResult;
 import zig.zak.media.tor.search.KeywordFilter;
 import zig.zak.media.tor.search.SearchResult;
 import zig.zak.media.tor.search.StreamableSearchResult;
-import zig.zak.media.tor.search.soundcloud.SoundcloudSearchResult;
+import zig.zak.media.tor.search.soundcloud.SoundCloudSearchResult;
 import zig.zak.media.tor.search.torrent.TorrentSearchResult;
 import zig.zak.media.tor.search.youtube.YouTubeCrawledSearchResult;
 import zig.zak.media.tor.search.youtube.YouTubeCrawledStreamableSearchResult;
@@ -215,7 +215,7 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
     }
 
     private static boolean isAudio(SearchResult sr) {
-        if (sr instanceof SoundcloudSearchResult) {
+        if (sr instanceof SoundCloudSearchResult) {
             return true;
         }
 
@@ -360,7 +360,7 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
                 i.putExtra("streamUrl", sr.getStreamUrl());
                 i.putExtra("audio", isAudio(sr));
                 i.putExtra("hasVideo", hasVideo(sr));
-                if (sr instanceof SoundcloudSearchResult) {
+                if (sr instanceof SoundCloudSearchResult) {
                     Log.i(TAG, "instance of sound cloud");
                     i.putExtra(IS_SOUND_CLOUD, true);
                 }

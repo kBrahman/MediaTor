@@ -33,7 +33,7 @@ import zig.zak.media.tor.bittorrent.BTEngine;
 import zig.zak.media.tor.bittorrent.BTEngineAdapter;
 import zig.zak.media.tor.search.HttpSearchResult;
 import zig.zak.media.tor.search.SearchResult;
-import zig.zak.media.tor.search.soundcloud.SoundcloudSearchResult;
+import zig.zak.media.tor.search.soundcloud.SoundCloudSearchResult;
 import zig.zak.media.tor.search.torrent.TorrentCrawledSearchResult;
 import zig.zak.media.tor.search.torrent.TorrentSearchResult;
 import zig.zak.media.tor.search.youtube.YouTubeCrawledSearchResult;
@@ -186,8 +186,8 @@ public final class TransferManager {
             transfer = newHttpDownload((HttpSlideSearchResult) sr);
         } else if (sr instanceof YouTubeCrawledSearchResult) {
             transfer = newYouTubeDownload((YouTubeCrawledSearchResult) sr);
-        } else if (sr instanceof SoundcloudSearchResult) {
-            transfer = newSoundcloudDownload((SoundcloudSearchResult) sr);
+        } else if (sr instanceof SoundCloudSearchResult) {
+            transfer = newSoundcloudDownload((SoundCloudSearchResult) sr);
         } else if (sr instanceof HttpSearchResult) {
             transfer = newHttpDownload((HttpSearchResult) sr);
         }
@@ -400,7 +400,7 @@ public final class TransferManager {
         return download;
     }
 
-    private Transfer newSoundcloudDownload(SoundcloudSearchResult sr) {
+    private Transfer newSoundcloudDownload(SoundCloudSearchResult sr) {
         SoundcloudDownload download = new UISoundcloudDownload(this, sr);
 
         httpDownloads.add(download);

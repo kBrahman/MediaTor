@@ -19,7 +19,7 @@
 package zig.zak.media.tor.android.gui.transfers;
 
 import zig.zak.media.tor.android.gui.services.Engine;
-import zig.zak.media.tor.search.soundcloud.SoundcloudSearchResult;
+import zig.zak.media.tor.search.soundcloud.SoundCloudSearchResult;
 import zig.zak.media.tor.transfers.SoundcloudDownload;
 
 /**
@@ -30,7 +30,7 @@ public class UISoundcloudDownload extends SoundcloudDownload {
 
     private final TransferManager manager;
 
-    public UISoundcloudDownload(TransferManager manager, SoundcloudSearchResult sr) {
+    public UISoundcloudDownload(TransferManager manager, SoundCloudSearchResult sr) {
         super(sr);
         this.manager = manager;
     }

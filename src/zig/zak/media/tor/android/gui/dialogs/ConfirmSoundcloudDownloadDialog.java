@@ -25,7 +25,7 @@ import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.gui.tasks.AsyncStartDownload;
 import zig.zak.media.tor.android.gui.util.UIUtils;
 import zig.zak.media.tor.search.SearchResult;
-import zig.zak.media.tor.search.soundcloud.SoundcloudSearchResult;
+import zig.zak.media.tor.search.soundcloud.SoundCloudSearchResult;
 import zig.zak.media.tor.util.JsonUtils;
 import zig.zak.media.tor.util.Ref;
 
@@ -34,13 +34,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class ConfirmSoundcloudDownloadDialog extends AbstractConfirmListDialog<SoundcloudSearchResult> {
+public class ConfirmSoundcloudDownloadDialog extends AbstractConfirmListDialog<SoundCloudSearchResult> {
 
     public static ConfirmSoundcloudDownloadDialog newInstance(
             Context ctx,
             String dialogTitle,
             String dialogText,
-            List<SoundcloudSearchResult> listData) {
+            List<SoundCloudSearchResult> listData) {
         ConfirmSoundcloudDownloadDialog dlg = new ConfirmSoundcloudDownloadDialog();
         SoundcloudSearchResultList srList = new SoundcloudSearchResultList();
         srList.listData = listData;
@@ -62,14 +62,14 @@ public class ConfirmSoundcloudDownloadDialog extends AbstractConfirmListDialog<S
     }
 
     @Override
-    public List<SoundcloudSearchResult> deserializeData(String listDataInJSON) {
+    public List<SoundCloudSearchResult> deserializeData(String listDataInJSON) {
         SoundcloudSearchResultList srList = JsonUtils.toObject(listDataInJSON, SoundcloudSearchResultList.class);
         return srList.listData;
     }
 
     @Override
-    public ConfirmListDialogDefaultAdapter<SoundcloudSearchResult> createAdapter(Context context,
-                                                                                 List<SoundcloudSearchResult> listData,
+    public ConfirmListDialogDefaultAdapter<SoundCloudSearchResult> createAdapter(Context context,
+                                                                                 List<SoundCloudSearchResult> listData,
                                                                                  SelectionMode selectionMode,
                                                                                  Bundle bundle) {
         return new SoundcloudPlaylistConfirmListDialogAdapter(context, listData, selectionMode);
@@ -82,7 +82,7 @@ public class ConfirmSoundcloudDownloadDialog extends AbstractConfirmListDialog<S
     }
 
     private static class SoundcloudSearchResultList {
-        List<SoundcloudSearchResult> listData;
+        List<SoundCloudSearchResult> listData;
     }
 
     // TODO: this class needs heavy refactor/cleanup
@@ -101,8 +101,8 @@ public class ConfirmSoundcloudDownloadDialog extends AbstractConfirmListDialog<S
                 final AbstractConfirmListDialog dlg = dlgRef.get();
 
                 final AbstractConfirmListDialog.SelectionMode selectionMode = dlg.getSelectionMode();
-                List<SoundcloudSearchResult> results = (selectionMode == AbstractConfirmListDialog.SelectionMode.NO_SELECTION) ?
-                        (List<SoundcloudSearchResult>) dlg.getList() :
+                List<SoundCloudSearchResult> results = (selectionMode == AbstractConfirmListDialog.SelectionMode.NO_SELECTION) ?
+                        (List<SoundCloudSearchResult>) dlg.getList() :
                         new ArrayList<>();
 
                 if (results.isEmpty()) {
@@ -117,28 +117,28 @@ public class ConfirmSoundcloudDownloadDialog extends AbstractConfirmListDialog<S
         }
     }
 
-    private static class SoundcloudPlaylistConfirmListDialogAdapter extends ConfirmListDialogDefaultAdapter<SoundcloudSearchResult> {
+    private static class SoundcloudPlaylistConfirmListDialogAdapter extends ConfirmListDialogDefaultAdapter<SoundCloudSearchResult> {
         SoundcloudPlaylistConfirmListDialogAdapter(Context context, List list, AbstractConfirmListDialog.SelectionMode selectionMode) {
             super(context, list, selectionMode);
         }
 
         @Override
-        public CharSequence getItemTitle(SoundcloudSearchResult data) {
+        public CharSequence getItemTitle(SoundCloudSearchResult data) {
             return data.getDisplayName();
         }
 
         @Override
-        public long getItemSize(SoundcloudSearchResult data) {
+        public long getItemSize(SoundCloudSearchResult data) {
             return data.getSize();
         }
 
         @Override
-        public CharSequence getItemThumbnailUrl(SoundcloudSearchResult data) {
+        public CharSequence getItemThumbnailUrl(SoundCloudSearchResult data) {
             return data.getThumbnailUrl();
         }
 
         @Override
-        public int getItemThumbnailResourceId(SoundcloudSearchResult data) {
+        public int getItemThumbnailResourceId(SoundCloudSearchResult data) {
             return -1;
         }
 
@@ -149,7 +149,7 @@ public class ConfirmSoundcloudDownloadDialog extends AbstractConfirmListDialog<S
             }
 
             long totalBytes = 0;
-            for (SoundcloudSearchResult sr : (Set<SoundcloudSearchResult>) checked) {
+            for (SoundCloudSearchResult sr : (Set<SoundCloudSearchResult>) checked) {
                 totalBytes += sr.getSize();
             }
 

@@ -28,7 +28,7 @@ import java.util.Locale;
  * @author gubatron
  * @author aldenml
  */
-public final class SoundcloudSearchResult extends AbstractFileSearchResult implements HttpSearchResult, StreamableSearchResult {
+public final class SoundCloudSearchResult extends AbstractFileSearchResult implements HttpSearchResult, StreamableSearchResult {
 
     private static final String DATE_FORMAT = "yyyy/mm/dd HH:mm:ss Z";
 
@@ -42,7 +42,7 @@ public final class SoundcloudSearchResult extends AbstractFileSearchResult imple
     private final String downloadUrl;
     private final long size;
 
-    SoundcloudSearchResult(SoundcloudItem item, String clientId, String appVersion) {
+    SoundCloudSearchResult(SoundcloudItem item, String clientId) {
         this.displayName = item.title;
         this.username = buildUsername(item);
         this.trackUrl = item.permalink_url;
@@ -57,7 +57,7 @@ public final class SoundcloudSearchResult extends AbstractFileSearchResult imple
         this.thumbnailUrl = buildThumbnailUrl(item.artwork_url != null ? item.artwork_url : userAvatarUrl);
 
         this.date = buildDate(item.created_at);
-        this.downloadUrl = buildDownloadUrl(item, clientId, appVersion);
+        this.downloadUrl = buildDownloadUrl(item, clientId);
     }
 
     @Override
@@ -153,7 +153,7 @@ public final class SoundcloudSearchResult extends AbstractFileSearchResult imple
         }
     }
 
-    private String buildDownloadUrl(SoundcloudItem item, String clientId, String appVersion) {
+    private String buildDownloadUrl(SoundcloudItem item, String clientId) {
         final String clientAppenderChar = (item.download_url != null && item.download_url.contains("?")) ? "&" : "?";
         String downloadUrl = ((item.download_url != null) ? item.download_url : item.stream_url);
 
@@ -163,8 +163,8 @@ public final class SoundcloudSearchResult extends AbstractFileSearchResult imple
         }
 
         // direct download urls don't seem to need client_id & app_version, if passed to the url returns HTTP 404.
-        if (clientId != null && appVersion != null) {
-            downloadUrl += clientAppenderChar + "client_id=" + clientId + "&app_version=" + appVersion;
+        if (clientId != null) {
+            downloadUrl += clientAppenderChar + "client_id=" + clientId;
         }
 
         return downloadUrl;
@@ -177,10 +177,10 @@ public final class SoundcloudSearchResult extends AbstractFileSearchResult imple
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || !(o instanceof SoundcloudSearchResult)) {
+        if (o == null || !(o instanceof SoundCloudSearchResult)) {
             return false;
         }
-        SoundcloudSearchResult other = (SoundcloudSearchResult) o;
+        SoundCloudSearchResult other = (SoundCloudSearchResult) o;
         return this.getDetailsUrl().equals(other.getDetailsUrl()) &&
                 this.getDisplayName().equals(other.getDisplayName()) &&
                 this.getDownloadUrl().equals(other.getDownloadUrl());
