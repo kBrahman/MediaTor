@@ -26,7 +26,7 @@
     <zig.zak.media.tor.android.gui.views.SwipeLayout
         android:id="@+id/fragment_search_swipe"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1.0"
         android:orientation="vertical">
 
@@ -35,16 +35,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/app_background_white">
-
-            <zig.zak.media.tor.android.gui.views.PromotionsView
-                android:id="@+id/fragment_search_promos"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-
-            <zig.zak.media.tor.android.gui.views.SearchProgressView
-                android:id="@+id/fragment_search_search_progress"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
 
             <ListView
                 android:id="@+id/fragment_search_list"

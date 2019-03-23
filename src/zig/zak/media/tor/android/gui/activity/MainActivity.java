@@ -40,6 +40,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.KeyEvent;
 import android.view.MenuItem;
@@ -170,9 +171,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         syncNavigationMenu();
         updateHeader(getCurrentFragment());
         super.onBackPressed();
-        if (ad != null && ad.isLoaded()) {
-            ad.show();
-        }
     }
 
     public void shutdown() {
@@ -403,6 +401,7 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         adView.setAdListener(new AdListener() {
             @Override
             public void onAdLoaded() {
+                Log.i(TAG, "on ad loaded");
                 adView.setVisibility(View.VISIBLE);
             }
         });
@@ -410,6 +409,21 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         ad = new InterstitialAd(this);
         ad.setAdUnitId(getString(R.string.int_id));
         ad.loadAd(new AdRequest.Builder().build());
+        View view = findViewById(R.id.pb);
+        ad.setAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(int i) {
+                view.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAdLoaded() {
+                if (ad != null) {
+                    ad.show();
+                }
+                view.setVisibility(View.GONE);
+            }
+        });
     }
 
     private void checkAccessCoarseLocationPermissions() {
@@ -462,7 +476,7 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         syncNavigationMenu();
         if (firstTime) {
             if (ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_NETWORK_BITTORRENT_ON_VPN_ONLY) && !NetworkManager.instance().isTunnelUp()) {
-                UIUtils.showDismissableMessage(findView(R.id.activity_main_parent_layout), R.string.cannot_start_engine_without_vpn);
+                UIUtils.showDismissableMessage(findView(R.id.activity_main_drawer_layout), R.string.cannot_start_engine_without_vpn);
             } else {
                 firstTime = false;
                 Engine.instance().startServices(); // it's necessary for the first time after wizard
@@ -886,7 +900,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
                 if (!isDataUp) {
                     UIUtils.showDismissableMessage(findView(android.R.id.content), R.string.no_data_check_internet_connection);
                 }
-                search.setDataUp(isDataUp);
             }
         }
     }

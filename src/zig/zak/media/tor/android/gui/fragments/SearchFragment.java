@@ -89,7 +89,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
     private SearchResultListAdapter adapter;
     private SearchInputView searchInput;
     private ProgressBar deepSearchProgress;
-    private SearchProgressView searchProgress;
     private ListView list;
     private FilterToolbarButton filterButton;
     private String currentQuery;
@@ -156,7 +155,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
             } else {
                 updateKeywordDetector(adapter.getList());
             }
-            searchProgress.setKeywordFiltersApplied(filtersApplied);
             filterButton.updateVisibility();
             keywordFilterDrawerView.updateAppliedKeywordFilters(adapter.getKeywordFiltersPipeline());
         }
@@ -170,9 +168,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         }
         if (searchHeaderBanner != null) {
             searchHeaderBanner.setSearchFragmentReference(this);
-            if (getCurrentQuery() == null) {
-                searchHeaderBanner.setBannerViewVisibility(SearchHeaderBanner.BannerType.ALL, false);
-            }
         }
         if (getCurrentQuery() == null) {
             searchInput.setFileTypeCountersVisible(false);
@@ -207,18 +202,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         searchInput.setOnSearchListener(new SearchInputOnSearchListener((LinearLayout) view, this));
         deepSearchProgress = findView(view, R.id.fragment_search_deepsearch_progress);
         deepSearchProgress.setVisibility(View.GONE);
-        // Click Listeners of the inner promos need this reference because there's too much logic
-        // on starting a download already here. See PromotionsView.setupView()
-        searchProgress = findView(view, R.id.fragment_search_search_progress);
-        searchProgress.setCurrentQueryReporter(this);
-        searchProgress.setCancelOnClickListener(v -> {
-            if (LocalSearchEngine.instance().isSearchFinished()) {
-                performSearch(searchInput.getText(), adapter.getFileType()); // retry
-            } else {
-                cancelSearch();
-            }
-        });
-
         list = findView(view, R.id.fragment_search_list);
 
         SwipeLayout swipe = findView(view, R.id.fragment_search_swipe);
@@ -437,7 +420,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         currentQuery = query;
         keywordDetector.shutdownHistogramUpdateRequestDispatcher();
         LocalSearchEngine.instance().performSearch(query);
-        searchProgress.setProgressEnabled(true);
         showSearchView(getView());
         UXStats.instance().log(UXAction.SEARCH_STARTED_ENTER_KEY);
     }
@@ -450,33 +432,22 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         resetKeywordDetector();
         currentQuery = null;
         LocalSearchEngine.instance().cancelSearch();
-        searchProgress.setProgressEnabled(false);
         showSearchView(getView());
         filterButton.reset(true); // hide=true
-        searchHeaderBanner.setBannerViewVisibility(SearchHeaderBanner.BannerType.ALL, false);
         keywordDetector.shutdownHistogramUpdateRequestDispatcher();
     }
 
     private void showSearchView(View view) {
         boolean searchFinished = LocalSearchEngine.instance().isSearchFinished();
-        if (LocalSearchEngine.instance().isSearchStopped()) {
-            switchView(view, R.id.fragment_search_promos);
-            deepSearchProgress.setVisibility(View.GONE);
+
+        boolean adapterHasResults = adapter != null && adapter.getCount() > 0;
+        if (adapterHasResults) {
+            switchView(view, R.id.fragment_search_list);
+            deepSearchProgress.setVisibility(searchFinished ? View.GONE : View.VISIBLE);
+            filterButton.updateVisibility();
         } else {
-            boolean adapterHasResults = adapter != null && adapter.getCount() > 0;
-            if (adapterHasResults) {
-                switchView(view, R.id.fragment_search_list);
-                deepSearchProgress.setVisibility(searchFinished ? View.GONE : View.VISIBLE);
-                filterButton.updateVisibility();
-            } else {
-                switchView(view, R.id.fragment_search_search_progress);
-                deepSearchProgress.setVisibility(View.GONE);
-            }
+            deepSearchProgress.setVisibility(View.GONE);
         }
-        if (getCurrentQuery() != null && adapter != null) {
-            searchProgress.setKeywordFiltersApplied(!adapter.getKeywordFiltersPipeline().isEmpty());
-        }
-        searchProgress.setProgressEnabled(!searchFinished);
     }
 
     private void switchView(View v, int id) {
@@ -581,10 +552,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         keywordFilterDrawerView.reset();
     }
 
-    public void setDataUp(boolean value) {
-        searchProgress.setDataUp(value);
-    }
-
     private static class LocalSearchEngineListener implements SearchListener {
 
         private final WeakReference<SearchFragment> searchFragmentRef;
@@ -614,7 +581,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
                     searchFragment.getActivity().runOnUiThread(() -> {
                         if (Ref.alive(searchFragmentRef)) {
                             SearchFragment searchFragment1 = searchFragmentRef.get();
-                            searchFragment1.searchProgress.setProgressEnabled(false);
                             searchFragment1.deepSearchProgress.setVisibility(View.GONE);
                         }
                     });
@@ -623,7 +589,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         }
     }
 
-    private static final class SearchInputOnSearchListener implements SearchInputView.OnSearchListener {
+    private final class SearchInputOnSearchListener implements SearchInputView.OnSearchListener {
         private final WeakReference<LinearLayout> rootViewRef;
         private final WeakReference<SearchFragment> fragmentRef;
 
@@ -638,7 +604,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
             }
             SearchFragment fragment = fragmentRef.get();
             fragment.searchHeaderBanner.setSearchFragmentReference(fragment);
-            fragment.searchHeaderBanner.updateComponents();
             fragment.resetKeywordDetector();
             fragment.searchInput.selectTabByMediaType((byte) mediaTypeId);
             if (query.contains("://m.soundcloud.com/") || query.contains("://soundcloud.com/")) {

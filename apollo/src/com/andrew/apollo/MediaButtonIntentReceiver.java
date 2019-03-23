@@ -11,7 +11,6 @@
 
 package com.andrew.apollo;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
@@ -27,14 +26,14 @@ import com.andrew.apollo.ui.activities.HomeActivity;
 
 /**
  * Used to control headset playback.
- *   Single press: pause/resume
- *   Double press: next track
- *   Triple press: previous track
- *   Long press: voice search
+ * Single press: pause/resume
+ * Double press: next track
+ * Triple press: previous track
+ * Long press: voice search
  */
 public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
     private static final boolean DEBUG = false;
-    private static final String TAG = "MediaButtonIntentReceiver";
+    private static final String TAG = MediaButtonIntentReceiver.class.getSimpleName();
 
     private static final int MSG_LONGPRESS_TIMEOUT = 1;
     private static final int MSG_HEADSET_DOUBLE_CLICK_TIMEOUT = 2;
@@ -59,7 +58,7 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
                 case MSG_LONGPRESS_TIMEOUT:
                     if (DEBUG) Log.v(TAG, "Handling longpress timeout, launched " + mLaunched);
                     if (!mLaunched) {
-                        final Context context = (Context)msg.obj;
+                        final Context context = (Context) msg.obj;
                         final Intent i = new Intent();
                         i.setClass(context, HomeActivity.class);
                         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -74,14 +73,22 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
 
                     if (DEBUG) Log.v(TAG, "Handling headset click, count = " + clickCount);
                     switch (clickCount) {
-                        case 1: command = MusicPlaybackService.CMDTOGGLEPAUSE; break;
-                        case 2: command = MusicPlaybackService.CMDNEXT; break;
-                        case 3: command = MusicPlaybackService.CMDPREVIOUS; break;
-                        default: command = null; break;
+                        case 1:
+                            command = MusicPlaybackService.CMDTOGGLEPAUSE;
+                            break;
+                        case 2:
+                            command = MusicPlaybackService.CMDNEXT;
+                            break;
+                        case 3:
+                            command = MusicPlaybackService.CMDPREVIOUS;
+                            break;
+                        default:
+                            command = null;
+                            break;
                     }
 
                     if (command != null) {
-                        final Context context = (Context)msg.obj;
+                        final Context context = (Context) msg.obj;
                         startService(context, command);
                     }
                     break;
@@ -90,9 +97,6 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
         }
     };
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onReceive(final Context context, final Intent intent) {
         if (DEBUG) Log.v(TAG, "Received intent: " + intent);
@@ -100,7 +104,7 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
         if (AudioManager.ACTION_AUDIO_BECOMING_NOISY.equals(intentAction)) {
             startService(context, MusicPlaybackService.CMDPAUSE);
         } else if (Intent.ACTION_MEDIA_BUTTON.equals(intentAction)) {
-            final KeyEvent event = (KeyEvent)intent.getParcelableExtra(Intent.EXTRA_KEY_EVENT);
+            final KeyEvent event = (KeyEvent) intent.getParcelableExtra(Intent.EXTRA_KEY_EVENT);
             if (event == null) {
                 return;
             }
@@ -134,12 +138,9 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
             if (command != null) {
                 if (action == KeyEvent.ACTION_DOWN) {
                     if (mDown) {
-                        if (MusicPlaybackService.CMDTOGGLEPAUSE.equals(command)
-                                || MusicPlaybackService.CMDPLAY.equals(command)) {
-                            if (mLastClickTime != 0
-                                    && eventtime - mLastClickTime > LONG_PRESS_DELAY) {
-                                acquireWakeLockAndSendMessage(context,
-                                        mHandler.obtainMessage(MSG_LONGPRESS_TIMEOUT, context), 0);
+                        if (MusicPlaybackService.CMDTOGGLEPAUSE.equals(command) || MusicPlaybackService.CMDPLAY.equals(command)) {
+                            if (mLastClickTime != 0 && eventtime - mLastClickTime > LONG_PRESS_DELAY) {
+                                acquireWakeLockAndSendMessage(context, mHandler.obtainMessage(MSG_LONGPRESS_TIMEOUT, context), 0);
                             }
                         }
                     } else if (event.getRepeatCount() == 0) {
@@ -159,8 +160,7 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
                             if (DEBUG) Log.v(TAG, "Got headset click, count = " + mClickCounter);
                             mHandler.removeMessages(MSG_HEADSET_DOUBLE_CLICK_TIMEOUT);
 
-                            Message msg = mHandler.obtainMessage(
-                                    MSG_HEADSET_DOUBLE_CLICK_TIMEOUT, mClickCounter, 0, context);
+                            Message msg = mHandler.obtainMessage(MSG_HEADSET_DOUBLE_CLICK_TIMEOUT, mClickCounter, 0, context);
 
                             long delay = mClickCounter < 3 ? DOUBLE_CLICK : 0;
                             if (mClickCounter >= 3) {
@@ -209,8 +209,7 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
     }
 
     private static void releaseWakeLockIfHandlerIdle() {
-        if (mHandler.hasMessages(MSG_LONGPRESS_TIMEOUT)
-                || mHandler.hasMessages(MSG_HEADSET_DOUBLE_CLICK_TIMEOUT)) {
+        if (mHandler.hasMessages(MSG_LONGPRESS_TIMEOUT) || mHandler.hasMessages(MSG_HEADSET_DOUBLE_CLICK_TIMEOUT)) {
             if (DEBUG) Log.v(TAG, "Handler still has messages pending, not releasing wake lock");
             return;
         }
