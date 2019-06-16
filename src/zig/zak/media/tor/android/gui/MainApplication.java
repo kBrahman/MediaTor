@@ -17,8 +17,8 @@
 
 package zig.zak.media.tor.android.gui;
 
-import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDexApplication;
 import android.view.ViewConfiguration;
 
 import com.andrew.apollo.cache.ImageCache;
@@ -48,11 +48,7 @@ import zig.zak.media.tor.util.Ref;
 import static zig.zak.media.tor.android.util.Asyncs.async;
 import static zig.zak.media.tor.android.util.RunStrict.runStrict;
 
-/**
- * @author gubatron
- * @author aldenml
- */
-public class MainApplication extends Application {
+public class MainApplication extends MultiDexApplication {
 
     private static final Logger LOG = Logger.getLogger(MainApplication.class);
 

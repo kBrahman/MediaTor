@@ -32,10 +32,6 @@ import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.widget.ImageView;
 
-import zig.zak.media.tor.android.gui.MainApplication;
-import zig.zak.media.tor.util.Logger;
-import zig.zak.media.tor.util.Ref;
-import zig.zak.media.tor.util.http.OKHTTPClient;
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
@@ -52,13 +48,14 @@ import java.util.HashSet;
 
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
+import zig.zak.media.tor.android.gui.MainApplication;
+import zig.zak.media.tor.util.Logger;
+import zig.zak.media.tor.util.Ref;
+import zig.zak.media.tor.util.http.OKHTTPClient;
 
 import static zig.zak.media.tor.android.util.Asyncs.async;
 
-/**
- * @author gubatron
- * @author aldenml
- */
+
 public final class ImageLoader {
 
     private static final Logger LOG = Logger.getLogger(ImageLoader.class);
@@ -113,18 +110,12 @@ public final class ImageLoader {
         Bitmap bitmap = null;
         try {
             Uri albumUri = Uri.withAppendedPath(MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI, albumId);
-            Cursor cursor = context.getContentResolver().query(albumUri, new String[]{MediaStore.Audio.AlbumColumns.ALBUM_ART}, null, null, null);
-            try {
-                LOG.info("Using album_art path for uri: " + albumUri);
+            try (Cursor cursor = context.getContentResolver().query(albumUri, new String[]{MediaStore.Audio.AlbumColumns.ALBUM_ART}, null, null, null)) {
                 if (cursor != null && cursor.moveToFirst()) {
                     String albumArt = cursor.getString(0);
                     if (albumArt != null) {
                         bitmap = BitmapFactory.decodeFile(albumArt);
                     }
-                }
-            } finally {
-                if (cursor != null) {
-                    cursor.close();
                 }
             }
 
@@ -360,8 +351,7 @@ public final class ImageLoader {
         String params();
     }
 
-    private static final class CallbackWrapper implements
-            com.squareup.picasso.Callback {
+    private static final class CallbackWrapper implements com.squareup.picasso.Callback {
 
         private final Callback cb;
 
@@ -509,12 +499,7 @@ public final class ImageLoader {
         private static long getFirstAlbumIdForArtist(Context context, String artistName) {
             int id = -1;
             try {
-                Cursor cursor = context.getContentResolver().query(
-                        MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI, new String[]{
-                                BaseColumns._ID
-                        }, MediaStore.Audio.AlbumColumns.ARTIST + "=?", new String[]{
-                                artistName
-                        }, BaseColumns._ID);
+                Cursor cursor = context.getContentResolver().query(MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI, new String[]{BaseColumns._ID}, MediaStore.Audio.AlbumColumns.ARTIST + "=?", new String[]{artistName}, BaseColumns._ID);
                 if (cursor != null) {
                     cursor.moveToFirst();
                     if (!cursor.isAfterLast()) {

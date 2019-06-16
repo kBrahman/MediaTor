@@ -35,10 +35,6 @@ import android.widget.RelativeLayout;
 
 import zig.zak.media.tor.R;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public class ClearableEditTextView extends RelativeLayout {
 
     private FWAutoCompleteTextView input;
@@ -77,10 +73,6 @@ public class ClearableEditTextView extends RelativeLayout {
     @Override
     public void setOnKeyListener(OnKeyListener l) {
         input.setOnKeyListener(l);
-    }
-
-    public OnItemClickListener getOnItemClickListener() {
-        return input.getOnItemClickListener();
     }
 
     public void setOnItemClickListener(OnItemClickListener l) {

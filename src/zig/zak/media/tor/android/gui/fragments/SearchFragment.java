@@ -265,10 +265,12 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
             updateKeywordDetector(keywordFiltered);
         }
         if (isAdded()) {
-            getActivity().runOnUiThread(() -> {
+            Activity activity = getActivity();
+            activity.runOnUiThread(() -> {
                 adapter.addResults(keywordFiltered, mediaTypeFiltered);
                 showSearchView(getView());
                 refreshFileTypeCounters(true);
+                activity.findViewById(R.id.pb).setVisibility(View.GONE);
             });
         }
     }
@@ -562,6 +564,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
 
         @Override
         public void onResults(long token, final List<? extends SearchResult> results) {
+
             if (Ref.alive(searchFragmentRef)) {
                 //noinspection unchecked
                 searchFragmentRef.get().onSearchResults((List<SearchResult>) results);
@@ -599,6 +602,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         }
 
         public void onSearch(View v, String query, int mediaTypeId) {
+            getActivity().findViewById(R.id.pb).setVisibility(View.VISIBLE);
             if (!Ref.alive(fragmentRef) || !Ref.alive(rootViewRef)) {
                 return;
             }

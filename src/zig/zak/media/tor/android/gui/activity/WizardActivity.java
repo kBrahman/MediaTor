@@ -35,11 +35,6 @@ import zig.zak.media.tor.android.gui.views.GeneralWizardPage;
 import zig.zak.media.tor.android.gui.views.WizardPageView;
 import zig.zak.media.tor.android.gui.views.WizardPageView.OnCompleteListener;
 
-/**
- * @author gubatron
- * @author aldenml
- *
- */
 public class WizardActivity extends AbstractActivity {
     private final OnCompleteListener completeListener;
     private Button buttonPrevious;
@@ -55,7 +50,7 @@ public class WizardActivity extends AbstractActivity {
             }
         };
     }
-    
+
     @Override
     protected void onCreate(Bundle savedInstance) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);

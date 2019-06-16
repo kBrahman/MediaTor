@@ -34,6 +34,7 @@ import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -387,6 +388,7 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i(TAG, "on create");
         setTheme(R.style.Theme_MediaTor);
         super.onCreate(savedInstanceState);
         if (!ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_GUI_TOS_ACCEPTED)) {
@@ -424,6 +426,11 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
                 view.setVisibility(View.GONE);
             }
         });
+        new Handler().postDelayed(() -> {
+            ad = null;
+            view.setVisibility(View.GONE);
+        }, 5000);
+        Log.i(TAG, "on create");
     }
 
     private void checkAccessCoarseLocationPermissions() {

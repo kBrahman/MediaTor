@@ -20,6 +20,8 @@ package zig.zak.media.tor.android.gui.activity.internal;
 import android.app.Fragment;
 import android.content.Intent;
 
+import java.lang.ref.WeakReference;
+
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.ConfigurationManager;
 import zig.zak.media.tor.android.gui.activity.MainActivity;
@@ -30,12 +32,7 @@ import zig.zak.media.tor.android.gui.fragments.TransfersFragment;
 import zig.zak.media.tor.android.gui.fragments.TransfersFragment.TransferStatus;
 import zig.zak.media.tor.util.Ref;
 
-import java.lang.ref.WeakReference;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class MainController {
 
     private final WeakReference<MainActivity> activityRef;

@@ -21,6 +21,7 @@ package zig.zak.media.tor.android.gui.views;
 import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.KeyEvent;
 import android.view.View;
@@ -41,7 +42,6 @@ public class SearchInputView extends LinearLayout {
     private ClearableEditTextView textInput;
     private View dummyFocusView;
     private OnSearchListener onSearchListener;
-    private int mediaTypeId;
     private TabLayout tabLayout;
     private final SparseArray<FileTypeTab> toFileTypeTab;
 
@@ -89,10 +89,6 @@ public class SearchInputView extends LinearLayout {
 
     public String getText() {
         return textInput.getText();
-    }
-
-    public void setHint(String hint) {
-        textInput.setHint(hint);
     }
 
     public void setText(String text) {
@@ -156,7 +152,7 @@ public class SearchInputView extends LinearLayout {
         adapter.discardLastResult();
         String query = textInput.getText().trim();
         if (query.length() > 0) {
-            mediaTypeId = ConfigurationManager.instance().getLastMediaTypeFilter();
+            int mediaTypeId = ConfigurationManager.instance().getLastMediaTypeFilter();
             tabItemFileTypeClick(mediaTypeId);
             onSearch(query, mediaTypeId);
         }
@@ -248,15 +244,20 @@ public class SearchInputView extends LinearLayout {
 
     private static final class TextInputClickListener extends ClickAdapter<SearchInputView> implements OnItemClickListener, OnActionListener {
 
-        public TextInputClickListener(SearchInputView owner) {
+        private static final String TAG = SearchInputView.class.getSimpleName();
+
+        TextInputClickListener(SearchInputView owner) {
             super(owner);
         }
 
         @Override
         public boolean onKey(SearchInputView owner, View v, int keyCode, KeyEvent event) {
+            Log.i(TAG, "on key");
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_UP) {
                 owner.startSearch(v);
                 return true;
+            } else if (keyCode == KeyEvent.ACTION_DOWN) {
+                owner.showTextInput();
             }
             return false;
         }

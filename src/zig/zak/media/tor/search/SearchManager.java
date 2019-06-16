@@ -17,11 +17,6 @@
 
 package zig.zak.media.tor.search;
 
-import zig.zak.media.tor.search.filter.SearchTable;
-import zig.zak.media.tor.util.Logger;
-import zig.zak.media.tor.util.Ref;
-import zig.zak.media.tor.util.ThreadPool;
-
 import java.lang.ref.WeakReference;
 import java.util.Collections;
 import java.util.Iterator;
@@ -29,6 +24,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.PriorityBlockingQueue;
+
+import zig.zak.media.tor.search.filter.SearchTable;
+import zig.zak.media.tor.util.Logger;
+import zig.zak.media.tor.util.Ref;
+import zig.zak.media.tor.util.ThreadPool;
 
 /**
  * @author gubatron
@@ -59,9 +59,6 @@ public final class SearchManager {
     }
 
     public void perform(final SearchPerformer performer) {
-//        if (performer == null) {
-//            throw new IllegalArgumentException("Search performer argument can't be null");
-//        }
         if (performer != null) {
             if (performer.getToken() < 0) {
                 throw new IllegalArgumentException("Search token id must be >= 0");
