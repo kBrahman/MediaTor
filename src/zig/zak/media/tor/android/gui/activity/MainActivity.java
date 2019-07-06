@@ -34,7 +34,6 @@ import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.IBinder;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -50,10 +49,7 @@ import android.view.View;
 import com.andrew.apollo.IApolloService;
 import com.andrew.apollo.utils.MusicUtils;
 import com.andrew.apollo.utils.MusicUtils.ServiceToken;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
+import com.facebook.ads.AudienceNetworkAds;
 
 import org.apache.commons.io.IOUtils;
 
@@ -125,7 +121,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     private TimerSubscription playerSubscription;
 
     private boolean shuttingdown = false;
-    private InterstitialAd ad;
 
     public MainActivity() {
         super(R.layout.activity_main);
@@ -399,38 +394,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         }
         checkExternalStoragePermissionsOrBindMusicService();
         checkAccessCoarseLocationPermissions();
-        AdView adView = findViewById(R.id.adView);
-        adView.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                Log.i(TAG, "on ad loaded");
-                adView.setVisibility(View.VISIBLE);
-            }
-        });
-        adView.loadAd(new AdRequest.Builder().build());
-        ad = new InterstitialAd(this);
-        ad.setAdUnitId(getString(R.string.int_id));
-        ad.loadAd(new AdRequest.Builder().build());
-        View view = findViewById(R.id.pb);
-        ad.setAdListener(new AdListener() {
-            @Override
-            public void onAdFailedToLoad(int i) {
-                view.setVisibility(View.GONE);
-            }
-
-            @Override
-            public void onAdLoaded() {
-                if (ad != null) {
-                    ad.show();
-                }
-                view.setVisibility(View.GONE);
-            }
-        });
-        new Handler().postDelayed(() -> {
-            ad = null;
-            view.setVisibility(View.GONE);
-        }, 5000);
-        Log.i(TAG, "on create");
     }
 
     private void checkAccessCoarseLocationPermissions() {
@@ -455,10 +418,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     protected void onDestroy() {
         super.onDestroy();
         if (search != null) {
-            // this is necessary because the Fragment#onDestroy is not
-            // necessary called right in the Activity#onDestroy call, making
-            // the internal mopub view possible to outlive the activity
-            // destruction, creating a context leak
             search.destroyHeaderBanner();
             // TODO: make a unique call for these destroys
         }

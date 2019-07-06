@@ -23,6 +23,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <com.facebook.ads.NativeAdLayout
+        android:id="@+id/native_ad_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"/>
+
     <zig.zak.media.tor.android.gui.views.SwipeLayout
         android:id="@+id/fragment_search_swipe"
         android:layout_width="match_parent"

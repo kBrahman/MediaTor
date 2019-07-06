@@ -22,6 +22,7 @@ import android.support.multidex.MultiDexApplication;
 import android.view.ViewConfiguration;
 
 import com.andrew.apollo.cache.ImageCache;
+import com.facebook.ads.AudienceNetworkAds;
 
 import org.apache.commons.io.FileUtils;
 
@@ -62,6 +63,8 @@ public class MainApplication extends MultiDexApplication {
         async(this, this::initializeCrawlPagedWebSearchPerformer);
         async(LocalSearchEngine::instance);
         async(MainApplication::cleanTemp);
+        AudienceNetworkAds.initialize(this);
+        AudienceNetworkAds.isInAdsProcess(this);
     }
 
     @Override
