@@ -74,7 +74,7 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
                     if (DEBUG) Log.v(TAG, "Handling headset click, count = " + clickCount);
                     switch (clickCount) {
                         case 1:
-                            command = MusicPlaybackService.CMDTOGGLEPAUSE;
+                            command = MusicPlaybackService.CMDTOGGLE_PAUSE;
                             break;
                         case 2:
                             command = MusicPlaybackService.CMDNEXT;
@@ -102,9 +102,9 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
         if (DEBUG) Log.v(TAG, "Received intent: " + intent);
         final String intentAction = intent.getAction();
         if (AudioManager.ACTION_AUDIO_BECOMING_NOISY.equals(intentAction)) {
-            startService(context, MusicPlaybackService.CMDPAUSE);
+            //            startService(context, MusicPlaybackService.CMDPAUSE);
         } else if (Intent.ACTION_MEDIA_BUTTON.equals(intentAction)) {
-            final KeyEvent event = (KeyEvent) intent.getParcelableExtra(Intent.EXTRA_KEY_EVENT);
+            final KeyEvent event = intent.getParcelableExtra(Intent.EXTRA_KEY_EVENT);
             if (event == null) {
                 return;
             }
@@ -120,7 +120,7 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
                     break;
                 case KeyEvent.KEYCODE_HEADSETHOOK:
                 case KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE:
-                    command = MusicPlaybackService.CMDTOGGLEPAUSE;
+                    command = MusicPlaybackService.CMDTOGGLE_PAUSE;
                     break;
                 case KeyEvent.KEYCODE_MEDIA_NEXT:
                     command = MusicPlaybackService.CMDNEXT;
@@ -138,7 +138,7 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
             if (command != null) {
                 if (action == KeyEvent.ACTION_DOWN) {
                     if (mDown) {
-                        if (MusicPlaybackService.CMDTOGGLEPAUSE.equals(command) || MusicPlaybackService.CMDPLAY.equals(command)) {
+                        if (MusicPlaybackService.CMDTOGGLE_PAUSE.equals(command) || MusicPlaybackService.CMDPLAY.equals(command)) {
                             if (mLastClickTime != 0 && eventtime - mLastClickTime > LONG_PRESS_DELAY) {
                                 acquireWakeLockAndSendMessage(context, mHandler.obtainMessage(MSG_LONGPRESS_TIMEOUT, context), 0);
                             }

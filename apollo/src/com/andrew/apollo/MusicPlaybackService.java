@@ -188,7 +188,7 @@ public class MusicPlaybackService extends Service {
 
     static final String CMDNAME = "command";
 
-    static final String CMDTOGGLEPAUSE = "togglepause";
+    static final String CMDTOGGLE_PAUSE = "togglepause";
 
     static final String CMDSTOP = "stop";
 
@@ -855,7 +855,7 @@ public class MusicPlaybackService extends Service {
                 seek(0);
                 play();
             }
-        } else if (CMDTOGGLEPAUSE.equals(command) || TOGGLEPAUSE_ACTION.equals(action)) {
+        } else if (CMDTOGGLE_PAUSE.equals(command) || TOGGLEPAUSE_ACTION.equals(action)) {
             if (isPlaying()) {
                 pause();
                 mPausedByTransientLossOfFocus = false;
