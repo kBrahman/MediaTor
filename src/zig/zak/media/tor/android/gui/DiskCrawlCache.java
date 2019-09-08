@@ -29,10 +29,6 @@ import org.apache.commons.io.IOUtils;
 
 import java.io.File;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class DiskCrawlCache implements CrawlCache {
 
     private static final Logger LOG = Logger.getLogger(DiskCrawlCache.class);

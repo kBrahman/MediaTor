@@ -32,6 +32,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -42,15 +43,24 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.andrew.apollo.utils.MusicUtils;
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AdIconView;
+import com.facebook.ads.AdOptionsView;
+import com.facebook.ads.MediaView;
+import com.facebook.ads.NativeAd;
+import com.facebook.ads.NativeAdLayout;
+import com.facebook.ads.NativeAdListener;
 
 import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.Constants;
@@ -60,7 +70,6 @@ import zig.zak.media.tor.android.gui.dialogs.YouTubeDownloadDialog;
 import zig.zak.media.tor.android.gui.services.Engine;
 import zig.zak.media.tor.android.gui.views.AbstractActivity;
 import zig.zak.media.tor.android.gui.views.AbstractDialog;
-import zig.zak.media.tor.android.util.ImageLoader;
 import zig.zak.media.tor.search.FileSearchResult;
 import zig.zak.media.tor.search.youtube.YouTubePackageSearchResult;
 import zig.zak.media.tor.util.Logger;
@@ -69,10 +78,6 @@ import zig.zak.media.tor.util.Ref;
 import static zig.zak.media.tor.android.gui.adapters.SearchResultListAdapter.IS_SOUND_CLOUD;
 
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class PreviewPlayerActivity extends AbstractActivity implements AbstractDialog.OnDialogClickListener, TextureView.SurfaceTextureListener, MediaPlayer.OnBufferingUpdateListener, MediaPlayer.OnCompletionListener, MediaPlayer.OnPreparedListener, MediaPlayer.OnVideoSizeChangedListener, MediaPlayer.OnInfoListener, AudioManager.OnAudioFocusChangeListener {
 
     private static final Logger LOG = Logger.getLogger(PreviewPlayerActivity.class);
@@ -83,14 +88,12 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
     private Surface surface;
     private String displayName;
     private String source;
-    private String thumbnailUrl;
     private String streamUrl;
-    private boolean hasVideo;
     private boolean audio;
     private boolean isFullScreen = false;
     private boolean videoSizeSetupDone = false;
     private boolean changedActionBarTitleToNonBuffering = false;
-    private boolean isSoundCloud;
+    private NativeAd nativeAd;
 
     public PreviewPlayerActivity() {
         super(R.layout.activity_preview_player);
@@ -99,7 +102,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        isSoundCloud = getIntent().getBooleanExtra(IS_SOUND_CLOUD, false);
+        boolean isSoundCloud = getIntent().getBooleanExtra(IS_SOUND_CLOUD, false);
         Log.i(TAG, "is sound cloud=>" + isSoundCloud);
         if (isSoundCloud) {
             findView(R.id.activity_preview_player_download_button).setVisibility(View.GONE);
@@ -135,16 +138,14 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
 
         displayName = i.getStringExtra("displayName");
         source = i.getStringExtra("source");
-        thumbnailUrl = i.getStringExtra("thumbnailUrl");
         streamUrl = i.getStringExtra("streamUrl");
-        hasVideo = i.getBooleanExtra("hasVideo", false);
         audio = i.getBooleanExtra("audio", false);
         isFullScreen = i.getBooleanExtra("isFullScreen", false);
 
         int mediaTypeStrId = audio ? R.string.audio : R.string.video;
         setTitle(getString(R.string.media_preview, getString(mediaTypeStrId)) + getString(R.string.buffering));
 
-        final TextureView videoTexture = findView(R.id.activity_preview_player_videoview);
+        final TextureView videoTexture = findView(R.id.activity_preview_player_video_view);
         videoTexture.setSurfaceTextureListener(this);
 
         // when previewing audio, we make the video view really tiny.
@@ -154,9 +155,9 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
             layoutParams.width = 1;
             layoutParams.height = 1;
             videoTexture.setLayoutParams(layoutParams);
+            loadNativeAd();
         }
 
-        final ImageView img = findView(R.id.activity_preview_player_thumbnail);
 
         final TextView trackName = findView(R.id.activity_preview_player_track_name);
         final TextView artistName = findView(R.id.activity_preview_player_artist_name);
@@ -168,10 +169,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
                 toggleFullScreen(videoTexture);
                 return false;
             });
-        }
-
-        if (thumbnailUrl != null) {
-            ImageLoader.getInstance(this).load(Uri.parse(thumbnailUrl), img, R.drawable.default_artwork);
         }
 
         final Button downloadButton = findView(R.id.activity_preview_player_download_button);
@@ -191,9 +188,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
             super.onSaveInstanceState(outState);
             outState.putString("displayName", displayName);
             outState.putString("source", source);
-            outState.putString("thumbnailUrl", thumbnailUrl);
             outState.putString("streamUrl", streamUrl);
-            outState.putBoolean("hasVideo", hasVideo);
             outState.putBoolean("audio", audio);
             outState.putBoolean("isFullScreen", isFullScreen);
             if (androidMediaPlayer != null && androidMediaPlayer.isPlaying()) {
@@ -202,10 +197,95 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         }
     }
 
-    private void onVideoViewPrepared(final ImageView img) {
-        if (!audio) {
-            img.setVisibility(View.GONE);
-        }
+    private void loadNativeAd() {
+        // Instantiate a NativeAd object.
+        // NOTE: the placement ID will eventually identify this as your App, you can ignore it for
+        // now, while you are testing and replace it later when you have signed up.
+        // While you are using this temporary code you will only get test ads and if you release
+        // your code like this to the Google Play your users will not receive ads (you will get a no fill error).
+        nativeAd = new NativeAd(this, getString(R.string.id_ad_native));
+
+        nativeAd.setAdListener(new NativeAdListener() {
+            @Override
+            public void onMediaDownloaded(Ad ad) {
+                // Native ad finished downloading all assets
+                Log.e(TAG, "Native ad finished downloading all assets.");
+            }
+
+            @Override
+            public void onError(Ad ad, AdError adError) {
+                // Native ad failed to load
+                Log.e(TAG, "Native ad failed to load: " + adError.getErrorMessage());
+            }
+
+            @Override
+            public void onAdLoaded(Ad ad) {
+                if (nativeAd == null || nativeAd != ad) {
+                    return;
+                }
+                // Inflate Native Ad into Container
+                inflateAd(nativeAd);
+            }
+
+
+            @Override
+            public void onAdClicked(Ad ad) {
+                // Native ad clicked
+                Log.d(TAG, "Native ad clicked!");
+            }
+
+            @Override
+            public void onLoggingImpression(Ad ad) {
+                // Native ad impression
+                Log.d(TAG, "Native ad impression logged!");
+            }
+        });
+
+        // Request an ad
+        nativeAd.loadAd();
+    }
+
+    private void inflateAd(NativeAd nativeAd) {
+        Log.i(TAG, "inflateAd");
+        nativeAd.unregisterView();
+
+        // Add the Ad view into the ad container.
+        NativeAdLayout nativeAdLayout = findViewById(R.id.preview_native_ad_container);
+        LayoutInflater inflater = LayoutInflater.from(this);
+        // Inflate the Ad view.  The layout referenced should be the one you created in the last step.
+        View adView = inflater.inflate(R.layout.native_ad_layout, nativeAdLayout, false);
+        nativeAdLayout.addView(adView);
+
+        // Add the AdOptionsView
+        LinearLayout adChoicesContainer = findViewById(R.id.ad_choices_container);
+        AdOptionsView adOptionsView = new AdOptionsView(this, nativeAd, nativeAdLayout);
+        adChoicesContainer.removeAllViews();
+        adChoicesContainer.addView(adOptionsView, 0);
+
+        // Create native UI using the ad metadata.
+        AdIconView nativeAdIcon = adView.findViewById(R.id.native_ad_icon);
+        TextView nativeAdTitle = adView.findViewById(R.id.native_ad_title);
+        MediaView nativeAdMedia = adView.findViewById(R.id.native_ad_media);
+        TextView nativeAdSocialContext = adView.findViewById(R.id.native_ad_social_context);
+        TextView nativeAdBody = adView.findViewById(R.id.native_ad_body);
+        TextView sponsoredLabel = adView.findViewById(R.id.native_ad_sponsored_label);
+        Button nativeAdCallToAction = adView.findViewById(R.id.native_ad_call_to_action);
+
+        // Set the Text.
+        nativeAdTitle.setText(nativeAd.getAdvertiserName());
+        nativeAdBody.setText(nativeAd.getAdBodyText());
+        nativeAdSocialContext.setText(nativeAd.getAdSocialContext());
+        nativeAdCallToAction.setVisibility(nativeAd.hasCallToAction() ? View.VISIBLE : View.INVISIBLE);
+        nativeAdCallToAction.setText(nativeAd.getAdCallToAction());
+        sponsoredLabel.setText(nativeAd.getSponsoredTranslation());
+
+        // Create a list of clickable views
+        List<View> clickableViews = new ArrayList<>();
+        clickableViews.add(nativeAdTitle);
+        clickableViews.add(nativeAdCallToAction);
+
+        // Register the Title and CTA button to listen for clicks.
+        nativeAd.registerViewForInteraction(adView, nativeAdMedia, nativeAdIcon, clickableViews);
     }
 
     private void onDownloadButtonClick() {
@@ -276,11 +356,10 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
 
         boolean isPortrait = isPortrait();
 
-        final FrameLayout frameLayout = findView(R.id.activity_preview_player_framelayout);
+        final FrameLayout frameLayout = findView(R.id.activity_preview_player_frameLayout);
         LinearLayout.LayoutParams frameLayoutParams = (LinearLayout.LayoutParams) frameLayout.getLayoutParams();
 
         LinearLayout playerMetadataHeader = findView(R.id.activity_preview_player_metadata_header);
-        ImageView thumbnail = findView(R.id.activity_preview_player_thumbnail);
 
         final Button downloadButton = findView(R.id.activity_preview_player_download_button);
 
@@ -293,7 +372,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
             findToolbar().setVisibility(View.GONE);
-            setViewsVisibility(View.GONE, playerMetadataHeader, thumbnail, downloadButton, rightSide);
+            setViewsVisibility(View.GONE, playerMetadataHeader, downloadButton, rightSide);
 
             if (isPortrait) {
                 //noinspection SuspiciousNameCombination
@@ -301,9 +380,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
                 //noinspection SuspiciousNameCombination
                 frameLayoutParams.height = metrics.widthPixels;
             } else {
-                //noinspection SuspiciousNameCombination
                 frameLayoutParams.width = metrics.widthPixels;
-                //noinspection SuspiciousNameCombination
                 frameLayoutParams.height = metrics.heightPixels;
             }
             isFullScreen = true;
@@ -337,7 +414,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         }
         int videoWidth = androidMediaPlayer.getVideoWidth();
         int videoHeight = androidMediaPlayer.getVideoHeight();
-        final TextureView v = findView(R.id.activity_preview_player_videoview);
+        final TextureView v = findView(R.id.activity_preview_player_video_view);
         DisplayMetrics metrics = new DisplayMetrics();
         final Display defaultDisplay = getWindowManager().getDefaultDisplay();
         defaultDisplay.getMetrics(metrics);
@@ -363,9 +440,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
             }
         } else {
             if (isFullScreen) {
-                //noinspection SuspiciousNameCombination
                 params.width = metrics.widthPixels;
-                //noinspection SuspiciousNameCombination
                 params.height = metrics.heightPixels;
             } else {
                 params.width = Math.max(videoWidth, metrics.widthPixels / 2);
@@ -417,6 +492,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
     @Override
     public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int width, int height) {
         surface = new Surface(surfaceTexture);
+        Log.i(TAG, "onSurfaceTextureAvailable");
         Thread t = new Thread("PreviewPlayerActivity-onSurfaceTextureAvailable") {
             @Override
             public void run() {
@@ -487,8 +563,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
             am.requestAudioFocus(PreviewPlayerActivity.this, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN);
         }
 
-        final ImageView img = findView(R.id.activity_preview_player_thumbnail);
-        onVideoViewPrepared(img);
         if (mp != null) {
             changeVideoSize();
         }

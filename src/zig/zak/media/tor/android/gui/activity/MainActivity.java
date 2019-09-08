@@ -45,11 +45,13 @@ import android.util.SparseArray;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.andrew.apollo.IApolloService;
 import com.andrew.apollo.utils.MusicUtils;
 import com.andrew.apollo.utils.MusicUtils.ServiceToken;
-import com.facebook.ads.AudienceNetworkAds;
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
 
 import org.apache.commons.io.IOUtils;
 
@@ -120,7 +122,8 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     private final LocalBroadcastReceiver localBroadcastReceiver;
     private TimerSubscription playerSubscription;
 
-    private boolean shuttingdown = false;
+    private boolean shuttingDown = false;
+    public AdView adView;
 
     public MainActivity() {
         super(R.layout.activity_main);
@@ -170,14 +173,14 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     }
 
     public void shutdown() {
-        if (shuttingdown) {
+        if (shuttingDown) {
             // NOTE: the actual solution should be for a re-architecture for
             // a guarantee of a single call of this logic.
             // For now, just mitigate the double call if coming from the exit
             // and at the same time the close of the interstitial
             return;
         }
-        shuttingdown = true;
+        shuttingDown = true;
         LocalSearchEngine.instance().cancelSearch();
         //UXStats.instance().flush(true); // sends data and ends 3rd party APIs sessions.
         finish();
@@ -394,6 +397,16 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         }
         checkExternalStoragePermissionsOrBindMusicService();
         checkAccessCoarseLocationPermissions();
+        adView = new AdView(this, getString(R.string.banner_id), AdSize.BANNER_HEIGHT_50);
+
+        // Find the Ad Container
+        LinearLayout adContainer = findViewById(R.id.banner_container);
+
+        // Add the ad view to your activity layout
+        adContainer.addView(adView);
+
+        adView.setVisibility(View.GONE);
+        adView.loadAd();
     }
 
     private void checkAccessCoarseLocationPermissions() {
@@ -427,6 +440,9 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         if (mToken != null) {
             MusicUtils.unbindFromService(mToken);
             mToken = null;
+        }
+        if (adView != null) {
+            adView.destroy();
         }
     }
 

@@ -21,15 +21,11 @@ package zig.zak.media.tor.android.gui.views;
 import android.app.Fragment;
 import android.view.View;
 
+import java.lang.ref.WeakReference;
+
 import zig.zak.media.tor.util.Logger;
 import zig.zak.media.tor.util.Ref;
 
-import java.lang.ref.WeakReference;
-
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class TimerSubscription {
 
     private static final Logger LOG = Logger.getLogger(TimerSubscription.class);

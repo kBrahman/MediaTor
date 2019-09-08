@@ -57,6 +57,7 @@ import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.ConfigurationManager;
 import zig.zak.media.tor.android.core.Constants;
 import zig.zak.media.tor.android.gui.LocalSearchEngine;
+import zig.zak.media.tor.android.gui.activity.MainActivity;
 import zig.zak.media.tor.android.gui.adapters.SearchResultListAdapter;
 import zig.zak.media.tor.android.gui.adapters.SearchResultListAdapter.FilteredSearchResults;
 import zig.zak.media.tor.android.gui.dialogs.HandpickedTorrentDownloadDialogOnFetch;
@@ -94,6 +95,8 @@ import zig.zak.media.tor.util.Ref;
 import zig.zak.media.tor.uxstats.UXAction;
 import zig.zak.media.tor.uxstats.UXStats;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
 import static zig.zak.media.tor.android.util.Asyncs.async;
 
 public final class SearchFragment extends AbstractFragment implements MainFragment, OnDialogClickListener, SearchProgressView.CurrentQueryReporter, KeywordFilterDrawerView.KeywordFilterDrawerController, DrawerLayout.DrawerListener {
@@ -110,7 +113,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
     private DrawerLayout drawerLayout;
     private KeywordFilterDrawerView keywordFilterDrawerView;
     private SearchHeaderBanner searchHeaderBanner;
-    private NativeAd nativeAd;
+        private NativeAd nativeAd;
 
     public SearchFragment() {
         super(R.layout.fragment_search);
@@ -313,7 +316,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         searchInput.setShowKeyboardOnPaste(true);
         searchInput.setOnSearchListener(new SearchInputOnSearchListener((LinearLayout) view, this));
         deepSearchProgress = findView(view, R.id.fragment_search_deepsearch_progress);
-        deepSearchProgress.setVisibility(View.GONE);
+        deepSearchProgress.setVisibility(GONE);
         list = findView(view, R.id.fragment_search_list);
 
         SwipeLayout swipe = findView(view, R.id.fragment_search_swipe);
@@ -382,10 +385,17 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
                 adapter.addResults(keywordFiltered, mediaTypeFiltered);
                 showSearchView(getView());
                 refreshFileTypeCounters(true);
-                activity.findViewById(R.id.pb).setVisibility(View.GONE);
-                getView().findViewById(R.id.native_ad_container).setVisibility(View.GONE);
+                activity.findViewById(R.id.pb).setVisibility(GONE);
+                setNativeAdVisiblity(GONE);
             });
         }
+    }
+
+    private void setNativeAdVisiblity(int visibility) {
+        getView().findViewById(R.id.native_ad_container).setVisibility(visibility);
+        if (visibility == GONE) visibility = VISIBLE;
+        else visibility=GONE;
+        ((MainActivity) getActivity()).adView.setVisibility(visibility);
     }
 
     private void updateKeywordDetector(final List<? extends SearchResult> results) {
@@ -394,7 +404,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         }
         if (results != null) {
             boolean searchFinished = LocalSearchEngine.instance().isSearchFinished();
-            // the second condition exists to accommodate a reset keywordDetector upon screen rotation
             if (!searchFinished || (keywordDetector.totalHistogramKeys() == 0 && results.size() > 0)) {
                 updateKeywordDetectorWithSearchResults(this, results);
             }
@@ -558,10 +567,10 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         boolean adapterHasResults = adapter != null && adapter.getCount() > 0;
         if (adapterHasResults) {
             switchView(view, R.id.fragment_search_list);
-            deepSearchProgress.setVisibility(searchFinished ? View.GONE : View.VISIBLE);
+            deepSearchProgress.setVisibility(searchFinished ? GONE : View.VISIBLE);
             filterButton.updateVisibility();
         } else {
-            deepSearchProgress.setVisibility(View.GONE);
+            deepSearchProgress.setVisibility(GONE);
         }
     }
 
@@ -697,7 +706,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
                     searchFragment.getActivity().runOnUiThread(() -> {
                         if (Ref.alive(searchFragmentRef)) {
                             SearchFragment searchFragment1 = searchFragmentRef.get();
-                            searchFragment1.deepSearchProgress.setVisibility(View.GONE);
+                            searchFragment1.deepSearchProgress.setVisibility(GONE);
                         }
                     });
                 }
@@ -756,6 +765,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
             }
             SearchFragment fragment = fragmentRef.get();
             fragment.cancelSearch();
+            setNativeAdVisiblity(VISIBLE);
         }
     }
 
@@ -885,20 +895,20 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         }
 
         private void setVisible(boolean visible) {
-            int visibility = visible ? View.VISIBLE : View.GONE;
+            int visibility = visible ? View.VISIBLE : GONE;
             int oldVisibility = imageButton.getVisibility();
             imageButton.setVisibility(visibility);
             if (visible) {
-                if (oldVisibility == View.GONE && !filterButtonClickedBefore) {
+                if (oldVisibility == GONE && !filterButtonClickedBefore) {
                     pulse.reset();
                     imageButton.setAnimation(pulse);
                     pulse.setStartTime(AnimationUtils.currentAnimationTimeMillis() + 1000);
                 }
-                counterTextView.setVisibility(getKeywordFiltersPipeline().size() > 0 ? View.VISIBLE : View.GONE);
+                counterTextView.setVisibility(getKeywordFiltersPipeline().size() > 0 ? View.VISIBLE : GONE);
                 counterTextView.setText(String.valueOf(getKeywordFiltersPipeline().size()));
             } else {
                 imageButton.clearAnimation();
-                counterTextView.setVisibility(View.GONE);
+                counterTextView.setVisibility(GONE);
             }
         }
 

@@ -1,7 +1,7 @@
 /*
  * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
  * Copyright (c) 2011-2015, FrostWire(R). All rights reserved.
- 
+
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,22 +19,14 @@ package zig.zak.media.tor.uxstats;
 
 import java.lang.reflect.Field;
 
-/**
- * @author gubatron
- * @author aldenml
- *
- */
 public final class UXAction {
-    public static final int CONFIGURATION_WIZARD_BASE = 0;
+    private static final int CONFIGURATION_WIZARD_BASE = 0;
     public static final int CONFIGURATION_WIZARD_FIRST_TIME = CONFIGURATION_WIZARD_BASE + 1; // both
     public static final int CONFIGURATION_WIZARD_AFTER_UPDATE = CONFIGURATION_WIZARD_BASE + 2; // both
 
     public static final int SEARCH_BASE = 1000;
     public static final int SEARCH_STARTED_ENTER_KEY = SEARCH_BASE + 1; // both
-    public static final int SEARCH_STARTED_SMALL_SEARCH_ICON_CLICK = SEARCH_BASE + 2; // desktop only
-    public static final int SEARCH_STARTED_SEARCH_TAB_BUTTON = SEARCH_BASE + 3; // desktop only
-    public static final int SEARCH_RESULT_CLICK_DOWNLOAD = SEARCH_BASE + 4; // desktop only
-    public static final int SEARCH_RESULT_ENTER_KEY_DOWNLOAD = SEARCH_BASE + 5; // desktop only
+                public static final int SEARCH_RESULT_ENTER_KEY_DOWNLOAD = SEARCH_BASE + 5; // desktop only
     public static final int SEARCH_RESULT_BIG_BUTTON_DOWNLOAD = SEARCH_BASE + 6; // desktop only
     public static final int SEARCH_RESULT_ROW_BUTTON_DOWNLOAD = SEARCH_BASE + 7; // desktop only
     public static final int SEARCH_RESULT_CLICKED = SEARCH_BASE + 8; // android only
@@ -72,7 +64,7 @@ public final class UXAction {
     public static final int SHARING_SEEDING_DISABLED = SHARING_BASE + 7; // both
     public static final int SHARING_PARTIAL_SEEDING_ENABLED = SHARING_BASE + 8; // unused
     public static final int SHARING_PARTIAL_SEEDING_DISABLED = SHARING_BASE + 9; // unused
-    
+
     public static final int LIBRARY_BASE = 4000;
     public static final int LIBRARY_PLAY_AUDIO_FROM_FILE = LIBRARY_BASE + 1;
     public static final int LIBRARY_PLAY_AUDIO_FROM_PLAYLIST = LIBRARY_BASE + 2; // desktop only
@@ -102,13 +94,13 @@ public final class UXAction {
     public static final int PLAYER_STOP_ON_LONG_CLICK = PLAYER_BASE + 7; // android only
     public static final int PLAYER_TOGGLE_FAVORITE = PLAYER_BASE + 8; // android only
     public static final int PLAYER_SOCIAL_SHARE = PLAYER_BASE + 9; // android only (unused)
-    
+
     public static final int MISC_BASE = 7000;
     public static final int MISC_CHAT_OPENED_IN_BROWSER = MISC_BASE + 1;
     public static final int MISC_PROMO_CLICK_ON_TIPS = MISC_BASE + 2; // desktop
     public static final int MISC_INTERSTITIAL_SHOW = MISC_BASE + 3; // android only
     public static final int MISC_NOTIFICATION_EXIT = MISC_BASE + 4; // android only
-    
+
     public static final int SETTINGS_BASE = 8000;
     public static final int SETTINGS_SET_STORAGE_INTERNAL_MEMORY = SETTINGS_BASE + 1; // android only
     public static final int SETTINGS_SET_STORAGE_SD_CARD = SETTINGS_BASE + 2; // android only
@@ -122,12 +114,12 @@ public final class UXAction {
     // DO NOT DELETE THESE. They're not accessed but they're converted to JSON when sent over.
     private final int code;
     private final long time;
-    
+
     public static String getActionName(int code) {
         Field[] declaredFields = UXAction.class.getDeclaredFields();
         for (Field f : declaredFields) {
             try {
-                if (f!=null && f.getInt(null) == code) {
+                if (f != null && f.getInt(null) == code) {
                     return f.getName();
                 }
             } catch (Throwable e) {

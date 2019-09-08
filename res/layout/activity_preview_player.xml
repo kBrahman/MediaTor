@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/app_background_body_light"
-              android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background_body_light"
+    android:orientation="vertical">
 
-    <include layout="@layout/toolbar_main"/>
+    <include layout="@layout/toolbar_main" />
 
     <LinearLayout
         android:id="@+id/activity_preview_player_metadata_header"
@@ -14,10 +14,10 @@
         android:background="@color/app_background_white"
         android:gravity="center_vertical"
         android:orientation="vertical"
-        android:paddingEnd="@dimen/audio_player_header_padding_right"
+        android:paddingStart="@dimen/audio_player_header_padding_left"
         android:paddingLeft="@dimen/audio_player_header_padding_left"
-        android:paddingRight="@dimen/audio_player_header_padding_right"
-        android:paddingStart="@dimen/audio_player_header_padding_left">
+        android:paddingEnd="@dimen/audio_player_header_padding_right"
+        android:paddingRight="@dimen/audio_player_header_padding_right">
 
         <TextView
             android:id="@+id/activity_preview_player_track_name"
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="@string/dummy_title"/>
+            android:text="@string/dummy_title" />
 
         <TextView
             android:id="@+id/activity_preview_player_artist_name"
@@ -35,28 +35,29 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="@string/dummy_author"/>
+            android:text="@string/dummy_author" />
     </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/activity_preview_player_framelayout"
+        android:id="@+id/activity_preview_player_frame_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1.0"
         android:background="@color/basic_gray_medium">
 
         <TextureView
-            android:id="@+id/activity_preview_player_videoview"
+            android:id="@+id/activity_preview_player_video_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal|center_vertical"/>
+            android:layout_gravity="center_horizontal|center_vertical" />
 
-        <ImageView
-            android:id="@+id/activity_preview_player_thumbnail"
+        <com.facebook.ads.NativeAdLayout
+            android:id="@+id/preview_native_ad_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:contentDescription="@null"/>
+            android:contentDescription="@null"
+            android:orientation="vertical" />
     </FrameLayout>
 
     <Button
@@ -65,10 +66,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="20dp"
         android:layout_marginTop="20dp"
-        android:drawableLeft="@drawable/promo_download_arrow_button"
-        android:minHeight="45dp"
+        android:layout_marginBottom="20dp"
+        android:drawableStart="@drawable/promo_download_arrow_button"
         android:minWidth="150dp"
-        android:text="@string/download"/>
+        android:minHeight="45dp"
+        android:text="@string/download" />
 </LinearLayout>
