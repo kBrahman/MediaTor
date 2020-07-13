@@ -24,20 +24,17 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
-import android.widget.ImageButton;
 
-import com.andrew.apollo.ui.activities.AudioPlayerActivity;
 import com.andrew.apollo.utils.ApolloUtils;
 import com.andrew.apollo.utils.MusicUtils;
+
+import androidx.appcompat.widget.AppCompatImageButton;
 import zig.zak.media.tor.R;
 
 /**
  * A custom {@link ImageButton} that represents the "play and pause" button.
- *
- * @author Andrew Neal (andrewdneal@gmail.com)
  */
-public final class PlayPauseButton extends ImageButton
-        implements OnClickListener, OnLongClickListener {
+public final class PlayPauseButton extends AppCompatImageButton implements OnClickListener, OnLongClickListener {
 
     private int playDrawable;
     private int pauseDrawable;

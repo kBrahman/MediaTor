@@ -17,11 +17,5 @@
 
 package zig.zak.media.tor.search;
 
-/**
- * 
- * @author gubatron
- * @author aldenml
- *
- */
 public abstract class AbstractFileSearchResult extends AbstractSearchResult implements FileSearchResult {
 }

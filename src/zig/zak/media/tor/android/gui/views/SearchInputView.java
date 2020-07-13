@@ -19,7 +19,7 @@
 package zig.zak.media.tor.android.gui.views;
 
 import android.content.Context;
-import android.support.design.widget.TabLayout;
+import com.google.android.material.tabs.TabLayout;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.SparseArray;
@@ -117,10 +117,7 @@ public class SearchInputView extends LinearLayout {
         textInput.setOnKeyListener(textInputListener);
         textInput.setOnActionListener(textInputListener);
         textInput.setOnItemClickListener(textInputListener);
-
-        if (!Constants.IS_GOOGLE_PLAY_DISTRIBUTION || Constants.IS_BASIC_AND_DEBUG) {
-            textInput.setAdapter(adapter);
-        }
+        textInput.setAdapter(adapter);
 
         updateHint();
 

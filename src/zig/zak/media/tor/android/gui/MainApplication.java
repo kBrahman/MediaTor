@@ -18,7 +18,7 @@
 package zig.zak.media.tor.android.gui;
 
 import android.content.Context;
-import android.support.multidex.MultiDexApplication;
+import androidx.multidex.MultiDexApplication;
 import android.view.ViewConfiguration;
 
 import com.andrew.apollo.cache.ImageCache;

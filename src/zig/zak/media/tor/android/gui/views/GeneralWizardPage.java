@@ -122,7 +122,7 @@ public class GeneralWizardPage extends RelativeLayout implements WizardPageView 
         checkUXStats.setOnCheckedChangeListener((buttonView, isChecked) -> validate());
 
         final TextView welcome_to_frostwire = findViewById(R.id.view_general_wizard_page_welcome_to_frostwire);
-        final String basicOrPlus = getContext().getString(Constants.IS_GOOGLE_PLAY_DISTRIBUTION ? R.string.basic : R.string.plus);
+        final String basicOrPlus = getContext().getString(R.string.plus);
         welcome_to_frostwire.setText(getContext().getString(R.string.welcome_to_frostwire, basicOrPlus));
     }
 

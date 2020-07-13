@@ -21,14 +21,6 @@ package zig.zak.media.tor.util;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-/**
- * Simple JSON utility class based on google-gson.
- * <p/>
- * Visit google-gson: {@link http://code.google.com/p/google-gson/} for more information.
- *
- * @author gubatron
- * @author aldenml
- */
 public final class JsonUtils {
 
     private static final Gson gson = new GsonBuilder().create();

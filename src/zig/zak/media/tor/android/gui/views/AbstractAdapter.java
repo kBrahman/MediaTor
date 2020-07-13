@@ -19,7 +19,7 @@
 package zig.zak.media.tor.android.gui.views;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;

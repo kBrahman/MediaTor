@@ -1,13 +1,16 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 buildscript {
+    ext.kotlin_version = '1.3.72'
 
     repositories {
         google()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath 'com.android.tools.build:gradle:4.0.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -29,19 +32,16 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(rootProject.file("keystore.properties").newDataInputStream())
 
 android {
-
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
-
+    compileSdkVersion 29
     defaultConfig {
         applicationId "zig.zak.media.tor"
-        versionCode 21
-        versionName "1.20"
+        versionCode 22
+        versionName "1.21"
         multiDexEnabled true
         minSdkVersion 18
-        targetSdkVersion 28
+        targetSdkVersion 29
         buildConfigField "String", "PIXA_KEY", localProperties["pixa_key"]
-        buildConfigField "String", "SOUND_CLOUD_KEY", localProperties["sound_cloud_key"]
+        buildConfigField "String", "SOUND_CLOUD_KEY", localProperties["s_c_key"]
     }
 
     compileOptions {
@@ -96,21 +96,22 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'com.android.support:animated-vector-drawable:28.0.0'
-    implementation 'com.android.support:customtabs:28.0.0'
-    implementation 'com.android.support:preference-v7:28.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.vectordrawable:vectordrawable-animated:1.1.0'
+    implementation 'androidx.browser:browser:1.2.0'
+    implementation 'androidx.preference:preference:1.1.1'
     implementation 'com.squareup.picasso:picasso:3.0.0-SNAPSHOT'
     implementation 'com.google.android:flexbox:1.0.0'
-    implementation 'com.facebook.android:audience-network-sdk:5.5.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation "com.google.code.gson:gson:2.8.5"
-    implementation 'com.google.re2j:re2j:1.3'
-    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.facebook.android:audience-network-sdk:5.10.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.google.re2j:re2j:1.4'
+    implementation 'androidx.multidex:multidex:2.0.1'
     implementation files('libs/jlibtorrent-1.2.1.0.jar')
     implementation files('libs/jlibtorrent-android-arm-1.2.1.0.jar')
     implementation files('libs/jlibtorrent-android-x86-1.2.1.0.jar')
     implementation files('libs/jlibtorrent-android-arm64-1.2.1.0.jar')
     implementation files('libs/jlibtorrent-android-x86_64-1.2.1.0.jar')
-    implementation 'com.facebook.android:audience-network-sdk:5.5.0'
+    implementation "androidx.core:core-ktx:1.3.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

@@ -41,10 +41,6 @@ import zig.zak.media.tor.search.SearchPerformer;
 import zig.zak.media.tor.search.SearchResult;
 import zig.zak.media.tor.util.StringUtils;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class LocalSearchEngine {
 
     private final SearchManager manager;

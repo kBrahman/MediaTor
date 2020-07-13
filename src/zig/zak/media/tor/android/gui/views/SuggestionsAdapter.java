@@ -20,7 +20,7 @@ package zig.zak.media.tor.android.gui.views;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.support.v4.widget.SimpleCursorAdapter;
+import androidx.cursoradapter.widget.SimpleCursorAdapter;
 
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.util.HttpClientFactory;
@@ -32,10 +32,6 @@ import org.json.JSONArray;
 import java.net.URLEncoder;
 import java.util.Locale;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 class SuggestionsAdapter extends SimpleCursorAdapter {
 
     private static final String SUGGESTIONS_URL = buildSuggestionsUrl();

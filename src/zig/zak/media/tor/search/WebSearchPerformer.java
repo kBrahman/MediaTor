@@ -1,7 +1,7 @@
 /*
  * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
  * Copyright (c) 2011-2014, FrostWire(R). All rights reserved.
- 
+
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,29 +17,24 @@
 
 package zig.zak.media.tor.search;
 
-import zig.zak.media.tor.util.Logger;
-import zig.zak.media.tor.util.UrlUtils;
-import zig.zak.media.tor.util.http.HttpClient;
-import zig.zak.media.tor.util.HttpClientFactory;
-import zig.zak.media.tor.util.UserAgentGenerator;
 import org.apache.commons.io.FilenameUtils;
 
 import java.io.IOException;
 import java.util.Map;
 
-/**
- * 
- * @author gubatron
- * @author aldenml
- *
- */
+import zig.zak.media.tor.util.HttpClientFactory;
+import zig.zak.media.tor.util.Logger;
+import zig.zak.media.tor.util.UrlUtils;
+import zig.zak.media.tor.util.UserAgentGenerator;
+import zig.zak.media.tor.util.http.HttpClient;
+
 public abstract class WebSearchPerformer extends AbstractSearchPerformer {
 
     private static final Logger LOG = Logger.getLogger(WebSearchPerformer.class);
 
     private static final String DEFAULT_USER_AGENT = UserAgentGenerator.getUserAgent();
 
-    private static final String[] STREAMABLE_EXTENSIONS = new String[] { "mp3", "ogg", "wma", "wmv", "m4a", "aac", "flac", "mp4", "flv", "mov", "mpg", "mpeg", "3gp", "m4v", "webm" };
+    private static final String[] STREAMABLE_EXTENSIONS = new String[]{"mp3", "ogg", "wma", "wmv", "m4a", "aac", "flac", "mp4", "flv", "mov", "mpg", "mpeg", "3gp", "m4v", "webm"};
 
     private final String domainName;
     private final String keywords;
@@ -74,12 +69,6 @@ public abstract class WebSearchPerformer extends AbstractSearchPerformer {
         LOG.warn("Review your logic, calling deep search without implementation for: " + sr);
     }
 
-    /**
-     * Allow to perform the HTTP operation using the same internal http client.
-     * 
-     * @param url
-     * @return the web page (html)
-     */
     public String fetch(String url) throws IOException {
         return fetch(url, null, null);
     }
@@ -98,7 +87,7 @@ public abstract class WebSearchPerformer extends AbstractSearchPerformer {
 
     /**
      * Allow to perform the HTTP operation using the same internal http client.
-     * 
+     *
      * @param url
      * @return the raw bytes from the http connection
      */

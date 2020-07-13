@@ -20,7 +20,7 @@ package zig.zak.media.tor.android;
 import android.annotation.SuppressLint;
 import android.app.Application;
 import android.os.Build;
-import android.support.v4.provider.DocumentFile;
+import androidx.documentfile.provider.DocumentFile;
 
 import zig.zak.media.tor.android.gui.Librarian;
 import com.frostwire.jlibtorrent.swig.libtorrent;
@@ -36,10 +36,6 @@ import zig.zak.media.tor.util.Logger;
 
 import java.io.File;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class AndroidPlatform extends AbstractPlatform {
 
     private static final Logger LOG = Logger.getLogger(AndroidPlatform.class);

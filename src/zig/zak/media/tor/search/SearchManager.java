@@ -30,10 +30,6 @@ import zig.zak.media.tor.util.Logger;
 import zig.zak.media.tor.util.Ref;
 import zig.zak.media.tor.util.ThreadPool;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class SearchManager {
 
     private static final Logger LOG = Logger.getLogger(SearchManager.class);
@@ -146,7 +142,6 @@ public final class SearchManager {
                 while (it.hasNext()) {
                     WeakReference<SearchTable> t = it.next();
                     if (Ref.alive(t)) {
-                        //noinspection ConstantConditions
                         t.get().add(results);
                     } else {
                         it.remove();

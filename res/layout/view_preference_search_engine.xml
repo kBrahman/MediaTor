@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="marquee"
                 android:maxLines="1"
-                android:textAppearance="@style/Preference_TextAppearanceMaterialSubhead" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
             <TextView
                 android:id="@android:id/summary"

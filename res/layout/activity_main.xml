@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v4.widget.DrawerLayout
+    <androidx.drawerlayout.widget.DrawerLayout
 
         android:id="@+id/activity_main_drawer_layout"
         android:layout_width="match_parent"
@@ -14,7 +13,7 @@
         android:focusable="true"
         app:layout_constraintBottom_toTopOf="@id/banner_container">
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -31,20 +30,20 @@
                     android:name="zig.zak.media.tor.android.gui.fragments.SearchFragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:tag="search_fragment"/>
+                    android:tag="search_fragment" />
 
                 <fragment
                     android:id="@+id/activity_main_fragment_my_files"
                     android:name="zig.zak.media.tor.android.gui.fragments.MyFilesFragment"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent" />
 
                 <fragment
                     android:id="@+id/activity_main_fragment_transfers"
                     android:name="zig.zak.media.tor.android.gui.fragments.TransfersFragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:tag="transfers_fragment"/>
+                    android:tag="transfers_fragment" />
             </FrameLayout>
 
             <zig.zak.media.tor.android.gui.views.MiniPlayerView
@@ -52,10 +51,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-        </android.support.constraint.ConstraintLayout>
+                app:layout_constraintBottom_toTopOf="@id/banner_container" />
 
-        <android.support.design.widget.NavigationView
+            <LinearLayout
+                android:id="@+id/banner_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.navigation.NavigationView
             android:id="@+id/activity_main_nav_view"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -65,17 +72,16 @@
             app:itemBackground="@drawable/nav_view_background_color_selector"
             app:itemIconTint="@color/nav_view_icon_color_selector"
             app:itemTextColor="@color/app_text_primary"
-            app:menu="@menu/nav_view_menu">
-        </android.support.design.widget.NavigationView>
+            app:menu="@menu/nav_view_menu" />
 
         <zig.zak.media.tor.android.gui.views.KeywordFilterDrawerView
             android:id="@+id/activity_main_keyword_filter_drawer_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="end"/>
+            android:layout_gravity="end" />
 
 
-    </android.support.v4.widget.DrawerLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
 
     <ProgressBar
         android:id="@+id/pb"
@@ -85,13 +91,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/banner_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-</android.support.constraint.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

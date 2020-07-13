@@ -29,10 +29,10 @@ import android.content.IntentFilter;
 import android.content.Loader;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.design.widget.TabLayout;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.view.ActionMode;
-import android.support.v7.widget.SearchView;
+import com.google.android.material.tabs.TabLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.appcompat.view.ActionMode;
+import androidx.appcompat.widget.SearchView;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -644,7 +644,7 @@ public class MyFilesFragment extends AbstractFragment implements LoaderCallbacks
         }
     }
 
-    private class MyFilesActionModeCallback implements android.support.v7.view.ActionMode.Callback {
+    private class MyFilesActionModeCallback implements androidx.appcompat.view.ActionMode.Callback {
         private ActionMode mode;
         private Menu menu;
         private int numChecked;

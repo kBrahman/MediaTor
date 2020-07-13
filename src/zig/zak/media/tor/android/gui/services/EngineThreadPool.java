@@ -106,7 +106,7 @@ final class EngineThreadPool extends ThreadPool {
         long now = System.nanoTime();
         for (Map.Entry<Thread, TaskInfo> e : taskInfo.entrySet()) {
             String threadName = e.getKey().getName();
-            if (threadName != null && threadName.contains("thread-idle")) {
+            if (threadName.contains("thread-idle")) {
                 continue;
             }
             System.out.println("Thread name: " + threadName);

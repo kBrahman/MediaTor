@@ -56,26 +56,26 @@ import com.facebook.ads.NativeAd;
 import com.facebook.ads.NativeAdLayout;
 import com.facebook.ads.NativeAdListener;
 
+import org.json.JSONObject;
+
+import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.Constants;
 import zig.zak.media.tor.android.core.player.CoreMediaPlayer;
 import zig.zak.media.tor.android.gui.dialogs.NewTransferDialog;
-import zig.zak.media.tor.android.gui.dialogs.YouTubeDownloadDialog;
 import zig.zak.media.tor.android.gui.services.Engine;
 import zig.zak.media.tor.android.gui.views.AbstractActivity;
 import zig.zak.media.tor.android.gui.views.AbstractDialog;
 import zig.zak.media.tor.search.FileSearchResult;
-import zig.zak.media.tor.search.youtube.YouTubePackageSearchResult;
 import zig.zak.media.tor.util.Logger;
 import zig.zak.media.tor.util.Ref;
-
-import static zig.zak.media.tor.android.gui.adapters.SearchResultListAdapter.IS_SOUND_CLOUD;
 
 
 public final class PreviewPlayerActivity extends AbstractActivity implements AbstractDialog.OnDialogClickListener, TextureView.SurfaceTextureListener, MediaPlayer.OnBufferingUpdateListener, MediaPlayer.OnCompletionListener, MediaPlayer.OnPreparedListener, MediaPlayer.OnVideoSizeChangedListener, MediaPlayer.OnInfoListener, AudioManager.OnAudioFocusChangeListener {
@@ -97,16 +97,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
 
     public PreviewPlayerActivity() {
         super(R.layout.activity_preview_player);
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        boolean isSoundCloud = getIntent().getBooleanExtra(IS_SOUND_CLOUD, false);
-        Log.i(TAG, "is sound cloud=>" + isSoundCloud);
-        if (isSoundCloud) {
-            findView(R.id.activity_preview_player_download_button).setVisibility(View.GONE);
-        }
     }
 
     @Override
@@ -170,11 +160,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
                 return false;
             });
         }
-
-        final Button downloadButton = findView(R.id.activity_preview_player_download_button);
-        if (artistName.getText().toString().contains("YouTube"))
-            downloadButton.setVisibility(View.GONE);
-        else downloadButton.setOnClickListener(v -> onDownloadButtonClick());
 
         if (isFullScreen) {
             isFullScreen = false; //so it will make it full screen on what was an orientation change.
@@ -288,34 +273,15 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         nativeAd.registerViewForInteraction(adView, nativeAdMedia, nativeAdIcon, clickableViews);
     }
 
-    private void onDownloadButtonClick() {
-        if (Ref.alive(srRef)) {
-            Engine.instance().hapticFeedback();
-            final FileSearchResult fileSearchResult = srRef.get();
-            if (fileSearchResult instanceof YouTubePackageSearchResult) {
-                releaseMediaPlayer();
-                YouTubeDownloadDialog ytDownloadDlg = YouTubeDownloadDialog.newInstance(this, (YouTubePackageSearchResult) fileSearchResult);
-                ytDownloadDlg.show(getFragmentManager());
-            } else {
-                NewTransferDialog dlg = NewTransferDialog.newInstance(fileSearchResult, false);
-                dlg.show(getFragmentManager());
-            }
-        } else {
-            finish();
-        }
-    }
-
     private String getFinalUrl(String url) {
         HttpURLConnection con = null;
         try {
             con = (HttpURLConnection) (new URL(url).openConnection());
-            con.setInstanceFollowRedirects(false);
             con.connect();
-            String location = con.getHeaderField("Location");
-
-            if (location != null) {
-                return location;
-            }
+            InputStream inputStream = con.getInputStream();
+            Scanner scanner = new Scanner(inputStream).useDelimiter("\\A");
+            String result = scanner.hasNext() ? scanner.next() : "";
+            return new JSONObject(result).getString("url");
         } catch (Throwable e) {
             LOG.error("Unable to detect final url", e);
         } finally {
@@ -360,9 +326,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         LinearLayout.LayoutParams frameLayoutParams = (LinearLayout.LayoutParams) frameLayout.getLayoutParams();
 
         LinearLayout playerMetadataHeader = findView(R.id.activity_preview_player_metadata_header);
-
-        final Button downloadButton = findView(R.id.activity_preview_player_download_button);
-
         // these ones only exist on landscape mode.
         ViewGroup rightSide = findView(R.id.activity_preview_player_right_side);
 
@@ -372,7 +335,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
             findToolbar().setVisibility(View.GONE);
-            setViewsVisibility(View.GONE, playerMetadataHeader, downloadButton, rightSide);
+            setViewsVisibility(View.GONE, playerMetadataHeader, rightSide);
 
             if (isPortrait) {
                 //noinspection SuspiciousNameCombination
@@ -392,7 +355,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
             findToolbar().setVisibility(View.VISIBLE);
-            setViewsVisibility(View.VISIBLE, playerMetadataHeader, downloadButton, rightSide);
+            setViewsVisibility(View.VISIBLE, playerMetadataHeader, rightSide);
             v.setRotation(0);
 
             // restore the thumbnail on the way back only if doing audio preview.

@@ -20,7 +20,7 @@ package zig.zak.media.tor.android.gui.views.preference;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.preference.DialogPreference;
+import androidx.preference.DialogPreference;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;

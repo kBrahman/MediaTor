@@ -72,19 +72,6 @@
                     android:contentDescription="@null"
                     android:orientation="vertical" />
             </FrameLayout>
-
-            <Button
-                android:id="@+id/activity_preview_player_download_button"
-                style="@style/BlueButton"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:layout_centerHorizontal="false"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="5dp"
-                android:layout_weight="0"
-                android:drawableLeft="@drawable/promo_download_arrow_button"
-                android:paddingLeft="15dp"
-                android:text="@string/download" />
         </LinearLayout>
 
         <LinearLayout

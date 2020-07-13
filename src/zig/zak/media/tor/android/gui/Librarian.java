@@ -40,9 +40,6 @@ import zig.zak.media.tor.util.Ref;
  * -> Keeping track of what files we're sharing or not.
  * -> Indexing the files we're sharing.
  * -> Searching for files we're sharing.
- *
- * @author gubatron
- * @author aldenml
  */
 public final class Librarian {
 

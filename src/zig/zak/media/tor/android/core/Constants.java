@@ -22,22 +22,7 @@ import zig.zak.media.tor.BuildConfig;
 
 public final class Constants {
 
-    /**
-     * isDevelopment
-     */
-    public static final boolean IS_BASIC_AND_DEBUG = BuildConfig.FLAVOR.equals("basic") && BuildConfig.DEBUG;
-    public static final boolean IS_GOOGLE_PLAY_DISTRIBUTION = BuildConfig.FLAVOR.equals("basic");
-
-    private static final String BUILD_PREFIX = !IS_GOOGLE_PLAY_DISTRIBUTION ? "1000" : "";
-
-    /**
-     * should manually match the manifest, here for convenience so we can ask for it from static contexts without
-     * needing to pass the Android app context to obtain the PackageManager instance.
-     */
-    public static final String FROSTWIRE_BUILD = BUILD_PREFIX + (BuildConfig.VERSION_CODE % 1000);
-
-    public static final String APP_PACKAGE_NAME = "zig.zak.media.tor";
-
+    public static final String FROSTWIRE_BUILD = String.valueOf((BuildConfig.VERSION_CODE % 1000));
     public static final String FROSTWIRE_VERSION_STRING = BuildConfig.VERSION_NAME;
 
     // preference keys
@@ -159,19 +144,11 @@ public final class Constants {
 
     public static final String MIME_TYPE_ANDROID_PACKAGE_ARCHIVE = "application/vnd.android.package-archive";
     public static final String MIME_TYPE_BITTORRENT = "application/x-bittorrent";
-
-    /**
-     * URL where FrostWire checks for software updates
-     */
-    private static final String FROM_URL_PARAMETERS = "from=android&basic=" + (IS_GOOGLE_PLAY_DISTRIBUTION && !IS_BASIC_AND_DEBUG ? "1" : "0") + "&version=" + FROSTWIRE_VERSION_STRING + "&build=" + FROSTWIRE_BUILD;
     public static final String FROSTWIRE_MORE_RESULTS = "http://www.frostwire.com/more.results";
-    public static final String SERVER_PROMOTIONS_URL = "http://update.frostwire.com/o.php?" + FROM_URL_PARAMETERS;
     public static final String SUPPORT_URL = "http://support.frostwire.com/hc/en-us/categories/200014385-FrostWire-for-Android";
     public static final String TERMS_OF_USE_URL = "http://www.frostwire.com/terms";
     public static final String ALL_FEATURED_DOWNLOADS_URL = "http://www.frostwire.com/featured-downloads/";
     public static final String FROSTWIRE_PREVIEW_DOT_COM_URL = "http://www.frostwire-preview.com/";
-
-    public static final String USER_AGENT = "FrostWire/android-" + (Constants.IS_GOOGLE_PLAY_DISTRIBUTION ? "basic" : "plus") + "/" + Constants.FROSTWIRE_VERSION_STRING + "/" + Constants.FROSTWIRE_BUILD;
 
     /**
      * Social Media official URLS

@@ -15,12 +15,6 @@ import android.view.View;
 import android.widget.AbsListView.RecyclerListener;
 import com.andrew.apollo.ui.MusicViewHolder;
 
-
-/**
- * A @ {@link RecyclerListener} for {@link MusicViewHolder}'s views.
- * 
- * @author Andrew Neal (andrewdneal@gmail.com)
- */
 public class RecycleHolder implements RecyclerListener {
 
     /**

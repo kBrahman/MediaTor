@@ -17,17 +17,14 @@
 
 package zig.zak.media.tor.search.soundcloud;
 
+import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.Locale;
+
 import zig.zak.media.tor.search.AbstractFileSearchResult;
 import zig.zak.media.tor.search.HttpSearchResult;
 import zig.zak.media.tor.search.StreamableSearchResult;
 
-import java.text.SimpleDateFormat;
-import java.util.Locale;
-
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class SoundCloudSearchResult extends AbstractFileSearchResult implements HttpSearchResult, StreamableSearchResult {
 
     private static final String DATE_FORMAT = "yyyy/mm/dd HH:mm:ss Z";
@@ -131,9 +128,6 @@ public final class SoundCloudSearchResult extends AbstractFileSearchResult imple
     }
 
     private String buildThumbnailUrl(String str) {
-        //http://i1.sndcdn.com/artworks-000019588274-le8r71-crop.jpg?be0edad
-        //https://i1.sndcdn.com/artworks-000019588274-le8r71-t500x500.jpg
-        //https://i1.sndcdn.com/avatars-000081692254-cxjo72-t500x500.jpg?2aaad5e
         String url = null;
         if (str != null) {
             try {
@@ -154,20 +148,22 @@ public final class SoundCloudSearchResult extends AbstractFileSearchResult imple
     }
 
     private String buildDownloadUrl(SoundcloudItem item, String clientId) {
-        final String clientAppenderChar = (item.download_url != null && item.download_url.contains("?")) ? "&" : "?";
-        String downloadUrl = ((item.download_url != null) ? item.download_url : item.stream_url);
-
-        //http://api.soundcloud.com/tracks/#########/download no longer works, has to be /stream now.
-        if (downloadUrl.endsWith("/download")) {
-            downloadUrl = downloadUrl.replace("/download", "/stream");
+        String downloadUrl;
+        List<Tanscoding> transcodings = item.media.getTranscodings();
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            downloadUrl = transcodings.stream().filter(t -> t.getUrl().endsWith("/progressive")).findAny().get().getUrl();
+        } else {
+            downloadUrl = getUrl(transcodings);
         }
+        return downloadUrl + "?client_id=" + clientId;
+    }
 
-        // direct download urls don't seem to need client_id & app_version, if passed to the url returns HTTP 404.
-        if (clientId != null) {
-            downloadUrl += clientAppenderChar + "client_id=" + clientId;
+    private String getUrl(List<Tanscoding> transcodings) {
+        for (Tanscoding transcoding : transcodings) {
+            String url = transcoding.getUrl();
+            if (url.endsWith("/progressive")) return url;
         }
-
-        return downloadUrl;
+        return null;
     }
 
     @Override
@@ -177,19 +173,15 @@ public final class SoundCloudSearchResult extends AbstractFileSearchResult imple
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || !(o instanceof SoundCloudSearchResult)) {
+        if (!(o instanceof SoundCloudSearchResult)) {
             return false;
         }
         SoundCloudSearchResult other = (SoundCloudSearchResult) o;
-        return this.getDetailsUrl().equals(other.getDetailsUrl()) &&
-                this.getDisplayName().equals(other.getDisplayName()) &&
-                this.getDownloadUrl().equals(other.getDownloadUrl());
+        return this.getDetailsUrl().equals(other.getDetailsUrl()) && this.getDisplayName().equals(other.getDisplayName()) && this.getDownloadUrl().equals(other.getDownloadUrl());
     }
 
     @Override
     public int hashCode() {
-        return getDetailsUrl().hashCode() +
-                getDisplayName().hashCode() +
-                getDownloadUrl().hashCode();
+        return getDetailsUrl().hashCode() + getDisplayName().hashCode() + getDownloadUrl().hashCode();
     }
 }

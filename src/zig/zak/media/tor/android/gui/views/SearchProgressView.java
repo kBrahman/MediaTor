@@ -84,7 +84,7 @@ public class SearchProgressView extends LinearLayout {
         if (textTryOtherKeywordsOrFilters != null && isDataUp) {
             textTryOtherKeywordsOrFilters.setVisibility(View.VISIBLE);
         }
-        if (Constants.IS_GOOGLE_PLAY_DISTRIBUTION && textTryFrostWirePlus != null && isDataUp) {
+        if (textTryFrostWirePlus != null && isDataUp) {
             textTryFrostWirePlus.setVisibility(View.VISIBLE);
         }
         if (!isDataUp) {
@@ -125,7 +125,7 @@ public class SearchProgressView extends LinearLayout {
         textTryFrostWirePlus = findViewById(R.id.view_search_progress_try_frostwire_plus);
         textTryFrostWirePlus.setPaintFlags(textTryFrostWirePlus.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
-        if (Constants.IS_GOOGLE_PLAY_DISTRIBUTION && textTryFrostWirePlus != null) {
+        if (textTryFrostWirePlus != null) {
             initTryFrostWirePlusListener();
         }
     }

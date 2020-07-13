@@ -18,37 +18,16 @@
 
 package zig.zak.media.tor.util;
 
-import java.lang.ref.PhantomReference;
 import java.lang.ref.Reference;
-import java.lang.ref.ReferenceQueue;
-import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;
 
-/**
- * 
- * @author gubatron
- * @author aldenml
- *
- */
 public final class Ref {
 
     private Ref() {
     }
 
-    public static <T> T strong(T obj) {
-        return obj;
-    }
-
     public static <T> WeakReference<T> weak(T obj) {
         return new WeakReference<T>(obj);
-    }
-
-    public static <T> SoftReference<T> soft(T obj) {
-        return new SoftReference<T>(obj);
-    }
-
-    public static <T> PhantomReference<T> phantom(T obj, ReferenceQueue<? super T> q) {
-        return new PhantomReference<T>(obj, q);
     }
 
     public static <T> boolean alive(Reference<T> ref) {

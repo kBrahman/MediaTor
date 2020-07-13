@@ -22,6 +22,7 @@ import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -42,29 +43,27 @@ public final class SoundCloudSearchPerformer extends PagedWebSearchPerformer {
 
     @Override
     protected String getUrl(int page, String encodedKeywords) {
-        return "http://api.soundcloud.com/tracks/?q=" + encodedKeywords + "&limit=50&offset=0&client_id=" + SOUND_CLOUD_CLIENT_ID;
+        return "https://api-v2.soundcloud.com/search?q=" + encodedKeywords + "&limit=50&offset=0&client_id=" + SOUND_CLOUD_CLIENT_ID;
     }
 
     @Override
     protected List<? extends SearchResult> searchPage(String page) {
         List<SearchResult> result = new LinkedList<>();
-        Log.i(TAG, page);
         JSONArray arr;
         try {
-            arr = new JSONArray(page);
+            arr = new JSONObject(page).getJSONArray("collection");
             for (int i = 0; i < arr.length(); i++) {
                 SoundcloudItem item = JsonUtils.toObject(arr.get(i).toString(), SoundcloudItem.class);
-                if (!isStopped() && item != null) {
+                if (!isStopped() && item != null && item.media != null) {
                     SoundCloudSearchResult sr = new SoundCloudSearchResult(item, SOUND_CLOUD_CLIENT_ID);
                     result.add(sr);
                 }
             }
+            Log.i(TAG, "result should be redady");
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        // can't use fromJson here due to the isStopped call
-
+        Log.i(TAG, result.toString());
         return result;
     }
 

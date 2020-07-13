@@ -22,8 +22,8 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.widget.DrawerLayout;
+import androidx.annotation.Nullable;
+import androidx.drawerlayout.widget.DrawerLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,8 +41,11 @@ import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
 import com.facebook.ads.AdIconView;
 import com.facebook.ads.AdOptionsView;
+import com.facebook.ads.AdSettings;
+import com.facebook.ads.AdView;
 import com.facebook.ads.MediaView;
 import com.facebook.ads.NativeAd;
+import com.facebook.ads.NativeAdBase;
 import com.facebook.ads.NativeAdLayout;
 import com.facebook.ads.NativeAdListener;
 
@@ -113,7 +116,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
     private DrawerLayout drawerLayout;
     private KeywordFilterDrawerView keywordFilterDrawerView;
     private SearchHeaderBanner searchHeaderBanner;
-        private NativeAd nativeAd;
+    private NativeAd nativeAd;
 
     public SearchFragment() {
         super(R.layout.fragment_search);
@@ -137,7 +140,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         // your code like this to the Google Play your users will not receive ads (you will get a no fill error).
         nativeAd = new NativeAd(getActivity(), getString(R.string.id_ad_native));
 
-        nativeAd.setAdListener(new NativeAdListener() {
+        NativeAdListener adListener = new NativeAdListener() {
             @Override
             public void onMediaDownloaded(Ad ad) {
                 // Native ad finished downloading all assets
@@ -171,10 +174,10 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
                 // Native ad impression
                 Log.d(TAG, "Native ad impression logged!");
             }
-        });
+        };
 
-        // Request an ad
-        nativeAd.loadAd();
+        NativeAdBase.NativeLoadAdConfig loadAdConfig = nativeAd.buildLoadAdConfig().withAdListener(adListener).build();
+        nativeAd.loadAd(loadAdConfig);
     }
 
     private void inflateAd(NativeAd nativeAd) {
@@ -275,9 +278,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         if (list != null && CM.getBoolean(Constants.PREF_KEY_GUI_DISTRACTION_FREE_SEARCH)) {
             list.setOnScrollListener(new ComposedOnScrollListener(new FastScrollDisabledWhenIdleOnScrollListener(), new DirectionDetectorScrollListener(new ScrollDirectionListener(this), Engine.instance().getThreadPool())));
         }
-        if (searchHeaderBanner != null) {
-            searchHeaderBanner.setSearchFragmentReference(this);
-        }
         if (getCurrentQuery() == null) {
             searchInput.setFileTypeCountersVisible(false);
         }
@@ -293,7 +293,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
 
     public void destroyHeaderBanner() {
         if (searchHeaderBanner != null) {
-            searchHeaderBanner.setSearchFragmentReference(this);
             searchHeaderBanner.onDestroy();
         }
     }
@@ -311,7 +310,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
     @Override
     protected void initComponents(final View view, Bundle savedInstanceState) {
         searchHeaderBanner = findView(view, R.id.fragment_search_header_banner);
-        searchHeaderBanner.setSearchFragmentReference(this);
         searchInput = findView(view, R.id.fragment_search_input);
         searchInput.setShowKeyboardOnPaste(true);
         searchInput.setOnSearchListener(new SearchInputOnSearchListener((LinearLayout) view, this));
@@ -386,16 +384,18 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
                 showSearchView(getView());
                 refreshFileTypeCounters(true);
                 activity.findViewById(R.id.pb).setVisibility(GONE);
-                setNativeAdVisiblity(GONE);
+                setNativeAdVisibility(GONE);
             });
         }
     }
 
-    private void setNativeAdVisiblity(int visibility) {
+    private void setNativeAdVisibility(int visibility) {
         getView().findViewById(R.id.native_ad_container).setVisibility(visibility);
+        AdView adView = ((MainActivity) getActivity()).adView;
+        if (adView == null) return;
         if (visibility == GONE) visibility = VISIBLE;
-        else visibility=GONE;
-        ((MainActivity) getActivity()).adView.setVisibility(visibility);
+        else visibility = GONE;
+        adView.setVisibility(visibility);
     }
 
     private void updateKeywordDetector(final List<? extends SearchResult> results) {
@@ -729,7 +729,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
                 return;
             }
             SearchFragment fragment = fragmentRef.get();
-            fragment.searchHeaderBanner.setSearchFragmentReference(fragment);
             fragment.resetKeywordDetector();
             fragment.searchInput.selectTabByMediaType((byte) mediaTypeId);
             if (query.contains("://m.soundcloud.com/") || query.contains("://soundcloud.com/")) {
@@ -765,7 +764,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
             }
             SearchFragment fragment = fragmentRef.get();
             fragment.cancelSearch();
-            setNativeAdVisiblity(VISIBLE);
+            setNativeAdVisibility(VISIBLE);
         }
     }
 

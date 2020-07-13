@@ -18,11 +18,6 @@
 
 package zig.zak.media.tor.search;
 
-/**
- * @author gubatron
- * @author aldenml
- *
- */
 public interface HttpSearchResult extends FileSearchResult {
     String getDownloadUrl();
 }

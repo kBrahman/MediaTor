@@ -42,7 +42,7 @@
             android:ellipsize="marquee"
             android:maxLines="1"
             android:text="@string/dummy_title"
-            android:textAppearance="@style/Preference_TextAppearanceMaterialSubhead" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
         <TextView
             android:id="@android:id/summary"

@@ -24,13 +24,6 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
 import zig.zak.media.tor.R;
 
-/**
- * In-layout notifications. Based on {@link android.widget.Toast} notifications 
- * and article by Cyril Mottier (http://android.cyrilmottier.com/?p=773).
- * 
- * @author e.shishkin
- *
- */
 public class AppMsg {
 	
 	/**

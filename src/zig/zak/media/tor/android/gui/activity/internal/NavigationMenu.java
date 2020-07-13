@@ -20,12 +20,11 @@ package zig.zak.media.tor.android.gui.activity.internal;
 
 import android.app.Fragment;
 import android.content.res.Configuration;
-import android.os.Handler;
-import android.os.Looper;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.Toolbar;
+
+import com.google.android.material.navigation.NavigationView;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -60,7 +59,6 @@ public final class NavigationMenu {
         drawerToggle = new MenuDrawerToggle(controller, drawerLayout, toolbar);
         this.drawerLayout.addDrawerListener(drawerToggle);
         navView = initNavigationView(mainActivity);
-        refreshMenuRemoveAdsItem();
     }
 
     public boolean isOpen() {
@@ -158,14 +156,6 @@ public final class NavigationMenu {
         hide();
     }
 
-    private void refreshMenuRemoveAdsItem() {
-        // only visible for basic or debug build and if ads have not been disabled.
-        int visibility = ((Constants.IS_GOOGLE_PLAY_DISTRIBUTION || Constants.IS_BASIC_AND_DEBUG)) ? View.VISIBLE : View.GONE;
-        Handler handler = new Handler(Looper.getMainLooper());
-        // TODO: review why calling this directly was causing ANR
-        // there is some lifecycle issue here
-    }
-
     public void onUpdateAvailable() {
         View navViewHeader = navView.getHeaderView(0);
         ImageView updateButton = navViewHeader.findViewById(R.id.nav_view_header_main_update);
@@ -203,7 +193,6 @@ public final class NavigationMenu {
 
         @Override
         public void onDrawerStateChanged(int newState) {
-            refreshMenuRemoveAdsItem();
             controller.syncNavigationMenu();
         }
     }

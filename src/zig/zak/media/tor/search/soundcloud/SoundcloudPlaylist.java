@@ -20,10 +20,6 @@ package zig.zak.media.tor.search.soundcloud;
 
 import java.util.List;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 final class SoundcloudPlaylist {
     public List<SoundcloudItem> tracks;
 }

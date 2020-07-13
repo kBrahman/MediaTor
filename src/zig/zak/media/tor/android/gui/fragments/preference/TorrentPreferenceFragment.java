@@ -19,9 +19,9 @@
 package zig.zak.media.tor.android.gui.fragments.preference;
 
 import android.app.DialogFragment;
-import android.support.v7.preference.CheckBoxPreference;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.SwitchPreferenceCompat;
+import androidx.preference.CheckBoxPreference;
+import androidx.preference.Preference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.Constants;

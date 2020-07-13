@@ -24,8 +24,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.ParcelFileDescriptor;
 import android.os.storage.StorageManager;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.provider.DocumentFile;
+import androidx.core.content.ContextCompat;
+import androidx.documentfile.provider.DocumentFile;
 import android.util.LruCache;
 
 import zig.zak.media.tor.android.core.Constants;

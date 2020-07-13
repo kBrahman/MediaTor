@@ -23,7 +23,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v4.provider.DocumentFile;
+import androidx.documentfile.provider.DocumentFile;
 
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.ConfigurationManager;

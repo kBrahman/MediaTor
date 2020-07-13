@@ -19,9 +19,9 @@ package zig.zak.media.tor.android.gui.fragments.preference;
 
 import android.app.Dialog;
 import android.app.DialogFragment;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceCategory;
-import android.support.v7.preference.SwitchPreferenceCompat;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.SwitchPreferenceCompat;
 
 import zig.zak.media.tor.BuildConfig;
 import zig.zak.media.tor.android.AndroidPlatform;
@@ -65,7 +65,6 @@ public final class ApplicationFragment extends AbstractPreferenceFragment implem
         setupVPNRequirementOption();
         setupStorageOption();
         setupDataSaving();
-        setupStore(removeAdsPurchaseTime);
     }
 
     private void setupDataSaving() {
@@ -212,14 +211,6 @@ public final class ApplicationFragment extends AbstractPreferenceFragment implem
             if (p != null) {
                 p.setSummary(newPath);
             }
-        }
-    }
-
-    private void setupStore(long purchaseTimestamp) {
-        Preference p = findPreference("frostwire.prefs.offers.buy_no_ads");
-        if (p != null && !Constants.IS_GOOGLE_PLAY_DISTRIBUTION) {
-            PreferenceCategory category = findPreference("frostwire.prefs.other_settings");
-            category.removePreference(p);
         }
     }
 
