@@ -35,9 +35,7 @@ import zig.zak.media.tor.android.gui.views.MenuAction;
 import zig.zak.media.tor.android.gui.views.TimerObserver;
 import zig.zak.media.tor.transfers.BittorrentDownload;
 import zig.zak.media.tor.transfers.HttpDownload;
-import zig.zak.media.tor.transfers.SoundcloudDownload;
 import zig.zak.media.tor.transfers.Transfer;
-import zig.zak.media.tor.transfers.YouTubeDownload;
 import zig.zak.media.tor.util.Ref;
 import zig.zak.media.tor.uxstats.UXAction;
 import zig.zak.media.tor.uxstats.UXStats;
@@ -56,18 +54,14 @@ public final class CancelMenuAction extends MenuAction {
 
 
     public CancelMenuAction(Context context, Transfer transfer, boolean deleteData) {
-        super(context,
-                deleteData ? R.drawable.contextmenu_icon_trash : R.drawable.contextmenu_icon_stop_transfer,
-                deleteData ? R.string.cancel_delete_menu_action : (transfer.isComplete()) ? R.string.clear_complete : R.string.cancel_menu_action);
+        super(context, deleteData ? R.drawable.contextmenu_icon_trash : R.drawable.contextmenu_icon_stop_transfer, deleteData ? R.string.cancel_delete_menu_action : (transfer.isComplete()) ? R.string.clear_complete : R.string.cancel_menu_action);
         this.transfer = transfer;
         this.deleteData = deleteData;
         this.deleteTorrent = deleteData;
     }
 
     public CancelMenuAction(Context context, BittorrentDownload transfer, boolean deleteTorrent, boolean deleteData) {
-        super(context,
-                deleteData ? R.drawable.contextmenu_icon_trash : R.drawable.contextmenu_icon_stop_transfer,
-                R.string.remove_torrent_and_data);
+        super(context, deleteData ? R.drawable.contextmenu_icon_trash : R.drawable.contextmenu_icon_stop_transfer, R.string.remove_torrent_and_data);
         this.transfer = transfer;
         this.deleteTorrent = deleteTorrent;
         this.deleteData = deleteData;
@@ -75,14 +69,11 @@ public final class CancelMenuAction extends MenuAction {
 
     @Override
     public void onClick(final Context context) {
-        CancelMenuActionDialog.newInstance(
-                transfer,
-                deleteData, deleteTorrent, this).
+        CancelMenuActionDialog.newInstance(transfer, deleteData, deleteTorrent, this).
                 show(((Activity) getContext()).getFragmentManager());
     }
 
-    private static void removeTransfer(Context context, Transfer transfer, boolean deleteTorrent,
-                                       boolean deleteData) {
+    private static void removeTransfer(Context context, Transfer transfer, boolean deleteTorrent, boolean deleteData) {
         if (transfer instanceof UIBittorrentDownload) {
             ((UIBittorrentDownload) transfer).remove(Ref.weak(context), deleteTorrent, deleteData);
         } else {
@@ -103,10 +94,7 @@ public final class CancelMenuAction extends MenuAction {
         private static boolean deleteTorrent;
         private static CancelMenuAction cancelMenuAction;
 
-        public static CancelMenuActionDialog newInstance(Transfer t,
-                                                         boolean delete_data,
-                                                         boolean delete_torrent,
-                                                         CancelMenuAction cancel_menu_action) {
+        public static CancelMenuActionDialog newInstance(Transfer t, boolean delete_data, boolean delete_torrent, CancelMenuAction cancel_menu_action) {
             transfer = t;
             deleteData = delete_data;
             deleteTorrent = delete_torrent;
@@ -122,7 +110,7 @@ public final class CancelMenuAction extends MenuAction {
         protected void initComponents(Dialog dlg, Bundle savedInstanceState) {
 
             int yes_no_cancel_transfer_id = R.string.yes_no_cancel_transfer_question;
-            if (transfer instanceof YouTubeDownload || transfer instanceof SoundcloudDownload || transfer instanceof HttpDownload) {
+            if (transfer instanceof HttpDownload) {
                 yes_no_cancel_transfer_id = R.string.yes_no_cancel_transfer_question_cloud;
             }
 
@@ -168,11 +156,7 @@ public final class CancelMenuAction extends MenuAction {
         @SuppressWarnings("unused")
         private final CancelMenuAction cancelMenuAction;
 
-        PositiveButtonOnClickListener(Transfer transfer,
-                                      boolean deleteTorrent,
-                                      boolean deleteData,
-                                      CancelMenuAction cancelMenuAction,
-                                      Dialog dialog) {
+        PositiveButtonOnClickListener(Transfer transfer, boolean deleteTorrent, boolean deleteData, CancelMenuAction cancelMenuAction, Dialog dialog) {
             this.transfer = transfer;
             this.deleteTorrent = deleteTorrent;
             this.deleteData = deleteData;

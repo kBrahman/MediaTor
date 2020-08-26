@@ -18,10 +18,6 @@
 
 package zig.zak.media.tor.platform;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public interface AppSettings {
 
     String string(String key);

@@ -18,10 +18,6 @@
 
 package zig.zak.media.tor.transfers;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public class HttpDownload extends BaseHttpDownload {
 
     public HttpDownload(Info info) {

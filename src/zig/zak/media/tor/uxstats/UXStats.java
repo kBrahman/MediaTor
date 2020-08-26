@@ -25,10 +25,6 @@ import java.util.concurrent.ExecutorService;
 import zig.zak.media.tor.util.HttpClientFactory;
 import zig.zak.media.tor.util.JsonUtils;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class UXStats {
     private static final boolean IS_TESTING = false;
     private static final zig.zak.media.tor.util.Logger LOG = zig.zak.media.tor.util.Logger.getLogger(UXStats.class);

@@ -23,7 +23,6 @@ import android.content.Context;
 
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.gui.dialogs.HandpickedTorrentDownloadDialogOnFetch;
-import zig.zak.media.tor.android.gui.dialogs.YouTubeDownloadDialog;
 import zig.zak.media.tor.android.gui.transfers.ExistingDownload;
 import zig.zak.media.tor.android.gui.transfers.InvalidDownload;
 import zig.zak.media.tor.android.gui.transfers.InvalidTransfer;
@@ -32,7 +31,6 @@ import zig.zak.media.tor.android.gui.util.UIUtils;
 import zig.zak.media.tor.search.SearchResult;
 import zig.zak.media.tor.search.torrent.TorrentCrawledSearchResult;
 import zig.zak.media.tor.search.torrent.TorrentSearchResult;
-import zig.zak.media.tor.search.youtube.YouTubePackageSearchResult;
 import zig.zak.media.tor.transfers.BittorrentDownload;
 import zig.zak.media.tor.transfers.Transfer;
 import zig.zak.media.tor.util.Logger;
@@ -60,10 +58,6 @@ public class AsyncStartDownload {
         try {
             if (sr instanceof TorrentSearchResult && !(sr instanceof TorrentCrawledSearchResult)) {
                 transfer = TransferManager.instance().downloadTorrent(((TorrentSearchResult) sr).getTorrentUrl(), new HandpickedTorrentDownloadDialogOnFetch((Activity) ctx), sr.getDisplayName());
-            } else if (sr instanceof YouTubePackageSearchResult) {
-                //FIXME: this stuff shouldn't be in the background!!!
-                YouTubeDownloadDialog ytDownloadDlg = YouTubeDownloadDialog.newInstance(ctx, (YouTubePackageSearchResult) sr);
-                ytDownloadDlg.show(((Activity) ctx).getFragmentManager());
             } else {
                 transfer = TransferManager.instance().download(sr);
                 if (!(transfer instanceof InvalidDownload)) {

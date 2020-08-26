@@ -18,12 +18,7 @@
 
 package zig.zak.media.tor.search.youtube.jd;
 
-/**
- * @author gubatron
- * @author aldenml
- *
- */
 interface Lambda1 {
 
-    public Object eval(Object obj);
+    Object eval(Object obj);
 }

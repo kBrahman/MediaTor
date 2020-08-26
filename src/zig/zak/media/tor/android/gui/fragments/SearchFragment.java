@@ -22,8 +22,6 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.drawerlayout.widget.DrawerLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,7 +39,6 @@ import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
 import com.facebook.ads.AdIconView;
 import com.facebook.ads.AdOptionsView;
-import com.facebook.ads.AdSettings;
 import com.facebook.ads.AdView;
 import com.facebook.ads.MediaView;
 import com.facebook.ads.NativeAd;
@@ -56,6 +53,8 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import androidx.annotation.Nullable;
+import androidx.drawerlayout.widget.DrawerLayout;
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.ConfigurationManager;
 import zig.zak.media.tor.android.core.Constants;
@@ -80,7 +79,6 @@ import zig.zak.media.tor.android.gui.views.SearchInputView;
 import zig.zak.media.tor.android.gui.views.SearchProgressView;
 import zig.zak.media.tor.android.gui.views.SwipeLayout;
 import zig.zak.media.tor.android.offers.SearchHeaderBanner;
-import zig.zak.media.tor.frostclick.TorrentPromotionSearchResult;
 import zig.zak.media.tor.search.FileSearchResult;
 import zig.zak.media.tor.search.HttpSearchResult;
 import zig.zak.media.tor.search.KeywordDetector;
@@ -92,7 +90,6 @@ import zig.zak.media.tor.search.soundcloud.SoundCloudSearchResult;
 import zig.zak.media.tor.search.torrent.AbstractTorrentSearchResult;
 import zig.zak.media.tor.search.torrent.TorrentCrawledSearchResult;
 import zig.zak.media.tor.search.torrent.TorrentSearchResult;
-import zig.zak.media.tor.search.youtube.YouTubeSearchResult;
 import zig.zak.media.tor.util.Logger;
 import zig.zak.media.tor.util.Ref;
 import zig.zak.media.tor.uxstats.UXAction;
@@ -597,8 +594,8 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
 
     private void startTransfer(final SearchResult sr, final String toastMessage) {
         Engine.instance().hapticFeedback();
-        if (!(sr instanceof AbstractTorrentSearchResult || sr instanceof TorrentPromotionSearchResult) && ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_GUI_SHOW_NEW_TRANSFER_DIALOG)) {
-            if (sr instanceof FileSearchResult && !(sr instanceof YouTubeSearchResult)) {
+        if (!(sr instanceof AbstractTorrentSearchResult) && ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_GUI_SHOW_NEW_TRANSFER_DIALOG)) {
+            if (sr instanceof FileSearchResult) {
                 try {
                     NewTransferDialog dlg = NewTransferDialog.newInstance((FileSearchResult) sr, false);
                     dlg.show(getFragmentManager());
@@ -607,8 +604,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
                     // just start the download then if the dialog crapped out.
                     onDialogClick(NewTransferDialog.TAG, Dialog.BUTTON_POSITIVE);
                 }
-            } else if (sr instanceof YouTubeSearchResult) {
-                startDownload(getActivity(), sr, toastMessage);
             }
         } else {
             if (isVisible()) {

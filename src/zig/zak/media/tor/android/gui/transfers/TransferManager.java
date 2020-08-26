@@ -23,6 +23,15 @@ import android.os.Environment;
 import android.os.Looper;
 import android.os.StatFs;
 
+import org.apache.commons.io.FileUtils;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
+
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.ConfigurationManager;
 import zig.zak.media.tor.android.core.Constants;
@@ -36,22 +45,11 @@ import zig.zak.media.tor.search.SearchResult;
 import zig.zak.media.tor.search.soundcloud.SoundCloudSearchResult;
 import zig.zak.media.tor.search.torrent.TorrentCrawledSearchResult;
 import zig.zak.media.tor.search.torrent.TorrentSearchResult;
-import zig.zak.media.tor.search.youtube.YouTubeCrawledSearchResult;
 import zig.zak.media.tor.transfers.BittorrentDownload;
 import zig.zak.media.tor.transfers.HttpDownload;
 import zig.zak.media.tor.transfers.SoundcloudDownload;
 import zig.zak.media.tor.transfers.Transfer;
-import zig.zak.media.tor.transfers.YouTubeDownload;
 import zig.zak.media.tor.util.Logger;
-
-import org.apache.commons.io.FileUtils;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 import static zig.zak.media.tor.android.util.Asyncs.async;
 
@@ -103,7 +101,7 @@ public final class TransferManager {
     private void clearTransfers() {
         this.httpDownloads.clear();
         this.bittorrentDownloadsList.clear();
-        this.bittorrentDownloadsMap .clear();
+        this.bittorrentDownloadsMap.clear();
         this.downloadsToReview = 0;
     }
 
@@ -184,8 +182,6 @@ public final class TransferManager {
             transfer = newBittorrentDownload((TorrentSearchResult) sr);
         } else if (sr instanceof HttpSlideSearchResult) {
             transfer = newHttpDownload((HttpSlideSearchResult) sr);
-        } else if (sr instanceof YouTubeCrawledSearchResult) {
-            transfer = newYouTubeDownload((YouTubeCrawledSearchResult) sr);
         } else if (sr instanceof SoundCloudSearchResult) {
             transfer = newSoundcloudDownload((SoundCloudSearchResult) sr);
         } else if (sr instanceof HttpSearchResult) {
@@ -317,10 +313,7 @@ public final class TransferManager {
 
             Uri u = Uri.parse(url);
             String scheme = u.getScheme();
-            if (!scheme.equalsIgnoreCase("file") &&
-                    !scheme.equalsIgnoreCase("http") &&
-                    !scheme.equalsIgnoreCase("https") &&
-                    !scheme.equalsIgnoreCase("magnet")) {
+            if (!scheme.equalsIgnoreCase("file") && !scheme.equalsIgnoreCase("http") && !scheme.equalsIgnoreCase("https") && !scheme.equalsIgnoreCase("magnet")) {
                 LOG.warn("Invalid URI scheme: " + u.toString());
                 return new InvalidBittorrentDownload(R.string.torrent_scheme_download_not_supported);
             }
@@ -391,15 +384,6 @@ public final class TransferManager {
         return download;
     }
 
-    private Transfer newYouTubeDownload(YouTubeCrawledSearchResult sr) {
-        YouTubeDownload download = new UIYouTubeDownload(this, sr);
-
-        httpDownloads.add(download);
-        download.start();
-
-        return download;
-    }
-
     private Transfer newSoundcloudDownload(SoundCloudSearchResult sr) {
         SoundcloudDownload download = new UISoundcloudDownload(this, sr);
 
@@ -423,8 +407,7 @@ public final class TransferManager {
     }
 
     public boolean isMobileAndDataSavingsOn() {
-        return NetworkManager.instance().isDataMobileUp() &&
-                ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_NETWORK_USE_WIFI_ONLY);
+        return NetworkManager.instance().isDataMobileUp() && ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_NETWORK_USE_WIFI_ONLY);
     }
 
     public boolean isBittorrentSearchResultAndMobileDataSavingsOn(SearchResult sr) {

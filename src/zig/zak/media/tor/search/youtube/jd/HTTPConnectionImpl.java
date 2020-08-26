@@ -12,6 +12,8 @@ import java.net.URL;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.security.KeyManagementException;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
 import java.util.ArrayList;
@@ -25,38 +27,39 @@ import java.util.zip.GZIPInputStream;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
+import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
 public class HTTPConnectionImpl implements HTTPConnection {
 
-    protected LinkedHashMap<String, String>  requestProperties          = null;
-    protected long[]                         ranges;
+    protected LinkedHashMap<String, String> requestProperties = null;
+    protected long[] ranges;
 
-    protected String                         customcharset              = null;
+    protected String customcharset = null;
 
-    protected Socket                         httpSocket                 = null;
-    protected URL                            httpURL                    = null;
-    protected String                         httpPath                   = null;
+    protected Socket httpSocket = null;
+    protected URL httpURL = null;
+    protected String httpPath = null;
 
-    protected RequestMethod                  httpMethod                 = RequestMethod.GET;
-    protected LowerCaseHashMap<List<String>> headers                    = null;
-    protected int                            httpResponseCode           = -1;
-    protected String                         httpResponseMessage        = "";
-    protected int                            readTimeout                = 30000;
-    protected int                            connectTimeout             = 30000;
-    protected long                           requestTime                = -1;
-    protected OutputStream                   outputStream               = null;
-    protected InputStream                    inputStream                = null;
-    protected InputStream                    convertedInputStream       = null;
-    protected boolean                        inputStreamConnected       = false;
-    protected String                         httpHeader                 = null;
+    protected RequestMethod httpMethod = RequestMethod.GET;
+    protected LowerCaseHashMap<List<String>> headers = null;
+    protected int httpResponseCode = -1;
+    protected String httpResponseMessage = "";
+    protected int readTimeout = 30000;
+    protected int connectTimeout = 30000;
+    protected long requestTime = -1;
+    protected OutputStream outputStream = null;
+    protected InputStream inputStream = null;
+    protected InputStream convertedInputStream = null;
+    protected boolean inputStreamConnected = false;
+    protected String httpHeader = null;
 
-    protected boolean                        outputClosed               = false;
-    private boolean                          contentDecoded             = true;
-    protected long                           postTodoLength             = -1;
-    private int[]                            allowedResponseCodes       = new int[0];
-    private InetSocketAddress                proxyInetSocketAddress     = null;
-    protected InetSocketAddress              connectedInetSocketAddress = null;
+    protected boolean outputClosed = false;
+    private boolean contentDecoded = true;
+    protected long postTodoLength = -1;
+    private int[] allowedResponseCodes = new int[0];
+    private InetSocketAddress proxyInetSocketAddress = null;
+    protected InetSocketAddress connectedInetSocketAddress = null;
 
     public HTTPConnectionImpl(final URL url) {
         this.httpURL = url;
@@ -77,7 +80,8 @@ public class HTTPConnectionImpl implements HTTPConnection {
     }
 
     public void connect() throws IOException {
-        if (this.isConnected()) { return;/* oder fehler */
+        if (this.isConnected()) {
+            return;/* oder fehler */
         }
         final InetAddress hosts[] = this.resolvHostIP(this.httpURL.getHost());
         /* try all different ip's until one is valid and connectable */
@@ -231,7 +235,7 @@ public class HTTPConnectionImpl implements HTTPConnection {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see
      * org.appwork.utils.net.httpconnection.HTTPConnection#finalizeConnect()
      */
@@ -304,9 +308,9 @@ public class HTTPConnectionImpl implements HTTPConnection {
                 } else if ("gzip".equalsIgnoreCase(encoding)) {
                     /* gzip encoding */
                     this.convertedInputStream = new GZIPInputStream(this.inputStream);
-                //} else if ("deflate".equalsIgnoreCase(encoding)) {
-                //    /* deflate encoding */
-                //    this.convertedInputStream = new java.util.zip.DeflaterInputStream(this.inputStream);
+                    //} else if ("deflate".equalsIgnoreCase(encoding)) {
+                    //    /* deflate encoding */
+                    //    this.convertedInputStream = new java.util.zip.DeflaterInputStream(this.inputStream);
                 } else {
                     /* unsupported */
                     throw new UnsupportedOperationException("Encoding " + encoding + " not supported!");
@@ -340,7 +344,7 @@ public class HTTPConnectionImpl implements HTTPConnection {
                 final long gotSB = Long.parseLong(range[0]);
                 final long gotEB = Long.parseLong(range[1]);
                 final long gotS = Long.parseLong(range[2]);
-                this.ranges = new long[] { gotSB, gotEB, gotS };
+                this.ranges = new long[]{gotSB, gotEB, gotS};
                 return this.ranges;
             } else if ((range = new Regex(contentRange, ".*?(\\d+).*?-/.*?(\\d+)").getRow(0)) != null && this.getResponseCode() != 416) {
                 /* only parse this when we have NO 416 (invalid range request) */
@@ -353,11 +357,11 @@ public class HTTPConnectionImpl implements HTTPConnection {
                 /* content-range: bytes 1020054729-/1073741824 */
                 final long gotSB = Long.parseLong(range[0]);
                 final long gotS = Long.parseLong(range[1]);
-                this.ranges = new long[] { gotSB, gotS - 1, gotS };
+                this.ranges = new long[]{gotSB, gotS - 1, gotS};
                 return this.ranges;
             } else if (this.getResponseCode() == 416 && (range = new Regex(contentRange, ".*?\\*/.*?(\\d+)").getRow(0)) != null) {
                 /* a 416 may respond with content-range * | content.size answer */
-                this.ranges = new long[] { -1, -1, Long.parseLong(range[0]) };
+                this.ranges = new long[]{-1, -1, Long.parseLong(range[0])};
                 return this.ranges;
             } else {
                 /* unknown range header format! */
@@ -550,12 +554,12 @@ public class HTTPConnectionImpl implements HTTPConnection {
         this.httpSocket.getOutputStream().write(sb.toString().getBytes("ISO-8859-1"));
         this.httpSocket.getOutputStream().flush();
         //if (this.httpMethod != RequestMethod.POST) {
-            this.outputStream = this.httpSocket.getOutputStream();
-            this.outputClosed = true;
-            this.connectInputStream();
-//        } else {
-//            this.outputStream = new CountingOutputStream(this.httpSocket.getOutputStream());
-//        }
+        this.outputStream = this.httpSocket.getOutputStream();
+        this.outputClosed = true;
+        this.connectInputStream();
+        //        } else {
+        //            this.outputStream = new CountingOutputStream(this.httpSocket.getOutputStream());
+        //        }
     }
 
     @Override
@@ -574,7 +578,9 @@ public class HTTPConnectionImpl implements HTTPConnection {
 
     @Override
     public void setContentDecoded(final boolean b) {
-        if (this.convertedInputStream != null) { throw new IllegalStateException("InputStream already in use!"); }
+        if (this.convertedInputStream != null) {
+            throw new IllegalStateException("InputStream already in use!");
+        }
         this.contentDecoded = b;
 
     }
@@ -608,14 +614,6 @@ public class HTTPConnectionImpl implements HTTPConnection {
 
     private Request request;
 
-    public InputStream getErrorStream() {
-        try {
-            return this.getInputStream();
-        } catch (final IOException e) {
-            return null;
-        }
-    }
-
     public long getLongContentLength() {
         return this.getContentLength();
     }
@@ -628,7 +626,7 @@ public class HTTPConnectionImpl implements HTTPConnection {
         this.request = request;
     }
 
-    private static TrustManager[] trustAllCerts = new TrustManager[] { new X509TrustManager() {
+    private static TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
 
         @Override
         public void checkClientTrusted(final java.security.cert.X509Certificate[] chain, final String authType) throws CertificateException {
@@ -636,18 +634,27 @@ public class HTTPConnectionImpl implements HTTPConnection {
 
         @Override
         public void checkServerTrusted(final java.security.cert.X509Certificate[] chain, final String authType) throws CertificateException {
+            try {
+                TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+                tmf.init((KeyStore) null);
+                TrustManager[] trustManagers = tmf.getTrustManagers();
+                final X509TrustManager origTrustManager = (X509TrustManager) trustManagers[0];
+                origTrustManager.checkServerTrusted(chain, authType);
+            } catch (NoSuchAlgorithmException | KeyStoreException e) {
+                e.printStackTrace();
+            }
         }
 
         @Override
         public java.security.cert.X509Certificate[] getAcceptedIssuers() {
-                                                        /*
-                                                         * returning null here
-                                                         * can cause a NPE in
-                                                         * some java versions!
-                                                         */
+            /*
+             * returning null here
+             * can cause a NPE in
+             * some java versions!
+             */
             return new java.security.cert.X509Certificate[0];
         }
-    } };
+    }};
 
     public static SSLSocketFactory getSSLFactoryTrustALL() throws IOException {
         try {

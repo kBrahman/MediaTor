@@ -21,7 +21,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -41,6 +40,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import androidx.recyclerview.widget.RecyclerView;
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.AndroidPlatform;
 import zig.zak.media.tor.android.core.ConfigurationManager;
@@ -77,7 +77,6 @@ import zig.zak.media.tor.transfers.SoundcloudDownload;
 import zig.zak.media.tor.transfers.Transfer;
 import zig.zak.media.tor.transfers.TransferItem;
 import zig.zak.media.tor.transfers.TransferState;
-import zig.zak.media.tor.transfers.YouTubeDownload;
 import zig.zak.media.tor.util.Logger;
 import zig.zak.media.tor.util.Ref;
 
@@ -182,7 +181,7 @@ public class TransferListAdapter extends RecyclerView.Adapter<TransferListAdapte
     }
 
     private boolean isCloudDownload(Object tag) {
-        return tag instanceof HttpDownload || tag instanceof YouTubeDownload;
+        return tag instanceof HttpDownload;
     }
 
     private String populateBittorrentDownloadMenuActions(BittorrentDownload bittorrentDownload, List<MenuAction> items) {
@@ -308,7 +307,7 @@ public class TransferListAdapter extends RecyclerView.Adapter<TransferListAdapte
                     try {
                         if (transfer instanceof BittorrentDownload) {
                             populateBittorrentDownload(listItemLinearLayoutHolder, (BittorrentDownload) transfer);
-                        } else if (transfer instanceof YouTubeDownload || transfer instanceof SoundcloudDownload) {
+                        } else if (transfer instanceof SoundcloudDownload) {
                             populateCloudDownload(listItemLinearLayoutHolder, transfer);
                         } else if (transfer instanceof HttpDownload) {
                             populateHttpDownload(listItemLinearLayoutHolder, (HttpDownload) transfer);
@@ -434,13 +433,6 @@ public class TransferListAdapter extends RecyclerView.Adapter<TransferListAdapte
                 buttonPlay.setOnClickListener(playOnClickListener);
             } else {
                 buttonPlay.setVisibility(View.GONE);
-            }
-            // hack to fill the demuxing state
-            if (download instanceof YouTubeDownload) {
-                YouTubeDownload yt = (YouTubeDownload) download;
-                if (yt.getState() == TransferState.DEMUXING) {
-                    status.setText(transferStateStrings.get(download.getState()) + " (" + yt.demuxingProgress() + "%)");
-                }
             }
             populateFileTypeIndicatorImageView(download);
         }

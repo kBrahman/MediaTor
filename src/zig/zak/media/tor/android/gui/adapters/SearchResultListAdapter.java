@@ -35,9 +35,6 @@ import zig.zak.media.tor.search.SearchResult;
 import zig.zak.media.tor.search.StreamableSearchResult;
 import zig.zak.media.tor.search.soundcloud.SoundCloudSearchResult;
 import zig.zak.media.tor.search.torrent.TorrentSearchResult;
-import zig.zak.media.tor.search.youtube.YouTubeCrawledSearchResult;
-import zig.zak.media.tor.search.youtube.YouTubeCrawledStreamableSearchResult;
-import zig.zak.media.tor.search.youtube.YouTubePackageSearchResult;
 import zig.zak.media.tor.util.Ref;
 
 public abstract class SearchResultListAdapter extends AbstractListAdapter<SearchResult> {
@@ -132,7 +129,7 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
 
         MediaPlaybackStatusOverlayView overlayView = findView(view, R.id.view_bittorrent_search_result_list_item_filetype_icon_media_playback_overlay_view);
         fileTypeIcon.setOnClickListener(previewClickListener);
-        if (isAudio(sr) || sr instanceof YouTubePackageSearchResult) {
+        if (isAudio(sr)) {
             fileTypeIcon.setTag(sr);
             overlayView.setTag(sr);
             overlayView.setVisibility(View.VISIBLE);
@@ -189,7 +186,7 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
 
             if ("youtube".equals(extension)) {
                 mt = MediaType.getVideoMediaType();
-            } else if (mt != null && mt.equals(MediaType.getVideoMediaType()) && sr instanceof YouTubeCrawledSearchResult) {
+            } else if (mt != null && mt.equals(MediaType.getVideoMediaType())) {
                 // NOTE: this excludes all non .youtube youtube search results (e.g. 3gp, webm) from appearing on results
                 mt = null;
             }
@@ -215,16 +212,7 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
     }
 
     private static boolean isAudio(SearchResult sr) {
-        if (sr instanceof SoundCloudSearchResult) {
-            return true;
-        }
-
-        if (sr instanceof YouTubeCrawledStreamableSearchResult) {
-            YouTubeCrawledStreamableSearchResult ytsr = (YouTubeCrawledStreamableSearchResult) sr;
-            return ytsr.getVideo() == null;
-        }
-
-        return false;
+        return sr instanceof SoundCloudSearchResult;
     }
 
     private int getFileTypeIconId() {
@@ -359,7 +347,6 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
                 i.putExtra("thumbnailUrl", sr.getThumbnailUrl());
                 i.putExtra("streamUrl", sr.getStreamUrl());
                 i.putExtra("audio", isAudio(sr));
-                i.putExtra("hasVideo", hasVideo(sr));
                 if (sr instanceof SoundCloudSearchResult) {
                     Log.i(TAG, "instance of sound cloud");
                     i.putExtra(IS_SOUND_CLOUD, true);
@@ -368,8 +355,5 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
             }
         }
 
-        private boolean hasVideo(StreamableSearchResult sr) {
-            return sr instanceof YouTubePackageSearchResult;
-        }
     }
 }

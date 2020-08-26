@@ -38,10 +38,6 @@ import zig.zak.media.tor.search.tpb.TPBSearchPerformer;
 import zig.zak.media.tor.search.yify.YifySearchPerformer;
 import zig.zak.media.tor.search.zooqle.ZooqleSearchPerformer;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public abstract class SearchEngine {
 
     private static final UserAgent FROSTWIRE_ANDROID_USER_AGENT = new UserAgent(getOSVersionString(), Constants.FROSTWIRE_VERSION_STRING, Constants.FROSTWIRE_BUILD);

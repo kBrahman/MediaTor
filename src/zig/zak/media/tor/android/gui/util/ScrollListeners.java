@@ -20,14 +20,7 @@ package zig.zak.media.tor.android.gui.util;
 
 import android.widget.AbsListView;
 
-/**
- * Created on 9/26/17.
- * @author Marcelinkaaa
- * @author gubatron
- * @author aldenml
- */
-
-public final class ScrollListeners  {
+public final class ScrollListeners {
 
     public static final class ComposedOnScrollListener implements AbsListView.OnScrollListener {
         private final AbsListView.OnScrollListener[] listeners;

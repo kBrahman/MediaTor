@@ -18,11 +18,6 @@
 
 package zig.zak.media.tor.search.youtube.jd;
 
-/**
- * @author gubatron
- * @author aldenml
- *
- */
 final class JsError extends RuntimeException {
 
     public JsError(String message) {

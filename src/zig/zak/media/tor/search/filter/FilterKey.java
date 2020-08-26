@@ -17,10 +17,6 @@
 
 package zig.zak.media.tor.search.filter;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public interface FilterKey extends Comparable<FilterKey> {
 
     String display();

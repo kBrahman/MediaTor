@@ -35,7 +35,6 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.regex.Pattern;
 
-import zig.zak.media.tor.search.youtube.YouTubeCrawledSearchResult;
 import zig.zak.media.tor.util.HistoHashMap;
 import zig.zak.media.tor.util.Logger;
 import zig.zak.media.tor.util.ThreadPool;
@@ -132,7 +131,7 @@ public final class KeywordDetector {
                     continue;
                 }
                 KeywordMediaType mt = KeywordMediaType.getMediaTypeForExtension(extension);
-                if (mt != null && mt.equals(KeywordMediaType.getVideoMediaType()) && sr instanceof YouTubeCrawledSearchResult) {
+                if (mt != null && mt.equals(KeywordMediaType.getVideoMediaType())) {
                     // NOTE: this excludes all non .youtube youtube search results (e.g. 3gp, webm) from appearing on results
                     mt = null;
                 }

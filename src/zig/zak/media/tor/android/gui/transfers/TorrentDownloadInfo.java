@@ -18,11 +18,6 @@
 
 package zig.zak.media.tor.android.gui.transfers;
 
-/**
- * @author gubatron
- * @author aldenml
- * 
- */
 interface TorrentDownloadInfo {
 
     String makeMagnetUri();

@@ -28,11 +28,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author gubatron
- * @author aldenml
- *
- */
 public class FrostClickSearchPerformer extends PagedWebSearchPerformer {
 
     private static final Logger LOG = Logger.getLogger(FrostClickSearchPerformer.class);
@@ -71,7 +66,6 @@ public class FrostClickSearchPerformer extends PagedWebSearchPerformer {
 
     @Override
     protected List<? extends SearchResult> searchPage(String page) {
-        // unused for this implementation since we still don't have search responses ready.
         return Collections.emptyList();
     }
 

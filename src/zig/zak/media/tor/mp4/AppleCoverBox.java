@@ -20,10 +20,6 @@ package zig.zak.media.tor.mp4;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class AppleCoverBox extends AppleDataBox {
 
     private static final int IMAGE_TYPE_JPG = 13;

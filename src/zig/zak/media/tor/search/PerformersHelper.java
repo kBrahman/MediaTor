@@ -27,10 +27,6 @@ import zig.zak.media.tor.util.Logger;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class PerformersHelper {
 
     private static final Logger LOG = Logger.getLogger(PerformersHelper.class);

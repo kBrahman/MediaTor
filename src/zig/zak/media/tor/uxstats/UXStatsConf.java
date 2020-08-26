@@ -19,11 +19,6 @@ package zig.zak.media.tor.uxstats;
 
 import java.util.UUID;
 
-/**
- * @author gubatron
- * @author aldenml
- *
- */
 public final class UXStatsConf {
 
     private final String url;

@@ -25,13 +25,6 @@ import org.apache.commons.io.FilenameUtils;
 
 import java.util.*;
 
-/**
- * To be used only inside PerformersHelper and only for torrents search related functions.
- * Private API.
- *
- * @author gubatron
- * @author aldenml
- */
 public class AlbumCluster {
 
     private static final int ALBUM_SIZE_THRESHOLD = 4;
