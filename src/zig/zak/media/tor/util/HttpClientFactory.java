@@ -17,35 +17,23 @@
 
 package zig.zak.media.tor.util;
 
-import zig.zak.media.tor.util.http.HttpClient;
-import zig.zak.media.tor.util.http.JdkHttpClient;
-import zig.zak.media.tor.util.http.OKHTTPClient;
-
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.LinkedBlockingQueue;
 
-/**
- * 
- * @author gubatron
- * @author aldenml
- *
- */
+import zig.zak.media.tor.util.http.HttpClient;
+import zig.zak.media.tor.util.http.JdkHttpClient;
+import zig.zak.media.tor.util.http.OKHTTPClient;
+
 public class HttpClientFactory {
     public enum HttpContext {
-        SEARCH,
-        DOWNLOAD,
-        MISC
+        SEARCH, DOWNLOAD, MISC
     }
 
     private static Map<HttpContext, ThreadPool> okHttpClientPools = null;
 
     private HttpClientFactory() {
-    }
-
-    public static HttpClient newInstance() {
-        return new JdkHttpClient();
     }
 
     public static HttpClient getInstance(HttpContext context) {

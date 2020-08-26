@@ -23,7 +23,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.SurfaceTexture;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -31,12 +30,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
-import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -78,41 +72,22 @@ import zig.zak.media.tor.util.Logger;
 import zig.zak.media.tor.util.Ref;
 
 
-public final class PreviewPlayerActivity extends AbstractActivity implements AbstractDialog.OnDialogClickListener, TextureView.SurfaceTextureListener, MediaPlayer.OnBufferingUpdateListener, MediaPlayer.OnCompletionListener, MediaPlayer.OnPreparedListener, MediaPlayer.OnVideoSizeChangedListener, MediaPlayer.OnInfoListener, AudioManager.OnAudioFocusChangeListener {
+public final class PreviewPlayerActivity extends AbstractActivity implements AbstractDialog.OnDialogClickListener, MediaPlayer.OnBufferingUpdateListener, MediaPlayer.OnCompletionListener, MediaPlayer.OnPreparedListener, MediaPlayer.OnInfoListener, AudioManager.OnAudioFocusChangeListener {
 
     private static final Logger LOG = Logger.getLogger(PreviewPlayerActivity.class);
     private static final String TAG = PreviewPlayerActivity.class.getSimpleName();
     public static WeakReference<FileSearchResult> srRef;
 
     private MediaPlayer androidMediaPlayer;
-    private Surface surface;
     private String displayName;
     private String source;
     private String streamUrl;
-    private boolean audio;
     private boolean isFullScreen = false;
-    private boolean videoSizeSetupDone = false;
     private boolean changedActionBarTitleToNonBuffering = false;
     private NativeAd nativeAd;
 
     public PreviewPlayerActivity() {
         super(R.layout.activity_preview_player);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.activity_preview_player_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        MenuItem fullscreenMenu = menu.findItem(R.id.activity_preview_player_menu_fullscreen);
-        if (fullscreenMenu != null) {
-            fullscreenMenu.setVisible(!audio);  //userRegistered is boolean, pointing if the user has registered or not.
-        }
-        return true;
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -129,42 +104,16 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         displayName = i.getStringExtra("displayName");
         source = i.getStringExtra("source");
         streamUrl = i.getStringExtra("streamUrl");
-        audio = i.getBooleanExtra("audio", false);
         isFullScreen = i.getBooleanExtra("isFullScreen", false);
 
-        int mediaTypeStrId = audio ? R.string.audio : R.string.video;
+        int mediaTypeStrId = R.string.audio;
         setTitle(getString(R.string.media_preview, getString(mediaTypeStrId)) + getString(R.string.buffering));
-
-        final TextureView videoTexture = findView(R.id.activity_preview_player_video_view);
-        videoTexture.setSurfaceTextureListener(this);
-
-        // when previewing audio, we make the video view really tiny.
-        // hiding it will cause the player not to play.
-        if (audio) {
-            final ViewGroup.LayoutParams layoutParams = videoTexture.getLayoutParams();
-            layoutParams.width = 1;
-            layoutParams.height = 1;
-            videoTexture.setLayoutParams(layoutParams);
-            loadNativeAd();
-        }
-
-
         final TextView trackName = findView(R.id.activity_preview_player_track_name);
         final TextView artistName = findView(R.id.activity_preview_player_artist_name);
         trackName.setText(displayName);
         artistName.setText(source);
-
-        if (!audio) {
-            videoTexture.setOnTouchListener((view, motionEvent) -> {
-                toggleFullScreen(videoTexture);
-                return false;
-            });
-        }
-
-        if (isFullScreen) {
-            isFullScreen = false; //so it will make it full screen on what was an orientation change.
-            toggleFullScreen(videoTexture);
-        }
+        play();
+        loadNativeAd();
     }
 
     @Override
@@ -174,7 +123,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
             outState.putString("displayName", displayName);
             outState.putString("source", source);
             outState.putString("streamUrl", streamUrl);
-            outState.putBoolean("audio", audio);
             outState.putBoolean("isFullScreen", isFullScreen);
             if (androidMediaPlayer != null && androidMediaPlayer.isPlaying()) {
                 outState.putInt("currentPosition", androidMediaPlayer.getCurrentPosition());
@@ -193,7 +141,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         nativeAd.setAdListener(new NativeAdListener() {
             @Override
             public void onMediaDownloaded(Ad ad) {
-                // Native ad finished downloading all assets
                 Log.e(TAG, "Native ad finished downloading all assets.");
             }
 
@@ -315,7 +262,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
     }
 
     private void toggleFullScreen(TextureView v) {
-        videoSizeSetupDone = false;
         DisplayMetrics metrics = new DisplayMetrics();
         final Display defaultDisplay = getWindowManager().getDefaultDisplay();
         defaultDisplay.getMetrics(metrics);
@@ -368,53 +314,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         }
 
         frameLayout.setLayoutParams(frameLayoutParams);
-        changeVideoSize();
-    }
-
-    private void changeVideoSize() {
-        if (androidMediaPlayer == null) {
-            return;
-        }
-        int videoWidth = androidMediaPlayer.getVideoWidth();
-        int videoHeight = androidMediaPlayer.getVideoHeight();
-        final TextureView v = findView(R.id.activity_preview_player_video_view);
-        DisplayMetrics metrics = new DisplayMetrics();
-        final Display defaultDisplay = getWindowManager().getDefaultDisplay();
-        defaultDisplay.getMetrics(metrics);
-
-        final android.widget.FrameLayout.LayoutParams params = (android.widget.FrameLayout.LayoutParams) v.getLayoutParams();
-        boolean isPortrait = isPortrait();
-        float hRatio = (videoHeight * 1.0f) / (videoWidth * 1.0f);
-        float rotation = 0;
-
-        if (isPortrait) {
-            if (isFullScreen) {
-                //noinspection SuspiciousNameCombination
-                params.width = metrics.heightPixels;
-                //noinspection SuspiciousNameCombination
-                params.height = metrics.widthPixels;
-                params.gravity = Gravity.TOP;
-                v.setPivotY((float) metrics.widthPixels / 2.0f);
-                rotation = 90f;
-            } else {
-                params.width = metrics.widthPixels;
-                params.height = (int) (params.width * hRatio);
-                params.gravity = Gravity.CENTER;
-            }
-        } else {
-            if (isFullScreen) {
-                params.width = metrics.widthPixels;
-                params.height = metrics.heightPixels;
-            } else {
-                params.width = Math.max(videoWidth, metrics.widthPixels / 2);
-                params.height = (int) (params.width * hRatio);
-                params.gravity = Gravity.CENTER;
-            }
-        }
-
-        v.setRotation(rotation);
-        v.setLayoutParams(params);
-        videoSizeSetupDone = true;
     }
 
     /**
@@ -452,9 +351,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         }
     }
 
-    @Override
-    public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int width, int height) {
-        surface = new Surface(surfaceTexture);
+    public void play() {
         Log.i(TAG, "onSurfaceTextureAvailable");
         Thread t = new Thread("PreviewPlayerActivity-onSurfaceTextureAvailable") {
             @Override
@@ -465,11 +362,9 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
                 androidMediaPlayer = new MediaPlayer();
                 try {
                     androidMediaPlayer.setDataSource(PreviewPlayerActivity.this, uri);
-                    androidMediaPlayer.setSurface(!audio ? surface : null);
                     androidMediaPlayer.setOnBufferingUpdateListener(PreviewPlayerActivity.this);
                     androidMediaPlayer.setOnCompletionListener(PreviewPlayerActivity.this);
                     androidMediaPlayer.setOnPreparedListener(PreviewPlayerActivity.this);
-                    androidMediaPlayer.setOnVideoSizeChangedListener(PreviewPlayerActivity.this);
                     androidMediaPlayer.setOnInfoListener(PreviewPlayerActivity.this);
                     androidMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
                     androidMediaPlayer.prepare();
@@ -483,31 +378,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
             }
         };
         t.start();
-    }
-
-    @Override
-    public void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int width, int height) {
-        if (androidMediaPlayer != null) {
-            if (surface != null) {
-                surface.release();
-                surface = new Surface(surfaceTexture);
-            }
-            androidMediaPlayer.setSurface(!audio ? surface : null);
-        }
-    }
-
-    @Override
-    public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
-        if (androidMediaPlayer != null) {
-            androidMediaPlayer.setSurface(null);
-            this.surface.release();
-            this.surface = null;
-        }
-        return false;
-    }
-
-    @Override
-    public void onSurfaceTextureUpdated(SurfaceTexture surface) {
     }
 
     @Override
@@ -525,17 +395,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         if (am != null) {
             am.requestAudioFocus(PreviewPlayerActivity.this, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN);
         }
-
-        if (mp != null) {
-            changeVideoSize();
-        }
-    }
-
-    @Override
-    public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
-        if (width > 0 && height > 0 && !videoSizeSetupDone) {
-            changeVideoSize();
-        }
     }
 
     @Override
@@ -552,7 +411,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
                 break;
             case MediaPlayer.MEDIA_INFO_BUFFERING_END:
                 //LOG.warn("End of media buffering.");
-                changeVideoSize();
                 startedPlayback = true;
                 break;
             case MediaPlayer.MEDIA_INFO_BAD_INTERLEAVING:
@@ -567,7 +425,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         }
 
         if (startedPlayback && !changedActionBarTitleToNonBuffering) {
-            int mediaTypeStrId = audio ? R.string.audio : R.string.video;
+            int mediaTypeStrId = R.string.audio;
             setTitle(getString(R.string.media_preview, getString(mediaTypeStrId)));
             changedActionBarTitleToNonBuffering = true;
         }
@@ -617,7 +475,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         if (focusChange == AudioManager.AUDIOFOCUS_LOSS || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT) {
             releaseMediaPlayer();
 
-            int mediaTypeStrId = audio ? R.string.audio : R.string.video;
+            int mediaTypeStrId = R.string.audio;
             setTitle(getString(R.string.media_preview, getString(mediaTypeStrId)));
         }
     }

@@ -26,9 +26,6 @@ import java.security.cert.X509Certificate;
 
 /**
  * Util class to provide SSL/TLS specific features.
- *
- * @author gubatron
- * @author aldenml
  */
 public final class Ssl {
 

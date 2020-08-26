@@ -21,13 +21,6 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.BroadcastReceiver;
 import android.os.Bundle;
-import androidx.annotation.IdRes;
-import androidx.annotation.LayoutRes;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.ActionMode;
-import androidx.appcompat.widget.Toolbar;
 import android.view.ContextMenu;
 import android.view.Gravity;
 import android.view.Menu;
@@ -36,18 +29,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import zig.zak.media.tor.R;
-import zig.zak.media.tor.android.util.Debug;
-
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * @author gubatron
- * @author aldenml
- */
+import androidx.annotation.IdRes;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.ActionMode;
+import androidx.appcompat.widget.Toolbar;
+import zig.zak.media.tor.R;
+import zig.zak.media.tor.android.util.Debug;
+
 public abstract class AbstractActivity extends AppCompatActivity {
 
     private final int layoutResId;
@@ -231,9 +227,7 @@ public abstract class AbstractActivity extends AppCompatActivity {
             placeholder.removeAllViews();
         }
         if (view != null && placeholder != null) {
-            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT);
+            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             params.gravity = gravity;
             placeholder.addView(view, params);
             placeholder.setVisibility(View.VISIBLE);

@@ -33,9 +33,6 @@ import java.util.zip.GZIPOutputStream;
 
 /**
  * A pure java based HTTP client with resume capabilities.
- *
- * @author gubatron
- * @author aldenml
  */
 public final class JdkHttpClient extends AbstractHttpClient {
     private static final Logger LOG = Logger.getLogger(JdkHttpClient.class);
