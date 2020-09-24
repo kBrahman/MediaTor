@@ -42,5 +42,5 @@
         android:id="@+id/view_search_input_tab_torrents"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:icon="@drawable/my_files_torrent_icon_tab_selector"/>
+        android:icon="@mipmap/ic_launcher"/>
 </com.google.android.material.tabs.TabLayout>

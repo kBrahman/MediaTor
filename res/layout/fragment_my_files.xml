@@ -51,7 +51,7 @@
             android:id="@+id/fragment_my_files_tab_torrents"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:icon="@drawable/my_files_torrent_icon_tab_selector" />
+            android:icon="@mipmap/ic_launcher" />
     </com.google.android.material.tabs.TabLayout>
 
     <!-- Checkbox and Search Box for Browse Peer, see view_my_files_search_bar.xml -->
@@ -124,9 +124,9 @@
 
                 <GridView
                     android:id="@+id/fragment_my_files_gridview"
+                    style="@style/scrollbar_default_style"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    style="@style/scrollbar_default_style"
                     android:background="@color/app_background_white"
                     android:gravity="center"
                     android:horizontalSpacing="1dp"

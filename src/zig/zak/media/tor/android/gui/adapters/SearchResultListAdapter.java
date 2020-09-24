@@ -228,7 +228,7 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
             case Constants.FILE_TYPE_VIDEOS:
                 return R.drawable.list_item_video_icon;
             case Constants.FILE_TYPE_TORRENTS:
-                return R.drawable.list_item_torrent_icon;
+                return R.mipmap.ic_launcher;
             default:
                 return R.drawable.list_item_question_mark;
         }
