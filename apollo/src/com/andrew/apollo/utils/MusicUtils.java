@@ -80,8 +80,6 @@ import java.util.WeakHashMap;
 
 /**
  * A collection of helpers directly related to music or Apollo's service.
- *
- * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public final class MusicUtils {
 

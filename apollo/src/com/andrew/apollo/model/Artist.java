@@ -15,8 +15,6 @@ import android.text.TextUtils;
 
 /**
  * A class that represents an artist.
- * 
- * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public class Artist {
 

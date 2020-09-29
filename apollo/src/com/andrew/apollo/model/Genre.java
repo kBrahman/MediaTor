@@ -15,8 +15,6 @@ import android.text.TextUtils;
 
 /**
  * A class that represents a genre.
- * 
- * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public class Genre {
 

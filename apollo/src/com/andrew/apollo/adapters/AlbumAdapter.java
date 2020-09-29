@@ -26,9 +26,7 @@ import zig.zak.media.tor.util.Ref;
 
 /**
  * This {@link ArrayAdapter} is used to display all of the albums on a user's
- * device for RecentsFragment and AlbumsFragment.
- *
- * @author Andrew Neal (andrewdneal@gmail.com)
+ * device for RecentsFragment and AlbumsFragment
  */
 public class AlbumAdapter extends ApolloFragmentAdapter<Album> implements ApolloFragmentAdapter.Cacheable {
 
