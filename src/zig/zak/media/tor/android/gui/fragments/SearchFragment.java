@@ -37,7 +37,6 @@ import android.widget.TextView;
 
 import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
-import com.facebook.ads.AdIconView;
 import com.facebook.ads.AdOptionsView;
 import com.facebook.ads.AdView;
 import com.facebook.ads.MediaView;
@@ -195,7 +194,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         adChoicesContainer.addView(adOptionsView, 0);
 
         // Create native UI using the ad metadata.
-        AdIconView nativeAdIcon = adView.findViewById(R.id.native_ad_icon);
         TextView nativeAdTitle = adView.findViewById(R.id.native_ad_title);
         MediaView nativeAdMedia = adView.findViewById(R.id.native_ad_media);
         TextView nativeAdSocialContext = adView.findViewById(R.id.native_ad_social_context);
@@ -211,13 +209,8 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         nativeAdCallToAction.setText(nativeAd.getAdCallToAction());
         sponsoredLabel.setText(nativeAd.getSponsoredTranslation());
 
-        // Create a list of clickable views
-        List<View> clickableViews = new ArrayList<>();
-        clickableViews.add(nativeAdTitle);
-        clickableViews.add(nativeAdCallToAction);
-
         // Register the Title and CTA button to listen for clicks.
-        nativeAd.registerViewForInteraction(adView, nativeAdMedia, nativeAdIcon, clickableViews);
+        nativeAd.registerViewForInteraction(adView, nativeAdMedia);
     }
 
 

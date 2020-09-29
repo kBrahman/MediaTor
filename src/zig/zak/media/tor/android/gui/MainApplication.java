@@ -64,7 +64,7 @@ public class MainApplication extends MultiDexApplication {
         async(LocalSearchEngine::instance);
         async(MainApplication::cleanTemp);
         AudienceNetworkAds.initialize(this);
-        AudienceNetworkAds.isInAdsProcess(this);
+//        AudienceNetworkAds.isInAdsProcess(this);
     }
 
     @Override

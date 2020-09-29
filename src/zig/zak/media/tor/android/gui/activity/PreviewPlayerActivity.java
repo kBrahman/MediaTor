@@ -43,7 +43,6 @@ import android.widget.TextView;
 import com.andrew.apollo.utils.MusicUtils;
 import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
-import com.facebook.ads.AdIconView;
 import com.facebook.ads.AdOptionsView;
 import com.facebook.ads.MediaView;
 import com.facebook.ads.NativeAd;
@@ -56,8 +55,6 @@ import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import zig.zak.media.tor.R;
@@ -138,7 +135,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         // your code like this to the Google Play your users will not receive ads (you will get a no fill error).
         nativeAd = new NativeAd(this, getString(R.string.id_ad_native));
 
-        nativeAd.setAdListener(new NativeAdListener() {
+        NativeAdListener listener = new NativeAdListener() {
             @Override
             public void onMediaDownloaded(Ad ad) {
                 Log.e(TAG, "Native ad finished downloading all assets.");
@@ -171,10 +168,10 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
                 // Native ad impression
                 Log.d(TAG, "Native ad impression logged!");
             }
-        });
-
+        };
+        
         // Request an ad
-        nativeAd.loadAd();
+        nativeAd.loadAd(nativeAd.buildLoadAdConfig().withAdListener(listener).build());
     }
 
     private void inflateAd(NativeAd nativeAd) {
@@ -195,7 +192,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         adChoicesContainer.addView(adOptionsView, 0);
 
         // Create native UI using the ad metadata.
-        AdIconView nativeAdIcon = adView.findViewById(R.id.native_ad_icon);
         TextView nativeAdTitle = adView.findViewById(R.id.native_ad_title);
         MediaView nativeAdMedia = adView.findViewById(R.id.native_ad_media);
         TextView nativeAdSocialContext = adView.findViewById(R.id.native_ad_social_context);
@@ -211,13 +207,8 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         nativeAdCallToAction.setText(nativeAd.getAdCallToAction());
         sponsoredLabel.setText(nativeAd.getSponsoredTranslation());
 
-        // Create a list of clickable views
-        List<View> clickableViews = new ArrayList<>();
-        clickableViews.add(nativeAdTitle);
-        clickableViews.add(nativeAdCallToAction);
-
         // Register the Title and CTA button to listen for clicks.
-        nativeAd.registerViewForInteraction(adView, nativeAdMedia, nativeAdIcon, clickableViews);
+        nativeAd.registerViewForInteraction(adView, nativeAdMedia);
     }
 
     private String getFinalUrl(String url) {
