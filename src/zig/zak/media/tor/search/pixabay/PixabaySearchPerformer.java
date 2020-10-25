@@ -1,20 +1,3 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2017, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package zig.zak.media.tor.search.pixabay;
 
 import java.util.LinkedList;
@@ -26,10 +9,6 @@ import zig.zak.media.tor.search.CrawlPagedWebSearchPerformer;
 import zig.zak.media.tor.search.SearchResult;
 import zig.zak.media.tor.util.JsonUtils;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class PixabaySearchPerformer extends CrawlPagedWebSearchPerformer<PixabaySearchResult> {
 
     static final String API_KEY = BuildConfig.PIXA_KEY;
@@ -40,8 +19,7 @@ public final class PixabaySearchPerformer extends CrawlPagedWebSearchPerformer<P
 
     @Override
     protected String getUrl(int page, String encodedKeywords) {
-        // start with image search, but inject the video later
-        return String.format(Locale.US, "https://pixabay.com/api/?key=%s&q=%s&image_type=photo", API_KEY, encodedKeywords);
+        return String.format(Locale.getDefault(), "https://pixabay.com/api/?key=%s&q=%s&image_type=photo", API_KEY, encodedKeywords);
     }
 
     @Override

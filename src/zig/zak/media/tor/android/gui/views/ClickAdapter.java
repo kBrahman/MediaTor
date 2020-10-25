@@ -19,20 +19,18 @@
 package zig.zak.media.tor.android.gui.views;
 
 import android.content.DialogInterface;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.CompoundButton;
 
-import zig.zak.media.tor.util.Ref;
-
 import java.lang.ref.WeakReference;
 
-/**
- * @author gubatron
- * @author aldenml
- */
+import zig.zak.media.tor.util.Ref;
+
 public abstract class ClickAdapter<T> implements View.OnClickListener, View.OnLongClickListener, View.OnKeyListener, DialogInterface.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
+    private static final String TAG = ClickAdapter.class.getSimpleName();
     protected final WeakReference<T> ownerRef;
 
     public ClickAdapter(T owner) {
@@ -41,6 +39,7 @@ public abstract class ClickAdapter<T> implements View.OnClickListener, View.OnLo
 
     @Override
     public final void onClick(View v) {
+        Log.i(TAG, "on click");
         if (Ref.alive(ownerRef)) {
             onClick(ownerRef.get(), v);
         }

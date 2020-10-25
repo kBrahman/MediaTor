@@ -20,6 +20,9 @@ package zig.zak.media.tor.android.gui.tasks;
 
 import android.content.Context;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.gui.activity.MainActivity;
 import zig.zak.media.tor.android.gui.dialogs.ConfirmSoundcloudDownloadDialog;
@@ -31,13 +34,6 @@ import zig.zak.media.tor.util.HttpClientFactory;
 import zig.zak.media.tor.util.Logger;
 import zig.zak.media.tor.util.http.HttpClient;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/*
- * @author aldenml
- * @author gubatron
- */
 public final class AsyncDownloadSoundcloudFromUrl {
     @SuppressWarnings("unused")
     private static final Logger LOG = Logger.getLogger(AsyncDownloadSoundcloudFromUrl.class);

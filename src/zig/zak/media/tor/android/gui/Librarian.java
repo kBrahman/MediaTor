@@ -265,7 +265,7 @@ public final class Librarian {
             List<Integer> ids = new ArrayList<>(0);
 
             while (c.moveToNext()) {
-                int id = Integer.valueOf(c.getString(idCol));
+                int id = Integer.parseInt(c.getString(idCol));
                 String path = c.getString(pathCol);
 
                 if (ignorableFiles.contains(new File(path))) {

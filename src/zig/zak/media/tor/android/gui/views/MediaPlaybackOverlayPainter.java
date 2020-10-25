@@ -24,11 +24,6 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
 
-/**
- * @author gubatron
- * @author aldenml
- * @author marcelinkaaa
- */
 public class MediaPlaybackOverlayPainter {
     public enum MediaPlaybackState {
         NONE, PLAY, PREVIEW, STOP

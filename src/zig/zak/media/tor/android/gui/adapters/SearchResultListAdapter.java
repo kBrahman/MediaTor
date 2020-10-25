@@ -28,7 +28,6 @@ import zig.zak.media.tor.android.gui.views.ClickAdapter;
 import zig.zak.media.tor.android.gui.views.MediaPlaybackOverlayPainter;
 import zig.zak.media.tor.android.gui.views.MediaPlaybackStatusOverlayView;
 import zig.zak.media.tor.android.util.ImageLoader;
-import zig.zak.media.tor.licenses.Licenses;
 import zig.zak.media.tor.search.FileSearchResult;
 import zig.zak.media.tor.search.KeywordFilter;
 import zig.zak.media.tor.search.SearchResult;
@@ -40,6 +39,7 @@ import zig.zak.media.tor.util.Ref;
 public abstract class SearchResultListAdapter extends AbstractListAdapter<SearchResult> {
 
     private static final int NO_FILE_TYPE = -1;
+    private static final String TAG = SearchResultListAdapter.class.getSimpleName();
     private final PreviewClickListener previewClickListener;
     private int fileType;
     private final ImageLoader thumbLoader;
@@ -54,6 +54,10 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
         this.fileType = NO_FILE_TYPE;
         this.thumbLoader = ImageLoader.getInstance(context);
         this.keywordFiltersPipeline = new LinkedList<>();
+    }
+
+    public PreviewClickListener getPreviewClickListener() {
+        return previewClickListener;
     }
 
     public int getFileType() {
@@ -118,7 +122,6 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
         TextView seeds = findView(view, R.id.view_bittorrent_search_result_list_item_text_seeds);
         seeds.setText("");
 
-        String license = sr.getLicense().equals(Licenses.UNKNOWN) ? "" : " - " + sr.getLicense();
     }
 
     private void populateThumbnail(View view, SearchResult sr) {
@@ -128,10 +131,8 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
         }
 
         MediaPlaybackStatusOverlayView overlayView = findView(view, R.id.view_bittorrent_search_result_list_item_filetype_icon_media_playback_overlay_view);
-        fileTypeIcon.setOnClickListener(previewClickListener);
         if (isAudio(sr)) {
-            fileTypeIcon.setTag(sr);
-            overlayView.setTag(sr);
+            view.setTag(sr);
             overlayView.setVisibility(View.VISIBLE);
             overlayView.setPlaybackState(MediaPlaybackOverlayPainter.MediaPlaybackState.PREVIEW);
             overlayView.setOnClickListener(previewClickListener);
@@ -154,11 +155,10 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
 
     @Override
     protected void onItemClicked(View v) {
-        SearchResult sr = (SearchResult) v.getTag();
-        searchResultClicked(sr);
+        searchResultClicked(v);
     }
 
-    abstract protected void searchResultClicked(SearchResult sr);
+    abstract protected void searchResultClicked(View v);
 
     public FilteredSearchResults filter() {
         long now = SystemClock.currentThreadTimeMillis();
@@ -321,9 +321,10 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
         }
     }
 
-    private static final class PreviewClickListener extends ClickAdapter<Context> {
+    public static final class PreviewClickListener extends ClickAdapter<Context> {
         private static final String TAG = PreviewClickListener.class.getSimpleName();
-        final WeakReference<SearchResultListAdapter> adapterRef;
+
+        public final WeakReference<SearchResultListAdapter> adapterRef;
 
         PreviewClickListener(Context ctx, SearchResultListAdapter adapter) {
             super(ctx);
@@ -332,6 +333,7 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
 
         @Override
         public void onClick(Context ctx, View v) {
+            Log.i(TAG, "v=>" + v.getClass().getSimpleName());
             if (v == null) {
                 return;
             }

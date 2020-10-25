@@ -94,8 +94,6 @@ import static zig.zak.media.tor.android.util.Asyncs.async;
 
 /**
  * Apollo's "now playing" interface.
- *
- * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public final class AudioPlayerActivity extends AbstractActivity implements ServiceConnection, OnSeekBarChangeListener, DeleteDialog.DeleteDialogCallback, ActivityCompat.OnRequestPermissionsResultCallback {
 

@@ -1,36 +1,15 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2016, FrostWire(R). All rights reserved.
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 package zig.zak.media.tor.search;
 
-import zig.zak.media.tor.util.Logger;
+import android.util.Log;
 
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * @author gubatron
- * @author aldenml
- */
+
 public abstract class PagedWebSearchPerformer extends WebSearchPerformer {
 
-    private static final Logger LOG = Logger.getLogger(PagedWebSearchPerformer.class);
+    private static final String TAG = PagedWebSearchPerformer.class.getSimpleName();
 
     private final int pages;
 
@@ -52,6 +31,7 @@ public abstract class PagedWebSearchPerformer extends WebSearchPerformer {
         try {
             url = getUrl(page, getEncodedKeywords());
             String text = fetchSearchPage(url);
+            Log.i(TAG, "txt=>" + text);
             if (text != null) {
                 result = searchPage(text);
             }
@@ -59,7 +39,8 @@ public abstract class PagedWebSearchPerformer extends WebSearchPerformer {
             if (url == null) {
                 url = "n.a";
             }
-            LOG.error("Error searching page [" + url + "]: " + e.getMessage());
+            e.printStackTrace();
+            Log.e(TAG, "Error searching page [" + url + "]: " + e.getMessage());
         }
         return result;
     }

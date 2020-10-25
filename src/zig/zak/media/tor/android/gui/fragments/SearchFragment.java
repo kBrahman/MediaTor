@@ -1,21 +1,3 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml),
- *            Marcelina Knitter (@marcelinkaaa)
- * Copyright (c) 2011-2018, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package zig.zak.media.tor.android.gui.fragments;
 
 import android.app.Activity;
@@ -342,9 +324,12 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         if (adapter == null) {
             adapter = new SearchResultListAdapter(getActivity()) {
                 @Override
-                protected void searchResultClicked(SearchResult sr) {
+                protected void searchResultClicked(View v) {
+                    SearchResult sr = (SearchResult) v.getTag();
                     if (!(sr instanceof SoundCloudSearchResult)) {
                         startTransfer(sr, getString(R.string.download_added_to_queue));
+                    } else {
+                        getPreviewClickListener().onClick(v);
                     }
                 }
             };

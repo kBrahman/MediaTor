@@ -1,21 +1,3 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2018, FrostWire(R). All rights reserved.
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 package zig.zak.media.tor.search.soundcloud;
 
 import android.util.Log;
@@ -46,6 +28,27 @@ public final class SoundCloudSearchPerformer extends PagedWebSearchPerformer {
         return "https://api-v2.soundcloud.com/search?q=" + encodedKeywords + "&limit=50&offset=0&client_id=" + SOUND_CLOUD_CLIENT_ID;
     }
 
+    private String buildDownloadUrl(SoundcloudItem item) {
+        String downloadUrl;
+        List<Tanscoding> transcodings = item.media.getTranscodings();
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            Tanscoding t = transcodings.stream().filter(e -> e.getUrl().endsWith("/progressive")).findAny().orElse(null);
+            if (t == null) return null;
+            downloadUrl = t.getUrl();
+        } else {
+            downloadUrl = getUrl(transcodings);
+        }
+        return downloadUrl + "?client_id=" + SOUND_CLOUD_CLIENT_ID;
+    }
+
+    private String getUrl(List<Tanscoding> transcodings) {
+        for (Tanscoding transcoding : transcodings) {
+            String url = transcoding.getUrl();
+            if (url.endsWith("/progressive")) return url;
+        }
+        return null;
+    }
+
     @Override
     protected List<? extends SearchResult> searchPage(String page) {
         List<SearchResult> result = new LinkedList<>();
@@ -55,7 +58,9 @@ public final class SoundCloudSearchPerformer extends PagedWebSearchPerformer {
             for (int i = 0; i < arr.length(); i++) {
                 SoundcloudItem item = JsonUtils.toObject(arr.get(i).toString(), SoundcloudItem.class);
                 if (!isStopped() && item != null && item.media != null) {
-                    SoundCloudSearchResult sr = new SoundCloudSearchResult(item, SOUND_CLOUD_CLIENT_ID);
+                    String url = buildDownloadUrl(item);
+                    if (url == null) continue;
+                    SoundCloudSearchResult sr = new SoundCloudSearchResult(item, url);
                     result.add(sr);
                 }
             }

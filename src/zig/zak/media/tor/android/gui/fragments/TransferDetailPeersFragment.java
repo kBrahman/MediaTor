@@ -19,26 +19,22 @@
 package zig.zak.media.tor.android.gui.fragments;
 
 import android.content.res.Resources;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import zig.zak.media.tor.R;
-import zig.zak.media.tor.android.gui.util.UIUtils;
-import zig.zak.media.tor.android.gui.views.AbstractTransferDetailFragment;
 import com.frostwire.jlibtorrent.PeerInfo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author gubatron
- * @author aldenml
- * @author marcelinkaaa
- */
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import zig.zak.media.tor.R;
+import zig.zak.media.tor.android.gui.util.UIUtils;
+import zig.zak.media.tor.android.gui.views.AbstractTransferDetailFragment;
+
 public class TransferDetailPeersFragment extends AbstractTransferDetailFragment {
 
     private TextView peerNumberTextView;
@@ -102,10 +98,7 @@ public class TransferDetailPeersFragment extends AbstractTransferDetailFragment 
         private TextView uploadedTextView;
 
         enum PeerSourceType {
-            tracker(0x1, R.string.tracker),
-            dht(0x2, R.string.dht),
-            pex(0x4, R.string.pex),
-            lsd(0x8, R.string.lsd);
+            tracker(0x1, R.string.tracker), dht(0x2, R.string.dht), pex(0x4, R.string.pex), lsd(0x8, R.string.lsd);
 
             private final int bitFlag;
             private final int stringId;
@@ -178,9 +171,12 @@ public class TransferDetailPeersFragment extends AbstractTransferDetailFragment 
 
     private static String connectionTypeAsString(PeerInfo.ConnectionType t, int flags) {
         switch (t) {
-            case WEB_SEED: return "web_seed";
-            case HTTP_SEED: return "http_seed";
-            default: return (flags & utp_socket) == utp_socket ? "uTP" : "bt";
+            case WEB_SEED:
+                return "web_seed";
+            case HTTP_SEED:
+                return "http_seed";
+            default:
+                return (flags & utp_socket) == utp_socket ? "uTP" : "bt";
         }
     }
 

@@ -30,7 +30,7 @@
         style="@style/AppTabLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/basic_cburgundy"
+        android:background="@color/basic_burgundy"
         app:tabMode="scrollable" />
 
     <!--<android.support.v4.view.ViewPager-->

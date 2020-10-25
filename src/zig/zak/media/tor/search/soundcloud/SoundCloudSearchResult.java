@@ -18,13 +18,14 @@
 package zig.zak.media.tor.search.soundcloud;
 
 import java.text.SimpleDateFormat;
-import java.util.List;
 import java.util.Locale;
 
+import androidx.annotation.Keep;
 import zig.zak.media.tor.search.AbstractFileSearchResult;
 import zig.zak.media.tor.search.HttpSearchResult;
 import zig.zak.media.tor.search.StreamableSearchResult;
 
+@Keep
 public final class SoundCloudSearchResult extends AbstractFileSearchResult implements HttpSearchResult, StreamableSearchResult {
 
     private static final String DATE_FORMAT = "yyyy/mm/dd HH:mm:ss Z";
@@ -39,7 +40,7 @@ public final class SoundCloudSearchResult extends AbstractFileSearchResult imple
     private final String downloadUrl;
     private final long size;
 
-    SoundCloudSearchResult(SoundcloudItem item, String clientId) {
+    SoundCloudSearchResult(SoundcloudItem item, String downloadUrl) {
         this.displayName = item.title;
         this.username = buildUsername(item);
         this.trackUrl = item.permalink_url;
@@ -54,7 +55,7 @@ public final class SoundCloudSearchResult extends AbstractFileSearchResult imple
         this.thumbnailUrl = buildThumbnailUrl(item.artwork_url != null ? item.artwork_url : userAvatarUrl);
 
         this.date = buildDate(item.created_at);
-        this.downloadUrl = buildDownloadUrl(item, clientId);
+        this.downloadUrl = downloadUrl;
     }
 
     @Override
@@ -145,25 +146,6 @@ public final class SoundCloudSearchResult extends AbstractFileSearchResult imple
         } catch (Throwable e) {
             return System.currentTimeMillis();
         }
-    }
-
-    private String buildDownloadUrl(SoundcloudItem item, String clientId) {
-        String downloadUrl;
-        List<Tanscoding> transcodings = item.media.getTranscodings();
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            downloadUrl = transcodings.stream().filter(t -> t.getUrl().endsWith("/progressive")).findAny().get().getUrl();
-        } else {
-            downloadUrl = getUrl(transcodings);
-        }
-        return downloadUrl + "?client_id=" + clientId;
-    }
-
-    private String getUrl(List<Tanscoding> transcodings) {
-        for (Tanscoding transcoding : transcodings) {
-            String url = transcoding.getUrl();
-            if (url.endsWith("/progressive")) return url;
-        }
-        return null;
     }
 
     @Override

@@ -1,20 +1,3 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2018, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package zig.zak.media.tor.bittorrent;
 
 import com.frostwire.jlibtorrent.AlertListener;
@@ -807,21 +790,17 @@ public final class BTEngine extends SessionManager {
     }
 
     private static String dhtBootstrapNodes() {
-        StringBuilder sb = new StringBuilder();
 
-        sb.append("dht.libtorrent.org:25401").append(",");
-        sb.append("router.bittorrent.com:6881").append(",");
-        sb.append("dht.transmissionbt.com:6881").append(",");
-        // for DHT IPv6
-        sb.append("router.silotis.us:6881");
-
-        return sb.toString();
+        String sb = "dht.libtorrent.org:25401" + "," + "router.bittorrent.com:6881" + "," + "dht.transmissionbt.com:6881" + "," +
+                // for DHT IPv6
+                "router.silotis.us:6881";
+        return sb;
     }
 
     private static SettingsPack defaultSettings() {
         SettingsPack sp = new SettingsPack();
 
-        sp.broadcastLSD(true);
+//        sp.broadcastLSD(true);
 
         if (ctx.optimizeMemory) {
             int maxQueuedDiskBytes = sp.maxQueuedDiskBytes();

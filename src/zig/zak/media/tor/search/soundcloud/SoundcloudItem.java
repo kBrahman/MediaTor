@@ -1,5 +1,8 @@
 package zig.zak.media.tor.search.soundcloud;
 
+import androidx.annotation.Keep;
+
+@Keep
 final class SoundcloudItem {
 
     public int id;
@@ -10,8 +13,6 @@ final class SoundcloudItem {
     public String title;
     public String permalink_url;
     public String artwork_url;
-    public String stream_url;
     public String created_at;
     public boolean downloadable;
-    public String download_url;
 }

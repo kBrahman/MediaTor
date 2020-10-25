@@ -1,43 +1,20 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml),
- *            Marcelina Knitter (@marcelinkaaa)
- * Copyright (c) 2011-2018, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package zig.zak.media.tor.android.gui.activity;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
+import android.os.Handler;
 import android.util.Log;
-import android.view.Display;
 import android.view.LayoutInflater;
-import android.view.TextureView;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.andrew.apollo.utils.MusicUtils;
@@ -57,6 +34,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
+import androidx.annotation.NonNull;
 import zig.zak.media.tor.R;
 import zig.zak.media.tor.android.core.Constants;
 import zig.zak.media.tor.android.core.player.CoreMediaPlayer;
@@ -69,7 +47,7 @@ import zig.zak.media.tor.util.Logger;
 import zig.zak.media.tor.util.Ref;
 
 
-public final class PreviewPlayerActivity extends AbstractActivity implements AbstractDialog.OnDialogClickListener, MediaPlayer.OnBufferingUpdateListener, MediaPlayer.OnCompletionListener, MediaPlayer.OnPreparedListener, MediaPlayer.OnInfoListener, AudioManager.OnAudioFocusChangeListener {
+public final class PreviewPlayerActivity extends AbstractActivity implements AbstractDialog.OnDialogClickListener, MediaPlayer.OnBufferingUpdateListener, MediaPlayer.OnCompletionListener, MediaPlayer.OnPreparedListener, MediaPlayer.OnInfoListener, AudioManager.OnAudioFocusChangeListener, SeekBar.OnSeekBarChangeListener, Runnable {
 
     private static final Logger LOG = Logger.getLogger(PreviewPlayerActivity.class);
     private static final String TAG = PreviewPlayerActivity.class.getSimpleName();
@@ -82,12 +60,13 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
     private boolean isFullScreen = false;
     private boolean changedActionBarTitleToNonBuffering = false;
     private NativeAd nativeAd;
+    private SeekBar seekBar;
+    private final Handler handler = new Handler();
 
     public PreviewPlayerActivity() {
         super(R.layout.activity_preview_player);
     }
 
-    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void initComponents(Bundle savedInstanceState) {
         Intent i = getIntent();
@@ -95,9 +74,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
             finish();
             return;
         }
-
         stopAnyOtherPlayers();
-
         displayName = i.getStringExtra("displayName");
         source = i.getStringExtra("source");
         streamUrl = i.getStringExtra("streamUrl");
@@ -107,6 +84,19 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         setTitle(getString(R.string.media_preview, getString(mediaTypeStrId)) + getString(R.string.buffering));
         final TextView trackName = findView(R.id.activity_preview_player_track_name);
         final TextView artistName = findView(R.id.activity_preview_player_artist_name);
+        seekBar = findViewById(R.id.sb);
+        seekBar.setOnSeekBarChangeListener(this);
+
+        findViewById(R.id.play).setOnClickListener((v) -> {
+            ImageButton button = (ImageButton) v;
+            if (androidMediaPlayer.isPlaying()) {
+                androidMediaPlayer.pause();
+                button.setImageResource(android.R.drawable.ic_media_play);
+            } else {
+                androidMediaPlayer.start();
+                button.setImageResource(android.R.drawable.ic_media_pause);
+            }
+        });
         trackName.setText(displayName);
         artistName.setText(source);
         play();
@@ -114,7 +104,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
         if (outState != null) {
             super.onSaveInstanceState(outState);
             outState.putString("displayName", displayName);
@@ -169,7 +159,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
                 Log.d(TAG, "Native ad impression logged!");
             }
         };
-        
+
         // Request an ad
         nativeAd.loadAd(nativeAd.buildLoadAdConfig().withAdListener(listener).build());
     }
@@ -248,82 +238,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         }
     }
 
-    private boolean isPortrait() {
-        return getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
-    }
-
-    private void toggleFullScreen(TextureView v) {
-        DisplayMetrics metrics = new DisplayMetrics();
-        final Display defaultDisplay = getWindowManager().getDefaultDisplay();
-        defaultDisplay.getMetrics(metrics);
-
-        boolean isPortrait = isPortrait();
-
-        final FrameLayout frameLayout = findView(R.id.activity_preview_player_frameLayout);
-        LinearLayout.LayoutParams frameLayoutParams = (LinearLayout.LayoutParams) frameLayout.getLayoutParams();
-
-        LinearLayout playerMetadataHeader = findView(R.id.activity_preview_player_metadata_header);
-        // these ones only exist on landscape mode.
-        ViewGroup rightSide = findView(R.id.activity_preview_player_right_side);
-
-        // Let's Go into full screen mode.
-        if (!isFullScreen) {
-            //hides the status bar
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-            findToolbar().setVisibility(View.GONE);
-            setViewsVisibility(View.GONE, playerMetadataHeader, rightSide);
-
-            if (isPortrait) {
-                //noinspection SuspiciousNameCombination
-                frameLayoutParams.width = metrics.heightPixels;
-                //noinspection SuspiciousNameCombination
-                frameLayoutParams.height = metrics.widthPixels;
-            } else {
-                frameLayoutParams.width = metrics.widthPixels;
-                frameLayoutParams.height = metrics.heightPixels;
-            }
-            isFullScreen = true;
-        } else {
-            // restore components back from full screen mode.
-            //final TextureView videoTexture = findView(R.id.activity_preview_player_videoview);
-
-            //restores the status bar to view
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-            findToolbar().setVisibility(View.VISIBLE);
-            setViewsVisibility(View.VISIBLE, playerMetadataHeader, rightSide);
-            v.setRotation(0);
-
-            // restore the thumbnail on the way back only if doing audio preview.
-            //thumbnail.setVisibility(!audio ? View.GONE : View.VISIBLE);
-            frameLayoutParams.width = FrameLayout.LayoutParams.MATCH_PARENT;
-            frameLayoutParams.height = FrameLayout.LayoutParams.MATCH_PARENT;
-            frameLayoutParams.weight = 1.0f;
-
-            isFullScreen = false;
-        }
-
-        frameLayout.setLayoutParams(frameLayoutParams);
-    }
-
-    /**
-     * Utility method: change the visibility for a bunch of views. Skips null views.
-     */
-    private void setViewsVisibility(int visibility, View... views) {
-        if (visibility != View.INVISIBLE && visibility != View.VISIBLE && visibility != View.GONE) {
-            throw new IllegalArgumentException("Invalid visibility constant");
-        }
-        if (views == null) {
-            throw new IllegalArgumentException("Views argument can't be null");
-        }
-        for (View v : views) {
-            if (v != null) {
-                v.setVisibility(visibility);
-            }
-        }
-    }
-
     private void releaseMediaPlayer() {
         if (androidMediaPlayer != null) {
             androidMediaPlayer.stop();
@@ -343,11 +257,9 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
     }
 
     public void play() {
-        Log.i(TAG, "onSurfaceTextureAvailable");
         Thread t = new Thread("PreviewPlayerActivity-onSurfaceTextureAvailable") {
             @Override
             public void run() {
-                Log.i(TAG, "stream url=>" + streamUrl);
                 final String url = getFinalUrl(streamUrl);
                 final Uri uri = Uri.parse(url);
                 androidMediaPlayer = new MediaPlayer();
@@ -359,6 +271,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
                     androidMediaPlayer.setOnInfoListener(PreviewPlayerActivity.this);
                     androidMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
                     androidMediaPlayer.prepare();
+                    startSeekBar();
                     androidMediaPlayer.start();
                     if (MusicUtils.isPlaying()) {
                         MusicUtils.playOrPause();
@@ -443,6 +356,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
 
     @Override
     protected void onDestroy() {
+        handler.removeCallbacks(this);
         stopAnyOtherPlayers();
         releaseMediaPlayer();
         super.onDestroy();
@@ -469,5 +383,36 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
             int mediaTypeStrId = R.string.audio;
             setTitle(getString(R.string.media_preview, getString(mediaTypeStrId)));
         }
+    }
+
+    private void startSeekBar() {
+        handler.postDelayed(this, 1000);
+    }
+
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        if (fromUser) {
+            seekBar.setProgress(progress);
+            androidMediaPlayer.seekTo(progress * androidMediaPlayer.getDuration() / 100);
+        }
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void run() {
+        if (androidMediaPlayer==null)return;
+        int currentPosition = androidMediaPlayer.getCurrentPosition();
+        int progress = currentPosition * 100 / androidMediaPlayer.getDuration();
+        seekBar.setProgress(progress);
+        startSeekBar();
     }
 }

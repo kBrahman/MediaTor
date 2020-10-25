@@ -18,10 +18,6 @@
 
 package zig.zak.media.tor.search.soundcloud;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 final class SoundcloundUser {
 
     public int id;
