@@ -58,12 +58,12 @@ import com.andrew.apollo.widgets.ShuffleButton;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
-import zig.zak.media.tor.R;;
-import zig.zak.media.tor.android.gui.adapters.menu.CreateNewPlaylistMenuAction;
-import zig.zak.media.tor.android.gui.util.DangerousPermissionsChecker;
-import zig.zak.media.tor.android.gui.util.UIUtils;
-import zig.zak.media.tor.android.gui.util.WriteSettingsPermissionActivityHelper;
-import zig.zak.media.tor.android.gui.views.AbstractActivity;
+import z.zer.tor.media.R;
+import z.zer.tor.media.android.gui.adapters.menu.CreateNewPlaylistMenuAction;
+import z.zer.tor.media.android.gui.util.DangerousPermissionsChecker;
+import z.zer.tor.media.android.gui.util.UIUtils;
+import z.zer.tor.media.android.gui.util.WriteSettingsPermissionActivityHelper;
+import z.zer.tor.media.android.gui.views.AbstractActivity;
 
 import static com.andrew.apollo.utils.MusicUtils.musicPlaybackService;
 

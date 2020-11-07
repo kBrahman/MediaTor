@@ -50,8 +50,8 @@ import com.andrew.apollo.utils.PreferenceUtils;
 import com.andrew.apollo.utils.SortOrder;
 import com.andrew.apollo.widgets.ProfileTabCarousel;
 import com.andrew.apollo.widgets.ProfileTabCarousel.Listener;
-import zig.zak.media.tor.R;
-import zig.zak.media.tor.util.Ref;
+import z.zer.tor.media.R;
+import z.zer.tor.media.util.Ref;
 
 /**
  * The {@link Activity} is used to display the data for specific

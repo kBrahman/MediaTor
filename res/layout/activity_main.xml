@@ -27,26 +27,26 @@
 
                 <fragment
                     android:id="@+id/activity_main_fragment_search"
-                    android:name="zig.zak.media.tor.android.gui.fragments.SearchFragment"
+                    android:name="z.zer.tor.media.android.gui.fragments.SearchFragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:tag="search_fragment" />
 
                 <fragment
                     android:id="@+id/activity_main_fragment_my_files"
-                    android:name="zig.zak.media.tor.android.gui.fragments.MyFilesFragment"
+                    android:name="z.zer.tor.media.android.gui.fragments.MyFilesFragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
                 <fragment
                     android:id="@+id/activity_main_fragment_transfers"
-                    android:name="zig.zak.media.tor.android.gui.fragments.TransfersFragment"
+                    android:name="z.zer.tor.media.android.gui.fragments.TransfersFragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:tag="transfers_fragment" />
             </FrameLayout>
 
-            <zig.zak.media.tor.android.gui.views.MiniPlayerView
+            <z.zer.tor.media.android.gui.views.MiniPlayerView
                 android:id="@+id/activity_main_player_notifier"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
             app:itemTextColor="@color/app_text_primary"
             app:menu="@menu/nav_view_menu" />
 
-        <zig.zak.media.tor.android.gui.views.KeywordFilterDrawerView
+        <z.zer.tor.media.android.gui.views.KeywordFilterDrawerView
             android:id="@+id/activity_main_keyword_filter_drawer_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

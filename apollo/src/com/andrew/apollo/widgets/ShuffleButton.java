@@ -25,7 +25,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 
 import com.andrew.apollo.utils.MusicUtils;
-import zig.zak.media.tor.R;
+import z.zer.tor.media.R;
 
 /**
  * @author Andrew Neal (andrewdneal@gmail.com)

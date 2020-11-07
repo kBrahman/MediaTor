@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <zig.zak.media.tor.android.offers.SearchHeaderBanner
+    <z.zer.tor.media.android.offers.SearchHeaderBanner
         android:id="@+id/fragment_search_header_banner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -18,7 +18,7 @@
         android:indeterminate="true"
         android:progress="25"/>
 
-    <zig.zak.media.tor.android.gui.views.SearchInputView
+    <z.zer.tor.media.android.gui.views.SearchInputView
         android:id="@+id/fragment_search_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -29,7 +29,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"/>
 
-    <zig.zak.media.tor.android.gui.views.SwipeLayout
+    <z.zer.tor.media.android.gui.views.SwipeLayout
         android:id="@+id/fragment_search_swipe"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -52,5 +52,5 @@
                 android:dividerHeight="0dp"
                 android:groupIndicator="@null"/>
         </FrameLayout>
-    </zig.zak.media.tor.android.gui.views.SwipeLayout>
+    </z.zer.tor.media.android.gui.views.SwipeLayout>
 </LinearLayout>

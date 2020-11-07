@@ -29,7 +29,7 @@ import com.andrew.apollo.utils.ApolloUtils;
 import com.andrew.apollo.utils.MusicUtils;
 
 import androidx.appcompat.widget.AppCompatImageButton;
-import zig.zak.media.tor.R;
+import z.zer.tor.media.R;
 
 /**
  * A custom {@link ImageButton} that represents the "play and pause" button.

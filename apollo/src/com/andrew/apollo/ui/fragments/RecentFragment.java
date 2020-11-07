@@ -37,9 +37,9 @@ import com.andrew.apollo.utils.PreferenceUtils;
 
 import java.util.List;
 
-import zig.zak.media.tor.R;
+import z.zer.tor.media.R;
 
-import static zig.zak.media.tor.android.util.Asyncs.async;
+import static z.zer.tor.media.android.util.Asyncs.async;
 
 /**
  * This class is used to display all of the recently listened to albums by the

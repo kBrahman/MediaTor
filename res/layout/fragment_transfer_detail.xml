@@ -30,11 +30,11 @@
         style="@style/AppTabLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/basic_burgundy"
+        android:background="@color/colorPrimary"
         app:tabMode="scrollable" />
 
     <!--<android.support.v4.view.ViewPager-->
-    <zig.zak.media.tor.android.gui.views.NonSmoothViewPager
+    <z.zer.tor.media.android.gui.views.NonSmoothViewPager
         android:id="@+id/transfer_detail_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

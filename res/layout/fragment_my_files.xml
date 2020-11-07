@@ -111,7 +111,7 @@
         android:layout_weight="1"
         android:padding="1dp">
 
-        <zig.zak.media.tor.android.gui.views.SwipeLayout
+        <z.zer.tor.media.android.gui.views.SwipeLayout
             android:id="@+id/fragment_my_files_swipe"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -136,7 +136,7 @@
                     android:verticalSpacing="1dp" />
 
             </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-        </zig.zak.media.tor.android.gui.views.SwipeLayout>
+        </z.zer.tor.media.android.gui.views.SwipeLayout>
 
     </FrameLayout>
 

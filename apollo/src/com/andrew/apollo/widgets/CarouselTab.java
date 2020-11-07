@@ -25,8 +25,8 @@ import com.andrew.apollo.utils.ApolloUtils;
 import com.andrew.apollo.utils.BitmapUtils;
 import com.andrew.apollo.utils.MusicUtils;
 
-import zig.zak.media.tor.R;;
-import zig.zak.media.tor.android.util.ImageLoader;
+import z.zer.tor.media.R;
+import z.zer.tor.media.android.util.ImageLoader;
 
 /**
  * @author Andrew Neal (andrewdneal@gmail.com)

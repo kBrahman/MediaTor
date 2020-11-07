@@ -54,20 +54,20 @@ import com.andrew.apollo.provider.RecentStore;
 import com.andrew.apollo.ui.activities.AudioPlayerActivity;
 import com.andrew.apollo.utils.MusicUtils;
 
-import zig.zak.media.tor.BuildConfig;
-import zig.zak.media.tor.R;
-import zig.zak.media.tor.android.core.ConfigurationManager;
-import zig.zak.media.tor.android.core.Constants;
-import zig.zak.media.tor.android.util.Asyncs;
-import zig.zak.media.tor.util.Logger;
-import zig.zak.media.tor.util.Ref;
+import z.zer.tor.media.BuildConfig;
+import z.zer.tor.media.R;
+import z.zer.tor.media.android.core.ConfigurationManager;
+import z.zer.tor.media.android.core.Constants;
+import z.zer.tor.media.android.util.Asyncs;
+import z.zer.tor.media.util.Logger;
+import z.zer.tor.media.util.Ref;
 
 import java.lang.ref.WeakReference;
 import java.util.Random;
 import java.util.Stack;
 
-import static zig.zak.media.tor.android.util.Asyncs.async;
-import static zig.zak.media.tor.android.util.RunStrict.runStrict;
+import static z.zer.tor.media.android.util.Asyncs.async;
+import static z.zer.tor.media.android.util.RunStrict.runStrict;
 
 /**
  * A background {@link Service} used to keep music playing between activities

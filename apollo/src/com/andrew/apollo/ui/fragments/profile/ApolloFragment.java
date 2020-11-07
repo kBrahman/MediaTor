@@ -61,20 +61,12 @@ import com.devspark.appmsg.AppMsg;
 
 import java.util.List;
 
-import zig.zak.media.tor.R;;
-import zig.zak.media.tor.android.core.Constants;
-import zig.zak.media.tor.android.gui.util.WriteSettingsPermissionActivityHelper;
+import z.zer.tor.media.R;
+import z.zer.tor.media.android.core.Constants;
+import z.zer.tor.media.android.gui.util.WriteSettingsPermissionActivityHelper;
 
-import static zig.zak.media.tor.android.util.Asyncs.async;
+import static z.zer.tor.media.android.util.Asyncs.async;
 
-
-/**
- * Created on 1/26/16 in a plane.
- *
- * @author Angel Leon (@gubatron)
- * @author Alden Torres (@aldenml)
- * @author Jose Molina (@votaguz)
- */
 public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I> extends Fragment implements LoaderManager.LoaderCallbacks<List<I>>, AdapterView.OnItemClickListener, MusicStateListener {
 
     private final int GROUP_ID;

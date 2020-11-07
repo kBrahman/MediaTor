@@ -21,7 +21,7 @@ import com.andrew.apollo.ui.MusicViewHolder;
 import com.andrew.apollo.ui.fragments.profile.*;
 import com.andrew.apollo.utils.MusicUtils;
 
-import zig.zak.media.tor.R;;
+import z.zer.tor.media.R;
 
 /**
  * This {@link ArrayAdapter} is used to display the songs for a particular

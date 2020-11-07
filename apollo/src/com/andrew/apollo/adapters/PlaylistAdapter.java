@@ -24,8 +24,8 @@ import com.andrew.apollo.ui.MusicViewHolder;
 import com.andrew.apollo.ui.MusicViewHolder.DataHolder;
 import com.andrew.apollo.ui.fragments.PlaylistFragment;
 import com.andrew.apollo.utils.MusicUtils;
-import zig.zak.media.tor.R;
-import zig.zak.media.tor.android.gui.adapters.menu.CreateNewPlaylistMenuAction;
+import z.zer.tor.media.R;
+import z.zer.tor.media.android.gui.adapters.menu.CreateNewPlaylistMenuAction;
 
 /**
  * This {@link ArrayAdapter} is used to display all of the playlists on a user's

@@ -23,21 +23,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <zig.zak.media.tor.android.gui.views.ViewFlipper
+    <z.zer.tor.media.android.gui.views.ViewFlipper
         android:id="@+id/activity_wizard_view_flipper"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="5dp"
         android:layout_weight="1.0">
 
-        <zig.zak.media.tor.android.gui.views.GeneralWizardPage
+        <z.zer.tor.media.android.gui.views.GeneralWizardPage
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <zig.zak.media.tor.android.gui.views.IntentWizardPage
+        <z.zer.tor.media.android.gui.views.IntentWizardPage
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    </zig.zak.media.tor.android.gui.views.ViewFlipper>
+    </z.zer.tor.media.android.gui.views.ViewFlipper>
 
     <LinearLayout
         android:id="@+id/activity_wizard_buttons"

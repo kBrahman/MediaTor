@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:background="@drawable/rounded_corner"
-            android:backgroundTint="@color/basic_burgundy"
+            android:backgroundTint="@color/colorPrimary"
             android:src="@android:drawable/ic_media_pause"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -68,6 +68,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
+            android:thumbTint="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="@id/play"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/play"

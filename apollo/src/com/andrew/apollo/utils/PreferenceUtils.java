@@ -25,7 +25,7 @@ import com.andrew.apollo.ui.fragments.phone.MusicBrowserPhoneFragment;
 import com.andrew.apollo.ui.fragments.profile.AlbumSongFragment;
 import com.andrew.apollo.ui.fragments.profile.ArtistAlbumFragment;
 import com.andrew.apollo.ui.fragments.profile.ArtistSongFragment;
-import zig.zak.media.tor.android.core.ConfigurationManager;
+import z.zer.tor.media.android.core.ConfigurationManager;
 
 /**
  * A collection of helpers designed to get and set various preferences across

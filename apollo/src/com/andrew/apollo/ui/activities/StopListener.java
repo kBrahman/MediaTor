@@ -22,13 +22,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import com.andrew.apollo.utils.MusicUtils;
-import zig.zak.media.tor.android.core.Constants;
-import zig.zak.media.tor.android.gui.services.Engine;
-import zig.zak.media.tor.util.Ref;
+import z.zer.tor.media.android.core.Constants;
+import z.zer.tor.media.android.gui.services.Engine;
+import z.zer.tor.media.util.Ref;
 
 import java.lang.ref.WeakReference;
 
-import static zig.zak.media.tor.android.util.Asyncs.async;
+import static z.zer.tor.media.android.util.Asyncs.async;
 
 /**
  * @author gubatron

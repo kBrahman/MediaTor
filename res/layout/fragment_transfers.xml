@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/basic_burgundy"
+        android:background="@color/colorPrimary"
         android:orientation="vertical">
 
         <View
@@ -25,7 +25,7 @@
             android:focusableInTouchMode="true"
             android:orientation="horizontal" />
 
-        <zig.zak.media.tor.android.gui.views.ClearableEditTextView
+        <z.zer.tor.media.android.gui.views.ClearableEditTextView
             android:id="@+id/fragment_transfers_add_transfer_text_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
         style="@style/AppTabLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/basic_burgundy"
+        android:background="@color/colorPrimary"
         app:tabMode="scrollable">
 
         <com.google.android.material.tabs.TabItem
@@ -72,7 +72,7 @@
             android:text="@string/transfers_select_completed" />
     </com.google.android.material.tabs.TabLayout>
 
-    <zig.zak.media.tor.android.gui.views.RichNotification
+    <z.zer.tor.media.android.gui.views.RichNotification
         android:id="@+id/fragment_transfers_sd_card_notification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
         frostwire:rich_notification_title="@string/saving_to_sd_card"
         frostwire:rich_notification_title_underlined="true" />
 
-    <zig.zak.media.tor.android.gui.views.RichNotification
+    <z.zer.tor.media.android.gui.views.RichNotification
         android:id="@+id/fragment_transfers_internal_memory_notification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <zig.zak.media.tor.android.gui.views.TransfersNoSeedsView
+            <z.zer.tor.media.android.gui.views.TransfersNoSeedsView
                 android:id="@+id/fragment_transfers_no_seeds_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -110,7 +110,7 @@
 
         </ScrollView>
 
-        <zig.zak.media.tor.android.gui.views.SwipeLayout
+        <z.zer.tor.media.android.gui.views.SwipeLayout
             android:id="@+id/fragment_transfers_swipe"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -126,7 +126,7 @@
                 android:dividerHeight="0dp"
                 android:groupIndicator="@null" />
 
-        </zig.zak.media.tor.android.gui.views.SwipeLayout>
+        </z.zer.tor.media.android.gui.views.SwipeLayout>
 
         <TextView
             android:id="@+id/fragment_transfers_vpn_notification"

@@ -25,8 +25,8 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.widget.ImageView;
 
-import zig.zak.media.tor.R;;
-import zig.zak.media.tor.android.util.ImageLoader;
+import z.zer.tor.media.R;
+import z.zer.tor.media.android.util.ImageLoader;
 
 /**
  * This class wraps up completing some arbitrary long running work when loading

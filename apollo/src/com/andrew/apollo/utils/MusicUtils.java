@@ -60,13 +60,13 @@ import com.andrew.apollo.provider.FavoritesStore;
 import com.andrew.apollo.provider.FavoritesStore.FavoriteColumns;
 import com.andrew.apollo.provider.RecentStore;
 import com.devspark.appmsg.AppMsg;
-import zig.zak.media.tor.R;
-import zig.zak.media.tor.android.core.Constants;
-import zig.zak.media.tor.android.gui.util.UIUtils;
-import zig.zak.media.tor.android.util.SystemUtils;
-import zig.zak.media.tor.platform.FileSystem;
-import zig.zak.media.tor.platform.Platforms;
-import zig.zak.media.tor.util.Logger;
+import z.zer.tor.media.R;
+import z.zer.tor.media.android.core.Constants;
+import z.zer.tor.media.android.gui.util.UIUtils;
+import z.zer.tor.media.android.util.SystemUtils;
+import z.zer.tor.media.platform.FileSystem;
+import z.zer.tor.media.platform.Platforms;
+import z.zer.tor.media.util.Logger;
 
 import org.apache.commons.lang3.ArrayUtils;
 

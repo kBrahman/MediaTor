@@ -62,8 +62,8 @@ import com.andrew.apollo.utils.ApolloUtils;
 import com.andrew.apollo.utils.MusicUtils;
 import com.andrew.apollo.utils.MusicUtils.ServiceToken;
 import com.andrew.apollo.utils.NavUtils;
-import zig.zak.media.tor.R;
-import zig.zak.media.tor.android.gui.views.AbstractActivity;
+import z.zer.tor.media.R;
+import z.zer.tor.media.android.gui.views.AbstractActivity;
 
 import java.util.Locale;
 

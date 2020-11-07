@@ -25,8 +25,8 @@ import com.andrew.apollo.ui.MusicViewHolder;
 import com.andrew.apollo.ui.fragments.profile.ArtistAlbumFragment;
 import com.andrew.apollo.utils.MusicUtils;
 
-import zig.zak.media.tor.R;;
-import zig.zak.media.tor.util.Ref;
+import z.zer.tor.media.R;
+import z.zer.tor.media.util.Ref;
 
 
 /**

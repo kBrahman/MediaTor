@@ -24,7 +24,7 @@
     android:layout_height="match_parent"
     android:background="@color/app_background_white"
     android:orientation="vertical"
-    tools:context="zig.zak.media.tor.android.gui.activity.TransferDetailActivity">
+    tools:context="z.zer.tor.media.android.gui.activity.TransferDetailActivity">
 
     <include layout="@layout/toolbar_main" />
 
@@ -35,7 +35,7 @@
 
     <fragment
         android:id="@+id/fragment_transfer_detail"
-        android:name="zig.zak.media.tor.android.gui.fragments.TransferDetailFragment"
+        android:name="z.zer.tor.media.android.gui.fragments.TransferDetailFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_transfer_detail" />

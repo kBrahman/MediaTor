@@ -30,7 +30,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import zig.zak.media.tor.R;;
+import z.zer.tor.media.R;
 
 
 /**

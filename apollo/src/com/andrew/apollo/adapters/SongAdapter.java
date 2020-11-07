@@ -33,10 +33,10 @@ import com.andrew.apollo.utils.MusicUtils;
 
 import java.util.List;
 
-import zig.zak.media.tor.R;
-import zig.zak.media.tor.util.Ref;
+import z.zer.tor.media.R;
+import z.zer.tor.media.util.Ref;
 
-import static zig.zak.media.tor.android.util.Asyncs.async;
+import static z.zer.tor.media.android.util.Asyncs.async;
 
 /**
  * This {@link ArrayAdapter} is used to display all of the songs on a user's

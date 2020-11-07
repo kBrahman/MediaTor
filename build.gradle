@@ -34,9 +34,9 @@ keystoreProperties.load(rootProject.file("keystore.properties").newDataInputStre
 android {
     compileSdkVersion 30
     defaultConfig {
-        applicationId "zig.zak.media.tor"
-        versionCode 27
-        versionName "1.26"
+        applicationId localProperties["id"]
+        versionCode 28
+        versionName "1.27"
         multiDexEnabled true
         minSdkVersion 21
         targetSdkVersion 30
@@ -104,8 +104,8 @@ dependencies {
     implementation 'androidx.preference:preference-ktx:1.1.1'
     implementation 'com.squareup.picasso:picasso:3.0.0-SNAPSHOT'
     implementation 'com.google.android:flexbox:1.0.0'
-    implementation 'com.facebook.android:audience-network-sdk:6.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation 'com.facebook.android:audience-network-sdk:6.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.google.re2j:re2j:1.5'
     implementation 'androidx.multidex:multidex:2.0.1'

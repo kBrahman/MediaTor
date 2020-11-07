@@ -24,8 +24,8 @@ import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
 
-import zig.zak.media.tor.R;;
-import zig.zak.media.tor.util.Ref;
+import z.zer.tor.media.R;
+import z.zer.tor.media.util.Ref;
 
 /**
  * Used to efficiently cache and recycle the {@link View}s used in the artist,

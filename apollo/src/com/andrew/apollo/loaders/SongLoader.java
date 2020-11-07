@@ -18,7 +18,7 @@ import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.AudioColumns;
 import com.andrew.apollo.model.Song;
 import com.andrew.apollo.utils.PreferenceUtils;
-import zig.zak.media.tor.util.Logger;
+import z.zer.tor.media.util.Logger;
 
 import java.util.ArrayList;
 import java.util.Collections;

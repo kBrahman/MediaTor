@@ -22,8 +22,8 @@ import android.graphics.Bitmap;
 import androidx.core.app.NotificationCompat;
 import android.widget.RemoteViews;
 
-import zig.zak.media.tor.R;
-import zig.zak.media.tor.android.core.Constants;
+import z.zer.tor.media.R;
+import z.zer.tor.media.android.core.Constants;
 
 /**
  * Builds the notification for Apollo's service. Jelly Bean and higher uses the

@@ -3,7 +3,7 @@
     xmlns:frostwire="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/basic_burgundy"
+    android:background="@color/colorPrimary"
     android:orientation="vertical">
 
     <View
@@ -20,13 +20,13 @@
         android:focusableInTouchMode="true"
         android:orientation="horizontal" />
 
-    <zig.zak.media.tor.android.gui.views.ClearableEditTextView
+    <z.zer.tor.media.android.gui.views.ClearableEditTextView
         android:id="@+id/view_search_input_text_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="6dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="6dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="6dp"
         android:layout_marginTop="6dp"
         frostwire:clearable_hint="@string/search_label" />
 

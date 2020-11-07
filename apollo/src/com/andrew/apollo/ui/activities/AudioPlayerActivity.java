@@ -73,24 +73,24 @@ import com.andrew.apollo.widgets.PlayPauseButton;
 import com.andrew.apollo.widgets.RepeatButton;
 import com.andrew.apollo.widgets.RepeatingImageButton;
 import com.andrew.apollo.widgets.ShuffleButton;
-import zig.zak.media.tor.R;
-import zig.zak.media.tor.android.core.Constants;
-import zig.zak.media.tor.android.gui.adapters.menu.AddToPlaylistMenuAction;
-import zig.zak.media.tor.android.gui.services.Engine;
-import zig.zak.media.tor.android.gui.util.UIUtils;
-import zig.zak.media.tor.android.gui.util.WriteSettingsPermissionActivityHelper;
-import zig.zak.media.tor.android.gui.views.AbstractActivity;
-import zig.zak.media.tor.android.gui.views.SwipeLayout;
-import zig.zak.media.tor.util.Logger;
-import zig.zak.media.tor.util.Ref;
-import zig.zak.media.tor.uxstats.UXAction;
-import zig.zak.media.tor.uxstats.UXStats;
+import z.zer.tor.media.R;
+import z.zer.tor.media.android.core.Constants;
+import z.zer.tor.media.android.gui.adapters.menu.AddToPlaylistMenuAction;
+import z.zer.tor.media.android.gui.services.Engine;
+import z.zer.tor.media.android.gui.util.UIUtils;
+import z.zer.tor.media.android.gui.util.WriteSettingsPermissionActivityHelper;
+import z.zer.tor.media.android.gui.views.AbstractActivity;
+import z.zer.tor.media.android.gui.views.SwipeLayout;
+import z.zer.tor.media.util.Logger;
+import z.zer.tor.media.util.Ref;
+import z.zer.tor.media.uxstats.UXAction;
+import z.zer.tor.media.uxstats.UXStats;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
 
 import static com.andrew.apollo.utils.MusicUtils.musicPlaybackService;
-import static zig.zak.media.tor.android.util.Asyncs.async;
+import static z.zer.tor.media.android.util.Asyncs.async;
 
 /**
  * Apollo's "now playing" interface.

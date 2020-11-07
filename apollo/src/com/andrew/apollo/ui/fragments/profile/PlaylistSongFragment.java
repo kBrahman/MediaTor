@@ -45,9 +45,9 @@ import com.andrew.apollo.utils.PreferenceUtils;
 
 import java.util.List;
 
-import zig.zak.media.tor.R;;
-import zig.zak.media.tor.android.core.Constants;
-import zig.zak.media.tor.android.gui.util.UIUtils;
+import z.zer.tor.media.R;
+import z.zer.tor.media.android.core.Constants;
+import z.zer.tor.media.android.gui.util.UIUtils;
 
 /**
  * This class is used to display all of the songs from a particular playlist.

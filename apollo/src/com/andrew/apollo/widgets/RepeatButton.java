@@ -26,7 +26,7 @@ import android.widget.ImageButton;
 
 import com.andrew.apollo.MusicPlaybackService;
 import com.andrew.apollo.utils.MusicUtils;
-import zig.zak.media.tor.R;
+import z.zer.tor.media.R;
 
 /**
  * A custom {@link ImageButton} that represents the "repeat" button.

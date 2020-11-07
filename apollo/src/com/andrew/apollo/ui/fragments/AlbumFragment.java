@@ -25,7 +25,7 @@ import com.andrew.apollo.adapters.AlbumAdapter;
 import com.andrew.apollo.loaders.AlbumLoader;
 import com.andrew.apollo.model.Album;
 import com.andrew.apollo.utils.PreferenceUtils;
-import zig.zak.media.tor.R;
+import z.zer.tor.media.R;
 
 import java.util.List;
 

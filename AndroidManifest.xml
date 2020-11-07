@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="zig.zak.media.tor"
+    package="z.zer.tor.media"
     android:installLocation="auto">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -25,7 +25,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
-        android:name=".android.gui.MainApplication"
+        android:name="z.zer.tor.media.android.gui.MainApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -33,7 +33,7 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/Theme.MediaTor">
         <activity
-            android:name=".android.gui.activity.MainActivity"
+            android:name="z.zer.tor.media.android.gui.activity.MainActivity"
             android:label="@string/application_label"
             android:launchMode="singleTask"
             android:protectionLevel="dangerous"
@@ -94,26 +94,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".android.gui.activity.WizardActivity"
+            android:name="z.zer.tor.media.android.gui.activity.WizardActivity"
             android:label="@string/application_label"
             android:theme="@style/WizardActivity" />
         <activity
-            android:name=".android.gui.activity.SettingsActivity"
+            android:name="z.zer.tor.media.android.gui.activity.SettingsActivity"
             android:label="@string/activity_preferences_name" />
         <activity
-            android:name=".android.gui.activity.ImageViewerActivity"
+            android:name="z.zer.tor.media.android.gui.activity.ImageViewerActivity"
             android:label="@string/picture" />
         <activity
-            android:name=".android.gui.activity.PreviewPlayerActivity"
+            android:name="z.zer.tor.media.android.gui.activity.PreviewPlayerActivity"
             android:configChanges="screenSize"
             android:label="@string/playing" />
         <activity
-            android:name=".android.gui.activity.VPNStatusDetailActivity"
+            android:name="z.zer.tor.media.android.gui.activity.VPNStatusDetailActivity"
             android:excludeFromRecents="true"
             android:label="@string/activity_VPN"
             android:noHistory="true" />
         <activity
-            android:name=".android.gui.activity.TransferDetailActivity"
+            android:name="z.zer.tor.media.android.gui.activity.TransferDetailActivity"
             android:label="@string/title_activity_transfer_detail" />
 
         <!-- apollo activities -->
@@ -213,7 +213,7 @@
         <!-- services -->
 
         <service
-            android:name=".android.gui.services.EngineService"
+            android:name="z.zer.tor.media.android.gui.services.EngineService"
             android:exported="false" />
         <service
             android:name="com.andrew.apollo.MusicPlaybackService"
@@ -221,7 +221,7 @@
 
         <!-- receivers -->
 
-        <receiver android:name=".android.gui.services.EngineBroadcastReceiver">
+        <receiver android:name="z.zer.tor.media.android.gui.services.EngineBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>

@@ -32,7 +32,7 @@ import com.andrew.apollo.ui.fragments.Fragments;
 import com.andrew.apollo.utils.PreferenceUtils;
 import java.util.List;
 
-import zig.zak.media.tor.R;;
+import z.zer.tor.media.R;
 
 /**
  * This class is used to display all of the songs from a particular album.

@@ -18,7 +18,7 @@ import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.PlaylistsColumns;
 import com.andrew.apollo.model.Playlist;
-import zig.zak.media.tor.R;
+import z.zer.tor.media.R;
 
 import java.util.ArrayList;
 import java.util.List;

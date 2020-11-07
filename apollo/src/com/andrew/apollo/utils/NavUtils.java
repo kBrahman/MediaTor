@@ -21,7 +21,7 @@ import android.provider.MediaStore;
 import com.andrew.apollo.Config;
 import com.andrew.apollo.ui.activities.*;
 import com.devspark.appmsg.AppMsg;
-import zig.zak.media.tor.R;
+import z.zer.tor.media.R;
 
 /**
  * Various navigation helpers.

@@ -40,8 +40,8 @@ import java.lang.ref.WeakReference;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import zig.zak.media.tor.android.util.SystemUtils;
-import zig.zak.media.tor.util.Ref;
+import z.zer.tor.media.android.util.SystemUtils;
+import z.zer.tor.media.util.Ref;
 
 /**
  * This class holds the memory and disk bitmap caches.

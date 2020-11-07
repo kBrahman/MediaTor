@@ -34,9 +34,10 @@ import com.andrew.apollo.utils.MusicUtils;
 import com.andrew.apollo.utils.NavUtils;
 import com.andrew.apollo.utils.PreferenceUtils;
 import com.andrew.apollo.widgets.VerticalScrollListener;
-import zig.zak.media.tor.R;
 
 import java.util.List;
+
+import z.zer.tor.media.R;
 
 /**
  * This class is used to display all of the albums from a particular artist.

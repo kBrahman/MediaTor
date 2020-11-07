@@ -21,7 +21,7 @@ package com.andrew.apollo.adapters;
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
-import zig.zak.media.tor.android.gui.views.FragmentPagerAdapter;
+import z.zer.tor.media.android.gui.views.FragmentPagerAdapter;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 
@@ -31,7 +31,7 @@ import com.andrew.apollo.ui.fragments.LastAddedFragment;
 import com.andrew.apollo.ui.fragments.PlaylistFragment;
 import com.andrew.apollo.ui.fragments.RecentFragment;
 import com.andrew.apollo.ui.fragments.SongFragment;
-import zig.zak.media.tor.R;
+import z.zer.tor.media.R;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;

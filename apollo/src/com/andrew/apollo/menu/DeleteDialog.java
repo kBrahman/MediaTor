@@ -31,7 +31,7 @@ import com.andrew.apollo.Config;
 import com.andrew.apollo.cache.ImageFetcher;
 import com.andrew.apollo.utils.ApolloUtils;
 import com.andrew.apollo.utils.MusicUtils;
-import zig.zak.media.tor.R;
+import z.zer.tor.media.R;
 
 /**
  * Alert dialog used to delete tracks.

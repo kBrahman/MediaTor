@@ -20,9 +20,9 @@ import com.andrew.apollo.ui.MusicViewHolder;
 import com.andrew.apollo.ui.MusicViewHolder.DataHolder;
 import com.andrew.apollo.utils.MusicUtils;
 
-import zig.zak.media.tor.R;;
-import zig.zak.media.tor.util.Logger;
-import zig.zak.media.tor.util.Ref;
+import z.zer.tor.media.R;
+import z.zer.tor.media.util.Logger;
+import z.zer.tor.media.util.Ref;
 
 /**
  * This {@link ArrayAdapter} is used to display all of the albums on a user's

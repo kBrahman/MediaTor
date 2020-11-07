@@ -30,7 +30,7 @@ import com.andrew.apollo.loaders.LastAddedLoader;
 import com.andrew.apollo.model.Song;
 import com.andrew.apollo.ui.fragments.Fragments;
 import com.andrew.apollo.utils.PreferenceUtils;
-import zig.zak.media.tor.R;
+import z.zer.tor.media.R;
 
 import java.util.List;
 

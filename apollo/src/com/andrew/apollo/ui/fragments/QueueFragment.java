@@ -40,8 +40,7 @@ import com.andrew.apollo.model.Song;
 import com.andrew.apollo.ui.fragments.profile.ApolloFragment;
 import com.andrew.apollo.utils.MusicUtils;
 import com.andrew.apollo.utils.PreferenceUtils;
-import zig.zak.media.tor.R;
-import zig.zak.media.tor.util.Logger;
+import z.zer.tor.media.R;
 
 import java.util.List;
 
