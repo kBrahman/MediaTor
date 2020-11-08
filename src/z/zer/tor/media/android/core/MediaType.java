@@ -342,7 +342,7 @@ public class MediaType implements Serializable {
         } else if (mt.equals(MediaType.getVideoMediaType())) {
             return R.drawable.my_files_video_icon_selector_menu;
         } else if (mt.equals(MediaType.getTorrentMediaType())) {
-            return R.mipmap.ic_launcher_foreground;
+            return R.mipmap.ic_launcher;
         } else {
             return R.drawable.question_mark;
         }

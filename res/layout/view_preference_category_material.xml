@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="16dip"
     android:background="@android:color/transparent"
-    android:paddingLeft="?android:attr/listPreferredItemPaddingLeft"
+    android:paddingStart="?android:attr/listPreferredItemPaddingLeft"
     android:paddingTop="16dip"
-    android:paddingRight="?android:attr/listPreferredItemPaddingRight"
+    android:paddingEnd="?android:attr/listPreferredItemPaddingRight"
     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />

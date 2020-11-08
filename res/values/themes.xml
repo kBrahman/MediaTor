@@ -5,7 +5,7 @@
     <style name="Theme.MediaTor" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/basic_blue_dark</item>
-        <item name="colorAccent">@color/basic_blue_highlight_dark</item>
+        <item name="colorAccent">@color/colorPrimary</item>
         <item name="android:textColorPrimary">@color/app_text_primary</item>
         <item name="android:textColorSecondary">@color/app_text_secondary</item>
         <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButtonStyle</item>
@@ -42,7 +42,7 @@
 
     <style name="Preference.Category.Material">
         <item name="android:layout">@layout/view_preference_category_material</item>
-        <item name="android:textColor">@color/basic_blue_highlight_dark</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textStyle">bold</item>
     </style>
 
