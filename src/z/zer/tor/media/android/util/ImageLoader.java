@@ -304,11 +304,6 @@ public final class ImageLoader {
         }
     }
 
-    public void clear() {
-        //cache.clear();
-        picasso.evictAll();
-    }
-
     public void shutdown() {
         shutdown = true;
         picasso.shutdown();

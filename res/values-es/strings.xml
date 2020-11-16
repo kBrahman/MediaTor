@@ -1,23 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-/* 
- * Creado por Angel Leon (@gubatron), Alden Torres (aldenml), Alejandro Martinez (alejandroarturom)
- * Derechos de Autor (c) 2011-2017, FrostWire(R). Todos los derechos reservados.
- * 
- * Este programa es gratuito: puedes distribuirlo y/o modificarlo 
- * bajo los términos de la Licencia General Pública de GNU tal y como lo publica 
- * la Fundación del Software Gratuito, ya sea la 3ª versión de la Licencia, o 
- * (es tu opción) una versión anterior. 
- * 
- * Este programa se distribuye con la esperanza de que será de gran uso, 
- * pero SIN GARANTÍAS; ni siquiera con la garantía implícita de la 
- * COMERCIALIDAD o ADECUACIÓN AL PROPÓSITO. Lee los 
- * detalles de la Licencia General Pública de GNU. 
- * 
- * Deberías haber recibido una copia de la Licencia General Pública GNU 
- * junto con este programa. Si no la has recibido, ve a http://www.gnu.org/licenses/. 
- */ 
--->
 <resources>
     <!-- Important: Android tiene bugs con HTML, no dejes etiquetas HTML pegadas al texto, deja espacios. De otro modo android cuenta las etiquetas como parte de la longitud del texto y luego las lineas se cortan de forma prematura. -->
     <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Información:</b> Aunque te lo recomendamos, especialmente al descargar o intercambiar información confidencial (por ejemplo, información bancaria) y al usar Wi-Fi público o datos móviles, <b>no necesitas un VPN para usar FrostWire. </b>]]></string>

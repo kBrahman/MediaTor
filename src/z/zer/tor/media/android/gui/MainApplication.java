@@ -69,7 +69,6 @@ public class MainApplication extends MultiDexApplication {
     @Override
     public void onLowMemory() {
         ImageCache.getInstance(this).evictAll();
-        ImageLoader.getInstance(this).clear();
         super.onLowMemory();
     }
 
