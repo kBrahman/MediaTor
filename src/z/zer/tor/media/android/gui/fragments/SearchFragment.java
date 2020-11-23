@@ -17,6 +17,9 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
 import com.facebook.ads.AdOptionsView;
@@ -34,8 +37,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import androidx.annotation.Nullable;
-import androidx.drawerlayout.widget.DrawerLayout;
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.core.ConfigurationManager;
 import z.zer.tor.media.android.core.Constants;
@@ -159,18 +160,14 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
     }
 
     private void inflateAd(NativeAd nativeAd) {
-        Log.i(TAG, "inflateAd");
+        final View view = getView();
+        if (view == null) return;
         nativeAd.unregisterView();
-
-        // Add the Ad view into the ad container.
-        NativeAdLayout nativeAdLayout = getView().findViewById(R.id.native_ad_container);
+        NativeAdLayout nativeAdLayout = view.findViewById(R.id.native_ad_container);
         LayoutInflater inflater = LayoutInflater.from(getActivity());
-        // Inflate the Ad view.  The layout referenced should be the one you created in the last step.
         View adView = inflater.inflate(R.layout.native_ad_layout, nativeAdLayout, false);
         nativeAdLayout.addView(adView);
-
-        // Add the AdOptionsView
-        LinearLayout adChoicesContainer = getView().findViewById(R.id.ad_choices_container);
+        LinearLayout adChoicesContainer = view.findViewById(R.id.ad_choices_container);
         AdOptionsView adOptionsView = new AdOptionsView(getActivity(), nativeAd, nativeAdLayout);
         adChoicesContainer.removeAllViews();
         adChoicesContainer.addView(adOptionsView, 0);
