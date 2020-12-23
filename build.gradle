@@ -64,11 +64,6 @@ android {
         abortOnError false
     }
 
-    dexOptions {
-        javaMaxHeapSize "2g"
-        jumboMode = true
-    }
-
     signingConfigs {
         zig {
             storeFile file(keystoreProperties['storeFile'])
