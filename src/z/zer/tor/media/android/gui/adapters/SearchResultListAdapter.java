@@ -21,6 +21,7 @@ import z.zer.tor.media.R;
 import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.android.core.MediaType;
 import z.zer.tor.media.android.gui.LocalSearchEngine;
+import z.zer.tor.media.android.gui.activity.PlayerActivity;
 import z.zer.tor.media.android.gui.activity.PreviewPlayerActivity;
 import z.zer.tor.media.android.gui.util.UIUtils;
 import z.zer.tor.media.android.gui.views.AbstractListAdapter;
@@ -333,17 +334,12 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
 
         @Override
         public void onClick(Context ctx, View v) {
-            Log.i(TAG, "v=>" + v.getClass().getSimpleName());
-            if (v == null) {
-                return;
-            }
-
+            Log.i(TAG, "v tag=>" + v.getTag().getClass().getSimpleName());
             StreamableSearchResult sr = (StreamableSearchResult) v.getTag();
-
             if (sr != null) {
                 LocalSearchEngine.instance().markOpened(sr, (Ref.alive(adapterRef)) ? adapterRef.get() : null);
                 PreviewPlayerActivity.srRef = Ref.weak((FileSearchResult) sr);
-                Intent i = new Intent(ctx, PreviewPlayerActivity.class);
+                Intent i = new Intent(ctx, PlayerActivity.class);
                 i.putExtra("displayName", sr.getDisplayName());
                 i.putExtra("source", sr.getSource());
                 i.putExtra("thumbnailUrl", sr.getThumbnailUrl());

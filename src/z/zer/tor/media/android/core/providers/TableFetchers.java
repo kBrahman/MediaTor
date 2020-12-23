@@ -1,21 +1,3 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2015, FrostWire(R). All rights reserved.
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 package z.zer.tor.media.android.core.providers;
 
 import android.database.Cursor;
@@ -29,6 +11,9 @@ import android.provider.MediaStore.Video.VideoColumns;
 import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.android.core.FileDescriptor;
 import z.zer.tor.media.android.core.MediaType;
+
+import static android.provider.MediaStore.Audio.AlbumColumns.ALBUM;
+import static android.provider.MediaStore.MediaColumns.ARTIST;
 
 public final class TableFetchers {
 
@@ -70,7 +55,7 @@ public final class TableFetchers {
         private int albumIdCol;
 
         public String[] getColumns() {
-            return new String[]{AudioColumns._ID, AudioColumns.ARTIST, AudioColumns.TITLE, AudioColumns.ALBUM, AudioColumns.DATA, AudioColumns.YEAR, AudioColumns.MIME_TYPE, AudioColumns.SIZE, AudioColumns.DATE_ADDED, AudioColumns.DATE_MODIFIED, AudioColumns.ALBUM_ID};
+            return new String[]{AudioColumns._ID, ARTIST, AudioColumns.TITLE, ALBUM, AudioColumns.DATA, AudioColumns.YEAR, AudioColumns.MIME_TYPE, AudioColumns.SIZE, AudioColumns.DATE_ADDED, AudioColumns.DATE_MODIFIED, AudioColumns.ALBUM_ID};
         }
 
         public String getSortByExpression() {
@@ -85,7 +70,7 @@ public final class TableFetchers {
             idCol = cur.getColumnIndex(AudioColumns._ID);
             pathCol = cur.getColumnIndex(AudioColumns.DATA);
             mimeCol = cur.getColumnIndex(AudioColumns.MIME_TYPE);
-            artistCol = cur.getColumnIndex(AudioColumns.ARTIST);
+            artistCol = cur.getColumnIndex(ARTIST);
             titleCol = cur.getColumnIndex(AudioColumns.TITLE);
             albumCol = cur.getColumnIndex(AudioColumns.ALBUM);
             yearCol = cur.getColumnIndex(AudioColumns.YEAR);
@@ -195,7 +180,7 @@ public final class TableFetchers {
         }
 
         public String[] getColumns() {
-            return new String[]{VideoColumns._ID, VideoColumns.ARTIST, VideoColumns.TITLE, VideoColumns.ALBUM, VideoColumns.DATA, VideoColumns.MIME_TYPE, VideoColumns.MINI_THUMB_MAGIC, VideoColumns.SIZE, VideoColumns.DATE_ADDED, VideoColumns.DATE_MODIFIED};
+            return new String[]{VideoColumns._ID, ARTIST, VideoColumns.TITLE, VideoColumns.ALBUM, VideoColumns.DATA, VideoColumns.MIME_TYPE, VideoColumns.MINI_THUMB_MAGIC, VideoColumns.SIZE, VideoColumns.DATE_ADDED, VideoColumns.DATE_MODIFIED};
         }
 
         public Uri getContentUri() {
@@ -214,7 +199,7 @@ public final class TableFetchers {
             idCol = cur.getColumnIndex(VideoColumns._ID);
             pathCol = cur.getColumnIndex(VideoColumns.DATA);
             mimeCol = cur.getColumnIndex(VideoColumns.MIME_TYPE);
-            artistCol = cur.getColumnIndex(VideoColumns.ARTIST);
+            artistCol = cur.getColumnIndex(ARTIST);
             titleCol = cur.getColumnIndex(VideoColumns.TITLE);
             albumCol = cur.getColumnIndex(VideoColumns.ALBUM);
             sizeCol = cur.getColumnIndex(VideoColumns.SIZE);
@@ -358,7 +343,7 @@ public final class TableFetchers {
         }
 
         public String[] getColumns() {
-            return new String[]{AudioColumns._ID, AudioColumns.ARTIST, AudioColumns.TITLE, AudioColumns.ALBUM, AudioColumns.DATA, AudioColumns.YEAR, AudioColumns.MIME_TYPE, AudioColumns.SIZE, AudioColumns.DATE_ADDED, AudioColumns.DATE_MODIFIED};
+            return new String[]{AudioColumns._ID, ARTIST, AudioColumns.TITLE, AudioColumns.ALBUM, AudioColumns.DATA, AudioColumns.YEAR, AudioColumns.MIME_TYPE, AudioColumns.SIZE, AudioColumns.DATE_ADDED, AudioColumns.DATE_MODIFIED};
         }
 
         public Uri getContentUri() {
@@ -377,7 +362,7 @@ public final class TableFetchers {
             idCol = cur.getColumnIndex(AudioColumns._ID);
             pathCol = cur.getColumnIndex(AudioColumns.DATA);
             mimeCol = cur.getColumnIndex(AudioColumns.MIME_TYPE);
-            artistCol = cur.getColumnIndex(AudioColumns.ARTIST);
+            artistCol = cur.getColumnIndex(ARTIST);
             titleCol = cur.getColumnIndex(AudioColumns.TITLE);
             albumCol = cur.getColumnIndex(AudioColumns.ALBUM);
             yearCol = cur.getColumnIndex(AudioColumns.YEAR);

@@ -1,8 +1,8 @@
 /**
  * Copyright (c) 2009 - 2011 AppWork UG(haftungsbeschränkt) <e-mail@appwork.org>
- * 
+ * <p>
  * This file is part of org.appwork.utils.net
- * 
+ * <p>
  * This software is licensed under the Artistic License 2.0,
  * see the LICENSE file or http://www.opensource.org/licenses/artistic-license-2.0.php
  * for details
@@ -12,16 +12,12 @@ package z.zer.tor.media.search.youtube.jd;
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
- * @author daniel, ChunkedInputStream, see rfc2616#section-3.6
- * 
- */
 public class ChunkedInputStream extends InputStream {
 
     private final InputStream is;
-    private int               nextChunkSize = 0;
-    private int               nextChunkLeft = 0;
-    private long              completeSize  = 0;
+    private int nextChunkSize = 0;
+    private int nextChunkLeft = 0;
+    private long completeSize = 0;
 
     public ChunkedInputStream(final InputStream is) {
         this.is = is;
@@ -29,23 +25,29 @@ public class ChunkedInputStream extends InputStream {
 
     @Override
     public int available() throws IOException {
-        if (this.nextChunkLeft > 0) { return this.nextChunkLeft; }
+        if (this.nextChunkLeft > 0) {
+            return this.nextChunkLeft;
+        }
         return this.is.available();
     }
 
     /**
      * returns available bytes in current Chunk or reads next Chunk and parses
      * it
-     * 
+     *
      * @return
      * @throws IOException
      */
     private int availableChunkData() throws IOException {
-        if (this.nextChunkLeft == -1) { return -1; }
-        if (this.nextChunkLeft > 0) { return this.nextChunkLeft; }
+        if (this.nextChunkLeft == -1) {
+            return -1;
+        }
+        if (this.nextChunkLeft > 0) {
+            return this.nextChunkLeft;
+        }
         final StringBuilder sb = new StringBuilder();
         boolean chunkExt = false;
-        final byte[] b = { (byte) 0x00 };
+        final byte[] b = {(byte) 0x00};
         int read = 0;
         if (this.nextChunkSize > 0) {
             /* finish LF/CRLF from previous chunk */
@@ -67,7 +69,9 @@ public class ChunkedInputStream extends InputStream {
             }
             read = this.is.read();
         }
-        if (read == -1 && sb.length() == 0) { return -1; }
+        if (read == -1 && sb.length() == 0) {
+            return -1;
+        }
         if (read == 13) {
             /* finish CRLF here */
             read = this.is.read();
@@ -95,7 +99,7 @@ public class ChunkedInputStream extends InputStream {
 
     /**
      * Exhaust an input stream, reading until EOF has been encountered.
-     * 
+     *
      * @throws IOException
      */
     private void exhaustInputStream() throws IOException {
@@ -145,7 +149,7 @@ public class ChunkedInputStream extends InputStream {
 
     /**
      * TODO: read the Trailers we read until EOF at the moment;
-     * 
+     *
      * @throws IOException
      */
     private void readTrailers() throws IOException {

@@ -20,7 +20,9 @@ package z.zer.tor.media.frostclick;
 
 public class Slide {
 
-    /** Download the file via HTTP */
+    /**
+     * Download the file via HTTP
+     */
     public static final int DOWNLOAD_METHOD_HTTP = 2;
 
     // FLAGS
@@ -64,7 +66,6 @@ public class Slide {
      * *
      * en
      * en_US
-     *
      */
     public String language;
 
@@ -76,7 +77,9 @@ public class Slide {
      */
     public String os;
 
-    /** Title of the promotion */
+    /**
+     * Title of the promotion
+     */
     public String title;
 
     public String author;
@@ -92,8 +95,6 @@ public class Slide {
 
     public String saveFileAs;
 
-    public String executeParameters;
-
     public String includedVersions;
 
     public String audioURL;
@@ -106,17 +107,13 @@ public class Slide {
 
     public String gplus;
 
-    public String youtube;
-
-    public String instagram;
-
     public int flags;
 
     public String uri;
 
-    public boolean uncompress;
 
-
-    /** Total size in bytes */
+    /**
+     * Total size in bytes
+     */
     public long size;
 }

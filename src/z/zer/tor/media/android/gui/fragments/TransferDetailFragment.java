@@ -107,7 +107,7 @@ public final class TransferDetailFragment extends AbstractFragment {
             return;
         }
         if (isPausable()) {
-            pauseResumeMenuItem.setIcon(R.drawable.action_bar_pause);
+            pauseResumeMenuItem.setIcon(R.drawable.ic_pause_24);
         }
         if (isResumable()) {
             pauseResumeMenuItem.setIcon(R.drawable.action_bar_resume);

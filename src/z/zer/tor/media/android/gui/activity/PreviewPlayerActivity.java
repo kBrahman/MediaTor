@@ -17,6 +17,8 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import com.andrew.apollo.utils.MusicUtils;
 import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
@@ -34,7 +36,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
-import androidx.annotation.NonNull;
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.android.core.player.CoreMediaPlayer;
@@ -79,9 +80,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         source = i.getStringExtra("source");
         streamUrl = i.getStringExtra("streamUrl");
         isFullScreen = i.getBooleanExtra("isFullScreen", false);
-
-        int mediaTypeStrId = R.string.audio;
-        setTitle(getString(R.string.media_preview, getString(mediaTypeStrId)) + getString(R.string.buffering));
+        setTitle(getString(R.string.application_label));
         final TextView trackName = findView(R.id.activity_preview_player_track_name);
         final TextView artistName = findView(R.id.activity_preview_player_artist_name);
         seekBar = findViewById(R.id.sb);
@@ -101,19 +100,18 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         artistName.setText(source);
         play();
         loadNativeAd();
+
     }
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
-        if (outState != null) {
-            super.onSaveInstanceState(outState);
-            outState.putString("displayName", displayName);
-            outState.putString("source", source);
-            outState.putString("streamUrl", streamUrl);
-            outState.putBoolean("isFullScreen", isFullScreen);
-            if (androidMediaPlayer != null && androidMediaPlayer.isPlaying()) {
-                outState.putInt("currentPosition", androidMediaPlayer.getCurrentPosition());
-            }
+        super.onSaveInstanceState(outState);
+        outState.putString("displayName", displayName);
+        outState.putString("source", source);
+        outState.putString("streamUrl", streamUrl);
+        outState.putBoolean("isFullScreen", isFullScreen);
+        if (androidMediaPlayer != null && androidMediaPlayer.isPlaying()) {
+            outState.putInt("currentPosition", androidMediaPlayer.getCurrentPosition());
         }
     }
 
@@ -182,7 +180,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         adChoicesContainer.addView(adOptionsView, 0);
 
         // Create native UI using the ad metadata.
-        TextView nativeAdTitle = adView.findViewById(R.id.native_ad_title);
+        TextView nativeAdTitle = findViewById(R.id.native_ad_title);
         MediaView nativeAdMedia = adView.findViewById(R.id.native_ad_media);
         TextView nativeAdSocialContext = adView.findViewById(R.id.native_ad_social_context);
         TextView nativeAdBody = adView.findViewById(R.id.native_ad_body);
@@ -329,8 +327,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
         }
 
         if (startedPlayback && !changedActionBarTitleToNonBuffering) {
-            int mediaTypeStrId = R.string.audio;
-            setTitle(getString(R.string.media_preview, getString(mediaTypeStrId)));
             changedActionBarTitleToNonBuffering = true;
         }
 
@@ -379,9 +375,6 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
     public void onAudioFocusChange(int focusChange) {
         if (focusChange == AudioManager.AUDIOFOCUS_LOSS || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT) {
             releaseMediaPlayer();
-
-            int mediaTypeStrId = R.string.audio;
-            setTitle(getString(R.string.media_preview, getString(mediaTypeStrId)));
         }
     }
 
@@ -409,7 +402,7 @@ public final class PreviewPlayerActivity extends AbstractActivity implements Abs
 
     @Override
     public void run() {
-        if (androidMediaPlayer==null)return;
+        if (androidMediaPlayer == null) return;
         int currentPosition = androidMediaPlayer.getCurrentPosition();
         int progress = currentPosition * 100 / androidMediaPlayer.getDuration();
         seekBar.setProgress(progress);

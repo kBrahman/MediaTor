@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <style name="Theme.MediaTor" parent="Theme.AppCompat.Light.NoActionBar">
@@ -33,7 +32,7 @@
 
     <style name="SplashScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/frostwire_splash_screen</item>
-        <item name="colorPrimaryDark">@color/basic_blue_highlight_dark</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
     </style>
 
     <style name="PreferenceThemeOverlay" parent="PreferenceThemeOverlay.v14.Material">

@@ -27,20 +27,13 @@ import z.zer.tor.media.platform.SystemPaths;
 
 import java.io.File;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 final class AndroidPaths implements SystemPaths {
 
-    private static final String STORAGE_PATH = "FrostWire";
+    private static final String STORAGE_PATH = "MediaTor";
     private static final String TORRENT_DATA_PATH = "TorrentsData";
     private static final String TORRENTS_PATH = "Torrents";
     private static final String TEMP_PATH = "temp";
     private static final String LIBTORRENT_PATH = "libtorrent";
-
-    private static final String UPDATE_APK_NAME = "frostwire.apk";
-
     private final Application app;
 
     public AndroidPaths(Application app) {
@@ -65,11 +58,6 @@ final class AndroidPaths implements SystemPaths {
     @Override
     public File libtorrent() {
         return new File(app.getExternalFilesDir(null), LIBTORRENT_PATH);
-    }
-
-    @Override
-    public File update() {
-        return new File(app.getExternalFilesDir(null), UPDATE_APK_NAME);
     }
 
     private static File storage() {

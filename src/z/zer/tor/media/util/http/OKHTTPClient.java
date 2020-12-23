@@ -279,7 +279,7 @@ public class OKHTTPClient extends AbstractHttpClient {
         searchClient.followRedirects(true);
         searchClient.connectTimeout(DEFAULT_TIMEOUT, TimeUnit.MILLISECONDS);
 
-        searchClient = configNullSsl(searchClient);
+        configNullSsl(searchClient);
 
         // Maybe we should use a custom connection pool here. Using default.
         //searchClient.setConnectionPool(?);

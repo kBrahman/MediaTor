@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2012 Andrew Neal
- * Modified by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2013-2018, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.andrew.apollo.ui.activities;
 
 import android.app.Activity;
@@ -39,10 +21,11 @@ import com.andrew.apollo.loaders.SearchLoader;
 import com.andrew.apollo.model.Song;
 import com.andrew.apollo.utils.MusicUtils;
 import com.andrew.apollo.utils.MusicUtils.ServiceToken;
-import z.zer.tor.media.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import z.zer.tor.media.R;
 
 import static com.andrew.apollo.Config.MIME_TYPE;
 import static com.andrew.apollo.utils.MusicUtils.musicPlaybackService;
@@ -52,8 +35,6 @@ import static com.andrew.apollo.utils.MusicUtils.musicPlaybackService;
  * art in an app-widget, and then carries out the proper action. It is also
  * responsible for processing voice queries and playing the spoken artist,
  * album, song, playlist, or genre.
- *
- * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public final class ShortcutActivity extends Activity implements ServiceConnection {
 

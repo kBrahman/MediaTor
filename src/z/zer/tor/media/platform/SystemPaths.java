@@ -33,6 +33,4 @@ public interface SystemPaths {
     File temp();
 
     File libtorrent();
-
-    File update();
 }

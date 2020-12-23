@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2012 Andrew Neal
- * Modified by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2013-2018, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.andrew.apollo.utils;
 
 import android.app.Activity;
@@ -60,6 +42,7 @@ import com.andrew.apollo.provider.FavoritesStore;
 import com.andrew.apollo.provider.FavoritesStore.FavoriteColumns;
 import com.andrew.apollo.provider.RecentStore;
 import com.devspark.appmsg.AppMsg;
+
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.android.gui.util.UIUtils;
@@ -350,7 +333,8 @@ public final class MusicUtils {
         if (musicPlaybackService != null) {
             try {
                 musicPlaybackService.enableShuffle(!isShuffleEnabled());
-            } catch (RemoteException ignored) {}
+            } catch (RemoteException ignored) {
+            }
         }
     }
 
@@ -384,7 +368,8 @@ public final class MusicUtils {
         if (musicPlaybackService != null) {
             try {
                 return musicPlaybackService.isShuffleEnabled();
-            } catch (final RemoteException ignored) { }
+            } catch (final RemoteException ignored) {
+            }
         }
         return false;
     }
@@ -1349,11 +1334,11 @@ public final class MusicUtils {
                     MediaStore.Audio.Playlists.Members.AUDIO_ID
             };
             Cursor cursor = context.getContentResolver().query(
-                        MediaStore.Audio.Playlists.Members.getContentUri("external", playlistId),
-                        projection,
-                        null,
-                        null,
-                        MediaStore.Audio.Playlists.Members.DEFAULT_SORT_ORDER);
+                    MediaStore.Audio.Playlists.Members.getContentUri("external", playlistId),
+                    projection,
+                    null,
+                    null,
+                    MediaStore.Audio.Playlists.Members.DEFAULT_SORT_ORDER);
             if (cursor != null) {
                 final long[] list = getSongListForCursor(cursor);
                 cursor.close();

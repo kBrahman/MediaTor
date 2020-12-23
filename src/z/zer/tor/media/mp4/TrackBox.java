@@ -17,10 +17,6 @@
 
 package z.zer.tor.media.mp4;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class TrackBox extends ContainerBox {
 
     TrackBox() {

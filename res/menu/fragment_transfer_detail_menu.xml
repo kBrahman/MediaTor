@@ -22,7 +22,7 @@
 
     <item
         android:id="@+id/fragment_transfer_detail_menu_pause_resume_seed"
-        android:icon="@drawable/action_bar_pause"
+        android:icon="@drawable/ic_pause_24"
         android:orderInCategory="1"
         android:title="@string/transfers_context_menu_pause_stop_all_transfers"
         app:showAsAction="always"/>

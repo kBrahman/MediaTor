@@ -22,11 +22,6 @@ import android.content.Context;
 
 import z.zer.tor.media.android.core.FileDescriptor;
 
-/**
- * @author gubatron
- * @author aldenml
- *
- */
 public interface CoreMediaPlayer {
 
     void play(Playlist playlist);
@@ -34,10 +29,10 @@ public interface CoreMediaPlayer {
     void stop();
 
     boolean isPlaying();
-    
+
     /**
      * The current file the media player is playing.
-     * 
+     *
      * @return
      */
     FileDescriptor getCurrentFD(final Context context);

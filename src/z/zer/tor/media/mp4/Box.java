@@ -286,24 +286,9 @@ public class Box {
                 return new ObjectDescriptorBox();
             }
         });
-        map.put(trak, new BoxLambda() {
-            @Override
-            public Box empty() {
-                return new TrackBox();
-            }
-        });
-        map.put(tkhd, new BoxLambda() {
-            @Override
-            public Box empty() {
-                return new TrackHeaderBox();
-            }
-        });
-        map.put(edts, new BoxLambda() {
-            @Override
-            public Box empty() {
-                return new EditBox();
-            }
-        });
+        map.put(trak, TrackBox::new);
+        map.put(tkhd, TrackHeaderBox::new);
+        map.put(edts, EditBox::new);
         map.put(elst, new BoxLambda() {
             @Override
             public Box empty() {
