@@ -11,9 +11,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.*
@@ -219,44 +216,6 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
         // your code like this to the Google Play your users will not receive ads (you will get a no fill error).
 
         // Request an ad
-    }
-
-    fun inflateAd(nativeAd: NativeAd) {
-        Log.i(TAG, "inflateAd")
-//        nativeAd.unregisterView()
-
-        // Add the Ad view into the ad container.
-        val nativeAdLayout: NativeAdLayout = findViewById(R.id.preview_native_ad_container)
-        val inflater = LayoutInflater.from(this)
-        // Inflate the Ad view.  The layout referenced should be the one you created in the last step.
-        val adView = inflater.inflate(R.layout.native_ad_layout, nativeAdLayout, false)
-        nativeAdLayout.addView(adView)
-
-        // Add the AdOptionsView
-        val adChoicesContainer: LinearLayout = findViewById(R.id.ad_choices_container)
-        val adOptionsView = AdOptionsView(this, nativeAd, nativeAdLayout)
-        adChoicesContainer.removeAllViews()
-        adChoicesContainer.addView(adOptionsView, 0)
-
-        // Create native UI using the ad metadata.
-        val nativeAdTitle = adView.findViewById<TextView>(R.id.native_ad_title)
-        val nativeAdMedia: MediaView = adView.findViewById(R.id.native_ad_media)
-
-        val nativeAdSocialContext = adView.findViewById<TextView>(R.id.native_ad_social_context)
-        val nativeAdBody = adView.findViewById<TextView>(R.id.native_ad_body)
-        val sponsoredLabel = adView.findViewById<TextView>(R.id.native_ad_sponsored_label)
-        val nativeAdCallToAction = adView.findViewById<Button>(R.id.native_ad_call_to_action)
-
-        // Set the Text.
-        nativeAdTitle.text = nativeAd.advertiserName
-        nativeAdBody.text = nativeAd.adBodyText
-        nativeAdSocialContext.text = nativeAd.adSocialContext
-        nativeAdCallToAction.visibility = if (nativeAd.hasCallToAction()) View.VISIBLE else View.INVISIBLE
-        nativeAdCallToAction.text = nativeAd.adCallToAction
-        sponsoredLabel.text = nativeAd.sponsoredTranslation
-
-        // Register the Title and CTA button to listen for clicks.
-        nativeAd.registerViewForInteraction(adView, nativeAdMedia)
     }
 
     fun getFinalUrl(url: String?): String? {

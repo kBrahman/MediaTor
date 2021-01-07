@@ -162,10 +162,6 @@
             android:name="z.zer.tor.media.android.gui.activity.ImageViewerActivity"
             android:label="@string/picture" />
         <activity
-            android:name="z.zer.tor.media.android.gui.activity.PreviewPlayerActivity"
-            android:configChanges="screenSize"
-            android:label="@string/playing" />
-        <activity
             android:name="z.zer.tor.media.android.gui.activity.VPNStatusDetailActivity"
             android:excludeFromRecents="true"
             android:label="@string/activity_VPN"
