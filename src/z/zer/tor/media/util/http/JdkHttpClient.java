@@ -393,7 +393,7 @@ public final class JdkHttpClient extends AbstractHttpClient {
     }
 
     private void setHostnameVerifier(HttpsURLConnection conn) {
-        conn.setHostnameVerifier(Ssl.nullHostnameVerifier());
+//        conn.setHostnameVerifier(Ssl.nullHostnameVerifier());
         conn.setSSLSocketFactory(Ssl.nullSocketFactory());
     }
 

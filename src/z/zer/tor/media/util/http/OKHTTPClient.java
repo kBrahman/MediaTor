@@ -288,7 +288,7 @@ public class OKHTTPClient extends AbstractHttpClient {
 
     public static OkHttpClient.Builder configNullSsl(OkHttpClient.Builder b) {
         b.followSslRedirects(true);
-        b.hostnameVerifier(Ssl.nullHostnameVerifier());
+//        b.hostnameVerifier(Ssl.nullHostnameVerifier());
         b.sslSocketFactory(Ssl.nullSocketFactory(), Ssl.nullTrustManager());
 
         ConnectionSpec spec1 = cipherSpec(ConnectionSpec.CLEARTEXT);

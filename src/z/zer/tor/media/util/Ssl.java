@@ -1,20 +1,3 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2017, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package z.zer.tor.media.util;
 
 import java.io.IOException;
@@ -27,9 +10,7 @@ import java.security.SecureRandom;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 
-import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
@@ -40,24 +21,11 @@ import javax.net.ssl.X509TrustManager;
  */
 public final class Ssl {
 
-    private static final HostnameVerifier NULL_HOSTNAME_VERIFIER = new NullHostnameVerifier();
     private static final X509TrustManager NULL_TRUST_MANAGER = new NullTrustManager();
 
     private static final SSLSocketFactory NULL_SOCKET_FACTORY = buildNullSSLSocketFactory();
 
     private Ssl() {
-    }
-
-    /**
-     * Returns a hostname verifier instance that simply accepts all hostnames
-     * as valid.
-     * <p>
-     * The instance returned is always the same and it's thread safe.
-     *
-     * @return the hostname verifier.
-     */
-    public static HostnameVerifier nullHostnameVerifier() {
-        return NULL_HOSTNAME_VERIFIER;
     }
 
     /**
@@ -92,14 +60,6 @@ public final class Ssl {
             return new WrapSSLSocketFactory(d);
         } catch (Throwable e) {
             throw new RuntimeException(e);
-        }
-    }
-
-    private static final class NullHostnameVerifier implements HostnameVerifier {
-
-        @Override
-        public boolean verify(String s, SSLSession sslSession) {
-            return true;
         }
     }
 

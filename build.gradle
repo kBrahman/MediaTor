@@ -10,7 +10,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.0-alpha03'
+        classpath 'com.android.tools.build:gradle:7.0.0-alpha04'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -32,8 +32,8 @@ android {
     compileSdkVersion 30
     defaultConfig {
         applicationId localProperties["id"]
-        versionCode 32
-        versionName "1.31"
+        versionCode 33
+        versionName "1.32"
         multiDexEnabled true
         minSdkVersion 21
         targetSdkVersion 30
@@ -77,6 +77,9 @@ android {
         release {
             minifyEnabled true
             shrinkResources true
+            ndk {
+                debugSymbolLevel 'SYMBOL_TABLE'
+            }
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.zig
             applicationVariants.all { variant ->
