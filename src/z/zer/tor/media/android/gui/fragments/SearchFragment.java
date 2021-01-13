@@ -256,14 +256,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
     public void onDestroy() {
         LocalSearchEngine.instance().setListener(null);
         keywordDetector.shutdownHistogramUpdateRequestDispatcher();
-        destroyHeaderBanner();
         super.onDestroy();
-    }
-
-    public void destroyHeaderBanner() {
-        if (searchHeaderBanner != null) {
-            searchHeaderBanner.onDestroy();
-        }
     }
 
     @Override
@@ -538,7 +531,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
 
         boolean adapterHasResults = adapter != null && adapter.getCount() > 0;
         if (adapterHasResults) {
-            switchView(view, R.id.fragment_search_list);
+            switchView(view);
             deepSearchProgress.setVisibility(searchFinished ? GONE : View.VISIBLE);
             filterButton.updateVisibility();
         } else {
@@ -546,13 +539,13 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         }
     }
 
-    private void switchView(View v, int id) {
+    private void switchView(View v) {
         if (v != null) {
             FrameLayout frameLayout = findView(v, R.id.fragment_search_framelayout);
             int childCount = frameLayout.getChildCount();
             for (int i = 0; i < childCount; i++) {
                 View childAt = frameLayout.getChildAt(i);
-                childAt.setVisibility((childAt.getId() == id) ? View.VISIBLE : View.INVISIBLE);
+                childAt.setVisibility((childAt.getId() == R.id.fragment_search_list) ? View.VISIBLE : View.INVISIBLE);
             }
         }
     }

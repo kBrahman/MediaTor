@@ -266,7 +266,6 @@ public final class JdkHttpClient extends AbstractHttpClient {
         }
 
         if (customHeaders != null && customHeaders.size() > 0) {
-            //put down here so it can overwrite any of the previous headers.
             setCustomHeaders(conn, customHeaders);
         }
 

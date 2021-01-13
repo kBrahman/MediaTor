@@ -35,17 +35,18 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.andrew.apollo.IApolloService;
 import com.andrew.apollo.utils.MusicUtils;
@@ -266,6 +267,7 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
 
     @Override
     protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
         if (intent == null || isShutdown(intent)) {
             return;
         }
@@ -430,10 +432,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (search != null) {
-            search.destroyHeaderBanner();
-            // TODO: make a unique call for these destroys
-        }
         if (playerSubscription != null) {
             playerSubscription.unsubscribe();
         }
