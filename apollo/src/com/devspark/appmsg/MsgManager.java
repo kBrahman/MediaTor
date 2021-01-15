@@ -1,23 +1,4 @@
-/*
- * Copyright 2012 Evgeny Shishkin
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.devspark.appmsg;
-
-import java.util.LinkedList;
-import java.util.Queue;
 
 import android.os.Handler;
 import android.os.Message;
@@ -25,11 +6,9 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-/**
- * 
- * @author Evgeny Shishkin
- * 
- */
+import java.util.LinkedList;
+import java.util.Queue;
+
 class MsgManager extends Handler {
 
     private static final int MESSAGE_DISPLAY = 0xc2007;
@@ -57,7 +36,7 @@ class MsgManager extends Handler {
 
     /**
      * Inserts a {@link AppMsg} to be displayed.
-     * 
+     *
      * @param AppMsg
      */
     void add(AppMsg appMsg) {
@@ -127,7 +106,7 @@ class MsgManager extends Handler {
 
     /**
      * Removes the {@link AppMsg}'s view after it's display duration.
-     * 
+     *
      * @param appMsg The {@link AppMsg} added to a {@link ViewGroup} and should be removed.s
      */
     private void removeMsg(final AppMsg appMsg) {

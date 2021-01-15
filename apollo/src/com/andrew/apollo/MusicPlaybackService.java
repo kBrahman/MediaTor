@@ -1,15 +1,3 @@
-/*
-* Copyright (C) 2012-2018 Andrew Neal, Angel Leon, Alden Torres, Jose Molina
-* Licensed under the Apache License, Version 2.0
-* (the "License"); you may not use this file except in compliance with the
-* License. You may obtain a copy of the License at
-* http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
-* or agreed to in writing, software distributed under the License is
-* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-* KIND, either express or implied. See the License for the specific language
-* governing permissions and limitations under the License.
-*/
-
 package com.andrew.apollo;
 
 import android.Manifest;
@@ -17,7 +5,6 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -45,6 +32,7 @@ import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.AlbumColumns;
 import android.provider.MediaStore.Audio.AudioColumns;
+
 import androidx.core.content.ContextCompat;
 
 import com.andrew.apollo.cache.ImageCache;
@@ -54,6 +42,10 @@ import com.andrew.apollo.provider.RecentStore;
 import com.andrew.apollo.ui.activities.AudioPlayerActivity;
 import com.andrew.apollo.utils.MusicUtils;
 
+import java.lang.ref.WeakReference;
+import java.util.Random;
+import java.util.Stack;
+
 import z.zer.tor.media.BuildConfig;
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.core.ConfigurationManager;
@@ -61,10 +53,6 @@ import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.android.util.Asyncs;
 import z.zer.tor.media.util.Logger;
 import z.zer.tor.media.util.Ref;
-
-import java.lang.ref.WeakReference;
-import java.util.Random;
-import java.util.Stack;
 
 import static z.zer.tor.media.android.util.Asyncs.async;
 import static z.zer.tor.media.android.util.RunStrict.runStrict;
@@ -119,11 +107,6 @@ public class MusicPlaybackService extends Service {
      */
     private static final String APOLLO_PACKAGE_NAME = "com.andrew.apollo";
     private static final String MUSIC_PACKAGE_NAME = "com.android.music";
-
-    /**
-     * Called to indicate a general service command. Used in
-     * {@link MediaButtonIntentReceiver}
-     */
     static final String SERVICECMD = "com.andrew.apollo.musicservicecommand";
 
     /**
@@ -167,8 +150,6 @@ public class MusicPlaybackService extends Service {
     public static final String FOREGROUND_STATE_CHANGED = "com.andrew.apollo.fgstatechanged";
 
     public static final String NOW_IN_FOREGROUND = "nowinforeground";
-
-    static final String FROM_MEDIA_BUTTON = "frommediabutton";
 
     /**
      * Used to easily notify a list that it should refresh. i.e. A playlist
@@ -420,7 +401,6 @@ public class MusicPlaybackService extends Service {
      */
     private RemoteControlClient mRemoteControlClient;
 
-    private ComponentName mMediaButtonReceiverComponent;
 
     // We use this to distinguish between different cards when saving/restoring
     // playlists
@@ -549,7 +529,8 @@ public class MusicPlaybackService extends Service {
                 // give this is a service declared in AndroidManifest.xml"
                 // -gubatron
                 new Thread(this::initService).start();
-            } catch (Throwable ignored) {}
+            } catch (Throwable ignored) {
+            }
         }
     }
 
@@ -580,18 +561,6 @@ public class MusicPlaybackService extends Service {
         // Initialize the audio manager and register any headset controls for
         // playback
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-        mMediaButtonReceiverComponent = new ComponentName(getPackageName(),
-                MediaButtonIntentReceiver.class.getName());
-        try {
-            if (mAudioManager != null) {
-                mAudioManager.registerMediaButtonEventReceiver(mMediaButtonReceiverComponent);
-            }
-        } catch (SecurityException e) {
-            e.printStackTrace();
-            // ignore
-            // some times the phone does not grant the MODIFY_PHONE_STATE permission
-            // this permission is for OMEs and we can't do anything about it
-        }
 
         // Use the remote control APIs to set the playback state
         setUpRemoteControlClient();
@@ -654,7 +623,6 @@ public class MusicPlaybackService extends Service {
      */
     private void setUpRemoteControlClient() {
         final Intent mediaButtonIntent = new Intent(Intent.ACTION_MEDIA_BUTTON);
-        mediaButtonIntent.setComponent(mMediaButtonReceiverComponent);
         mRemoteControlClient = new RemoteControlClient(
                 PendingIntent.getBroadcast(getApplicationContext(), 0, mediaButtonIntent,
                         PendingIntent.FLAG_UPDATE_CURRENT));
@@ -794,11 +762,6 @@ public class MusicPlaybackService extends Service {
         // Make sure the service will shut down on its own if it was
         // just started but not bound to and nothing is playing
         scheduleDelayedShutdown();
-
-        if (intent != null && intent.getBooleanExtra(FROM_MEDIA_BUTTON, false)) {
-            MediaButtonIntentReceiver.completeWakefulIntent(intent);
-        }
-
         return START_STICKY;
     }
 
@@ -932,7 +895,6 @@ public class MusicPlaybackService extends Service {
 
     /**
      * Called when we receive a ACTION_MEDIA_EJECT notification.
-     *
      */
     private void closeExternalStorageFiles() {
         stop(true);
@@ -2104,7 +2066,7 @@ public class MusicPlaybackService extends Service {
 
     /**
      * Expensive method, do not use in main thread.
-     *
+     * <p>
      * Returns the full duration of the current track
      *
      * @return The duration of the current track in milliseconds
@@ -2226,14 +2188,6 @@ public class MusicPlaybackService extends Service {
 
         if (status != AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
             return;
-        }
-
-        try {
-            mAudioManager.registerMediaButtonEventReceiver(new ComponentName(getPackageName(),
-                    MediaButtonIntentReceiver.class.getName()));
-        } catch (SecurityException e) {
-            e.printStackTrace();
-            // see explanation in initService
         }
 
         if (mPlayer != null && mPlayer.isInitialized()) {
@@ -2388,7 +2342,7 @@ public class MusicPlaybackService extends Service {
      * Moves an item in the queue from one position to another
      *
      * @param from The position the item is currently at
-     * @param to The position the item is being moved to
+     * @param to   The position the item is being moved to
      */
     public void moveQueueItem(int from, int to) {
         synchronized (this) {
@@ -2460,6 +2414,7 @@ public class MusicPlaybackService extends Service {
         ConfigurationManager CM = ConfigurationManager.instance();
         CM.setBoolean(Constants.PREF_KEY_GUI_PLAYER_SHUFFLE_ENABLED, shuffleEnabled);
     }
+
     /**
      * Sets the position of a track in the queue
      *
@@ -2773,8 +2728,8 @@ public class MusicPlaybackService extends Service {
             if (Ref.alive(mService)) {
                 MusicPlaybackService musicPlaybackService = mService.get();
                 async(musicPlaybackService,
-                      MusicPlaybackService.MultiPlayer::setDataSourceTask,
-                      player, path, callback, this);
+                        MusicPlaybackService.MultiPlayer::setDataSourceTask,
+                        player, path, callback, this);
             }
         }
 
