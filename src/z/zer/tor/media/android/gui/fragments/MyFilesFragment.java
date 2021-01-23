@@ -30,9 +30,10 @@ import android.content.Loader;
 import android.os.Bundle;
 import android.os.SystemClock;
 import com.google.android.material.tabs.TabLayout;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.appcompat.view.ActionMode;
 import androidx.appcompat.widget.SearchView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;

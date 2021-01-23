@@ -400,13 +400,8 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         checkExternalStoragePermissionsOrBindMusicService();
         checkAccessCoarseLocationPermissions();
         adView = new AdView(this, getString(R.string.banner_id), AdSize.BANNER_HEIGHT_50);
-
-        // Find the Ad Container
         LinearLayout adContainer = findViewById(R.id.banner_container);
-
-        // Add the ad view to your activity layout
         adContainer.addView(adView);
-
         adView.setVisibility(View.GONE);
         adView.loadAd();
     }
