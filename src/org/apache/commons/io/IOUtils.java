@@ -100,14 +100,6 @@ public class IOUtils {
      */
     public static final char DIR_SEPARATOR = File.separatorChar;
     /**
-     * The Unix line separator string.
-     */
-    public static final String LINE_SEPARATOR_UNIX = "\n";
-    /**
-     * The Windows line separator string.
-     */
-    public static final String LINE_SEPARATOR_WINDOWS = "\r\n";
-    /**
      * The system line separator string.
      */
     public static final String LINE_SEPARATOR;

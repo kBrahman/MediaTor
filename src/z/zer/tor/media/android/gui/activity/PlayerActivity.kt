@@ -1,5 +1,6 @@
 package z.zer.tor.media.android.gui.activity
 
+//import androidx.compose.foundation.layout.*
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
@@ -12,6 +13,7 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.widget.*
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
@@ -22,11 +24,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.gesture.tapGestureFilter
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layout
-import androidx.compose.ui.platform.setContent
-import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
+import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.constraintlayout.compose.Dimension
 import com.andrew.apollo.utils.MusicUtils
 import com.facebook.ads.*
 import org.json.JSONObject
@@ -88,7 +91,7 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
             }
         }).build())
 
-        setContent {
+        this.setContent {
             val playing = remember { mutableStateOf(true) }
             progress = remember { mutableStateOf(0F) }
             playerStarted = remember { mutableStateOf(false) }
@@ -101,16 +104,20 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
             })
             ConstraintLayout(modifier = Modifier.fillMaxSize()) {
                 val (btn, sb, row, col, mv, socialCtx, bodyTxt) = createRefs()
-                Column(Modifier.padding(8.dp).constrainAs(col) {}) {
+                Column(Modifier
+                        .padding(8.dp)
+                        .constrainAs(col) {}) {
                     Text(text = displayName, fontSize = 20.sp)
                     Text(text = intent.getStringExtra("source").toString())
 
                 }
                 if (adLoaded.value) {
                     val icon = MediaView(this@PlayerActivity)
-                    Row(Modifier.constrainAs(row) {
-                        top.linkTo(col.bottom, margin = 10.dp)
-                    }.padding(8.dp)) {
+                    Row(Modifier
+                            .constrainAs(row) {
+                                top.linkTo(col.bottom, margin = 10.dp)
+                            }
+                            .padding(8.dp)) {
                         AndroidView(modifier = Modifier.size(35.dp), viewBlock = { icon })
                         Spacer(modifier = Modifier.preferredWidth(4.dp))
                         Column {
@@ -120,22 +127,28 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
                         Spacer(Modifier.weight(1F))
                         AndroidView(viewBlock = { AdOptionsView(this@PlayerActivity, nativeAd, null) })
                     }
-                    AndroidView(modifier = Modifier.padding(start = 8.dp, end = 8.dp).constrainAs(mv) {
-                        top.linkTo(row.bottom)
-                        bottom.linkTo(socialCtx.top, margin = 4.dp)
-                        height = Dimension.fillToConstraints
-                    }, viewBlock = {
+                    AndroidView(modifier = Modifier
+                            .padding(start = 8.dp, end = 8.dp)
+                            .constrainAs(mv) {
+                                top.linkTo(row.bottom)
+                                bottom.linkTo(socialCtx.top, margin = 4.dp)
+                                height = Dimension.fillToConstraints
+                            }, viewBlock = {
                         Log.i(TAG, "android view block")
                         val mediaView = MediaView(this@PlayerActivity)
                         nativeAd.registerViewForInteraction(mediaView, mediaView, icon)
                         mediaView
                     })
-                    Text(text = nativeAd.adSocialContext.toString(), modifier = Modifier.constrainAs(socialCtx) {
-                        bottom.linkTo(bodyTxt.top, margin = 4.dp)
-                    }.padding(start = 4.dp))
-                    Text(text = nativeAd.adBodyText.toString(), modifier = Modifier.constrainAs(bodyTxt) {
-                        bottom.linkTo(sb.top, margin = 4.dp)
-                    }.padding(start = 4.dp, end = 4.dp))
+                    Text(text = nativeAd.adSocialContext.toString(), modifier = Modifier
+                            .constrainAs(socialCtx) {
+                                bottom.linkTo(bodyTxt.top, margin = 4.dp)
+                            }
+                            .padding(start = 4.dp))
+                    Text(text = nativeAd.adBodyText.toString(), modifier = Modifier
+                            .constrainAs(bodyTxt) {
+                                bottom.linkTo(sb.top, margin = 4.dp)
+                            }
+                            .padding(start = 4.dp, end = 4.dp))
                 }
                 if (playerStarted.value) {
                     Button(onClick = {
@@ -147,32 +160,38 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
                             playing.value = true
                         }
                     }, colors = ButtonDefaults.buttonColors(backgroundColor = colorPrimary),
-                            modifier = Modifier.preferredWidth(48.dp).constrainAs(btn) {
-                                start.linkTo(parent.start, margin = 8.dp)
-                                bottom.linkTo(parent.bottom, margin = 8.dp)
-                            }) {
-                        Icon(vectorResource(id = if (playing.value) R.drawable.ic_pause_24 else R.drawable.ic_play_24),
+                            modifier = Modifier
+                                    .preferredWidth(48.dp)
+                                    .constrainAs(btn) {
+                                        start.linkTo(parent.start, margin = 8.dp)
+                                        bottom.linkTo(parent.bottom, margin = 8.dp)
+                                    }) {
+                        Icon(painter = painterResource(id = if (playing.value) R.drawable.ic_pause_24 else R.drawable.ic_play_24),
+                                contentDescription = "",
                                 tint = Color.White)
                     }
 
-                    LinearProgressIndicator(progress = progress.value, color = colorPrimary, modifier = Modifier.constrainAs(sb) {
-                        start.linkTo(btn.end, margin = 4.dp)
-                        end.linkTo(parent.end, margin = 16.dp)
-                        top.linkTo(btn.top)
-                        bottom.linkTo(btn.bottom)
-                        height = Dimension.fillToConstraints
-                        width = Dimension.fillToConstraints
-                    }.layout { measurable, constraints ->
-                        val placeable = measurable.measure(constraints)
-                        w = placeable.width
-                        layout(placeable.width, placeable.height) {
-                            placeable.placeRelative(0, 0)
-                        }
-                    }.tapGestureFilter {
-                        progress.value = it.x / w
-                        androidMediaPlayer?.seekTo((progress.value * (androidMediaPlayer?.duration
-                                ?: 0)).toInt())
-                    })
+                    LinearProgressIndicator(progress = progress.value, color = colorPrimary, modifier = Modifier
+                            .constrainAs(sb) {
+                                start.linkTo(btn.end, margin = 4.dp)
+                                end.linkTo(parent.end, margin = 16.dp)
+                                top.linkTo(btn.top)
+                                bottom.linkTo(btn.bottom)
+                                height = Dimension.fillToConstraints
+                                width = Dimension.fillToConstraints
+                            }
+                            .layout { measurable, constraints ->
+                                val placeable = measurable.measure(constraints)
+                                w = placeable.width
+                                layout(placeable.width, placeable.height) {
+                                    placeable.placeRelative(0, 0)
+                                }
+                            }
+                            .tapGestureFilter {
+                                progress.value = it.x / w
+                                androidMediaPlayer?.seekTo((progress.value * (androidMediaPlayer?.duration
+                                        ?: 0)).toInt())
+                            })
                 } else {
                     LinearProgressIndicator(color = colorPrimary, modifier = Modifier.constrainAs(sb) {
                         bottom.linkTo(parent.bottom, margin = 16.dp)

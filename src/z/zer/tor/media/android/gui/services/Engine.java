@@ -1,20 +1,3 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2017, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package z.zer.tor.media.android.gui.services;
 
 import android.app.Application;
@@ -30,6 +13,7 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Vibrator;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
@@ -49,6 +33,7 @@ import static z.zer.tor.media.android.util.Asyncs.async;
 public final class Engine implements IEngineService {
 
     private static final ExecutorService MAIN_THREAD_POOL = new EngineThreadPool();
+    private static final String TAG = Engine.class.getSimpleName();
 
     private EngineService service;
     private ServiceConnection connection;
@@ -119,6 +104,7 @@ public final class Engine implements IEngineService {
     }
 
     public void startServices() {
+        Log.i(TAG, "startServices; wasShutDown=>" + wasShutdown + "; service is null=>" + (service == null));
         if (service != null || wasShutdown) {
             if (service != null) {
                 service.startServices(wasShutdown);
@@ -180,6 +166,7 @@ public final class Engine implements IEngineService {
      * @param context This must be the application context, otherwise there will be a leak.
      */
     private void startEngineService(final Context context) {
+        Log.i(TAG, "startEngineService");
         Intent i = new Intent(context, EngineService.class);
         try {
             context.startService(i);
@@ -189,7 +176,9 @@ public final class Engine implements IEngineService {
 
                 public void onServiceConnected(ComponentName name, IBinder service) {
                     // avoids: java.lang.ClassCastException: android.os.BinderProxy cannot be cast to com.frostwire.android.gui.services.EngineService$EngineServiceBinder
+                    Log.i(TAG, "on service connected");
                     if (service instanceof EngineServiceBinder) {
+                        Log.i(TAG, "getting service");
                         Engine.this.service = ((EngineServiceBinder) service).getService();
                         registerStatusReceiver(context);
                         if (pendingStartServices) {
@@ -281,7 +270,7 @@ public final class Engine implements IEngineService {
         }
     }
 
-    private class EngineApplicationRefsHolder {
+    private static class EngineApplicationRefsHolder {
         WeakReference<Engine> engineRef;
         WeakReference<Application> appRef;
 
@@ -292,6 +281,7 @@ public final class Engine implements IEngineService {
     }
 
     private static void engineServiceStarter(EngineApplicationRefsHolder refsHolder) {
+        Log.i(TAG, "engineServiceStarter");
         if (!Ref.alive(refsHolder.engineRef)) {
             return;
         }

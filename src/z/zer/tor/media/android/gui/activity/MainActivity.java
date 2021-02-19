@@ -32,7 +32,6 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.res.Configuration;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
@@ -191,20 +190,14 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
 
     @Override
     public void finish() {
-        if (Build.VERSION.SDK_INT >= 21) {
-            finishAndRemoveTaskViaReflection();
-        } else {
-            super.finish();
-        }
+        finishAndRemoveTaskViaReflection();
     }
 
     private void finishAndRemoveTaskViaReflection() {
         final Class<? extends MainActivity> clazz = getClass();
         try {
             final Method finishAndRemoveTaskMethod = clazz.getMethod("finishAndRemoveTask");
-            if (finishAndRemoveTaskMethod != null) {
-                finishAndRemoveTaskMethod.invoke(this);
-            }
+            finishAndRemoveTaskMethod.invoke(this);
         } catch (Throwable e) {
             e.printStackTrace();
             super.finish();
@@ -388,7 +381,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i(TAG, "on create");
         setTheme(R.style.Theme_MediaTor);
         super.onCreate(savedInstanceState);
         if (!ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_GUI_TOS_ACCEPTED)) {
@@ -447,6 +439,7 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     }
 
     private void mainResume() {
+        Log.i(TAG, "main resume");
         async(this, MainActivity::checkSDPermission, MainActivity::checkSDPermissionPost);
         syncNavigationMenu();
         if (firstTime) {
@@ -455,6 +448,7 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
             } else {
                 firstTime = false;
                 Engine.instance().startServices(); // it's necessary for the first time after wizard
+                Log.i(TAG, "Engine.instance().startServices()");
             }
         }
         if (Engine.instance().wasShutdown()) {
@@ -737,6 +731,7 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         if (checker != null) {
             checker.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     public void performYTSearch(String ytUrl) {

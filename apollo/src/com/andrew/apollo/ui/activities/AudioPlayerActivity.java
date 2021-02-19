@@ -163,9 +163,6 @@ public final class AudioPlayerActivity extends AbstractActivity implements Servi
     private long mLastSeekEventTime;
 
     private long mLastShortSeekEventTime;
-
-    private long lastInitAlbumArtBanner;
-
     private boolean mIsPaused = false;
 
     private boolean mFromTouch = false;

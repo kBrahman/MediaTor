@@ -41,10 +41,6 @@ import static z.zer.tor.media.android.util.Asyncs.async;
 /**
  * See also Apollo's BaseActivity and StopAndHideBottomActionBarListener if you're trying
  * to update the mini player in My Music.
- *
- * @author gubatron
- * @author aldenml
- * @author marcelinkaaa
  */
 public class MiniPlayerView extends LinearLayout {
 

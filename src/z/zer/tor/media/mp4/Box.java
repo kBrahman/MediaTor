@@ -244,7 +244,7 @@ public class Box {
         return null;
     }
 
-    static Box empty(int type) throws IOException {
+    static Box empty(int type) {
         BoxLambda p = mapping.get(type);
         if (p != null) {
             return p.empty();
@@ -517,12 +517,7 @@ public class Box {
                 return new AppleGenreIDBox();
             }
         });
-        map.put(Cday, new BoxLambda() {
-            @Override
-            public Box empty() {
-                return new AppleYearBox();
-            }
-        });
+        map.put(Cday, AppleYearBox::new);
         map.put(free, new BoxLambda() {
             @Override
             public Box empty() {
