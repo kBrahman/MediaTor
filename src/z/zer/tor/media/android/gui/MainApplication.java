@@ -49,7 +49,6 @@ public class MainApplication extends MultiDexApplication {
         async(LocalSearchEngine::instance);
         async(MainApplication::cleanTemp);
         AudienceNetworkAds.initialize(this);
-        Engine.instance().onApplicationCreate(this);
     }
 
     @Override

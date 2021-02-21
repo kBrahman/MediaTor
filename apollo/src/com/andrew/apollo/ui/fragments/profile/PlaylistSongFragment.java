@@ -46,8 +46,6 @@ import com.andrew.apollo.utils.PreferenceUtils;
 import java.util.List;
 
 import z.zer.tor.media.R;
-import z.zer.tor.media.android.core.Constants;
-import z.zer.tor.media.android.gui.util.UIUtils;
 
 /**
  * This class is used to display all of the songs from a particular playlist.
@@ -92,7 +90,6 @@ public final class PlaylistSongFragment extends ApolloFragment<ProfileSongAdapte
         //fix scrollbar todo figure out why was it disabled in ApolloFragment
         dsListView.setVerticalScrollBarEnabled(true);
         dsListView.setFastScrollEnabled(true);
-        mEmptyTextView.setOnClickListener(v -> UIUtils.openURL(v.getContext(), Constants.FROSTWIRE_ANDROID_FAQ_HOW_TO_ADD_SONGS_TO_PLAYLIST_URL));
         return mRootView;
     }
 

@@ -438,6 +438,12 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         }
     }
 
+//    @Override
+//    protected void onStart() {
+//        Engine.instance().onApplicationCreate(getApplication());
+//        super.onStart();
+//    }
+
     private void mainResume() {
         Log.i(TAG, "main resume");
         async(this, MainActivity::checkSDPermission, MainActivity::checkSDPermissionPost);
@@ -447,12 +453,12 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
                 UIUtils.showDismissableMessage(findView(R.id.activity_main_drawer_layout), R.string.cannot_start_engine_without_vpn);
             } else {
                 firstTime = false;
-                Engine.instance().startServices(); // it's necessary for the first time after wizard
+                Engine.instance().startServices(getApplication()); // it's necessary for the first time after wizard
                 Log.i(TAG, "Engine.instance().startServices()");
             }
         }
         if (Engine.instance().wasShutdown()) {
-            Engine.instance().startServices();
+            Engine.instance().startServices(getApplication());
         }
     }
 

@@ -27,6 +27,8 @@ import android.os.Environment;
 import android.os.SystemClock;
 import android.telephony.TelephonyManager;
 
+import java.io.File;
+
 import z.zer.tor.media.android.core.ConfigurationManager;
 import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.android.gui.Librarian;
@@ -38,8 +40,6 @@ import z.zer.tor.media.bittorrent.BTEngine;
 import z.zer.tor.media.platform.Platforms;
 import z.zer.tor.media.util.Logger;
 import z.zer.tor.media.util.Ref;
-
-import java.io.File;
 
 import static z.zer.tor.media.android.util.Asyncs.async;
 
@@ -192,9 +192,7 @@ public class EngineBroadcastReceiver extends BroadcastReceiver {
             e.printStackTrace();
         }
         if (Engine.instance().isDisconnected()) {
-            if (ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_NETWORK_BITTORRENT_ON_VPN_ONLY) && !NetworkManager.instance().isTunnelUp()) {
-                //don't start
-            } else {
+            if (!(ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_NETWORK_BITTORRENT_ON_VPN_ONLY) && !NetworkManager.instance().isTunnelUp())) {
                 Engine.instance().startServices();
             }
         }

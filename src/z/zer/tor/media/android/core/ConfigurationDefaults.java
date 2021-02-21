@@ -60,9 +60,7 @@ final class ConfigurationDefaults {
         defaultValues.put(Constants.PREF_KEY_GUI_OGURY_THRESHOLD, 101);
         defaultValues.put(Constants.PREF_KEY_GUI_OFFERS_WATERFALL,
                 new String[]{
-                        Constants.AD_NETWORK_SHORTCODE_MOPUB,
                         Constants.AD_NETWORK_SHORTCODE_APPLOVIN,
-                        Constants.AD_NETWORK_SHORTCODE_REMOVEADS
                 });
         defaultValues.put(Constants.PREF_KEY_GUI_HAPTIC_FEEDBACK_ON, true);
         defaultValues.put(Constants.PREF_KEY_GUI_DISTRACTION_FREE_SEARCH, false);

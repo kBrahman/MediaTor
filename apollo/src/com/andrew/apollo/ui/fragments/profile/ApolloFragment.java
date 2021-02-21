@@ -1,21 +1,3 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- *            Jose Molina (@votaguz)
- * Copyright (c) 2011-2018, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.andrew.apollo.ui.fragments.profile;
 
 import android.app.Activity;
@@ -34,7 +16,6 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.andrew.apollo.MusicStateListener;
 import com.andrew.apollo.adapters.ApolloFragmentAdapter;
@@ -78,9 +59,6 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I> exte
      * The list view
      */
     protected ListView mListView;
-
-    protected TextView mEmptyTextView;
-
     /**
      * The grid view
      */
@@ -168,9 +146,6 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I> exte
             // this inflate here is crashing.
             mRootView = (ViewGroup) inflater.inflate(R.layout.grid_base, null, false);
             initGridView();
-        }
-        if (mEmptyTextView == null) {
-            mEmptyTextView = mRootView.findViewById(R.id.empty);
         }
         return mRootView;
     }
@@ -409,15 +384,7 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I> exte
         if (data == null || data.isEmpty()) {
             mAdapter.unload();
             mAdapter.notifyDataSetChanged();
-            // Set the empty text
-            if (mEmptyTextView != null) {
-                mEmptyTextView.setText(mDefaultFragmentEmptyString);
-                if (isSimpleLayout()) {
-                    mListView.setEmptyView(mEmptyTextView);
-                } else {
-                    mGridView.setEmptyView(mEmptyTextView);
-                }
-            }
+
             return;
         }
         if (mAdapter == null) {

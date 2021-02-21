@@ -103,6 +103,23 @@ public final class Engine implements IEngineService {
         return service != null && service.isDisconnected();
     }
 
+    public void startServices(Application application) {
+        Log.i(TAG, "startServices; wasShutDown=>" + wasShutdown + "; service is null=>" + (service == null));
+        if (service != null || wasShutdown) {
+            if (service != null) {
+                service.startServices(wasShutdown);
+            }
+            if (wasShutdown) {
+                async(new EngineApplicationRefsHolder(this, getApplication()), Engine::engineServiceStarter);
+            }
+            wasShutdown = false;
+        } else {
+            // save pending startServices call
+            pendingStartServices = true;
+            async(new EngineApplicationRefsHolder(this, application), Engine::engineServiceStarter);
+        }
+    }
+
     public void startServices() {
         Log.i(TAG, "startServices; wasShutDown=>" + wasShutdown + "; service is null=>" + (service == null));
         if (service != null || wasShutdown) {
@@ -170,6 +187,7 @@ public final class Engine implements IEngineService {
         Intent i = new Intent(context, EngineService.class);
         try {
             context.startService(i);
+            Log.i(TAG, "engine service started");
             context.bindService(i, connection = new ServiceConnection() {
                 public void onServiceDisconnected(ComponentName name) {
                 }
@@ -183,7 +201,7 @@ public final class Engine implements IEngineService {
                         registerStatusReceiver(context);
                         if (pendingStartServices) {
                             pendingStartServices = false;
-                            Engine.this.service.startServices();
+                            Engine.this.service.startServices(getApplication());
                         }
                     }
                 }
@@ -283,9 +301,11 @@ public final class Engine implements IEngineService {
     private static void engineServiceStarter(EngineApplicationRefsHolder refsHolder) {
         Log.i(TAG, "engineServiceStarter");
         if (!Ref.alive(refsHolder.engineRef)) {
+            Log.i(TAG, "!Ref.alive(refsHolder.engineRef)");
             return;
         }
         if (!Ref.alive(refsHolder.appRef)) {
+            Log.i(TAG, "!Ref.alive(refsHolder.appRef)");
             return;
         }
         Engine engine = refsHolder.engineRef.get();

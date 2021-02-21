@@ -138,36 +138,14 @@ public final class Constants {
     public static final byte FILE_TYPE_RINGTONES = 0x05;
     public static final byte FILE_TYPE_TORRENTS = 0x06;
 
-    public static final String MIME_TYPE_ANDROID_PACKAGE_ARCHIVE = "application/vnd.android.package-archive";
     public static final String MIME_TYPE_BITTORRENT = "application/x-bittorrent";
     public static final String FROSTWIRE_MORE_RESULTS = "http://www.frostwire.com/more.results";
     public static final String SUPPORT_URL = "http://support.frostwire.com/hc/en-us/categories/200014385-FrostWire-for-Android";
-    public static final String TERMS_OF_USE_URL = "http://www.frostwire.com/terms";
-    public static final String ALL_FEATURED_DOWNLOADS_URL = "http://www.frostwire.com/featured-downloads/";
-    public static final String FROSTWIRE_PREVIEW_DOT_COM_URL = "http://www.frostwire-preview.com/";
-
-    /**
-     * Social Media official URLS
-     */
-    public static final String SOCIAL_URL_FACEBOOK_PAGE = "https://www.facebook.com/FrostwireOfficial";
-    public static final String SOCIAL_URL_TWITTER_PAGE = "https://twitter.com/frostwire";
-    public static final String SOCIAL_URL_REDDIT_PAGE = "https://reddit.com/r/frostwire";
-    public static final String SOCIAL_URL_GITHUB_PAGE = "https://github.com/frostwire/frostwire";
-    public static final String SOCIAL_URL_SLACK_PAGE = "http://www.frostwire.com/chat";
-
-    public static final String FROSTWIRE_GIVE_URL = "http://www.frostwire.com/give/?from=";
-    public static final String STICKERS_SHOP_URL = "http://www.frostwire.com/stickers";
-    public static final String CONTACT_US_URL = "http://www.frostwire.com/contact";
-    public static final String TRANSLATE_HELP_URL = "http://forum.frostwire.com/viewtopic.php?f=9&t=4922";
-    public static final String CHANGELOG_URL = "https://github.com/frostwire/frostwire/blob/master/android/changelog.txt";
 
     public static final String AD_NETWORK_SHORTCODE_APPLOVIN = "AL";
-    public static final String AD_NETWORK_SHORTCODE_REMOVEADS = "RA";
-    public static final String AD_NETWORK_SHORTCODE_MOPUB = "MP";
 
     public static final String FROSTWIRE_VPN_URL = "http://www.frostwire.com/vpn";
 
-    public static final String PIA_VPN_URL = "https://www.privateinternetaccess.com/pages/android-vpn-app/FROSTWIRE";
     public static final String EXPRESSVPN_URL = "https://www.linkev.com/?offer=3monthsfree&a_fid=frostwire";
     public static final String NORDVPN_URL = "https://go.nordvpn.net/aff_c?offer_id=222&aff_id=11226";
 
@@ -175,9 +153,6 @@ public final class Constants {
     public static final int NOTIFICATION_DOWNLOAD_TRANSFER_FINISHED = 1001;
     public static final int NOTIFICATION_FROSTWIRE_PLAYER_STATUS = 1002;
 
-    public static final String FROSTWIRE_NOTIFICATION_CHANNEL_ID = "frostwire";
-    public static final String FROSTWIRE_ANDROID_FAQ_HOW_TO_ADD_SONGS_TO_PLAYLIST_URL = "https://support.frostwire.com/hc/en-us/articles/213091283-How-To-Create-Playlists-on-FrostWire-for-Android";
+    public static final String MEDIA_TOR_NOTIFICATION_CHANNEL_ID = "media_tor";
 
-    private Constants() {
-    }
 }

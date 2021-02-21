@@ -1,22 +1,6 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2018, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package z.zer.tor.media.android.gui.services;
 
+import android.app.Application;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -28,6 +12,7 @@ import android.content.SharedPreferences;
 import android.os.Binder;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
+
 import androidx.core.app.NotificationCompat;
 
 import com.frostwire.jlibtorrent.Vectors;
@@ -183,7 +168,7 @@ public class EngineService extends Service implements IEngineService {
         return getState() == STATE_DISCONNECTED;
     }
 
-    public synchronized void startServices() {
+    public synchronized void startServices(Application application) {
         startServices(false);
     }
 
@@ -250,13 +235,13 @@ public class EngineService extends Service implements IEngineService {
             i.putExtra(Constants.EXTRA_DOWNLOAD_COMPLETE_PATH, file.getAbsolutePath());
             PendingIntent pi = PendingIntent.getActivity(context, 0, i, PendingIntent.FLAG_UPDATE_CURRENT);
             NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            Notification notification = new NotificationCompat.Builder(context, Constants.FROSTWIRE_NOTIFICATION_CHANNEL_ID).setWhen(System.currentTimeMillis()).setContentText(getString(R.string.download_finished)).setContentTitle(getString(R.string.download_finished)).setSmallIcon(R.mipmap.ic_launcher_round).setContentIntent(pi).build();
+            Notification notification = new NotificationCompat.Builder(context, Constants.MEDIA_TOR_NOTIFICATION_CHANNEL_ID).setWhen(System.currentTimeMillis()).setContentText(getString(R.string.download_finished)).setContentTitle(getString(R.string.download_finished)).setSmallIcon(R.mipmap.ic_launcher_round).setContentIntent(pi).build();
             notification.vibrate = ConfigurationManager.instance().vibrateOnFinishedDownload() ? VENEZUELAN_VIBE : null;
             notification.number = TransferManager.instance().getDownloadsToReview();
             notification.flags |= Notification.FLAG_AUTO_CANCEL;
             if (manager != null) {
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                    NotificationChannel channel = new NotificationChannel(Constants.FROSTWIRE_NOTIFICATION_CHANNEL_ID, "FrostWire", NotificationManager.IMPORTANCE_MIN);
+                    NotificationChannel channel = new NotificationChannel(Constants.MEDIA_TOR_NOTIFICATION_CHANNEL_ID, "FrostWire", NotificationManager.IMPORTANCE_MIN);
                     channel.setSound(null, null);
                     manager.createNotificationChannel(channel);
                 }

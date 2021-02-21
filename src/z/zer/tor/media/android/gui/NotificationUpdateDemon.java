@@ -1,20 +1,3 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2017, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package z.zer.tor.media.android.gui;
 
 import android.app.Notification;
@@ -23,9 +6,11 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.PowerManager;
-import androidx.core.app.NotificationCompat;
 import android.widget.RemoteViews;
+
+import androidx.core.app.NotificationCompat;
 
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.core.ConfigurationManager;
@@ -38,14 +23,14 @@ import z.zer.tor.media.android.gui.views.TimerService;
 import z.zer.tor.media.android.gui.views.TimerSubscription;
 import z.zer.tor.media.util.Logger;
 
+import static android.app.NotificationManager.IMPORTANCE_DEFAULT;
+import static z.zer.tor.media.android.core.Constants.MEDIA_TOR_NOTIFICATION_CHANNEL_ID;
 import static z.zer.tor.media.android.util.Asyncs.async;
 
 public final class NotificationUpdateDemon implements TimerObserver {
 
     private static final Logger LOG = Logger.getLogger(NotificationUpdateDemon.class);
     private static final int FROSTWIRE_STATUS_NOTIFICATION_UPDATE_INTERVAL_IN_SECS = 5;
-    private static final String CHANNEL_ID = "Media_Tor_channel";
-
     private final Context mParentContext;
     private TimerSubscription mTimerSubscription;
 
@@ -122,7 +107,7 @@ public final class NotificationUpdateDemon implements TimerObserver {
             if (notificationManager != null) {
                 try {
                     if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                        NotificationChannel channel = new NotificationChannel(Constants.FROSTWIRE_NOTIFICATION_CHANNEL_ID, "FrostWire", NotificationManager.IMPORTANCE_MIN);
+                        NotificationChannel channel = new NotificationChannel(MEDIA_TOR_NOTIFICATION_CHANNEL_ID, "FrostWire", NotificationManager.IMPORTANCE_MIN);
                         channel.setSound(null, null);
                         notificationManager.createNotificationChannel(channel);
                     }
@@ -142,10 +127,10 @@ public final class NotificationUpdateDemon implements TimerObserver {
         if (!ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_GUI_ENABLE_PERMANENT_STATUS_NOTIFICATION)) {
             return;
         }
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-        //            NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, "Taxor", IMPORTANCE_DEFAULT);
-        //            ((NotificationManager) mParentContext.getSystemService(Context.NOTIFICATION_SERVICE)).createNotificationChannel(mChannel);
-        //        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel mChannel = new NotificationChannel(MEDIA_TOR_NOTIFICATION_CHANNEL_ID, "media_tor_channel", IMPORTANCE_DEFAULT);
+            ((NotificationManager) mParentContext.getSystemService(Context.NOTIFICATION_SERVICE)).createNotificationChannel(mChannel);
+        }
         RemoteViews remoteViews = new RemoteViews(mParentContext.getPackageName(), R.layout.view_permanent_status_notification);
 
         PendingIntent showFrostWireIntent = createShowFrostwireIntent();
@@ -153,7 +138,7 @@ public final class NotificationUpdateDemon implements TimerObserver {
 
         remoteViews.setOnClickPendingIntent(R.id.view_permanent_status_shutdown, shutdownIntent);
         remoteViews.setOnClickPendingIntent(R.id.view_permanent_status_text_title, showFrostWireIntent);
-        Notification notification = new NotificationCompat.Builder(mParentContext, Constants.FROSTWIRE_NOTIFICATION_CHANNEL_ID).
+        Notification notification = new NotificationCompat.Builder(mParentContext, MEDIA_TOR_NOTIFICATION_CHANNEL_ID).
                 setSmallIcon(R.mipmap.ic_launcher_round).
                 setContentIntent(showFrostWireIntent).
                 setContent(remoteViews).

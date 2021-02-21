@@ -19,13 +19,14 @@ package z.zer.tor.media.android.gui.fragments.preference;
 
 import android.app.Dialog;
 import android.app.DialogFragment;
+
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.SwitchPreferenceCompat;
 
 import z.zer.tor.media.BuildConfig;
-import z.zer.tor.media.android.AndroidPlatform;
 import z.zer.tor.media.R;
+import z.zer.tor.media.android.AndroidPlatform;
 import z.zer.tor.media.android.core.ConfigurationManager;
 import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.android.gui.NetworkManager;
@@ -194,7 +195,7 @@ public final class ApplicationFragment extends AbstractPreferenceFragment implem
     }
 
     private void connect() {
-        Engine.instance().startServices(); // internally this is an async call in libtorrent
+        Engine.instance().startServices(getActivity().getApplication()); // internally this is an async call in libtorrent
         updateConnectSwitchStatus();
     }
 

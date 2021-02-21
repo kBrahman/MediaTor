@@ -89,7 +89,7 @@ public class NotificationHelper {
         PendingIntent pendingintent = getPendingIntent();
 
         // Notification Builder
-        Notification aNotification = new NotificationCompat.Builder(mService, Constants.FROSTWIRE_NOTIFICATION_CHANNEL_ID).setSmallIcon(R.mipmap.ic_launcher_round).setContentIntent(pendingintent).setVisibility(VISIBILITY_PUBLIC).setContent(mNotificationTemplate).build();
+        Notification aNotification = new NotificationCompat.Builder(mService, Constants.MEDIA_TOR_NOTIFICATION_CHANNEL_ID).setSmallIcon(R.mipmap.ic_launcher_round).setContentIntent(pendingintent).setVisibility(VISIBILITY_PUBLIC).setContent(mNotificationTemplate).build();
 
         // Control playback from the notification
         initPlaybackActions(isPlaying);
@@ -143,7 +143,7 @@ public class NotificationHelper {
         try {
             if (mNotification != null) {
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                    NotificationChannel channel = new NotificationChannel(Constants.FROSTWIRE_NOTIFICATION_CHANNEL_ID, "FrostWire", NotificationManager.IMPORTANCE_DEFAULT);
+                    NotificationChannel channel = new NotificationChannel(Constants.MEDIA_TOR_NOTIFICATION_CHANNEL_ID, "FrostWire", NotificationManager.IMPORTANCE_DEFAULT);
                     channel.setSound(null, null);
                     mNotificationManager.createNotificationChannel(channel);
                 }
