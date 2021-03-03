@@ -123,7 +123,7 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     private TimerSubscription playerSubscription;
 
     private boolean shuttingDown = false;
-    public AdView adView;
+    public AdView banner;
 
     public MainActivity() {
         super(R.layout.activity_main);
@@ -391,11 +391,11 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         }
         checkExternalStoragePermissionsOrBindMusicService();
         checkAccessCoarseLocationPermissions();
-        adView = new AdView(this, getString(R.string.banner_id), AdSize.BANNER_HEIGHT_50);
+        banner = new AdView(this, getString(R.string.fb_banner_id), AdSize.BANNER_HEIGHT_50);
         LinearLayout adContainer = findViewById(R.id.banner_container);
-        adContainer.addView(adView);
-        adView.setVisibility(View.GONE);
-        adView.loadAd();
+        adContainer.addView(banner);
+        banner.setVisibility(View.GONE);
+        banner.loadAd();
     }
 
     private void checkAccessCoarseLocationPermissions() {
@@ -426,8 +426,8 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
             MusicUtils.unbindFromService(mToken);
             mToken = null;
         }
-        if (adView != null) {
-            adView.destroy();
+        if (banner != null) {
+            banner.destroy();
         }
     }
 

@@ -1,6 +1,5 @@
 package z.zer.tor.media.android.gui.activity
 
-//import androidx.compose.foundation.layout.*
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
@@ -15,14 +14,15 @@ import android.util.Log
 import android.widget.*
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.gesture.tapGestureFilter
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -43,7 +43,10 @@ import java.net.HttpURLConnection
 import java.net.URL
 import java.util.*
 
-class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener, MediaPlayer.OnBufferingUpdateListener, MediaPlayer.OnCompletionListener, MediaPlayer.OnPreparedListener, MediaPlayer.OnInfoListener, AudioManager.OnAudioFocusChangeListener, SeekBar.OnSeekBarChangeListener, Runnable {
+class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener,
+    MediaPlayer.OnBufferingUpdateListener, MediaPlayer.OnCompletionListener,
+    MediaPlayer.OnPreparedListener, MediaPlayer.OnInfoListener,
+    AudioManager.OnAudioFocusChangeListener, SeekBar.OnSeekBarChangeListener, Runnable {
 
     private lateinit var adLoaded: MutableState<Boolean>
     val TAG = PlayerActivity::class.java.simpleName
@@ -60,7 +63,7 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
         super.onCreate(savedInstanceState)
         title = getString(R.string.application_label)
         val displayName = intent.getStringExtra("displayName").toString()
-        val nativeAd = NativeAd(this, getString(R.string.id_ad_native))
+        val nativeAd = NativeAd(this, getString(R.string.id_ad_native_fb))
         nativeAd.loadAd(nativeAd.buildLoadAdConfig().withAdListener(object : NativeAdListener {
             override fun onMediaDownloaded(ad: Ad) {
                 Log.e(TAG, "Native ad finished downloading all assets.")
@@ -97,14 +100,17 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
             playerStarted = remember { mutableStateOf(false) }
             adLoaded = remember { mutableStateOf(false) }
             var w = 0
-            val colorPrimary = Color(if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                getColor(R.color.colorPrimary)
-            } else {
-                resources.getColor(R.color.colorPrimary)
-            })
+            val colorPrimary = Color(
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    getColor(R.color.colorPrimary)
+                } else {
+                    resources.getColor(R.color.colorPrimary)
+                }
+            )
             ConstraintLayout(modifier = Modifier.fillMaxSize()) {
                 val (btn, sb, row, col, mv, socialCtx, bodyTxt) = createRefs()
-                Column(Modifier
+                Column(
+                    Modifier
                         .padding(8.dp)
                         .constrainAs(col) {}) {
                     Text(text = displayName, fontSize = 20.sp)
@@ -114,41 +120,50 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
                 if (adLoaded.value) {
                     val icon = MediaView(this@PlayerActivity)
                     Row(Modifier
-                            .constrainAs(row) {
-                                top.linkTo(col.bottom, margin = 10.dp)
-                            }
-                            .padding(8.dp)) {
-                        AndroidView(modifier = Modifier.size(35.dp), viewBlock = { icon })
-                        Spacer(modifier = Modifier.preferredWidth(4.dp))
+                        .constrainAs(row) {
+                            top.linkTo(col.bottom, margin = 10.dp)
+                        }
+                        .padding(8.dp)) {
+                        AndroidView(modifier = Modifier.size(35.dp), factory = { icon })
+                        Spacer(modifier = Modifier.width(4.dp))
                         Column {
                             Text(text = nativeAd.advertiserName.toString(), fontSize = 15.sp)
-                            Text(text = nativeAd.sponsoredTranslation.toString(), fontSize = 12.sp, color = Color.DarkGray)
+                            Text(
+                                text = nativeAd.sponsoredTranslation.toString(),
+                                fontSize = 12.sp,
+                                color = Color.DarkGray
+                            )
                         }
                         Spacer(Modifier.weight(1F))
-                        AndroidView(viewBlock = { AdOptionsView(this@PlayerActivity, nativeAd, null) })
+                        AndroidView(factory = {
+                            AdOptionsView(
+                                this@PlayerActivity,
+                                nativeAd,
+                                null
+                            )
+                        })
                     }
                     AndroidView(modifier = Modifier
-                            .padding(start = 8.dp, end = 8.dp)
-                            .constrainAs(mv) {
-                                top.linkTo(row.bottom)
-                                bottom.linkTo(socialCtx.top, margin = 4.dp)
-                                height = Dimension.fillToConstraints
-                            }, viewBlock = {
-                        Log.i(TAG, "android view block")
+                        .padding(start = 8.dp, end = 8.dp)
+                        .constrainAs(mv) {
+                            top.linkTo(row.bottom)
+                            bottom.linkTo(socialCtx.top, margin = 4.dp)
+                            height = Dimension.fillToConstraints
+                        }, factory = {
                         val mediaView = MediaView(this@PlayerActivity)
                         nativeAd.registerViewForInteraction(mediaView, mediaView, icon)
                         mediaView
                     })
                     Text(text = nativeAd.adSocialContext.toString(), modifier = Modifier
-                            .constrainAs(socialCtx) {
-                                bottom.linkTo(bodyTxt.top, margin = 4.dp)
-                            }
-                            .padding(start = 4.dp))
+                        .constrainAs(socialCtx) {
+                            bottom.linkTo(bodyTxt.top, margin = 4.dp)
+                        }
+                        .padding(start = 4.dp))
                     Text(text = nativeAd.adBodyText.toString(), modifier = Modifier
-                            .constrainAs(bodyTxt) {
-                                bottom.linkTo(sb.top, margin = 4.dp)
-                            }
-                            .padding(start = 4.dp, end = 4.dp))
+                        .constrainAs(bodyTxt) {
+                            bottom.linkTo(sb.top, margin = 4.dp)
+                        }
+                        .padding(start = 4.dp, end = 4.dp))
                 }
                 if (playerStarted.value) {
                     Button(onClick = {
@@ -160,18 +175,22 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
                             playing.value = true
                         }
                     }, colors = ButtonDefaults.buttonColors(backgroundColor = colorPrimary),
-                            modifier = Modifier
-                                    .preferredWidth(48.dp)
-                                    .constrainAs(btn) {
-                                        start.linkTo(parent.start, margin = 8.dp)
-                                        bottom.linkTo(parent.bottom, margin = 8.dp)
-                                    }) {
-                        Icon(painter = painterResource(id = if (playing.value) R.drawable.ic_pause_24 else R.drawable.ic_play_24),
-                                contentDescription = "",
-                                tint = Color.White)
+                        modifier = Modifier
+                            .width(48.dp)
+                            .constrainAs(btn) {
+                                start.linkTo(parent.start, margin = 8.dp)
+                                bottom.linkTo(parent.bottom, margin = 8.dp)
+                            }) {
+                        Icon(
+                            painter = painterResource(id = if (playing.value) R.drawable.ic_pause_24 else R.drawable.ic_play_24),
+                            contentDescription = "",
+                            tint = Color.White
+                        )
                     }
 
-                    LinearProgressIndicator(progress = progress.value, color = colorPrimary, modifier = Modifier
+                    LinearProgressIndicator(progress = progress.value,
+                        color = colorPrimary,
+                        modifier = Modifier
                             .constrainAs(sb) {
                                 start.linkTo(btn.end, margin = 4.dp)
                                 end.linkTo(parent.end, margin = 16.dp)
@@ -187,18 +206,24 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
                                     placeable.placeRelative(0, 0)
                                 }
                             }
-                            .tapGestureFilter {
-                                progress.value = it.x / w
-                                androidMediaPlayer?.seekTo((progress.value * (androidMediaPlayer?.duration
-                                        ?: 0)).toInt())
+                            .pointerInput(Unit) {
+                                detectTapGestures {
+                                    progress.value = it.x / w
+                                    androidMediaPlayer?.seekTo(
+                                        (progress.value * (androidMediaPlayer?.duration
+                                            ?: 0)).toInt()
+                                    )
+                                }
                             })
                 } else {
-                    LinearProgressIndicator(color = colorPrimary, modifier = Modifier.constrainAs(sb) {
-                        bottom.linkTo(parent.bottom, margin = 16.dp)
-                        start.linkTo(parent.start, margin = 16.dp)
-                        end.linkTo(parent.end, margin = 16.dp)
-                        width = Dimension.fillToConstraints
-                    })
+                    LinearProgressIndicator(
+                        color = colorPrimary,
+                        modifier = Modifier.constrainAs(sb) {
+                            bottom.linkTo(parent.bottom, margin = 16.dp)
+                            start.linkTo(parent.start, margin = 16.dp)
+                            end.linkTo(parent.end, margin = 16.dp)
+                            width = Dimension.fillToConstraints
+                        })
                 }
             }
         }
@@ -213,7 +238,6 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
         streamUrl = i.getStringExtra("streamUrl")
         isFullScreen = i.getBooleanExtra("isFullScreen", false)
         play()
-//        loadNativeAd()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -225,16 +249,6 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
         if (androidMediaPlayer != null && androidMediaPlayer!!.isPlaying) {
             outState.putInt("currentPosition", androidMediaPlayer!!.currentPosition)
         }
-    }
-
-    fun loadNativeAd() {
-        // Instantiate a NativeAd object.
-        // NOTE: the placement ID will eventually identify this as your App, you can ignore it for
-        // now, while you are testing and replace it later when you have signed up.
-        // While you are using this temporary code you will only get test ads and if you release
-        // your code like this to the Google Play your users will not receive ads (you will get a no fill error).
-
-        // Request an ad
     }
 
     fun getFinalUrl(url: String?): String? {

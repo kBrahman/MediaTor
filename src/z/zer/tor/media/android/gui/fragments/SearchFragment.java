@@ -117,7 +117,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         // now, while you are testing and replace it later when you have signed up.
         // While you are using this temporary code you will only get test ads and if you release
         // your code like this to the Google Play your users will not receive ads (you will get a no fill error).
-        nativeAd = new NativeAd(getActivity(), getString(R.string.id_ad_native));
+        nativeAd = new NativeAd(getActivity(), getString(R.string.id_ad_native_fb));
 
         NativeAdListener adListener = new NativeAdListener() {
             @Override
@@ -356,7 +356,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
 
     private void setNativeAdVisibility(int visibility) {
         getView().findViewById(R.id.native_ad_container).setVisibility(visibility);
-        AdView adView = ((MainActivity) getActivity()).adView;
+        AdView adView = ((MainActivity) getActivity()).banner;
         if (adView == null) return;
         if (visibility == GONE) visibility = VISIBLE;
         else visibility = GONE;
