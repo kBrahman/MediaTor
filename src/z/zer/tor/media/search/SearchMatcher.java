@@ -1,7 +1,7 @@
 package z.zer.tor.media.search;
 
 
-import z.zer.tor.media.regex.Matcher;
+import z.zer.tor.media.regex.MediaMatcher;
 
 /**
  * <strong>A memory conscious Matcher</strong><br/>
@@ -14,13 +14,13 @@ import z.zer.tor.media.regex.Matcher;
  */
 public final class SearchMatcher {
 
-    private final Matcher matcher;
+    private final MediaMatcher matcher;
 
-    public static SearchMatcher from(Matcher matcher) {
+    public static SearchMatcher from(MediaMatcher matcher) {
         return new SearchMatcher(matcher);
     }
 
-    public SearchMatcher(Matcher matcher) {
+    public SearchMatcher(MediaMatcher matcher) {
         this.matcher = matcher;
     }
 

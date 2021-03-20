@@ -24,14 +24,13 @@ import com.andrew.apollo.ui.MusicViewHolder;
 import com.andrew.apollo.ui.MusicViewHolder.DataHolder;
 import com.andrew.apollo.ui.fragments.PlaylistFragment;
 import com.andrew.apollo.utils.MusicUtils;
+
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.gui.adapters.menu.CreateNewPlaylistMenuAction;
 
 /**
  * This {@link ArrayAdapter} is used to display all of the playlists on a user's
  * device for {@link PlaylistFragment}.
- *
- * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public class PlaylistAdapter extends ApolloFragmentAdapter<Playlist> implements ApolloFragmentAdapter.Cacheable {
 
@@ -64,7 +63,7 @@ public class PlaylistAdapter extends ApolloFragmentAdapter<Playlist> implements 
      */
     @Override
     public View getView(final int position, View convertView, final ViewGroup parent) {
-        if (position ==  0) {
+        if (position == 0) {
             if (convertView == null) {
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.new_playlist_list_item, null);
                 convertView.setOnClickListener(new View.OnClickListener() {

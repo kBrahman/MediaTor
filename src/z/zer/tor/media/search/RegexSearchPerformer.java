@@ -18,7 +18,7 @@
 
 package z.zer.tor.media.search;
 
-import z.zer.tor.media.regex.Pattern;
+import z.zer.tor.media.regex.MediaPattern;
 
 /**
  * 
@@ -28,7 +28,7 @@ import z.zer.tor.media.regex.Pattern;
  */
 interface RegexSearchPerformer<T extends SearchResult> extends SearchPerformer {
 
-    Pattern getPattern();
+    MediaPattern getPattern();
 
     T fromMatcher(SearchMatcher matcher);
 }

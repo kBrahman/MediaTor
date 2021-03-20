@@ -17,8 +17,8 @@
 
 package z.zer.tor.media.search.zooqle;
 
-import z.zer.tor.media.regex.Matcher;
-import z.zer.tor.media.regex.Pattern;
+import z.zer.tor.media.regex.MediaMatcher;
+import z.zer.tor.media.regex.MediaPattern;
 import z.zer.tor.media.search.SearchMatcher;
 import z.zer.tor.media.search.torrent.AbstractTorrentSearchResult;
 
@@ -34,7 +34,7 @@ import static z.zer.tor.media.search.PerformersHelper.parseInfoHash;
 public final class ZooqleSearchResult extends AbstractTorrentSearchResult {
 
     private static final String FILE_SIZE_REGEX = "title=\"File size\"></i>(?<size>[\\d\\.\\,]*) (?<sizeUnit>.{2}?)";
-    private static final Pattern FILE_SIZE_PATTERN = Pattern.compile(FILE_SIZE_REGEX);
+    private static final MediaPattern FILE_SIZE_PATTERN = MediaPattern.compile(FILE_SIZE_REGEX);
 
     private final String filename;
     private final String displayName;
@@ -66,7 +66,7 @@ public final class ZooqleSearchResult extends AbstractTorrentSearchResult {
         if (sizedata.contains("Filesize yet unknown")) {
             return -1;
         }
-        Matcher fileSizeMatcher = FILE_SIZE_PATTERN.matcher(sizedata);
+        MediaMatcher fileSizeMatcher = FILE_SIZE_PATTERN.matcher(sizedata);
         if (fileSizeMatcher.find()) {
             return calculateSize(fileSizeMatcher.group("size"), fileSizeMatcher.group("sizeUnit"));
         } else {

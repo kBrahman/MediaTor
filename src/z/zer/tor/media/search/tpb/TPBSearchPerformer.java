@@ -17,7 +17,7 @@
 
 package z.zer.tor.media.search.tpb;
 
-import z.zer.tor.media.regex.Pattern;
+import z.zer.tor.media.regex.MediaPattern;
 import z.zer.tor.media.search.CrawlRegexSearchPerformer;
 import z.zer.tor.media.search.PerformersHelper;
 import z.zer.tor.media.search.SearchMatcher;
@@ -34,14 +34,14 @@ public class TPBSearchPerformer extends CrawlRegexSearchPerformer<TPBSearchResul
     private static final int MAX_RESULTS = 20;
 
     private static final String REGEX = "(?is)<td class=\"vertTh\">.*?<a href=\"[^\"]*?\" title=\"More from this category\">(.*?)</a>.*?</td>.*?<a href=\"([^\"]*?)\" class=\"detLink\" title=\"Details for ([^\"]*?)\">.*?</a>.*?<a href=\\\"(magnet:\\?xt=urn:btih:.*?)\\\" title=\\\"Download this torrent using magnet\\\">.*?</a>.*?<font class=\"detDesc\">Uploaded ([^,]*?), Size (.*?), ULed.*?<td align=\"right\">(.*?)</td>\\s*<td align=\"right\">(.*?)</td>";
-    private static final Pattern PATTERN = Pattern.compile(REGEX);
+    private static final MediaPattern PATTERN = MediaPattern.compile(REGEX);
 
     public TPBSearchPerformer(String domainName, long token, String keywords, int timeout) {
         super(domainName, token, keywords, timeout, 1, MAX_RESULTS, MAX_RESULTS);
     }
 
     @Override
-    public Pattern getPattern() {
+    public MediaPattern getPattern() {
         return PATTERN;
     }
 

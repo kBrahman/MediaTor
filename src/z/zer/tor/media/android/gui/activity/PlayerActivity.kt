@@ -14,6 +14,7 @@ import android.util.Log
 import android.widget.*
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
@@ -108,7 +109,7 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
                 }
             )
             ConstraintLayout(modifier = Modifier.fillMaxSize()) {
-                val (btn, sb, row, col, mv, socialCtx, bodyTxt) = createRefs()
+                val (btn, sb, row, col, mv, socialCtx, bodyTxt, spacer) = createRefs()
                 Column(
                     Modifier
                         .padding(8.dp)
@@ -117,6 +118,7 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
                     Text(text = intent.getStringExtra("source").toString())
 
                 }
+
                 if (adLoaded.value) {
                     val icon = MediaView(this@PlayerActivity)
                     Row(Modifier
@@ -161,10 +163,17 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
                         .padding(start = 4.dp))
                     Text(text = nativeAd.adBodyText.toString(), modifier = Modifier
                         .constrainAs(bodyTxt) {
-                            bottom.linkTo(sb.top, margin = 4.dp)
+                            bottom.linkTo(spacer.top, margin = 4.dp)
                         }
                         .padding(start = 4.dp, end = 4.dp))
                 }
+                Spacer(
+                    Modifier
+                        .height(32.dp)
+                        .fillMaxWidth()
+                        .constrainAs(spacer) {
+                            bottom.linkTo(btn.top)
+                        })
                 if (playerStarted.value) {
                     Button(onClick = {
                         if (playing.value) {

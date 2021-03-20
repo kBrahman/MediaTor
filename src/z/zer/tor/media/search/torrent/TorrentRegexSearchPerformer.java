@@ -17,8 +17,8 @@
 
 package z.zer.tor.media.search.torrent;
 
-import z.zer.tor.media.regex.Matcher;
-import z.zer.tor.media.regex.Pattern;
+import z.zer.tor.media.regex.MediaMatcher;
+import z.zer.tor.media.regex.MediaPattern;
 import z.zer.tor.media.search.*;
 import z.zer.tor.media.util.Logger;
 
@@ -33,21 +33,21 @@ public abstract class TorrentRegexSearchPerformer<T extends CrawlableSearchResul
 
     private final static Logger LOG = Logger.getLogger(TorrentRegexSearchPerformer.class);
 
-    private final Pattern preliminarySearchResultsPattern;
-    private final Pattern htmlDetailPagePattern;
+    private final MediaPattern preliminarySearchResultsPattern;
+    private final MediaPattern htmlDetailPagePattern;
 
     public TorrentRegexSearchPerformer(String domainName, long token, String keywords, int timeout, int pages, int numCrawls, int regexMaxResults, String preliminarySearchResultsRegex, String htmlDetailPagePatternRegex) {
         super(domainName, token, keywords, timeout, pages, numCrawls, regexMaxResults);
-        this.preliminarySearchResultsPattern = Pattern.compile(preliminarySearchResultsRegex);
-        this.htmlDetailPagePattern = Pattern.compile(htmlDetailPagePatternRegex);
+        this.preliminarySearchResultsPattern = MediaPattern.compile(preliminarySearchResultsRegex);
+        this.htmlDetailPagePattern = MediaPattern.compile(htmlDetailPagePatternRegex);
     }
 
     @Override
-    public Pattern getPattern() {
+    public MediaPattern getPattern() {
         return preliminarySearchResultsPattern;
     }
 
-    public Pattern getDetailsPattern() {
+    public MediaPattern getDetailsPattern() {
         return htmlDetailPagePattern;
     }
 
@@ -88,7 +88,7 @@ public abstract class TorrentRegexSearchPerformer<T extends CrawlableSearchResul
             String html = PerformersHelper.reduceHtml(unreducedHtml, htmlPrefixOffset(unreducedHtml), htmlSuffixOffset(unreducedHtml));
 
             if (html != null) {
-                Matcher matcher = htmlDetailPagePattern.matcher(html);
+                MediaMatcher matcher = htmlDetailPagePattern.matcher(html);
 
                 try {
                     // BOOKMARK: this is a good spot to put a break point in-order to test your search performer's regex

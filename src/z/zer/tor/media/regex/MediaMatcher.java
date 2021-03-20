@@ -19,39 +19,22 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
 
 /**
  * An engine that performs match operations on a character sequence by
- * interpreting a {@link Pattern}. This is a wrapper for {@link Matcher}.
+ * interpreting a {@link MediaPattern}. This is a wrapper for {@link MediaMatcher}.
  *
  * @since 0.1.9
  */
-public class Matcher {
+public class MediaMatcher {
 
-    private com.google.re2j.Matcher matcher;
-    private Pattern parentPattern;
+    private final Matcher matcher;
+    private final MediaPattern parentPattern;
 
-    Matcher(Pattern parentPattern, CharSequence input) {
+    MediaMatcher(MediaPattern parentPattern, CharSequence input) {
         this.parentPattern = parentPattern;
         this.matcher = parentPattern.pattern().matcher(input);
-    }
-
-    /**
-     * Returns the pattern that is interpreted by this matcher.
-     *
-     * @return the pattern
-     */
-    public com.google.re2j.Pattern standardPattern() {
-        return matcher.pattern();
-    }
-
-    /**
-     * Returns the named pattern that is interpreted by this matcher.
-     *
-     * @return the pattern
-     */
-    public Pattern namedPattern() {
-        return parentPattern;
     }
 
     /**
@@ -59,7 +42,7 @@ public class Matcher {
      *
      * @return this Matcher
      */
-    public Matcher reset() {
+    public MediaMatcher reset() {
         matcher.reset();
         return this;
     }
@@ -76,7 +59,7 @@ public class Matcher {
      * @param input The new input character sequence
      * @return this Matcher
      */
-    public Matcher reset(CharSequence input) {
+    public MediaMatcher reset(CharSequence input) {
         matcher.reset(input);
         return this;
     }
@@ -358,10 +341,10 @@ public class Matcher {
         if (obj == null) {
             return false;
         }
-        if (!(obj instanceof Matcher)) {
+        if (!(obj instanceof MediaMatcher)) {
             return false;
         }
-        Matcher other = (Matcher) obj;
+        MediaMatcher other = (MediaMatcher) obj;
         if (!parentPattern.equals(other.parentPattern)) {
             return false;
         }

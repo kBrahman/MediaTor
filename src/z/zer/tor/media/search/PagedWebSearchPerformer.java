@@ -31,7 +31,6 @@ public abstract class PagedWebSearchPerformer extends WebSearchPerformer {
         try {
             url = getUrl(page, getEncodedKeywords());
             String text = fetchSearchPage(url);
-            System.out.println("txt=>"+text);
             if (text != null) {
                 result = searchPage(text);
             }

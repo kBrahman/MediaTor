@@ -1,34 +1,17 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml),
- * Marcelina Knitter (@marcelinkaaa)
- * Copyright (c) 2011-2017, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package z.zer.tor.media.android.gui.activity.internal;
 
 import android.app.Fragment;
 import android.content.res.Configuration;
-
-import com.google.android.material.navigation.NavigationView;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
 
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.core.Constants;
@@ -36,14 +19,6 @@ import z.zer.tor.media.android.gui.activity.MainActivity;
 import z.zer.tor.media.android.gui.fragments.TransfersFragment;
 import z.zer.tor.media.android.gui.services.Engine;
 import z.zer.tor.media.android.gui.util.UIUtils;
-
-/**
- * @author aldenml
- * @author gubatron
- * @author marcelinkaaa
- * <p>
- * Created on 02/23/2017
- */
 
 public final class NavigationMenu {
     private final MainController controller;

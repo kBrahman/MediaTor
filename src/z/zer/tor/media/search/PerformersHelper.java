@@ -23,7 +23,7 @@ import com.frostwire.jlibtorrent.TorrentInfo;
 import java.util.LinkedList;
 import java.util.List;
 
-import z.zer.tor.media.regex.Pattern;
+import z.zer.tor.media.regex.MediaPattern;
 import z.zer.tor.media.search.torrent.TorrentCrawlableSearchResult;
 import z.zer.tor.media.search.torrent.TorrentCrawledSearchResult;
 import z.zer.tor.media.util.Logger;
@@ -32,7 +32,7 @@ public final class PerformersHelper {
 
     private static final Logger LOG = Logger.getLogger(PerformersHelper.class);
 
-    private static final Pattern MAGNET_HASH_PATTERN = Pattern.compile("magnet\\:\\?xt\\=urn\\:btih\\:([a-fA-F0-9]{40})");
+    private static final MediaPattern MAGNET_HASH_PATTERN = MediaPattern.compile("magnet\\:\\?xt\\=urn\\:btih\\:([a-fA-F0-9]{40})");
 
     private PerformersHelper() {
     }

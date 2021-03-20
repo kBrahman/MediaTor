@@ -35,8 +35,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import z.zer.tor.media.regex.Matcher;
-import z.zer.tor.media.regex.Pattern;
+import z.zer.tor.media.regex.MediaMatcher;
+import z.zer.tor.media.regex.MediaPattern;
 
 /**
  * @author gubatron
@@ -81,7 +81,7 @@ public final class JsFunction<T> {
             stmt = stmt.substring("var ".length());
         }
 
-        final Matcher ass_m = Pattern.compile("^(?<out>[a-z]+)(\\[(?<index>.+?)\\])?=(?<expr>.*)$").matcher(stmt);
+        final MediaMatcher ass_m = MediaPattern.compile("^(?<out>[a-z]+)(\\[(?<index>.+?)\\])?=(?<expr>.*)$").matcher(stmt);
         Lambda1 assign;
         String expr;
         if (ass_m.find()) {
@@ -155,12 +155,12 @@ public final class JsFunction<T> {
             return jsl;
         }
 
-        Matcher m = Pattern.compile("^(?<var>"+VAR+")\\.(?<member>[^\\(]+)(\\((?<args>[^\\(\\)]*)\\))?$").matcher(expr);
+        MediaMatcher m = MediaPattern.compile("^(?<var>"+VAR+")\\.(?<member>[^\\(]+)(\\((?<args>[^\\(\\)]*)\\))?$").matcher(expr);
         boolean mFind = m.find();
         if (!mFind) {
             // maybe it's the new pattern?
             // oE["do"](a,67)
-            m = Pattern.compile("^(?<var>" + VAR + ")\\[\"(?<member>[^\\(]+)\"\\](\\((?<args>[^\\(\\)]*)\\))?$").matcher(expr);
+            m = MediaPattern.compile("^(?<var>" + VAR + ")\\[\"(?<member>[^\\(]+)\"\\](\\((?<args>[^\\(\\)]*)\\))?$").matcher(expr);
             mFind = m.find();
         }
 
@@ -232,21 +232,21 @@ public final class JsFunction<T> {
             return ((JsObject) obj).functions.get(member).eval(argvals.toArray());
         }
 
-        m = Pattern.compile("^(?<in>[a-z]+)\\[(?<idx>.+)\\]$").matcher(expr);
+        m = MediaPattern.compile("^(?<in>[a-z]+)\\[(?<idx>.+)\\]$").matcher(expr);
         if (m.find()) {
             Object val = local_vars.get(m.group("in"));
             Object idx = interpret_expression(ctx, m.group("idx"), local_vars, allow_recursion - 1);
             return ((List<?>) val).get((Integer) idx);
         }
 
-        m = Pattern.compile("^(?<a>.+?)(?<op>[%])(?<b>.+?)$").matcher(expr);
+        m = MediaPattern.compile("^(?<a>.+?)(?<op>[%])(?<b>.+?)$").matcher(expr);
         if (m.find()) {
             Object a = interpret_expression(ctx, m.group("a"), local_vars, allow_recursion);
             Object b = interpret_expression(ctx, m.group("b"), local_vars, allow_recursion);
             return (Integer) a % (Integer) b;
         }
 
-        m = Pattern.compile("^(?<func>[a-zA-Z]+)\\((?<args>[a-z0-9,]*)\\)$").matcher(expr);
+        m = MediaPattern.compile("^(?<func>[a-zA-Z]+)\\((?<args>[a-z0-9,]*)\\)$").matcher(expr);
         if (m.find()) {
             String fname = m.group("func");
             if (!ctx.functions.containsKey(fname) && ctx.jscode.length() > 0) {
@@ -269,11 +269,11 @@ public final class JsFunction<T> {
         JsObject obj = new JsObject();
         String obj_mRegex = String.format("(var"+ WS +"+)%1$s"+ WS +"*="+ WS +"*\\{",
                 escape(objname)) + WS +"*(?<fields>("+VAR + WS +"*:"+ WS +"*function\\(.*?\\)"+ WS +"*\\{.*?\\}(,"+ WS +")*)*)\\}"+ WS +"*;";
-        final Matcher obj_m = Pattern.compile(obj_mRegex).matcher(ctx.jscode);
+        final MediaMatcher obj_m = MediaPattern.compile(obj_mRegex).matcher(ctx.jscode);
         obj_m.find();
         String fields = obj_m.group("fields");
         // Currently, it only supports function definitions
-        final Matcher fields_m = Pattern.compile("(?<key>"+VAR+")"+ WS +"*:"+ WS +"*function\\((?<args>[a-z,]+)\\)\\"+CODE).matcher(fields);
+        final MediaMatcher fields_m = MediaPattern.compile("(?<key>"+VAR+")"+ WS +"*:"+ WS +"*function\\((?<args>[a-z,]+)\\)\\"+CODE).matcher(fields);
 
         while (fields_m.find()) {
             final String[] argnames = mscpy(fields_m.group("args").split(","));
@@ -290,7 +290,7 @@ public final class JsFunction<T> {
     private static LambdaN extract_function(final JsContext ctx, String funcname) {
         String func_mRegex = String.format("(%1$s"+WS+"*="+WS+"*function|function"+WS+"+%1$s|[\\{;,]%1$s"+WS+"*="+WS+"*function|var"+WS+"+%1$s"+WS+"*="+WS+"*function)"+WS+"*",
                 escape(funcname)) + "\\((?<args>[a-z,]+)\\)\\"+CODE;
-        final Matcher func_m = Pattern.compile(func_mRegex).matcher(ctx.jscode);
+        final MediaMatcher func_m = MediaPattern.compile(func_mRegex).matcher(ctx.jscode);
         if (!func_m.find()) {
             throw new JsError("JsFunction.extract_function(): Could not find JS function " + funcname);
         }

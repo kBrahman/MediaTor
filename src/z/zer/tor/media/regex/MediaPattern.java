@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2012-2013 The named-regexp Authors
  * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
 /**
@@ -29,7 +30,7 @@ import java.util.regex.PatternSyntaxException;
  *
  * @since 0.1.9
  */
-public class Pattern {
+public class MediaPattern {
 
     /**
      * Pattern to match group names
@@ -46,10 +47,10 @@ public class Pattern {
      */
     private static final int INDEX_GROUP_NAME = 1;
 
-    private com.google.re2j.Pattern pattern;
-    private String namedPattern;
+    private final Pattern pattern;
+    private final String namedPattern;
     private List<String> groupNames;
-    private Map<String, List<GroupInfo>> groupInfo;
+    private final Map<String, List<GroupInfo>> groupInfo;
 
     /**
      * Constructs a named pattern with the given regular expression and flags
@@ -67,7 +68,7 @@ public class Pattern {
      *                <li>{@link java.util.regex.Pattern#COMMENTS}</li>
      *              </ul>
      */
-    protected Pattern(String regex, int flags) {
+    protected MediaPattern(String regex, int flags) {
         namedPattern = regex;
 
         // group info must be parsed before building the standard pattern
@@ -83,8 +84,8 @@ public class Pattern {
      * @param regex the expression to be compiled
      * @return the pattern
      */
-    public static Pattern compile(String regex) {
-        return new Pattern(regex, 0);
+    public static MediaPattern compile(String regex) {
+        return new MediaPattern(regex, 0);
     }
 
     /**
@@ -104,8 +105,8 @@ public class Pattern {
      *              </ul>
      * @return the pattern
      */
-    public static Pattern compile(String regex, int flags) {
-        return new Pattern(regex, flags);
+    public static MediaPattern compile(String regex, int flags) {
+        return new MediaPattern(regex, flags);
     }
 
     /**
@@ -153,8 +154,8 @@ public class Pattern {
      * @param input The character sequence to be matched
      * @return A new matcher for this pattern
      */
-    public Matcher matcher(CharSequence input) {
-        return new Matcher(this, input);
+    public MediaMatcher matcher(CharSequence input) {
+        return new MediaMatcher(this, input);
     }
 
     /**
@@ -162,7 +163,7 @@ public class Pattern {
      *
      * @return the pattern
      */
-    public com.google.re2j.Pattern pattern() {
+    public Pattern pattern() {
         return pattern;
     }
 
@@ -537,12 +538,12 @@ public class Pattern {
      *                     </ul>
      * @return the standard {@code java.util.regex.Pattern}
      */
-    private com.google.re2j.Pattern buildStandardPattern(String namedPattern, Integer flags) {
+    private Pattern buildStandardPattern(String namedPattern, Integer flags) {
         // replace the named-group construct with left-paren but
         // make sure we're actually looking at the construct (ignore escapes)
         StringBuilder s = new StringBuilder(namedPattern);
         s = replace(s, NAMED_GROUP_PATTERN, "(");
-        return com.google.re2j.Pattern.compile(s.toString(), flags);
+        return Pattern.compile(s.toString(), flags);
     }
 
     /*
@@ -557,10 +558,10 @@ public class Pattern {
         if (obj == null) {
             return false;
         }
-        if (!(obj instanceof Pattern)) {
+        if (!(obj instanceof MediaPattern)) {
             return false;
         }
-        Pattern other = (Pattern) obj;
+        MediaPattern other = (MediaPattern) obj;
         return namedPattern.equals(other.namedPattern) && pattern.flags() == other.pattern.flags();
     }
 

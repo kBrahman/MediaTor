@@ -1,26 +1,6 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml),
- *            Marcelina Knitter (@marcelinkaaa)
- * Copyright (c) 2011-2017, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package z.zer.tor.media.android.gui.fragments;
 
 import android.app.FragmentManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,31 +8,30 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.frostwire.jlibtorrent.AnnounceEntry;
+import com.frostwire.jlibtorrent.TorrentHandle;
+import com.frostwire.jlibtorrent.TorrentStatus;
+
+import java.lang.ref.WeakReference;
+import java.util.List;
+
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.gui.transfers.UIBittorrentDownload;
 import z.zer.tor.media.android.gui.util.UIUtils;
 import z.zer.tor.media.android.gui.views.AbstractTransferDetailFragment;
 import z.zer.tor.media.android.gui.views.EditTextDialog;
-import com.frostwire.jlibtorrent.AnnounceEntry;
-import com.frostwire.jlibtorrent.TorrentHandle;
-import com.frostwire.jlibtorrent.TorrentStatus;
-import z.zer.tor.media.regex.Matcher;
-import z.zer.tor.media.regex.Pattern;
+import z.zer.tor.media.regex.MediaMatcher;
+import z.zer.tor.media.regex.MediaPattern;
 import z.zer.tor.media.util.Ref;
-
-import java.lang.ref.WeakReference;
-import java.util.List;
-
-/**
- * @author gubatron
- * @author aldenml
- * @author marcelinkaaa
- */
 
 public class TransferDetailTrackersFragment extends AbstractTransferDetailFragment {
     public TransferDetailTrackersFragment() {
         super(R.layout.fragment_transfer_detail_trackers);
     }
+
     private TextView dhtStatus;
     private TextView lsdStatus;
     private RecyclerView recyclerView;
@@ -60,7 +39,7 @@ public class TransferDetailTrackersFragment extends AbstractTransferDetailFragme
 
     private TrackerRecyclerViewAdapter adapter;
     private AddTrackerButtonClickListener addTrackerButtonClickListener;
-    private static final Pattern validTrackerUrlPattern = Pattern.compile("^(https?|udp)://[-a-zA-Z0-9+&@#/%?=~_|!:,\\.;]*[-a-zA-Z0-9+&@#/%=~_|]");
+    private static final MediaPattern validTrackerUrlPattern = MediaPattern.compile("^(https?|udp)://[-a-zA-Z0-9+&@#/%?=~_|!:,\\.;]*[-a-zA-Z0-9+&@#/%=~_|]");
 
     @Override
     public void onResume() {
@@ -142,7 +121,7 @@ public class TransferDetailTrackersFragment extends AbstractTransferDetailFragme
         public void onDialogSubmitted(String value, boolean cancelled) {
             if (!cancelled && torrentHandle != null && value != null) {
                 value = value.trim();
-                Matcher matcher = validTrackerUrlPattern.matcher(value);
+                MediaMatcher matcher = validTrackerUrlPattern.matcher(value);
                 if (matcher.matches()) {
                     torrentHandle.addTracker(new AnnounceEntry(value));
                     torrentHandle.saveResumeData();
@@ -237,7 +216,7 @@ public class TransferDetailTrackersFragment extends AbstractTransferDetailFragme
                 TrackerItemViewHolder trackerViewHolder = vhRef.get();
                 if (!cancelled && value != null) {
                     value = value.trim();
-                    Matcher matcher = validTrackerUrlPattern.matcher(value);
+                    MediaMatcher matcher = validTrackerUrlPattern.matcher(value);
                     if (matcher.matches()) {
                         AnnounceEntry newTracker = new AnnounceEntry(value);
                         TorrentHandle th = trackerViewHolder.torrentHandle;
