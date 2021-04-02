@@ -1,34 +1,15 @@
-/*
- * Copyright (C) 2012 Andrew Neal
- *
- * Modified by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Marcelina Knitter (@marcelinkaaa), Jose Molina (@votaguz)
- * Copyright (c) 2013-2018, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.andrew.apollo.ui.fragments.phone;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.viewpager.widget.ViewPager;
 
 import com.andrew.apollo.adapters.PagerAdapter;
 import com.andrew.apollo.adapters.PagerAdapter.MusicFragments;
@@ -40,6 +21,7 @@ import com.andrew.apollo.utils.MusicUtils;
 import com.andrew.apollo.utils.NavUtils;
 import com.andrew.apollo.utils.PreferenceUtils;
 import com.andrew.apollo.utils.SortOrder;
+
 import z.zer.tor.media.R;
 
 /**
@@ -53,7 +35,6 @@ import z.zer.tor.media.R;
  * worked out, but I'm going to keep it in the Play Store version of
  * Apollo for a couple of weeks or so before merging it with CM.
  *
- * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public final class MusicBrowserPhoneFragment extends Fragment {
 

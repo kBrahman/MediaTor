@@ -1,5 +1,8 @@
 package com.andrew.apollo.ui.activities;
 
+import static com.andrew.apollo.utils.MusicUtils.musicPlaybackService;
+import static z.zer.tor.media.android.util.Asyncs.async;
+
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.app.SearchManager;
@@ -22,10 +25,7 @@ import android.os.SystemClock;
 import android.provider.MediaStore.Audio.Albums;
 import android.provider.MediaStore.Audio.Artists;
 import android.provider.MediaStore.Audio.Playlists;
-import androidx.core.app.ActivityCompat;
-import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.SearchView.OnQueryTextListener;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -41,6 +41,11 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.SearchView.OnQueryTextListener;
+import androidx.core.app.ActivityCompat;
+import androidx.viewpager.widget.ViewPager;
+
 import com.andrew.apollo.IApolloService;
 import com.andrew.apollo.MusicPlaybackService;
 import com.andrew.apollo.adapters.PagerAdapter;
@@ -55,6 +60,10 @@ import com.andrew.apollo.widgets.PlayPauseButton;
 import com.andrew.apollo.widgets.RepeatButton;
 import com.andrew.apollo.widgets.RepeatingImageButton;
 import com.andrew.apollo.widgets.ShuffleButton;
+
+import java.io.File;
+import java.lang.ref.WeakReference;
+
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.android.gui.adapters.menu.AddToPlaylistMenuAction;
@@ -68,12 +77,6 @@ import z.zer.tor.media.util.Ref;
 import z.zer.tor.media.uxstats.UXAction;
 import z.zer.tor.media.uxstats.UXStats;
 
-import java.io.File;
-import java.lang.ref.WeakReference;
-
-import static com.andrew.apollo.utils.MusicUtils.musicPlaybackService;
-import static z.zer.tor.media.android.util.Asyncs.async;
-
 /**
  * Apollo's "now playing" interface.
  */
@@ -83,6 +86,7 @@ public final class AudioPlayerActivity extends AbstractActivity implements Servi
 
     // Message to refresh the time
     private static final int REFRESH_TIME = 1;
+    private static final String TAG = AudioPlayerActivity.class.getSimpleName();
 
     // The service token
     private ServiceToken mToken;
@@ -164,7 +168,7 @@ public final class AudioPlayerActivity extends AbstractActivity implements Servi
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Log.i(TAG, "onCreate");
         // Control the media volume
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
@@ -197,6 +201,7 @@ public final class AudioPlayerActivity extends AbstractActivity implements Servi
     public void onNewIntent(Intent intent) {
         setIntent(intent);
         startPlayback();
+        super.onNewIntent(intent);
     }
 
     @Override
@@ -374,7 +379,8 @@ public final class AudioPlayerActivity extends AbstractActivity implements Servi
         Engine.instance().hapticFeedback();
         try {
             super.onBackPressed();
-        } catch (Throwable ignored) {}
+        } catch (Throwable ignored) {
+        }
     }
 
     private static boolean isMusicPlayingAsync(AudioPlayerActivity activity) {

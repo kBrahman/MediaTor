@@ -1,14 +1,3 @@
-/*
- * Copyright (C) 2012 Andrew Neal Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */
-
 package com.andrew.apollo.utils;
 
 import android.app.Activity;
@@ -18,22 +7,28 @@ import android.content.Intent;
 import android.media.audiofx.AudioEffect;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
+
 import com.andrew.apollo.Config;
-import com.andrew.apollo.ui.activities.*;
+import com.andrew.apollo.ui.activities.AudioPlayerActivity;
+import com.andrew.apollo.ui.activities.HomeActivity;
+import com.andrew.apollo.ui.activities.ProfileActivity;
+import com.andrew.apollo.ui.activities.SearchActivity;
 import com.devspark.appmsg.AppMsg;
+
 import z.zer.tor.media.R;
 
 /**
  * Various navigation helpers.
- * 
- * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public final class NavUtils {
 
+    private static final String TAG = NavUtils.class.getSimpleName();
+
     /**
      * Opens the profile of an artist.
-     * 
-     * @param context The {@link Activity} to use.
+     *
+     * @param context    The {@link Activity} to use.
      * @param artistName The name of the artist
      */
     public static void openArtistProfile(final Activity context, final String artistName, final long[] songs) {
@@ -59,14 +54,14 @@ public final class NavUtils {
 
     /**
      * Opens the profile of an album.
-     * 
-     * @param context The {@link Activity} to use.
-     * @param albumName The name of the album
+     *
+     * @param context    The {@link Activity} to use.
+     * @param albumName  The name of the album
      * @param artistName The name of the album artist
-     * @param albumId The id of the album
+     * @param albumId    The id of the album
      */
     public static void openAlbumProfile(final Activity context,
-            final String albumName, final String artistName, final long albumId, final long[] songs) {
+                                        final String albumName, final String artistName, final long albumId, final long[] songs) {
 
         // Create a new bundle to transfer the album info
         final Bundle bundle = new Bundle();
@@ -88,7 +83,7 @@ public final class NavUtils {
 
     /**
      * Opens the sound effects panel or DSP manager in CM
-     * 
+     *
      * @param context The {@link Activity} to use.
      */
     public static void openEffectsPanel(final Activity context) {
@@ -105,20 +100,27 @@ public final class NavUtils {
 
     /**
      * Opens to {@link AudioPlayerActivity}.
-     * 
+     *
      * @param activity The {@link Activity} to use.
      */
     public static void openAudioPlayer(final Activity activity) {
         final Intent intent = new Intent(activity, AudioPlayerActivity.class);
+        String trackName = MusicUtils.getTrackName();
+        Log.i(TAG, "track name=>" + trackName);
+        intent.putExtra("displayName", trackName);
+//        intent.putExtra("source", "");
+//        intent.putExtra("thumbnailUrl", MusicUtils);
+        intent.putExtra("streamUrl", MusicUtils.getFilePath());
+//        intent.putExtra("audio", MusicUtils.is);
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         activity.startActivity(intent);
     }
 
     /**
      * Opens to {@link SearchActivity}.
-     * 
+     *
      * @param activity The {@link Activity} to use.
-     * @param query The search query.
+     * @param query    The search query.
      */
     public static void openSearch(final Activity activity, final String query) {
         final Bundle bundle = new Bundle();
@@ -130,7 +132,7 @@ public final class NavUtils {
 
     /**
      * Opens to {@link HomeActivity}.
-     * 
+     *
      * @param activity The {@link Activity} to use.
      */
     public static void goHome(final Activity activity) {

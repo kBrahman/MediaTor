@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -46,7 +45,6 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
     private final List<KeywordFilter> keywordFiltersPipeline;
     private final AtomicLong lastFilterCallTimestamp = new AtomicLong();
     private FilteredSearchResults cachedFilteredSearchResults = null;
-    public static final String IS_SOUND_CLOUD = "is_sound_cloud";
 
     protected SearchResultListAdapter(Context context) {
         super(context, R.layout.view_bittorrent_search_result_list_item);
@@ -333,20 +331,14 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
 
         @Override
         public void onClick(Context ctx, View v) {
-            Log.i(TAG, "v tag=>" + v.getTag().getClass().getSimpleName());
             StreamableSearchResult sr = (StreamableSearchResult) v.getTag();
             if (sr != null) {
                 LocalSearchEngine.instance().markOpened(sr, (Ref.alive(adapterRef)) ? adapterRef.get() : null);
                 Intent i = new Intent(ctx, PlayerActivity.class);
                 i.putExtra("displayName", sr.getDisplayName());
                 i.putExtra("source", sr.getSource());
-                i.putExtra("thumbnailUrl", sr.getThumbnailUrl());
                 i.putExtra("streamUrl", sr.getStreamUrl());
                 i.putExtra("audio", isAudio(sr));
-                if (sr instanceof SoundCloudSearchResult) {
-                    Log.i(TAG, "instance of sound cloud");
-                    i.putExtra(IS_SOUND_CLOUD, true);
-                }
                 ctx.startActivity(i);
             }
         }

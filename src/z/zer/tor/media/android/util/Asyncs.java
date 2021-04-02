@@ -1,24 +1,8 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2018, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package z.zer.tor.media.android.util;
 
 import android.os.Handler;
 import android.os.Looper;
+
 import androidx.annotation.NonNull;
 
 import java.lang.ref.WeakReference;
@@ -104,7 +88,6 @@ public final class Asyncs {
     }
 
     public static <C, T1> void async(C context, ContextTask1<C, T1> task, T1 arg1) {
-
         requireContext(context);
         invokeAsyncSupport(context, (c, args) -> {
             task.run(c, (T1) args[0]);
@@ -131,7 +114,6 @@ public final class Asyncs {
     }
 
     public static <C, T1, T2, T3, T4> void async(@NonNull C context, ContextTask4<C, T1, T2, T3, T4> task, T1 arg1, T2 arg2, T3 arg3, T4 arg4) {
-
         requireContext(context);
         invokeAsyncSupport(context, (c, args) -> {
             task.run(c, (T1) args[0], (T2) args[1], (T3) args[2], (T4) args[3]);

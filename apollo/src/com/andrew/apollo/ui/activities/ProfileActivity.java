@@ -41,7 +41,7 @@ import com.andrew.apollo.ui.fragments.profile.ArtistAlbumFragment;
 import com.andrew.apollo.ui.fragments.profile.ArtistSongFragment;
 import com.andrew.apollo.ui.fragments.profile.FavoriteFragment;
 import com.andrew.apollo.ui.fragments.profile.GenreSongFragment;
-import com.andrew.apollo.ui.fragments.profile.LastAddedFragment;
+import com.andrew.apollo.ui.fragments.profile.LastAddedProfileFragment;
 import com.andrew.apollo.ui.fragments.profile.PlaylistSongFragment;
 import com.andrew.apollo.utils.ApolloUtils;
 import com.andrew.apollo.utils.MusicUtils;
@@ -169,7 +169,7 @@ public final class ProfileActivity extends BaseActivity implements OnPageChangeL
             // Add the carousel images
             mTabCarousel.setPlaylistOrGenreProfileHeader(this, mProfileName);
             // Last added fragment
-            mPagerAdapter.add(LastAddedFragment.class, null);
+            mPagerAdapter.add(LastAddedProfileFragment.class, null);
             // Action bar title = Last added
             setTitle(mProfileName);
         } else if (isPlaylist()) { // Set up the user playlist profile

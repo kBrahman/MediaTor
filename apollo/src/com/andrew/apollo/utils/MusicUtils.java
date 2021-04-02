@@ -67,6 +67,7 @@ import java.util.WeakHashMap;
 public final class MusicUtils {
 
     private static final Logger LOG = Logger.getLogger(MusicUtils.class);
+    private static final String TAG = MusicUtils.class.getSimpleName();
 
     public static IApolloService musicPlaybackService = null;
 
@@ -1272,12 +1273,14 @@ public final class MusicUtils {
      * @return The path to the currently playing file as {@link String}
      */
     public static String getFilePath() {
+        Log.i(TAG,"getFilePath");
         try {
             if (musicPlaybackService != null) {
                 return musicPlaybackService.getPath();
             }
         } catch (final RemoteException ignored) {
         }
+        Log.i(TAG,"musicPlaybackService is null");
         return null;
     }
 

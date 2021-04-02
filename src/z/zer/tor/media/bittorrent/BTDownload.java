@@ -1,20 +1,3 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2017, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package z.zer.tor.media.bittorrent;
 
 import com.frostwire.jlibtorrent.AlertListener;
@@ -39,11 +22,6 @@ import com.frostwire.jlibtorrent.swig.entry;
 import com.frostwire.jlibtorrent.swig.string_entry_map;
 import com.frostwire.jlibtorrent.swig.string_vector;
 import com.frostwire.jlibtorrent.swig.torrent_flags_t;
-import z.zer.tor.media.platform.Platforms;
-import z.zer.tor.media.transfers.BittorrentDownload;
-import z.zer.tor.media.transfers.TransferItem;
-import z.zer.tor.media.transfers.TransferState;
-import z.zer.tor.media.util.Logger;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
@@ -57,10 +35,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * @author gubatron
- * @author aldenml
- */
+import z.zer.tor.media.platform.Platforms;
+import z.zer.tor.media.transfers.BittorrentDownload;
+import z.zer.tor.media.transfers.TransferItem;
+import z.zer.tor.media.transfers.TransferState;
+import z.zer.tor.media.util.Logger;
+
 public final class BTDownload implements BittorrentDownload {
 
     private static final Logger LOG = Logger.getLogger(BTDownload.class);

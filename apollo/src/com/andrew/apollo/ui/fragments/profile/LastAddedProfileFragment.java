@@ -15,9 +15,9 @@ import java.util.List;
 
 import z.zer.tor.media.R;
 
-public final class LastAddedFragment extends ApolloFragment<ProfileSongAdapter, Song> {
+public final class LastAddedProfileFragment extends ApolloFragment<ProfileSongAdapter, Song> {
 
-    public LastAddedFragment() {
+    public LastAddedProfileFragment() {
         super(Fragments.LAST_ADDED_PROFILE_FRAGMENT_GROUP_ID, Fragments.LAST_ADDED_PROFILE_FRAGMENT_LOADER_ID);
     }
 

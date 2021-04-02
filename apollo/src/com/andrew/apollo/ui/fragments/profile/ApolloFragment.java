@@ -1,11 +1,14 @@
 package com.andrew.apollo.ui.fragments.profile;
 
+import static z.zer.tor.media.android.util.Asyncs.async;
+
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.LoaderManager;
 import android.content.Intent;
 import android.content.Loader;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -44,12 +47,12 @@ import java.util.List;
 
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.core.Constants;
+import z.zer.tor.media.android.gui.activity.PlayerActivity;
 import z.zer.tor.media.android.gui.util.WriteSettingsPermissionActivityHelper;
-
-import static z.zer.tor.media.android.util.Asyncs.async;
 
 public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I> extends Fragment implements LoaderManager.LoaderCallbacks<List<I>>, AdapterView.OnItemClickListener, MusicStateListener {
 
+    private static final String TAG = ApolloFragment.class.getSimpleName();
     private final int GROUP_ID;
     /**
      * LoaderCallbacks identifier
@@ -111,9 +114,8 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I> exte
     public abstract void onItemClick(final AdapterView<?> parent, final View view, final int position, final long id);
 
     protected void onSongItemClick(int position) {
-        if (mAdapter != null) {
-            async(this, ApolloFragment::songClickTask, position);
-        }
+        Log.i(this.getClass().getName(), "onSongItemClick");
+        if (mAdapter != null) async(this, ApolloFragment::songClickTask, position);
     }
 
     protected ApolloFragment(int groupId, int loaderId, int defaultEmptyString) {
@@ -609,10 +611,17 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I> exte
     private static void songClickTask(final ApolloFragment fragment, int position) {
         try {
             ApolloFragmentAdapter adapter = fragment.getAdapter();
-            MusicUtils.playAllFromUserItemClick(adapter, position);
+            Song item = (Song) adapter.getItem(position);
+            Log.i(TAG, "song=>" + item);
+//            MusicUtils.playAllFromUserItemClick(adapter, position);
             Activity activity = fragment.getActivity();
+            Intent intent = new Intent(activity, PlayerActivity.class);
+            intent.putExtra("displayName", item.mSongName);
+            intent.putExtra("streamUrl", "content://media/external/audio/media/" + item.mSongId);
+            intent.putExtra("source", "File system - " + item.mArtistName);
+            activity.startActivity(intent);
             activity.runOnUiThread(adapter::notifyDataSetChanged);
-            NavUtils.openAudioPlayer(activity);
+//            NavUtils.openAudioPlayer(activity);
         } catch (Throwable t) {
             t.printStackTrace();
         }

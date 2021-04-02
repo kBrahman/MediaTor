@@ -6,8 +6,6 @@ import android.content.Context;
 /**
  * <a href="http://code.google.com/p/android/issues/detail?id=14944">Issue
  * 14944</a>
- *
- * @author Alexander Blom
  */
 abstract class WrappedAsyncTaskLoader<D> extends AsyncTaskLoader<D> {
 

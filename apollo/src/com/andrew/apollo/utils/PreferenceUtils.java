@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2012 Andrew Neal
- * Modified by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2013-2017, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.andrew.apollo.utils;
 
 import com.andrew.apollo.ui.fragments.AlbumFragment;
@@ -25,17 +7,14 @@ import com.andrew.apollo.ui.fragments.phone.MusicBrowserPhoneFragment;
 import com.andrew.apollo.ui.fragments.profile.AlbumSongFragment;
 import com.andrew.apollo.ui.fragments.profile.ArtistAlbumFragment;
 import com.andrew.apollo.ui.fragments.profile.ArtistSongFragment;
+
 import z.zer.tor.media.android.core.ConfigurationManager;
 
 /**
  * A collection of helpers designed to get and set various preferences across
  * Apollo.
- *
+ * <p>
  * These helpers are now a wrapper of more optimized FrostWire ConfigurationManager
- *
- * @author Andrew Neal (andrewdneal@gmail.com)
- * @author Angel Leon (gubatron)
- * @author Alden Torres (aldenml)
  */
 public final class PreferenceUtils {
 

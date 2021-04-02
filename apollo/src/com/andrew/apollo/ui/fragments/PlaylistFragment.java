@@ -1,22 +1,8 @@
-/*
- * Copyright (C) 2012 Andrew Neal
- * Modified by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2013-2017, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.andrew.apollo.ui.fragments;
+
+import static com.andrew.apollo.loaders.PlaylistLoader.FAVORITE_PLAYLIST_ID;
+import static com.andrew.apollo.loaders.PlaylistLoader.LAST_ADDED_PLAYLIST_ID;
+import static com.andrew.apollo.loaders.PlaylistLoader.NEW_PLAYLIST_ID;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -43,23 +29,15 @@ import com.andrew.apollo.ui.activities.ProfileActivity;
 import com.andrew.apollo.ui.fragments.profile.ApolloFragment;
 import com.andrew.apollo.utils.MusicUtils;
 import com.andrew.apollo.utils.PreferenceUtils;
+
+import java.util.List;
+
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.gui.views.AbstractActivity;
 import z.zer.tor.media.android.gui.views.AbstractDialog;
 
-import java.util.List;
-
-import static com.andrew.apollo.loaders.PlaylistLoader.FAVORITE_PLAYLIST_ID;
-import static com.andrew.apollo.loaders.PlaylistLoader.LAST_ADDED_PLAYLIST_ID;
-import static com.andrew.apollo.loaders.PlaylistLoader.NEW_PLAYLIST_ID;
-
 /**
  * This class is used to display all of the playlists on a user's device.
- *
- * @author Andrew Neal (andrewdneal@gmail.com)
- * @author Angel Leon (@gubatron)
- * @author Alden Torres (@aldenml)
- * @author Marcelina Knitter (@marcelinkaaa)
  */
 public class PlaylistFragment extends ApolloFragment<PlaylistAdapter, Playlist> {
 

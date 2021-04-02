@@ -17,6 +17,9 @@
 
 package z.zer.tor.media.android.util;
 
+import static z.zer.tor.media.android.util.Asyncs.async;
+
+import android.annotation.SuppressLint;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -27,10 +30,15 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.MediaMetadataRetriever;
 import android.net.Uri;
+import android.os.Build;
 import android.os.StatFs;
 import android.provider.BaseColumns;
 import android.provider.MediaStore;
+import android.util.Log;
+import android.util.Size;
 import android.widget.ImageView;
+
+import androidx.annotation.RequiresApi;
 
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.NetworkPolicy;
@@ -52,8 +60,6 @@ import z.zer.tor.media.android.gui.MainApplication;
 import z.zer.tor.media.util.Logger;
 import z.zer.tor.media.util.Ref;
 import z.zer.tor.media.util.http.OKHTTPClient;
-
-import static z.zer.tor.media.android.util.Asyncs.async;
 
 
 public final class ImageLoader {
@@ -81,6 +87,7 @@ public final class ImageLoader {
     private static final Uri METADATA_THUMBNAILS_URI = Uri.parse(SCHEME_IMAGE_SLASH + METADATA_AUTHORITY);
 
     private static final boolean DEBUG_ERRORS = false;
+    private static final String TAG = ImageLoader.class.getSimpleName();
 
     //private final ImageCache cache;
     private final Picasso picasso;
@@ -106,15 +113,20 @@ public final class ImageLoader {
      * For loading album art inside the application Activities/Views/Fragments, take a look at
      * FileListAdapter and how it uses the ImageLoader.
      */
+    @SuppressLint("NewApi")
     private static Bitmap getAlbumArt(Context context, String albumId) {
         Bitmap bitmap = null;
         try {
             Uri albumUri = Uri.withAppendedPath(MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI, albumId);
+            Log.i(TAG, "album uri=>" + albumUri);
             try (Cursor cursor = context.getContentResolver().query(albumUri, new String[]{MediaStore.Audio.AlbumColumns.ALBUM_ART}, null, null, null)) {
                 if (cursor != null && cursor.moveToFirst()) {
                     String albumArt = cursor.getString(0);
+                    Log.i(TAG, "album art=>" + albumArt);
                     if (albumArt != null) {
                         bitmap = BitmapFactory.decodeFile(albumArt);
+                    } else {
+                        bitmap = context.getContentResolver().loadThumbnail(albumUri, new Size(100,100),null);
                     }
                 }
             }
@@ -423,6 +435,7 @@ public final class ImageLoader {
 
     private static final class ImageRequestHandler extends RequestHandler {
 
+        private static final String TAG = ImageRequestHandler.class.getSimpleName();
         private final Context context;
         private final HashSet<String> failed;
 
@@ -467,6 +480,7 @@ public final class ImageLoader {
 
         private Result loadAlbum(Uri uri) {
             String albumId = uri.getLastPathSegment();
+            Log.i(TAG, "album id=>" + albumId);
             if (albumId == null || albumId.equals("-1")) {
                 return null;
             }

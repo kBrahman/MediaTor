@@ -1,14 +1,3 @@
-/*
- * Copyright (C) 2012 Andrew Neal Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */
-
 package com.andrew.apollo.loaders;
 
 import android.content.Context;
@@ -16,25 +5,26 @@ import android.database.Cursor;
 import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.AudioColumns;
+
 import com.andrew.apollo.model.Song;
 import com.andrew.apollo.utils.PreferenceUtils;
-import z.zer.tor.media.util.Logger;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import z.zer.tor.media.util.Logger;
+
 /**
  * Used to query MediaStore.Audio.Media.EXTERNAL_CONTENT_URI and return
  * the songs on a user's device.
- * 
- * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public class SongLoader extends WrappedAsyncTaskLoader<List<Song>> {
     private static final Logger LOGGER = Logger.getLogger(SongLoader.class);
+
     /**
      * Constructor of <code>SongLoader</code>
-     * 
+     *
      * @param context The {@link Context} to use
      */
     public SongLoader(final Context context) {
@@ -83,7 +73,7 @@ public class SongLoader extends WrappedAsyncTaskLoader<List<Song>> {
                     duration = mCursor.getLong(4);
                     durationInSecs = (int) duration / 1000;
                 } catch (Throwable ignored) {
-                    LOGGER.error("SongLoader.loadInBackground(): " +ignored.getMessage(), ignored);
+                    LOGGER.error("SongLoader.loadInBackground(): " + ignored.getMessage(), ignored);
                 }
 
                 // Create a new song
@@ -107,7 +97,7 @@ public class SongLoader extends WrappedAsyncTaskLoader<List<Song>> {
 
     /**
      * Creates the {@link Cursor} used to run the query.
-     * 
+     *
      * @param context The {@link Context} to use.
      * @return The {@link Cursor} used to run the song query.
      */
@@ -116,7 +106,7 @@ public class SongLoader extends WrappedAsyncTaskLoader<List<Song>> {
         mSelection.append(AudioColumns.IS_MUSIC + "=1");
         mSelection.append(" AND " + AudioColumns.TITLE + " != ''"); //$NON-NLS-2$
         return context.getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
-                new String[] {
+                new String[]{
                         /* 0 */
                         BaseColumns._ID,
                         /* 1 */

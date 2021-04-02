@@ -1,5 +1,8 @@
 package com.andrew.apollo;
 
+import static z.zer.tor.media.android.util.Asyncs.async;
+import static z.zer.tor.media.android.util.RunStrict.runStrict;
+
 import android.Manifest;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -32,6 +35,7 @@ import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.AlbumColumns;
 import android.provider.MediaStore.Audio.AudioColumns;
+import android.util.Log;
 
 import androidx.core.content.ContextCompat;
 
@@ -54,9 +58,6 @@ import z.zer.tor.media.android.util.Asyncs;
 import z.zer.tor.media.util.Logger;
 import z.zer.tor.media.util.Ref;
 
-import static z.zer.tor.media.android.util.Asyncs.async;
-import static z.zer.tor.media.android.util.RunStrict.runStrict;
-
 /**
  * A background {@link Service} used to keep music playing between activities
  * and when the user moves Apollo into the background.
@@ -68,86 +69,86 @@ public class MusicPlaybackService extends Service {
     /**
      * Indicates that the music has paused or resumed
      */
-    public static final String PLAYSTATE_CHANGED = "com.andrew.apollo.playstatechanged";
+    public static final String PLAYSTATE_CHANGED = "zig.zak.media.tor.playstatechanged";
 
     /**
      * Indicates has been stopped
      */
-    private static final String PLAYSTATE_STOPPED = "com.andrew.apollo.playstatestopped";
+    private static final String PLAYSTATE_STOPPED = "zig.zak.media.tor.playstatestopped";
 
     /**
      * Indicates that music playback position within
      * a title was changed
      */
-    private static final String POSITION_CHANGED = "com.android.apollo.positionchanged";
+    private static final String POSITION_CHANGED = "zig.zak.media.tor.positionchanged";
 
     /**
      * Indicates the meta data has changed in some way, like a track change
      */
-    public static final String META_CHANGED = "com.andrew.apollo.metachanged";
+    public static final String META_CHANGED = "zig.zak.media.tor.metachanged";
 
     /**
      * Indicates the queue has been updated
      */
-    private static final String QUEUE_CHANGED = "com.andrew.apollo.queuechanged";
+    private static final String QUEUE_CHANGED = "zig.zak.media.tor.queuechanged";
 
     /**
      * Indicates the repeat mode changed
      */
-    public static final String REPEATMODE_CHANGED = "com.andrew.apollo.repeatmodechanged";
+    public static final String REPEATMODE_CHANGED = "zig.zak.media.tor.repeatmodechanged";
 
     /**
      * Indicates the shuffle mode changed
      */
-    public static final String SHUFFLEMODE_CHANGED = "com.andrew.apollo.shufflemodechanged";
+    public static final String SHUFFLEMODE_CHANGED = "zig.zak.media.tor.shufflemodechanged";
 
     /**
      * For backwards compatibility reasons, also provide sticky
      * broadcasts under the music package
      */
-    private static final String APOLLO_PACKAGE_NAME = "com.andrew.apollo";
+    private static final String APOLLO_PACKAGE_NAME = "zig.zak.media.tor";
     private static final String MUSIC_PACKAGE_NAME = "com.android.music";
-    static final String SERVICECMD = "com.andrew.apollo.musicservicecommand";
+    static final String SERVICECMD = "zig.zak.media.tor.musicservicecommand";
 
     /**
      * Called to go toggle between pausing and playing the music
      */
-    static final String TOGGLEPAUSE_ACTION = "com.andrew.apollo.togglepause";
+    static final String TOGGLEPAUSE_ACTION = "zig.zak.media.tor.togglepause";
 
     /**
      * Called to go to pause the playback
      */
-    private static final String PAUSE_ACTION = "com.andrew.apollo.pause";
+    private static final String PAUSE_ACTION = "zig.zak.media.tor.pause";
 
     /**
      * Called to go to stop the playback
      */
-    static final String STOP_ACTION = "com.andrew.apollo.stop";
+    static final String STOP_ACTION = "zig.zak.media.tor.stop";
 
     /**
      * Called to go to the previous track
      */
-    public static final String PREVIOUS_ACTION = "com.andrew.apollo.previous";
+    public static final String PREVIOUS_ACTION = "zig.zak.media.tor.previous";
 
     /**
      * Called to go to the next track
      */
-    static final String NEXT_ACTION = "com.andrew.apollo.next";
+    static final String NEXT_ACTION = "zig.zak.media.tor.next";
 
     /**
      * Called to change the repeat mode
      */
-    private static final String REPEAT_ACTION = "com.andrew.apollo.repeat";
+    private static final String REPEAT_ACTION = "zig.zak.media.tor.repeat";
 
     /**
      * Called to change the shuffle mode
      */
-    private static final String SHUFFLE_ACTION = "com.andrew.apollo.shuffle";
+    private static final String SHUFFLE_ACTION = "zig.zak.media.tor.shuffle";
 
     /**
      * Called to update the service about the foreground state of Apollo's activities
      */
-    public static final String FOREGROUND_STATE_CHANGED = "com.andrew.apollo.fgstatechanged";
+    public static final String FOREGROUND_STATE_CHANGED = "zig.zak.media.tor.fgstatechanged";
 
     public static final String NOW_IN_FOREGROUND = "nowinforeground";
 
@@ -155,17 +156,17 @@ public class MusicPlaybackService extends Service {
      * Used to easily notify a list that it should refresh. i.e. A playlist
      * changes
      */
-    public static final String REFRESH = "com.andrew.apollo.refresh";
+    public static final String REFRESH = "zig.zak.media.tor.refresh";
 
     /**
      * Used by the alarm intent to shutdown the service after being idle
      */
-    public static final String SHUTDOWN_ACTION = "com.andrew.apollo.shutdown";
+    public static final String SHUTDOWN_ACTION = "zig.zak.media.tor.shutdown";
 
     /**
      * Simple player stopped playing the sound (completed or was stopped)
      */
-    public static final String SIMPLE_PLAYSTATE_STOPPED = "com.andrew.apollo.simple.stopped";
+    public static final String SIMPLE_PLAYSTATE_STOPPED = "zig.zak.media.tor.simple.stopped";
 
     static final String CMDNAME = "command";
 
@@ -527,7 +528,6 @@ public class MusicPlaybackService extends Service {
                 //
                 // I didn't want to use Engine.instance().getThreadPool() as this might be initialized before EngineService
                 // give this is a service declared in AndroidManifest.xml"
-                // -gubatron
                 new Thread(this::initService).start();
             } catch (Throwable ignored) {
             }
@@ -1588,7 +1588,7 @@ public class MusicPlaybackService extends Service {
                 editor.putLong("seekpos", pos);
             } catch (Throwable e) {
                 // usually an IllegalStateException coming
-                // from com.andrew.apollo.MusicPlaybackService$MultiPlayer.position
+                // from zig.zak.media.tor.MusicPlaybackService$MultiPlayer.position
                 // which comes from a native call to MediaPlayer.getCurrentPosition()
             }
         }
@@ -2672,13 +2672,15 @@ public class MusicPlaybackService extends Service {
                 case RESET:
                     mediaPlayer.reset();
             }
-        } catch (Throwable ignored) {
+        } catch (Throwable t) {
+            t.printStackTrace();
         }
     }
 
     static final class MultiPlayer implements MediaPlayer.OnErrorListener,
             MediaPlayer.OnCompletionListener {
 
+        private static final String TAG = MultiPlayer.class.getSimpleName();
         private final WeakReference<MusicPlaybackService> mService;
 
         private MediaPlayer mCurrentMediaPlayer = new MediaPlayer();
@@ -2781,16 +2783,22 @@ public class MusicPlaybackService extends Service {
                 LOG.error("Media player fatal error", e);
                 return;
             }
-
             releaseNextMediaPlayer();
-
             if (path == null) {
                 return;
             }
-
+//            mCurrentMediaPlayer = new MediaPlayer();
+//            try {
+//                mCurrentMediaPlayer.setDataSource(mService.get(), Uri.parse(path));
+//                mCurrentMediaPlayer.prepare();
+//                mCurrentMediaPlayer.start();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
             initNextMediaPlayer();
 
             setDataSourceImpl(mNextMediaPlayer, path, result -> {
+                Log.i(TAG, "path=>" + path);
                 if (result) {
                     try {
                         mCurrentMediaPlayer.setNextMediaPlayer(mNextMediaPlayer);
@@ -2859,6 +2867,7 @@ public class MusicPlaybackService extends Service {
          * Starts or resumes playback.
          */
         public void start() {
+            Log.i(TAG,"start");
             if (mCurrentMediaPlayer != null) {
                 try {
                     mediaPlayerAsyncAction(mCurrentMediaPlayer, MediaPlayerAction.START);

@@ -14,7 +14,6 @@ import android.util.Log
 import android.widget.*
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
@@ -314,6 +313,7 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
     fun play() {
         val t: Thread = object : Thread("PreviewPlayerActivity-onSurfaceTextureAvailable") {
             override fun run() {
+                Log.i(TAG, "url=>$streamUrl")
                 val url = getFinalUrl(streamUrl)
                 val uri = Uri.parse(url)
                 androidMediaPlayer = MediaPlayer()
