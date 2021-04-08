@@ -80,7 +80,7 @@ import z.zer.tor.media.transfers.Transfer;
 import z.zer.tor.media.transfers.TransferState;
 import z.zer.tor.media.util.Logger;
 import z.zer.tor.media.util.Ref;
-import z.zer.tor.media.util.StringUtils;
+import z.zer.tor.media.util.Utils;
 
 import static z.zer.tor.media.android.util.Asyncs.async;
 
@@ -642,7 +642,7 @@ public class TransfersFragment extends AbstractFragment implements TimerObserver
 
     private void startTransferFromURL() {
         String url = addTransferUrlTextView.getText();
-        if (!StringUtils.isNullOrEmpty(url) && (url.startsWith("magnet") || url.startsWith("http"))) {
+        if (!Utils.isNullOrEmpty(url) && (url.startsWith("magnet") || url.startsWith("http"))) {
             toggleAddTransferControls();
             if (url.startsWith("http") && (url.contains("soundcloud.com/") || url.contains("youtube.com/"))) {
                 startCloudTransfer(url);
@@ -692,7 +692,7 @@ public class TransfersFragment extends AbstractFragment implements TimerObserver
                     } else {
                         text = charSequence.toString();
                     }
-                    if (!StringUtils.isNullOrEmpty(text)) {
+                    if (!Utils.isNullOrEmpty(text)) {
                         if (text.startsWith("http")) {
                             addTransferUrlTextView.setText(text.trim());
                         } else if (text.startsWith("magnet")) {

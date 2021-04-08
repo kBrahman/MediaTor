@@ -21,7 +21,7 @@ package z.zer.tor.media.search.eztv;
 import z.zer.tor.media.search.SearchMatcher;
 import z.zer.tor.media.search.torrent.AbstractTorrentSearchResult;
 import z.zer.tor.media.util.HtmlManipulator;
-import z.zer.tor.media.util.StringUtils;
+import z.zer.tor.media.util.Utils;
 import org.apache.commons.io.FilenameUtils;
 
 import java.io.UnsupportedEncodingException;
@@ -113,7 +113,7 @@ public final class EztvSearchResult extends AbstractTorrentSearchResult {
     private String parseFileName(String urlEncodedFileName) {
         String decodedFileName = null;
         try {
-            if (!StringUtils.isNullOrEmpty(urlEncodedFileName)) {
+            if (!Utils.isNullOrEmpty(urlEncodedFileName)) {
                 decodedFileName = URLDecoder.decode(urlEncodedFileName, "UTF-8");
             }
         } catch (UnsupportedEncodingException ignored) {

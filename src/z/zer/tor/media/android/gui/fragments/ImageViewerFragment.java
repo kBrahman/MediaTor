@@ -1,22 +1,6 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml),
- *            Marcelina Knitter (@marcelinkaaa), Jose Molina (@votaguz)
- * Copyright (c) 2011-2018, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package z.zer.tor.media.android.gui.fragments;
+
+import static z.zer.tor.media.android.util.Asyncs.async;
 
 import android.app.Activity;
 import android.content.ContentUris;
@@ -24,8 +8,6 @@ import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import androidx.appcompat.view.ActionMode;
-import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -34,8 +16,18 @@ import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
-import z.zer.tor.media.android.AndroidPlatform;
+import androidx.appcompat.view.ActionMode;
+import androidx.appcompat.widget.Toolbar;
+
+import org.apache.commons.io.FilenameUtils;
+
+import java.io.File;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.List;
+
 import z.zer.tor.media.R;
+import z.zer.tor.media.android.AndroidPlatform;
 import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.android.core.FileDescriptor;
 import z.zer.tor.media.android.gui.Librarian;
@@ -55,21 +47,6 @@ import z.zer.tor.media.android.util.SystemUtils;
 import z.zer.tor.media.util.Logger;
 import z.zer.tor.media.util.Ref;
 
-import org.apache.commons.io.FilenameUtils;
-
-import java.io.File;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.List;
-
-import static z.zer.tor.media.android.util.Asyncs.async;
-
-/**
- * @author gubatron
- * @author aldenml
- * @author marcelinkaaa
- * @author votaguz
- */
 public final class ImageViewerFragment extends AbstractFragment {
     private static final Logger LOG = Logger.getLogger(ImageViewerFragment.class);
     public static final String EXTRA_FILE_DESCRIPTOR_BUNDLE = "com.frostwire.android.extra.bundle.FILE_DESCRIPTOR";
@@ -117,7 +94,7 @@ public final class ImageViewerFragment extends AbstractFragment {
     @Override
     protected void initComponents(View v, Bundle savedInstanceState) {
         imageLoader = ImageLoader.getInstance(getActivity());
-        containerLayout = findView(v, R.id.fragment_image_viewer_container_layout);
+        containerLayout = v.findViewById(R.id.fragment_image_viewer_container_layout);
         progressBar = findView(v, R.id.fragment_image_viewer_progress_bar);
         progressBar.setVisibility(View.VISIBLE);
         imageViewHighRes = findView(v, R.id.fragment_image_viewer_image_highres);
@@ -212,7 +189,7 @@ public final class ImageViewerFragment extends AbstractFragment {
             if (absVelocityX < 0) {
                 // finger moves to the left, load next
                 fragment.loadPicture(fragment.nextStateBundle);
-            } else if (absVelocityX > 0){
+            } else if (absVelocityX > 0) {
                 // finger moves to the right, load previous
                 fragment.loadPicture(fragment.previousStateBundle);
             }

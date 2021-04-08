@@ -19,7 +19,7 @@
 package z.zer.tor.media.bittorrent;
 
 import com.frostwire.jlibtorrent.Entry;
-import z.zer.tor.media.util.StringUtils;
+import z.zer.tor.media.util.Utils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -87,10 +87,10 @@ public class PaymentOptions implements Mappable<String, Map<String, String>> {
 
     public Map<String, Map<String, String>> asMap() {
         Map<String, String> innerMap = new HashMap<>();
-        if (!StringUtils.isNullOrEmpty(bitcoin)) {
+        if (!Utils.isNullOrEmpty(bitcoin)) {
             innerMap.put("bitcoin", bitcoin);
         }
-        if (!StringUtils.isNullOrEmpty(paypalUrl)) {
+        if (!Utils.isNullOrEmpty(paypalUrl)) {
             innerMap.put("paypalUrl", paypalUrl);
         }
 

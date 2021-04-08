@@ -19,7 +19,7 @@ package z.zer.tor.media.util.http;
 
 import z.zer.tor.media.util.Logger;
 import z.zer.tor.media.util.Ssl;
-import z.zer.tor.media.util.StringUtils;
+import z.zer.tor.media.util.Utils;
 import z.zer.tor.media.util.ThreadPool;
 import okhttp3.*;
 import okio.Buffer;
@@ -234,10 +234,10 @@ public class OKHTTPClient extends AbstractHttpClient {
         okHttpClient.interceptors().clear();
         Request.Builder builder = new Request.Builder();
         builder.url(url);
-        if (!StringUtils.isNullOrEmpty(userAgent)) {
+        if (!Utils.isNullOrEmpty(userAgent)) {
             builder.header("User-Agent", userAgent);
         }
-        if (!StringUtils.isNullOrEmpty(referrer)) {
+        if (!Utils.isNullOrEmpty(referrer)) {
             try {
                 builder.header("Referer", referrer); // [sic - typo in HTTP protocol]
             } catch (IllegalArgumentException illegalEx) {
@@ -245,7 +245,7 @@ public class OKHTTPClient extends AbstractHttpClient {
                 LOG.warn(illegalEx.getMessage(), illegalEx);
             }
         }
-        if (!StringUtils.isNullOrEmpty(cookie)) {
+        if (!Utils.isNullOrEmpty(cookie)) {
             builder.header("Cookie", cookie);
         }
         return builder;

@@ -39,7 +39,7 @@ import z.zer.tor.media.search.SearchListener;
 import z.zer.tor.media.search.SearchManager;
 import z.zer.tor.media.search.SearchPerformer;
 import z.zer.tor.media.search.SearchResult;
-import z.zer.tor.media.util.StringUtils;
+import z.zer.tor.media.util.Utils;
 
 public final class LocalSearchEngine {
 
@@ -95,7 +95,7 @@ public final class LocalSearchEngine {
     }
 
     public void performSearch(String query) {
-        if (StringUtils.isNullOrEmpty(query, true)) {
+        if (Utils.isNullOrEmpty(query, true)) {
             return;
         }
 
@@ -230,7 +230,7 @@ public final class LocalSearchEngine {
     private String sanitize(String str) {
         str = Html.fromHtml(str).toString();
         str = str.replaceAll("\\.torrent|www\\.|\\.com|\\.net|[\\\\\\/%_;\\-\\.\\(\\)\\[\\]\\n\\rÐ&~{}\\*@\\^'=!,¡|#ÀÁ]", " ");
-        str = StringUtils.removeDoubleSpaces(str);
+        str = Utils.removeDoubleSpaces(str);
 
         return str.trim();
     }

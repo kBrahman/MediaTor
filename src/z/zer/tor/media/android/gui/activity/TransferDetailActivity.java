@@ -1,29 +1,15 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml), Marcelina Knitter (@marcelinkaaa)
- * Copyright (c) 2011-2017, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package z.zer.tor.media.android.gui.activity;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
-import com.google.android.material.tabs.TabLayout;
-import z.zer.tor.media.android.gui.views.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 import android.util.SparseArray;
+
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
+
+import java.util.List;
 
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.core.ConfigurationManager;
@@ -41,11 +27,10 @@ import z.zer.tor.media.android.gui.util.UIUtils;
 import z.zer.tor.media.android.gui.views.AbstractActivity;
 import z.zer.tor.media.android.gui.views.AbstractFragment;
 import z.zer.tor.media.android.gui.views.AbstractTransferDetailFragment;
+import z.zer.tor.media.android.gui.views.FragmentPagerAdapter;
 import z.zer.tor.media.android.gui.views.TimerObserver;
 import z.zer.tor.media.android.gui.views.TimerService;
 import z.zer.tor.media.android.gui.views.TimerSubscription;
-
-import java.util.List;
 
 public class TransferDetailActivity extends AbstractActivity implements TimerObserver {
     private TimerSubscription subscription;
@@ -181,7 +166,7 @@ public class TransferDetailActivity extends AbstractActivity implements TimerObs
             if (correspondingActiveFragment == null) {
                 return; // definitively not added yet
             }
-            detailFragments[lastSelectedTabIndex]=(AbstractTransferDetailFragment) correspondingActiveFragment;
+            detailFragments[lastSelectedTabIndex] = (AbstractTransferDetailFragment) correspondingActiveFragment;
             currentFragment = detailFragments[lastSelectedTabIndex];
         }
         if (transferDetailFragment != null) {
@@ -200,11 +185,11 @@ public class TransferDetailActivity extends AbstractActivity implements TimerObs
      * it seems the SectionsPageAdapter doesn't properly tag the fragments
      * and we have to manually find the corresponding added fragment
      * in the list keep by AbstractFragment's getFragments()
-     *
+     * <p>
      * We receive a fragment whose .isAdded() method returns false and we
      * look into our tracked list of fragments for an equivalent instance that
      * is marked as added and return it.
-     *
+     * <p>
      * We'll then replace that instance in our detailFragments[] array
      */
     private Fragment getCorrespondingActiveFragment(AbstractTransferDetailFragment currentFragment) {

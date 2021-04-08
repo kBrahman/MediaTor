@@ -24,7 +24,7 @@ import androidx.cursoradapter.widget.SimpleCursorAdapter;
 
 import z.zer.tor.media.R;
 import z.zer.tor.media.util.HttpClientFactory;
-import z.zer.tor.media.util.StringUtils;
+import z.zer.tor.media.util.Utils;
 import z.zer.tor.media.util.http.HttpClient;
 
 import org.json.JSONArray;
@@ -80,7 +80,7 @@ class SuggestionsAdapter extends SimpleCursorAdapter {
 
     private static String buildSuggestionsUrl() {
         String lang = Locale.getDefault().getLanguage();
-        if (StringUtils.isNullOrEmpty(lang)) {
+        if (Utils.isNullOrEmpty(lang)) {
             lang = "en";
         }
 

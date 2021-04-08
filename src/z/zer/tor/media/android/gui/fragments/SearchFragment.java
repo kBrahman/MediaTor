@@ -1,5 +1,9 @@
 package z.zer.tor.media.android.gui.fragments;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+import static z.zer.tor.media.android.util.Asyncs.async;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -60,7 +64,6 @@ import z.zer.tor.media.android.gui.views.KeywordFilterDrawerView;
 import z.zer.tor.media.android.gui.views.SearchInputView;
 import z.zer.tor.media.android.gui.views.SearchProgressView;
 import z.zer.tor.media.android.gui.views.SwipeLayout;
-import z.zer.tor.media.android.offers.SearchHeaderBanner;
 import z.zer.tor.media.search.FileSearchResult;
 import z.zer.tor.media.search.HttpSearchResult;
 import z.zer.tor.media.search.KeywordDetector;
@@ -77,10 +80,6 @@ import z.zer.tor.media.util.Ref;
 import z.zer.tor.media.uxstats.UXAction;
 import z.zer.tor.media.uxstats.UXStats;
 
-import static android.view.View.GONE;
-import static android.view.View.VISIBLE;
-import static z.zer.tor.media.android.util.Asyncs.async;
-
 public final class SearchFragment extends AbstractFragment implements MainFragment, OnDialogClickListener, SearchProgressView.CurrentQueryReporter, KeywordFilterDrawerView.KeywordFilterDrawerController, DrawerLayout.DrawerListener {
     private static final Logger LOG = Logger.getLogger(SearchFragment.class);
     private static final String TAG = SearchFragment.class.getSimpleName();
@@ -94,7 +93,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
     private final KeywordDetector keywordDetector;
     private DrawerLayout drawerLayout;
     private KeywordFilterDrawerView keywordFilterDrawerView;
-    private SearchHeaderBanner searchHeaderBanner;
     private NativeAd nativeAd;
 
     public SearchFragment() {
@@ -111,12 +109,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         setRetainInstance(true);
     }
 
-    private void loadNativeAd() {
-        // Instantiate a NativeAd object.
-        // NOTE: the placement ID will eventually identify this as your App, you can ignore it for
-        // now, while you are testing and replace it later when you have signed up.
-        // While you are using this temporary code you will only get test ads and if you release
-        // your code like this to the Google Play your users will not receive ads (you will get a no fill error).
+    private void loadFB() {
         nativeAd = new NativeAd(getActivity(), getString(R.string.id_ad_native_fb));
 
         NativeAdListener adListener = new NativeAdListener() {
@@ -131,6 +124,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
                 // Native ad failed to load
                 Log.e(TAG, "Native ad failed to load: " + adError.getErrorMessage());
             }
+
 
             @Override
             public void onAdLoaded(Ad ad) {
@@ -266,12 +260,11 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        loadNativeAd();
+        loadFB();
     }
 
     @Override
     protected void initComponents(final View view, Bundle savedInstanceState) {
-        searchHeaderBanner = findView(view, R.id.fragment_search_header_banner);
         searchInput = findView(view, R.id.fragment_search_input);
         searchInput.setShowKeyboardOnPaste(true);
         searchInput.setOnSearchListener(new SearchInputOnSearchListener((LinearLayout) view, this));
@@ -346,16 +339,18 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
             Activity activity = getActivity();
             activity.runOnUiThread(() -> {
                 adapter.addResults(keywordFiltered, mediaTypeFiltered);
-                showSearchView(getView());
+                View view = getView();
+                showSearchView(view);
                 refreshFileTypeCounters(true);
                 activity.findViewById(R.id.pb).setVisibility(GONE);
-                setNativeAdVisibility(GONE);
+                setNativeAdVisibility(view.findViewById(R.id.native_ad_container), GONE);
+
             });
         }
     }
 
-    private void setNativeAdVisibility(int visibility) {
-        getView().findViewById(R.id.native_ad_container).setVisibility(visibility);
+    private void setNativeAdVisibility(View nativeAd, int visibility) {
+        nativeAd.setVisibility(visibility);
         AdView adView = ((MainActivity) getActivity()).banner;
         if (adView == null) return;
         if (visibility == GONE) visibility = VISIBLE;
@@ -727,7 +722,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
             }
             SearchFragment fragment = fragmentRef.get();
             fragment.cancelSearch();
-            setNativeAdVisibility(VISIBLE);
+            setNativeAdVisibility(getView().findViewById(R.id.native_ad_container), VISIBLE);
         }
     }
 

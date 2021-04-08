@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <z.zer.tor.media.android.offers.SearchHeaderBanner
-        android:id="@+id/fragment_search_header_banner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
     <ProgressBar
         android:id="@+id/fragment_search_deepsearch_progress"
@@ -16,18 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="5dip"
         android:indeterminate="true"
-        android:progress="25"/>
+        android:progress="25" />
 
     <z.zer.tor.media.android.gui.views.SearchInputView
         android:id="@+id/fragment_search_input"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
     <com.facebook.ads.NativeAdLayout
         android:id="@+id/native_ad_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"/>
+        android:orientation="vertical" />
 
     <z.zer.tor.media.android.gui.views.SwipeLayout
         android:id="@+id/fragment_search_swipe"
@@ -50,7 +45,7 @@
                 android:childDivider="#00000000"
                 android:divider="@color/transparent"
                 android:dividerHeight="0dp"
-                android:groupIndicator="@null"/>
+                android:groupIndicator="@null" />
         </FrameLayout>
     </z.zer.tor.media.android.gui.views.SwipeLayout>
 </LinearLayout>

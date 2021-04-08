@@ -1,5 +1,8 @@
 package z.zer.tor.media.android.gui.activity;
 
+import static com.andrew.apollo.utils.MusicUtils.musicPlaybackService;
+import static z.zer.tor.media.android.util.Asyncs.async;
+
 import android.app.ActionBar;
 import android.app.Dialog;
 import android.app.Fragment;
@@ -74,12 +77,9 @@ import z.zer.tor.media.android.gui.views.TimerSubscription;
 import z.zer.tor.media.platform.Platforms;
 import z.zer.tor.media.util.Logger;
 import z.zer.tor.media.util.Ref;
-import z.zer.tor.media.util.StringUtils;
+import z.zer.tor.media.util.Utils;
 import z.zer.tor.media.uxstats.UXAction;
 import z.zer.tor.media.uxstats.UXStats;
-
-import static com.andrew.apollo.utils.MusicUtils.musicPlaybackService;
-import static z.zer.tor.media.android.util.Asyncs.async;
 
 
 public class MainActivity extends AbstractActivity implements OnDialogClickListener, ServiceConnection, ActivityCompat.OnRequestPermissionsResultCallback {
@@ -464,7 +464,7 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         final ConfigurationManager CM = ConfigurationManager.instance();
         final String lastSeenVersionBuild = CM.getString(Constants.PREF_KEY_CORE_LAST_SEEN_VERSION_BUILD);
         final String currentVersionBuild = Constants.FROSTWIRE_VERSION_STRING + "." + Constants.FROSTWIRE_BUILD;
-        if (StringUtils.isNullOrEmpty(lastSeenVersionBuild)) {
+        if (Utils.isNullOrEmpty(lastSeenVersionBuild)) {
             //fresh install
             //Offers.forceDisabledAds(this); // no ads on first session ever
             CM.setString(Constants.PREF_KEY_CORE_LAST_SEEN_VERSION_BUILD, currentVersionBuild);

@@ -670,7 +670,7 @@
     <string name="frostwire_start_engine_service_security_exception">FrostWire nije mogao pravilno pokrenuti zbog nedostatka dozvola. Dopustite potrebnim dozvolama i ponovo pokrenite aplikaciju</string>
     <string name="vpn_find_out_more">Saznaj više</string>
     <string name="vpn_suggestion_nordvpn">NORDVPN \n Besplatno 7-dnevno probno razdoblje</string>
-    <string name="play_store_out_of_sync">Trgovina Google Play treba sinkronizirati, pričekajte nekoliko minuta</string>
+
     <string name="one_file_shared">Jedna je datoteka podijeljena s MediaTor uređajima na istoj Wi-Fi mreži.</string>
     <string name="n_files_shared">Dijeljeno je %d datoteka MediaTor uređajima na istoj Wi-Fi mreži.</string>
     <string name="uploaded">Preneseni</string>

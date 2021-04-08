@@ -1,20 +1,3 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2018, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package z.zer.tor.media.android.gui.activity;
 
 import android.content.Intent;
@@ -34,10 +17,6 @@ import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.android.gui.util.UIUtils;
 import z.zer.tor.media.android.gui.views.AbstractActivity;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class VPNStatusDetailActivity extends AbstractActivity {
 
     public VPNStatusDetailActivity() {
@@ -87,7 +66,7 @@ public final class VPNStatusDetailActivity extends AbstractActivity {
             learnVPNText.setText(R.string.vpn_find_out_more);
         }
 
-        learnVPNText.setPaintFlags(learnVPNText.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
+        learnVPNText.setPaintFlags(learnVPNText.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         /*
         issue-709

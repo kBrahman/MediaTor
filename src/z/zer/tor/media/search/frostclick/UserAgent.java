@@ -24,7 +24,7 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import z.zer.tor.media.util.StringUtils;
+import z.zer.tor.media.util.Utils;
 
 /**
 * @author gubatron
@@ -106,7 +106,7 @@ public class UserAgent {
         String v = headerMap.get(OS_KEY);
         Map<String,String> osVersion = Collections.emptyMap();
         
-        if (!StringUtils.isNullOrEmpty(v)) {
+        if (!Utils.isNullOrEmpty(v)) {
             String[] split = v.split("_");
             try {
                 osVersion = new HashMap<String,String>();
@@ -141,7 +141,7 @@ public class UserAgent {
     }
 
     private String normalizeUnavailableString(String str) {
-        if (StringUtils.isNullOrEmpty(str)) {
+        if (Utils.isNullOrEmpty(str)) {
             str = "NA";
         } else {
             str = normalizeOsVersionString(str);

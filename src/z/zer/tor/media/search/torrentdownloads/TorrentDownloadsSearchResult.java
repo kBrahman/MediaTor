@@ -21,7 +21,7 @@ package z.zer.tor.media.search.torrentdownloads;
 import z.zer.tor.media.search.SearchMatcher;
 import z.zer.tor.media.search.torrent.AbstractTorrentSearchResult;
 import z.zer.tor.media.util.HtmlManipulator;
-import z.zer.tor.media.util.StringUtils;
+import z.zer.tor.media.util.Utils;
 import org.apache.commons.io.FilenameUtils;
 
 import java.io.UnsupportedEncodingException;
@@ -102,7 +102,7 @@ public final class TorrentDownloadsSearchResult extends AbstractTorrentSearchRes
     private String parseFileName(String urlEncodedFileName, String fallbackName) {
         String decodedFileName = fallbackName;
         try {
-            if (!StringUtils.isNullOrEmpty(urlEncodedFileName)) {
+            if (!Utils.isNullOrEmpty(urlEncodedFileName)) {
                 decodedFileName = URLDecoder.decode(urlEncodedFileName, "UTF-8");
                 decodedFileName.replace("&amp;", "and");
             }
