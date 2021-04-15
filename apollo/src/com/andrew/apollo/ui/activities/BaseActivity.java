@@ -1,22 +1,6 @@
-/*
- * Copyright (C) 2012 Andrew Neal
- * Modified by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2013-2017, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.andrew.apollo.ui.activities;
+
+import static com.andrew.apollo.utils.MusicUtils.musicPlaybackService;
 
 import android.app.Activity;
 import android.app.SearchManager;
@@ -30,9 +14,6 @@ import android.content.ServiceConnection;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.IBinder;
-import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.SearchView.OnQueryTextListener;
-import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -40,6 +21,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.SearchView.OnQueryTextListener;
+import androidx.appcompat.widget.Toolbar;
 
 import com.andrew.apollo.Config;
 import com.andrew.apollo.IApolloService;
@@ -65,15 +50,11 @@ import z.zer.tor.media.android.gui.util.UIUtils;
 import z.zer.tor.media.android.gui.util.WriteSettingsPermissionActivityHelper;
 import z.zer.tor.media.android.gui.views.AbstractActivity;
 
-import static com.andrew.apollo.utils.MusicUtils.musicPlaybackService;
-
 /**
  * A base {@link Activity} used to update the bottom bar and
  * bind to Apollo's service.
  * <p>
  * {@link HomeActivity} extends from this skeleton.
- *
- * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public abstract class BaseActivity extends AbstractActivity implements ServiceConnection {
     /**
@@ -157,7 +138,6 @@ public abstract class BaseActivity extends AbstractActivity implements ServiceCo
                 return;
             }
         }
-
         super.onActivityResult(requestCode, resultCode, data);
     }
 
