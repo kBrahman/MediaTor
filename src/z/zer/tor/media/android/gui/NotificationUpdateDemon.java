@@ -107,7 +107,7 @@ public final class NotificationUpdateDemon implements TimerObserver {
             if (notificationManager != null) {
                 try {
                     if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                        NotificationChannel channel = new NotificationChannel(MEDIA_TOR_NOTIFICATION_CHANNEL_ID, "FrostWire", NotificationManager.IMPORTANCE_MIN);
+                        NotificationChannel channel = new NotificationChannel(MEDIA_TOR_NOTIFICATION_CHANNEL_ID, "MediaTor", NotificationManager.IMPORTANCE_MIN);
                         channel.setSound(null, null);
                         notificationManager.createNotificationChannel(channel);
                     }

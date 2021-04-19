@@ -1,20 +1,3 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2018, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package z.zer.tor.media.android.core;
 
 
@@ -22,13 +5,13 @@ import z.zer.tor.media.BuildConfig;
 
 public final class Constants {
 
-    public static final String FROSTWIRE_BUILD = String.valueOf((BuildConfig.VERSION_CODE % 1000));
+    public static final String MEDIAT_TOR_BUILD = String.valueOf((BuildConfig.VERSION_CODE % 1000));
     public static final String FROSTWIRE_VERSION_STRING = BuildConfig.VERSION_NAME;
 
     // preference keys
-    public static final String PREF_KEY_CORE_UUID = "frostwire.prefs.core.uuid";
-    public static final String PREF_KEY_CORE_LAST_SEEN_VERSION_BUILD = "frostwire.prefs.core.last_seen_version_build";
-    public static final String PREF_KEY_MAIN_APPLICATION_ON_CREATE_TIMESTAMP = "frostwire.prefs.core.main_application_on_create_timestamp";
+    public static final String PREF_KEY_CORE_UUID = "zig.zak.media.tor.core.uuid";
+    public static final String PREF_KEY_CORE_LAST_SEEN_VERSION_BUILD = "zig.zak.media.tor.core.last_seen_version_build";
+    public static final String PREF_KEY_MAIN_APPLICATION_ON_CREATE_TIMESTAMP = "zig.zak.media.tor.core.main_application_on_create_timestamp";
 
     public static final String PREF_KEY_NETWORK_ENABLE_DHT = "froswire.prefs.network.enable_dht";
 
@@ -140,7 +123,6 @@ public final class Constants {
 
     public static final String MIME_TYPE_BITTORRENT = "application/x-bittorrent";
     public static final String FROSTWIRE_MORE_RESULTS = "http://www.frostwire.com/more.results";
-    public static final String SUPPORT_URL = "http://support.frostwire.com/hc/en-us/categories/200014385-FrostWire-for-Android";
 
     public static final String AD_NETWORK_SHORTCODE_APPLOVIN = "AL";
 

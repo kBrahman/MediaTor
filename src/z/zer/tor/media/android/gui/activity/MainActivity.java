@@ -463,7 +463,7 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     private void checkLastSeenVersionBuild() {
         final ConfigurationManager CM = ConfigurationManager.instance();
         final String lastSeenVersionBuild = CM.getString(Constants.PREF_KEY_CORE_LAST_SEEN_VERSION_BUILD);
-        final String currentVersionBuild = Constants.FROSTWIRE_VERSION_STRING + "." + Constants.FROSTWIRE_BUILD;
+        final String currentVersionBuild = Constants.FROSTWIRE_VERSION_STRING + "." + Constants.MEDIAT_TOR_BUILD;
         if (Utils.isNullOrEmpty(lastSeenVersionBuild)) {
             //fresh install
             //Offers.forceDisabledAds(this); // no ads on first session ever

@@ -260,7 +260,7 @@ public class SeedAction extends MenuAction implements AbstractDialog.OnDialogCli
             create_torrent ct = new create_torrent(fs); //, 0, -1, create_torrent.flags_t.merkle.swigValue());
             // commented out the merkle flag above because torrent doesn't appear as "Seeding", piece count doesn't work
             // as the algorithm in BTDownload.getProgress() doesn't make sense at the moment for merkle torrents.
-            ct.set_creator("FrostWire " + Constants.FROSTWIRE_VERSION_STRING + " build " + Constants.FROSTWIRE_BUILD);
+            ct.set_creator("FrostWire " + Constants.FROSTWIRE_VERSION_STRING + " build " + Constants.MEDIAT_TOR_BUILD);
             ct.set_priv(false);
             final error_code ec = new error_code();
             libtorrent.set_piece_hashes_ex(ct, saveDir.getAbsolutePath(), new set_piece_hashes_listener(), ec);

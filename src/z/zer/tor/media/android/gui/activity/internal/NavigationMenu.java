@@ -14,7 +14,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.navigation.NavigationView;
 
 import z.zer.tor.media.R;
-import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.android.gui.activity.MainActivity;
 import z.zer.tor.media.android.gui.fragments.TransfersFragment;
 import z.zer.tor.media.android.gui.services.Engine;
@@ -109,9 +108,6 @@ public final class NavigationMenu {
                     break;
                 case R.id.menu_main_transfers:
                     controller.showTransfers(TransfersFragment.TransferStatus.ALL);
-                    break;
-                case R.id.menu_main_support:
-                    UIUtils.openURL(controller.getActivity(), Constants.SUPPORT_URL);
                     break;
                 case R.id.menu_main_settings:
                     controller.showPreferences();

@@ -40,7 +40,7 @@ import z.zer.tor.media.search.zooqle.ZooqleSearchPerformer;
 
 public abstract class SearchEngine {
 
-    private static final UserAgent FROSTWIRE_ANDROID_USER_AGENT = new UserAgent(getOSVersionString(), Constants.FROSTWIRE_VERSION_STRING, Constants.FROSTWIRE_BUILD);
+    private static final UserAgent FROSTWIRE_ANDROID_USER_AGENT = new UserAgent(getOSVersionString(), Constants.FROSTWIRE_VERSION_STRING, Constants.MEDIAT_TOR_BUILD);
     private static final int DEFAULT_TIMEOUT = 10000;
 
     private final String name;
