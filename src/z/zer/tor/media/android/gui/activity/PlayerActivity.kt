@@ -204,7 +204,6 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
                                 end.linkTo(parent.end, margin = 16.dp)
                                 top.linkTo(btn.top)
                                 bottom.linkTo(btn.bottom)
-                                height = Dimension.fillToConstraints
                                 width = Dimension.fillToConstraints
                             }
                             .layout { measurable, constraints ->
