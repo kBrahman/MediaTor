@@ -131,5 +131,5 @@
   <string name="page_last_added">Ostatnio Dodane</string>
   <string name="empty_playlist">Ta playlista jest pusta.\n\nKliknij tutaj aby dowiedzieć się jak dodać piosenki.</string>
   <string name="are_you_sure_delete_files_text">Czy na pewno chcesz NA ZAWSZE USUNĄĆ wybrane pliki z urządzenia?</string>
-  <string name="frostwire_player">Odtwarzacz FrostWire</string>
+
 </resources>

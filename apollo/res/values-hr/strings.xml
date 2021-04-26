@@ -131,5 +131,5 @@
   <string name="page_last_added">Zadnje dodano</string>
   <string name="empty_playlist">Popis za reprodukciju je prazan.\n\nKliknite ovdje da biste saznali kako dodati pjesme.</string>
   <string name="are_you_sure_delete_files_text">Jeste li sigurni da želite trajno izbrisati odabrane datoteke s uređaja?</string>
-  <string name="frostwire_player">FrostWire igrač mediji</string>
+
 </resources>

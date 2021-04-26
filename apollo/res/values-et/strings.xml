@@ -131,5 +131,5 @@
   <string name="page_last_added">Viimati lisatud</string>
   <string name="empty_playlist">See esitusloend on tühi.\n\nLoo lisamise kohta lisateabe saamiseks klõpsake siin.</string>
   <string name="are_you_sure_delete_files_text">Kas olete kindel, et soovite oma seadmest valitud failid püsivalt kustutada?</string>
-  <string name="frostwire_player">FrostWire meediumipleier</string>
+
 </resources>

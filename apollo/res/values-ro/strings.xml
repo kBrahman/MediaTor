@@ -131,5 +131,5 @@
   <string name="page_last_added">Ultimele adăugate</string>
   <string name="empty_playlist">Acest playlist este gol.\n\nFaceți clic aici pentru a afla cum să adăugați melodii.</string>
   <string name="are_you_sure_delete_files_text">Sigur doriți să DELETEȚI PERMANENT fișierele selectate de pe dispozitiv?</string>
-  <string name="frostwire_player">FrostWire Player</string>
+
 </resources>

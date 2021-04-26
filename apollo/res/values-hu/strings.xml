@@ -131,5 +131,5 @@
   <string name="page_last_added">Utoljára hozzáadva</string>
   <string name="empty_playlist">Ez a lejátszási lista üres.\n\nKattintson ide a dalok hozzáadásához.</string>
   <string name="are_you_sure_delete_files_text">Biztosan törölni szeretné a kijelölt fájlokat a készülékről?</string>
-  <string name="frostwire_player">FrostWire médialejátszó</string>
+
 </resources>

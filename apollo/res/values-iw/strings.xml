@@ -130,5 +130,5 @@
   <string name="page_last_added">נוסף לאחרונה</string>
   <string name="empty_playlist">הפלייליסט הזה ריק.\n\nלחץ כאן כדי ללמוד כיצד להוסיף שירים.</string>
   <string name="are_you_sure_delete_files_text">האם אתה בטוח שברצונך למחוק תמיד את הקבצים שנבחרו מהמכשיר?</string>
-  <string name="frostwire_player">נגן המדיה FrostWire</string>
+
 </resources>

@@ -12,6 +12,7 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.widget.*
+import android.widget.Toast.LENGTH_SHORT
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -243,6 +244,10 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
         stopAnyOtherPlayers()
         source = i.getStringExtra("source")
         streamUrl = i.getStringExtra("streamUrl")
+        if (streamUrl == null) {
+            Toast.makeText(this, R.string.media_player_failed, LENGTH_SHORT).show()
+            finish()
+        }
         isFullScreen = i.getBooleanExtra("isFullScreen", false)
         play()
     }

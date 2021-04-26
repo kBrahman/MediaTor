@@ -131,5 +131,5 @@
   <string name="page_last_added">Poslední přidané</string>
   <string name="empty_playlist">Tento seznam skladeb je prázdný.\n\nKlepnutím sem se dozvíte, jak přidat skladby.</string>
   <string name="are_you_sure_delete_files_text">Opravdu chcete soubory ze zařízení trvale smazat?</string>
-  <string name="frostwire_player">Přehrávač médií FrostWire</string>
+
 </resources>

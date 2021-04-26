@@ -131,5 +131,5 @@
   <string name="page_last_added">最後に追加された</string>
   <string name="empty_playlist">このプレイリストは空です。\n\n曲を追加する方法については、こちらをクリックしてください。</string>
   <string name="are_you_sure_delete_files_text">選択したファイルをデバイスから永久に削除してもよろしいですか？</string>
-  <string name="frostwire_player">FrostWireプレーヤー</string>
+
 </resources>

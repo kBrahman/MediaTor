@@ -131,5 +131,5 @@
   <string name="page_last_added">Naposledy pridané</string>
   <string name="empty_playlist">Tento zoznam skladieb je prázdny.\n\nKliknutím sem získate informácie o pridávaní skladieb.</string>
   <string name="are_you_sure_delete_files_text">Naozaj chcete trvalo odstrániť vybraté súbory z vášho zariadenia?</string>
-  <string name="frostwire_player">Prehrávač médií FrostWire</string>
+
 </resources>

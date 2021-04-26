@@ -131,5 +131,5 @@
   <string name="page_last_added">En son eklenmiş</string>
   <string name="empty_playlist">Bu oynatma listesi boş.\n\nŞarkı eklemeyi öğrenmek için buraya tıklayın.</string>
   <string name="are_you_sure_delete_files_text">Seçilen dosyaları cihazınızdan kalıcı olarak silmek istediğinizden emin misiniz?</string>
-  <string name="frostwire_player">FrostWire medya oynatıcı</string>
+
 </resources>

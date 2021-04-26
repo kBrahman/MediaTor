@@ -131,5 +131,5 @@
   <string name="page_last_added">Último adicionado</string>
   <string name="empty_playlist">Esta lista de reprodução está vazia.\n\nClique aqui para aprender como adicionar canções.</string>
   <string name="are_you_sure_delete_files_text">Tem certeza de que deseja APAGAR PERMANENTEMENTE os arquivos selecionados do seu dispositivo?</string>
-  <string name="frostwire_player">Reprodutor de FrostWire</string>
+
 </resources>
