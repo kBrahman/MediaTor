@@ -247,6 +247,7 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
         if (streamUrl == null) {
             Toast.makeText(this, R.string.media_player_failed, LENGTH_SHORT).show()
             finish()
+            return
         }
         isFullScreen = i.getBooleanExtra("isFullScreen", false)
         play()
