@@ -35,8 +35,8 @@ android {
     compileSdkVersion 30
     defaultConfig {
         applicationId localProperties["id"]
-        versionCode 51
-        versionName "1.50"
+        versionCode 52
+        versionName "1.51"
         multiDexEnabled true
         minSdkVersion 21
         targetSdkVersion 30
@@ -96,10 +96,7 @@ android {
     buildFeatures {
         compose true
     }
-//    composeOptions {
-//        kotlinCompilerVersion "$kotlin_version"
-//        kotlinCompilerExtensionVersion '1.0.0-alpha12'
-//    }
+
     kotlinOptions {
         useIR = true
         jvmTarget = '11'
