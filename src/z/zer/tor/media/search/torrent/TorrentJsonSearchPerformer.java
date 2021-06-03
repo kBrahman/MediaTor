@@ -52,7 +52,7 @@ public abstract class TorrentJsonSearchPerformer<T extends ComparableTorrentJson
     }
 
     @Override
-    protected final List<? extends SearchResult> searchPage(String page) {
+    protected final List<? extends SearchResult> parsePage(String page) {
         List<SearchResult> result = new LinkedList<>();
 
         List<T> items = parseJson(page);

@@ -34,7 +34,7 @@ public abstract class CrawlRegexSearchPerformer<T extends CrawlableSearchResult>
     }
 
     @Override
-    protected List<? extends SearchResult> searchPage(String page) {
+    protected List<? extends SearchResult> parsePage(String page) {
         if (!isValidHtml(page)) {
             return Collections.emptyList();
         }

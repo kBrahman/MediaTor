@@ -10,6 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import z.zer.tor.media.BuildConfig;
+import z.zer.tor.media.android.gui.LocalSearchEngine;
 import z.zer.tor.media.search.PagedWebSearchPerformer;
 import z.zer.tor.media.search.SearchResult;
 import z.zer.tor.media.util.JsonUtils;
@@ -50,7 +51,7 @@ public final class SoundCloudSearchPerformer extends PagedWebSearchPerformer {
     }
 
     @Override
-    protected List<? extends SearchResult> searchPage(String page) {
+    protected List<? extends SearchResult> parsePage(String page) {
         List<SearchResult> result = new LinkedList<>();
         JSONArray arr;
         try {

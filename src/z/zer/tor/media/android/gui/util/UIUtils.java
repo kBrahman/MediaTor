@@ -1,21 +1,6 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2018, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package z.zer.tor.media.android.gui.util;
+
+import static z.zer.tor.media.android.util.Asyncs.async;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -28,16 +13,17 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Environment;
-import androidx.annotation.StringRes;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.core.content.FileProvider;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
+import androidx.annotation.StringRes;
+import androidx.core.content.FileProvider;
+
 import com.andrew.apollo.utils.MusicUtils;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.apache.commons.io.FilenameUtils;
 
@@ -65,13 +51,6 @@ import z.zer.tor.media.util.MimeDetector;
 import z.zer.tor.media.uxstats.UXAction;
 import z.zer.tor.media.uxstats.UXStats;
 
-import static z.zer.tor.media.android.util.Asyncs.async;
-
-/**
- * @author gubatron
- * @author aldenml
- * @author votaguz
- */
 public final class UIUtils {
 
     private static final Logger LOG = Logger.getLogger(UIUtils.class);

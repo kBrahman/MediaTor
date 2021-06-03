@@ -200,6 +200,7 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
                     LinearProgressIndicator(progress = progress.value,
                         color = colorPrimary,
                         modifier = Modifier
+                            .height(8.dp)
                             .constrainAs(sb) {
                                 start.linkTo(btn.end, margin = 4.dp)
                                 end.linkTo(parent.end, margin = 16.dp)

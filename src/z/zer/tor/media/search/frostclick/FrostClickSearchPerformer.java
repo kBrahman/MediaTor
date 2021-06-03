@@ -29,7 +29,7 @@ public class FrostClickSearchPerformer extends PagedWebSearchPerformer {
     }
 
     @Override
-    protected List<? extends SearchResult> searchPage(int page) {
+    protected List<? extends SearchResult> parsePage(int page) {
         String url = getUrl(page, getEncodedKeywords());
         String text;
         try {
@@ -39,7 +39,7 @@ public class FrostClickSearchPerformer extends PagedWebSearchPerformer {
         }
         
         if (text != null) {
-            return searchPage(text);
+            return parsePage(text);
         } else {
             LOG.warn("Page content empty for url: " + url);
             return Collections.emptyList();
@@ -47,7 +47,7 @@ public class FrostClickSearchPerformer extends PagedWebSearchPerformer {
     }
 
     @Override
-    protected List<? extends SearchResult> searchPage(String page) {
+    protected List<? extends SearchResult> parsePage(String page) {
         return Collections.emptyList();
     }
 

@@ -53,7 +53,7 @@ public class ArchiveorgSearchPerformer extends CrawlPagedWebSearchPerformer<Arch
     }
 
     @Override
-    protected List<? extends SearchResult> searchPage(String page) {
+    protected List<? extends SearchResult> parsePage(String page) {
         List<SearchResult> result = new LinkedList<>();
 
         ArchiveorgResponse response = JsonUtils.toObject(page, ArchiveorgResponse.class);

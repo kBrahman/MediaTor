@@ -24,8 +24,8 @@ public final class PixabaySearchPerformer extends CrawlPagedWebSearchPerformer<P
     }
 
     @Override
-    protected List<? extends SearchResult> searchPage(String page) {
-        return searchPage(page, true);
+    protected List<? extends SearchResult> parsePage(String page) {
+        return parsePage(page, true);
     }
 
     @Override
@@ -36,10 +36,10 @@ public final class PixabaySearchPerformer extends CrawlPagedWebSearchPerformer<P
     @Override
     protected List<? extends SearchResult> crawlResult(PixabaySearchResult sr, byte[] data) throws Exception {
         String json = new String(data, StandardCharsets.UTF_8);
-        return searchPage(json, false);
+        return parsePage(json, false);
     }
 
-    private List<? extends SearchResult> searchPage(String page, boolean firstPass) {
+    private List<? extends SearchResult> parsePage(String page, boolean firstPass) {
         List<SearchResult> result = new LinkedList<>();
 
         PixabayResponse response = JsonUtils.toObject(page, PixabayResponse.class);
