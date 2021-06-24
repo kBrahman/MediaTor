@@ -48,9 +48,12 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
     MediaPlayer.OnBufferingUpdateListener, MediaPlayer.OnCompletionListener,
     MediaPlayer.OnPreparedListener, MediaPlayer.OnInfoListener,
     AudioManager.OnAudioFocusChangeListener, SeekBar.OnSeekBarChangeListener, Runnable {
+    companion object {
+        private val TAG = PlayerActivity::class.java.simpleName
+    }
 
-    private lateinit var adLoaded: MutableState<Boolean>
-    val TAG = PlayerActivity::class.java.simpleName
+    private var adLoaded = mutableStateOf(false)
+
     var androidMediaPlayer: MediaPlayer? = null
     var displayName: String? = null
     var source: String? = null

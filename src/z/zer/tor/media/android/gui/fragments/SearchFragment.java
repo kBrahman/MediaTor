@@ -123,7 +123,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
             @Override
             public void onError(Ad ad, AdError adError) {
                 // Native ad failed to load
-                Log.e(TAG, "Native ad failed to load: " + adError.getErrorMessage());
+                System.out.println(TAG+ "Native ad failed to load: " + adError.getErrorMessage()+"test");
             }
 
 
