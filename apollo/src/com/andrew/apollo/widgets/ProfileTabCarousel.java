@@ -1,14 +1,3 @@
-/*
- * Copyright (C) 2012 Andrew Neal Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */
-
 package com.andrew.apollo.widgets;
 
 import android.animation.Animator;
@@ -25,6 +14,7 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.animation.AnimationUtils;
 import android.widget.HorizontalScrollView;
+
 import com.andrew.apollo.ui.activities.ProfileActivity;
 import com.andrew.apollo.utils.ApolloUtils;
 
@@ -199,7 +189,7 @@ public class ProfileTabCarousel extends HorizontalScrollView implements OnTouchL
     @SuppressLint("DrawAllocation")
     @Override
     protected void onLayout(final boolean changed, final int l, final int t, final int r,
-            final int b) {
+                            final int b) {
         super.onLayout(changed, l, t, r, b);
         if (!mScrollToCurrentTab) {
             return;
@@ -223,8 +213,8 @@ public class ProfileTabCarousel extends HorizontalScrollView implements OnTouchL
         if (mLastScrollPosition == x) {
             return;
         }
-        final int scaledL = (int)(x * mScrollScaleFactor);
-        final int oldScaledL = (int)(oldX * mScrollScaleFactor);
+        final int scaledL = (int) (x * mScrollScaleFactor);
+        final int oldScaledL = (int) (oldX * mScrollScaleFactor);
         mListener.onScrollChanged(scaledL, y, oldScaledL, oldY);
         mLastScrollPosition = x;
         updateAlphaLayers();
@@ -416,13 +406,13 @@ public class ProfileTabCarousel extends HorizontalScrollView implements OnTouchL
 
     /**
      * Sets the artist image header
-     * 
-     * @param context The {@link Activity} to use
+     *
+     * @param context    The {@link Activity} to use
      * @param artistName The artist name used to find the cached artist image
-     *            and used to find the last album played by the artist
+     *                   and used to find the last album played by the artist
      */
     public void setArtistProfileHeader(final Activity context,
-            final String artistName) {
+                                       final String artistName) {
         mFirstTab.setLabel(getResources().getString(R.string.page_songs));
         mSecondTab.setLabel(getResources().getString(R.string.page_albums));
         mFirstTab.setArtistPhoto(context, artistName);
@@ -432,13 +422,13 @@ public class ProfileTabCarousel extends HorizontalScrollView implements OnTouchL
 
     /**
      * Sets the album image header
-     * 
-     * @param context The {@link Activity} to use
-     * @param albumName The key used to find the cached album art
+     *
+     * @param context    The {@link Activity} to use
+     * @param albumName  The key used to find the cached album art
      * @param artistName The artist name used to find the cached artist image
      */
     public void setAlbumProfileHeader(final Activity context,
-            final String albumName, final String artistName) {
+                                      final String albumName, final String artistName) {
         mFirstTab.setLabel(getResources().getString(R.string.page_songs));
         mFirstTab.setAlbumPhoto(context, albumName, artistName);
         mFirstTab.blurPhoto(context, artistName, albumName);
@@ -448,20 +438,22 @@ public class ProfileTabCarousel extends HorizontalScrollView implements OnTouchL
 
     /**
      * Sets the playlist or genre image header
-     * 
-     * @param context The {@link Activity} to use
+     *
+     * @param context     The {@link Activity} to use
      * @param profileName The key used to find the cached image for a playlist
-     *            or genre
+     *                    or genre
      */
     public void setPlaylistOrGenreProfileHeader(final Activity context,
-            final String profileName) {
+                                                final String profileName) {
         mFirstTab.setLabel(getResources().getString(R.string.page_songs));
         mFirstTab.setPlaylistOrGenrePhoto(context, profileName);
         mSecondTab.setVisibility(View.GONE);
         mEnableSwipe = false;
     }
 
-    /** When clicked, selects the corresponding tab. */
+    /**
+     * When clicked, selects the corresponding tab.
+     */
     private final class TabClickListener implements OnClickListener {
         private final int mTab;
 

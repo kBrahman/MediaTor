@@ -3,7 +3,7 @@
     android:id="@+id/profile_tab_carousel"
     class="com.andrew.apollo.widgets.ProfileTabCarousel"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/profile_carousel_view_height"
+    android:layout_height="wrap_content"
     android:fadingEdge="none"
     android:scrollbars="none">
 
