@@ -15,7 +15,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
-import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -29,7 +28,6 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.andrew.apollo.IApolloService;
@@ -55,7 +53,6 @@ import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.android.gui.LocalSearchEngine;
 import z.zer.tor.media.android.gui.NetworkManager;
 import z.zer.tor.media.android.gui.activity.internal.MainController;
-import z.zer.tor.media.android.gui.activity.internal.NavigationMenu;
 import z.zer.tor.media.android.gui.dialogs.HandpickedTorrentDownloadDialogOnFetch;
 import z.zer.tor.media.android.gui.dialogs.NewTransferDialog;
 import z.zer.tor.media.android.gui.dialogs.SDPermissionDialog;
@@ -96,7 +93,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     private final Stack<Integer> fragmentsStack;
     private final MainController controller;
     private ServiceToken mToken;
-    private NavigationMenu navigationMenu;
     private Fragment currentFragment;
     private SearchFragment search;
     private MyFilesFragment library;
@@ -135,10 +131,7 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
 
     @Override
     public void onBackPressed() {
-        if (navigationMenu.isOpen()) {
-            navigationMenu.hide();
-            return;
-        } else if (fragmentsStack.size() > 1) {
+        if (fragmentsStack.size() > 1) {
             try {
                 fragmentsStack.pop();
                 int id = fragmentsStack.peek();
@@ -223,13 +216,9 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
 
     public void updateNavigationMenu(boolean updateAvailable) {
         LOG.info("updateNavigationMenu(" + updateAvailable + ")");
-        if (navigationMenu == null) {
-            setupDrawer();
-        }
         if (updateAvailable) {
             // make sure it will remember this, even if the menu gets destroyed
             getIntent().putExtra("updateAvailable", true);
-            navigationMenu.onUpdateAvailable();
         }
     }
 
@@ -313,7 +302,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     protected void onResume() {
         super.onResume();
         localBroadcastReceiver.register(this);
-        setupDrawer();
         ConfigurationManager CM = ConfigurationManager.instance();
         if (CM.getBoolean(Constants.PREF_KEY_GUI_INITIAL_SETTINGS_COMPLETE)) {
             mainResume();
@@ -478,12 +466,7 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     }
 
     private void toggleDrawer() {
-        if (navigationMenu.isOpen()) {
-            navigationMenu.hide();
-        } else {
-            navigationMenu.show();
-            syncNavigationMenu();
-        }
+        syncNavigationMenu();
         updateHeader(getCurrentFragment());
     }
 
@@ -507,7 +490,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
 
     public void syncNavigationMenu() {
         invalidateOptionsMenu();
-        navigationMenu.updateCheckedItem(getNavMenuIdByFragment(getCurrentFragment()));
     }
 
     private void setupFragments() {
@@ -550,15 +532,8 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         }
         if (fragment == null) {
             fragment = search;
-            setCheckedItem();
         }
         switchContent(fragment);
-    }
-
-    private void setCheckedItem() {
-        if (navigationMenu != null) {
-            navigationMenu.updateCheckedItem(R.id.menu_main_search);
-        }
     }
 
     private void saveFragmentsStack(Bundle outState) {
@@ -593,10 +568,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
                 if (header != null) {
                     setToolbarView(header);
                 }
-            }
-            if (navigationMenu != null) {
-                MenuItem item = navigationMenu.getCheckedItem();
-                setTitle(item.getTitle());
             }
         } catch (Throwable e) {
             LOG.error("Error updating main header", e);
@@ -659,15 +630,7 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (navigationMenu != null) {
-            try {
-                navigationMenu.onOptionsItemSelected(item);
-            } catch (Throwable t) {
-                // usually java.lang.IllegalArgumentException: No drawer view found with gravity LEFT
-                return false;
-            }
-            return false;
-        }
+
         if (item == null) {
             return false;
         }
@@ -675,18 +638,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        navigationMenu.onConfigurationChanged(newConfig);
-    }
-
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        navigationMenu.syncState();
     }
 
     private void setupActionBar() {
@@ -697,12 +648,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
             bar.setDisplayHomeAsUpEnabled(true);
             bar.setHomeButtonEnabled(true);
         }
-    }
-
-    private void setupDrawer() {
-        DrawerLayout drawerLayout = findView(R.id.activity_main_drawer_layout);
-        Toolbar toolbar = findToolbar();
-        navigationMenu = new NavigationMenu(controller, drawerLayout, toolbar);
     }
 
     public void onServiceConnected(final ComponentName name, final IBinder service) {

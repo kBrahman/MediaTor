@@ -32,14 +32,14 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(rootProject.file("keystore.properties").newDataInputStream())
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     defaultConfig {
         applicationId localProperties["id"]
-        versionCode 59
-        versionName "1.58"
+        versionCode 60
+        versionName "1.59"
         multiDexEnabled true
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 31
         buildConfigField "String", "PIXA_KEY", localProperties["pixa_key"]
         buildConfigField "String", "SOUND_CLOUD_KEY", localProperties["s_c_key"]
     }
@@ -110,7 +110,7 @@ dependencies {
     implementation 'androidx.preference:preference-ktx:1.1.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.google.android.flexbox:flexbox:3.0.0'
-    implementation 'com.google.code.gson:gson:2.8.7'
+    implementation 'com.google.code.gson:gson:2.8.8'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation files('libs/jlibtorrent-1.2.10.0.jar')
     implementation files('libs/jlibtorrent-android-arm-1.2.10.0.jar')
@@ -118,7 +118,7 @@ dependencies {
     implementation files('libs/jlibtorrent-android-arm64-1.2.10.0.jar')
     implementation files('libs/jlibtorrent-android-x86_64-1.2.10.0.jar')
     implementation platform('com.google.firebase:firebase-bom:26.3.0')
-    implementation 'com.google.firebase:firebase-analytics-ktx:19.0.0'
+    implementation 'com.google.firebase:firebase-analytics-ktx:19.0.1'
     implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.1'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     //compose
@@ -128,5 +128,5 @@ dependencies {
     implementation 'androidx.activity:activity-compose:1.3.1'
     implementation 'androidx.constraintlayout:constraintlayout-compose:1.0.0-beta02'
     //ads
-    implementation 'com.facebook.android:audience-network-sdk:6.5.1'
+    implementation 'com.facebook.android:audience-network-sdk:6.6.0'
 }

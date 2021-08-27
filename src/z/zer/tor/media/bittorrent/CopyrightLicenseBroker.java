@@ -10,7 +10,7 @@ import java.util.Map;
 import z.zer.tor.media.licenses.License;
 import z.zer.tor.media.licenses.Licenses;
 
-public class CopyrightLicenseBroker implements Mappable<String, Map<String, String>> {
+public class CopyrightLicenseBroker implements Mappable {
 
     public enum LicenseCategory {
         CreativeCommons("creative-commons"), OpenSource("open-source"), PublicDomain("public-domain"), NoLicense("no-license");
@@ -119,18 +119,6 @@ public class CopyrightLicenseBroker implements Mappable<String, Map<String, Stri
         this.attributionTitle = title;
         this.attributionAuthor = author;
         this.attributionUrl = attributionUrl;
-    }
-
-    public Map<String, Map<String, String>> asMap() {
-        Map<String, Map<String, String>> container = new HashMap<String, Map<String, String>>();
-        Map<String, String> innerMap = new HashMap<String, String>();
-        innerMap.put("licenseUrl", this.license.getUrl());
-        innerMap.put("attributionTitle", this.attributionTitle);
-        innerMap.put("attributionAuthor", this.attributionAuthor);
-        innerMap.put("attributionUrl", this.attributionUrl);
-
-        container.put(licenseCategory.toString(), innerMap);
-        return container;
     }
 
     public String getLicenseName() {

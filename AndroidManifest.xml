@@ -34,6 +34,7 @@
         android:theme="@style/Theme.MediaTor">
         <activity
             android:name="z.zer.tor.media.android.gui.activity.MainActivity"
+            android:exported="true"
             android:label="@string/application_label"
             android:launchMode="singleTask"
             android:protectionLevel="dangerous"
@@ -96,7 +97,8 @@
         <activity
             android:name=".android.gui.activity.PlayerActivity"
             android:parentActivityName=".android.gui.activity.MainActivity"
-            android:theme="@style/PlayerActivity">
+            android:theme="@style/PlayerActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.MUSIC_PLAYER" />
@@ -178,7 +180,8 @@
             android:name="com.andrew.apollo.ui.activities.AudioPlayerActivity"
             android:clearTaskOnLaunch="true"
             android:launchMode="singleTask"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustPan"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -242,7 +245,8 @@
         <activity
             android:name="com.andrew.apollo.ui.activities.ShortcutActivity"
             android:excludeFromRecents="true"
-            android:theme="@style/Theme.Transparent">
+            android:theme="@style/Theme.Transparent"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH" />
 
@@ -251,7 +255,8 @@
         </activity>
         <activity
             android:name="com.andrew.apollo.ui.activities.SearchActivity"
-            android:parentActivityName="com.andrew.apollo.ui.activities.HomeActivity">
+            android:parentActivityName="com.andrew.apollo.ui.activities.HomeActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
                 <action android:name="android.intent.action.MEDIA_SEARCH" />
@@ -274,7 +279,8 @@
 
         <!-- receivers -->
 
-        <receiver android:name="z.zer.tor.media.android.gui.services.EngineBroadcastReceiver">
+        <receiver android:name="z.zer.tor.media.android.gui.services.EngineBroadcastReceiver"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
