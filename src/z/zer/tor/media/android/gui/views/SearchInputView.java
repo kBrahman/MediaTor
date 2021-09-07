@@ -30,11 +30,10 @@ public class SearchInputView extends LinearLayout {
     private final SparseArray<FileTypeTab> toFileTypeTab;
 
     private enum FileTypeTab {
-        TAB_AUDIO(Constants.FILE_TYPE_AUDIO, 0), TAB_PICTURES(Constants.FILE_TYPE_PICTURES, 2), TAB_APPLICATIONS(Constants.FILE_TYPE_APPLICATIONS, 3), TAB_DOCUMENTS(Constants.FILE_TYPE_DOCUMENTS, 4), TAB_TORRENTS(Constants.FILE_TYPE_TORRENTS, 5);
+        TAB_AUDIO(Constants.FILE_TYPE_AUDIO, 0),   TAB_TORRENTS(Constants.FILE_TYPE_TORRENTS, 1);
 
         final byte fileType;
         final int position;
-
 
         FileTypeTab(byte fileType, int position) {
             this.fileType = fileType;
@@ -52,7 +51,6 @@ public class SearchInputView extends LinearLayout {
         this.adapter = new SuggestionsAdapter(context);
         toFileTypeTab = new SparseArray<>();
         toFileTypeTab.put(Constants.FILE_TYPE_AUDIO, FileTypeTab.TAB_AUDIO);
-        toFileTypeTab.put(Constants.FILE_TYPE_PICTURES, FileTypeTab.TAB_PICTURES);
         toFileTypeTab.put(Constants.FILE_TYPE_TORRENTS, FileTypeTab.TAB_TORRENTS);
     }
 

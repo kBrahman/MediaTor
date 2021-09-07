@@ -608,18 +608,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         }
     }
 
-    private int getNavMenuIdByFragment(Fragment fragment) {
-        int menuId = -1;
-        if (fragment == search) {
-            menuId = R.id.menu_main_search;
-        } else if (fragment == library) {
-            menuId = R.id.menu_main_library;
-        } else if (fragment == transfers) {
-            menuId = R.id.menu_main_transfers;
-        }
-        return menuId;
-    }
-
     public void switchContent(Fragment fragment) {
         switchContent(fragment, true);
     }

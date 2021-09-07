@@ -12,7 +12,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.1'
+        classpath 'com.android.tools.build:gradle:7.0.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.google.gms:google-services:4.3.10'
         classpath 'com.google.firebase:firebase-crashlytics-gradle:2.7.1'
@@ -35,8 +35,8 @@ android {
     compileSdkVersion 31
     defaultConfig {
         applicationId localProperties["id"]
-        versionCode 60
-        versionName "1.59"
+        versionCode 61
+        versionName "1.60"
         multiDexEnabled true
         minSdkVersion 21
         targetSdkVersion 31
@@ -122,9 +122,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.1'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     //compose
-    implementation 'androidx.compose.foundation:foundation:1.0.1'
-    implementation 'androidx.compose.ui:ui:1.0.1'
-    implementation 'androidx.compose.material:material:1.0.1'
+    implementation 'androidx.compose.foundation:foundation:1.0.2'
+    implementation 'androidx.compose.ui:ui:1.0.2'
+    implementation 'androidx.compose.material:material:1.0.2'
     implementation 'androidx.activity:activity-compose:1.3.1'
     implementation 'androidx.constraintlayout:constraintlayout-compose:1.0.0-beta02'
     //ads

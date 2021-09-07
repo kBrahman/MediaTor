@@ -15,12 +15,6 @@
         android:icon="@drawable/my_files_audio_icon_tab_selector" />
 
     <com.google.android.material.tabs.TabItem
-        android:id="@+id/view_search_input_tab_documents"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:icon="@drawable/my_files_document_icon_tab_selector" />
-
-    <com.google.android.material.tabs.TabItem
         android:id="@+id/view_search_input_tab_torrents"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
