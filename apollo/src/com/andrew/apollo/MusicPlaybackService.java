@@ -606,7 +606,7 @@ public class MusicPlaybackService extends Service {
         shutdownIntent.setAction(SHUTDOWN_ACTION);
 
         mAlarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        mShutdownIntent = PendingIntent.getService(this, 0, shutdownIntent, 0);
+        mShutdownIntent = PendingIntent.getService(this, 0, shutdownIntent, PendingIntent.FLAG_IMMUTABLE);
 
         // Listen for the idle state
         scheduleDelayedShutdown();
@@ -625,7 +625,7 @@ public class MusicPlaybackService extends Service {
         final Intent mediaButtonIntent = new Intent(Intent.ACTION_MEDIA_BUTTON);
         mRemoteControlClient = new RemoteControlClient(
                 PendingIntent.getBroadcast(getApplicationContext(), 0, mediaButtonIntent,
-                        PendingIntent.FLAG_UPDATE_CURRENT));
+                        PendingIntent.FLAG_IMMUTABLE));
 
         try {
             if (mAudioManager != null) {
@@ -2867,7 +2867,7 @@ public class MusicPlaybackService extends Service {
          * Starts or resumes playback.
          */
         public void start() {
-            Log.i(TAG,"start");
+            Log.i(TAG, "start");
             if (mCurrentMediaPlayer != null) {
                 try {
                     mediaPlayerAsyncAction(mCurrentMediaPlayer, MediaPlayerAction.START);

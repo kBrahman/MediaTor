@@ -1,5 +1,9 @@
 package z.zer.tor.media.android.gui;
 
+import static android.app.NotificationManager.IMPORTANCE_DEFAULT;
+import static z.zer.tor.media.android.core.Constants.MEDIA_TOR_NOTIFICATION_CHANNEL_ID;
+import static z.zer.tor.media.android.util.Asyncs.async;
+
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -22,10 +26,6 @@ import z.zer.tor.media.android.gui.views.TimerObserver;
 import z.zer.tor.media.android.gui.views.TimerService;
 import z.zer.tor.media.android.gui.views.TimerSubscription;
 import z.zer.tor.media.util.Logger;
-
-import static android.app.NotificationManager.IMPORTANCE_DEFAULT;
-import static z.zer.tor.media.android.core.Constants.MEDIA_TOR_NOTIFICATION_CHANNEL_ID;
-import static z.zer.tor.media.android.util.Asyncs.async;
 
 public final class NotificationUpdateDemon implements TimerObserver {
 
@@ -157,13 +157,13 @@ public final class NotificationUpdateDemon implements TimerObserver {
     private PendingIntent createShowFrostwireIntent() {
         return PendingIntent.getActivity(mParentContext, 0, new Intent(mParentContext, MainActivity.class).
                 setAction(Constants.ACTION_SHOW_TRANSFERS).
-                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK), 0);
+                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK), PendingIntent.FLAG_IMMUTABLE);
     }
 
     private PendingIntent createShutdownIntent() {
         return PendingIntent.getActivity(mParentContext, 1, new Intent(mParentContext, MainActivity.class).
                 setAction(Constants.ACTION_REQUEST_SHUTDOWN).
-                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK), 0);
+                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK), PendingIntent.FLAG_IMMUTABLE);
     }
 
     @Override
