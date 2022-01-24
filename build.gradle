@@ -35,8 +35,8 @@ android {
     compileSdkVersion 31
     defaultConfig {
         applicationId localProperties["id"]
-        versionCode 63
-        versionName "1.62"
+        versionCode 64
+        versionName "1.63"
         multiDexEnabled true
         minSdkVersion 23
         targetSdkVersion 31
