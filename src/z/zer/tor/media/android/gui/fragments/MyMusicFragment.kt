@@ -35,7 +35,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import z.music.db.Track
+import z.zer.tor.media.android.db.Track
 import z.zer.tor.media.R
 import z.zer.tor.media.android.db.Db
 import z.zer.tor.media.android.gui.activity.PlayerActivity

@@ -1,4 +1,4 @@
-package z.music.db
+package z.zer.tor.media.android.db
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

@@ -1,7 +1,6 @@
 package z.zer.tor.media.android.db
 
 import androidx.room.*
-import z.music.db.Track
 
 
 @Database(entities = [Track::class], version = 1)

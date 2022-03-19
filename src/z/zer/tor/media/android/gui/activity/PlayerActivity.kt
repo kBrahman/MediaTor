@@ -232,7 +232,13 @@ class PlayerActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener,
                             cScope.launch(Dispatchers.IO) {
                                 if (added.value!!) db.trackDao().deleteById(id)
                                 else {
-                                    val track = z.music.db.Track(id, displayName, source ?: "", streamUrl!!, imgUrl!!)
+                                    val track = z.zer.tor.media.android.db.Track(
+                                        id,
+                                        displayName,
+                                        source ?: "",
+                                        streamUrl!!,
+                                        imgUrl!!
+                                    )
                                     db.trackDao().insert(track)
                                     Log.i(TAG, "inserting track=>$track")
                                 }
@@ -296,7 +302,6 @@ class PlayerActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener,
         }
 
     private fun extractId(streamUrl: String): String {
-        //#https://api-v2.soundcloud.com/media/soundcloud:tracks:37801561/1783a392-e164-470b-a07b-166d2ef9395d/stream/progressive?client_id=1CZUOY7BrjNOdkrJ1KkeLJ04sqXoxRR3
         val id = streamUrl.split(":")[3].substringBefore("/")
         Log.i(TAG, "extracted id=>$id")
         return id

@@ -6,9 +6,6 @@
 -dontwarn org.conscrypt.Conscrypt
 -dontwarn org.conscrypt.OpenSSLProvider
 
-# jlibtorrent
--keep class com.frostwire.jlibtorrent.swig.libtorrent_jni {*;}
-
 # keep all constructors
 -keep class * {
     <init>(...);
