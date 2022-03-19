@@ -19,10 +19,8 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Розкриття інформації:</b> Хоча рекомендується для завантаження, особливо коли ви завантажуєте або обмінюєтесь конфіденційною інформацією (наприклад, банківською діяльністю) та під час користування загальнодоступними Wi-Fi або мобільними даними, <b>Вам не потрібно VPN використовувати FrostWire. </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>Інформація:</b> Торкніться доданих тегів до]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Ви під\'єднані до Інтернету за допомогою VPN. <br><br> Якщо ви ще не є, ми рекомендуємо скористатись одним із наведених нижче служб для шифрування вашого з\'єднання та  <b>захисту вашої конфіденційності</b>. ]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Ваша конфіденційність є основним правом людини</b>. Незахищений зв\'язок - це все, що ви робите в Інтернеті, включаючи <b>завантаження, пошук, обмін повідомленнями</b>, можна контролювати та перехоплювати будь-хто в мережі, наприклад, Інтернет-провайдери, хакери, уряди.<br><br><b>We STRONGLY recommend using a VPN service</b>. <br> Here are some options that provide reliable service and work well with FrostWire:]]></string>
     <string name="vpn_not_found">Ні VPN. Розглянемо шифрування з\'єднання.</string>
     <string name="azureus_peer_manager_status_finished">Закінчено</string>
     <string name="activity_mediaplayer_name">Медіа плеєр</string>
@@ -105,7 +103,6 @@
     <string name="chat_actions">Чат Дії</string>
     <string name="tos_refuse">відказати</string>
     <string name="torrent_max_total_connections">Макс Всього підключень</string>
-    <string name="activity_preferences_name">Налаштування</string>
     <string name="use_torrentdownloads">користування TorrentDownloads</string>
     <string name="ten_dollars">$10</string>
     <string name="my_files">Мої файли</string>
@@ -117,7 +114,6 @@
     <string name="invalid_torrent_file">Невірний торрент-файл</string>
     <string name="activity_downloads_title_text">Завантаження</string>
     <string name="disconnecting">Роз\'єднання</string>
-    <string name="activity_media_player_name">Медіа плеєр</string>
     <string name="choose_email_app">Виберіть Email App…</string>
     <string name="failed_to_add_download">Не вдалося додати завантаження</string>
     <string name="vibrate_on_finished_download">Вібрує, коли завантаження закінчується</string>
@@ -411,7 +407,6 @@
     <string name="use_yify_summary">Yify є магнітом на основі, працює тільки на Wi-Fi</string>
     <string name="error_no_internet_connection">Помилка: Перевірте з\'єднання з Інтернетом</string>
     <string name="azureus_manager_item_error">Помилка</string>
-    <string name="why_we_need_storage_permissions">Навіщо нам потрібні права зберігання.</string>
     <string name="get_a_frostwire_tshirt">Отримати MediaTor футболку</string>
     <string name="media_type_applications">Додатки</string>
     <string name="invalid_filename">Неправильне ім\'я файлу</string>
@@ -583,7 +578,6 @@
     <string name="remove_ads">видалити оголошення</string>
     <string name="your_connection_has_dropped_stopping_services">Ваше підключення до Wi-Fi впав. Зупинка служб.</string>
     <string name="use_tpb_summary">TPB є магнітом на основі, працює тільки на Wi-Fi.</string>
-    <string name="frostwire_sticker_and_more">FrostWire наклейки і багато іншого</string>
     <string name="wifi_networks_only_summary">Збереження даних. Завантажити тільки якщо Wi-Fi з\'єднання встановлено.</string>
     <string name="notifications_other_settings">Відомості та інше</string>
     <string name="wifi_networks_only">Тільки Wi-Fi мережі</string>

@@ -17,7 +17,6 @@
 
 package z.zer.tor.media.android.gui.views;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.AttributeSet;
@@ -26,9 +25,7 @@ import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import z.zer.tor.media.android.AndroidPlatform;
 import z.zer.tor.media.R;
-import z.zer.tor.media.android.StoragePicker;
 import z.zer.tor.media.android.core.ConfigurationManager;
 import z.zer.tor.media.android.core.Constants;
 
@@ -97,14 +94,10 @@ public class GeneralWizardPage extends RelativeLayout implements WizardPageView 
         TextView textStoragePathTitle = findViewById(R.id.view_general_wizard_page_storage_path_title);
         textStoragePath = findViewById(R.id.view_general_wizard_page_storage_path_textview);
         TextView titleHorizontalBreak = findViewById(R.id.view_general_wizard_page_title_horizontal_break);
+        titleHorizontalBreak.setVisibility(View.GONE);
+        textStoragePathTitle.setVisibility(View.GONE);
+        textStoragePath.setVisibility(View.GONE);
 
-        if (AndroidPlatform.saf()) {
-            textStoragePath.setOnClickListener(v -> StoragePicker.show((Activity) getContext()));
-        } else {
-            titleHorizontalBreak.setVisibility(View.GONE);
-            textStoragePathTitle.setVisibility(View.GONE);
-            textStoragePath.setVisibility(View.GONE);
-        }
 
         checkSeedFinishedTorrents = findViewById(R.id.view_general_wizard_page_check_seed_finished_torrents);
         checkSeedFinishedTorrents.setOnCheckedChangeListener((buttonView, isChecked) -> {

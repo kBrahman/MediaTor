@@ -1,6 +1,8 @@
 package z.zer.tor.media.android.gui.services;
 
-import android.app.Application;
+
+import static z.zer.tor.media.android.util.Asyncs.async;
+
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -15,30 +17,19 @@ import android.preference.PreferenceManager;
 
 import androidx.core.app.NotificationCompat;
 
-import com.frostwire.jlibtorrent.Vectors;
-import com.frostwire.jlibtorrent.swig.bloom_filter_256;
-import com.frostwire.jlibtorrent.swig.byte_vector;
-import com.frostwire.jlibtorrent.swig.sha1_hash;
-
 import java.io.File;
 
 import okhttp3.ConnectionPool;
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.core.ConfigurationManager;
 import z.zer.tor.media.android.core.Constants;
-import z.zer.tor.media.android.core.player.CoreMediaPlayer;
-import z.zer.tor.media.android.gui.NotificationUpdateDemon;
 import z.zer.tor.media.android.gui.activity.MainActivity;
 import z.zer.tor.media.android.gui.transfers.TransferManager;
-import z.zer.tor.media.android.util.SystemUtils;
-import z.zer.tor.media.bittorrent.BTEngine;
 import z.zer.tor.media.util.Hex;
 import z.zer.tor.media.util.Logger;
 import z.zer.tor.media.util.http.OKHTTPClient;
 
-import static z.zer.tor.media.android.util.Asyncs.async;
-
-public class EngineService extends Service implements IEngineService {
+public class EngineService extends Service  {
     private static final Logger LOG = Logger.getLogger(EngineService.class);
     private final static long[] VENEZUELAN_VIBE = buildVenezuelanVibe();
 
@@ -46,18 +37,12 @@ public class EngineService extends Service implements IEngineService {
 
     private final IBinder binder;
     // services in background
-    private final CoreMediaPlayer mediaPlayer;
     private byte state;
-    private NotificationUpdateDemon notificationUpdateDemon;
 
     private NotifiedStorage notifiedStorage;
 
     public EngineService() {
         binder = new EngineServiceBinder();
-
-        mediaPlayer = new ApolloMediaPlayer();
-
-        state = STATE_DISCONNECTED;
     }
 
     @Override
@@ -89,11 +74,6 @@ public class EngineService extends Service implements IEngineService {
         LOG.info("FrostWire's EngineService started by this intent:");
         LOG.info("FrostWire:" + intent.toString());
         LOG.info("FrostWire: flags:" + flags + " startId: " + startId);
-        if (notificationUpdateDemon == null) {
-            notificationUpdateDemon = new NotificationUpdateDemon(getApplicationContext());
-        }
-        startForeground(1, notificationUpdateDemon.getNotificationObject());
-        async(this, EngineService::startPermanentNotificationUpdatesTask);
         return START_STICKY;
     }
 
@@ -105,17 +85,8 @@ public class EngineService extends Service implements IEngineService {
     private void shutdownSupport() {
         LOG.debug("shutdownSupport");
         //enableComponentsTask(this, false); // we're already on a shutdown thread
-        stopPermanentNotificationUpdates();
         cancelAllNotificationsTask(this);
-        stopServices(false);
-
-        if (BTEngine.ctx != null) {
-            LOG.debug("onDestroy, stopping BTEngine...");
-            BTEngine.getInstance().stop();
-            LOG.debug("onDestroy, BTEngine stopped");
-        } else {
-            LOG.debug("onDestroy, BTEngine didn't have a chance to start, no need to stop it");
-        }
+        stopServices();
 
         //ImageLoader.getInstance(this).shutdown();
         stopOkHttp();
@@ -140,86 +111,20 @@ public class EngineService extends Service implements IEngineService {
         }
     }
 
-    public CoreMediaPlayer getMediaPlayer() {
-        return mediaPlayer;
-    }
 
     public byte getState() {
         return state;
     }
 
-    public boolean isStarted() {
-        return getState() == STATE_STARTED;
-    }
-
-    public boolean isStarting() {
-        return getState() == STATE_STARTING;
-    }
-
-    public boolean isStopped() {
-        return getState() == STATE_STOPPED;
-    }
-
-    public boolean isStopping() {
-        return getState() == STATE_STOPPING;
-    }
-
-    public boolean isDisconnected() {
-        return getState() == STATE_DISCONNECTED;
-    }
-
-    public synchronized void startServices(Application application) {
-        startServices(false);
-    }
-
-    public synchronized void startServices(boolean wasShutdown) {
-        // hard check for TOS
-        if (!ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_GUI_TOS_ACCEPTED)) {
-            return;
-        }
-
-        if (!SystemUtils.isPrimaryExternalStorageMounted()) {
-            return;
-        }
-
-        if (isStarted() || isStarting()) {
-            return;
-        }
-
-        async(this, EngineService::resumeBTEngineTask, wasShutdown);
-    }
-
-    private static void resumeBTEngineTask(EngineService engineService, boolean wasShutdown) {
-        engineService.state = STATE_STARTING;
-        BTEngine btEngine = BTEngine.getInstance();
-        if (!wasShutdown) {
-            btEngine.resume();
-        } else {
-            btEngine.start();
-            TransferManager.instance().reset();
-            btEngine.resume();
-        }
-        engineService.state = STATE_STARTED;
-        LOG.info("resumeBTEngineTask(): Engine started", true);
-    }
-
-    public synchronized void stopServices(boolean disconnected) {
-        if (isStopped() || isStopping() || isDisconnected()) {
-            return;
-        }
-
-        state = STATE_STOPPING;
-
+    public synchronized void stopServices() {
         LOG.info("Pausing BTEngine...");
         TransferManager.instance().onShutdown();
-        BTEngine.getInstance().pause();
         LOG.info("Pausing BTEngine paused");
 
-        state = disconnected ? STATE_DISCONNECTED : STATE_STOPPED;
         LOG.info("Engine stopped, state: " + state);
     }
 
-    public void notifyDownloadFinished(String displayName, File file, String infoHash) {
+    public void notifyDownloadFinished(File file, String infoHash) {
         try {
             if (notifiedStorage.contains(infoHash)) {
                 // already notified
@@ -252,25 +157,9 @@ public class EngineService extends Service implements IEngineService {
         }
     }
 
-    @Override
-    public void shutdown() {
-        LOG.info("shutdown");
-
-        Context ctx = getApplication();
-        Intent i = new Intent(ctx, EngineService.class);
-        i.setAction(SHUTDOWN_ACTION);
-        ctx.startService(i);
-    }
-
     public class EngineServiceBinder extends Binder {
         public EngineService getService() {
             return EngineService.this;
-        }
-    }
-
-    private void stopPermanentNotificationUpdates() {
-        if (notificationUpdateDemon != null) {
-            notificationUpdateDemon.stop();
         }
     }
 
@@ -292,29 +181,15 @@ public class EngineService extends Service implements IEngineService {
 
         // not using ConfigurationManager to avoid setup/startup timing issues
         private final SharedPreferences preferences;
-        private final bloom_filter_256 hashes;
 
         NotifiedStorage(Context context) {
             preferences = PreferenceManager.getDefaultSharedPreferences(context);
-            hashes = new bloom_filter_256();
-
-            loadHashes();
         }
 
         public boolean contains(String infoHash) {
             if (infoHash == null || infoHash.length() != 40) {
                 // not a valid info hash
                 return false;
-            }
-
-            try {
-
-                byte[] arr = Hex.decode(infoHash);
-                sha1_hash ih = new sha1_hash(Vectors.bytes2byte_vector(arr));
-                return hashes.find(ih);
-
-            } catch (Throwable e) {
-                LOG.warn("Error checking if info hash was notified", e);
             }
 
             return false;
@@ -329,11 +204,6 @@ public class EngineService extends Service implements IEngineService {
             try {
 
                 byte[] arr = Hex.decode(infoHash);
-                sha1_hash ih = new sha1_hash(Vectors.bytes2byte_vector(arr));
-                hashes.set(ih);
-
-                byte_vector v = hashes.to_bytes();
-                arr = Vectors.byte_vector2bytes(v);
                 String s = Hex.encode(arr);
 
                 SharedPreferences.Editor editor = preferences.edit();
@@ -342,18 +212,6 @@ public class EngineService extends Service implements IEngineService {
 
             } catch (Throwable e) {
                 LOG.warn("Error adding info hash to notified storage", e);
-            }
-        }
-
-        private void loadHashes() {
-            String s = preferences.getString(PREF_KEY_NOTIFIED_HASHES, null);
-            if (s != null) {
-                try {
-                    byte[] arr = Hex.decode(s);
-                    hashes.from_bytes(Vectors.bytes2byte_vector(arr));
-                } catch (Throwable e) {
-                    LOG.warn("Error loading notified storage from preference data", e);
-                }
             }
         }
     }
@@ -366,14 +224,6 @@ public class EngineService extends Service implements IEngineService {
             }
         } catch (SecurityException ignore) {
             // new exception in Android 7
-        }
-    }
-
-    private static void startPermanentNotificationUpdatesTask(EngineService engineService) {
-        try {
-            engineService.notificationUpdateDemon.start();
-        } catch (Throwable t) {
-            LOG.warn(t.getMessage(), t);
         }
     }
 }

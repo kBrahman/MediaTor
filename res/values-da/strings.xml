@@ -20,10 +20,7 @@
 -->
 <resources>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Tryk på anvendte tags til]]></string>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Afsløring:</b> Selvom anbefalet til dine downloads, især når du downloader eller udveksler følsomme oplysninger (f.eks. bank) og samtidig bruger offentlige Wi-Fi- eller mobildata, <b>du behøver ikke en VPN til at bruge FrostWire. </b>]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Du er forbundet til internettet ved hjælp af en VPN. <br><br> Hvis du ikke allerede er, anbefaler vi at bruge en af nedenstående tjenester til at kryptere din forbindelse og <b>beskytte dit privatliv</b>. ]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Dit privatliv er en grundlæggende menneskerettighed</b>. En ubeskyttet forbindelse betyder alt, hvad du gør online, herunder <b>downloads, søgninger, meddelelser</b>, kan overvåges og opfanges af alle på dit netværk, f.eks. Internetudbydere, hackere, regeringer.<br><br><b>Vi anbefaler stærkt at bruge en VPN-tjeneste</b>. <br> Her er nogle muligheder, der giver pålidelig service og fungerer godt med FrostWire:]]></string>
-    <string name="activity_preferences_name">Indstillinger</string>
     <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Active Downloads</string>
     <string name="activity_uploads_name">Active Uploads</string>
@@ -215,7 +212,6 @@
     <string name="not_connected">Ikke forbundet</string>
     <string name="mobile_data">Mobil Data</string>
     <string name="media_player_failed">Media player mislykkedes</string>
-    <string name="activity_media_player_name">Media Player</string>
     <string name="search_settings">Søgning indstillinger</string>
     <string name="use_zooqle">Brug Zooqle.com</string>
     <string name="use_tpb">Brug ThePirateBay.org</string>
@@ -513,7 +509,6 @@
     <string name="use_limetorrents">Brug Limetorrents</string>
     <string name="use_yify_summary">Yify er magnet baseret, fungerer kun på Wifi</string>
     <string name="error_no_internet_connection">Fejl: Kontroller internetforbindelsen</string>
-    <string name="why_we_need_storage_permissions">Hvorfor vi har brug for tilladelser opbevaring.</string>
     <string name="invalid_filename">Ugyldigt filnavn</string>
     <string name="use_archiveorg">Brug Archive.org</string>
     <string name="wifi_network_unavailable">Wifi netværk ikke tilgængelig</string>
@@ -583,7 +578,6 @@
     <string name="keep_the_project_alive">Hold projekt i live</string>
     <string name="remove_ads">Fjern annoncer</string>
     <string name="use_tpb_summary">TPB er magnet baseret, fungerer kun på Wifi</string>
-    <string name="frostwire_sticker_and_more">FrostWire klistermærker og mere</string>
     <string name="wifi_networks_only_summary">Gem data. Hent kun, hvis Wi-Fi-forbindelse er etableret. </string>
     <string name="notifications_other_settings">Bemærkninger og andre</string>
     <string name="wifi_networks_only">Kun Wi-Fi-netværk</string>

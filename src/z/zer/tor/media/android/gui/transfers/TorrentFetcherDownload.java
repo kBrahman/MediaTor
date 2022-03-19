@@ -17,21 +17,17 @@
 
 package z.zer.tor.media.android.gui.transfers;
 
-import z.zer.tor.media.bittorrent.BTEngine;
-
-import com.frostwire.jlibtorrent.FileStorage;
-import com.frostwire.jlibtorrent.TorrentInfo;
-import z.zer.tor.media.transfers.BittorrentDownload;
-import z.zer.tor.media.transfers.TransferItem;
-import z.zer.tor.media.transfers.TransferState;
-import z.zer.tor.media.util.HttpClientFactory;
-import z.zer.tor.media.util.Logger;
-
 import java.io.File;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
+
+import z.zer.tor.media.transfers.BittorrentDownload;
+import z.zer.tor.media.transfers.TransferItem;
+import z.zer.tor.media.transfers.TransferState;
+import z.zer.tor.media.util.HttpClientFactory;
+import z.zer.tor.media.util.Logger;
 
 /**
  * @author gubatron
@@ -231,34 +227,6 @@ public class TorrentFetcherDownload implements BittorrentDownload {
         return null;
     }
 
-    private void downloadTorrent(final byte[] data) {
-        try {
-            TorrentInfo ti = TorrentInfo.bdecode(data);
-            boolean[] selection = null;
-            if (info.getRelativePath() != null) {
-                selection = calculateSelection(ti, info.getRelativePath());
-            }
-
-            BTEngine.getInstance().download(ti, null, selection, null, TransferManager.instance().isDeleteStartedTorrentEnabled());
-        } catch (Throwable e) {
-            LOG.error("Error downloading torrent", e);
-        }
-    }
-
-    private boolean[] calculateSelection(TorrentInfo ti, String path) {
-        boolean[] selection = new boolean[ti.numFiles()];
-
-        FileStorage fs = ti.files();
-        for (int i = 0; i < selection.length; i++) {
-            String filePath = fs.filePath(i);
-            if (path.endsWith(filePath) || filePath.endsWith(path)) {
-                selection[i] = true;
-            }
-        }
-
-        return selection;
-    }
-
     private class FetcherRunnable implements Runnable {
 
         @Override
@@ -274,30 +242,13 @@ public class TorrentFetcherDownload implements BittorrentDownload {
                 if (uri.startsWith("http")) {
                     // use our http client, since we can handle referer
                     data = HttpClientFactory.getInstance(HttpClientFactory.HttpContext.DOWNLOAD).getBytes(uri, 30000, referrer);
-                } else {
-                    data = BTEngine.getInstance().fetchMagnet(uri, 30, true);
                 }
 
                 if (state == TransferState.CANCELED) {
                     return;
                 }
 
-                if (data != null) {
-                    // Don't download the torrent yourself, there's a listener waiting
-                    // for the .torrent, and it's up to this listener to start the transfer.
-                    if (fetcherListener != null) {
-                        fetcherListener.onTorrentInfoFetched(data, uri, tokenId);
-                        return;
-                    }
-
-                    try {
-                        downloadTorrent(data);
-                    } finally {
-                        remove(false);
-                    }
-                } else {
-                    state = TransferState.ERROR;
-                }
+                state = TransferState.ERROR;
             } catch (Throwable e) {
                 state = TransferState.ERROR;
                 LOG.error("Error downloading torrent from uri", e);

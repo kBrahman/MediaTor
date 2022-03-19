@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Раскрытие информации:</b> Хотя для ваших загрузок рекомендуется использовать, особенно при загрузке или обмене конфиденциальной информацией (например, банковской) и при использовании общедоступных Wi-Fi или мобильных данных, <b>, вам не нужна VPN для использования FrostWire.</b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>Информация:</b> Прикоснитесь к приложенным тегам к]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Ваша конфиденциальность является основополагающим правом человека</b>. Незащищенное соединение означает все, что вы делаете в сети, в том числе <b>загрузка, поиск, обмен сообщениями</b>, может контролироваться и перехватываться кем-либо из вашей сети, например. Интернет-провайдеры, хакеры, правительства.<br><br><b>Мы настоятельно рекомендуем использовать службу VPN</b>. <br> Вот некоторые варианты, которые обеспечивают надежное обслуживание и хорошо работают с FrostWire:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Вы подключены к Интернету с помощью VPN. <br><br> Если вы еще этого не сделали, мы рекомендуем использовать одну из приведенных ниже служб для шифрования вашего соединения и <b>защитить вашу конфиденциальность</b>. ]]></string>
-    <string name="activity_preferences_name">Настройки</string>
     <string name="activity_chat_named">Чат</string>
     <string name="activity_downloads_name">Активные загрузки</string>
     <string name="activity_uploads_name">Активные раздачи</string>
@@ -197,7 +194,6 @@
     <string name="not_connected">Не соединено</string>
     <string name="mobile_data">Мобильная передача данных</string>
     <string name="media_player_failed">Не удалось запустить медиаплеер</string>
-    <string name="activity_media_player_name">Медиаплеер</string>
     <string name="search_settings">Настройки поиска</string>
     <string name="use_zooqle">Использовать Zooqle.com</string>
     <string name="use_tpb">Использовать ThePirateBay.org</string>
@@ -471,7 +467,6 @@
     <string name="frostwire_shutting_down_no_permissions">К сожалению, MediaTor не может продолжить без разрешения доступа к диску.</string>
     <string name="restarting">Перезапуск…</string>
     <string name="restarting_summary">FrostWire будет перезапущен, чтобы предоставленные разрешения вступили в силу</string>
-    <string name="why_we_need_storage_permissions">Зачем нам нужен доступ для хранения данных.</string>
     <string name="why_we_need_storage_permissions_summary">FrostWire является файл-браузером и загрузчиком, поэтому он должен получить возможность сохранять файлы на диск.\n\nБез предоставленных прав MediaTor не может работать.\n\nХотите попробовать снова?</string>
     <string name="shutting_down">Выключение…</string>
     <string name="help">Помощь</string>
@@ -562,7 +557,6 @@
     <string name="remove_ads">Убрать рекламу</string>
     <string name="advertisement">Реклама</string>
     <string name="all_free_downloads">Все свободные скачивания</string>
-    <string name="frostwire_sticker_and_more">наклейки Frostwire и многое другое</string>
     <string name="wifi_networks_only_summary">Сохранить данные. Скачать только если Wi-Fi соединение установлено. </string>
     <string name="notifications_other_settings">Уведомления и другое</string>
     <string name="wifi_networks_only">Только Wi-Fi сети</string>

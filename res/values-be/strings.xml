@@ -20,7 +20,6 @@
 -->
 <resources>
     <string name="tip_touch_tags_to"><![CDATA[ <b>інфармацыя:</b> Націсніце ўжытыя тэгі да]]></string>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[Раскрыццё інфармацыі: Хоць рэкамендуецца для загрузкі, <b>bам не трэба VPN выкарыстоўваць FrostWire. </b>]]></string>
     <string name="vpn_not_found">Няма VPN. Разгледзім шыфраванне злучэння.</string>
     <string name="azureus_peer_manager_status_finished">Скончана</string>
     <string name="activity_mediaplayer_name">Media Player</string>
@@ -103,7 +102,6 @@
     <string name="chat_actions">Чат дзеянні</string>
     <string name="tos_refuse">Адмоўцеся</string>
     <string name="torrent_max_total_connections">Максімальныя агульныя злучэння</string>
-    <string name="activity_preferences_name">Налады</string>
     <string name="use_torrentdownloads">Выкарыстоўвайце TorrentDownloads</string>
     <string name="ten_dollars">$10</string>
     <string name="my_files">Мае файлы</string>
@@ -115,7 +113,6 @@
     <string name="invalid_torrent_file">Няправільны торэнт-файл</string>
     <string name="activity_downloads_title_text">Загрузкі</string>
     <string name="disconnecting">Раз\'яднанне</string>
-    <string name="activity_media_player_name">Media Player</string>
     <string name="choose_email_app">Выберыце Email App…</string>
     <string name="failed_to_add_download">Не атрымалася дадаць спампаваць</string>
     <string name="vibrate_on_finished_download">Вібруе, калі загрузка заканчваецца</string>
@@ -410,7 +407,6 @@
     <string name="use_yify_summary">Yify з\'яўляецца магнітам на аснове, працуе толькі на Wi-Fi</string>
     <string name="error_no_internet_connection">Памылка: Праверце падключэнне да Інтэрнэту</string>
     <string name="azureus_manager_item_error">Памылка</string>
-    <string name="why_we_need_storage_permissions">Навошта нам патрэбныя правы захоўвання.</string>
     <string name="get_a_frostwire_tshirt">Атрымаць MediaTor футболку</string>
     <string name="media_type_applications">Вобласці прымянення</string>
     <string name="invalid_filename">Няправільнае імя файла</string>
@@ -583,7 +579,6 @@
     <string name="remove_ads">выдаліць аб\'явы</string>
     <string name="your_connection_has_dropped_stopping_services">Ваша падлучэнне да Wi-Fi ўпаў. Прыпынак службаў.</string>
     <string name="use_tpb_summary">СПТ з\'яўляецца магнітам на аснове, працуе толькі на Wi-Fi</string>
-    <string name="frostwire_sticker_and_more">налепкі Frostwire і многае іншае</string>
     <string name="wifi_networks_only_summary">Захаванне дадзеных. Спампаваць толькі калі Wi-Fi злучэнне ўстаноўлена. </string>
     <string name="notifications_other_settings">Апавяшчэнні і іншае</string>
     <string name="wifi_networks_only">толькі Wi-Fi сеткі</string>

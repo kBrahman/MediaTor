@@ -1,17 +1,16 @@
 package z.zer.tor.media.android.gui.activity
 
-import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.media.AudioManager
 import android.media.MediaPlayer
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import android.widget.*
+import android.widget.SeekBar
+import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +21,7 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.layout
@@ -31,42 +31,42 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
+import androidx.room.Room
 import com.andrew.apollo.utils.MusicUtils
 import com.facebook.ads.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import org.json.JSONObject
 import z.zer.tor.media.R
-import z.zer.tor.media.android.core.Constants
-import z.zer.tor.media.android.gui.dialogs.NewTransferDialog
-import z.zer.tor.media.android.gui.services.Engine
-import z.zer.tor.media.android.gui.views.AbstractDialog
-import z.zer.tor.media.util.Ref
+import z.zer.tor.media.android.db.Db
 import java.net.HttpURLConnection
 import java.net.URL
 import java.util.*
 
-class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener,
-    MediaPlayer.OnBufferingUpdateListener, MediaPlayer.OnCompletionListener,
-    MediaPlayer.OnPreparedListener, MediaPlayer.OnInfoListener,
+class PlayerActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener,
     AudioManager.OnAudioFocusChangeListener, SeekBar.OnSeekBarChangeListener, Runnable {
     companion object {
         private val TAG = PlayerActivity::class.java.simpleName
     }
 
+    private lateinit var displayName: String
+    private var imgUrl: String? = null
     private var adLoaded = mutableStateOf(false)
 
     var androidMediaPlayer: MediaPlayer? = null
-    var displayName: String? = null
     var source: String? = null
     var streamUrl: String? = null
-    var isFullScreen = false
-    var changedActionBarTitleToNonBuffering = false
     val handler = Handler(Looper.getMainLooper())
     private lateinit var progress: MutableState<Float>
     private lateinit var playerStarted: MutableState<Boolean>
+    private val cScope = CoroutineScope(Dispatchers.Default)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         title = getString(R.string.application_label)
-        val displayName = intent.getStringExtra("displayName").toString()
+        displayName = intent.getStringExtra("displayName").toString()
+        source = intent.getStringExtra("source")
         val nativeAd = NativeAd(this, getString(R.string.id_ad_native_fb))
         nativeAd.loadAd(nativeAd.buildLoadAdConfig().withAdListener(object : NativeAdListener {
             override fun onMediaDownloaded(ad: Ad) {
@@ -74,17 +74,16 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
             }
 
             override fun onError(ad: Ad, adError: AdError) {
-                // Native ad failed to load
                 Log.e(TAG, "Native ad failed to load: " + adError.errorMessage)
+                play()
             }
 
             override fun onAdLoaded(ad: Ad) {
                 if (nativeAd !== ad) {
                     return
                 }
-                // Inflate Native Ad into Container
                 adLoaded.value = true
-//                inflateAd(nativeAd)
+                play()
             }
 
             override fun onAdClicked(ad: Ad) {
@@ -97,29 +96,29 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
                 Log.d(TAG, "Native ad impression logged!")
             }
         }).build())
-
-        this.setContent {
+        val db = Room.databaseBuilder(
+            this,
+            Db::class.java,
+            getString(R.string.application_label) + "_db"
+        ).build()
+        setContent {
             val playing = remember { mutableStateOf(true) }
+            val added = remember { mutableStateOf<Boolean?>(null) }
             progress = remember { mutableStateOf(0F) }
             playerStarted = remember { mutableStateOf(false) }
             adLoaded = remember { mutableStateOf(false) }
             var w = 0
             val colorPrimary = Color(
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    getColor(R.color.colorPrimary)
-                } else {
-                    resources.getColor(R.color.colorPrimary)
-                }
+                getColor(R.color.colorPrimary)
             )
             ConstraintLayout(modifier = Modifier.fillMaxSize()) {
-                val (btn, sb, row, col, mv, socialCtx, bodyTxt, spacer) = createRefs()
+                val (btn, sb, row, col, mv, socialCtx, bodyTxt, spacer, btnAdd) = createRefs()
                 Column(
                     Modifier
                         .padding(8.dp)
                         .constrainAs(col) {}) {
                     Text(text = displayName, fontSize = 20.sp)
-                    Text(text = intent.getStringExtra("source").toString())
-
+                    Text(text = source ?: "")
                 }
 
                 if (adLoaded.value) {
@@ -206,7 +205,7 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
                             .height(8.dp)
                             .constrainAs(sb) {
                                 start.linkTo(btn.end, margin = 4.dp)
-                                end.linkTo(parent.end, margin = 16.dp)
+                                end.linkTo(btnAdd.start, margin = 16.dp)
                                 top.linkTo(btn.top)
                                 bottom.linkTo(btn.bottom)
                                 width = Dimension.fillToConstraints
@@ -227,6 +226,38 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
                                     )
                                 }
                             })
+                    if (added.value != null) {
+                        Button(onClick = {
+                            val id = extractId(streamUrl!!)
+                            cScope.launch(Dispatchers.IO) {
+                                if (added.value!!) db.trackDao().deleteById(id)
+                                else {
+                                    val track = z.music.db.Track(id, displayName, source ?: "", streamUrl!!, imgUrl!!)
+                                    db.trackDao().insert(track)
+                                    Log.i(TAG, "inserting track=>$track")
+                                }
+                                added.value = db.trackDao().isAdded(id)
+                            }
+                            Log.i(TAG, "add button click=>${added.value}")
+                        }, colors = ButtonDefaults.buttonColors(backgroundColor = colorPrimary),
+                            modifier = Modifier
+                                .width(48.dp)
+                                .constrainAs(btnAdd) {
+                                    end.linkTo(parent.end, margin = 8.dp)
+                                    bottom.linkTo(parent.bottom, margin = 8.dp)
+                                }) {
+                            Icon(
+                                painter = painterResource(
+                                    id = if (added.value!!) R.drawable.ic_done_24 else
+                                        R.drawable.transfer_menuitem_plus
+                                ),
+                                contentDescription = "",
+                                Modifier.scale(if (added.value!!) 1F else 1.75F),
+                                tint = Color.White
+                            )
+                        }
+                    }
+
                 } else {
                     LinearProgressIndicator(
                         color = colorPrimary,
@@ -238,37 +269,49 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
                         })
                 }
             }
+            initComponents(added, db.trackDao())
         }
-        initComponents()
-
     }
 
-    fun initComponents() {
+    fun initComponents(added: MutableState<Boolean?>, trackDao: Db.TrackDao) {
         val i: Intent = intent
         stopAnyOtherPlayers()
-        source = i.getStringExtra("source")
         streamUrl = i.getStringExtra("streamUrl")
+        imgUrl = i.getStringExtra("image_url")
+        Log.i(TAG, "stream url=>$streamUrl")
+        Log.i(TAG, "img=>$imgUrl")
         if (streamUrl == null) {
             Toast.makeText(this, R.string.media_player_failed, LENGTH_SHORT).show()
             finish()
             return
         }
-        isFullScreen = i.getBooleanExtra("isFullScreen", false)
-        play()
+        checkAdded(trackDao, extractId(streamUrl!!), added)
+    }
+
+    private fun checkAdded(trackDao: Db.TrackDao, id: String, added: MutableState<Boolean?>) =
+        cScope.launch(Dispatchers.IO) {
+            val isAdded = trackDao.isAdded(id)
+            Log.i(TAG, "is added=>$isAdded")
+            added.value = isAdded
+        }
+
+    private fun extractId(streamUrl: String): String {
+        //#https://api-v2.soundcloud.com/media/soundcloud:tracks:37801561/1783a392-e164-470b-a07b-166d2ef9395d/stream/progressive?client_id=1CZUOY7BrjNOdkrJ1KkeLJ04sqXoxRR3
+        val id = streamUrl.split(":")[3].substringBefore("/")
+        Log.i(TAG, "extracted id=>$id")
+        return id
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putString("displayName", displayName)
         outState.putString("source", source)
         outState.putString("streamUrl", streamUrl)
-        outState.putBoolean("isFullScreen", isFullScreen)
         if (androidMediaPlayer != null && androidMediaPlayer!!.isPlaying) {
             outState.putInt("currentPosition", androidMediaPlayer!!.currentPosition)
         }
     }
 
-    fun getFinalUrl(url: String?): String? {
+    private fun getFinalUrl(url: String?): String? {
         var con: HttpURLConnection? = null
         try {
             con = URL(url).openConnection() as HttpURLConnection
@@ -284,24 +327,11 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
                 try {
                     con.disconnect()
                 } catch (e: Throwable) {
-                    // ignore
+                    e.printStackTrace()
                 }
             }
         }
         return url
-    }
-
-    override fun onDialogClick(tag: String, which: Int) {
-        if (tag == NewTransferDialog.TAG && which == Dialog.BUTTON_POSITIVE) {
-            if (Ref.alive(NewTransferDialog.srRef)) {
-                releaseMediaPlayer()
-                val i = Intent(this, MainActivity::class.java)
-                i.action = Constants.ACTION_START_TRANSFER_FROM_PREVIEW
-                i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-                startActivity(i)
-            }
-            finish()
-        }
     }
 
     private fun releaseMediaPlayer() {
@@ -311,87 +341,37 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
             try {
                 androidMediaPlayer!!.release()
             } catch (t: Throwable) {
-                //there could be a runtime exception thrown inside stayAwake()
+                t.printStackTrace()
             }
             androidMediaPlayer = null
-            val audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager?
-            audioManager?.abandonAudioFocus(this)
         }
     }
 
-    fun play() {
-        val t: Thread = object : Thread("PreviewPlayerActivity-onSurfaceTextureAvailable") {
-            override fun run() {
-                Log.i(TAG, "url=>$streamUrl")
-                val url = getFinalUrl(streamUrl)
-                val uri = Uri.parse(url)
-                androidMediaPlayer = MediaPlayer()
-                try {
-                    androidMediaPlayer!!.setDataSource(this@PlayerActivity, uri)
-                    androidMediaPlayer!!.setOnBufferingUpdateListener(this@PlayerActivity)
-                    androidMediaPlayer!!.setOnCompletionListener(this@PlayerActivity)
-                    androidMediaPlayer!!.setOnPreparedListener(this@PlayerActivity)
-                    androidMediaPlayer!!.setOnInfoListener(this@PlayerActivity)
-                    androidMediaPlayer!!.prepare()
-                    startSeekBar()
-                    androidMediaPlayer!!.start()
-                    playerStarted.value = true
-                    if (MusicUtils.isPlaying()) {
-                        MusicUtils.playOrPause()
-                    }
-                } catch (e: Throwable) {
-                    e.printStackTrace()
-                }
+    fun play() = cScope.launch {
+        Log.i(TAG, "url=>$streamUrl")
+        val url = getFinalUrl(streamUrl)
+        val uri = Uri.parse(url)
+        androidMediaPlayer = MediaPlayer()
+        try {
+            androidMediaPlayer!!.setDataSource(this@PlayerActivity, uri)
+            androidMediaPlayer!!.setOnCompletionListener(this@PlayerActivity)
+            androidMediaPlayer!!.prepare()
+            startSeekBar()
+            androidMediaPlayer!!.start()
+            playerStarted.value = true
+            if (MusicUtils.isPlaying()) {
+                MusicUtils.playOrPause()
             }
+        } catch (e: Throwable) {
+            e.printStackTrace()
         }
-        t.start()
     }
-
-    override fun onBufferingUpdate(mp: MediaPlayer?, percent: Int) {}
 
     override fun onCompletion(mp: MediaPlayer?) {
         finish()
     }
 
-    override fun onPrepared(mp: MediaPlayer?) {
-        val am = getSystemService(Context.AUDIO_SERVICE) as AudioManager?
-        am?.requestAudioFocus(this, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN)
-    }
-
-    override fun onInfo(mp: MediaPlayer?, what: Int, extra: Int): Boolean {
-        var startedPlayback = false
-        when (what) {
-            MediaPlayer.MEDIA_INFO_VIDEO_TRACK_LAGGING -> {
-            }
-            MediaPlayer.MEDIA_INFO_BUFFERING_START -> {
-            }
-            MediaPlayer.MEDIA_INFO_BUFFERING_END ->                 //LOG.warn("End of media buffering.");
-                startedPlayback = true
-            MediaPlayer.MEDIA_INFO_BAD_INTERLEAVING -> {
-            }
-            MediaPlayer.MEDIA_INFO_NOT_SEEKABLE -> {
-            }
-            MediaPlayer.MEDIA_INFO_METADATA_UPDATE -> {
-            }
-            MediaPlayer.MEDIA_INFO_UNKNOWN -> {
-            }
-            else -> {
-            }
-        }
-        if (startedPlayback && !changedActionBarTitleToNonBuffering) {
-            changedActionBarTitleToNonBuffering = true
-        }
-        return false
-    }
-
-    fun stopAnyOtherPlayers() {
-        try {
-            val mediaPlayer = Engine.instance().mediaPlayer
-            if (mediaPlayer != null && mediaPlayer.isPlaying) {
-                mediaPlayer.stop()
-            }
-        } catch (ignored: Throwable) {
-        }
+    private fun stopAnyOtherPlayers() {
         val mAudioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager?
         if (mAudioManager != null && mAudioManager.isMusicActive) {
             val i = Intent("com.android.music.musicservicecommand")
@@ -407,15 +387,9 @@ class PlayerActivity : AppCompatActivity(), AbstractDialog.OnDialogClickListener
         super.onDestroy()
     }
 
-
     override fun onPause() {
         releaseMediaPlayer()
         super.onPause()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        changedActionBarTitleToNonBuffering = false
     }
 
     override fun onAudioFocusChange(focusChange: Int) {

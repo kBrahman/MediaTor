@@ -114,7 +114,6 @@
     <string name="loading_all">అన్నింటినీ లోడ్ చేస్తోంది</string>
     <string name="azureus_manager_item_allocating">పెడుతోంది</string>
     <string name="app_shutdown_dlg_message">ఇది అన్ని బదిలీలు మరియు నేపథ్య సేవలను మూసివేస్తుంది. మీరు చెప్పేది నిజమా?</string>
-    <string name="frostwire_sticker_and_more">FrostWire స్టిక్కర్లు మరియు మరిన్ని</string>
     <string name="show_transfers_on_download_start">డౌన్ లోడ్ ప్రారంభంలో బదిలీలు చూపించు</string>
     <string name="sharing">పంచుకోవడం</string>
     <string name="send_feedback">అభిప్రాయాన్ని పంపండి</string>
@@ -122,7 +121,6 @@
     <string name="tos_refuse">తిరస్కరించు</string>
     <string name="touch_applied_tags_to_include_exclude">చేర్చండి/మినహాయించాలని అనువర్తిత ట్యాగ్లను తాకండి</string>
     <string name="torrent_max_total_connections">గరిష్ట మొత్తం కనెక్షన్లు</string>
-    <string name="activity_preferences_name">సెట్టింగులు</string>
     <string name="use_torrentdownloads">TorrentDownloads ఉపయోగించండి</string>
     <string name="ten_dollars">$10</string>
     <string name="one_file_shared">అదే ఫైల్ MediaTor పరికరాల్లో అదే Wi-Fi నెట్వర్క్లో భాగస్వామ్యం చేయబడింది.</string>
@@ -138,7 +136,6 @@
     <string name="activity_downloads_title_text">డౌన్ లోడ్</string>
     <string name="storage_picker_treeuri_not_directory">ఎంచుకున్న మార్గం డైరెక్టరీ కాదు</string>
     <string name="disconnecting">డిస్కనెక్ట్</string>
-    <string name="activity_media_player_name">మీడియా ప్లేయర్</string>
     <string name="choose_email_app">ఇమెయిల్ అనువర్తనాన్ని ఎంచుకోండి…</string>
     <string name="failed_to_add_download">డౌన్లోడ్ను జోడించడంలో విఫలమైంది</string>
     <string name="vibrate_on_finished_download">డౌన్లోడ్ పూర్తి అయినప్పుడు వైబ్రేట్ చేయండి</string>
@@ -349,7 +346,6 @@
     <string name="completed">పూర్తయింది</string>
     <string name="crawl_cache_size">క్రాల్ కాష్ %1$.2fMB</string>
     <string name="wizard_previous">మునుపటి</string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>మీ గోప్యత ప్రాథమిక మానవ హక్కు</b>. ఒక అసురక్షిత కనెక్షన్ మీరు ఆన్లైన్లో చేస్తున్న ప్రతిదాన్ని సూచిస్తుంది <b>డౌన్లోడ్లు, శోధనలు, సందేశం</b>, మీ నెట్వర్క్లో ఎవరినైనా పరిశీలించడం మరియు అడ్డగించడం చేయవచ్చు, ఉదా. ఇంటర్నెట్ సర్వీస్ ప్రొవైడర్లు, హ్యాకర్లు, ప్రభుత్వాలు.<br><br><b>మేము ఖచ్చితంగా VPN సేవను ఉపయోగించాలని సిఫార్సు చేస్తున్నాము</b>. <br> ఇక్కడ నమ్మకమైన సేవ అందించడానికి మరియు MediaTor బాగా పని కొన్ని ఎంపికలు ఉన్నాయి:]]></string>
     <string name="azureus_manager_item_downloading">డౌన్లోడ్ చేస్తోంది</string>
     <string name="there_is_n_torrents_indexed">ఇండెక్స్లో %d టోరెంట్ లు ఉన్నాయి</string>
     <string name="wifi_sharing_disabled">Wi-Fi భాగస్వామ్యం ఆఫ్లో ఉంది.\n\nఅదే Wi-Fi నెట్వర్క్కి కనెక్ట్ చేయబడిన MediaTor ఆధారిత పరికరాల మధ్య ఫైళ్ళను పంచుకోవడానికి Wi-Fi భాగస్వామ్యాన్ని ఉపయోగించవచ్చు.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;ఇంకా నేర్చుకో.&lt;/a&gt;</string>
@@ -445,7 +441,6 @@
     <string name="peer_http_download_status_unknown">తెలియని</string>
     <string name="save_bandwidth">బ్యాండ్విడ్త్ను సేవ్ చేయి</string>
     <string name="accept_connection_from">నుండి కనెక్షన్ను అంగీకరించండి</string>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>ప్రకటన:</b> మీ డౌన్ లోడ్ కోసం సిఫారసు చేసినప్పటికీ, ముఖ్యంగా సున్నితమైన సమాచారాన్ని (ఉదా. బ్యాంకింగ్) డౌన్లోడ్ చేయడం లేదా మార్పిడి చేసేటప్పుడు మరియు పబ్లిక్ Wi-Fi లేదా మొబైల్ డేటాను ఉపయోగిస్తున్నప్పుడు, <b>మీకు MediaTor ఉపయోగించడానికి VPN అవసరం లేదు. </b>]]></string>
     <string name="transfers_context_resume_all_torrent_transfers">అన్ని torrent బదిలీలు పునఃప్రారంభించుము</string>
     <string name="no_data_check_internet_connection">నెట్వర్క్ అందుబాటులో లేదు, దయచేసి మీ ఇంటర్నెట్ కనెక్షన్ను తనిఖీ చేయండి.</string>
     <string name="seeing_less_results">తక్కువ లేదా ఫలితాలను చూడటం లేదా?</string>
@@ -502,7 +497,6 @@
     <string name="error_no_internet_connection">లోపం: ఇంటర్నెట్ కనెక్షన్ను తనిఖీ చేయండి</string>
     <string name="time_elapsed">సమయం అయిపోయింది</string>
     <string name="azureus_manager_item_error">లోపం</string>
-    <string name="why_we_need_storage_permissions">మాకు నిల్వ అనుమతులు అవసరం ఎందుకు.</string>
     <string name="get_a_frostwire_tshirt">ఒక MediaTor t షర్టు పొందండి</string>
     <string name="media_type_applications">అప్లికేషన్స్</string>
     <string name="invalid_filename">చెల్లని ఫైల్ పేరు</string>

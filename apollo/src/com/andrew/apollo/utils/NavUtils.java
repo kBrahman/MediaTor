@@ -7,12 +7,8 @@ import android.content.Intent;
 import android.media.audiofx.AudioEffect;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 
 import com.andrew.apollo.Config;
-import com.andrew.apollo.ui.activities.AudioPlayerActivity;
-import com.andrew.apollo.ui.activities.HomeActivity;
-import com.andrew.apollo.ui.activities.ProfileActivity;
 import com.andrew.apollo.ui.activities.SearchActivity;
 import com.devspark.appmsg.AppMsg;
 
@@ -45,11 +41,6 @@ public final class NavUtils {
         if (songs != null && songs.length > 0) {
             bundle.putLongArray(Config.TRACKS, songs);
         }
-
-        // Create the intent to launch the profile activity
-        final Intent intent = new Intent(context, ProfileActivity.class);
-        intent.putExtras(bundle);
-        context.startActivity(intent);
     }
 
     /**
@@ -74,73 +65,6 @@ public final class NavUtils {
         if (songs != null && songs.length > 0) {
             bundle.putLongArray(Config.TRACKS, songs);
         }
-
-        // Create the intent to launch the profile activity
-        final Intent intent = new Intent(context, ProfileActivity.class);
-        intent.putExtras(bundle);
-        context.startActivity(intent);
     }
 
-    /**
-     * Opens the sound effects panel or DSP manager in CM
-     *
-     * @param context The {@link Activity} to use.
-     */
-    public static void openEffectsPanel(final Activity context) {
-        try {
-            final Intent effects = new Intent(AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL);
-            effects.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, MusicUtils.getAudioSessionId());
-            // No result expected for this activity
-            context.startActivityForResult(effects, 0);
-        } catch (final ActivityNotFoundException notFound) {
-            AppMsg.makeText(context, context.getString(R.string.no_effects_for_you),
-                    AppMsg.STYLE_ALERT);
-        }
-    }
-
-    /**
-     * Opens to {@link AudioPlayerActivity}.
-     *
-     * @param activity The {@link Activity} to use.
-     */
-    public static void openAudioPlayer(final Activity activity) {
-        final Intent intent = new Intent(activity, AudioPlayerActivity.class);
-        String trackName = MusicUtils.getTrackName();
-        Log.i(TAG, "track name=>" + trackName);
-        intent.putExtra("displayName", trackName);
-//        intent.putExtra("source", "");
-//        intent.putExtra("thumbnailUrl", MusicUtils);
-        intent.putExtra("streamUrl", MusicUtils.getFilePath());
-//        intent.putExtra("audio", MusicUtils.is);
-        intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-        activity.startActivity(intent);
-    }
-
-    /**
-     * Opens to {@link SearchActivity}.
-     *
-     * @param activity The {@link Activity} to use.
-     * @param query    The search query.
-     */
-    public static void openSearch(final Activity activity, final String query) {
-        final Bundle bundle = new Bundle();
-        final Intent intent = new Intent(activity, SearchActivity.class);
-        intent.putExtra(SearchManager.QUERY, query);
-        intent.putExtras(bundle);
-        activity.startActivity(intent);
-    }
-
-    /**
-     * Opens to {@link HomeActivity}.
-     *
-     * @param activity The {@link Activity} to use.
-     */
-    public static void goHome(final Activity activity) {
-        final Intent intent = new Intent(activity, HomeActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        activity.startActivity(intent);
-        activity.finish();
-    }
 }

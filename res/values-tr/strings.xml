@@ -19,9 +19,7 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Bilgilendirme:</b> İndirmeleriniz için önerilse de, özellikle hassas bilgileri (örneğin bankacılık) indirirken veya paylaşırken ve herkese açık Wi-Fi veya mobil veri kullanırken, <b>FrostWire\'ı kullanmak için VPN\'ye ihtiyacınız yok. </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>Bilgi:</b> Için uygulanmış etiketler\'e dokunun]]></string>
-    <string name="activity_preferences_name">Ayarlar</string>
     <string name="activity_chat_named">Sohbet</string>
     <string name="activity_downloads_name">Aktif İndirmeler</string>
     <string name="activity_uploads_name">Aktif Yüklemeler</string>
@@ -213,7 +211,6 @@
     <string name="not_connected">Bağlı Değil</string>
     <string name="mobile_data">Cep Telefonu Verisi</string>
     <string name="media_player_failed">Medya oynatıcı hata verdi</string>
-    <string name="activity_media_player_name">Medya Oynatıcı</string>
     <string name="search_settings">Arama Ayarları</string>
     <string name="use_zooqle">Zooqle.com\'u Kullan</string>
     <string name="use_tpb">ThePirateBay.org\'u Kullan</string>
@@ -523,7 +520,6 @@
     <string name="use_limetorrents">Limetorrents\'u Kullan</string>
     <string name="use_yify_summary">Yify mıknatıs tabanlı, yalnızca Wifi üzerinde çalışıyor</string>
     <string name="error_no_internet_connection">Hata: İnternet bağlantısını kontrol et</string>
-    <string name="why_we_need_storage_permissions">Neden depolama izinlerine ihtiyacımız var.</string>
     <string name="invalid_filename">Geçersiz dosya adı</string>
     <string name="wifi_network_unavailable">Wifi Ağı Kullanılamaz</string>
     <string name="select_all">Hepsini seç</string>
@@ -583,7 +579,6 @@
     <string name="keep_the_project_alive">Projeyi Canlı Tutun</string>
     <string name="remove_ads">Reklamları kaldırmak</string>
     <string name="use_tpb_summary">TPB mıknatıs tabanlı, yalnızca Wifi üzerinde çalışıyor</string>
-    <string name="frostwire_sticker_and_more">FrostWire çıkartmaları ve daha fazlası</string>
     <string name="wifi_networks_only_summary">Veri kaydet. Sadece Wi-Fi bağlantısı kurulduysa indirin. </string>
     <string name="notifications_other_settings">Bildirimler ve Diğer</string>
     <string name="wifi_networks_only">Yalnızca kablosuz ağlar</string>
@@ -693,7 +688,6 @@
     <string name="edit_tracker">İzleyiciyi düzenle</string>
     <string name="down_speed">İndirme hızı</string>
     <string name="completed">Tamamlanan</string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Gizliliğiniz temel bir insan hakkıdır</b>. Korumasız bir bağlantı, <b>indirmeler, aramalar, mesajlaşma</b> dahil olmak üzere çevrimiçi olarak yaptığınız her şey anlamına gelir, ağınızdaki herhangi bir kişi tarafından izlenebilir ve yakalanabilir, ör. İnternet Servis Sağlayıcıları, bilgisayar korsanları, hükümetler.<br><br><b>VPN hizmeti kullanmanızı şiddetle tavsiye ediyoruz</b>. <br> İşte güvenilir hizmet veren ve MediaTor ile iyi çalışan bazı seçenekler:]]></string>
     <string name="downloaded">İndirildi</string>
     <string name="n_peers">%1$d akranlar</string>
     <string name="sequential_download">Sıralı indirme</string>

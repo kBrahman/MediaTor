@@ -19,9 +19,7 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Разкриване:</b> Въпреки че се препоръчва за вашите файлове за изтегляне, особено когато изтегляте или обменяте чувствителна информация (например банкиране) и докато използвате обществени Wi-Fi или мобилни данни, <b>Вие не се нуждаят от VPN, за да използвате FrostWire. </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>Информация:</b> Докоснете приложените маркери до]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Вашият личен живот е основно човешко право</b>. Незащитена връзка означава, че всичко, което правите онлайн, включително <b> изтегляния, търсения и съобщения</b>, може да бъде наблюдавано и задържано от всеки в мрежата ви, напр. Доставчици на интернет услуги, хакери, правителства.<br><br><b>Ние силно препоръчваме да използвате VPN услуга</b>. <br> Ето някои опции, които осигуряват надеждно обслужване и работят добре с FrostWire:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Вие сте свързани към Интернет чрез VPN. <br><br> Ако още не сте, препоръчваме да използвате една от долупосочените услуги, за да шифровате връзката си и <b>да запазите поверителността си</b>. ]]></string>
     <string name="vpn_not_found">Не VPN. Помислете за криптиране на връзката.</string>
     <string name="azureus_peer_manager_status_finished">Завършил</string>
@@ -99,14 +97,12 @@
     <string name="loading_all">Зареждане на всички</string>
     <string name="azureus_manager_item_allocating">Разпределяне</string>
     <string name="app_shutdown_dlg_message">Това ще изключи всички трансфери и фонови услуги. Сигурен ли си?</string>
-    <string name="frostwire_sticker_and_more">FrostWire стикери и повече</string>
     <string name="show_transfers_on_download_start">Показване на преводи по изтегляне старт</string>
     <string name="sharing">Споделяне</string>
     <string name="send_feedback">Изпратете отзиви</string>
     <string name="chat_actions">Чат Действия</string>
     <string name="tos_refuse">Отказвам</string>
     <string name="torrent_max_total_connections">Максимална обща връзки</string>
-    <string name="activity_preferences_name">Настройки</string>
     <string name="use_torrentdownloads">Използвайте TorrentDownloads</string>
     <string name="ten_dollars">$10</string>
     <string name="my_files">Моите файлове</string>
@@ -118,7 +114,6 @@
     <string name="invalid_torrent_file">Невалиден торент файл</string>
     <string name="activity_downloads_title_text">Свалян</string>
     <string name="disconnecting">Прекъсване на връзката</string>
-    <string name="activity_media_player_name">Медиен плейър</string>
     <string name="choose_email_app">Избери Електронна поща на приложението…</string>
     <string name="failed_to_add_download">Неуспешно добавяне на изтегляне</string>
     <string name="vibrate_on_finished_download">Вибрира при изтегляне завършва</string>
@@ -418,7 +413,6 @@
     <string name="use_yify_summary">Yify е магнит на основата, работи само на Wifi</string>
     <string name="error_no_internet_connection">Грешка: Проверете интернет връзката</string>
     <string name="azureus_manager_item_error">Грешка</string>
-    <string name="why_we_need_storage_permissions">Защо имаме нужда от разрешения за съхранение.</string>
     <string name="get_a_frostwire_tshirt">Вземете MediaTor T-Shirt</string>
     <string name="media_type_applications">Приложения</string>
     <string name="invalid_filename">Невалидно име на файла</string>

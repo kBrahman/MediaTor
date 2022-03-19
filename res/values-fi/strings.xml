@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Julkaiseminen:</b> Vaikka suosittelemme latauksillemme, varsinkin kun lataat tai vaihdat arkaluonteisia tietoja (esim. pankkitoimintaa) ja käyttäessäsi julkisia Wi-Fi- tai mobiilitietoja, <b>sinun ei tarvitse käyttää VPN: tä FrostWire.</b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Kosketa sovellettuja tunnisteita ]]></string>
     <string name="vpn_not_found">Ei VPN. Mieti salaamalla yhteys.</string>
     <string name="azureus_peer_manager_status_finished">Valmiit</string>
@@ -80,14 +79,12 @@
     <string name="loading_all">Ladataan kaikki</string>
     <string name="azureus_manager_item_allocating">Kohdentaminen</string>
     <string name="app_shutdown_dlg_message">Tämä aiotaan sulkea kaikki siirrot ja taustan palveluja. Oletko varma?</string>
-    <string name="frostwire_sticker_and_more">FrostWire tarroja ja muuta</string>
     <string name="show_transfers_on_download_start">Näytä Siirrot download alku</string>
     <string name="sharing">Jakaminen</string>
     <string name="send_feedback">Lähetä palautetta</string>
     <string name="chat_actions">Chat Toiminnot</string>
     <string name="tos_refuse">Kieltäytyä</string>
     <string name="torrent_max_total_connections">Suurin Yhteensä Liitännät</string>
-    <string name="activity_preferences_name">Asetukset</string>
     <string name="use_torrentdownloads">Käytä TorrentDownloads</string>
     <string name="ten_dollars">$10</string>
     <string name="my_files">Tiedostoni</string>
@@ -99,7 +96,6 @@
     <string name="invalid_torrent_file">Virheellinen Torrent File</string>
     <string name="activity_downloads_title_text">Lataukset</string>
     <string name="disconnecting">Katkaiseminen</string>
-    <string name="activity_media_player_name">Mediasoitin</string>
     <string name="choose_email_app">Valitse sähköpostisovellus…</string>
     <string name="failed_to_add_download">Lisääminen epäonnistui ladattavissa</string>
     <string name="vibrate_on_finished_download">Värinä lataus on valmis</string>
@@ -402,7 +398,6 @@
     <string name="use_yify_summary">Yify on magneetti pohjainen, toimii vain Wifi</string>
     <string name="error_no_internet_connection">Virhe: Tarkista Internet-yhteys</string>
     <string name="azureus_manager_item_error">Virhe</string>
-    <string name="why_we_need_storage_permissions">Siksi tarvitaan varastointi käyttöoikeudet.</string>
     <string name="get_a_frostwire_tshirt">Hanki MediaTor T-paita</string>
     <string name="media_type_applications">Hakemukset ohjelmistojen</string>
     <string name="invalid_filename">Virheellinen tiedostonimi</string>
@@ -674,7 +669,6 @@
     <string name="edit_tracker">Muokata tracker</string>
     <string name="down_speed">Latausnopeus</string>
     <string name="completed">Valmistunut</string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Tietosuoja on ihmisen perusoikeus</b>. Vahvistamattomalla yhteydellä tarkoitetaan mitä tahansa, mitä teet verkossa, mukaan lukien <b>lataukset, haut, viestit</b>. Internet-palveluntarjoajat, hakkerit, hallitukset.<br><br><b>Suosittelemme voimakkaasti VPN-palvelun käyttöä</b>. <br> Seuraavassa on joitain vaihtoehtoja, jotka tarjoavat luotettavaa palvelua ja toimivat hyvin FrostWiren kanssa:]]></string>
     <string name="downloaded">Ladattua</string>
     <string name="n_peers">%1$d peeriä</string>
     <string name="sequential_download">Jaksottainen lataus</string>

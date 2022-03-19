@@ -26,6 +26,7 @@ import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.platform.SystemPaths;
 
 import java.io.File;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 final class AndroidPaths implements SystemPaths {
 
@@ -61,6 +62,8 @@ final class AndroidPaths implements SystemPaths {
     }
 
     private static File storage() {
+        CopyOnWriteArrayList<Integer> list=new CopyOnWriteArrayList<>();
+        list.add(1);
         String path = ConfigurationManager.instance().getString(Constants.PREF_KEY_STORAGE_PATH, Environment.getExternalStorageDirectory().getAbsolutePath());
         if (path.toLowerCase().endsWith("/" + STORAGE_PATH.toLowerCase())) {
             return new File(path);

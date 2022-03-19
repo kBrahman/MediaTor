@@ -1,32 +1,7 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2016, FrostWire(R). All rights reserved.
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 package z.zer.tor.media.transfers;
 
-import z.zer.tor.media.util.Logger;
-import z.zer.tor.media.mp3.ID3Wrapper;
-import z.zer.tor.media.mp3.ID3v1Tag;
-import z.zer.tor.media.mp3.ID3v23Tag;
-import z.zer.tor.media.mp3.Mp3File;
 import z.zer.tor.media.search.soundcloud.SoundCloudSearchResult;
-
-import java.io.ByteArrayOutputStream;
-import java.io.File;
+import z.zer.tor.media.util.Logger;
 
 /**
  * @author gubatron
@@ -47,61 +22,7 @@ public class SoundcloudDownload extends HttpDownload {
 
     @Override
     protected void onFinishing() {
-        downloadAndUpdateCoverArt(sr, tempPath);
         super.onFinishing();
-    }
-
-    private static void downloadAndUpdateCoverArt(SoundCloudSearchResult sr, File file) {
-        if (file != null && file.exists() && file.length() <= COVERART_FETCH_THRESHOLD) {
-            byte[] cover = downloadCoverArt(sr.getThumbnailUrl());
-            if (cover != null && cover.length > 0) {
-                File temp = new File(file.getAbsolutePath() + ".tmp");
-                if (file.renameTo(temp)) {
-                    if (setAlbumArt(sr, cover, temp.getAbsolutePath(), file.getAbsolutePath())) {
-                        temp.delete();
-                    } else {
-                        temp.renameTo(file);
-                    }
-                } else {
-                    LOG.warn("Error moving temporary file to stage one for cover update");
-                }
-            }
-        }
-    }
-
-    private static byte[] downloadCoverArt(String url) {
-        try {
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            simpleHTTP(url, baos, 3000);
-            return baos.toByteArray();
-        } catch (Throwable e) {
-            LOG.error("Error downloading SoundCloud cover art (url=" + url + ")", e);
-        }
-        return null;
-    }
-
-    private static boolean setAlbumArt(SoundCloudSearchResult sr, byte[] cover, String inPath, String outPath) {
-        try {
-            Mp3File mp3 = new Mp3File(inPath);
-
-            ID3Wrapper newId3Wrapper = new ID3Wrapper(new ID3v1Tag(), new ID3v23Tag());
-            newId3Wrapper.setAlbum(sr.getUsername() + ": " + sr.getDisplayName() + " via SoundCloud.com");
-            newId3Wrapper.setArtist(sr.getUsername());
-            newId3Wrapper.setTitle(sr.getDisplayName());
-            newId3Wrapper.setAlbumImage(cover, "image/jpg");
-            newId3Wrapper.setUrl(sr.getDetailsUrl());
-            newId3Wrapper.getId3v2Tag().setPadding(true);
-
-            mp3.setId3v1Tag(newId3Wrapper.getId3v1Tag());
-            mp3.setId3v2Tag(newId3Wrapper.getId3v2Tag());
-
-            mp3.save(outPath);
-
-            return true;
-        } catch (Throwable e) {
-            LOG.error("Error setting art information for soundcloud download", e);
-            return false;
-        }
     }
 
     private static Info convert(SoundCloudSearchResult sr) {

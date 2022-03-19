@@ -4,26 +4,14 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 
 import com.andrew.apollo.model.Song;
 import com.andrew.apollo.ui.MusicViewHolder;
-import com.andrew.apollo.ui.fragments.profile.AlbumSongFragment;
-import com.andrew.apollo.ui.fragments.profile.ArtistSongFragment;
-import com.andrew.apollo.ui.fragments.profile.FavoriteFragment;
-import com.andrew.apollo.ui.fragments.profile.GenreSongFragment;
-import com.andrew.apollo.ui.fragments.profile.LastAddedProfileFragment;
-import com.andrew.apollo.ui.fragments.profile.PlaylistSongFragment;
 import com.andrew.apollo.utils.MusicUtils;
 
 import z.zer.tor.media.R;
 
-/**
- * This {@link ArrayAdapter} is used to display the songs for a particular
- * artist, album, playlist, or genre for {@link ArtistSongFragment},
- * {@link AlbumSongFragment},{@link PlaylistSongFragment},
- * {@link GenreSongFragment},{@link FavoriteFragment},{@link LastAddedProfileFragment}.
- */
+
 public class ProfileSongAdapter extends ApolloFragmentAdapter<Song> {
 
     /**

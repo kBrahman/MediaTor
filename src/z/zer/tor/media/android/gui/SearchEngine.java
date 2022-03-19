@@ -2,28 +2,18 @@ package z.zer.tor.media.android.gui;
 
 import android.os.Build;
 
-import java.util.Arrays;
+import androidx.annotation.NonNull;
+
+import java.util.Collections;
 import java.util.List;
 
 import z.zer.tor.media.android.core.ConfigurationManager;
 import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.search.SearchPerformer;
-import z.zer.tor.media.search.archiveorg.ArchiveorgSearchPerformer;
-import z.zer.tor.media.search.eztv.EztvSearchPerformer;
-import z.zer.tor.media.search.frostclick.FrostClickSearchPerformer;
-import z.zer.tor.media.search.frostclick.UserAgent;
-import z.zer.tor.media.search.limetorrents.LimeTorrentsSearchPerformer;
-import z.zer.tor.media.search.pixabay.PixabaySearchPerformer;
 import z.zer.tor.media.search.soundcloud.SoundCloudSearchPerformer;
-import z.zer.tor.media.search.torlock.TorLockSearchPerformer;
-import z.zer.tor.media.search.torrentdownloads.TorrentDownloadsSearchPerformer;
-import z.zer.tor.media.search.tpb.TPBSearchPerformer;
-import z.zer.tor.media.search.yify.YifySearchPerformer;
-import z.zer.tor.media.search.zooqle.ZooqleSearchPerformer;
 
 public abstract class SearchEngine {
 
-    private static final UserAgent FROSTWIRE_ANDROID_USER_AGENT = new UserAgent(getOSVersionString(), Constants.FROSTWIRE_VERSION_STRING, Constants.MEDIAT_TOR_BUILD);
     private static final int DEFAULT_TIMEOUT = 10000;
 
     private final String name;
@@ -59,28 +49,13 @@ public abstract class SearchEngine {
         this.active = active;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return name;
     }
 
     public static List<SearchEngine> getEngines() {
-        // ensure that at leas one is enable
-        boolean oneEnabled = false;
-        for (SearchEngine se : ALL_ENGINES) {
-            if (se.isEnabled()) {
-                oneEnabled = true;
-            }
-        }
-        if (!oneEnabled) {
-            SearchEngine engineToEnable;
-            engineToEnable = EZTV;
-
-            // null check in case the logic above changes
-            String prefKey = engineToEnable.getPreferenceKey();
-            ConfigurationManager.instance().setBoolean(prefKey, true);
-        }
-
         return ALL_ENGINES;
     }
 
@@ -94,17 +69,6 @@ public abstract class SearchEngine {
         return null;
     }
 
-    static String getOSVersionString() {
-        return Build.VERSION.CODENAME + "_" + Build.VERSION.INCREMENTAL + "_" + Build.VERSION.RELEASE + "_" + Build.VERSION.SDK_INT;
-    }
-
-    public static final SearchEngine ZOOQLE = new SearchEngine("Zooqle", Constants.PREF_KEY_SEARCH_USE_ZOOQLE) {
-        @Override
-        public SearchPerformer getPerformer(long token, String keywords) {
-            return new ZooqleSearchPerformer("zooqle.com", token, keywords, DEFAULT_TIMEOUT);
-        }
-    };
-
     public static final SearchEngine SOUNCLOUD = new SearchEngine("Soundcloud", Constants.PREF_KEY_SEARCH_USE_SOUNDCLOUD) {
         @Override
         public SearchPerformer getPerformer(long token, String keywords) {
@@ -112,68 +76,5 @@ public abstract class SearchEngine {
         }
     };
 
-    public static final SearchEngine ARCHIVE = new SearchEngine("Archive.org", Constants.PREF_KEY_SEARCH_USE_ARCHIVEORG) {
-        @Override
-        public SearchPerformer getPerformer(long token, String keywords) {
-            return new ArchiveorgSearchPerformer("archive.org", token, keywords, DEFAULT_TIMEOUT);
-        }
-    };
-
-    public static final SearchEngine FROSTCLICK = new SearchEngine("FrostClick", Constants.PREF_KEY_SEARCH_USE_FROSTCLICK) {
-        @Override
-        public SearchPerformer getPerformer(long token, String keywords) {
-            return new FrostClickSearchPerformer("api.frostclick.com", token, keywords, DEFAULT_TIMEOUT, FROSTWIRE_ANDROID_USER_AGENT);
-        }
-    };
-
-    public static final SearchEngine TORLOCK = new SearchEngine("TorLock", Constants.PREF_KEY_SEARCH_USE_TORLOCK) {
-        @Override
-        public SearchPerformer getPerformer(long token, String keywords) {
-            return new TorLockSearchPerformer("www.torlock.com", token, keywords, DEFAULT_TIMEOUT);
-        }
-    };
-
-    public static final SearchEngine TORRENTDOWNLOADS = new SearchEngine("TorrentDownloads", Constants.PREF_KEY_SEARCH_USE_TORRENTDOWNLOADS) {
-        @Override
-        public SearchPerformer getPerformer(long token, String keywords) {
-            return new TorrentDownloadsSearchPerformer("www.torrentdownloads.me", token, keywords, DEFAULT_TIMEOUT);
-        }
-    };
-
-    public static final SearchEngine LIMETORRENTS = new SearchEngine("LimeTorrents", Constants.PREF_KEY_SEARCH_USE_LIMETORRENTS) {
-        @Override
-        public SearchPerformer getPerformer(long token, String keywords) {
-            return new LimeTorrentsSearchPerformer("www.limetorrents.cc", token, keywords, DEFAULT_TIMEOUT);
-        }
-    };
-
-    public static final SearchEngine EZTV = new SearchEngine("Eztv", Constants.PREF_KEY_SEARCH_USE_EZTV) {
-        @Override
-        public SearchPerformer getPerformer(long token, String keywords) {
-            return new EztvSearchPerformer("eztv.ag", token, keywords, DEFAULT_TIMEOUT);
-        }
-    };
-
-    public static final SearchEngine TPB = new SearchEngine("TPB", Constants.PREF_KEY_SEARCH_USE_TPB) {
-        @Override
-        public SearchPerformer getPerformer(long token, String keywords) {
-            return new TPBSearchPerformer("thepiratebay.org", token, keywords, DEFAULT_TIMEOUT);
-        }
-    };
-
-    public static final SearchEngine YIFY = new SearchEngine("Yify", Constants.PREF_KEY_SEARCH_USE_YIFY) {
-        @Override
-        public SearchPerformer getPerformer(long token, String keywords) {
-            return new YifySearchPerformer("www.yify-torrent.org", token, keywords, DEFAULT_TIMEOUT);
-        }
-    };
-
-    public static final SearchEngine PIXABAY = new SearchEngine("Pixabay", Constants.PREF_KEY_SEARCH_USE_PIXABAY) {
-        @Override
-        public SearchPerformer getPerformer(long token, String keywords) {
-            return new PixabaySearchPerformer(token, keywords, DEFAULT_TIMEOUT);
-        }
-    };
-
-    private static final List<SearchEngine> ALL_ENGINES = Arrays.asList(YIFY, FROSTCLICK, ZOOQLE, TPB, SOUNCLOUD, ARCHIVE, PIXABAY, TORLOCK, TORRENTDOWNLOADS, LIMETORRENTS, EZTV);
+    private static final List<SearchEngine> ALL_ENGINES = Collections.singletonList(SOUNCLOUD);
 }

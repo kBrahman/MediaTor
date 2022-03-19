@@ -19,11 +19,8 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[披露： 虽然建议您下载， <b>您不需要VPN使用FrostWire。 </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>信息:</b> 触摸应用的标签]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>您的隐私是一项基本人权</b>. 不受保护的连接意味着您在线进行的所有操作（包括<b>下载，搜索，消息传递</b>）都可以被网络上的任何人监控和拦截，例如： 互联网服务提供商，黑客，政府。<br><br><b>我们强烈建议您使用VPN服务</b>. <br> 以下是一些提供可靠服务并与FrostWire配合良好的选项：]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ 您已使用VPN连接到Internet。 <br><br> 如果您尚未使用，我们建议您使用以下服务之一加密您的连接并<b>保护您的隐私</b>。 ]]></string>
-    <string name="activity_preferences_name">设置</string>
     <string name="activity_chat_named">聊天</string>
     <string name="activity_downloads_name">主动下载</string>
     <string name="activity_uploads_name">主动上传</string>
@@ -214,7 +211,6 @@
     <string name="not_connected">没有连接</string>
     <string name="mobile_data">移动数据</string>
     <string name="media_player_failed">播放器失败</string>
-    <string name="activity_media_player_name">播放器</string>
     <string name="search_settings">搜索设置</string>
     <string name="use_zooqle">使用 Zooqle.com</string>
     <string name="use_tpb">使用 ThePirateBay.org</string>
@@ -539,7 +535,6 @@
     <string name="select_option_below">选择以下选项：</string>
     <string name="use_limetorrents">使用Limetorrents</string>
     <string name="error_no_internet_connection">错误：检查Internet连接</string>
-    <string name="why_we_need_storage_permissions">为什么我们需要存储权限。</string>
     <string name="invalid_filename">无效的文件名</string>
     <string name="wifi_network_unavailable">Wifi网络不可用</string>
     <string name="select_all">全选</string>
@@ -581,7 +576,6 @@
     <string name="remove_ads">移除广告</string>
     <string name="advertisement">廣告</string>
     <string name="all_free_downloads">所有免費下載</string>
-    <string name="frostwire_sticker_and_more">FrostWire貼紙和更多</string>
     <string name="wifi_networks_only_summary">保存數據。 僅在建立Wi-Fi連接時下載。 </string>
     <string name="notifications_other_settings">通知和其他</string>
 

@@ -10,14 +10,13 @@ import java.util.LinkedList;
 import java.util.List;
 
 import z.zer.tor.media.BuildConfig;
-import z.zer.tor.media.android.gui.LocalSearchEngine;
 import z.zer.tor.media.search.PagedWebSearchPerformer;
 import z.zer.tor.media.search.SearchResult;
 import z.zer.tor.media.util.JsonUtils;
 
 public final class SoundCloudSearchPerformer extends PagedWebSearchPerformer {
 
-    private static final String SOUND_CLOUD_CLIENT_ID = BuildConfig.SOUND_CLOUD_KEY;
+    private static final String SOUND_CLOUD_CLIENT_ID = BuildConfig.S_C_KEY;
     private static final String TAG = SoundCloudSearchPerformer.class.getSimpleName();
 
     public SoundCloudSearchPerformer(String domainName, long token, String keywords, int timeout) {
@@ -30,6 +29,7 @@ public final class SoundCloudSearchPerformer extends PagedWebSearchPerformer {
     }
 
     private String buildDownloadUrl(SoundcloudItem item) {
+        Log.i(TAG, "sc item=>" + item);
         String downloadUrl;
         List<Tanscoding> transcodings = item.media.getTranscodings();
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
@@ -51,7 +51,7 @@ public final class SoundCloudSearchPerformer extends PagedWebSearchPerformer {
     }
 
     @Override
-    protected List<? extends SearchResult> parsePage(String page) {
+    protected List<SearchResult> parsePage(String page) {
         List<SearchResult> result = new LinkedList<>();
         JSONArray arr;
         try {

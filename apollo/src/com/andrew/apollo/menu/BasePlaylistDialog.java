@@ -33,10 +33,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.andrew.apollo.ui.fragments.PlaylistFragment;
 import com.andrew.apollo.utils.MusicUtils;
+
 import z.zer.tor.media.R;
-import z.zer.tor.media.android.gui.views.AbstractActivity;
 
 /**
  * A simple base class for the playlist dialogs.
@@ -133,13 +132,6 @@ abstract class BasePlaylistDialog extends DialogFragment {
             basePlaylistDialog.onSaveClick();
             MusicUtils.refresh();
             dialog.dismiss();
-
-            // refresh the PlaylistFragment
-            AbstractActivity act = (AbstractActivity) basePlaylistDialog.getActivity();
-            PlaylistFragment f = act.findFragment(PlaylistFragment.class);
-            if (f != null) {
-                f.refresh();
-            }
         }
     }
 

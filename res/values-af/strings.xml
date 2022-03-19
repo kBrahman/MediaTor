@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Raak toegepaste etikette aan]]></string>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Openbaarmaking:</b> Alhoewel dit aanbeveel word vir jou aflaai, veral wanneer sensitiewe inligting (bv. bankdienste) afgelaai of verruil word en tydens die gebruik van openbare Wi-Fi- of mobiele data, <b> het jy nie \'n Skynprivaatnetwerk nodig om MediaTor te gebruik nie.</b>]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>U privaatheid is \'n fundamentele mensereg</b>. \'N Onbeskermde verbinding beteken alles wat jy aanlyn doen, insluitend <b>navrae, boodskappe en aflaaisels</b>, kan deur enigiemand op u netwerk gemonitor en opgesny word, bv. Internet Diensverskaffers, hackers, regerings.<br><br><b>Ons beveel sterk aan om \'n Skynprivaatnetwerkdiens te gebruik</b>. <br> Hier is \'n paar opsies wat betroubare diens lewer en goed werk met FrostWire:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Jy is gekoppel aan die internet deur \'n Skynprivaatnetwerk te gebruik. <br><br> As jy nie reeds is nie, beveel ons aan om een van die onderstaande dienste te gebruik om jou verbinding te enkripteer en <b>jou privaatheid te beveilig</b>. ]]></string>
     <string name="vpn_not_found">Geen VPN. Oorweeg enkripsieverbinding.</string>
     <string name="azureus_peer_manager_status_finished">Klaar</string>
@@ -92,7 +90,6 @@
     <string name="loading_all">Alles laai</string>
     <string name="azureus_manager_item_allocating">Toekenning</string>
     <string name="app_shutdown_dlg_message">Dit sal alle oordragte en agtergronddienste afsluit. Is jy seker?</string>
-    <string name="frostwire_sticker_and_more">FrostWire plakkers en nog baie meer</string>
     <string name="show_transfers_on_download_start">Wys oordragte op aflaai begin</string>
     <string name="sharing">Deel</string>
     <string name="send_feedback">Stuur terugvoering</string>
@@ -100,7 +97,6 @@
     <string name="tos_refuse">Weier</string>
     <string name="touch_applied_tags_to_include_exclude">Raak toegepaste etikette om in te sluit / uit te sluit</string>
     <string name="torrent_max_total_connections">Maks Totale verbindings</string>
-    <string name="activity_preferences_name">Instellings</string>
     <string name="use_torrentdownloads">Gebruik TorrentDownloads</string>
     <string name="ten_dollars">$10</string>
     <string name="my_files">My lêers</string>
@@ -113,7 +109,6 @@
     <string name="invalid_torrent_file">Ongeldige Torrent-lêer</string>
     <string name="activity_downloads_title_text">Downloads</string>
     <string name="disconnecting">Ontkoppel</string>
-    <string name="activity_media_player_name">Media Player</string>
     <string name="choose_email_app">Kies \'n e-posprogram…</string>
     <string name="failed_to_add_download">Kon nie aflaai laai nie</string>
     <string name="vibrate_on_finished_download">Vibreer wanneer aflaai afgelaai word</string>
@@ -452,7 +447,6 @@
     <string name="use_yify_summary">Yify is magneet gebaseer, werk net op Wifi</string>
     <string name="error_no_internet_connection">Fout: Gaan na internet konneksie</string>
     <string name="azureus_manager_item_error">Fout</string>
-    <string name="why_we_need_storage_permissions">Hoekom benodig ons stoorregte.</string>
     <string name="get_a_frostwire_tshirt">Kry \'n MediaTor T-shirt</string>
     <string name="media_type_applications">Aansoeke</string>
     <string name="invalid_filename">Ongeldige lêernaam</string>

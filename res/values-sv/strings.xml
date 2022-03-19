@@ -19,10 +19,8 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Avslöjande:</b> Även rekommenderas för dina nedladdningar, speciellt när du hämtar eller byter känslig information (t ex bank) och när du använder offentlig Wi-Fi eller mobil data, <b>du behöver inte en VPN att använda Frostwire. </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Peka på använda taggar till]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Du är ansluten till Internet via en VPN. <br><br> Om du inte redan rekommenderar vi att du använder en av tjänsterna nedan för att kryptera din anslutning och <b>skydda din integritet</b>. ]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Din integritet är en grundläggande mänsklig rättighet</b>. En oskyddad anslutning betyder allt du gör online, inklusive <b>nedladdningar, sökningar, meddelanden</b>, kan övervakas och avlyssas av någon i ditt nätverk, t.ex. Internetleverantörer, hackare, regeringar.<br><br><b>Vi rekommenderar starkt att du använder en VPN-tjänst</b>. <br> Här är några alternativ som ger pålitlig service och fungerar bra med FrostWire:]]></string>
     <string name="vpn_not_found">Ingen VPN. Överväga att kryptera anslutning.</string>
     <string name="azureus_peer_manager_status_finished">Färdiga</string>
     <string name="activity_mediaplayer_name">Mediaspelare</string>
@@ -101,14 +99,12 @@
     <string name="loading_all">Laddar Alla</string>
     <string name="azureus_manager_item_allocating">Fördela</string>
     <string name="app_shutdown_dlg_message">Detta kommer avstängning alla överföringar och bakgrundstjänster. Är du säker?</string>
-    <string name="frostwire_sticker_and_more">FrostWire klistermärken och mer</string>
     <string name="show_transfers_on_download_start">Visa överföringar på nedladdning start</string>
     <string name="sharing">Delning</string>
     <string name="send_feedback">Skicka feedback</string>
     <string name="chat_actions">Chatt åtgärder</string>
     <string name="tos_refuse">Vägra</string>
     <string name="torrent_max_total_connections">Max Totalt Anslutningar</string>
-    <string name="activity_preferences_name">Inställningar</string>
     <string name="use_torrentdownloads">Använda TorrentDownloads</string>
     <string name="ten_dollars">$10</string>
     <string name="my_files">Mina filer</string>
@@ -120,7 +116,6 @@
     <string name="invalid_torrent_file">Ogiltig Torrent-fil</string>
     <string name="activity_downloads_title_text">Nedladdningar</string>
     <string name="disconnecting">Koppla</string>
-    <string name="activity_media_player_name">Mediaspelare</string>
     <string name="choose_email_app">Välj ett e-postprogram…</string>
     <string name="failed_to_add_download">Det gick inte att lägga till nedladdning</string>
     <string name="vibrate_on_finished_download">Vibrera när nedladdningen är klar</string>
@@ -423,7 +418,6 @@
     <string name="use_yify_summary">Yify är magnet baserad, fungerar endast på Wifi</string>
     <string name="error_no_internet_connection">Fel: Kontrollera Internet-anslutningen</string>
     <string name="azureus_manager_item_error">Fel</string>
-    <string name="why_we_need_storage_permissions">Därför behöver vi lagrings behörigheter.</string>
     <string name="get_a_frostwire_tshirt">Få en MediaTor T-shirt</string>
     <string name="media_type_applications">Applikationer</string>
     <string name="invalid_filename">Ogiltigt filnamn</string>

@@ -19,12 +19,9 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[* Mặc dù đề nghị cho tải về của bạn, <b>bạn không cần một VPN để sử dụng FrostWire.</b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>Thông tin:</b> Chạm vào thẻ được áp dụng để]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Quyền riêng tư của bạn là quyền cơ bản của con người</b>. Kết nối không được bảo vệ có nghĩa là mọi thứ bạn thực hiện trực tuyến bao gồm <b>tải xuống, tìm kiếm, nhắn tin</b>, có thể được theo dõi và chặn bởi bất kỳ ai trên mạng của bạn, ví dụ: Nhà cung cấp dịch vụ Internet, tin tặc, chính phủ.<br><br><b>Chúng tôi mạnh mẽ khuyên bạn nên sử dụng dịch vụ VPN</b>. <br> Dưới đây là một số tùy chọn cung cấp dịch vụ đáng tin cậy và hoạt động tốt với FrostWire:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Bạn đang kết nối với Internet bằng VPN. <br><br> Nếu bạn chưa sẵn sàng, chúng tôi khuyên bạn nên sử dụng một trong các dịch vụ bên dưới để mã hóa kết nối của bạn và <b>bảo vệ quyền riêng tư của bạn</b>. ]]></string>
     <string name="invalid_tracker_url">URL trình theo dõi không hợp lệ</string>
-    <string name="activity_preferences_name">Thiết đặt</string>
     <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Tải về đang hoạt động</string>
     <string name="activity_uploads_name">Tải lên đang hoạt động</string>
@@ -215,7 +212,6 @@
     <string name="not_connected">Không kết nối</string>
     <string name="mobile_data">Dữ liệu điện thoại</string>
     <string name="media_player_failed">Nghe nhạc thất bại</string>
-    <string name="activity_media_player_name">Trình nghe nhạc</string>
     <string name="search_settings">Thiết lập tìm kiếm</string>
     <string name="use_zooqle">Chọn Zooqle.com</string>
     <string name="use_tpb">Chọn ThePirateBay.org</string>
@@ -513,7 +509,6 @@
     <string name="use_limetorrents">Chọn Limetorrents</string>
     <string name="use_yify_summary">Yify là nam châm dựa, chỉ hoạt động trên Wifi</string>
     <string name="error_no_internet_connection">Lỗi: Kiểm tra kết nối Internet</string>
-    <string name="why_we_need_storage_permissions">Tại sao chúng ta cần cho phép lưu trữ.</string>
     <string name="invalid_filename">Tên tập tin không hợp lệ</string>
     <string name="use_archiveorg">Chọn Archive.org</string>
     <string name="wifi_network_unavailable">Không có mạng Wifi</string>
@@ -584,7 +579,6 @@
     <string name="keep_the_project_alive">Giữ dự án sống</string>
     <string name="remove_ads">Loại bỏ các quảng cáo</string>
     <string name="use_tpb_summary">TPB là nam châm dựa, chỉ hoạt động trên Wifi</string>
-    <string name="frostwire_sticker_and_more">Dán MediaTor và nhiều hơn nữa</string>
     <string name="wifi_networks_only_summary">Lưu dữ liệu. chỉ tải về nếu kết nối Wi-Fi được thiết lập. </string>
     <string name="notifications_other_settings">Thông báo và khác</string>
     <string name="wifi_networks_only">Mạng Wifi chỉ</string>

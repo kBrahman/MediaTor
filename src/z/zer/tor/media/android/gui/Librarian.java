@@ -28,7 +28,6 @@ import z.zer.tor.media.android.core.player.EphemeralPlaylist;
 import z.zer.tor.media.android.core.player.PlaylistItem;
 import z.zer.tor.media.android.core.providers.TableFetcher;
 import z.zer.tor.media.android.core.providers.TableFetchers;
-import z.zer.tor.media.android.gui.transfers.Transfers;
 import z.zer.tor.media.android.gui.util.UIUtils;
 import z.zer.tor.media.android.util.SystemUtils;
 import z.zer.tor.media.platform.FileSystem;
@@ -127,69 +126,7 @@ public final class Librarian {
         return null;
     }
 
-    /**
-     * Deletes files.
-     * If the fileType is audio it'll use MusicUtils.deleteTracks and
-     * tell apollo to clean everything there, playslists, recents, etc.
-     *
-     * @param context
-     * @param fileType
-     * @param fds
-     */
-    public void deleteFiles(final Context context, byte fileType, Collection<FileDescriptor> fds) {
-        List<Integer> ids = new ArrayList<>(fds.size());
-        final int audioMediaType = MediaType.getAudioMediaType().getId();
-        if (fileType == audioMediaType) {
-            ArrayList<Long> trackIdsToDelete = new ArrayList<>();
-            for (FileDescriptor fd : fds) {
-                // just in case, as we had similar checks in other code
-                if (fd.fileType == audioMediaType) {
-                    trackIdsToDelete.add((long) fd.id);
-                    ids.add(fd.id);
-                }
-            }
-            // wish I could do just trackIdsToDelete.toArray(new long[0]) ...
-            long[] songsArray = new long[trackIdsToDelete.size()];
-            int i = 0;
-            for (Long l : trackIdsToDelete) {
-                songsArray[i++] = l;
-            }
-            try {
-                MusicUtils.deleteTracks(context, songsArray, false);
-            } catch (Throwable t) {
-                t.printStackTrace();
-            }
-        } else {
-            for (FileDescriptor fd : fds) {
-                ids.add(fd.id);
-            }
-        }
-
-        try {
-            if (context != null) {
-                ContentResolver cr = context.getContentResolver();
-                TableFetcher fetcher = TableFetchers.getFetcher(fileType);
-                cr.delete(fetcher.getContentUri(), MediaColumns._ID + " IN " + buildSet(ids), null);
-            } else {
-                Log.e(TAG, "Failed to delete files from media store, no context available");
-            }
-        } catch (Throwable e) {
-            Log.e(TAG, "Failed to delete files from media store", e);
-        }
-
-        FileSystem fs = Platforms.fileSystem();
-        for (FileDescriptor fd : fds) {
-            try {
-                fs.delete(new File(fd.filePath));
-            } catch (Throwable ignored) {
-            }
-        }
-
-        UIUtils.broadcastAction(context, Constants.ACTION_FILE_ADDED_OR_REMOVED, new UIUtils.IntentByteExtra(Constants.EXTRA_REFRESH_FILE_TYPE, fileType));
-    }
-
     public void scan(final Context context, File file) {
-        scan(context, file, Transfers.getIgnorableFiles());
         if (context == null) {
             Log.w(TAG, "Librarian has no `context` object to scan() with.");
             return;
@@ -227,14 +164,6 @@ public final class Librarian {
         }
 
         Context context = contextRef.get();
-
-        Set<File> ignorableFiles = Transfers.getIgnorableFiles();
-
-        syncMediaStore(context, Constants.FILE_TYPE_AUDIO, ignorableFiles);
-        syncMediaStore(context, Constants.FILE_TYPE_PICTURES, ignorableFiles);
-        syncMediaStore(context, Constants.FILE_TYPE_VIDEOS, ignorableFiles);
-        syncMediaStore(context, Constants.FILE_TYPE_RINGTONES, ignorableFiles);
-        syncMediaStore(context, Constants.FILE_TYPE_DOCUMENTS, ignorableFiles);
 
         Platforms.fileSystem().scan(Platforms.torrents());
     }
@@ -334,11 +263,6 @@ public final class Librarian {
         }
         return result;
     }
-
-    public List<FileDescriptor> getFiles(final Context context, String filepath, boolean exactPathMatch) {
-        return getFiles(context, getFileType(filepath, true), filepath, exactPathMatch);
-    }
-
     /**
      * @param fileType
      * @param filepath
@@ -357,16 +281,11 @@ public final class Librarian {
             if (ignorableFiles.contains(file)) {
                 return;
             }
-            new UniversalScanner(context).scan(file.getAbsolutePath());
         } else if (file.isDirectory() && file.canRead()) {
             Collection<File> flattenedFiles = getAllFolderFiles(file, null);
 
             if (ignorableFiles != null && !ignorableFiles.isEmpty()) {
                 flattenedFiles.removeAll(ignorableFiles);
-            }
-
-            if (flattenedFiles != null && !flattenedFiles.isEmpty()) {
-                new UniversalScanner(context).scan(flattenedFiles);
             }
         }
     }
@@ -412,22 +331,6 @@ public final class Librarian {
             }
         }
         return results;
-    }
-
-    private byte getFileType(String filename, boolean returnTorrentsAsDocument) {
-        byte result = Constants.FILE_TYPE_DOCUMENTS;
-
-        MediaType mt = MediaType.getMediaTypeForExtension(FilenameUtils.getExtension(filename));
-
-        if (mt != null) {
-            result = (byte) mt.getId();
-        }
-
-        if (returnTorrentsAsDocument && result == Constants.FILE_TYPE_TORRENTS) {
-            result = Constants.FILE_TYPE_DOCUMENTS;
-        }
-
-        return result;
     }
 
     private static String buildSet(List<?> list) {

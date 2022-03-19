@@ -19,10 +19,8 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>การเปิดเผยข้อมูล:</b> แม้ว่าแนะนำสำหรับการดาวน์โหลดของคุณโดยเฉพาะอย่างยิ่งเมื่อดาวน์โหลดหรือแลกเปลี่ยนข้อมูลที่สำคัญ (เช่นธนาคาร) และในขณะที่ใช้ Wi-Fi สาธารณะหรือข้อมูลมือถือ <b>คุณไม่จำเป็นต้อง VPN เพื่อใช้MediaTor</b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>ข้อมูล:</b> แตะแท็กที่ใช้ไปที่]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ คุณเชื่อมต่อกับอินเทอร์เน็ตโดยใช้ VPN <br><br> หากคุณยังไม่ได้เราขอแนะนำให้ใช้บริการด้านล่างเพื่อเข้ารหัสการเชื่อมต่อของคุณและ <b>ปกป้องข้อมูลส่วนบุคคลของคุณ</b> ]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>ความเป็นส่วนตัวของคุณเป็นสิทธิขั้นพื้นฐานของมนุษย์</b>. การเชื่อมต่อที่ไม่มีการป้องกันหมายถึงทุกอย่างที่คุณทำแบบออนไลน์ ได้แก่ <b>การดาวน์โหลดการค้นหาการส่งข้อความ</b> สามารถตรวจสอบและสกัดกั้นโดยทุกคนในเครือข่ายของคุณได้เช่น ผู้ให้บริการอินเทอร์เน็ตแฮกเกอร์รัฐบาล<br><br><b>เราขอแนะนำให้ใช้บริการ VPN เป็นหลัก</b>. <br> นี่คือตัวเลือกบางอย่างที่ให้บริการที่เชื่อถือได้และทำงานได้ดีกับ FrostWire:]]></string>
     <string name="vpn_not_found">ไม่มี VPN พิจารณาการเข้ารหัสการเชื่อมต่อ</string>
     <string name="azureus_peer_manager_status_finished">เสร็จ</string>
     <string name="activity_mediaplayer_name">Media Player</string>
@@ -99,14 +97,12 @@
     <string name="loading_all">โหลดทั้งหมด</string>
     <string name="azureus_manager_item_allocating">การจัดสรร</string>
     <string name="app_shutdown_dlg_message">นี้จะปิดการโอนและบริการทั้งหมดพื้นหลัง คุณแน่ใจไหม?</string>
-    <string name="frostwire_sticker_and_more">สติกเกอร์ MediaTor และอื่น ๆ</string>
     <string name="show_transfers_on_download_start">แสดงการโอนเงินในการดาวน์โหลดเริ่มต้น</string>
     <string name="sharing">ใช้งานร่วมกัน</string>
     <string name="send_feedback">ส่งความคิดเห็น</string>
     <string name="chat_actions">การกระทำการพูดคุย</string>
     <string name="tos_refuse">ปฏิเสธ</string>
     <string name="torrent_max_total_connections">การเชื่อมต่อสูงสุดรวม</string>
-    <string name="activity_preferences_name">การตั้งค่า</string>
     <string name="use_torrentdownloads">ใช้ TorrentDownloads</string>
     <string name="ten_dollars">$10</string>
     <string name="my_files">ไฟล์ของฉัน</string>
@@ -118,7 +114,6 @@
     <string name="invalid_torrent_file">ไฟล์ Torrent ที่ไม่ถูกต้อง</string>
     <string name="activity_downloads_title_text">ดาวน์โหลด</string>
     <string name="disconnecting">ยกเลิกการเชื่อมต่อ</string>
-    <string name="activity_media_player_name">Media Player</string>
     <string name="choose_email_app">เลือกโปรแกรมอีเมล…</string>
     <string name="failed_to_add_download">ไม่สามารถเพิ่มดาวน์โหลด</string>
     <string name="vibrate_on_finished_download">สั่นเมื่อดาวน์โหลดเสร็จสิ้น</string>
@@ -418,7 +413,6 @@
     <string name="use_yify_summary">Yify เป็นแม่เหล็กที่ใช้งานได้เฉพาะใน WiFi</string>
     <string name="error_no_internet_connection">ข้อผิดพลาด: ตรวจสอบการเชื่อมต่ออินเทอร์เน็ต</string>
     <string name="azureus_manager_item_error">ความผิดพลาด</string>
-    <string name="why_we_need_storage_permissions">ทำไมเราต้องมีสิทธิ์การจัดเก็บข้อมูล</string>
     <string name="get_a_frostwire_tshirt">ได้รับ MediaTor เสื้อยืด</string>
     <string name="media_type_applications">การประยุกต์ใช้งาน</string>
     <string name="invalid_filename">ชื่อไฟล์ที่ไม่ถูกต้อง</string>

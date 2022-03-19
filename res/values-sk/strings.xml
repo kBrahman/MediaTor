@@ -19,9 +19,7 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Zverejnenie:</b> Hoci odporúčaná pre sťahovanie, najmä pri sťahovaní alebo výmene citlivých informácií (napr. bankovníctva) a pri používaní verejných dát Wi-Fi alebo mobilných údajov, <b>nepotrebujete VPN použiť FrostWire.</b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Dotknite sa aplikovaných značiek na]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Vaše súkromie je základným ľudským právom</b>. Nechránené pripojenie znamená, že všetko, čo robíte online, vrátane <b>sťahovania, vyhľadávania a odosielania správ</b>, môže byť monitorované a zachytené každým v sieti, napr. Poskytovatelia internetových služieb, hackeri, vlády.<br><br><b>Odporúčame vám používať službu VPN</b>. <br> Tu sú niektoré možnosti, ktoré poskytujú spoľahlivé služby a fungujú dobre s FrostWire:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Ste pripojení k internetu pomocou VPN. <br><br> Ak ešte nie ste, odporúčame používať jednu z nižšie uvedených služieb na šifrovanie vášho pripojenia a <b>zabezpečenie ochrany osobných údajov</b>. ]]></string>
     <string name="vpn_not_found">No VPN. Zoberme si šifrovanie spojenia.</string>
     <string name="azureus_peer_manager_status_finished">Dokončené</string>
@@ -99,14 +97,12 @@
     <string name="loading_all">Načítanie všetko</string>
     <string name="azureus_manager_item_allocating">Pridelenie</string>
     <string name="app_shutdown_dlg_message">To bude vypnutý všetky prevody a služby na pozadí. Si si istý?</string>
-    <string name="frostwire_sticker_and_more">FrostWire samolepky a ďalšie</string>
     <string name="show_transfers_on_download_start">Zobraziť prevody na stiahnutie Začiatok</string>
     <string name="sharing">Zdieľanie</string>
     <string name="send_feedback">Poslať spätnú väzbu</string>
     <string name="chat_actions">Chat akcie</string>
     <string name="tos_refuse">Odmietnuť</string>
     <string name="torrent_max_total_connections">Maximálna celková Pripojenie</string>
-    <string name="activity_preferences_name">Nastavenie</string>
     <string name="use_torrentdownloads">Použiť TorrentDownloads</string>
     <string name="ten_dollars">$10</string>
     <string name="my_files">Moje súbory</string>
@@ -118,7 +114,6 @@
     <string name="invalid_torrent_file">Neplatný súbor torrent</string>
     <string name="activity_downloads_title_text">K stiahnutiu</string>
     <string name="disconnecting">Odpojenie</string>
-    <string name="activity_media_player_name">Mediálny prehrávač</string>
     <string name="choose_email_app">Vyberte e-mailovú aplikáciu…</string>
     <string name="failed_to_add_download">Nepodarilo sa pridať k stiahnutiu</string>
     <string name="vibrate_on_finished_download">Vibrujú, keď dokončí sťahovanie</string>
@@ -418,7 +413,6 @@
     <string name="use_yify_summary">Yify je magnet na báze funguje iba na Wifi</string>
     <string name="error_no_internet_connection">Chyba: Skontrolujte pripojenie k Internetu</string>
     <string name="azureus_manager_item_error">Chyba</string>
-    <string name="why_we_need_storage_permissions">Prečo potrebujeme oprávnenie pre ukladanie.</string>
     <string name="get_a_frostwire_tshirt">Získať MediaTor Tričko</string>
     <string name="media_type_applications">Aplikácie</string>
     <string name="invalid_filename">Neplatný názov súboru</string>

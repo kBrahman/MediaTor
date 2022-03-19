@@ -19,10 +19,8 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Közzététel:</b> Bár ajánlott a letöltéseket, különösen akkor, ha érzékeny információk (például banki szolgáltatások) letöltése és cseréje, valamint nyilvános Wi-Fi vagy mobil adat használata közben, <b>akkor nem kell egy VPN használata FrostWire. </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Érintse meg az alkalmazott címkéket a következőhöz:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ VPN-vel csatlakozik az internethez. <br><br> Ha még nem vagy, javasoljuk, hogy az alábbi szolgáltatások valamelyikét használja a titkosításához, és <b>a magánélet védelme</b>. ]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Az Ön magánéletének alapvető emberi jog</b>.A nem védett kapcsolat azt jelenti, hogy mindaz, amit online végez, beleértve a <b>letöltéseket, kereséseket, üzeneteket</b>, nyomon követhetők és elfoghatók bárkinek a hálózaton, pl. Internetszolgáltatók, hackerek, kormányok.<br><br><b>Erősen ajánljuk a VPN szolgáltatás használatát</b>. <br> Íme néhány olyan opció, amely megbízható szolgáltatást nyújt, és jól működik a FrostWire:]]></string>
     <string name="vpn_not_found">Nem VPN. Tekintsük titkosítása kapcsolatot.</string>
     <string name="azureus_peer_manager_status_finished">Befejezett</string>
     <string name="activity_mediaplayer_name">Médialejátszó</string>
@@ -105,7 +103,6 @@
     <string name="chat_actions">Chat Hozzászólások</string>
     <string name="tos_refuse">Megtagadni</string>
     <string name="torrent_max_total_connections">Maximális teljes kapcsolatok</string>
-    <string name="activity_preferences_name">Beállítások</string>
     <string name="use_torrentdownloads">Használja TorrentDownloads</string>
     <string name="ten_dollars">$10</string>
     <string name="my_files">A fájljaim</string>
@@ -117,7 +114,6 @@
     <string name="invalid_torrent_file">Érvénytelen torrent fájl</string>
     <string name="activity_downloads_title_text">Letöltések</string>
     <string name="disconnecting">Leválasztása</string>
-    <string name="activity_media_player_name">Médialejátszó</string>
     <string name="choose_email_app">Válasszon egy e-mail alkalmazás…</string>
     <string name="failed_to_add_download">Nem sikerült hozzáadni letöltés</string>
     <string name="vibrate_on_finished_download">Rezegjen letöltés befejeződik</string>
@@ -411,7 +407,6 @@
     <string name="use_yify_summary">Yify van mágnes alapú, csak akkor működik, Wifi</string>
     <string name="error_no_internet_connection">Hiba: Az internetkapcsolat ellenőrzése</string>
     <string name="azureus_manager_item_error">Hiba</string>
-    <string name="why_we_need_storage_permissions">Miért van szükségünk tárolási engedélyeket.</string>
     <string name="get_a_frostwire_tshirt">Kap egy MediaTor pólóval</string>
     <string name="media_type_applications">Alkalmazások</string>
     <string name="invalid_filename">Érvénytelen fáljnév</string>
@@ -583,7 +578,6 @@
     <string name="remove_ads">Hirdetések eltávolítása</string>
     <string name="your_connection_has_dropped_stopping_services">A Wifi kapcsolat megszakad. Szolgáltatások leállítása.</string>
     <string name="use_tpb_summary">TPB van mágnes alapú, csak akkor működik, Wifi</string>
-    <string name="frostwire_sticker_and_more">FrostWire matricák és több</string>
     <string name="wifi_networks_only_summary">Adatok tárolására. Letöltés csak akkor, ha a Wi-Fi kapcsolat jön létre. </string>
     <string name="notifications_other_settings">Értesítések és egyéb</string>
     <string name="wifi_networks_only">Wi-Fi hálózatok csak</string>

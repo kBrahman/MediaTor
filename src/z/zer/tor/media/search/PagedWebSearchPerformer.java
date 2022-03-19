@@ -25,8 +25,8 @@ public abstract class PagedWebSearchPerformer extends WebSearchPerformer {
         }
     }
 
-    protected List<? extends SearchResult> parsePage(int page) {
-        List<? extends SearchResult> result = Collections.emptyList();
+    protected List<SearchResult> parsePage(int page) {
+        List<SearchResult> result = Collections.emptyList();
         String url = null;
         try {
             url = getUrl(page, getEncodedKeywords());
@@ -50,5 +50,5 @@ public abstract class PagedWebSearchPerformer extends WebSearchPerformer {
 
     protected abstract String getUrl(int page, String encodedKeywords);
 
-    protected abstract List<? extends SearchResult> parsePage(String page);
+    protected abstract List<SearchResult> parsePage(String page);
 }

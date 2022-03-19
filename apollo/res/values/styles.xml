@@ -46,10 +46,6 @@
         <item name="android:contentDescription">@string/accessibility_next</item>
     </style>
 
-    <style name="NotificationAction.Collapse" parent="@style/NotificationAction">
-        <item name="android:src">@drawable/btn_notification_collapse</item>
-    </style>
-
     <!-- Bottom Action Bar TextViews -->
     <style name="BottomActionBarText">
         <item name="android:layout_width">wrap_content</item>

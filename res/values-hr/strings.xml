@@ -19,9 +19,7 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Razotkrivanje:</b> Iako je preporučeno za download, osobito pri svakom preuzimanju ili razmjeni osjetljivih informacija (npr. bankarstva) i tijekom korištenja javnih Wi-Fi ili mobilnih podataka, <b>ne morate VPN koristiti FrostWire. </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Dodirnite dodijeljene oznake u]]></string>
-    <string name="activity_preferences_name">Postavke</string>
     <string name="activity_chat_named">Razgovor</string>
     <string name="activity_downloads_name">Aktivna preuzimanja</string>
     <string name="activity_uploads_name">Aktivna slanja</string>
@@ -307,7 +305,6 @@
     <string name="input_text_hint">Što tražite? (savjeti od Googlea)</string>
     <string name="sdcard_storage">SD skladište</string>
     <string name="invalid_torrent_file">Nevažeća torrent datoteka</string>
-    <string name="activity_media_player_name">Svirač medija</string>
     <string name="failed_to_add_download">Nije moguće dodati preuzimanje</string>
     <string name="my_filetype">Moje %s</string>
     <string name="torrent_max_download_speed_summary">Maksimalna brzina preuzimanja</string>
@@ -474,7 +471,6 @@
     <string name="shutting_down">Gasim…</string>
     <string name="send_bitcoin_tip">Pošalji Bitcoin napojnicu</string>
     <string name="transfers_context_menu_copy_infohash">Kopiraj InfoHash</string>
-    <string name="why_we_need_storage_permissions">Zašto nam je potrebna dozvola za pohranu.</string>
     <string name="restarting">Ponovno pokrećem…</string>
     <string name="keep_in_touch">Ostanite u kontaktu!</string>
     <string name="action_menu_overflow_description">Više opcija</string>
@@ -504,7 +500,6 @@
     <string name="selected">odabran</string>
     <string name="bittorrent_off">BitTorrent off</string>
     <string name="storage_picker_treeuri_error">Neočekivana pogreška put branje pohranu</string>
-    <string name="frostwire_sticker_and_more">FrostWire naljepnice i još mnogo toga</string>
     <string name="use_torrentdownloads">Koristi TorrentDownloads</string>
     <string name="the_file_could_not_be_seeded_bittorrent_will_remain_disconnected">Datoteka nije mogla biti zasijana. BitTorrent će ostati isključen.</string>
     <string name="protected_connection">VPN zaštićen</string>
@@ -696,7 +691,6 @@
     <string name="edit_tracker">Uredi tracker</string>
     <string name="down_speed">Brzina skidanja</string>
     <string name="completed">Dovršen</string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Vaša je privatnost temeljno ljudsko pravo</b>. Nezaštićena veza znači da sve osobe koje se bave online, uključujući <b>preuzimanja, pretraživanja, slanje poruka</b>, mogu pratiti i presresti bilo tko na vašoj mreži, npr. Davatelji internetskih usluga, hakeri, vlade.<br><br><b>Čvrsto preporučujemo upotrebu VPN usluge</b>. <br> Evo nekoliko opcija koje pružaju pouzdanu uslugu i dobro funkcioniraju uz FrostWire:]]></string>
     <string name="downloaded">Preuzeto</string>
     <string name="n_peers">%1$d kolega</string>
     <string name="sequential_download">Sekvencionalno preuzimanje</string>

@@ -20,12 +20,9 @@
 -->
 <resources>
     <!-- Important: Android is buggy with HTML, do not put HTML tags right next to text, leave a space, as it seems the text wrapping logic is considering HTML as visible text and you get premature wrapping. -->
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Обелодањивање:</b> Иако се препоручује за своје преузимања, нарочито када преузмете или размјените осјетљиве информације (нпр. банкарство) и док користите јавне Ви-Фи или мобилне податке, <b>не треба ВПН за коришћење FrostWire. </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>Инфо:</b> Тоуцх примењене ознаке на]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Повезани сте на Интернет помоћу ВПН-а. <br><br> Ако нисте већ, препоручујемо вам да користите једну од услуга испод да бисте шифровали везу и <b>заштитили своју приватност </b>. ]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Ваша приватност је основно људско право</b>. Незаштићена веза значи све што радите на мрежи, укључујући <b>преузимање, претраживање, размену порука</b>, може се пратити и пресретнути од стране било кога на вашој мрежи, нпр. Интернет провајдери, хакери, владе.<br><br><b>Стално препоручујемо коришћење ВПН сервиса</b>. <br> Ево неких опција које пружају поуздан сервис и добро функционишу са ФростВире:]]></string>
     <!-- non HTML tags. -->
-    <string name="activity_preferences_name">Подешавања</string>
     <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Активни бесплатно</string>
     <string name="activity_uploads_name">Активни Уплоадс</string>
@@ -225,7 +222,6 @@
     <string name="not_connected">Није повезан</string>
     <string name="mobile_data">Мобилни подаци</string>
     <string name="media_player_failed">Медиа плаиер фаилед</string>
-    <string name="activity_media_player_name">медиа плаиер</string>
     <string name="search_settings">Подешавања претраге</string>
     <string name="use_tpb">Користе TPB</string>
     <string name="use_tpb_summary">TPB је магнет за базиран, ради само на Вифи</string>
@@ -511,7 +507,6 @@
     <string name="frostwire_shutting_down_no_permissions">Жао ми је, MediaTor не може да настави без дозволе за приступ диску.</string>
     <string name="restarting">Поновно покретање…</string>
     <string name="restarting_summary">FrostWire ће се поново покренути сада одобрене дозволе да ступи на снагу</string>
-    <string name="why_we_need_storage_permissions">Зашто нам је потребна дозвола за складиштење.</string>
     <string name="why_we_need_storage_permissions_summary">FrostWire је апликација Филе Бровсер и Довнлоадер, тако да мора да буде у стању да приступи диску.\n\nБез своје дозволе MediaTor не може да функционише.\n\nЖелим да покушам поново?</string>
     <string name="shutting_down">Искључивање…</string>
     <string name="help">Помоћ</string>
@@ -601,7 +596,6 @@
     <string name="notifications_other_settings">Обавештења и других</string>
     <string name="bandwidth_usage_settings">бандвидтх Употреба</string>
     <string name="search_preferences">Сеарцх Преференцес</string>
-    <string name="frostwire_sticker_and_more">FrostWire налепнице и више</string>
     <string name="donate_your_time">Донате време</string>
     <string name="changelog">Changelog</string>
     <string name="cloud_download_aborted_on_mobile_data">Актуелна поставка спречава преузимање када није на Ви-Фи мрежи</string>

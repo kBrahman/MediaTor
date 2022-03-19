@@ -1,7 +1,6 @@
 package z.zer.tor.media.android.gui.views;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.IdRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.ActionMode;
+import androidx.fragment.app.Fragment;
 
 public abstract class AbstractFragment extends Fragment {
 
@@ -25,11 +25,7 @@ public abstract class AbstractFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(layoutResId, container, false);
-
-        if (!rootView.isInEditMode()) {
-            initComponents(rootView, savedInstanceState);
-        }
-
+        initComponents(rootView, savedInstanceState);
         return rootView;
     }
 

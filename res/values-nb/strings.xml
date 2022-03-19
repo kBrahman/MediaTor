@@ -19,7 +19,6 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Informasjon:</b> Selv anbefalt for nedlastingene dine, spesielt når du laster ned eller bytter sensitiv informasjon (for eksempel bank) og mens du bruker offentlig Wi-Fi eller mobildata, <b>du trenger ikke en VPN å bruke Frostwire. </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Trykk på påførte tagger til]]></string>
     <string name="vpn_not_found">Ingen VPN. Vurdere å kryptere forbindelsen.</string>
     <string name="azureus_peer_manager_status_finished">Ferdig</string>
@@ -99,14 +98,12 @@
     <string name="loading_all">Laster Alle</string>
     <string name="azureus_manager_item_allocating">Tildeling</string>
     <string name="app_shutdown_dlg_message">Dette vil nedleggelse alle overføringer og bakgrunnen tjenester. Er du sikker?</string>
-    <string name="frostwire_sticker_and_more">Frostwire klistremerker og mer</string>
     <string name="show_transfers_on_download_start">Vis overføringer på Last ned start</string>
     <string name="sharing">Deling</string>
     <string name="send_feedback">Gi tilbakemelding</string>
     <string name="chat_actions">Chat Handlinger</string>
     <string name="tos_refuse">Avslå</string>
     <string name="torrent_max_total_connections">Maksimale totale Tilkoblinger</string>
-    <string name="activity_preferences_name">Innstillinger</string>
     <string name="use_torrentdownloads">Bruk TorrentDownloads</string>
     <string name="ten_dollars">$10</string>
     <string name="my_files">Mine filer</string>
@@ -118,7 +115,6 @@
     <string name="invalid_torrent_file">Ugyldig Torrent fil</string>
     <string name="activity_downloads_title_text">Nedlastinger</string>
     <string name="disconnecting">Frakobling</string>
-    <string name="activity_media_player_name">Mediaspiller</string>
     <string name="choose_email_app">Velg en e-post-appen…</string>
     <string name="failed_to_add_download">Kunne ikke legge til nedlasting</string>
     <string name="vibrate_on_finished_download">Vibrere når nedlastingen er ferdig</string>
@@ -421,7 +417,6 @@
     <string name="use_yify_summary">Yify er magnet basert, fungerer bare på Wifi</string>
     <string name="error_no_internet_connection">Feil: Kontroller Internett-tilkobling</string>
     <string name="azureus_manager_item_error">Feil</string>
-    <string name="why_we_need_storage_permissions">Hvorfor vi trenger lager tillatelser.</string>
     <string name="get_a_frostwire_tshirt">Få en Frostwire T-skjorte</string>
     <string name="media_type_applications">Applikasjoner</string>
     <string name="invalid_filename">Ugyldig filnavn</string>
@@ -693,7 +688,6 @@
     <string name="edit_tracker">Rediger sporing</string>
     <string name="down_speed">Nedlastningshastighet</string>
     <string name="completed">Fullført</string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Ditt privatliv er en grunnleggende menneskerettighet</b>. En ubeskyttet forbindelse betyr alt du gjør online, inkludert <b>nedlastinger, søk, meldinger</b>, kan overvåkes og avlysses av alle på nettverket ditt, f.eks. Internettleverandører, hackere, regjeringer.<br><br><b>Vi anbefaler sterkt at du bruker en VPN-tjeneste</b>. <br> Her er noen alternativer som gir pålitelig service og fungerer bra med FrostWire:]]></string>
     <string name="downloaded">Lastet ned</string>
     <string name="n_peers">%1$d KOLLEGER</string>
     <string name="sequential_download">Sekventiell nedlasting</string>

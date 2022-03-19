@@ -21,10 +21,7 @@
 -->
 <resources>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Touchez les étiquettes appliqués à]]></string>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Divulgation:</b> Bien que recommandée pour vos téléchargements, en particulier lors du téléchargement ou de l\'échange d\'informations sensibles (par exemple bancaires) et lors de l\'utilisation de Wi-Fi publics ou de données mobiles, <b>vous ne pas besoin d\'un VPN à utiliser FrostWire. </b>]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Votre vie privée est un droit humain fondamental</b>. Une connexion non protégée signifie tout ce que vous faites en ligne <b>recherches, messagerie et téléchargements</b>, peut être surveillé et intercepté par n\'importe qui sur votre réseau, par ex. Fournisseurs de services Internet, hackers, gouvernements.<br><br><b>Nous recommandons fortement d\'utiliser un service VPN</b>. <br> Voici quelques options qui fournissent un service fiable et fonctionnent bien avec FrostWire:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Vous êtes connecté à Internet via un VPN. <br><br> Si ce n\'est déjà fait, nous vous recommandons d\'utiliser l\'un des services ci-dessous pour crypter votre connexion et <b>protéger votre vie privée</b>. ]]></string>
-    <string name="activity_preferences_name">Paramètres</string>
     <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Téléchargement actif</string>
     <string name="activity_uploads_name">Transfert actif</string>
@@ -216,7 +213,6 @@
     <string name="not_connected">Non connecté </string>
     <string name="mobile_data">Données mobiles </string>
     <string name="media_player_failed">Le lecteur multimédia a échoué </string>
-    <string name="activity_media_player_name">Lecteur multimédia </string>
     <string name="search_settings">Paramètres de recherche</string>
     <string name="use_zooqle">Avec Zooqle.com</string>
     <string name="use_tpb">Avec ThePirateBay.org</string>
@@ -535,7 +531,6 @@
     <string name="select_option_below">Sélectionnez l\'option ci-dessous:</string>
     <string name="use_limetorrents">Utilisez Limetorrents</string>
     <string name="error_no_internet_connection">Erreur: Vérifiez la connexion Internet</string>
-    <string name="why_we_need_storage_permissions">Pourquoi nous avons besoin des autorisations de stockage.</string>
     <string name="invalid_filename">Nom de fichier non valide</string>
     <string name="wifi_network_unavailable">Wifi Réseau Non disponible</string>
     <string name="select_all">Sélectionner tout</string>
@@ -583,7 +578,6 @@
     <string name="remove_ads">Supprimer les annonces</string>
     <string name="advertisement">publicité</string>
     <string name="all_free_downloads">Tous les téléchargements gratuits</string>
-    <string name="frostwire_sticker_and_more">Autocollants MediaTor et plus</string>
     <string name="wifi_networks_only_summary">Enregistrer des données. Téléchargement uniquement si la connexion Wi-Fi est établie. </string>
     <string name="notifications_other_settings">Notifications et autres</string>
 

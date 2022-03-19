@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2012 Andrew Neal
- * Modified by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2013-2017, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.andrew.apollo.ui.activities;
 
 import android.app.Activity;
@@ -37,9 +19,8 @@ import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.SearchView.OnQueryTextListener;
-import androidx.appcompat.widget.Toolbar;
+
 import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,7 +53,6 @@ import static com.andrew.apollo.utils.MusicUtils.musicPlaybackService;
 /**
  * Provides the search interface for Apollo.
  *
- * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public final class SearchActivity extends AbstractActivity implements LoaderCallbacks<Cursor>,
         OnScrollListener, OnQueryTextListener, OnItemClickListener, ServiceConnection {
@@ -109,32 +89,17 @@ public final class SearchActivity extends AbstractActivity implements LoaderCall
     }
 
     @Override
-    protected void initToolbar(Toolbar toolbar) {
-        View v = LayoutInflater.from(this).
-                inflate(R.layout.view_toolbar_title_subtitle_header, toolbar, false);
-        setToolbarView(v);
-
-        TextView title = findView(R.id.view_toolbar_header_title);
-        title.setText(R.string.my_music);
-    }
-
-    @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         // Control the media volume
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
-
         // Bind Apollo's service
         mToken = MusicUtils.bindToService(this, this);
-
         // Get the query
         final String query = getIntent().getStringExtra(SearchManager.QUERY);
         mFilterString = !TextUtils.isEmpty(query) ? query : null;
-
         // Action bar subtitle
         setSubtitle(mFilterString);
-
         // Initialize the adapter
         mAdapter = new SearchAdapter(this);
         // Set the prefix
@@ -182,6 +147,11 @@ public final class SearchActivity extends AbstractActivity implements LoaderCall
         final SearchableInfo searchableInfo = searchManager.getSearchableInfo(getComponentName());
         mSearchView.setSearchableInfo(searchableInfo);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    protected void initComponents(Bundle savedInstanceState) {
+
     }
 
     @Override

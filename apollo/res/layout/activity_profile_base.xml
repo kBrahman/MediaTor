@@ -23,14 +23,6 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true" />
-
-            <include
-                android:id="@+id/activity_profile_base_tab_carousel"
-                layout="@layout/profile_tab_carousel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true" />
         </RelativeLayout>
 
         <include layout="@layout/bottom_action_bar" />

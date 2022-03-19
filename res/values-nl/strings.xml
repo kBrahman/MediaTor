@@ -19,11 +19,8 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[Informatie: Hoewel aanbevolen voor je downloads, <b>u geen VPN nodig MediaTor gebruiken. </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Raak toegepaste tags aan]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ U bent verbonden met internet via een VPN. <br><br> Als u dit nog niet doet, raden we u aan een van de onderstaande services te gebruiken om uw verbinding te versleutelen en <b>uw privacy te beschermen</b>. ]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Uw privacy is een fundamenteel mensenrecht</b>. Een onbeveiligde verbinding betekent dat alles wat u online doet, inclusief <b>downloads, zoekopdrachten, berichten</b>, kan worden gecontroleerd en onderschept door iedereen in uw netwerk, bijvoorbeeld Internetproviders, hackers, overheden.<br><br><b>We raden ten stelligste aan een VPN-service te gebruiken</b>. <br> Hier zijn enkele opties die betrouwbare service bieden en goed werken met FrostWire:]]></string>
-    <string name="activity_preferences_name">Instellingen</string>
     <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Actieve Downloads</string>
     <string name="activity_uploads_name">Actieve Uploads</string>
@@ -215,7 +212,6 @@
     <string name="not_connected">Niet Verbonden</string>
     <string name="mobile_data">Mobiele Data</string>
     <string name="media_player_failed">Media player mislukt</string>
-    <string name="activity_media_player_name">Media Player</string>
     <string name="search_settings">Zoek Instellingen</string>
     <string name="use_zooqle">Gebruik Zooqle</string>
     <string name="use_tpb">Gebruik ThePirateBay.org</string>
@@ -511,7 +507,6 @@
     <string name="use_limetorrents">Gebruik Limetorrents</string>
     <string name="use_yify_summary">Yify is magneet gebaseerd, werkt alleen op de website Wifi</string>
     <string name="error_no_internet_connection">Error: Check internetverbinding</string>
-    <string name="why_we_need_storage_permissions">Waarom moeten we de opslag permissies.</string>
     <string name="invalid_filename">Ongeldige bestandsnaam</string>
     <string name="use_archiveorg">Gebruik Archive.org</string>
     <string name="wifi_network_unavailable">WiFi-netwerk beschikbaar</string>
@@ -582,7 +577,6 @@
     <string name="use_tpb_summary">TPB is de magneet gebaseerd, werkt alleen op de website Wifi</string>
     <string name="advertisement">advertentie</string>
     <string name="all_free_downloads">Alle gratis downloads</string>
-    <string name="frostwire_sticker_and_more">FrostWire stickers en meer</string>
     <string name="wifi_networks_only_summary">Gegevens opslaan. Download alleen als Wi-Fi-verbinding tot stand is gebracht. </string>
     <string name="notifications_other_settings">Kennisgevingen en andere</string>
 

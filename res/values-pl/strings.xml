@@ -19,11 +19,9 @@
 -->
 <resources>
     <!-- Important: Android is buggy with HTML, do not put HTML tags right next to text, leave a space, as it seems the text wrapping logic is considering HTML as visible text and you get premature wrapping. -->
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<p> * Chociaż bardzo zalecamy, <b> nie musisz mieć VPN aby korzystać z FrostWire. </b></p>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>WSKAZÓWKA:</b> Dotchnij dodane tagi aby]]></string>
 
     <!-- non HTML tags. -->
-    <string name="activity_preferences_name">Ustawienia</string>
     <string name="activity_chat_named">Czat</string>
     <string name="activity_downloads_name">Aktywne Pobieranie</string>
     <string name="activity_uploads_name">Aktywne Wysyłanie</string>
@@ -215,7 +213,6 @@
     <string name="not_connected">Nie Połączono</string>
     <string name="mobile_data">Mobilna Transmisja Danych</string>
     <string name="media_player_failed">Odtwarzacz multimedialny nie działa</string>
-    <string name="activity_media_player_name">Odtwarzacz Multimedialny</string>
     <string name="search_settings">Ustawienia Wyszukiwania</string>
     <string name="use_zooqle">Używaj Zooqle.com</string>
     <string name="use_tpb">Używaj ThePirateBay.org</string>
@@ -488,7 +485,6 @@
     <string name="transfers_context_menu_copy_infohash_copied">Infohash skopiowany do schowka</string>
     <string name="shutting_down">Wyłączanie…</string>
     <string name="transfers_context_menu_copy_infohash">Skopiuj InfoHash</string>
-    <string name="why_we_need_storage_permissions">Dlaczego potrzebujemy uprawnienia pamięci.</string>
     <string name="restarting">Ponowne uruchamianie…</string>
     <string name="torrent_transfer_aborted_on_mobile_data">Transfery Torrentów nie zostaną wznowione dopóki nie połączysz się z siecią Wi-Fi. (Sprawdź twoje Ustawienia Sieci aby zobaczyć zużycie danych mobilnych)</string>
     <string name="keep_in_touch">Bądź w kontakcie!</string>
@@ -618,7 +614,6 @@
     <string name="include">Załącz</string>
     <string name="fix_instructions">Wejdź na support.frostwire.com po instrukcje jak naprawić</string>
     <string name="seeing_less_results">Masz mniej lub zero rezultatów wyszukiwania?</string>
-    <string name="frostwire_sticker_and_more">Naklejki MediaTor i więcej</string>
     <string name="touch_applied_tags_to_include_exclude">Dotchnij dodane tagi aby dodać/odjąć</string>
     <string name="exclude">Odejmnij</string>
     <string name="wifi_networks_only_summary">Oszczędziaj dane mobilne. Ściągaj tylko na Wi-Fi. </string>
@@ -680,7 +675,6 @@
     <string name="vpn_money_back_ExpressVPN">30-dniowa gwarancja zwrotu pieniędzy</string>
     <string name="down_speed">Szybkość Pobierania</string>
     <string name="completed">Zakończone</string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Twoja prywatność jest podstawowym prawem człowieka</b>. Niechronione połączenie oznacza, że wszystko co robisz na internecie: <b>pobieranie, wyszukiwanie, przysyłanie wiadomości</b> może być monitorowane i przechwycone przez kogokolwiek na towjej sieci, np. dostawce usług internetowych, hakerów lub rząd.<br><br><b>BARDZO polecamy używanie serwisu VPN</b>. <br>Poniżej znajdziesz solidne opcie serwisów które pracują dobrze z FrostWire:]]></string>
     <string name="downloaded">Pobrane</string>
     <string name="n_peers">%1$d HOSTÓW</string>
     <string name="visit_vpn_client_PIA">Odwiedź Private Internet Access</string>

@@ -198,7 +198,6 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
             } else if (mt != null && passedKeywordFilter) {
                 keywordFiltered.add(sr);
             }
-            fsr.increment(mt, passedKeywordFilter);
         }
         fsr.filtered = mediaTypedFiltered;
         fsr.keywordFiltered = keywordFiltered;
@@ -206,7 +205,7 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
     }
 
     private boolean isFileSearchResultMediaTypeMatching(SearchResult sr, MediaType mt) {
-        return sr instanceof FileSearchResult && mt != null && mt.getId() == fileType;
+        return sr instanceof FileSearchResult && mt != null;
     }
 
     private static boolean isAudio(SearchResult sr) {
@@ -214,22 +213,10 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
     }
 
     private int getFileTypeIconId() {
-        switch (fileType) {
-            case Constants.FILE_TYPE_APPLICATIONS:
-                return R.drawable.list_item_application_icon;
-            case Constants.FILE_TYPE_AUDIO:
-                return R.drawable.list_item_audio_icon;
-            case Constants.FILE_TYPE_DOCUMENTS:
-                return R.drawable.list_item_document_icon;
-            case Constants.FILE_TYPE_PICTURES:
-                return R.drawable.list_item_picture_icon;
-            case Constants.FILE_TYPE_VIDEOS:
-                return R.drawable.list_item_video_icon;
-            case Constants.FILE_TYPE_TORRENTS:
-                return R.mipmap.ic_launcher;
-            default:
-                return R.drawable.list_item_question_mark;
+        if (fileType == Constants.FILE_TYPE_MY_MUSIC) {
+            return R.mipmap.ic_launcher;
         }
+        return R.drawable.list_item_question_mark;
     }
 
     public List<KeywordFilter> getKeywordFiltersPipeline() {
@@ -287,36 +274,6 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
         public int numFilteredDocuments;
         public int numFilteredTorrents;
 
-        private void increment(MediaType mt, boolean passedFilter) {
-            if (mt != null) {
-                switch (mt.getId()) {
-                    case Constants.FILE_TYPE_AUDIO:
-                        numAudio++;
-                        numFilteredAudio += passedFilter ? 1 : 0;
-                        break;
-                    case Constants.FILE_TYPE_VIDEOS:
-                        numVideo++;
-                        numFilteredVideo += passedFilter ? 1 : 0;
-                        break;
-                    case Constants.FILE_TYPE_PICTURES:
-                        numPictures++;
-                        numFilteredPictures += passedFilter ? 1 : 0;
-                        break;
-                    case Constants.FILE_TYPE_APPLICATIONS:
-                        numApplications++;
-                        numFilteredApplications += passedFilter ? 1 : 0;
-                        break;
-                    case Constants.FILE_TYPE_DOCUMENTS:
-                        numDocuments++;
-                        numFilteredDocuments += passedFilter ? 1 : 0;
-                        break;
-                    case Constants.FILE_TYPE_TORRENTS:
-                        numTorrents++;
-                        numFilteredTorrents += passedFilter ? 1 : 0;
-                        break;
-                }
-            }
-        }
     }
 
     public static final class PreviewClickListener extends ClickAdapter<Context> {
@@ -338,7 +295,7 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
                 i.putExtra("displayName", sr.getDisplayName());
                 i.putExtra("source", sr.getSource());
                 i.putExtra("streamUrl", sr.getStreamUrl());
-                i.putExtra("audio", isAudio(sr));
+                i.putExtra("image_url", sr.getThumbnailUrl());
                 ctx.startActivity(i);
             }
         }

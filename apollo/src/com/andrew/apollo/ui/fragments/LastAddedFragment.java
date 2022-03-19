@@ -41,7 +41,6 @@ public final class LastAddedFragment extends ApolloFragment<SongAdapter, Song> {
     @Override
     public void onItemClick(final AdapterView<?> parent, final View view, final int position,
                             final long id) {
-        onSongItemClick(position);
     }
 
     @Override

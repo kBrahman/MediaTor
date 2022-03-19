@@ -25,12 +25,11 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.lang.ref.WeakReference;
+
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.core.ConfigurationManager;
-import z.zer.tor.media.android.gui.adapters.menu.SeedAction;
 import z.zer.tor.media.util.Ref;
-
-import java.lang.ref.WeakReference;
 
 /**
  * @author aldenml
@@ -99,7 +98,6 @@ public class TransfersNoSeedsView extends LinearLayout {
     }
 
     private void onSeedAllFinishedTransfers() {
-        new SeedAction(getContext()).onClick();
         setMode(Mode.INACTIVE);
     }
 

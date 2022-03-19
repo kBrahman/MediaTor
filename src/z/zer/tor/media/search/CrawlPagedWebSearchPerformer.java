@@ -1,35 +1,13 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2017, FrostWire(R). All rights reserved.
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 package z.zer.tor.media.search;
-
-import z.zer.tor.media.util.Logger;
-import z.zer.tor.media.search.torrent.TorrentSearchResult;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author gubatron
- * @author aldenml
- */
+import z.zer.tor.media.search.torrent.TorrentSearchResult;
+import z.zer.tor.media.util.Logger;
+
 public abstract class CrawlPagedWebSearchPerformer<T extends CrawlableSearchResult> extends PagedWebSearchPerformer {
 
     private static final Logger LOG = Logger.getLogger(CrawlPagedWebSearchPerformer.class);
@@ -61,10 +39,6 @@ public abstract class CrawlPagedWebSearchPerformer<T extends CrawlableSearchResu
 
     public static void setCache(CrawlCache cache) {
         CrawlPagedWebSearchPerformer.cache = cache;
-    }
-
-    public static MagnetDownloader getMagnetDownloader() {
-        return magnetDownloader;
     }
 
     public static void setMagnetDownloader(MagnetDownloader magnetDownloader) {
@@ -140,7 +114,7 @@ public abstract class CrawlPagedWebSearchPerformer<T extends CrawlableSearchResu
 
                     try {
                         if (data != null) {
-                            List<? extends SearchResult> results = crawlResult(obj, data);
+                            List<SearchResult> results = crawlResult(obj, data);
                             if (results != null) {
                                 if (!results.isEmpty()) {
                                     onResults(results);
@@ -155,7 +129,7 @@ public abstract class CrawlPagedWebSearchPerformer<T extends CrawlableSearchResu
                     }
                 } else {
                     try {
-                        List<? extends SearchResult> results = crawlResult(obj, null);
+                        List<SearchResult> results = crawlResult(obj, null);
                         if (results != null) {
                             onResults(results);
                         }
@@ -169,7 +143,7 @@ public abstract class CrawlPagedWebSearchPerformer<T extends CrawlableSearchResu
 
     protected abstract String getCrawlUrl(T sr);
 
-    protected abstract List<? extends SearchResult> crawlResult(T sr, byte[] data) throws Exception;
+    protected abstract List<SearchResult> crawlResult(T sr, byte[] data) throws Exception;
 
     private byte[] fetchMagnet(String magnet) {
         if (magnetDownloader != null) {

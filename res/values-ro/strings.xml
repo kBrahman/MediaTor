@@ -19,7 +19,6 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Dezvăluire:</b> Cu toate că este recomandat pentru descărcarea, în special atunci când descarcă sau schimbă informații sensibile (de exemplu, bancare) și în timp ce utilizează date publice Wi-Fi sau mobile, <b>nu aveți nevoie de un VPN pentru a utiliza FrostWire. </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Atingeți etichetele aplicate la]]></string>
     <string name="vpn_not_found">Nici VPN. Luați în considerare criptarea conexiunii.</string>
     <string name="azureus_peer_manager_status_finished">Terminat</string>
@@ -103,7 +102,6 @@
     <string name="chat_actions">Acțiuni de chat</string>
     <string name="tos_refuse">Refuza</string>
     <string name="torrent_max_total_connections">Maxima total conexiuni</string>
-    <string name="activity_preferences_name">Setările</string>
     <string name="use_torrentdownloads">Utilizați TorrentDownloads</string>
     <string name="ten_dollars">$10</string>
     <string name="my_files">Fișierele mele</string>
@@ -115,7 +113,6 @@
     <string name="invalid_torrent_file">Fișier torrent nevalid</string>
     <string name="activity_downloads_title_text">Descărcări în</string>
     <string name="disconnecting">Deconectând</string>
-    <string name="activity_media_player_name">Media Player</string>
     <string name="choose_email_app">Alege un e-mail App…</string>
     <string name="failed_to_add_download">Nu a reușit să adăugați descărcare</string>
     <string name="vibrate_on_finished_download">Vibrează când se termină descărcarea</string>
@@ -409,7 +406,6 @@
     <string name="use_yify_summary">Yify este pe bază de magnet, funcționează numai pe Wi-Fi</string>
     <string name="error_no_internet_connection">Eroare: Verificați conexiunea la Internet</string>
     <string name="azureus_manager_item_error">Eroare</string>
-    <string name="why_we_need_storage_permissions">De ce avem nevoie de permisiuni de stocare.</string>
     <string name="get_a_frostwire_tshirt">Obține un MediaTor T-Shirt</string>
     <string name="media_type_applications">Aplicatii</string>
     <string name="invalid_filename">Nume invalid</string>
@@ -581,7 +577,6 @@
     <string name="remove_ads">Elimina anunțurile</string>
     <string name="your_connection_has_dropped_stopping_services">Conexiunea Wi-Fi a scăzut. Servicii de oprire.</string>
     <string name="use_tpb_summary">TPB este pe bază de magnet, funcționează numai pe Wi-Fi</string>
-    <string name="frostwire_sticker_and_more">FrostWire autocolante și mai mult</string>
     <string name="wifi_networks_only_summary">Salveaza date. Descărcați numai în cazul în care este stabilită conexiunea Wi-Fi. </string>
     <string name="notifications_other_settings">Notificări și altele</string>
     <string name="wifi_networks_only">Numai rețele Wi-Fi</string>
@@ -693,7 +688,6 @@
     <string name="edit_tracker">Editați tracker-ul</string>
     <string name="down_speed">Viteza de descărcare</string>
     <string name="completed">Terminat</string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Intimitatea ta este un drept fundamental al omului</b>. O conexiune neprotejată înseamnă tot ce faceți online, inclusiv <b>descărcări, căutări, mesagerie</b>, pot fi monitorizate și interceptate de oricine din rețeaua dvs., de ex. Furnizori de servicii Internet, hackeri, guverne.<br><br><b>Vă recomandăm STRICT să utilizați un serviciu VPN</b>. <br> Iată câteva opțiuni care oferă servicii de încredere și funcționează bine cu FrostWire:]]></string>
     <string name="downloaded">Descarcat</string>
     <string name="n_peers">%1$d colegii</string>
     <string name="sequential_download">Descărcare secvențială</string>

@@ -53,7 +53,7 @@ public final class LocalSearchEngine {
         this.manager = SearchManager.getInstance();
         this.manager.setListener(new SearchListener() {
             @Override
-            public void onResults(long token, List<? extends SearchResult> results) {
+            public void onResults(long token, List<SearchResult> results) {
                 LocalSearchEngine.this.onResults(token, results);
             }
 

@@ -2,7 +2,6 @@ package z.zer.tor.media.android.gui.fragments;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
-import static z.zer.tor.media.android.util.Asyncs.async;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -11,24 +10,22 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
 import com.facebook.ads.AdOptionsView;
-import com.facebook.ads.AdView;
 import com.facebook.ads.MediaView;
 import com.facebook.ads.NativeAd;
 import com.facebook.ads.NativeAdBase;
@@ -39,14 +36,11 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.core.ConfigurationManager;
 import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.android.gui.LocalSearchEngine;
-import z.zer.tor.media.android.gui.activity.MainActivity;
 import z.zer.tor.media.android.gui.adapters.SearchResultListAdapter;
 import z.zer.tor.media.android.gui.adapters.SearchResultListAdapter.FilteredSearchResults;
 import z.zer.tor.media.android.gui.dialogs.HandpickedTorrentDownloadDialogOnFetch;
@@ -63,8 +57,6 @@ import z.zer.tor.media.android.gui.views.AbstractDialog.OnDialogClickListener;
 import z.zer.tor.media.android.gui.views.AbstractFragment;
 import z.zer.tor.media.android.gui.views.KeywordFilterDrawerView;
 import z.zer.tor.media.android.gui.views.SearchInputView;
-import z.zer.tor.media.android.gui.views.SearchProgressView;
-import z.zer.tor.media.android.gui.views.SwipeLayout;
 import z.zer.tor.media.search.FileSearchResult;
 import z.zer.tor.media.search.HttpSearchResult;
 import z.zer.tor.media.search.KeywordDetector;
@@ -76,24 +68,18 @@ import z.zer.tor.media.search.soundcloud.SoundCloudSearchResult;
 import z.zer.tor.media.search.torrent.AbstractTorrentSearchResult;
 import z.zer.tor.media.search.torrent.TorrentCrawledSearchResult;
 import z.zer.tor.media.search.torrent.TorrentSearchResult;
-import z.zer.tor.media.util.Logger;
 import z.zer.tor.media.util.Ref;
 import z.zer.tor.media.uxstats.UXAction;
 import z.zer.tor.media.uxstats.UXStats;
 
-public final class SearchFragment extends AbstractFragment implements MainFragment, OnDialogClickListener, SearchProgressView.CurrentQueryReporter, KeywordFilterDrawerView.KeywordFilterDrawerController, DrawerLayout.DrawerListener {
-    private static final Logger LOG = Logger.getLogger(SearchFragment.class);
+public final class SearchFragment extends AbstractFragment implements  OnDialogClickListener, SearchListener {
     private static final String TAG = SearchFragment.class.getSimpleName();
-    private SearchResultListAdapter adapter;
+    public SearchResultListAdapter adapter;
     private SearchInputView searchInput;
-    private ProgressBar deepSearchProgress;
     private ListView list;
-    private FilterToolbarButton filterButton;
     private String currentQuery;
     private final FileTypeCounter fileTypeCounter;
     private final KeywordDetector keywordDetector;
-    private DrawerLayout drawerLayout;
-    private KeywordFilterDrawerView keywordFilterDrawerView;
     private NativeAd nativeAd;
 
     public SearchFragment() {
@@ -101,13 +87,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         fileTypeCounter = new FileTypeCounter();
         currentQuery = null;
         keywordDetector = new KeywordDetector();
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        setupAdapter();
-        setRetainInstance(true);
     }
 
     private void loadFB() {
@@ -123,7 +102,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
             @Override
             public void onError(Ad ad, AdError adError) {
                 // Native ad failed to load
-                System.out.println(TAG+ "Native ad failed to load: " + adError.getErrorMessage()+"test");
+                System.out.println(TAG + "Native ad failed to load: " + adError.getErrorMessage() + "test");
             }
 
 
@@ -189,50 +168,17 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
 
 
     @Override
-    public View getHeader(Activity activity) {
-        LayoutInflater inflater = LayoutInflater.from(activity);
-        LinearLayout header = (LinearLayout) inflater.inflate(R.layout.view_search_header, null, false);
-        TextView title = header.findViewById(R.id.view_search_header_text_title);
-        title.setText(R.string.search);
-        ImageButton filterButtonIcon = header.findViewById(R.id.view_search_header_search_filter_button);
-        TextView filterCounter = header.findViewById(R.id.view_search_header_search_filter_counter);
-        filterButton = new FilterToolbarButton(filterButtonIcon, filterCounter);
-        filterButton.updateVisibility();
-        return header;
-    }
-
-
-    @Override
     public void onResume() {
         super.onResume();
-        // getHeader was conceived for quick update of main fragments headers,
-        // mainly in a functional style, but it is ill suited to extract from
-        // it a mutable state, like filterButton.
-        // As a result, you will get multiple NPE during the normal lifestyle
-        // of the fragmentRef, since getHeader is not guaranteed to be called
-        // at the right time during a full resume of the fragmentRef.
-        // TODO: refactor this
-        if (filterButton == null && isAdded() && getActivity() != null) { // best effort
-            // this will happen due to the call to onTabReselected on full resume
-            // and this is only solving the NPE, the drawback is that it will
-            // create a few orphan view objects to be GC'ed soon.
-            // it'is a poor solution overall, but the right one requires
-            // a big refactor.
-            getHeader(getActivity());
-        }
+
         ConfigurationManager CM = ConfigurationManager.instance();
         if (adapter != null && (adapter.getCount() > 0 || adapter.getTotalCount() > 0)) {
-            refreshFileTypeCounters(true);
-            searchInput.selectTabByMediaType((byte) CM.getLastMediaTypeFilter());
-            filterButton.reset(false);
             boolean filtersApplied = !adapter.getKeywordFiltersPipeline().isEmpty();
             if (filtersApplied) {
                 updateKeywordDetector(adapter.filter().keywordFiltered);
             } else {
                 updateKeywordDetector(adapter.getList());
             }
-            filterButton.updateVisibility();
-            keywordFilterDrawerView.updateAppliedKeywordFilters(adapter.getKeywordFiltersPipeline());
         }
 
         if (list != null) {
@@ -241,9 +187,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
 
         if (list != null && CM.getBoolean(Constants.PREF_KEY_GUI_DISTRACTION_FREE_SEARCH)) {
             list.setOnScrollListener(new ComposedOnScrollListener(new FastScrollDisabledWhenIdleOnScrollListener(), new DirectionDetectorScrollListener(new ScrollDirectionListener(this), Engine.instance().getThreadPool())));
-        }
-        if (getCurrentQuery() == null) {
-            searchInput.setFileTypeCountersVisible(false);
         }
     }
 
@@ -255,12 +198,9 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
     }
 
     @Override
-    public void onShow() {
-    }
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        setupAdapter();
         loadFB();
     }
 
@@ -268,24 +208,8 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
     protected void initComponents(final View view, Bundle savedInstanceState) {
         searchInput = findView(view, R.id.fragment_search_input);
         searchInput.setShowKeyboardOnPaste(true);
-        searchInput.setOnSearchListener(new SearchInputOnSearchListener((LinearLayout) view, this));
-        deepSearchProgress = findView(view, R.id.fragment_search_deepsearch_progress);
-        deepSearchProgress.setVisibility(GONE);
+        searchInput.setOnSearchListener(new SearchInputOnSearchListener((ConstraintLayout) view, this));
         list = findView(view, R.id.fragment_search_list);
-
-        SwipeLayout swipe = findView(view, R.id.fragment_search_swipe);
-        swipe.setOnSwipeListener(new SwipeLayout.OnSwipeListener() {
-            @Override
-            public void onSwipeLeft() {
-                switchToThe(true);
-            }
-
-            @Override
-            public void onSwipeRight() {
-                switchToThe(false);
-            }
-        });
-        showSearchView(view);
     }
 
     private void startMagnetDownload(String magnet) {
@@ -293,31 +217,14 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         TransferManager.instance().downloadTorrent(magnet, new HandpickedTorrentDownloadDialogOnFetch(getActivity()));
     }
 
-    private static String extractYTId(String ytUrl) {
-        String vId = null;
-        //noinspection RegExpRedundantEscape
-        Pattern pattern = Pattern.compile(".*(?:youtu.be\\/|v\\/|u\\/\\w\\/|embed\\/|watch\\?v=)([^#\\&\\?]*).*");
-        Matcher matcher = pattern.matcher(ytUrl);
-        if (matcher.matches()) {
-            vId = matcher.group(1);
-        }
-        return vId;
-    }
-
     private void setupAdapter() {
         if (adapter == null) {
             adapter = new SearchResultListAdapter(getActivity()) {
                 @Override
                 protected void searchResultClicked(View v) {
-                    SearchResult sr = (SearchResult) v.getTag();
-                    if (!(sr instanceof SoundCloudSearchResult)) {
-                        startTransfer(sr, getString(R.string.download_added_to_queue));
-                    } else {
                         getPreviewClickListener().onClick(v);
-                    }
                 }
             };
-            LocalSearchEngine.instance().setListener(new LocalSearchEngineListener(this));
         }
         list.setAdapter(adapter);
     }
@@ -341,8 +248,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
             activity.runOnUiThread(() -> {
                 adapter.addResults(keywordFiltered, mediaTypeFiltered);
                 View view = getView();
-                showSearchView(view);
-                refreshFileTypeCounters(true);
                 activity.findViewById(R.id.pb).setVisibility(GONE);
                 setNativeAdVisibility(view.findViewById(R.id.native_ad_container), GONE);
 
@@ -352,17 +257,9 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
 
     private void setNativeAdVisibility(View nativeAd, int visibility) {
         nativeAd.setVisibility(visibility);
-        AdView adView = ((MainActivity) getActivity()).banner;
-        if (adView == null) return;
-        if (visibility == GONE) visibility = VISIBLE;
-        else visibility = GONE;
-        adView.setVisibility(visibility);
     }
 
     private void updateKeywordDetector(final List<? extends SearchResult> results) {
-        if (filterButton != null) {
-            keywordDetector.setKeywordDetectorListener(filterButton);
-        }
         if (results != null) {
             boolean searchFinished = LocalSearchEngine.instance().isSearchFinished();
             if (!searchFinished || (keywordDetector.totalHistogramKeys() == 0 && results.size() > 0)) {
@@ -371,28 +268,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         }
     }
 
-    @Override
-    public void onDrawerSlide(View view, float v) {
-        if ((!isVisible() || currentQuery == null) && view == keywordFilterDrawerView) {
-            drawerLayout.closeDrawer(view);
-        }
-    }
-
-    @Override
-    public void onDrawerOpened(View view) {
-    }
-
-    @Override
-    public void onDrawerClosed(View view) {
-        if (view == keywordFilterDrawerView) {
-            searchInput.selectTabByMediaType((byte) adapter.getFileType());
-        }
-        filterButton.updateVisibility();
-    }
-
-    @Override
-    public void onDrawerStateChanged(int i) {
-    }
 
     /**
      * When submitting an anonymous Runnable class to the threadpool, the anonymous class's outer object reference (this)
@@ -420,6 +295,21 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
             fragment1.keywordDetector.feedSearchResults(resultsCopy);
             fragment1.keywordDetector.requestHistogramsUpdateAsync(null);
         });
+    }
+
+    @Override
+    public void onResults(long token, List<SearchResult> results) {
+        onSearchResults(results);
+    }
+
+    @Override
+    public void onError(long token, SearchError error) {
+
+    }
+
+    @Override
+    public void onStopped(long token) {
+
     }
 
     private static final class ScrollDirectionListener implements DirectionDetectorScrollListener.ScrollDirectionListener {
@@ -465,85 +355,28 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
             fileTypeCounter.clear();
             fileTypeCounter.add(filteredSearchResults);
         }
-        refreshFileTypeCounters(adapter != null && adapter.getList() != null && adapter.getList().size() > 0);
-    }
-
-    private void refreshFileTypeCounters(boolean fileTypeCountersVisible) {
-        searchInput.setFileTypeCountersVisible(fileTypeCountersVisible);
-        boolean keywordFiltersApplied = adapter.getKeywordFiltersPipeline().size() > 0;
-        FilteredSearchResults fsr = fileTypeCounter.fsr;
-        int applications = keywordFiltersApplied ? fsr.numFilteredApplications : fsr.numApplications;
-        int audios = keywordFiltersApplied ? fsr.numFilteredAudio : fsr.numAudio;
-        int documents = keywordFiltersApplied ? fsr.numFilteredDocuments : fsr.numDocuments;
-        int pictures = keywordFiltersApplied ? fsr.numFilteredPictures : fsr.numPictures;
-        int torrents = keywordFiltersApplied ? fsr.numFilteredTorrents : fsr.numTorrents;
-        int videos = keywordFiltersApplied ? fsr.numFilteredVideo : fsr.numVideo;
-        searchInput.updateFileTypeCounter(Constants.FILE_TYPE_APPLICATIONS, applications);
-        searchInput.updateFileTypeCounter(Constants.FILE_TYPE_AUDIO, audios);
-        searchInput.updateFileTypeCounter(Constants.FILE_TYPE_DOCUMENTS, documents);
-        searchInput.updateFileTypeCounter(Constants.FILE_TYPE_PICTURES, pictures);
-        searchInput.updateFileTypeCounter(Constants.FILE_TYPE_TORRENTS, torrents);
-        searchInput.updateFileTypeCounter(Constants.FILE_TYPE_VIDEOS, videos);
-    }
-
-    public void performYTSearch(String query) {
-        String ytId = extractYTId(query);
-        if (ytId != null) {
-            searchInput.setText("");
-            searchInput.selectTabByMediaType(Constants.FILE_TYPE_VIDEOS);
-            performSearch(ytId, Constants.FILE_TYPE_VIDEOS);
-            searchInput.setText("youtube:" + ytId);
-        }
     }
 
     private void performSearch(String query, int mediaTypeId) {
+        Log.i(TAG, "performSearch");
         adapter.clear();
         adapter.setFileType(mediaTypeId);
         fileTypeCounter.clear();
-        refreshFileTypeCounters(false);
         resetKeywordDetector();
         currentQuery = query;
         keywordDetector.shutdownHistogramUpdateRequestDispatcher();
+        LocalSearchEngine.instance().setListener(this);
         LocalSearchEngine.instance().performSearch(query);
-        showSearchView(getView());
         UXStats.instance().log(UXAction.SEARCH_STARTED_ENTER_KEY);
     }
 
     private void cancelSearch() {
         adapter.clear();
-        searchInput.setFileTypeCountersVisible(false);
         fileTypeCounter.clear();
-        refreshFileTypeCounters(false);
         resetKeywordDetector();
         currentQuery = null;
         LocalSearchEngine.instance().cancelSearch();
-        showSearchView(getView());
-        filterButton.reset(true); // hide=true
         keywordDetector.shutdownHistogramUpdateRequestDispatcher();
-    }
-
-    private void showSearchView(View view) {
-        boolean searchFinished = LocalSearchEngine.instance().isSearchFinished();
-
-        boolean adapterHasResults = adapter != null && adapter.getCount() > 0;
-        if (adapterHasResults) {
-            switchView(view);
-            deepSearchProgress.setVisibility(searchFinished ? GONE : View.VISIBLE);
-            filterButton.updateVisibility();
-        } else {
-            deepSearchProgress.setVisibility(GONE);
-        }
-    }
-
-    private void switchView(View v) {
-        if (v != null) {
-            FrameLayout frameLayout = findView(v, R.id.fragment_search_framelayout);
-            int childCount = frameLayout.getChildCount();
-            for (int i = 0; i < childCount; i++) {
-                View childAt = frameLayout.getChildAt(i);
-                childAt.setVisibility((childAt.getId() == R.id.fragment_search_list) ? View.VISIBLE : View.INVISIBLE);
-            }
-        }
     }
 
     @Override
@@ -554,27 +387,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
                 LocalSearchEngine.instance().markOpened(NewTransferDialog.srRef.get(), adapter);
             }
         }
-    }
-
-    private void startTransfer(final SearchResult sr, final String toastMessage) {
-        Engine.instance().hapticFeedback();
-        if (!(sr instanceof AbstractTorrentSearchResult) && ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_GUI_SHOW_NEW_TRANSFER_DIALOG)) {
-            if (sr instanceof FileSearchResult) {
-                try {
-                    NewTransferDialog dlg = NewTransferDialog.newInstance((FileSearchResult) sr, false);
-                    dlg.show(getFragmentManager());
-                } catch (IllegalStateException e) {
-                    // android.app.FragmentManagerImpl.checkStateLoss:1323 -> java.lang.IllegalStateException: Can not perform this action after onSaveInstanceState
-                    // just start the download then if the dialog crapped out.
-                    onDialogClick(NewTransferDialog.TAG, Dialog.BUTTON_POSITIVE);
-                }
-            }
-        } else {
-            if (isVisible()) {
-                startDownload(getActivity(), sr, toastMessage);
-            }
-        }
-        uxLogAction(sr);
     }
 
     public static void startDownload(Context ctx, SearchResult sr, String message) {
@@ -597,87 +409,20 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         }
     }
 
-    @Override
-    public String getCurrentQuery() {
-        return currentQuery;
-    }
-
     private void switchToThe(boolean right) {
-        searchInput.switchToThe(right);
+        switchToThe(right);
     }
 
-    public void connectDrawerLayoutFilterView(DrawerLayout drawerLayout, View filterView) {
-        this.drawerLayout = drawerLayout;
-        drawerLayout.removeDrawerListener(this);
-        drawerLayout.addDrawerListener(this);
-        keywordFilterDrawerView = (KeywordFilterDrawerView) filterView;
-        keywordFilterDrawerView.setKeywordFilterDrawerController(this);
-    }
-
-    @Override
-    public void closeKeywordFilterDrawer() {
-        if (keywordFilterDrawerView != null) {
-            drawerLayout.closeDrawer(keywordFilterDrawerView);
-        }
-    }
-
-    @Override
-    public void openKeywordFilterDrawer() {
-        if (drawerLayout == null || keywordFilterDrawerView == null) {
-            return;
-        }
-        drawerLayout.openDrawer(keywordFilterDrawerView);
-        keywordDetector.requestHistogramsUpdateAsync(null);
-    }
 
     private void resetKeywordDetector() {
         keywordDetector.reset();
-        keywordFilterDrawerView.reset();
-    }
-
-    private static class LocalSearchEngineListener implements SearchListener {
-
-        private final WeakReference<SearchFragment> searchFragmentRef;
-
-        LocalSearchEngineListener(SearchFragment searchFragment) {
-            searchFragmentRef = Ref.weak(searchFragment);
-        }
-
-        @Override
-        public void onResults(long token, final List<? extends SearchResult> results) {
-
-            if (Ref.alive(searchFragmentRef)) {
-                //noinspection unchecked
-                searchFragmentRef.get().onSearchResults((List<SearchResult>) results);
-            }
-        }
-
-        @Override
-        public void onError(long token, SearchError error) {
-            LOG.error("Some error in search stream: " + error);
-        }
-
-        @Override
-        public void onStopped(long token) {
-            if (Ref.alive(searchFragmentRef)) {
-                SearchFragment searchFragment = searchFragmentRef.get();
-                if (searchFragment.isAdded()) {
-                    searchFragment.getActivity().runOnUiThread(() -> {
-                        if (Ref.alive(searchFragmentRef)) {
-                            SearchFragment searchFragment1 = searchFragmentRef.get();
-                            searchFragment1.deepSearchProgress.setVisibility(GONE);
-                        }
-                    });
-                }
-            }
-        }
     }
 
     private final class SearchInputOnSearchListener implements SearchInputView.OnSearchListener {
-        private final WeakReference<LinearLayout> rootViewRef;
+        private final WeakReference<ViewGroup> rootViewRef;
         private final WeakReference<SearchFragment> fragmentRef;
 
-        SearchInputOnSearchListener(LinearLayout rootView, SearchFragment fragment) {
+        SearchInputOnSearchListener(ViewGroup rootView, SearchFragment fragment) {
             this.rootViewRef = Ref.weak(rootView);
             this.fragmentRef = Ref.weak(fragment);
         }
@@ -685,17 +430,15 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         public void onSearch(View v, String query, int mediaTypeId) {
             getActivity().findViewById(R.id.pb).setVisibility(View.VISIBLE);
             if (!Ref.alive(fragmentRef) || !Ref.alive(rootViewRef)) {
+                Log.i(TAG, "not alive");
                 return;
             }
             SearchFragment fragment = fragmentRef.get();
             fragment.resetKeywordDetector();
-            fragment.searchInput.selectTabByMediaType((byte) mediaTypeId);
             if (query.contains("://m.soundcloud.com/") || query.contains("://soundcloud.com/")) {
                 fragment.cancelSearch();
                 new AsyncDownloadSoundcloudFromUrl(fragment.getActivity(), query);
                 fragment.searchInput.setText("");
-            } else if (query.contains("youtube.com/")) {
-                fragment.performYTSearch(query);
             } else if (query.startsWith("magnet:?xt=urn:btih:")) {
                 fragment.startMagnetDownload(query);
                 fragment.currentQuery = null;
@@ -705,18 +448,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
             }
         }
 
-        public void onMediaTypeSelected(View view, int mediaTypeId) {
-            if (!Ref.alive(fragmentRef)) {
-                return;
-            }
-            SearchFragment fragment = fragmentRef.get();
-            if (fragment.adapter.getFileType() != mediaTypeId) {
-                ConfigurationManager.instance().setLastMediaTypeFilter(mediaTypeId);
-                fragment.adapter.setFileType(mediaTypeId);
-            }
-            fragment.showSearchView(rootViewRef.get());
-        }
-
         public void onClear(View v) {
             if (!Ref.alive(fragmentRef)) {
                 return;
@@ -724,6 +455,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
             SearchFragment fragment = fragmentRef.get();
             fragment.cancelSearch();
             setNativeAdVisibility(getView().findViewById(R.id.native_ad_container), VISIBLE);
+            getActivity().findViewById(R.id.pb).setVisibility(GONE);
         }
     }
 
@@ -761,7 +493,7 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
         }
     }
 
-    private class FilterToolbarButton implements KeywordDetector.KeywordDetectorListener, KeywordFilterDrawerView.KeywordFiltersPipelineListener {
+    private class FilterToolbarButton implements KeywordFilterDrawerView.KeywordFiltersPipelineListener {
 
         private final ImageButton imageButton;
         private final TextView counterTextView;
@@ -784,32 +516,9 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
             setVisible(currentQuery != null && adapter != null && adapter.getTotalCount() > 0);
         }
 
-        @Override
-        public void notifyHistogramsUpdate(final Map<KeywordDetector.Feature, List<Map.Entry<String, Integer>>> filteredHistograms) {
-            // TODO: review this, this is a workaround to a not clear framework logic problem
-            long td = System.currentTimeMillis() - filterButton.lastUIUpdate;
-            if (td <= 300) {
-                // don't bother to enqueue the task
-                return;
-            }
-
-            async(filterButton, SearchFragment::possiblyWaitInBackgroundToUpdateUI, keywordFilterDrawerView, filteredHistograms, SearchFragment::updateUIWithFilteredHistogramsPerFeature);
-        }
-
-        @Override
-        public void onKeywordDetectorFinished() {
-            if (isAdded()) {
-                getActivity().runOnUiThread(() -> {
-                    keywordFilterDrawerView.hideIndeterminateProgressViews();
-                    keywordFilterDrawerView.requestLayout();
-                });
-            }
-        }
-
         public void reset(boolean hide) { //might do, parameter to not hide drawer
             setVisible(!hide);
             keywordDetector.reset();
-            closeKeywordFilterDrawer();
         }
 
         @Override
@@ -825,7 +534,6 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
                 }
             }
             updateVisibility();
-            keywordFilterDrawerView.showIndeterminateProgressViews();
             List<SearchResult> results = adapter.getKeywordFiltersPipeline().isEmpty() ? adapter.getList() : filteredSearchResults.keywordFiltered;
             keywordDetector.reset();
             keywordDetector.requestHistogramsUpdateAsync(results);
@@ -878,14 +586,8 @@ public final class SearchFragment extends AbstractFragment implements MainFragme
                     imageButton.clearAnimation();
                     pulse = null;
                 }
-                openKeywordFilterDrawerView();
                 UXStats.instance().log(UXAction.SEARCH_FILTER_BUTTON_CLICK);
             });
-        }
-
-        private void openKeywordFilterDrawerView() {
-            keywordFilterDrawerView.setKeywordFiltersPipelineListener(this);
-            openKeywordFilterDrawer();
         }
     }
 

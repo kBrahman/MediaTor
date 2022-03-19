@@ -4,22 +4,10 @@
 
     <!-- low level networking -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
-    <!-- storage -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- generic -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.SET_WALLPAPER" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
-    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
-    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
@@ -33,9 +21,9 @@
         <activity
             android:name="z.zer.tor.media.android.gui.activity.MainActivity"
             android:exported="true"
-            android:label="@string/application_label"
             android:launchMode="singleTask"
             android:protectionLevel="dangerous"
+            android:screenOrientation="portrait"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -94,9 +82,9 @@
         </activity>
         <activity
             android:name=".android.gui.activity.PlayerActivity"
+            android:exported="true"
             android:parentActivityName=".android.gui.activity.MainActivity"
-            android:theme="@style/PlayerActivity"
-            android:exported="false">
+            android:theme="@style/PlayerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.MUSIC_PLAYER" />
@@ -152,108 +140,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="z.zer.tor.media.android.gui.activity.WizardActivity"
-            android:label="@string/application_label"
-            android:theme="@style/WizardActivity" />
-        <activity
-            android:name="z.zer.tor.media.android.gui.activity.SettingsActivity"
-            android:label="@string/activity_preferences_name" />
-        <activity
-            android:name="z.zer.tor.media.android.gui.activity.ImageViewerActivity"
-            android:label="@string/picture" />
-        <activity
-            android:name="z.zer.tor.media.android.gui.activity.VPNStatusDetailActivity"
-            android:excludeFromRecents="true"
-            android:label="@string/activity_VPN"
-            android:noHistory="true" />
-        <activity
-            android:name="z.zer.tor.media.android.gui.activity.TransferDetailActivity"
-            android:label="@string/title_activity_transfer_detail" />
-
-        <!-- apollo activities -->
-        <activity
-            android:name="com.andrew.apollo.ui.activities.HomeActivity"
-            android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name="com.andrew.apollo.ui.activities.AudioPlayerActivity"
-            android:clearTaskOnLaunch="true"
-            android:launchMode="singleTask"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:scheme="content" />
-                <data android:mimeType="audio/*" />
-                <data android:mimeType="application/ogg" />
-                <data android:mimeType="application/x-ogg" />
-                <data android:mimeType="application/itunes" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:scheme="file" />
-                <data android:mimeType="audio/*" />
-                <data android:mimeType="application/ogg" />
-                <data android:mimeType="application/x-ogg" />
-                <data android:mimeType="application/itunes" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="http" />
-                <data android:mimeType="audio/*" />
-                <data android:mimeType="application/ogg" />
-                <data android:mimeType="application/x-ogg" />
-                <data android:mimeType="application/itunes" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="vnd.android.cursor.dir/playlist" />
-                <data android:mimeType="vnd.android.cursor.dir/albums" />
-                <data android:mimeType="vnd.android.cursor.dir/artists" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="zig.zak.media.tor.android.AUDIO_PLAYER" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.PICK" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.OPENABLE" />
-
-                <data android:mimeType="vnd.android.cursor.dir/audio" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.andrew.apollo.ui.activities.ProfileActivity"
-            android:excludeFromRecents="true" />
-        <activity
-            android:name="com.andrew.apollo.ui.activities.ShortcutActivity"
-            android:excludeFromRecents="true"
-            android:theme="@style/Theme.Transparent"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name="com.andrew.apollo.ui.activities.SearchActivity"
-            android:parentActivityName="com.andrew.apollo.ui.activities.HomeActivity"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
@@ -274,15 +161,6 @@
         <service
             android:name="com.andrew.apollo.MusicPlaybackService"
             android:protectionLevel="dangerous" />
-
-        <!-- receivers -->
-
-        <receiver android:name="z.zer.tor.media.android.gui.services.EngineBroadcastReceiver"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
 
         <!-- providers -->
 

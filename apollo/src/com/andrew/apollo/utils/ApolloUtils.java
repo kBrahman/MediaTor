@@ -2,27 +2,16 @@ package com.andrew.apollo.utils;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.os.AsyncTask;
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.Toast;
-import com.andrew.apollo.Config;
+
 import com.andrew.apollo.cache.ImageCache;
 import com.andrew.apollo.cache.ImageFetcher;
-import z.zer.tor.media.android.gui.services.Engine;
-import com.andrew.apollo.ui.activities.ShortcutActivity;
-import com.devspark.appmsg.AppMsg;
-import z.zer.tor.media.R;
-import z.zer.tor.media.util.Ref;
-
-import java.lang.ref.WeakReference;
 
 /**
  * Mostly general and UI helpers.
@@ -119,81 +108,6 @@ public final class ApolloUtils {
         final ImageFetcher imageFetcher = ImageFetcher.getInstance(activity);
         imageFetcher.setImageCache(ImageCache.findOrCreateCache(activity));
         return imageFetcher;
-    }
-
-    /**
-     * Used to create shortcuts for an artist, album, or playlist that is then
-     * placed on the default launcher homescreen
-     *
-     * @param displayName The shortcut name
-     * @param id          The ID of the artist, album, playlist, or genre
-     * @param mimeType    The MIME type of the shortcut
-     * @param context     The {@link Context} to use to
-     */
-    public static void createShortcutIntentAsync(final String displayName, final String artistName,
-                                                 final Long id, final String mimeType, final WeakReference<Activity> context) {
-        Runnable task = () -> {
-            if (!Ref.alive(context)) {
-                return;
-            }
-            final ImageFetcher fetcher = getImageFetcher(context.get());
-            Bitmap bitmap;
-            boolean success = true;
-            try {
-                if (mimeType.equals(MediaStore.Audio.Albums.CONTENT_TYPE)) {
-                    bitmap = fetcher.getCachedBitmap(
-                            ImageFetcher.generateAlbumCacheKey(displayName, artistName));
-                } else {
-                    bitmap = fetcher.getCachedBitmap(displayName);
-                }
-                if (bitmap == null) {
-                    bitmap = fetcher.getDefaultArtwork();
-                }
-                //check if activity context is still valid
-                if(Ref.alive(context)) {
-                    final Intent shortcutIntent = new Intent(context.get(), ShortcutActivity.class);
-                    shortcutIntent.setAction(Intent.ACTION_VIEW);
-                    shortcutIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    shortcutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    shortcutIntent.putExtra(Config.ID, id);
-                    shortcutIntent.putExtra(Config.NAME, displayName);
-                    shortcutIntent.putExtra(Config.MIME_TYPE, mimeType);
-
-                    // Intent that actually sets the shortcut
-                    final Intent intent = new Intent();
-                    if (bitmap != null) {
-                        intent.putExtra(Intent.EXTRA_SHORTCUT_ICON, BitmapUtils.resizeAndCropCenter(bitmap, 96));
-                    }
-                    intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent);
-                    intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, displayName);
-                    intent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
-                    context.get().sendBroadcast(intent);
-                }
-            } catch (Exception e) {
-                Log.e("ApolloUtils", "createShortcutIntent", e);
-                success = false;
-            }
-
-            final boolean finalSuccess = success;
-
-            if (Ref.alive(context)) {
-                // UI thread portion
-                Runnable postExecute = () -> {
-                    if (finalSuccess) {
-                        AppMsg.makeText(context.get(),
-                                context.get().getString(R.string.pinned_to_home_screen, displayName),
-                                AppMsg.STYLE_CONFIRM).show();
-                    } else {
-                        AppMsg.makeText(
-                                context.get(),
-                                context.get().getString(R.string.could_not_be_pinned_to_home_screen, displayName),
-                                AppMsg.STYLE_ALERT).show();
-                    }
-                };
-                context.get().runOnUiThread(postExecute);
-            }
-        };
-        Engine.instance().getThreadPool().execute(task);
     }
 
 

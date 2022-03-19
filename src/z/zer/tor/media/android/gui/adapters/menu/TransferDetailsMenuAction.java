@@ -19,22 +19,14 @@
 package z.zer.tor.media.android.gui.adapters.menu;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.View;
-
-import z.zer.tor.media.R;
-import z.zer.tor.media.android.gui.activity.TransferDetailActivity;
-import z.zer.tor.media.android.gui.util.UIUtils;
-import z.zer.tor.media.android.gui.views.MenuAction;
-import z.zer.tor.media.util.Ref;
 
 import java.lang.ref.WeakReference;
 
-/**
- * @author gubatron
- * @author aldenml
- * @author votaguz
- */
+import z.zer.tor.media.R;
+import z.zer.tor.media.android.gui.views.MenuAction;
+import z.zer.tor.media.util.Ref;
+
 public class TransferDetailsMenuAction extends MenuAction {
 
     private final String infohash;
@@ -47,13 +39,7 @@ public class TransferDetailsMenuAction extends MenuAction {
 
     @Override
     public void onClick(Context context) {
-        if (infohash != null && !"".equals(infohash)) {
-            Intent intent = new Intent(getContext(), TransferDetailActivity.class);
-            intent.putExtra("infoHash", infohash);
-            context.startActivity(intent);
-        } else if (Ref.alive(clickedViewRef)) {
-            UIUtils.showShortMessage(clickedViewRef.get(), R.string.could_not_open_transfer_detail_invalid_infohash);
-        }
+
     }
 
     public TransferDetailsMenuAction setClickedView(View clickedView) {

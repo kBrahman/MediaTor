@@ -1,26 +1,9 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2018, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package z.zer.tor.media.android.gui.transfers;
 
-import android.content.SharedPreferences;
+import static z.zer.tor.media.android.util.Asyncs.async;
+
 import android.net.Uri;
 import android.os.Environment;
-import android.os.Looper;
 import android.os.StatFs;
 
 import org.apache.commons.io.FileUtils;
@@ -37,9 +20,6 @@ import z.zer.tor.media.android.core.ConfigurationManager;
 import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.android.gui.NetworkManager;
 import z.zer.tor.media.android.gui.services.Engine;
-import z.zer.tor.media.bittorrent.BTDownload;
-import z.zer.tor.media.bittorrent.BTEngine;
-import z.zer.tor.media.bittorrent.BTEngineAdapter;
 import z.zer.tor.media.search.HttpSearchResult;
 import z.zer.tor.media.search.SearchResult;
 import z.zer.tor.media.search.soundcloud.SoundCloudSearchResult;
@@ -51,12 +31,6 @@ import z.zer.tor.media.transfers.SoundcloudDownload;
 import z.zer.tor.media.transfers.Transfer;
 import z.zer.tor.media.util.Logger;
 
-import static z.zer.tor.media.android.util.Asyncs.async;
-
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class TransferManager {
 
     private static final Logger LOG = Logger.getLogger(TransferManager.class);
@@ -67,7 +41,6 @@ public final class TransferManager {
     private int downloadsToReview;
     private int startedTransfers = 0;
     private final Object alreadyDownloadingMonitor = new Object();
-    private final SharedPreferences.OnSharedPreferenceChangeListener onSharedPreferenceChangeListener;
     private volatile static TransferManager instance;
 
     public static TransferManager instance() {
@@ -78,8 +51,6 @@ public final class TransferManager {
     }
 
     private TransferManager() {
-        onSharedPreferenceChangeListener = (sharedPreferences, key) -> onPreferenceChanged(key);
-        registerPreferencesChangeListener();
         this.httpDownloads = new CopyOnWriteArrayList<>();
         this.bittorrentDownloadsList = new CopyOnWriteArrayList<>();
         this.bittorrentDownloadsMap = new HashMap<>(0);
@@ -88,14 +59,12 @@ public final class TransferManager {
     }
 
     public void reset() {
-        registerPreferencesChangeListener();
         clearTransfers();
         async(this::loadTorrentsTask);
     }
 
     public void onShutdown() {
         clearTransfers();
-        unregisterPreferencesChangeListener();
     }
 
     private void clearTransfers() {
@@ -128,10 +97,6 @@ public final class TransferManager {
         }
 
         return transfers;
-    }
-
-    public BittorrentDownload getBittorrentDownload(String infoHash) {
-        return bittorrentDownloadsMap.get(infoHash);
     }
 
     private boolean alreadyDownloading(String detailsUrl) {
@@ -232,37 +197,12 @@ public final class TransferManager {
         return count;
     }
 
-    public long getDownloadsBandwidth() {
-        if (BTEngine.ctx == null) {
-            // too early
-            return 0;
-        }
-        long torrentDownloadsBandwidth = BTEngine.getInstance().downloadRate();
-        long peerDownloadsBandwidth = 0;
-        for (Transfer d : httpDownloads) {
-            peerDownloadsBandwidth += d.getDownloadSpeed();
-        }
-        return torrentDownloadsBandwidth + peerDownloadsBandwidth;
-    }
-
-    public double getUploadsBandwidth() {
-        if (BTEngine.ctx == null) {
-            // too early
-            return 0;
-        }
-        return BTEngine.getInstance().uploadRate();
-    }
-
     public int getDownloadsToReview() {
         return downloadsToReview;
     }
 
     public void incrementDownloadsToReview() {
         downloadsToReview++;
-    }
-
-    public void clearDownloadsToReview() {
-        downloadsToReview = 0;
     }
 
     public void stopSeedingTorrents() {
@@ -321,9 +261,7 @@ public final class TransferManager {
             BittorrentDownload download = null;
 
             if (fetcherListener == null) {
-                if (scheme.equalsIgnoreCase("file")) {
-                    BTEngine.getInstance().download(new File(u.getPath()), null, null);
-                } else if (scheme.equalsIgnoreCase("http") || scheme.equalsIgnoreCase("https") || scheme.equalsIgnoreCase("magnet")) {
+                if (scheme.equalsIgnoreCase("http") || scheme.equalsIgnoreCase("https") || scheme.equalsIgnoreCase("magnet")) {
                     download = new TorrentFetcherDownload(this, new TorrentUrlInfo(u.toString(), tempDownloadTitle));
                     bittorrentDownloadsList.add(download);
                     bittorrentDownloadsMap.put(download.getInfoHash(), download);
@@ -353,7 +291,6 @@ public final class TransferManager {
     private static BittorrentDownload createBittorrentDownload(TransferManager manager, TorrentSearchResult sr) {
         if (sr instanceof TorrentCrawledSearchResult) {
             TorrentCrawledSearchResult torrentCrawledSearchResult = (TorrentCrawledSearchResult) sr;
-            BTEngine.getInstance().download(torrentCrawledSearchResult, null, manager.isDeleteStartedTorrentEnabled());
         } else if (sr.getTorrentUrl() != null) {
             return new TorrentFetcherDownload(manager, new TorrentSearchResultInfo(sr));
         }
@@ -402,10 +339,6 @@ public final class TransferManager {
         return download;
     }
 
-    public boolean isBittorrentDownload(Transfer transfer) {
-        return transfer instanceof UIBittorrentDownload || transfer instanceof TorrentFetcherDownload;
-    }
-
     public boolean isMobileAndDataSavingsOn() {
         return NetworkManager.instance().isDataMobileUp() && ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_NETWORK_USE_WIFI_ONLY);
     }
@@ -414,20 +347,8 @@ public final class TransferManager {
         return sr instanceof TorrentSearchResult && isMobileAndDataSavingsOn();
     }
 
-    public boolean isBittorrentDownloadAndMobileDataSavingsOn(Transfer transfer) {
-        return isBittorrentDownload(transfer) && isMobileAndDataSavingsOn();
-    }
-
-    public boolean isBittorrentDownloadAndMobileDataSavingsOff(Transfer transfer) {
-        return isBittorrentDownload(transfer) && isMobileAndDataSavingsOn();
-    }
-
     public boolean isBittorrentDisconnected() {
         return Engine.instance().isStopped() || Engine.instance().isStopping() || Engine.instance().isDisconnected();
-    }
-
-    public boolean isDeleteStartedTorrentEnabled() {
-        return ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_TORRENT_DELETE_STARTED_TORRENT_FILES);
     }
 
     public static boolean isResumable(BittorrentDownload bt) {
@@ -529,90 +450,14 @@ public final class TransferManager {
         return ++startedTransfers;
     }
 
-    public void resetStartedTransfers() {
-        startedTransfers = 0;
-    }
-
-    public int startedTransfers() {
-        return startedTransfers;
-    }
-
     static long getCurrentMountAvailableBytes() {
         StatFs stat = new StatFs(ConfigurationManager.instance().getStoragePath());
         return ((long) stat.getBlockSize() * (long) stat.getAvailableBlocks());
     }
 
-    private void registerPreferencesChangeListener() {
-        if (Looper.myLooper() == Looper.getMainLooper()) {
-            Engine.instance().getThreadPool().execute(() -> ConfigurationManager.instance().registerOnPreferenceChange(onSharedPreferenceChangeListener));
-        } else {
-            ConfigurationManager.instance().registerOnPreferenceChange(onSharedPreferenceChangeListener);
-        }
-    }
-
-    private void unregisterPreferencesChangeListener() {
-        if (Looper.myLooper() == Looper.getMainLooper()) {
-            Engine.instance().getThreadPool().execute(() -> ConfigurationManager.instance().unregisterOnPreferenceChange(onSharedPreferenceChangeListener));
-        } else {
-            ConfigurationManager.instance().unregisterOnPreferenceChange(onSharedPreferenceChangeListener);
-        }
-    }
-
-    private void onPreferenceChanged(String key) {
-        //LOG.info("onPreferenceChanged(key="+key+")");
-        Engine.instance().getThreadPool().execute(() -> {
-            BTEngine e = BTEngine.getInstance();
-            ConfigurationManager CM = ConfigurationManager.instance();
-            if (key.equals(Constants.PREF_KEY_TORRENT_MAX_DOWNLOAD_SPEED)) {
-                e.downloadRateLimit((int) CM.getLong(key));
-            } else if (key.equals(Constants.PREF_KEY_TORRENT_MAX_UPLOAD_SPEED)) {
-                e.uploadRateLimit((int) CM.getLong(key));
-            } else if (key.equals(Constants.PREF_KEY_TORRENT_MAX_DOWNLOADS)) {
-                e.maxActiveDownloads((int) CM.getLong(key));
-            } else if (key.equals(Constants.PREF_KEY_TORRENT_MAX_UPLOADS)) {
-                e.maxActiveSeeds((int) CM.getLong(key));
-            } else if (key.equals(Constants.PREF_KEY_TORRENT_MAX_TOTAL_CONNECTIONS)) {
-                e.maxConnections((int) CM.getLong(key));
-            } else if (key.equals(Constants.PREF_KEY_TORRENT_MAX_PEERS)) {
-                e.maxPeers((int) CM.getLong(key));
-            }
-        });
-
-    }
 
     private void loadTorrentsTask() {
         bittorrentDownloadsList.clear();
         bittorrentDownloadsMap.clear();
-        final BTEngine btEngine = BTEngine.getInstance();
-        btEngine.setListener(new BTEngineAdapter() {
-            @Override
-            public void downloadAdded(BTEngine engine, BTDownload dl) {
-                String name = dl.getName();
-                if (name != null && name.contains("fetch_magnet")) {
-                    return;
-                }
-                File savePath = dl.getSavePath();
-                if (savePath != null && savePath.toString().contains("fetch_magnet")) {
-                    return;
-                }
-                UIBittorrentDownload uiBittorrentDownload = new UIBittorrentDownload(TransferManager.this, dl);
-                bittorrentDownloadsList.add(uiBittorrentDownload);
-                bittorrentDownloadsMap.put(dl.getInfoHash(), uiBittorrentDownload);
-            }
-
-            @Override
-            public void downloadUpdate(BTEngine engine, BTDownload dl) {
-                try {
-                    BittorrentDownload bittorrentDownload = bittorrentDownloadsMap.get(dl.getInfoHash());
-                    if (bittorrentDownload instanceof UIBittorrentDownload) {
-                        UIBittorrentDownload bt = (UIBittorrentDownload) bittorrentDownload;
-                        bt.updateUI(dl);
-                    }
-                } catch (Throwable e) {
-                    LOG.error("Error updating bittorrent download", e);
-                }
-            }
-        });
-        btEngine.restoreDownloads();
     }
 }

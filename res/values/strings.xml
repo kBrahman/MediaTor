@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Disclosure:</b> Although recommended for your downloads, especially whenever downloading or exchanging sensitive information (e.g. banking) and while using public Wi-Fi or mobile data, <b>you don\'t need a VPN to use FrostWire. </b>]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Your privacy is a fundamental human right</b>. An unprotected connection means everything you do online including <b>downloads, searches, messaging</b>, can be monitored and intercepted by anyone on your network, e.g. Internet Service Providers, hackers, governments.<br><br><b>We STRONGLY recommend using a VPN service</b>. <br> Here are some options that provide reliable service and work well with FrostWire:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ You\'re connected to the Internet using a VPN. <br><br> If you are not already, we recommend using one of the services below to encrypt your connection and <b>safeguard your privacy</b>. ]]></string>
 
 
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Touch applied tags to]]></string>
 
     <!-- non HTML tags. -->
-    <string name="activity_preferences_name">Settings</string>
     <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Active Downloads</string>
     <string name="activity_uploads_name">Active Uploads</string>
@@ -203,7 +200,6 @@
     <string name="not_connected">Not Connected</string>
     <string name="mobile_data">Mobile Data</string>
     <string name="media_player_failed">Media player failed</string>
-    <string name="activity_media_player_name">Media Player</string>
     <string name="search_settings">Search Settings</string>
     <string name="use_tpb">Use TPB</string>
     <string name="use_tpb_summary">TPB is magnet based, works only on Wi-Fi</string>
@@ -531,7 +527,6 @@
     <string name="frostwire_shutting_down_no_permissions">Sorry, MediaTor can\'t continue without your permission to access disk.</string>
     <string name="restarting">Restarting…</string>
     <string name="restarting_summary">FrostWire will restart now for granted permissions to take effect</string>
-    <string name="why_we_need_storage_permissions">Why we need storage permissions.</string>
     <string name="why_we_need_storage_permissions_summary">FrostWire is a file browser and downloader app, therefore it needs to be able to access your disk.\n\nWithout your permissions MediaTor cannot work.\n\nWant to try again?</string>
     <string name="shutting_down">Shutting down…</string>
     <string name="help">Help</string>
@@ -635,7 +630,6 @@
     <string name="notifications_other_settings">Notifications and Other</string>
     <string name="bandwidth_usage_settings">Bandwidth Usage</string>
     <string name="search_preferences">Search Preferences</string>
-    <string name="frostwire_sticker_and_more">FrostWire stickers and more</string>
     <string name="donate_your_time">Donate your time</string>
     <string name="changelog">Changelog</string>
     <string name="pro" translatable="false">PRO</string>

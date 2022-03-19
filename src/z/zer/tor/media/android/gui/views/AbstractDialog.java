@@ -2,9 +2,7 @@ package z.zer.tor.media.android.gui.views;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -15,6 +13,8 @@ import android.view.Window;
 import android.view.WindowManager.LayoutParams;
 
 import androidx.annotation.IdRes;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
 
 import java.util.List;
 
@@ -120,7 +120,6 @@ public abstract class AbstractDialog extends DialogFragment {
 
         if (activity instanceof AbstractActivity) {
             List<Fragment> fragments = ((AbstractActivity) activity).getFragments();
-
             for (Fragment f : fragments) {
                 dispatchDialogClickSafe(f, tag, which);
             }
@@ -135,10 +134,6 @@ public abstract class AbstractDialog extends DialogFragment {
 
     public void setOnDialogClickListener(OnDialogClickListener onDialogClickListener) {
         this.onDialogClickListener = onDialogClickListener;
-    }
-
-    public OnDialogClickListener getOnDialogClickListener() {
-        return this.onDialogClickListener;
     }
 
     public interface OnDialogClickListener {

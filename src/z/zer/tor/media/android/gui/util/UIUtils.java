@@ -1,10 +1,7 @@
 package z.zer.tor.media.android.gui.util;
 
-import static z.zer.tor.media.android.util.Asyncs.async;
-
 import android.app.Activity;
 import android.app.Dialog;
-import android.app.FragmentManager;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface.OnClickListener;
@@ -13,7 +10,6 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Environment;
-import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -21,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.StringRes;
 import androidx.core.content.FileProvider;
+import androidx.fragment.app.FragmentManager;
 
 import com.andrew.apollo.utils.MusicUtils;
 import com.google.android.material.snackbar.Snackbar;
@@ -31,20 +28,14 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.NumberFormat;
-import java.util.List;
 import java.util.Locale;
-import java.util.Random;
 
 import z.zer.tor.media.BuildConfig;
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.core.ConfigurationManager;
 import z.zer.tor.media.android.core.Constants;
-import z.zer.tor.media.android.core.FileDescriptor;
-import z.zer.tor.media.android.core.player.CoreMediaPlayer;
-import z.zer.tor.media.android.gui.Librarian;
 import z.zer.tor.media.android.gui.activity.MainActivity;
 import z.zer.tor.media.android.gui.dialogs.YesNoDialog;
-import z.zer.tor.media.android.gui.services.Engine;
 import z.zer.tor.media.android.gui.views.EditTextDialog;
 import z.zer.tor.media.util.Logger;
 import z.zer.tor.media.util.MimeDetector;
@@ -167,40 +158,12 @@ public final class UIUtils {
     }
 
     /**
-     * Converts an rate into a human readable and localized KB/s speed.
-     */
-    public static String rate2speed(double rate) {
-        return NUMBER_FORMAT0.format(rate) + " " + GENERAL_UNIT_KBPSEC;
-    }
-
-    public static String getFileTypeAsString(Resources resources, byte fileType) {
-        switch (fileType) {
-            case Constants.FILE_TYPE_APPLICATIONS:
-                return resources.getString(R.string.applications);
-            case Constants.FILE_TYPE_AUDIO:
-                return resources.getString(R.string.audio);
-            case Constants.FILE_TYPE_DOCUMENTS:
-                return resources.getString(R.string.documents);
-            case Constants.FILE_TYPE_PICTURES:
-                return resources.getString(R.string.pictures);
-            case Constants.FILE_TYPE_RINGTONES:
-                return resources.getString(R.string.ringtones);
-            case Constants.FILE_TYPE_VIDEOS:
-                return resources.getString(R.string.video);
-            case Constants.FILE_TYPE_TORRENTS:
-                return resources.getString(R.string.media_type_torrents);
-            default:
-                return resources.getString(R.string.unknown);
-        }
-    }
-
-    /**
      * Opens the given file with the default Android activity for that File and
      * mime type.
      */
     public static void openFile(Context context, String filePath, String mime, boolean useFileProvider) {
         try {
-            if (filePath != null && !openAudioInternal(context, filePath)) {
+            if (filePath != null) {
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setDataAndType(getFileUri(context, filePath, useFileProvider), Intent.normalizeMimeType(mime));
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_GRANT_READ_URI_PERMISSION);
@@ -299,29 +262,6 @@ public final class UIUtils {
     }
 
     /**
-     * Create an ephemeral playlist with the files of the same type that live on the folder of the given file descriptor and play it.
-     */
-    public static void playEphemeralPlaylist(final Context context, final FileDescriptor fd) {
-        async(context, UIUtils::playEphemeralPlaylistTask, fd);
-    }
-
-    private static boolean openAudioInternal(final Context context, String filePath) {
-        try {
-            List<FileDescriptor> fds = Librarian.instance().getFiles(context, filePath, true);
-            if (fds.size() == 1 && fds.get(0).fileType == Constants.FILE_TYPE_AUDIO) {
-                playEphemeralPlaylist(context, fds.get(0));
-                UXStats.instance().log(UXAction.LIBRARY_PLAY_AUDIO_FROM_FILE);
-                return true;
-            } else {
-                return false;
-            }
-        } catch (Throwable e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
-    /**
      * Checks setting to show or not the transfers window right after a download has started.
      * This should probably be moved elsewhere (similar to GUIMediator on the desktop)
      */
@@ -388,58 +328,8 @@ public final class UIUtils {
         ctx.sendBroadcast(intent);
     }
 
-    public static int randomPitchResId(boolean avoidSupportPitches) {
-        int offsetRemoveAds = 4;
-        int offset = !avoidSupportPitches ? 0 : offsetRemoveAds;
-        return PITCHES[offset + new Random().nextInt(PITCHES.length - offset)];
-    }
-
-    public static double getScreenInches(Activity activity) {
-        DisplayMetrics dm = new DisplayMetrics();
-        activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
-        double x_sq = Math.pow(dm.widthPixels / dm.xdpi, 2);
-        double y_sq = Math.pow(dm.heightPixels / dm.ydpi, 2);
-        // pitagoras
-        return Math.sqrt(x_sq + y_sq);
-    }
-
     public static boolean isTablet(Resources res) {
         return res.getBoolean(R.bool.isTablet);
     }
 
-    public static boolean isPortrait(Activity activity) {
-        DisplayMetrics dm = new DisplayMetrics();
-        activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
-        return dm.heightPixels > dm.widthPixels;
-    }
-
-    /**
-     * @param thresholdPreferenceKey - preference key for an int threshold
-     * @return true if the threshold is >= 100, otherwise true if the dice roll is below the threshold
-     */
-    public static boolean diceRollPassesThreshold(ConfigurationManager cm, String thresholdPreferenceKey) {
-        int thresholdValue = cm.getInt(thresholdPreferenceKey);
-        int diceRoll = new Random().nextInt(100) + 1; //1-100
-        if (thresholdValue <= 0) {
-            LOG.info("diceRollPassesThreshold(" + thresholdPreferenceKey + "=" + thresholdValue + ") -> false");
-            return false;
-        }
-        if (thresholdValue >= 100) {
-            LOG.info("diceRollPassesThreshold(" + thresholdPreferenceKey + "=" + thresholdValue + ") -> true (always)");
-            return true;
-        }
-        LOG.info("diceRollPassesThreshold(" + thresholdPreferenceKey + "=" + thresholdValue + ", roll=" + diceRoll + ") -> " + (diceRoll <= thresholdValue));
-        return diceRoll <= thresholdValue;
-    }
-
-    private static void playEphemeralPlaylistTask(Context context, FileDescriptor fd) {
-        try {
-            CoreMediaPlayer mediaPlayer = Engine.instance().getMediaPlayer();
-            if (mediaPlayer != null) {
-                mediaPlayer.play(Librarian.instance().createEphemeralPlaylist(context, fd));
-            }
-        } catch (Throwable ignored) {
-            // possible Runtime error thrown by Librarian.instance()
-        }
-    }
 }

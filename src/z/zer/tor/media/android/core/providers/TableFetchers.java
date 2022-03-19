@@ -18,11 +18,6 @@ import static android.provider.MediaStore.MediaColumns.ARTIST;
 public final class TableFetchers {
 
     private static final TableFetcher AUDIO_TABLE_FETCHER = new AudioTableFetcher();
-    private static final TableFetcher PICTURES_TABLE_FETCHER = new PicturesTableFetcher();
-    private static final TableFetcher VIDEOS_TABLE_FETCHER = new VideosTableFetcher();
-    private static final TableFetcher DOCUMENTS_TABLE_FETCHER = new DocumentsTableFetcher();
-    private static final TableFetcher RINGTONES_TABLE_FETCHER = new RingtonesTableFetcher();
-    private static final TableFetcher TORRENTS_TABLE_FETCHER = new TorrentsTableFetcher();
 
     public static abstract class AbstractTableFetcher implements TableFetcher {
 
@@ -93,7 +88,7 @@ public final class TableFetchers {
             long dateModified = cur.getLong(dateModifiedCol);
             long albumId = cur.getLong(albumIdCol);
 
-            FileDescriptor fd = new FileDescriptor(id, artist, title, album, year, path, Constants.FILE_TYPE_AUDIO, mime, size, dateAdded, dateModified, true);
+            FileDescriptor fd = new FileDescriptor(id, artist, title, album, year, path, mime, size, dateAdded, dateModified, true);
             fd.albumId = albumId;
 
             return fd;
@@ -104,7 +99,7 @@ public final class TableFetchers {
         }
     }
 
-    public static class PicturesTableFetcher extends AbstractTableFetcher {
+    public static class PicturesTableFetcher  {
 
         private int idCol;
         private int titleCol;
@@ -123,7 +118,7 @@ public final class TableFetchers {
             long dateAdded = cur.getLong(dateAddedCol);
             long dateModified = cur.getLong(dateModifiedCol);
 
-            return new FileDescriptor(id, null, title, null, null, path, Constants.FILE_TYPE_PICTURES, mime, size, dateAdded, dateModified, true);
+            return new FileDescriptor(id, null, title, null, null, path,  mime, size, dateAdded, dateModified, true);
         }
 
         public String[] getColumns() {
@@ -134,9 +129,6 @@ public final class TableFetchers {
             return MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
         }
 
-        public byte getFileType() {
-            return Constants.FILE_TYPE_PICTURES;
-        }
 
         public String getSortByExpression() {
             return ImageColumns.DATE_ADDED + " DESC";
@@ -176,7 +168,12 @@ public final class TableFetchers {
             long dateAdded = cur.getLong(dateAddedCol);
             long dateModified = cur.getLong(dateModifiedCol);
 
-            return new FileDescriptor(id, artist, title, album, null, path, Constants.FILE_TYPE_VIDEOS, mime, size, dateAdded, dateModified, true);
+            return new FileDescriptor(id, artist, title, album, null, path, mime, size, dateAdded, dateModified, true);
+        }
+
+        @Override
+        public byte getFileType() {
+            return 0;
         }
 
         public String[] getColumns() {
@@ -187,9 +184,6 @@ public final class TableFetchers {
             return MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
         }
 
-        public byte getFileType() {
-            return Constants.FILE_TYPE_VIDEOS;
-        }
 
         public String getSortByExpression() {
             return VideoColumns.DATE_ADDED + " DESC";
@@ -226,7 +220,7 @@ public final class TableFetchers {
             int size = cur.getInt(sizeCol);
             long dateAdded = cur.getLong(dateAddedCol);
             long dateModified = cur.getLong(dateModifiedCol);
-            return new FileDescriptor(id, null, title, null, null, path, Constants.FILE_TYPE_DOCUMENTS, mime, size, dateAdded, dateModified, true);
+            return new FileDescriptor(id, null, title, null, null, path, mime, size, dateAdded, dateModified, true);
         }
 
         public String[] getColumns() {
@@ -237,9 +231,6 @@ public final class TableFetchers {
             return MediaStore.Files.getContentUri("external");
         }
 
-        public byte getFileType() {
-            return Constants.FILE_TYPE_DOCUMENTS;
-        }
 
         public String getSortByExpression() {
             return FileColumns.DATE_ADDED + " DESC";
@@ -261,22 +252,15 @@ public final class TableFetchers {
         final static String extensionsWhereSubClause = getExtsWhereSubClause();
 
         private static String getExtsWhereSubClause() {
-            final String[] exts = MediaType.getDocumentMediaType().getExtensions().toArray(new String[0]);
             StringBuilder sb = new StringBuilder();
             sb.append('(');
-            int index = 0;
-            while (index < exts.length) {
-                sb.append(FileColumns.DATA);
-                sb.append(" LIKE '%.");
-                sb.append(exts[index]);
-                sb.append('\'');
-                if (index < exts.length - 1) {
-                    sb.append(" OR ");
-                }
-                index++;
-            }
             sb.append(") AND ");
             return sb.toString();
+        }
+
+        @Override
+        public byte getFileType() {
+            return 0;
         }
 
         @Override
@@ -293,24 +277,6 @@ public final class TableFetchers {
         @Override
         public String[] whereArgs() {
             return new String[]{"%cache%", "%/.%", "%/libtorrent/%", "%com.google.%"};
-        }
-    }
-
-    public static final class TorrentsTableFetcher extends AbstractFilesTableFetcher {
-
-        @Override
-        public String where() {
-            return FileColumns.DATA + " NOT LIKE ? AND " +
-                    FileColumns.DATA + " NOT LIKE ? AND " +
-                    FileColumns.DATA + " NOT LIKE ? AND " +
-                    FileColumns.DATA + " LIKE ? AND " +
-                    FileColumns.MEDIA_TYPE + " = " + FileColumns.MEDIA_TYPE_NONE + " AND " +
-                    FileColumns.SIZE + " > 0";
-        }
-
-        @Override
-        public String[] whereArgs() {
-            return new String[]{"%/cache/%", "%/.%", "%/libtorrent/%", "%.torrent"};
         }
     }
 
@@ -339,7 +305,12 @@ public final class TableFetchers {
             long dateAdded = cur.getLong(dateAddedCol);
             long dateModified = cur.getLong(dateModifiedCol);
 
-            return new FileDescriptor(id, artist, title, album, year, path, Constants.FILE_TYPE_RINGTONES, mime, size, dateAdded, dateModified, true);
+            return new FileDescriptor(id, artist, title, album, year, path, mime, size, dateAdded, dateModified, true);
+        }
+
+        @Override
+        public byte getFileType() {
+            return 0;
         }
 
         public String[] getColumns() {
@@ -350,9 +321,6 @@ public final class TableFetchers {
             return MediaStore.Audio.Media.INTERNAL_CONTENT_URI;
         }
 
-        public byte getFileType() {
-            return Constants.FILE_TYPE_RINGTONES;
-        }
 
         public String getSortByExpression() {
             return AudioColumns.DATE_ADDED + " DESC";
@@ -373,21 +341,9 @@ public final class TableFetchers {
     }
 
     public static TableFetcher getFetcher(byte fileType) {
-        switch (fileType) {
-            case Constants.FILE_TYPE_AUDIO:
-                return AUDIO_TABLE_FETCHER;
-            case Constants.FILE_TYPE_PICTURES:
-                return PICTURES_TABLE_FETCHER;
-            case Constants.FILE_TYPE_VIDEOS:
-                return VIDEOS_TABLE_FETCHER;
-            case Constants.FILE_TYPE_DOCUMENTS:
-                return DOCUMENTS_TABLE_FETCHER;
-            case Constants.FILE_TYPE_RINGTONES:
-                return RINGTONES_TABLE_FETCHER;
-            case Constants.FILE_TYPE_TORRENTS:
-                return TORRENTS_TABLE_FETCHER;
-            default:
-                return null;
+        if (fileType == Constants.FILE_TYPE_AUDIO) {
+            return AUDIO_TABLE_FETCHER;
         }
+        return null;
     }
 }

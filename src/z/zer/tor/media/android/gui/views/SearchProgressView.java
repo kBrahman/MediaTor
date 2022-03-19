@@ -39,14 +39,6 @@ public class SearchProgressView extends LinearLayout {
 
         textTryFrostWirePlus = findViewById(R.id.view_search_progress_try_frostwire_plus);
         textTryFrostWirePlus.setPaintFlags(textTryFrostWirePlus.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-
-        if (textTryFrostWirePlus != null) {
-            initTryFrostWirePlusListener();
-        }
-    }
-
-    private void initTryFrostWirePlusListener() {
-        textTryFrostWirePlus.setOnClickListener(v -> UIUtils.openURL(getContext(), Constants.FROSTWIRE_MORE_RESULTS));
     }
 
     @Override
@@ -59,6 +51,5 @@ public class SearchProgressView extends LinearLayout {
     }
 
     public interface CurrentQueryReporter {
-        String getCurrentQuery();
     }
 }

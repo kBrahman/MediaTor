@@ -6,34 +6,14 @@
     android:background="@color/colorPrimary"
     android:orientation="vertical">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        style="@style/divider_line_dark" />
-
-    <!-- Dummy item to prevent EditText from receiving focus at startup -->
-    <LinearLayout
-        android:id="@+id/view_search_input_linearlayout_dummy"
-        android:layout_width="0px"
-        android:layout_height="0px"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:orientation="horizontal" />
-
     <z.zer.tor.media.android.gui.views.ClearableEditTextView
         android:id="@+id/view_search_input_text_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="6dp"
         android:layout_marginStart="4dp"
-        android:layout_marginEnd="6dp"
         android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="6dp"
         frostwire:clearable_hint="@string/search_label" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        style="@style/divider_line_dark" />
-
-    <include layout="@layout/view_searchinput_tablayout" />
 </LinearLayout>

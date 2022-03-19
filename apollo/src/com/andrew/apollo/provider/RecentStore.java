@@ -1,20 +1,3 @@
-/*
- * Copyright (C) 2012 Andrew Neal
- *
- * Modified by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Marcelina Knitter (@marcelinkaaa), Jose Molina (@votaguz)
- * Copyright (c) 2013-2018, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */
-
 package com.andrew.apollo.provider;
 
 import android.content.ContentValues;
@@ -26,21 +9,7 @@ import android.provider.BaseColumns;
 import android.provider.MediaStore.Audio.AudioColumns;
 import android.text.TextUtils;
 
-import com.andrew.apollo.ui.activities.ProfileActivity;
 
-/**
- * The {@link RecentStore} is used to display a list of
- * recently listened songs. In order to populate this list with
- * the correct data, we keep a cache of the song ID, title, artist, album, duration and time it was
- * played for last time to be retrieved later.
- * <p>
- * In {@link ProfileActivity}, when viewing the profile for an artist, the first
- * image the carousel header is the last album the user listened to for that
- * particular artist. That album is retrieved using
- * {@link #getAlbumName(String)}.
- *
- * @author Andrew Neal (andrewdneal@gmail.com)
- */
 public final class RecentStore extends SQLiteOpenHelper {
 
     /* Version constant to increment when the database should be rebuilt */

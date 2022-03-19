@@ -65,14 +65,13 @@ public class FileDescriptor implements Cloneable {
     public FileDescriptor() {
     }
 
-    public FileDescriptor(int id, String artist, String title, String album, String year, String path, byte fileType, String mime, long fileSize, long dateAdded, long dateModified, boolean isShared) {
+    public FileDescriptor(int id, String artist, String title, String album, String year, String path, String mime, long fileSize, long dateAdded, long dateModified, boolean isShared) {
         this.id = id;
         this.artist = artist;
         this.title = title;
         this.album = album;
         this.year = year;
         this.filePath = path;
-        this.fileType = fileType;
         this.mime = mime;
         this.fileSize = fileSize;
         this.dateAdded = dateAdded;
@@ -143,7 +142,7 @@ public class FileDescriptor implements Cloneable {
     @SuppressWarnings("CloneDoesntCallSuperClone")
     @Override
     public FileDescriptor clone() {
-        return new FileDescriptor(id, artist, title, album, year, filePath, fileType, mime, fileSize, dateAdded, dateModified, shared);
+        return new FileDescriptor(id, artist, title, album, year, filePath, mime, fileSize, dateAdded, dateModified, shared);
     }
 
     private void ensureCorrectMimeType(FileDescriptor fd) {

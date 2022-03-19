@@ -514,14 +514,6 @@
         <item name="android:paddingRight">24dp</item>
     </style>
 
-
-    <!-- Wizard Activity -->
-
-    <style name="WizardActivity" parent="Theme.MediaTor">
-        <item name="android:textColorSecondary">@color/app_text_wizard</item>
-        <item name="android:windowBackground">@color/app_background</item>
-    </style>
-
     <style name="PlayerActivity" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>

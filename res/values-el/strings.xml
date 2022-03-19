@@ -19,11 +19,8 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Αποκάλυψη:</b> Αν και συνιστάται για τις λήψεις σας, ιδίως όταν κάνετε λήψη ή ανταλλάσσετε ευαίσθητες πληροφορίες (π.χ. τραπεζικά) και ενώ χρησιμοποιείτε δημόσια δεδομένα Wi-Fi ή κινητά, <b>δεν χρειάζεται ένα VPN για να χρησιμοποιήσετε FrostWire. </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Αγγίξτε τις ετικέτες στις]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Η ιδιωτική σας ζωή είναι ένα θεμελιώδες ανθρώπινο δικαίωμα</b>. Μια μη προστατευμένη σύνδεση σημαίνει ότι ό, τι κάνετε online, συμπεριλαμβανομένων των <b>λήψεων, αναζητήσεων, μηνυμάτων</b>, μπορεί να παρακολουθείται και να παρεμποδίζεται από οποιονδήποτε στο δίκτυό σας, π.χ. Πάροχοι υπηρεσιών διαδικτύου, χάκερ, κυβερνήσεις.<br><br><b>We STRONGLY recommend using a VPN service</b>. <br> Εδώ είναι μερικές επιλογές που παρέχουν αξιόπιστες υπηρεσίες και λειτουργούν καλά με το FrostWire:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Συνδέεστε στο Internet χρησιμοποιώντας ένα VPN. <br><br> Αν δεν το έχετε ήδη, συνιστούμε να χρησιμοποιήσετε μία από τις παρακάτω υπηρεσίες για να κρυπτογραφήσετε τη σύνδεσή σας και <b>να διαφυλάξετε τα προσωπικά σας δεδομένα</b>. ]]></string>
-    <string name="activity_preferences_name">Ρυθμίσεις</string>
     <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Ενεργά Downloads</string>
     <string name="activity_uploads_name">Ενεργά Uploads</string>
@@ -215,7 +212,6 @@
     <string name="not_connected">Δεν Υπάρχει Σύνδεση</string>
     <string name="mobile_data">Δίκτυο Δεδομένων</string>
     <string name="media_player_failed">Το media player απέτυχε</string>
-    <string name="activity_media_player_name">Media Player</string>
     <string name="search_settings">Ρυθμίσεις Αναζήτησης</string>
     <string name="use_tpb">Χρήση TPB</string>
     <string name="use_tpb_summary">Το TPB είναι βασισμένο σε magnet, δουλεύει μόνο σε ασύρματο δίκτυο</string>
@@ -539,7 +535,6 @@
     <string name="select_option_below">Επιλέξτε από τις παρακάτω επιλογές:</string>
     <string name="use_limetorrents">Χρήση Limetorrents</string>
     <string name="error_no_internet_connection">Σφάλμα: Ελέγξτε τη σύνδεση στο Internet</string>
-    <string name="why_we_need_storage_permissions">Γιατί χρειαζόμαστε άδειες αποθήκευσης.</string>
     <string name="invalid_filename">Άκυρο όνομα αρχείου</string>
     <string name="wifi_network_unavailable">Wifi δίκτυο δεν είναι διαθέσιμο</string>
     <string name="select_all">Επιλογή όλων</string>
@@ -585,7 +580,6 @@
     <string name="protect_my_privacy">Προστασία της ιδιωτικής ζωής μου</string>
     <string name="keep_the_project_alive">Κρατήστε το έργο ζωντανό</string>
     <string name="remove_ads">Αφαίρεσε τις διαφημίσεις</string>
-    <string name="frostwire_sticker_and_more">FrostWire αυτοκόλλητα και πολλά άλλα</string>
     <string name="wifi_networks_only_summary">Αποθήκευση δεδομένων. Λήψη μόνο εάν είναι εγκατεστημένος σύνδεση Wi-Fi. </string>
     <string name="notifications_other_settings">Ειδοποιήσεις και Άλλα</string>
     <string name="wifi_networks_only">μόνο σε δίκτυα Wi-Fi</string>

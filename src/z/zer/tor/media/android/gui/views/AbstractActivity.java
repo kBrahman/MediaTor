@@ -4,23 +4,17 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.BroadcastReceiver;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ContextMenu;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 
 import androidx.annotation.IdRes;
 import androidx.annotation.LayoutRes;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.ActionMode;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentActivity;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -28,14 +22,13 @@ import java.util.List;
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.util.Debug;
 
-public abstract class AbstractActivity extends AppCompatActivity {
+public abstract class AbstractActivity extends FragmentActivity {
 
+    private static final String TAG = "AbstractActivity";
     private final int layoutResId;
     private final ArrayList<String> fragmentTags;
 
     private boolean paused;
-
-    private static boolean menuIconsVisible = false;
 
     public AbstractActivity(@LayoutRes int layoutResId) {
         this.layoutResId = layoutResId;
@@ -97,7 +90,7 @@ public abstract class AbstractActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(layoutResId);
         initComponents(savedInstanceState);
-        setToolbar();
+        Log.i(TAG,"onCreate");
     }
 
     @Override
@@ -121,20 +114,12 @@ public abstract class AbstractActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         boolean r = super.onCreateOptionsMenu(menu);
-        setMenuIconsVisible(menu);
         return r;
     }
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        setMenuIconsVisible(menu);
-    }
-
-    @Nullable
-    @Override
-    public ActionMode startSupportActionMode(@NonNull ActionMode.Callback callback) {
-        return super.startSupportActionMode(new ActionModeCallback(callback));
     }
 
     @Override
@@ -151,28 +136,10 @@ public abstract class AbstractActivity extends AppCompatActivity {
         }
     }
 
-    protected void initComponents(Bundle savedInstanceState) {
-    }
-
-    protected void initToolbar(Toolbar toolbar) {
-    }
-
-    private void setToolbar() {
-        Toolbar toolbar = findToolbar();
-        if (toolbar != null) {
-            setSupportActionBar(toolbar);
-            toolbar.setTitle(getTitle());
-            initToolbar(toolbar);
-        }
-    }
+    protected abstract void initComponents(Bundle savedInstanceState);
 
     protected final <T extends View> T findView(@IdRes int id) {
         return super.findViewById(id);
-    }
-
-    @SuppressWarnings("unchecked")
-    protected final <T extends Fragment> T findFragment(@IdRes int id) {
-        return (T) getFragmentManager().findFragmentById(id);
     }
 
     /**
@@ -203,98 +170,13 @@ public abstract class AbstractActivity extends AppCompatActivity {
         return findView(R.id.toolbar_main);
     }
 
-    protected final void setToolbarView(View view, int gravity) {
-        FrameLayout placeholder = findView(R.id.toolbar_main_placeholder);
-        if (placeholder != null) {
-            placeholder.removeAllViews();
-        }
-        if (view != null && placeholder != null) {
-            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            params.gravity = gravity;
-            placeholder.addView(view, params);
-            placeholder.setVisibility(View.VISIBLE);
-        }
-    }
-
-    protected final void setToolbarView(View view) {
-        setToolbarView(view, Gravity.START | Gravity.CENTER_VERTICAL);
-    }
-
     /**
      * This settings is application wide and apply to all activities and
      * fragments that use our internal abstract activity. This enable
      * or disable the menu icons for both options and context menu.
      *
-     * @param visible if icons are visible or not
      */
-    public static void setMenuIconsVisible(boolean visible) {
-        menuIconsVisible = visible;
+    public static void setMenuIconsVisible() {
     }
 
-    private static void setMenuIconsVisible(Menu menu) {
-        if (menu == null) { // in case the framework changes
-            return;
-        }
-
-        // android by default set the field to false
-        if (!menuIconsVisible) {
-            return; // quick return
-        }
-
-        Class<?> clazz = menu.getClass();
-        Field f = null;
-        while (clazz != null && f == null) {
-            try {
-                f = clazz.getDeclaredField("mOptionalIconsVisible");
-            } catch (Throwable e) {
-                // next, no need to get them all, balanced cost of exception
-            }
-            clazz = clazz.getSuperclass();
-        }
-
-        if (f == null) {
-            // the menu framework changed, nothing we can do, but visual
-            // will reveal that a fix is necessary
-            return;
-        }
-
-        try {
-            f.setAccessible(true);
-            f.set(menu, menuIconsVisible);
-        } catch (Throwable e) {
-            // ignore, unable to set icons for the menu, but visual
-            // will reveal that a fix is necessary
-        }
-    }
-
-    private static final class ActionModeCallback implements ActionMode.Callback {
-
-        private final ActionMode.Callback cb;
-
-        private ActionModeCallback(ActionMode.Callback cb) {
-            this.cb = cb;
-        }
-
-        @Override
-        public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-            boolean r = cb.onCreateActionMode(mode, menu);
-            setMenuIconsVisible(menu);
-            return r;
-        }
-
-        @Override
-        public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-            return cb.onPrepareActionMode(mode, menu);
-        }
-
-        @Override
-        public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-            return cb.onActionItemClicked(mode, item);
-        }
-
-        @Override
-        public void onDestroyActionMode(ActionMode mode) {
-            cb.onDestroyActionMode(mode);
-        }
-    }
 }

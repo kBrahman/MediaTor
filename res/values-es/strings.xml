@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <!-- Important: Android tiene bugs con HTML, no dejes etiquetas HTML pegadas al texto, deja espacios. De otro modo android cuenta las etiquetas como parte de la longitud del texto y luego las lineas se cortan de forma prematura. -->
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Información:</b> Aunque te lo recomendamos, especialmente al descargar o intercambiar información confidencial (por ejemplo, información bancaria) y al usar Wi-Fi público o datos móviles, <b>no necesitas un VPN para usar FrostWire. </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Toca las etiquetas aplicadas para]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Tu privacidad es un derecho humano fundamental</b>. Una conexión desprotegida significa que todo lo que haces en línea <b>búsquedas, mensajería, y descargas</b>, puede ser monitoreado e interceptado por cualquier persona en tu red, p.ej. proveedores de servicios de Internet, hackers, gobiernos.<br><br><b>Recomendamos ALTAMENTE el uso de un servicio de VPN</b>. <br> Estas son algunas opciones que brindan un servicio confiable y que funcionan muy bien con FrostWire:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Estás conectado a Internet usando un VPN. <br><br> Si aún no lo has hecho, te recomendamos que uses uno de estos servicios para encriptar tu conexión y <b>proteger tu privacidad</b>. ]]></string>
 
     <!-- NON HTML TAGS -->
-    <string name="activity_preferences_name">Configuración</string>
     <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Descargas Activas</string>
     <string name="activity_uploads_name">Cargas Activas</string>
@@ -199,7 +196,6 @@
     <string name="not_connected">No está conectado</string>
     <string name="mobile_data">Datos Móviles</string>
     <string name="media_player_failed">El Reproductor Multimedia ha fallado</string>
-    <string name="activity_media_player_name">Reproductor Multimedia</string>
     <string name="search_settings">Preferencias de Búsqueda</string>
     <string name="use_zooqle">Usar Zooqle.com</string>
     <string name="use_tpb">Usar TPB</string>
@@ -477,7 +473,6 @@
     <string name="remove_torrent_and_data">Eliminar Torrent y Archivos Descargados</string>
     <string name="frostwire_shutting_down_no_permissions">Lo siento, MediaTor no puede continuar sin tu permiso de acceder al disco.</string>
     <string name="shutting_down">Apagando…</string>
-    <string name="why_we_need_storage_permissions">Por qué necesitamos permisos de almacenamiento.</string>
     <string name="restarting">Reiniciando…</string>
     <string name="torrent_transfer_aborted_on_mobile_data">Las transferencias de torrent no empezarán hasta que te conectes a una red Wi-Fi. (Verifica tus preferencias de Redes con respecto al uso de datos 3G/4G)</string>
     <string name="transfers_context_menu_copy_magnet">Copiar Magnet</string>
@@ -567,7 +562,6 @@
     <string name="advertisement">publicidad</string>
     <string name="all_free_downloads">Descargas Gratuitas</string>
 
-    <string name="frostwire_sticker_and_more">Calcomanías de MediaTor y más</string>
     <string name="wifi_networks_only_summary">Ahorra datos. Descarga solo si se establece la conexión Wi-Fi.</string>
     <string name="notifications_other_settings">Notificaciones y otros</string>
     <string name="wifi_networks_only">Solo redes Wi-Fi</string>

@@ -19,9 +19,7 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[* على الرغم من أن أوصى لتحميل الخاص بك، فإنك لا تحتاج إلى VPN لاستخدام برنامج FrostWire. ]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>النصيحة:</b> المس العلامات المطبقة على]]></string>
-    <string name="activity_preferences_name">إعدادات</string>
     <string name="activity_chat_named">دردشة</string>
     <string name="activity_downloads_name">التنزيلات النشطة</string>
     <string name="activity_uploads_name">التحميلات النشطة</string>
@@ -213,7 +211,6 @@
     <string name="not_connected">غير متصل</string>
     <string name="mobile_data">بيانات الجوال</string>
     <string name="media_player_failed">فشل الميديا بلاير</string>
-    <string name="activity_media_player_name">مشغل الوسائط</string>
     <string name="search_settings">إعدادات البحث</string>
     <string name="use_zooqle">Zooqle.com استخدم</string>
     <string name="use_tpb">ThePirateBay.se استخدم </string>
@@ -523,7 +520,6 @@
     <string name="use_limetorrents">استخدام Limetorrents</string>
     <string name="use_yify_summary">Yify هو المغناطيس مقرها، يعمل فقط على واي فاي</string>
     <string name="error_no_internet_connection">خطأ: تحقق من اتصال الإنترنت</string>
-    <string name="why_we_need_storage_permissions">لماذا نحن بحاجة أذونات التخزين.</string>
     <string name="invalid_filename">اسم الملف غير صالح</string>
     <string name="wifi_network_unavailable">واي فاي شبكة غير متوفر</string>
     <string name="select_all">اختر الكل</string>
@@ -583,7 +579,6 @@
     <string name="keep_the_project_alive">تبقي على قيد الحياة مشروع</string>
     <string name="remove_ads">ازالة الاعلانات</string>
     <string name="use_tpb_summary">TPB هو المغناطيس مقرها، يعمل فقط على واي فاي</string>
-    <string name="frostwire_sticker_and_more">ملصقات فروست واير وأكثر من ذلك</string>
     <string name="wifi_networks_only_summary">احفظ البيانات. تحميل فقط إذا ثبت اتصال واي فاي. </string>
     <string name="notifications_other_settings">الإخطارات وغيره</string>
     <string name="wifi_networks_only">شبكات واي فاي فقط</string>

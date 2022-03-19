@@ -86,8 +86,7 @@
   <string name="delete_files_title">Läschen Dateien</string>
   <string name="no_effects_for_you">Den Equalizer konnt net opgemaach ginn.</string>
   <string name="accessibility_repeat_one">Wieder Wieder</string>
-  <string name="page_last_added">Lescht geäntwert</string>
-  <string name="use_default">Benotze Standardfaarf</string>
+    <string name="use_default">Benotze Standardfaarf</string>
   <string name="context_menu_remove_from_recent">Entferne vun de läschten</string>
   <string name="empty_playlist">Dës Playlist ass eidel.\n\nKlickt hei fir ze léieren wéi Dir Lidder u kënnt.</string>
   <string name="empty_last_added">Lieder déi Dir am Laaf vum leschten Mount huet, ginn hei gewisen.</string>

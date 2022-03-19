@@ -24,34 +24,12 @@ public class SearchInputView extends LinearLayout {
     private final TextInputClickListener textInputListener;
     private final SuggestionsAdapter adapter;
     private ClearableEditTextView textInput;
-    private View dummyFocusView;
     private OnSearchListener onSearchListener;
-    private TabLayout tabLayout;
-    private final SparseArray<FileTypeTab> toFileTypeTab;
-
-    private enum FileTypeTab {
-        TAB_AUDIO(Constants.FILE_TYPE_AUDIO, 0),   TAB_TORRENTS(Constants.FILE_TYPE_TORRENTS, 1);
-
-        final byte fileType;
-        final int position;
-
-        FileTypeTab(byte fileType, int position) {
-            this.fileType = fileType;
-            this.position = position;
-        }
-
-        static FileTypeTab at(int position) {
-            return FileTypeTab.values()[position];
-        }
-    }
 
     public SearchInputView(Context context, AttributeSet set) {
         super(context, set);
         this.textInputListener = new TextInputClickListener(this);
         this.adapter = new SuggestionsAdapter(context);
-        toFileTypeTab = new SparseArray<>();
-        toFileTypeTab.put(Constants.FILE_TYPE_AUDIO, FileTypeTab.TAB_AUDIO);
-        toFileTypeTab.put(Constants.FILE_TYPE_TORRENTS, FileTypeTab.TAB_TORRENTS);
     }
 
     public void setShowKeyboardOnPaste(boolean show) {
@@ -99,26 +77,6 @@ public class SearchInputView extends LinearLayout {
         textInput.setAdapter(adapter);
 
         updateHint();
-
-        tabLayout = findViewById(R.id.view_search_input_tab_layout_file_type);
-        TabLayout.OnTabSelectedListener tabSelectedListener = new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                tabItemFileTypeClick(FileTypeTab.at(tab.getPosition()).fileType);
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-                tabItemFileTypeClick(FileTypeTab.at(tab.getPosition()).fileType);
-            }
-        };
-        tabLayout.addOnTabSelectedListener(tabSelectedListener);
-        setFileTypeCountersVisible(false);
-        dummyFocusView = findViewById(R.id.view_search_input_linearlayout_dummy);
     }
 
     private void startSearch(View v) {
@@ -129,22 +87,13 @@ public class SearchInputView extends LinearLayout {
         String query = textInput.getText().trim();
         if (query.length() > 0) {
             int mediaTypeId = ConfigurationManager.instance().getLastMediaTypeFilter();
-            tabItemFileTypeClick(mediaTypeId);
             onSearch(query, mediaTypeId);
         }
-        dummyFocusView.requestFocus();
     }
 
     private void onSearch(String query, int mediaTypeId) {
-        selectTabByMediaType((byte) mediaTypeId);
         if (onSearchListener != null) {
             onSearchListener.onSearch(this, query, mediaTypeId);
-        }
-    }
-
-    private void onMediaTypeSelected(int mediaTypeId) {
-        if (onSearchListener != null) {
-            onSearchListener.onMediaTypeSelected(this, mediaTypeId);
         }
     }
 
@@ -167,55 +116,10 @@ public class SearchInputView extends LinearLayout {
         textInput.setHint(searchFiles + " " + orEnterYTorSCUrl);
     }
 
-    public void selectTabByMediaType(final byte mediaTypeId) {
-        if (toFileTypeTab != null) {
-            FileTypeTab fileTypeTab = toFileTypeTab.get(mediaTypeId);
-            if (fileTypeTab != null && tabLayout != null) {
-                TabLayout.Tab tab = tabLayout.getTabAt(fileTypeTab.position);
-                if (tab != null) {
-                    tab.select();
-                }
-            }
-        }
-    }
-
-    public void switchToThe(boolean right) {
-        int currentTabPosition = tabLayout.getSelectedTabPosition();
-        int nextTabPosition = (right ? ++currentTabPosition : --currentTabPosition) % 6;
-        if (nextTabPosition == -1) {
-            nextTabPosition = 5;
-        }
-        tabLayout.getTabAt(nextTabPosition).select();
-    }
-
-    private void tabItemFileTypeClick(final int fileType) {
-        updateHint();
-        onMediaTypeSelected(fileType);
-    }
-
     public interface OnSearchListener {
         void onSearch(View v, String query, int mediaTypeId);
 
-        void onMediaTypeSelected(View v, int mediaTypeId);
-
         void onClear(View v);
-    }
-
-    public void updateFileTypeCounter(byte fileType, int numFiles) {
-        try {
-            String numFilesStr = String.valueOf(numFiles);
-            if (numFiles > 999) {
-                numFilesStr = "+1k";
-            }
-            tabLayout.getTabAt(toFileTypeTab.get(fileType).position).setText(numFilesStr);
-        } catch (Throwable e) {
-            // NPE
-        }
-    }
-
-    public void setFileTypeCountersVisible(boolean fileTypeCountersVisible) {
-        TabLayout tabLayout = findViewById(R.id.view_search_input_tab_layout_file_type);
-        tabLayout.setVisibility(fileTypeCountersVisible ? View.VISIBLE : View.GONE);
     }
 
     private static final class TextInputClickListener extends ClickAdapter<SearchInputView> implements OnItemClickListener, OnActionListener {

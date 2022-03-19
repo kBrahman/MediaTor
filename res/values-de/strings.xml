@@ -19,11 +19,8 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Offenlegung:</b> Obwohl für Ihre Downloads empfohlen, insbesondere beim Herunterladen oder Austausch sensibler Informationen (z. B. Bankgeschäfte) und bei der Nutzung öffentlicher Wi-Fi- oder mobiler Daten, <b>Sie brauchen nicht ein VPN Wire zu verwenden. </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>Hinweis:</b> Berühren angewendet Tags]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Ihre Privatsphäre ist ein Grundrecht</b>. Eine ungeschützte Verbindung bedeutet, dass alles, was Sie online tun, einschließlich <b>Downloads, Suchen, Nachrichten</b>, von jedem in Ihrem Netzwerk überwacht und abgefangen werden kann, z. Internet Service Provider, Hacker, Regierungen.<br><br><b>Wir empfehlen DRINGLICH, einen VPN-Dienst zu verwenden</b>. <br> Hier sind einige Optionen, die einen zuverlässigen Service bieten und gut mit MediaTor funktionieren:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Sie sind über ein VPN mit dem Internet verbunden. <br> <br> Wenn Sie es nicht bereits sind, empfehlen wir Ihnen, einen der folgenden Dienste zu verwenden, um Ihre Verbindung zu verschlüsseln und <b>Ihre Privatsphäre zu schützen</b>. ]]></string>
-    <string name="activity_preferences_name">Einstellungen</string>
     <string name="activity_chat_named">Chat</string>
     <string name="activity_downloads_name">Aktive Downloads</string>
     <string name="activity_uploads_name">Aktive Uploads</string>
@@ -215,7 +212,6 @@
     <string name="not_connected">Nicht verbunden</string>
     <string name="mobile_data">Mobile Daten</string>
     <string name="media_player_failed">Media Player ist fehlgeschlagen</string>
-    <string name="activity_media_player_name">Media Player</string>
     <string name="search_settings">Einstellungen durchsuchen</string>
     <string name="use_zooqle">Benutze Zooqle.com</string>
     <string name="use_tpb">Benutze ThePirateBay.org</string>
@@ -516,7 +512,6 @@
     <string name="use_limetorrents">Benutze Limetorrents</string>
     <string name="use_yify_summary">Yify ist Magnet basiert, funktioniert nur auf der  Wifi</string>
     <string name="error_no_internet_connection">Fehler: Überprüfen Internetverbindung</string>
-    <string name="why_we_need_storage_permissions">Warum brauchen wir Speicherberechtigungen.</string>
     <string name="invalid_filename">Ungültiger Dateiname</string>
     <string name="wifi_network_unavailable">Wifi-Netzwerk nicht verfügbar</string>
     <string name="select_all">Alles auswählen</string>
@@ -582,7 +577,6 @@
     <string name="use_tpb_summary">TPB ist Magnet basiert, funktioniert nur auf der Wifi</string>
     <string name="advertisement">werbung</string>
     <string name="all_free_downloads">Alle kostenlosen Downloads</string>
-    <string name="frostwire_sticker_and_more">FrostWire Aufkleber und mehr</string>
     <string name="wifi_networks_only_summary">Daten speichern. Download nur, wenn Wifi-Verbindung hergestellt ist. </string>
     <string name="notifications_other_settings">Benachrichtigungen und Sonstiges</string>
 

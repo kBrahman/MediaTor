@@ -4,71 +4,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.drawerlayout.widget.DrawerLayout
-
-        android:id="@+id/activity_main_drawer_layout"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/activity_main_fragment_search"
+        android:name="z.zer.tor.media.android.gui.fragments.SearchFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clickable="true"
-        android:focusable="true">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/tabs"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/activity_main_fragment_my_music"
+        android:name="z.zer.tor.media.android.gui.fragments.MyMusicFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/tabs"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        style="@style/AppTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:tabGravity="fill"
+        app:tabMode="fixed">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/view_search_input_tab_audio"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:icon="@drawable/ic_search_24" />
 
-            <FrameLayout
-                android:id="@+id/content_frame"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_constraintBottom_toTopOf="@+id/activity_main_player_notifier"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <fragment
-                    android:id="@+id/activity_main_fragment_search"
-                    android:name="z.zer.tor.media.android.gui.fragments.SearchFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:tag="search_fragment" />
-
-                <fragment
-                    android:id="@+id/activity_main_fragment_my_files"
-                    android:name="z.zer.tor.media.android.gui.fragments.MyFilesFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-                <fragment
-                    android:id="@+id/activity_main_fragment_transfers"
-                    android:name="z.zer.tor.media.android.gui.fragments.TransfersFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:tag="transfers_fragment" />
-            </FrameLayout>
-
-            <z.zer.tor.media.android.gui.views.MiniPlayerView
-                android:id="@+id/activity_main_player_notifier"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                app:layout_constraintBottom_toTopOf="@id/banner_container" />
-
-            <LinearLayout
-                android:id="@+id/banner_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <z.zer.tor.media.android.gui.views.KeywordFilterDrawerView
-            android:id="@+id/activity_main_keyword_filter_drawer_view"
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/view_search_input_tab_my_music"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="end" />
-
-
-    </androidx.drawerlayout.widget.DrawerLayout>
+            android:icon="@drawable/ic_folder_24" />
+    </com.google.android.material.tabs.TabLayout>
 
     <ProgressBar
         android:id="@+id/pb"

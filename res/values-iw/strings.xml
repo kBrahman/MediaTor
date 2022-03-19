@@ -19,7 +19,6 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[ * למרות המומלץ עבור הורדות שלך,אתה לא צריך VPN להשתמש MediaTor ]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> גע בתגים שחלים על]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ אתה מחובר לאינטרנט באמצעות VPN. <br> <br>r אם אינך משתמש כבר, מומלץ להשתמש באחד מהשירותים הבאים כדי להצפין את החיבור שלך ו <b/> לשמור על הפרטיות שלך <b>. ]]></string>
 
@@ -101,14 +100,12 @@
     <string name="loading_all">טעינת כל</string>
     <string name="azureus_manager_item_allocating">הקצאה</string>
     <string name="app_shutdown_dlg_message">כיבוי רצון זה כל העברות ושירותי רקע. האם אתה בטוח?</string>
-    <string name="frostwire_sticker_and_more">מדבקות MediaTor ועוד</string>
     <string name="show_transfers_on_download_start">העברות הצג על התחל הורדה</string>
     <string name="sharing">שיתוף</string>
     <string name="send_feedback">שלח משוב</string>
     <string name="chat_actions">פעולות צ\'\אט</string>
     <string name="tos_refuse">מסרב</string>
     <string name="torrent_max_total_connections">חיבורים סה"כ מקסימאליים</string>
-    <string name="activity_preferences_name">הגדרות</string>
     <string name="use_torrentdownloads">השתמש TorrentDownloads</string>
     <string name="ten_dollars">$10</string>
     <string name="my_files">הקבצים שלי</string>
@@ -120,7 +117,6 @@
     <string name="invalid_torrent_file">קובץ הטורנט לא חוקי</string>
     <string name="activity_downloads_title_text">הורדות</string>
     <string name="disconnecting">ניתוק</string>
-    <string name="activity_media_player_name">נגן מדיה</string>
     <string name="choose_email_app">בחר יישום דוא"ל…</string>
     <string name="failed_to_add_download">נכשל ניסיון להוסיף להורדה</string>
     <string name="vibrate_on_finished_download">רטט בעת ההורדה מסיים</string>
@@ -423,7 +419,6 @@
     <string name="use_yify_summary">Yify הוא מבוסס מגנט, עובד רק על Wifi</string>
     <string name="error_no_internet_connection">שגיאה: בדוק את החיבור לאינטרנט</string>
     <string name="azureus_manager_item_error">שְׁגִיאָה</string>
-    <string name="why_we_need_storage_permissions">למה אנחנו צריכים הרשאות אחסון.</string>
     <string name="get_a_frostwire_tshirt">קבל בחולצת טריקו FrostWire</string>
     <string name="media_type_applications">יישומי תוכנה</string>
     <string name="invalid_filename">שם קובץ לא תקין</string>

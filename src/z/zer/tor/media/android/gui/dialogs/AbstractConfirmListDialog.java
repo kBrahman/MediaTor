@@ -1,25 +1,6 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- *            Jose Molina (@votaguz), Marcelina Knitter (@marcelinkaaa)
- * Copyright (c) 2011-2017, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package z.zer.tor.media.android.gui.dialogs;
 
 import android.app.Dialog;
-import android.app.FragmentManager;
 import android.content.Context;
 import android.content.DialogInterface.OnCancelListener;
 import android.os.Bundle;
@@ -32,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.fragment.app.FragmentManager;
+
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.gui.views.AbstractDialog;
 import z.zer.tor.media.android.gui.views.AbstractListAdapter;
@@ -42,23 +25,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * This dialog should evolve to allow us for reuse on a number of situations in which you
- * need a dialog that needs to display a list view control.
- * 
- * This would be the simplest version, in the future it will have a text editor to filter
- * the contents of the list, and it will also support different modes of selection.
- * 
- * For now it just uses an adapter to display the contents of the model data.
- * 
- * It's up to the user to implement the adapter (hmm, perhaps that's where the selection mode logic should be)
- * 
- * @author aldenml
- * @author gubatron
- * @author votaguz
- * @author marcelinkaaa
- *
- */
 abstract class AbstractConfirmListDialog<T> extends AbstractDialog implements
         AbstractListAdapter.OnItemCheckedListener<T> {
 

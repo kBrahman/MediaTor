@@ -75,19 +75,10 @@ public class AsyncStartDownload {
     private static void onPostExecute(final Context ctx, final SearchResult sr, final String message, final Transfer transfer) {
         if (transfer != null) {
             if (!(transfer instanceof InvalidTransfer)) {
-                TransferManager tm = TransferManager.instance();
-                if (tm.isBittorrentDownloadAndMobileDataSavingsOn(transfer)) {
-                    UIUtils.showLongMessage(ctx, R.string.torrent_transfer_enqueued_on_mobile_data);
-                    ((BittorrentDownload) transfer).pause();
-                } else {
-                    if (tm.isBittorrentDownloadAndMobileDataSavingsOff(transfer)) {
-                        UIUtils.showLongMessage(ctx, R.string.torrent_transfer_consuming_mobile_data);
-                    }
-
-                    if (message != null) {
+                if (message != null) {
                         UIUtils.showShortMessage(ctx, message);
                     }
-                }
+
                 UIUtils.showTransfersOnDownloadStart(ctx);
             } else if (!(transfer instanceof ExistingDownload)) {
                 UIUtils.showLongMessage(ctx, ((InvalidTransfer) transfer).getReasonResId());

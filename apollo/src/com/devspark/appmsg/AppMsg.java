@@ -27,15 +27,10 @@ public class AppMsg {
      */
     public static final int LENGTH_LONG = 5000;
 
-    /**
-     * Show the text notification for a long period of time with a negative style.
-     */
-    public static final Style STYLE_ALERT = new Style(LENGTH_LONG, R.color.alert);
 
     /**
      * Show the text notification for a short period of time with a positive style.
      */
-    public static final Style STYLE_CONFIRM = new Style(LENGTH_SHORT, R.color.confirm);
     private final Context mContext;
     private int mDuration = LENGTH_SHORT;
     private View mView;

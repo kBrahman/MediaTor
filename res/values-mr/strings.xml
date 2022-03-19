@@ -116,7 +116,6 @@
     <string name="loading_all">सर्व लोड करीत आहे</string>
     <string name="azureus_manager_item_allocating">वाटप</string>
     <string name="app_shutdown_dlg_message">हे सर्व बदल्या आणि पार्श्वभूमी सेवा बंद करेल तुला खात्री आहे?</string>
-    <string name="frostwire_sticker_and_more">FrostWire स्टिकर्स आणि अधिक</string>
     <string name="show_transfers_on_download_start">डाउनलोड प्रारंभ वर हस्तांतरण दर्शवा</string>
     <string name="sharing">सामायिकरण</string>
     <string name="send_feedback">अभिप्राय पाठवा</string>
@@ -124,7 +123,6 @@
     <string name="tos_refuse">नकार द्या</string>
     <string name="touch_applied_tags_to_include_exclude">समाविष्ट/वगळण्यासाठी लागू केलेले टॅग स्पर्श करा</string>
     <string name="torrent_max_total_connections">मॅक्स कमाल कनेक्शन</string>
-    <string name="activity_preferences_name">सेटिंग्ज</string>
     <string name="use_torrentdownloads">TorrentDownloads वापरा</string>
     <string name="ten_dollars">$10</string>
     <string name="one_file_shared">समान फाई नेटवर्कवरील फ्रॉस्टवायर डिव्हाइसेसवर एक फाइल सामायिक केली गेली आहे.</string>
@@ -140,7 +138,6 @@
     <string name="activity_downloads_title_text">डाउनलोड</string>
     <string name="storage_picker_treeuri_not_directory">निवडलेला पथ निर्देशिका नाही</string>
     <string name="disconnecting">डिस्कनेक्ट होत आहे</string>
-    <string name="activity_media_player_name">मीडिया प्लेअर</string>
     <string name="choose_email_app">एक ईमेल अॅप निवडा…</string>
     <string name="failed_to_add_download">डाउनलोड जोडण्यात अयशस्वी</string>
     <string name="vibrate_on_finished_download">डाउनलोड समाप्त झाल्यावर कंपन करा</string>
@@ -352,7 +349,6 @@
     <string name="completed">पूर्ण झाले</string>
     <string name="crawl_cache_size">क्रॉल कॅशे %1$.2fMB</string>
     <string name="wizard_previous">मागील</string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>आपली गोपनीयता मूलभूत मानवी हक्क आहे</b>. असुरक्षित कनेक्शन म्हणजे आपण ज्यासह ऑनलाइन करता आहात त्या सर्व गोष्टी <b>डाउनलोड, शोध, मेसेजिंग</b>, आपल्या नेटवर्कवरील कोणाहीद्वारे परीक्षण केले जाऊ शकते आणि व्यत्यय आणला जाऊ शकतो, उदा. इंटरनेट सेवा प्रदाते, हॅकर्स, सरकार.<br><br><b>आम्ही एक VPN सेवा वापरण्याची शिफारस करतो</b>. <br> विश्वसनीय पर्याय प्रदान करणारे आणि फ्रॉस्टवायरसह चांगले कार्य करणारे काही पर्याय येथे आहेत:]]></string>
     <string name="azureus_manager_item_downloading">डाउनलोड करीत आहे</string>
     <string name="there_is_n_torrents_indexed">%d टॉरेटर्स अनुक्रमित आहेत</string>
     <string name="wifi_sharing_disabled">वाय-फाय शेअरिंग बंद आहे\n\nWi-Fi सामायिकरण समान Wi-Fi नेटवर्कशी कनेक्ट केलेल्या फ्रॉस्टवायर समर्थित डिव्हाइसेस दरम्यान लोकल फाइल्स शेअर करण्यासाठी वापरले जाऊ शकते.\n\n&lt;a href=\"http://bit.ly/1tVReSt\"&gt;अधिक जाणून घ्या.&lt;/a&gt;</string>
@@ -448,7 +444,6 @@
     <string name="peer_http_download_status_unknown">अज्ञात</string>
     <string name="save_bandwidth">बँडविड्थ जतन करा</string>
     <string name="accept_connection_from">पासून कनेक्शन स्वीकारा</string>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>प्रकटन:</b> आपल्या डाउनलोड्सकरिता शिफारस केलेले असले तरी विशेषत: जेव्हाही संवेदनशील माहिती (उदा. बँकिंग) डाउनलोड करता आणि त्यास सार्वजनिक वाय-फाय किंवा मोबाईल डेटा वापरताना, <b>आपण MediaTor वापरण्यासाठी एक VPN गरज नाही. </b>]]></string>
     <string name="transfers_context_resume_all_torrent_transfers">सर्व जोराचा प्रवाह बदला</string>
     <string name="no_data_check_internet_connection">नेटवर्क अनुपलब्ध आहे, कृपया आपले इंटरनेट कनेक्शन तपासा.</string>
     <string name="seeing_less_results">कमी किंवा नाही परिणाम पाहून?</string>
@@ -505,7 +500,6 @@
     <string name="error_no_internet_connection">त्रुटी: इंटरनेट कनेक्शन तपासा</string>
     <string name="time_elapsed">वेळ संपली</string>
     <string name="azureus_manager_item_error">त्रुटी</string>
-    <string name="why_we_need_storage_permissions">आम्हाला स्टोरेज परवानग्याची आवश्यकता का आहे</string>
     <string name="get_a_frostwire_tshirt">एक MediaTor टी-शर्ट मिळवा</string>
     <string name="media_type_applications">अनुप्रयोग</string>
     <string name="invalid_filename">अवैध फाइल नाव</string>

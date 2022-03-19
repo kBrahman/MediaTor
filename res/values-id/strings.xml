@@ -1,9 +1,6 @@
 ﻿<resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Informasi:</b> Meskipun dianjurkan untuk download Anda, terutama setiap kali mengunduh atau menukar informasi sensitif (misalnya perbankan) dan saat menggunakan Wi-Fi publik atau data seluler, <b>Anda tidak perlu VPN untuk menggunakan FrostWire.</b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> Sentuh tag yang diterapkan ke]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Anda terhubung ke Internet menggunakan VPN. <br><br> Jika Anda belum melakukannya, kami sarankan menggunakan salah satu layanan di bawah ini untuk mengenkripsi koneksi Anda dan <b>menjaga privasi Anda</b>. ]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Privasi Anda adalah hak asasi manusia yang fundamental</b>. Sambungan tidak terlindungi artinya semua yang Anda lakukan secara online termasuk <b>unduhan, penelusuran, perpesanan</b>, dapat dipantau dan disadap oleh siapa saja di jaringan Anda, mis. Penyedia Layanan Internet, peretas, pemerintah.<br><br><b>Kami SANGAT merekomendasikan menggunakan layanan VPN</b>. <br> Berikut adalah beberapa opsi yang menyediakan layanan andal dan berfungsi baik dengan FrostWire:]]></string>
-    <string name="activity_preferences_name">Pengaturan</string>
     <string name="activity_chat_named">Percakapan</string>
     <string name="activity_downloads_name">Unduhan-unduhan Aktif</string>
     <string name="activity_uploads_name">Unggahan-unggahan Aktif</string>
@@ -195,7 +192,6 @@
     <string name="not_connected">Tidak Terhubung</string>
     <string name="mobile_data">Data Ponsel</string>
     <string name="media_player_failed">Media Player gagal</string>
-    <string name="activity_media_player_name">Media Player</string>
     <string name="search_settings">Pengaturan Pencarian</string>
     <string name="use_zooqle">Gunakan Zooqle.com</string>
     <string name="use_tpb">Gunakan ThePirateBay.org</string>
@@ -489,7 +485,6 @@
     <string name="use_limetorrents">Gunakan Limetorrents</string>
     <string name="use_yify_summary">Yify adalah magnet berdasarkan, bekerja hanya pada Wifi</string>
     <string name="error_no_internet_connection">Kesalahan: Periksa sambungan Internet</string>
-    <string name="why_we_need_storage_permissions">Mengapa kita perlu izin penyimpanan.</string>
     <string name="invalid_filename">Nama file tidak sah</string>
     <string name="use_archiveorg">Gunakan Archive.org</string>
     <string name="wifi_network_unavailable">Wifi Jaringan Tidak Tersedia</string>
@@ -563,7 +558,6 @@
     <string name="keep_the_project_alive">Menjaga proyek hidup</string>
     <string name="remove_ads">Hilangkan iklan</string>
     <string name="use_tpb_summary">TPB adalah magnet berdasarkan, bekerja hanya pada Wifi</string>
-    <string name="frostwire_sticker_and_more">FrostWire stiker dan banyak lagi</string>
     <string name="wifi_networks_only_summary">Menyimpan data. Download hanya jika koneksi Wi-Fi didirikan. </string>
     <string name="notifications_other_settings">Pemberitahuan dan lainnya</string>
     <string name="wifi_networks_only">Jaringan wifi saja</string>

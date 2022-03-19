@@ -19,10 +19,8 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[<b>Maklumat:</b> Walaupun disyorkan untuk muat turun anda, terutamanya apabila memuat turun atau menukar maklumat sensitif (cth. perbankan) dan semasa menggunakan data Wi-Fi awam atau mudah alih, <b>anda tidak memerlukan VPN untuk menggunakan FrostWire.</b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>Maklumat:</b> Sentuh teg yang digunakan]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ Anda disambungkan ke Internet menggunakan VPN. <br><br> Sekiranya anda belum lagi, kami cadangkan menggunakan salah satu perkhidmatan di bawah untuk menyulitkan sambungan anda dan <b>melindungi privasi anda</b>. ]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>Privasi anda adalah hak asasi manusia yang asas</b>. Sambungan tanpa perlindungan bermaksud semua yang anda lakukan dalam talian termasuk <b>muat turun, carian, mesej</b>, boleh dipantau dan dipintas oleh sesiapa sahaja di rangkaian anda, cth. Penyedia Perkhidmatan Internet, penggodam, kerajaan.<br><br><b>Kami SANGAT mengesyorkan menggunakan perkhidmatan VPN</b>. <br> Berikut adalah beberapa pilihan yang menyediakan perkhidmatan yang boleh dipercayai dan berfungsi dengan baik dengan FrostWire:]]></string>
     <string name="vpn_not_found">Tiada VPN. Pertimbangkan menyulitkan sambungan.</string>
     <string name="azureus_peer_manager_status_finished">Tamat</string>
     <string name="activity_mediaplayer_name">Pemain media</string>
@@ -99,14 +97,12 @@
     <string name="loading_all">Pembebanan Semua</string>
     <string name="azureus_manager_item_allocating">Memperuntukkan</string>
     <string name="app_shutdown_dlg_message">Ini akan penutupan semua pemindahan dan perkhidmatan latar belakang. Adakah anda pasti?</string>
-    <string name="frostwire_sticker_and_more">FrostWire pelekat dan banyak lagi</string>
     <string name="show_transfers_on_download_start">Show pemindahan di muat permulaan</string>
     <string name="sharing">Berkongsi</string>
     <string name="send_feedback">Hantar maklumbalas</string>
     <string name="chat_actions">Tindakan Chat</string>
     <string name="tos_refuse">Enggan</string>
     <string name="torrent_max_total_connections">Maksimum Jumlah Sambungan</string>
-    <string name="activity_preferences_name">Tetapan</string>
     <string name="use_torrentdownloads">Gunakan TorrentDownloads</string>
     <string name="ten_dollars">$10</string>
     <string name="my_files">Fail-fail saya</string>
@@ -118,7 +114,6 @@
     <string name="invalid_torrent_file">Fail Torrent tidak sah</string>
     <string name="activity_downloads_title_text">Muat turun</string>
     <string name="disconnecting">Memutuskan sambungan</string>
-    <string name="activity_media_player_name">Media Player</string>
     <string name="choose_email_app">Pilih Email Aplikasi…</string>
     <string name="failed_to_add_download">Gagal untuk menambah muat turun</string>
     <string name="vibrate_on_finished_download">Bergetar apabila muat turun selesai</string>
@@ -418,7 +413,6 @@
     <string name="use_yify_summary">Yify berasaskan magnet, hanya berfungsi pada Wifi</string>
     <string name="error_no_internet_connection">Ralat: Periksa sambungan Internet</string>
     <string name="azureus_manager_item_error">Ralat</string>
-    <string name="why_we_need_storage_permissions">Mengapa kita perlu kebenaran penyimpanan.</string>
     <string name="get_a_frostwire_tshirt">Dapatkan MediaTor T-Shirt</string>
     <string name="media_type_applications">Aplikasi</string>
     <string name="invalid_filename">Nama fail yang tidak sah</string>

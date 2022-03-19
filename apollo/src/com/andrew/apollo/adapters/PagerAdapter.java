@@ -6,13 +6,6 @@ import android.os.Bundle;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 
-import com.andrew.apollo.ui.fragments.AlbumFragment;
-import com.andrew.apollo.ui.fragments.ArtistFragment;
-import com.andrew.apollo.ui.fragments.LastAddedFragment;
-import com.andrew.apollo.ui.fragments.PlaylistFragment;
-import com.andrew.apollo.ui.fragments.RecentFragment;
-import com.andrew.apollo.ui.fragments.SongFragment;
-
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Locale;
@@ -112,61 +105,6 @@ public class PagerAdapter extends FragmentPagerAdapter {
         return mFragmentActivity.getResources().getStringArray(R.array.page_titles)[position]
                 .toUpperCase(Locale.getDefault());
     }
-
-    /**
-     * An enumeration of all the main fragments supported.
-     */
-    public enum MusicFragments {
-        /**
-         * The Last Songs added Fragment
-         */
-        LAST(LastAddedFragment.class),
-        /**
-         * The playlist fragment
-         */
-        PLAYLIST(PlaylistFragment.class),
-        /**
-         * The recent fragment
-         */
-        RECENT(RecentFragment.class),
-        /**
-         * The artist fragment
-         */
-        ARTIST(ArtistFragment.class),
-        /**
-         * The song fragment
-         */
-        SONG(SongFragment.class),
-        /**
-         * The album fragment
-         */
-        ALBUM(AlbumFragment.class);
-
-        private Class<? extends Fragment> mFragmentClass;
-
-        /**
-         * Constructor of <code>MusicFragments</code>
-         *
-         * @param fragmentClass The fragment class
-         */
-        MusicFragments(final Class<? extends Fragment> fragmentClass) {
-            mFragmentClass = fragmentClass;
-        }
-
-        /**
-         * Method that returns the fragment class.
-         *
-         * @return the fragment class.
-         */
-        public Class<? extends Fragment> getFragmentClass() {
-            return mFragmentClass;
-        }
-
-    }
-
-    /**
-     * A private class with information about fragment initialization
-     */
     private final static class Holder {
         String mClassName;
 

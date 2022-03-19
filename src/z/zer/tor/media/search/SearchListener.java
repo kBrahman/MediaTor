@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface SearchListener {
 
-    void onResults(long token, List<? extends SearchResult> results);
+    void onResults(long token, List<SearchResult> results);
 
     void onError(long token, SearchError error);
 

@@ -62,12 +62,11 @@ public class MediaType implements Serializable {
     /**
      * Type for 'documents'
      */
-    private static final MediaType TYPE_DOCUMENTS = new MediaType(Constants.FILE_TYPE_DOCUMENTS, SCHEMA_DOCUMENTS, DOCUMENTS_STRING_RESOURCE_ID, new String[]{"html", "htm", "xhtml", "mht", "mhtml", "xml", "txt", "ans", "asc", "diz", "eml", "pdf", "ps", "eps", "epsf", "dvi", "rtf", "wri", "doc", "docx", "mcw", "wps", "xls", "wk1", "dif", "csv", "ppt", "tsv", "hlp", "chm", "lit", "tex", "texi", "latex", "info", "man", "wp", "wpd", "wp5", "wk3", "wk4", "shw", "sdd", "sdw", "sdp", "sdc", "sxd", "sxw", "sxp", "sxc", "abw", "kwd", "mobi", "azw", "aeh", "lrf", "lrx", "cbr", "cbz", "cb7", "chm", "dnl", "djvu", "epub", "pdb", "fb2", "xeb", "ceb", "prc", "pkg", "opf", "pdg", "pdb", "tr2", "tr3", "cbr", "cbz", "cb7", "cbt", "cba", "zip", "7z", "rar", "gzip", "tar", "gz", "cab", "msi", "ace", "sit", "dmg", "taz", "sh", "awk", "pl", "java", "py", "rb", "c", "cpp", "h", "hpp"});
 
     /**
      * Type for applications.
      */
-    private static final MediaType TYPE_APPLICATIONS = new MediaType(Constants.FILE_TYPE_APPLICATIONS, SCHEMA_PROGRAMS, APPLICATIONS_STRING_RESOURCE_ID, new String[]{"apk"});
+    private static final MediaType TYPE_APPLICATIONS = new MediaType(SCHEMA_PROGRAMS, APPLICATIONS_STRING_RESOURCE_ID, new String[]{"apk"});
     /**
      * desktop world
      "zip", "jar", "cab", "msi", "msp", "arj", "rar", "ace",
@@ -81,30 +80,27 @@ public class MediaType implements Serializable {
     /**
      * Type for 'audio'
      */
-    private static final MediaType TYPE_AUDIO = new MediaType(Constants.FILE_TYPE_AUDIO, SCHEMA_AUDIO, AUDIO_STRING_RESOURCE_ID, new String[]{"mp3", "mpa", "mp1", "mpga", "mp2", "ra", "rm", "ram", "rmj", "wma", "wav", "m4a", "m4p", "lqt", "ogg", "med", "aif", "aiff", "aifc", "au", "snd", "s3m", "aud", "mid", "midi", "rmi", "mod", "kar", "ac3", "shn", "fla", "flac", "cda", "mka, aac"});
+    private static final MediaType TYPE_AUDIO = new MediaType(SCHEMA_AUDIO, AUDIO_STRING_RESOURCE_ID, new String[]{"mp3", "mpa", "mp1", "mpga", "mp2", "ra", "rm", "ram", "rmj", "wma", "wav", "m4a", "m4p", "lqt", "ogg", "med", "aif", "aiff", "aifc", "au", "snd", "s3m", "aud", "mid", "midi", "rmi", "mod", "kar", "ac3", "shn", "fla", "flac", "cda", "mka, aac"});
 
     /**
      * Type for 'video'
      */
-    private static final MediaType TYPE_VIDEO = new MediaType(Constants.FILE_TYPE_VIDEOS, SCHEMA_VIDEO, VIDEO_STRING_RESOURCE_ID, new String[]{"mpg", "mpeg", "mpe", "mng", "mpv", "m1v", "vob", "mp2", "mpv2", "mp2v", "m2p", "m2v", "mpgv", "vcd", "mp4", "dv", "dvd", "div", "divx", "dvx", "smi", "smil", "rm", "ram", "rv", "rmm", "rmvb", "avi", "asf", "asx", "wmv", "qt", "mov", "fli", "flc", "flx", "flv", "wml", "vrml", "swf", "dcr", "jve", "nsv", "mkv", "ogm", "cdg", "srt", "sub", "idx", "webm", "3gp"});
+    private static final MediaType TYPE_VIDEO = new MediaType( SCHEMA_VIDEO, VIDEO_STRING_RESOURCE_ID, new String[]{"mpg", "mpeg", "mpe", "mng", "mpv", "m1v", "vob", "mp2", "mpv2", "mp2v", "m2p", "m2v", "mpgv", "vcd", "mp4", "dv", "dvd", "div", "divx", "dvx", "smi", "smil", "rm", "ram", "rv", "rmm", "rmvb", "avi", "asf", "asx", "wmv", "qt", "mov", "fli", "flc", "flx", "flv", "wml", "vrml", "swf", "dcr", "jve", "nsv", "mkv", "ogm", "cdg", "srt", "sub", "idx", "webm", "3gp"});
 
     /**
      * Type for 'images'
      */
-    private static final MediaType TYPE_PICTURES = new MediaType(Constants.FILE_TYPE_PICTURES, SCHEMA_IMAGES, IMAGES_STRING_RESOURCE_ID, new String[]{"gif", "png", "jpg", "jpeg", "jpe", "jif", "jiff", "jfif", "tif", "tiff", "iff", "lbm", "ilbm", "eps", "mac", "drw", "pct", "img", "bmp", "dib", "rle", "ico", "ani", "icl", "cur", "emf", "wmf", "pcx", "pcd", "tga", "pic", "fig", "psd", "wpg", "dcx", "cpt", "mic", "pbm", "pnm", "ppm", "xbm", "xpm", "xwd", "sgi", "fax", "rgb", "ras"});
+    private static final MediaType TYPE_PICTURES = new MediaType(SCHEMA_IMAGES, IMAGES_STRING_RESOURCE_ID, new String[]{"gif", "png", "jpg", "jpeg", "jpe", "jif", "jiff", "jfif", "tif", "tiff", "iff", "lbm", "ilbm", "eps", "mac", "drw", "pct", "img", "bmp", "dib", "rle", "ico", "ani", "icl", "cur", "emf", "wmf", "pcx", "pcd", "tga", "pic", "fig", "psd", "wpg", "dcx", "cpt", "mic", "pbm", "pnm", "ppm", "xbm", "xpm", "xwd", "sgi", "fax", "rgb", "ras"});
 
     /**
      * Type for 'torrents'
      */
-    public static final MediaType TYPE_TORRENTS = new MediaType(Constants.FILE_TYPE_TORRENTS, SCHEMA_TORRENTS, TORRENTS_STRING_RESOURCE_ID, new String[]{"torrent"});
+    public static final MediaType TYPE_TORRENTS = new MediaType(SCHEMA_TORRENTS, TORRENTS_STRING_RESOURCE_ID, new String[]{"torrent"});
 
     /**
      * All media types.
      */
-    private static final MediaType[] ALL_MEDIA_TYPES = new MediaType[]{TYPE_AUDIO, TYPE_DOCUMENTS, TYPE_PICTURES, TYPE_TORRENTS, TYPE_VIDEO, TYPE_APPLICATIONS};
-
-    private final int id;
-
+    private static final MediaType[] ALL_MEDIA_TYPES = new MediaType[]{TYPE_AUDIO, TYPE_PICTURES, TYPE_TORRENTS, TYPE_VIDEO, TYPE_APPLICATIONS};
     /**
      * The description of this MediaType.
      */
@@ -134,11 +130,10 @@ public class MediaType implements Serializable {
      *                                 type.  Must be all lowercase.  If null, this matches
      *                                 any file.
      */
-    public MediaType(int id, String schema, int descriptionKeyResourceId, String[] extensions) {
+    public MediaType(String schema, int descriptionKeyResourceId, String[] extensions) {
         if (schema == null) {
             throw new NullPointerException("schema must not be null");
         }
-        this.id = id;
         this.schema = schema;
         this.descriptionKeyResourceId = descriptionKeyResourceId;
         this.isDefault = true;
@@ -150,11 +145,6 @@ public class MediaType implements Serializable {
             this.exts = set;
         }
     }
-
-    public int getId() {
-        return id;
-    }
-
     /**
      * Returns true if a file with the given name is of this
      * media type, i.e., the suffix of the filename matches
@@ -255,11 +245,6 @@ public class MediaType implements Serializable {
         }
         return false;
     }
-
-    public int hashCode() {
-        return 31 * (1 + this.id) * (11 * getExtensions().hashCode());
-    }
-
     /*
      * We canonicalize the default mediatypes, but since MediaType has
      * a public constructor only 'equals' comparisons should be used.
@@ -302,13 +287,6 @@ public class MediaType implements Serializable {
     }
 
     /**
-     * Retrieves the document media type.
-     */
-    public static MediaType getDocumentMediaType() {
-        return TYPE_DOCUMENTS;
-    }
-
-    /**
      * Retrieves the programs media type.
      */
     public static MediaType getApplicationsMediaType() {
@@ -331,13 +309,7 @@ public class MediaType implements Serializable {
         if (mt == null) {
             return R.drawable.question_mark;
         }
-        if (mt.equals(MediaType.getApplicationsMediaType())) {
-            return R.drawable.my_files_application_icon_selector_menu;
-        } else if (mt.equals(MediaType.getAudioMediaType())) {
-            return R.drawable.my_files_audio_icon_selector_menu;
-        } else if (mt.equals(MediaType.getDocumentMediaType())) {
-            return R.drawable.my_files_document_icon_selector_menu;
-        } else if (mt.equals(MediaType.getImageMediaType())) {
+       if (mt.equals(MediaType.getImageMediaType())) {
             return R.drawable.my_files_picture_icon_selector_menu;
         } else if (mt.equals(MediaType.getVideoMediaType())) {
             return R.drawable.my_files_video_icon_selector_menu;

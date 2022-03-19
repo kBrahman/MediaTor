@@ -1,21 +1,3 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml), Jose Molina (@votaguz)
- * Copyright (c) 2011, 2014, FrostWire(TM). All rights reserved.
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 package z.zer.tor.media.android.gui.dialogs;
 
 import android.content.Context;
@@ -29,6 +11,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.gui.dialogs.AbstractConfirmListDialog.SelectionMode;
 import z.zer.tor.media.android.gui.util.UIUtils;
@@ -36,21 +22,6 @@ import z.zer.tor.media.android.gui.views.AbstractListAdapter;
 import z.zer.tor.media.android.util.ImageLoader;
 import z.zer.tor.media.util.Logger;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-/**
- * Depending on the selection mode of your AbstractConfirmListDialog, you can give it this
- * default adapter implementation to use the out of the box list view items for
- * single selection mode (with radio buttons), multiple selection mode (with checkboxes),
- * or no selection mode which would by default accept all the presented items.
- *
- * @author gubatron
- * @author aldenml
- * @author votaguz
- *
- */
 abstract class ConfirmListDialogDefaultAdapter<T> extends AbstractListAdapter {
     private static final Logger LOGGER = Logger.getLogger(ConfirmListDialogDefaultAdapter.class);
     private static final int ITEM_TITLE = 0;
@@ -64,7 +35,7 @@ abstract class ConfirmListDialogDefaultAdapter<T> extends AbstractListAdapter {
     static {
         selectionModeToLayoutId.put(SelectionMode.NO_SELECTION, R.layout.confirmation_dialog_no_selection_list_item);
         selectionModeToLayoutId.put(SelectionMode.SINGLE_SELECTION, R.layout.confirmation_dialog_single_selection_list_item);
-        selectionModeToLayoutId.put(SelectionMode.MULTIPLE_SELECTION,R.layout.confirmation_dialog_multiple_selection_list_item);
+        selectionModeToLayoutId.put(SelectionMode.MULTIPLE_SELECTION, R.layout.confirmation_dialog_multiple_selection_list_item);
 
         layoutMapping.put(SelectionMode.NO_SELECTION, new SparseIntArray());
         layoutMapping.get(SelectionMode.NO_SELECTION).put(ITEM_TITLE, R.id.confirmation_dialog_no_selection_list_item_title);
@@ -100,7 +71,7 @@ abstract class ConfirmListDialogDefaultAdapter<T> extends AbstractListAdapter {
 
         try {
             initTouchFeedback(view, item);
-            if(selectionMode == SelectionMode.MULTIPLE_SELECTION) {
+            if (selectionMode == SelectionMode.MULTIPLE_SELECTION) {
                 initCheckBox(view, item);
                 setCheckboxesVisibility(true);
             } else if (selectionMode == SelectionMode.SINGLE_SELECTION) {
@@ -115,8 +86,11 @@ abstract class ConfirmListDialogDefaultAdapter<T> extends AbstractListAdapter {
     }
 
     public abstract CharSequence getItemTitle(T data);
+
     public abstract long getItemSize(T data);
+
     public abstract CharSequence getItemThumbnailUrl(T data);
+
     public abstract int getItemThumbnailResourceId(T data);
 
     @Override

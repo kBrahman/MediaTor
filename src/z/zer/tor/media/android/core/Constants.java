@@ -44,7 +44,6 @@ public final class Constants {
 
     public static final String PREF_KEY_GUI_VIBRATE_ON_FINISHED_DOWNLOAD = "frostwire.prefs.gui.vibrate_on_finished_download";
     public static final String PREF_KEY_GUI_LAST_MEDIA_TYPE_FILTER = "frostwire.prefs.gui.last_media_type_filter";
-    public static final String PREF_KEY_GUI_TOS_ACCEPTED = "frostwire.prefs.gui.tos_accepted";
     static final String PREF_KEY_GUI_ALREADY_RATED_US_IN_MARKET = "frostwire.prefs.gui.already_rated_in_market";
     public static final String PREF_KEY_GUI_FINISHED_DOWNLOADS_BETWEEN_RATINGS_REMINDER = "frostwire.prefs.gui.finished_downloads_between_ratings_reminder";
     public static final String PREF_KEY_GUI_INITIAL_SETTINGS_COMPLETE = "frostwire.prefs.gui.initial_settings_complete";
@@ -108,22 +107,11 @@ public final class Constants {
     public static final String EXTRA_REFRESH_FILE_TYPE = "com.frostwire.android.EXTRA_REFRESH_FILE_TYPE";
     public static final String EXTRA_FINISH_MAIN_ACTIVITY = "com.frostwire.android.EXTRA_FINISH_MAIN_ACTIVITY";
 
-    public static final String MY_FILES_FRAGMENT_LISTVIEW_FIRST_VISIBLE_POSITION = "com.frostwire.android.BROWSE_PEER_FRAGMENT_LISTVIEW_FIRST_VISIBLE_POSITION.";
-
     public static final String ASKED_FOR_ACCESS_COARSE_LOCATION_PERMISSIONS = "frostwire.prefs.gui.asked_for_access_coarse_location_permissions";
 
     // generic file types
     public static final byte FILE_TYPE_AUDIO = 0x00;
-    public static final byte FILE_TYPE_PICTURES = 0x01;
-    public static final byte FILE_TYPE_VIDEOS = 0x02;
-    public static final byte FILE_TYPE_DOCUMENTS = 0x03;
-    public static final byte FILE_TYPE_APPLICATIONS = 0x04;
-    public static final byte FILE_TYPE_RINGTONES = 0x05;
-    public static final byte FILE_TYPE_TORRENTS = 0x06;
-
-    public static final String MIME_TYPE_BITTORRENT = "application/x-bittorrent";
-    public static final String FROSTWIRE_MORE_RESULTS = "http://www.frostwire.com/more.results";
-
+    public static final byte FILE_TYPE_MY_MUSIC = 0x01;
     public static final String AD_NETWORK_SHORTCODE_APPLOVIN = "AL";
 
     public static final String FROSTWIRE_VPN_URL = "http://www.frostwire.com/vpn";

@@ -37,7 +37,6 @@ final class ConfigurationDefaults {
 
         defaultValues.put(Constants.PREF_KEY_GUI_VIBRATE_ON_FINISHED_DOWNLOAD, true);
         defaultValues.put(Constants.PREF_KEY_GUI_LAST_MEDIA_TYPE_FILTER, (int) Constants.FILE_TYPE_AUDIO);
-        defaultValues.put(Constants.PREF_KEY_GUI_TOS_ACCEPTED, false);
         defaultValues.put(Constants.PREF_KEY_GUI_ALREADY_RATED_US_IN_MARKET, false);
         defaultValues.put(Constants.PREF_KEY_GUI_FINISHED_DOWNLOADS_BETWEEN_RATINGS_REMINDER, 10);
         defaultValues.put(Constants.PREF_KEY_GUI_INITIAL_SETTINGS_COMPLETE, false);

@@ -11,7 +11,6 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.database.Cursor;
 import android.database.CursorIndexOutOfBoundsException;
-import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.IBinder;
 import android.os.RemoteException;
@@ -24,10 +23,8 @@ import android.provider.MediaStore.Audio.Media;
 import android.provider.MediaStore.Audio.Playlists;
 import android.provider.MediaStore.Audio.PlaylistsColumns;
 import android.provider.MediaStore.MediaColumns;
-import android.util.Log;
 import android.view.Menu;
 import android.view.SubMenu;
-import android.widget.ArrayAdapter;
 
 import com.andrew.apollo.IApolloService;
 import com.andrew.apollo.MusicPlaybackService;
@@ -38,27 +35,17 @@ import com.andrew.apollo.loaders.SongLoader;
 import com.andrew.apollo.menu.FragmentMenuItems;
 import com.andrew.apollo.model.Playlist;
 import com.andrew.apollo.model.Song;
-import com.andrew.apollo.provider.FavoritesStore;
 import com.andrew.apollo.provider.FavoritesStore.FavoriteColumns;
 import com.andrew.apollo.provider.RecentStore;
-import com.devspark.appmsg.AppMsg;
 
-import z.zer.tor.media.R;
-import z.zer.tor.media.android.core.Constants;
-import z.zer.tor.media.android.gui.util.UIUtils;
-import z.zer.tor.media.android.util.SystemUtils;
-import z.zer.tor.media.platform.FileSystem;
-import z.zer.tor.media.platform.Platforms;
-import z.zer.tor.media.util.Logger;
-
-import org.apache.commons.lang3.ArrayUtils;
-
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.WeakHashMap;
+
+import z.zer.tor.media.R;
+import z.zer.tor.media.android.util.SystemUtils;
+import z.zer.tor.media.util.Logger;
 
 
 /**
@@ -1068,12 +1055,6 @@ public final class MusicUtils {
                 makeInsertItems(ids, offSet, 1000, base);
                 numinserted += resolver.bulkInsert(uri, mContentValuesCache);
             }
-            if (updateQueue) {
-                addToQueue(context, ids);
-            }
-            final String message = context.getResources().getQuantityString(
-                    R.plurals.NNNtrackstoplaylist, numinserted, numinserted);
-            AppMsg.makeText(context, message, AppMsg.STYLE_CONFIRM).show();
             refresh();
         } else {
             LOG.warn("Unable to complete addToPlaylist, review the logic");
@@ -1118,16 +1099,6 @@ public final class MusicUtils {
         resolver.delete(uri, Playlists.Members.AUDIO_ID + " = ? ", new String[]{
                 Long.toString(id)
         });
-
-        if (showNotification) {
-            try {
-                final String message = context.getResources().getQuantityString(
-                        R.plurals.NNNtracksfromplaylist, 1, 1);
-                AppMsg.makeText(context, message, AppMsg.STYLE_CONFIRM).show();
-            } catch (Throwable t) {
-                // java.lang.RuntimeException: Can't create handler inside thread that has not called Looper.prepare()
-            }
-        }
     }
 
     /**
@@ -1140,97 +1111,6 @@ public final class MusicUtils {
     public static void removeFromPlaylist(final Context context, final long id,
                                           final long playlistId) {
         removeFromPlaylist(context, id, playlistId, false);
-    }
-
-    /**
-     * @param context The {@link Context} to use.
-     * @param list    The list to enqueue.
-     */
-    public static void addToQueue(final Context context, final long[] list) {
-        if (context == null || musicPlaybackService == null || list == null) {
-            return;
-        }
-        try {
-            musicPlaybackService.enqueue(list, MusicPlaybackService.LAST);
-            final String message = makeLabel(context, R.plurals.NNNtrackstoqueue, list.length);
-            AppMsg.makeText(context, message, AppMsg.STYLE_CONFIRM).show();
-        } catch (final RemoteException ignored) {
-        }
-    }
-
-    /**
-     * @param context  The {@link Context} to use
-     * @param id       The song ID.
-     * @param fileType
-     */
-    public static void setRingtone(final Context context, final long id, byte fileType) {
-        if (context == null) {
-            LOG.warn("context was null, not setting ringtone.");
-            return;
-        }
-        final ContentResolver resolver = context.getContentResolver();
-
-        Uri contentUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
-        if (fileType == Constants.FILE_TYPE_RINGTONES) {
-            contentUri = Media.INTERNAL_CONTENT_URI;
-        }
-
-        final Uri uri = ContentUris.withAppendedId(contentUri, id);
-        try {
-            final ContentValues values = new ContentValues(2);
-            values.put(AudioColumns.IS_RINGTONE, "1");
-            values.put(AudioColumns.IS_ALARM, "1");
-            resolver.update(uri, values, null, null);
-        } catch (final Throwable ignored) {
-            //return;
-            LOG.error(ignored.getMessage(), ignored);
-        }
-
-        final String[] projection = new String[]{
-                BaseColumns._ID, MediaColumns.DATA, MediaColumns.TITLE
-        };
-
-        final String selection = BaseColumns._ID + "=" + id;
-        Cursor cursor = resolver.query(contentUri, projection,
-                selection, null, null);
-        try {
-            if (cursor != null && cursor.getCount() == 1) {
-                cursor.moveToFirst();
-                RingtoneManager.setActualDefaultRingtoneUri(context, RingtoneManager.TYPE_RINGTONE, uri);
-                final String message = context.getString(R.string.set_as_ringtone,
-                        cursor.getString(2));
-                AppMsg.makeText(context, message, AppMsg.STYLE_CONFIRM).show();
-            } else {
-                UIUtils.showLongMessage(context, R.string.ringtone_not_set);
-            }
-        } catch (Throwable ignored) {
-            UIUtils.showLongMessage(context, R.string.ringtone_not_set);
-        } finally {
-            if (cursor != null) {
-                cursor.close();
-            }
-        }
-    }
-
-    /**
-     * @param context The {@link Context} to use.
-     * @param id      The id of the album.
-     * @return The song count for an album.
-     */
-    public static String getSongCountForAlbum(final Context context, final long id) {
-        if (context == null || id == -1) {
-            return null;
-        }
-        try {
-            Uri uri = ContentUris.withAppendedId(MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI, id);
-            Cursor cursor = context.getContentResolver().query(uri, new String[]{
-                    AlbumColumns.NUMBER_OF_SONGS
-            }, null, null, null);
-            return getFirstStringResult(cursor, true);
-        } catch (Throwable e) {
-            e.printStackTrace();
-            return null;
-        }
     }
 
     public static String getFirstStringResult(Cursor cursor, boolean closeCursor) {
@@ -1270,21 +1150,6 @@ public final class MusicUtils {
     }
 
     /**
-     * @return The path to the currently playing file as {@link String}
-     */
-    public static String getFilePath() {
-        Log.i(TAG,"getFilePath");
-        try {
-            if (musicPlaybackService != null) {
-                return musicPlaybackService.getPath();
-            }
-        } catch (final RemoteException ignored) {
-        }
-        Log.i(TAG,"musicPlaybackService is null");
-        return null;
-    }
-
-    /**
      * @param from The index the item is currently at.
      * @param to   The index the item is moving to.
      */
@@ -1296,19 +1161,6 @@ public final class MusicUtils {
         } catch (final RemoteException ignored) {
         }
     }
-
-    /**
-     * Toggles the current song as a favorite.
-     */
-    public static void toggleFavorite() {
-        try {
-            if (musicPlaybackService != null) {
-                musicPlaybackService.toggleFavorite();
-            }
-        } catch (final RemoteException ignored) {
-        }
-    }
-
     /**
      * @return True if the current song is a favorite, false otherwise.
      */
@@ -1352,19 +1204,6 @@ public final class MusicUtils {
             return sEmptyList;
         }
         return sEmptyList;
-    }
-
-    /**
-     * Plays a user created playlist.
-     *
-     * @param context    The {@link Context} to use.
-     * @param playlistId The playlist Id.
-     */
-    public static void playPlaylist(final Context context, final long playlistId) {
-        final long[] playlistList = getSongListForPlaylist(context, playlistId);
-        if (playlistList != null) {
-            playAll(playlistList, -1, MusicUtils.isShuffleEnabled());
-        }
     }
 
     /**
@@ -1593,168 +1432,4 @@ public final class MusicUtils {
         }
     }
 
-    /**
-     * Permanently deletes item(s) from the user's device.
-     *
-     * @param context The {@link Context} to use.
-     * @param list    The item(s) to delete.
-     */
-    public static void deleteTracks(final Context context, final long[] list, boolean showNotification) {
-        if (list == null) {
-            return;
-        }
-        final String[] projection = new String[]{
-                BaseColumns._ID, MediaColumns.DATA, AudioColumns.ALBUM_ID
-        };
-        final StringBuilder selection = new StringBuilder();
-        selection.append(BaseColumns._ID + " IN (");
-        for (int i = 0; i < list.length; i++) {
-            selection.append(list[i]);
-            if (i < list.length - 1) {
-                selection.append(",");
-            }
-        }
-        selection.append(")");
-        final Cursor c = context.getContentResolver().query(
-                MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection, selection.toString(),
-                null, null);
-        if (c != null) {
-            // Step 1: Remove selected tracks from the current playlist, as well
-            // as from the album art cache
-            c.moveToFirst();
-            while (!c.isAfterLast()) {
-                // Remove from current playlist.
-                final long id = c.getLong(0);
-                removeTrack(id);
-                // Remove from the favorites playlist.
-                FavoritesStore.getInstance(context).removeItem(id);
-                // Remove any items in the recent's database
-                RecentStore.getInstance(context).removeItem(id);
-                // Remove from all remaining playlists.
-                removeSongFromAllPlaylists(context, id);
-                c.moveToNext();
-            }
-
-            // Step 2: Remove selected tracks from the database
-            context.getContentResolver().delete(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
-                    selection.toString(), null);
-
-            // Step 3: Remove files from card
-            FileSystem fs = Platforms.fileSystem();
-            c.moveToFirst();
-            while (!c.isAfterLast()) {
-                final String name = c.getString(1);
-                try { // File.delete can throw a security exception
-                    final File f = new File(name);
-                    if (!fs.delete(f)) {
-                        // I'm not sure if we'd ever get here (deletion would
-                        // have to fail, but no exception thrown)
-                        Log.e("MusicUtils", "Failed to delete file " + name);
-                    }
-                    c.moveToNext();
-                } catch (final Throwable ex) {
-                    c.moveToNext();
-                }
-            }
-            c.close();
-            UIUtils.broadcastAction(context,
-                    Constants.ACTION_FILE_ADDED_OR_REMOVED,
-                    new UIUtils.IntentByteExtra(Constants.EXTRA_REFRESH_FILE_TYPE, Constants.FILE_TYPE_AUDIO));
-        }
-
-        if (showNotification) {
-            try {
-                final String message = makeLabel(context, R.plurals.NNNtracksdeleted, list.length);
-                AppMsg.makeText(context, message, AppMsg.STYLE_CONFIRM).show();
-            } catch (Throwable ignored) {
-            }
-        }
-
-        // We deleted a number of tracks, which could affect any number of
-        // things
-        // in the media content domain, so update everything.
-        context.getContentResolver().notifyChange(Uri.parse("content://media"), null);
-        // Notify the lists to update
-        refresh();
-    }
-
-    public static void deleteTracks(final Context context, final long[] list) {
-        // TODO: return the information of real tracks deleted to provide
-        // better feedback
-        // TODO: refactor to provide better handling of SecurityException
-        // ignoring for now, since we can't do anything about it, the result
-        // is not tracks are deleted without feedback
-        try {
-            deleteTracks(context, list, false);
-        } catch (SecurityException e) {
-            LOG.error("Error in deleteTracks", e);
-        }
-    }
-
-    public static void playAllFromUserItemClick(final ArrayAdapter<Song> adapter, final int position) {
-        if (adapter.getViewTypeCount() > 1 && position == 0) {
-            return;
-        }
-        final long[] list = MusicUtils.getSongListForAdapter(adapter);
-        int pos = adapter.getViewTypeCount() > 1 ? position - 1 : position;
-        if (list.length == 0) {
-            pos = 0;
-        }
-        MusicUtils.playAll(list, pos, MusicUtils.isShuffleEnabled());
-    }
-
-    public static void removeSongFromAllPlaylists(final Context context, final long songId) {
-        final List<Playlist> playlists = getPlaylists(context);
-
-        if (!playlists.isEmpty()) {
-            for (Playlist playlist : playlists) {
-                removeFromPlaylist(context, songId, playlist.mPlaylistId);
-            }
-        }
-    }
-
-    private static long[] getSongListForAdapter(final ArrayAdapter<Song> adapter) {
-        if (adapter == null) {
-            return sEmptyList;
-        }
-
-        int count = adapter.getCount() - (adapter.getViewTypeCount() > 1 ? 1 : 0);
-        List<Long> songList = new LinkedList<>();
-        for (int i = 0; i < count; i++) {
-            try {
-                long songId = adapter.getItem(i).mSongId;
-                songList.add(songId);
-            } catch (Throwable ignored) {
-                // possible array out of bounds on adapter.getItem(i)
-            }
-        }
-
-        if (songList.size() == 0) {
-            return sEmptyList;
-        }
-
-        // until Java supports primitive types as generics, we'll live with this double copy. O(2n)
-        Long[] list = new Long[songList.size()];
-        long[] result = ArrayUtils.toPrimitive(songList.toArray(list));
-        songList.clear();
-        return result;
-    }
-
-    public static void playSimple(String path) {
-        try {
-            if (musicPlaybackService != null) {
-                musicPlaybackService.playSimple(path);
-            }
-        } catch (RemoteException ignored) {
-        }
-    }
-
-    public static void stopSimplePlayer() {
-        try {
-            if (musicPlaybackService != null) {
-                musicPlaybackService.stopSimplePlayer();
-            }
-        } catch (RemoteException ignored) {
-        }
-    }
 }

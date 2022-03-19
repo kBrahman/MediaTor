@@ -1,17 +1,16 @@
 package com.andrew.apollo.adapters;
 
+import static z.zer.tor.media.android.util.Asyncs.async;
+
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 
 import com.andrew.apollo.cache.ImageFetcher;
 import com.andrew.apollo.model.Song;
 import com.andrew.apollo.ui.MusicViewHolder;
 import com.andrew.apollo.ui.MusicViewHolder.DataHolder;
-import com.andrew.apollo.ui.fragments.QueueFragment;
-import com.andrew.apollo.ui.fragments.SongFragment;
 import com.andrew.apollo.utils.MusicUtils;
 
 import java.util.List;
@@ -19,13 +18,6 @@ import java.util.List;
 import z.zer.tor.media.R;
 import z.zer.tor.media.util.Ref;
 
-import static z.zer.tor.media.android.util.Asyncs.async;
-
-/**
- * This {@link ArrayAdapter} is used to display all of the songs on a user's
- * device for {@link SongFragment}. It is also used to show the queue in
- * {@link QueueFragment}.
- */
 public class SongAdapter extends ApolloFragmentAdapter<Song> implements ApolloFragmentAdapter.Cacheable {
 
     /**

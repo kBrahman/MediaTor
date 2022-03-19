@@ -1,5 +1,7 @@
 package z.zer.tor.media.search;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 import java.util.Collections;
 import java.util.Iterator;
@@ -16,6 +18,7 @@ import z.zer.tor.media.util.ThreadPool;
 public final class SearchManager {
 
     private static final Logger LOG = Logger.getLogger(SearchManager.class);
+    private static final String TAG = "SearchManager";
 
     private final ExecutorService executor;
     private final List<SearchTask> tasks;
@@ -38,6 +41,7 @@ public final class SearchManager {
     }
 
     public void perform(final SearchPerformer performer) {
+        Log.i(TAG, "perform");
         if (performer != null) {
             if (performer.getToken() < 0) {
                 throw new IllegalArgumentException("Search token id must be >= 0");
@@ -45,7 +49,7 @@ public final class SearchManager {
 
             performer.setListener(new SearchListener() {
                 @Override
-                public void onResults(long token, List<? extends SearchResult> results) {
+                public void onResults(long token, List<SearchResult> results) {
                     if (performer.getToken() == token) {
                         SearchManager.this.onResults(performer, results);
                     } else {
@@ -111,7 +115,7 @@ public final class SearchManager {
         onResults(performer.getToken(), list);
     }
 
-    private void onResults(long token, List<? extends SearchResult> results) {
+    private void onResults(long token, List<SearchResult> results) {
         try {
             if (results != null && listener != null) {
                 listener.onResults(token, results);

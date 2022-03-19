@@ -1,14 +1,8 @@
 package com.andrew.apollo.ui.fragments.profile;
 
-import static z.zer.tor.media.android.util.Asyncs.async;
-
-import android.app.Activity;
-import android.app.Fragment;
 import android.app.LoaderManager;
-import android.content.Intent;
 import android.content.Loader;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,11 +14,10 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
 
-import com.andrew.apollo.MusicStateListener;
+import androidx.fragment.app.Fragment;
+
 import com.andrew.apollo.adapters.ApolloFragmentAdapter;
 import com.andrew.apollo.loaders.PlaylistLoader;
-import com.andrew.apollo.menu.CreateNewPlaylist;
-import com.andrew.apollo.menu.DeleteDialog;
 import com.andrew.apollo.menu.FragmentMenuItems;
 import com.andrew.apollo.model.Album;
 import com.andrew.apollo.model.Artist;
@@ -34,33 +27,21 @@ import com.andrew.apollo.model.Song;
 import com.andrew.apollo.provider.FavoritesStore;
 import com.andrew.apollo.provider.RecentStore;
 import com.andrew.apollo.recycler.RecycleHolder;
-import com.andrew.apollo.ui.activities.BaseActivity;
 import com.andrew.apollo.utils.ApolloUtils;
 import com.andrew.apollo.utils.MusicUtils;
 import com.andrew.apollo.utils.NavUtils;
 import com.andrew.apollo.utils.PreferenceUtils;
 import com.andrew.apollo.widgets.ProfileTabCarousel;
 import com.andrew.apollo.widgets.VerticalScrollListener;
-import com.devspark.appmsg.AppMsg;
 
 import java.util.List;
 
 import z.zer.tor.media.R;
-import z.zer.tor.media.android.core.Constants;
-import z.zer.tor.media.android.gui.activity.PlayerActivity;
-import z.zer.tor.media.android.gui.util.WriteSettingsPermissionActivityHelper;
 
-public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I> extends Fragment implements LoaderManager.LoaderCallbacks<List<I>>, AdapterView.OnItemClickListener, MusicStateListener {
+public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I> extends Fragment implements LoaderManager.LoaderCallbacks<List<I>>, AdapterView.OnItemClickListener {
 
     private static final String TAG = ApolloFragment.class.getSimpleName();
     private final int GROUP_ID;
-    /**
-     * LoaderCallbacks identifier
-     */
-    private final int LOADER_ID;
-    /**
-     * The list view
-     */
     protected ListView mListView;
     /**
      * The grid view
@@ -114,28 +95,15 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I> exte
     public abstract void onItemClick(final AdapterView<?> parent, final View view, final int position, final long id);
 
     protected void onSongItemClick(int position) {
-        Log.i(this.getClass().getName(), "onSongItemClick");
-        if (mAdapter != null) async(this, ApolloFragment::songClickTask, position);
     }
 
     protected ApolloFragment(int groupId, int loaderId, int defaultEmptyString) {
         this.GROUP_ID = groupId;
-        this.LOADER_ID = loaderId;
         this.mDefaultFragmentEmptyString = defaultEmptyString;
     }
 
     protected ApolloFragment(int groupId, int loaderId) {
         this(groupId, loaderId, R.string.empty_music);
-    }
-
-    @Override
-    public void onAttach(final Activity activity) {
-        super.onAttach(activity);
-        mProfileTabCarousel = activity.findViewById(R.id.activity_profile_base_tab_carousel);
-        if (activity instanceof BaseActivity) {
-            // Register the music status listener
-            ((BaseActivity) activity).setMusicStateListenerListener(this);
-        }
     }
 
     @Override
@@ -240,27 +208,14 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I> exte
                 case FragmentMenuItems.PLAY_NEXT:
                     MusicUtils.playNext(songList);
                     return true;
-                case FragmentMenuItems.ADD_TO_QUEUE:
-                    MusicUtils.addToQueue(getActivity(), songList);
-                    return true;
-                case FragmentMenuItems.ADD_TO_FAVORITES:
-                    onAddToFavorites();
-                    return true;
                 case FragmentMenuItems.REMOVE_FROM_FAVORITES:
                     onRemoveFromFavorites();
-                    return true;
-                case FragmentMenuItems.NEW_PLAYLIST:
-                    CreateNewPlaylist.getInstance(songList).show(getFragmentManager(), "CreatePlaylist");
                     return true;
                 case FragmentMenuItems.PLAYLIST_SELECTED:
                     final long playlistId = item.getIntent().getLongExtra("playlist", 0);
                     MusicUtils.addToPlaylist(getActivity(), songList, playlistId);
                     refresh();
                     return true;
-                case FragmentMenuItems.USE_AS_RINGTONE:
-                    if (onUseAsRingtone()) {
-                        return true;
-                    }
                 case FragmentMenuItems.DELETE:
                     return onDelete(songList);
                 case FragmentMenuItems.MORE_BY_ARTIST:
@@ -277,19 +232,6 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I> exte
             }
         }
         return super.onContextItemSelected(item);
-    }
-
-    private boolean onUseAsRingtone() {
-        Activity activity = getActivity();
-        if (activity == null) {
-            return false;
-        }
-        if (mSelectedId == -1) {
-            return false;
-        }
-        WriteSettingsPermissionActivityHelper helper = new WriteSettingsPermissionActivityHelper(getActivity());
-        helper.onSetRingtoneOption(getActivity(), mSelectedId, Constants.FILE_TYPE_AUDIO);
-        return true;
     }
 
     private boolean onRemoveFromRecent() {
@@ -311,10 +253,6 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I> exte
         } else if (mItem instanceof Artist) {
             title = ((Artist) mItem).mArtistName;
         }
-        DeleteDialog.newInstance(title, songList, null).setOnDeleteCallback(id -> {
-            restartLoader(true);
-            refresh();
-        }).show(getFragmentManager(), "DeleteDialog");
         return true;
     }
 
@@ -328,29 +266,6 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I> exte
             return true;
         }
         return false;
-    }
-
-    private void onAddToFavorites() {
-        if (mSongList != null) {
-            int added = 0;
-            for (Long songId : mSongList) {
-                try {
-                    final Song song = MusicUtils.getSong(getActivity(), songId);
-                    if (song != null) {
-                        FavoritesStore.getInstance(getActivity()).addSongId(songId, song.mSongName, song.mAlbumName, song.mArtistName);
-                        added++;
-                    }
-                } catch (Throwable ignored) {
-                    ignored.printStackTrace();
-                }
-            }
-            if (added > 0) {
-                final String message = getResources().getQuantityString(R.plurals.NNNtrackstoplaylist, added, added);
-                AppMsg.makeText(getActivity(), message, AppMsg.STYLE_CONFIRM).show();
-            }
-        } else if (mSelectedId != -1) {
-            FavoritesStore.getInstance(getActivity()).addSongId(mSelectedId, mSongName, mAlbumName, mArtistName);
-        }
     }
 
     private void onRemoveFromFavorites() {
@@ -460,7 +375,6 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I> exte
         if (force || (System.currentTimeMillis() - lastRestartLoader) >= 5000 && isAdded()) {
             lastRestartLoader = System.currentTimeMillis();
             try {
-                getLoaderManager().restartLoader(LOADER_ID, getArguments(), this);
                 return true;
             } catch (Throwable t) {
                 return false;
@@ -470,12 +384,7 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I> exte
     }
 
     private void initLoader() {
-        final Intent intent = getActivity().getIntent();
-        if (intent != null && intent.getExtras() != null && isAdded()) {
-            getLoaderManager().initLoader(LOADER_ID, intent.getExtras(), this);
-        } else {
-            restartLoader(true);
-        }
+        restartLoader(true);
     }
 
     public void onMetaChanged() {
@@ -608,22 +517,4 @@ public abstract class ApolloFragment<T extends ApolloFragmentAdapter<I>, I> exte
         return 0;
     }
 
-    private static void songClickTask(final ApolloFragment fragment, int position) {
-        try {
-            ApolloFragmentAdapter adapter = fragment.getAdapter();
-            Song item = (Song) adapter.getItem(position);
-            Log.i(TAG, "song=>" + item);
-//            MusicUtils.playAllFromUserItemClick(adapter, position);
-            Activity activity = fragment.getActivity();
-            Intent intent = new Intent(activity, PlayerActivity.class);
-            intent.putExtra("displayName", item.mSongName);
-            intent.putExtra("streamUrl", "content://media/external/audio/media/" + item.mSongId);
-            intent.putExtra("source", "File system - " + item.mArtistName);
-            activity.startActivity(intent);
-            activity.runOnUiThread(adapter::notifyDataSetChanged);
-//            NavUtils.openAudioPlayer(activity);
-        } catch (Throwable t) {
-            t.printStackTrace();
-        }
-    }
 }

@@ -19,9 +19,7 @@
  */
 -->
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[افشا: اگرچہ آپ کے ڈاؤن لوڈ کے لئے سفارش کی گئی ہے، آپ کو MediaTor استعمال کرنے کے لئے ایک وی پی این کی ضرورت نہیں ہے.]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>معلومات:</b> ایپلی کیشنز کو ٹچ کریں]]></string>
-    <string name="activity_preferences_name">ترتیبات</string>
     <string name="activity_chat_named">بات چیت</string>
     <string name="activity_downloads_name">موجودہ ڈونلوڈ</string>
     <string name="activity_uploads_name">موجودہ اپلوڈ</string>
@@ -173,7 +171,6 @@
     <string name="loading_all">تمام لوڈ ہو رہا ہے</string>
     <string name="azureus_manager_item_allocating">آونٹن</string>
     <string name="app_shutdown_dlg_message">یہ مرضی سے بند تمام کی منتقلی اور پس منظر کی خدمات. کیا تمہیں یقین ہے؟</string>
-    <string name="frostwire_sticker_and_more">FrostWire اسٹیکرز اور زیادہ</string>
     <string name="show_transfers_on_download_start">ٹرانسفر ڈاؤن لوڈ شروع پر شو</string>
     <string name="sharing">اشتراک کرنا</string>
     <string name="send_feedback">رائے بھیجیں</string>
@@ -188,7 +185,6 @@
     <string name="dialog_desktop_upload_request_text_text">%1$s wants to send you %2$s totalling %3$s</string>
     <string name="invalid_torrent_file">غلط سیلاب فائل</string>
     <string name="activity_downloads_title_text">ڈاؤن لوڈز</string>
-    <string name="activity_media_player_name">میڈیا پلیئر</string>
     <string name="choose_email_app">ایک ای میل اپلی کیشن کا انتخاب کریں</string>
     <string name="failed_to_add_download">ڈاؤن شامل کرنے میں ناکام</string>
     <string name="vibrate_on_finished_download">لوڈ فارغ ہونے پر مرتعش</string>
@@ -445,7 +441,6 @@
     <string name="use_yify_summary">Yify مقناطیس کی بنیاد پر ہے، صرف وائی فائی پر کام کرتا ہے</string>
     <string name="error_no_internet_connection">خرابی: انٹرنیٹ کنکشن چیک کریں</string>
     <string name="azureus_manager_item_error">خرابی</string>
-    <string name="why_we_need_storage_permissions">ہم کیوں اسٹوریج اجازت کی ضرورت.</string>
     <string name="get_a_frostwire_tshirt">ایک MediaTor ٹی شرٹ حاصل</string>
     <string name="media_type_applications">درخواستیں</string>
     <string name="invalid_filename">غلط فائل کا نام</string>

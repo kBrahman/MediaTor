@@ -1,9 +1,7 @@
 package com.andrew.apollo.utils;
 
-import com.andrew.apollo.ui.fragments.AlbumFragment;
-import com.andrew.apollo.ui.fragments.ArtistFragment;
+
 import com.andrew.apollo.ui.fragments.SongFragment;
-import com.andrew.apollo.ui.fragments.phone.MusicBrowserPhoneFragment;
 import com.andrew.apollo.ui.fragments.profile.AlbumSongFragment;
 import com.andrew.apollo.ui.fragments.profile.ArtistAlbumFragment;
 import com.andrew.apollo.ui.fragments.profile.ArtistSongFragment;
@@ -70,37 +68,10 @@ public final class PreferenceUtils {
         return sInstance;
     }
 
-    /**
-     * Saves the current page the user is on when they close the app.
-     *
-     * @param value The last page the pager was on when the onDestroy is called
-     *              in {@link MusicBrowserPhoneFragment}.
-     */
     public void setStartPage(final int value) {
         cm.setInt(START_PAGE, value);
     }
 
-    /**
-     * Returns the last page the user was on when the app was exited.
-     *
-     * @return The page to start on when the app is opened.
-     */
-    public final int getStartPage() {
-        return cm.getInt(START_PAGE, DEFAULT_PAGE);
-    }
-
-    /**
-     * Sets the sort order for the artist list.
-     *
-     * @param value The new sort order
-     */
-    public void setArtistSortOrder(final String value) {
-        setPreference(ARTIST_SORT_ORDER, value);
-    }
-
-    /**
-     * @return The sort order used for the artist list in {@link ArtistFragment}
-     */
     public final String getArtistSortOrder() {
         // This is only to prevent return an invalid field name caused by bug BUGDUMP-21136
         final String defaultSortKey = SortOrder.ArtistSortOrder.ARTIST_A_Z;
@@ -145,29 +116,9 @@ public final class PreferenceUtils {
         return cm.getString(ARTIST_ALBUM_SORT_ORDER, SortOrder.ArtistAlbumSortOrder.ALBUM_A_Z);
     }
 
-    /**
-     * Sets the sort order for the album list.
-     *
-     * @param value The new sort order
-     */
-    public void setAlbumSortOrder(final String value) {
-        setPreference(ALBUM_SORT_ORDER, value);
-    }
 
-    /**
-     * @return The sort order used for the album list in {@link AlbumFragment}
-     */
     public final String getAlbumSortOrder() {
         return cm.getString(ALBUM_SORT_ORDER, SortOrder.AlbumSortOrder.ALBUM_A_Z);
-    }
-
-    /**
-     * Sets the sort order for the album song list.
-     *
-     * @param value The new sort order
-     */
-    public void setAlbumSongSortOrder(final String value) {
-        setPreference(ALBUM_SONG_SORT_ORDER, value);
     }
 
     /**
@@ -176,15 +127,6 @@ public final class PreferenceUtils {
      */
     public final String getAlbumSongSortOrder() {
         return cm.getString(ALBUM_SONG_SORT_ORDER, SortOrder.AlbumSongSortOrder.SONG_TRACK_LIST);
-    }
-
-    /**
-     * Sets the sort order for the song list.
-     *
-     * @param value The new sort order
-     */
-    public void setSongSortOrder(final String value) {
-        setPreference(SONG_SORT_ORDER, value);
     }
 
     /**

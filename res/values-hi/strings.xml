@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="you_dont_need_a_vpn_to_use_frostwire_bullet_html"><![CDATA[प्रकटीकरण हालांकि अपने डाउनलोड के लिए सिफारिश की, <b>आप MediaTor का उपयोग करने के लिए एक वीपीएन जरूरत नहीं है। </b>]]></string>
     <string name="tip_touch_tags_to"><![CDATA[ <b>TIP:</b> लागू टैग को स्पर्श करें]]></string>
-    <string name="unprotected_connections_visibility_bullet_html"><![CDATA[ <b>आपकी गोपनीयता एक मौलिक मानव अधिकार है</b>. एक असुरक्षित कनेक्शन का अर्थ है कि आप <b>डाउनलोड, खोज, संदेश</b> सहित ऑनलाइन सबकुछ करते हैं, आपके नेटवर्क पर किसी भी व्यक्ति द्वारा निगरानी और अवरोध किया जा सकता है, उदा। इंटरनेट सेवा प्रदाता, हैकर्स, सरकारें।<br><br><b>हम दृढ़ता से एक वीपीएन सेवा का उपयोग करने की सलाह देते हैं</b>. <br> यहां कुछ विकल्प हैं जो विश्वसनीय सेवा प्रदान करते हैं और फ्रॉस्टवायर के साथ अच्छी तरह से काम करते हैं:]]></string>
     <string name="protected_connections_visibility_bullet_html"><![CDATA[ आप एक वीपीएन का उपयोग कर इंटरनेट से जुड़े हुए हैं।<br><br> यदि आप पहले से नहीं हैं, तो हम आपके कनेक्शन को एन्क्रिप्ट करने के लिए नीचे दी गई सेवाओं में से एक का उपयोग करने की सलाह देते हैं और <b>अपनी गोपनीयता की रक्षा करें</b>। ]]></string>
-    <string name="activity_preferences_name">सेटिंग्स</string>
     <string name="activity_chat_named">बातचीत</string>
     <string name="activity_downloads_name">सक्रिय डाउनलोड</string>
     <string name="activity_uploads_name">सक्रिय अपलोड</string>
@@ -196,7 +193,6 @@
     <string name="not_connected">कनेक्टेड नहीं</string>
     <string name="mobile_data">मोबाइल डेटा</string>
     <string name="media_player_failed">मीडिया प्लेयर विफल</string>
-    <string name="activity_media_player_name">मीडिया प्लेयर </string>
     <string name="search_settings">खोज सेटिंग्स</string>
     <string name="use_zooqle">Zooqle.com का प्रयोग करें</string>
     <string name="use_tpb">ThePirateBay.org का प्रयोग करें</string>
@@ -487,7 +483,6 @@
     <string name="use_limetorrents">उपयोग Limetorrents</string>
     <string name="use_yify_summary">Yify चुंबक आधारित है, केवल वाईफाई पर काम करता है</string>
     <string name="error_no_internet_connection">त्रुटि: इंटरनेट कनेक्शन की जांच</string>
-    <string name="why_we_need_storage_permissions">क्यों हम भंडारण अनुमतियों की जरूरत है।</string>
     <string name="invalid_filename">अमान्य फ़ाइल नाम</string>
     <string name="use_archiveorg">उपयोग Archive.org</string>
     <string name="wifi_network_unavailable">वाईफाई नेटवर्क अनुपलब्ध</string>
@@ -562,7 +557,6 @@
     <string name="remove_ads">विज्ञापन हटाएँ</string>
     <string name="use_tpb_summary">TPB चुंबक आधारित है, केवल वाईफाई पर काम करता है</string>
     <string name="all_free_downloads">सभी मुफ्त डाउनलोड</string>
-    <string name="frostwire_sticker_and_more">FrostWire स्टिकर और अधिक</string>
     <string name="wifi_networks_only_summary">डेटा बचाना। डाउनलोड अगर केवल वाई-फाई कनेक्शन की स्थापना की है। </string>
     <string name="notifications_other_settings">सूचनाएं और अन्य</string>
 
