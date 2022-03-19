@@ -6,24 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
 import com.andrew.apollo.model.Album;
 import com.andrew.apollo.ui.MusicViewHolder;
-import com.andrew.apollo.ui.fragments.profile.ArtistAlbumFragment;
 import com.andrew.apollo.utils.MusicUtils;
 
 import z.zer.tor.media.R;
 import z.zer.tor.media.util.Ref;
 
-
-/**
- * This {@link ArrayAdapter} is used to display the albums for a particular
- * artist for {@link ArtistAlbumFragment} .
- *
- * @author Andrew Neal (andrewdneal@gmail.com)
- */
 public class ArtistAlbumAdapter extends ApolloFragmentAdapter<Album> {
 
     /**

@@ -21,8 +21,7 @@
   <string name="page_artists">هونەرمەند</string>
   <string name="page_albums">ئەلبوم</string>
   <string name="page_songs">گۆرانییەکان</string>
-  <string name="page_playlists">لیستی لێدان</string>
-  <string name="page_genres">چه‌شنه‌کان</string>
+    <string name="page_genres">چه‌شنه‌کان</string>
   <string name="menu_settings">ڕێکخستن</string>
   <string name="menu_search">گه‌ڕان</string>
   <string name="menu_shuffle">هه‌ڕه‌مه‌کی</string>

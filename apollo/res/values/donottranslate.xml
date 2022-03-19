@@ -2,9 +2,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="durationformatshort" translatable="false"><xliff:g id="format">%2$d:%3$02d</xliff:g></string>
     <string name="durationformatlong" translatable="false"><xliff:g id="format">%1$d:%2$02d:%3$02d</xliff:g></string>
-    <string name="application_label">MediaTor</string>
+    <string name="application_label">MediaPlay</string>
     <string name="id_ad_native_fb">2996943860330868_3035279656497288</string>
-    <string name="fb_banner_id">2996943860330868_3067508279941092</string>
-    <string name="banner_rec">2996943860330868_5444667508891812</string>
-<!--    <string name="native_tst">2996943860330868_5444702315554998</string>-->
 </resources>

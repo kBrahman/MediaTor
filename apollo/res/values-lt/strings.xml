@@ -21,8 +21,7 @@
   <string name="page_artists">Artistai</string>
   <string name="page_albums">Albumai</string>
   <string name="page_songs">Dainos</string>
-  <string name="page_playlists">Grojaraščiai</string>
-  <string name="page_genres">Žanrai</string>
+    <string name="page_genres">Žanrai</string>
   <string name="menu_settings">Nustatymai</string>
   <string name="menu_search">Paieška</string>
   <string name="menu_shuffle">Maišyti viską</string>

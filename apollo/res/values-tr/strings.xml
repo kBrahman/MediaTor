@@ -21,8 +21,7 @@
   <string name="page_artists">Sanatçılar</string>
   <string name="page_albums">Albümler</string>
   <string name="page_songs">Şarkılar</string>
-  <string name="page_playlists">Çalma Listeleri</string>
-  <string name="page_genres">Türler</string>
+    <string name="page_genres">Türler</string>
   <string name="menu_settings">Ayarlar</string>
   <string name="menu_search">Arama</string>
   <string name="menu_shuffle">Hepsini karıştır</string>

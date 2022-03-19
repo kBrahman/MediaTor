@@ -21,8 +21,7 @@
   <string name="page_artists">Artiști</string>
   <string name="page_albums">Albume</string>
   <string name="page_songs">Melodii</string>
-  <string name="page_playlists">Liste de redare</string>
-  <string name="page_genres">Genuri</string>
+    <string name="page_genres">Genuri</string>
   <string name="menu_settings">Setări</string>
   <string name="menu_search">Căutare</string>
   <string name="menu_shuffle">Amestecă tot</string>

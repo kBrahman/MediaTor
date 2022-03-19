@@ -21,8 +21,7 @@
   <string name="page_artists">아티스트</string>
   <string name="page_albums">앨범</string>
   <string name="page_songs">노래</string>
-  <string name="page_playlists">재생목록</string>
-  <string name="page_genres">장르</string>
+    <string name="page_genres">장르</string>
   <string name="menu_settings">설정</string>
   <string name="menu_search">검색</string>
   <string name="menu_shuffle">모두 임의 재생</string>

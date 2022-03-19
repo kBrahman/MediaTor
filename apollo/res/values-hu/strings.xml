@@ -21,8 +21,7 @@
   <string name="page_artists">Előadók</string>
   <string name="page_albums">Albumok</string>
   <string name="page_songs">Dalok</string>
-  <string name="page_playlists">Lejátszási listák</string>
-  <string name="page_genres">Műfajok</string>
+    <string name="page_genres">Műfajok</string>
   <string name="menu_settings">Beállítások</string>
   <string name="menu_search">Keresés</string>
   <string name="menu_shuffle">Véletlen sorrend</string>

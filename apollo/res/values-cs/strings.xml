@@ -21,8 +21,7 @@
   <string name="page_artists">Umělci</string>
   <string name="page_albums">Alba</string>
   <string name="page_songs">Skladby</string>
-  <string name="page_playlists">Seznamy skladeb</string>
-  <string name="page_genres">Žánry</string>
+    <string name="page_genres">Žánry</string>
   <string name="menu_settings">Nastavení</string>
   <string name="menu_search">Vyhledávat</string>
   <string name="menu_shuffle">Vše náhodně</string>

@@ -21,8 +21,7 @@
   <string name="page_artists">කලාකරුවන්</string>
   <string name="page_albums">ඇල්බම</string>
   <string name="page_songs">සින්දු</string>
-  <string name="page_playlists">ධාවනලැයිස්තු</string>
-  <string name="page_genres">ප්‍රභේද</string>
+    <string name="page_genres">ප්‍රභේද</string>
   <string name="menu_settings">සැකසීම්</string>
   <string name="menu_search">සොයන්න</string>
   <string name="menu_shuffle">සියල්ල කලවම් කරන්න</string>

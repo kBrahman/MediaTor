@@ -21,8 +21,7 @@
   <string name="page_artists">Kunstnere</string>
   <string name="page_albums">Albums</string>
   <string name="page_songs">Sange</string>
-  <string name="page_playlists">Playlister</string>
-  <string name="page_genres">Genrer</string>
+    <string name="page_genres">Genrer</string>
   <string name="menu_settings">Indstillinger</string>
   <string name="menu_search">Søg</string>
   <string name="menu_shuffle">Bland alle</string>

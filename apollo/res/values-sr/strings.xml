@@ -21,8 +21,7 @@
   <string name="page_artists">Извођачи</string>
   <string name="page_albums">Албуми</string>
   <string name="page_songs">Песме</string>
-  <string name="page_playlists">Листе песама</string>
-  <string name="page_genres">Жанрови</string>
+    <string name="page_genres">Жанрови</string>
   <string name="menu_settings">Подешавања</string>
   <string name="menu_search">Претрага</string>
   <string name="menu_shuffle">Репродукуј све насумично</string>

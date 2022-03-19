@@ -21,8 +21,7 @@
   <string name="page_artists">Виконавці</string>
   <string name="page_albums">Альбоми</string>
   <string name="page_songs">Пісні</string>
-  <string name="page_playlists">Списки</string>
-  <string name="page_genres">Жанри</string>
+    <string name="page_genres">Жанри</string>
   <string name="menu_settings">Налаштування</string>
   <string name="menu_search">Пошук</string>
   <string name="menu_shuffle">Перемішати</string>

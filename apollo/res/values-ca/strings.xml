@@ -21,8 +21,7 @@
   <string name="page_artists">Artistes</string>
   <string name="page_albums">Àlbums</string>
   <string name="page_songs">Cançons</string>
-  <string name="page_playlists">Llistes de reproducció</string>
-  <string name="page_genres">Gèneres</string>
+    <string name="page_genres">Gèneres</string>
   <string name="menu_settings">Configuració</string>
   <string name="menu_search">Cerca</string>
   <string name="menu_shuffle">Barreja-ho tot</string>

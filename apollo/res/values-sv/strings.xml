@@ -21,8 +21,7 @@
   <string name="page_artists">Artister</string>
   <string name="page_albums">Album</string>
   <string name="page_songs">Låtar</string>
-  <string name="page_playlists">Spellistor</string>
-  <string name="page_genres">Genrer</string>
+    <string name="page_genres">Genrer</string>
   <string name="menu_settings">Inställningar</string>
   <string name="menu_search">Sök</string>
   <string name="menu_shuffle">Blanda alla</string>

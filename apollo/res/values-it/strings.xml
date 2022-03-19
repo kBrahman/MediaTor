@@ -21,8 +21,7 @@
   <string name="page_artists">Artisti</string>
   <string name="page_albums">Album</string>
   <string name="page_songs">Canzoni</string>
-  <string name="page_playlists">Playlist</string>
-  <string name="page_genres">Generi</string>
+    <string name="page_genres">Generi</string>
   <string name="menu_settings">Impostazioni</string>
   <string name="menu_search">Cerca</string>
   <string name="menu_shuffle">Riproduzione casuale</string>

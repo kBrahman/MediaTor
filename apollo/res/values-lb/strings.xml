@@ -19,8 +19,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="page_recent">Rezent</string>
   <string name="page_albums">Alben</string>
-  <string name="page_playlists">Ofspilllëschten</string>
-  <string name="page_genres">Genren</string>
+    <string name="page_genres">Genren</string>
   <string name="menu_settings">Astellungen</string>
   <string name="menu_search">Sichen</string>
   <string name="menu_play_all">All ofspillen</string>

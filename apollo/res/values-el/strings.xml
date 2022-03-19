@@ -21,8 +21,7 @@
   <string name="page_artists">Καλλιτέχνες</string>
   <string name="page_albums">Άλμπουμ</string>
   <string name="page_songs">Τραγούδια</string>
-  <string name="page_playlists">Λίστες αναπαραγωγής</string>
-  <string name="page_genres">Είδη</string>
+    <string name="page_genres">Είδη</string>
   <string name="menu_settings">Ρυθμίσεις</string>
   <string name="menu_search">Αναζήτηση</string>
   <string name="menu_shuffle">Τυχαία αναπαραγωγή όλων</string>

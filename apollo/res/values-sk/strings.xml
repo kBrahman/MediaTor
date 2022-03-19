@@ -21,8 +21,7 @@
   <string name="page_artists">Interpreti</string>
   <string name="page_albums">Albumy</string>
   <string name="page_songs">Skladby</string>
-  <string name="page_playlists">Zoznamy skladieb</string>
-  <string name="page_genres">Žánre</string>
+    <string name="page_genres">Žánre</string>
   <string name="menu_settings">Nastavenia</string>
   <string name="menu_search">Hľadať</string>
   <string name="menu_shuffle">Prehrať všetky náhodne</string>

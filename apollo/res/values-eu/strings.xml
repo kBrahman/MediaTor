@@ -21,8 +21,7 @@
   <string name="page_artists">Artistak</string>
   <string name="page_albums">Albumak</string>
   <string name="page_songs">Abestiak</string>
-  <string name="page_playlists">Zerrendak</string>
-  <string name="page_genres">Generoak</string>
+    <string name="page_genres">Generoak</string>
   <string name="menu_settings">Ezarpenak</string>
   <string name="menu_search">Bilatu</string>
   <string name="menu_shuffle">Ausazko erreprodukzioa</string>

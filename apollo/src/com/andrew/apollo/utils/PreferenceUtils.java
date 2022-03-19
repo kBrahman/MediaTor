@@ -1,11 +1,6 @@
 package com.andrew.apollo.utils;
 
 
-import com.andrew.apollo.ui.fragments.SongFragment;
-import com.andrew.apollo.ui.fragments.profile.AlbumSongFragment;
-import com.andrew.apollo.ui.fragments.profile.ArtistAlbumFragment;
-import com.andrew.apollo.ui.fragments.profile.ArtistSongFragment;
-
 import z.zer.tor.media.android.core.ConfigurationManager;
 
 /**
@@ -82,36 +77,9 @@ public final class PreferenceUtils {
         return key;
     }
 
-    /**
-     * Sets the sort order for the artist song list.
-     *
-     * @param value The new sort order
-     */
-    public void setArtistSongSortOrder(final String value) {
-        setPreference(ARTIST_SONG_SORT_ORDER, value);
-    }
-
-    /**
-     * @return The sort order used for the artist song list in
-     * {@link ArtistSongFragment}
-     */
     public final String getArtistSongSortOrder() {
         return cm.getString(ARTIST_SONG_SORT_ORDER, SortOrder.ArtistSongSortOrder.SONG_A_Z);
     }
-
-    /**
-     * Sets the sort order for the artist album list.
-     *
-     * @param value The new sort order
-     */
-    public void setArtistAlbumSortOrder(final String value) {
-        setPreference(ARTIST_ALBUM_SORT_ORDER, value);
-    }
-
-    /**
-     * @return The sort order used for the artist album list in
-     * {@link ArtistAlbumFragment}
-     */
     public final String getArtistAlbumSortOrder() {
         return cm.getString(ARTIST_ALBUM_SORT_ORDER, SortOrder.ArtistAlbumSortOrder.ALBUM_A_Z);
     }
@@ -121,17 +89,10 @@ public final class PreferenceUtils {
         return cm.getString(ALBUM_SORT_ORDER, SortOrder.AlbumSortOrder.ALBUM_A_Z);
     }
 
-    /**
-     * @return The sort order used for the album song in
-     * {@link AlbumSongFragment}
-     */
     public final String getAlbumSongSortOrder() {
         return cm.getString(ALBUM_SONG_SORT_ORDER, SortOrder.AlbumSongSortOrder.SONG_TRACK_LIST);
     }
 
-    /**
-     * @return The sort order used for the song list in {@link SongFragment}
-     */
     public final String getSongSortOrder() {
         return cm.getString(SONG_SORT_ORDER, SortOrder.SongSortOrder.SONG_A_Z);
     }

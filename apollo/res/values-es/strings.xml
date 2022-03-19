@@ -4,8 +4,7 @@
   <string name="page_artists">Artistas</string>
   <string name="page_albums">Álbumes</string>
   <string name="page_songs">Canciones</string>
-  <string name="page_playlists">Listas</string>
-  <string name="page_genres">Géneros</string>
+    <string name="page_genres">Géneros</string>
   <string name="menu_settings">Ajustes</string>
   <string name="menu_search">Buscar</string>
   <string name="menu_shuffle">Reproducción aleatoria</string>
