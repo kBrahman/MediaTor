@@ -1,31 +1,6 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2015, FrostWire(R). All rights reserved.
-
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package z.zer.tor.media.util.http;
 
-import z.zer.tor.media.util.Logger;
-import z.zer.tor.media.util.Ssl;
-import z.zer.tor.media.util.Utils;
-import z.zer.tor.media.util.ThreadPool;
-import okhttp3.*;
-import okio.Buffer;
-import okio.BufferedSink;
-import okio.GzipSink;
-import okio.Okio;
+import android.util.Log;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -37,15 +12,30 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-/**
- * An OkHttpClient based HTTP Client.
- *
- * @author gubatron
- * @author aldenml
- */
+import okhttp3.ConnectionPool;
+import okhttp3.ConnectionSpec;
+import okhttp3.Dispatcher;
+import okhttp3.Headers;
+import okhttp3.Interceptor;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import okio.Buffer;
+import okio.BufferedSink;
+import okio.GzipSink;
+import okio.Okio;
+import z.zer.tor.media.util.Logger;
+import z.zer.tor.media.util.Ssl;
+import z.zer.tor.media.util.ThreadPool;
+import z.zer.tor.media.util.Utils;
+
+
 public class OKHTTPClient extends AbstractHttpClient {
 
     private static final Logger LOG = Logger.getLogger(OKHTTPClient.class);
+    private static final String TAG = "OKHTTPClient";
     private final ThreadPool pool;
 
     public static final ConnectionPool CONNECTION_POOL = new ConnectionPool(5, 10, TimeUnit.SECONDS);
@@ -70,43 +60,16 @@ public class OKHTTPClient extends AbstractHttpClient {
     }
 
     @Override
-    public byte[] getBytes(String url, int timeout, String userAgent, String referrer, String cookies) {
-        byte[] result = null;
-        final OkHttpClient.Builder okHttpClient = newOkHttpClient();
-        final Request.Builder builder = prepareRequestBuilder(okHttpClient, url, timeout, userAgent, referrer, cookies);
-        ResponseBody responseBody = null;
-        try {
-            responseBody = getSyncResponse(okHttpClient, builder).body();
-            result = responseBody.bytes();
-        } catch (Throwable e) {
-            LOG.error("Error getting bytes from http body response: " + e.getMessage());
-        } finally {
-            if (responseBody != null) {
-                closeQuietly(responseBody);
-            }
-        }
-        return result;
-    }
-
-    @Override
     public String get(String url, int timeout, String userAgent, String referrer, String cookie, Map<String, String> customHeaders) throws IOException {
-        String result = null;
+        String result;
         final OkHttpClient.Builder okHttpClient = newOkHttpClient();
         final Request.Builder builder = prepareRequestBuilder(okHttpClient, url, timeout, userAgent, referrer, cookie);
         addCustomHeaders(customHeaders, builder);
-        ResponseBody responseBody = null;
-        try {
-            responseBody = getSyncResponse(okHttpClient, builder).body();
-            result = responseBody.string();
-        } catch (IOException ioe) {
-            //ioe.printStackTrace();
-            throw ioe;
-        } catch (Throwable e) {
-            LOG.error(e.getMessage(), e);
-        } finally {
-            if (responseBody != null) {
-                closeQuietly(responseBody);
-            }
+        try (Response response = getSyncResponse(okHttpClient, builder)) {
+            int code = response.code();
+            if (code == 401) throw new UnauthorizedException();
+            Log.i(TAG, "response code=>" + code);
+            result = response.body().string();
         }
         return result;
     }

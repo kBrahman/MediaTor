@@ -84,6 +84,7 @@ class PlayerActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener,
                 }
                 adLoaded.value = true
                 play()
+                Log.e(TAG, "Native ad is loaded")
             }
 
             override fun onAdClicked(ad: Ad) {
@@ -174,7 +175,7 @@ class PlayerActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener,
                         .height(32.dp)
                         .fillMaxWidth()
                         .constrainAs(spacer) {
-                            bottom.linkTo(btn.top)
+                            bottom.linkTo(sb.top)
                         })
                 if (playerStarted.value) {
                     Button(onClick = {
@@ -205,7 +206,7 @@ class PlayerActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener,
                             .height(8.dp)
                             .constrainAs(sb) {
                                 start.linkTo(btn.end, margin = 4.dp)
-                                end.linkTo(btnAdd.start, margin = 16.dp)
+                                end.linkTo(btnAdd.start, margin = 4.dp)
                                 top.linkTo(btn.top)
                                 bottom.linkTo(btn.bottom)
                                 width = Dimension.fillToConstraints
@@ -240,7 +241,6 @@ class PlayerActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener,
                                         imgUrl!!
                                     )
                                     db.trackDao().insert(track)
-                                    Log.i(TAG, "inserting track=>$track")
                                 }
                                 added.value = db.trackDao().isAdded(id)
                             }
@@ -250,7 +250,7 @@ class PlayerActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener,
                                 .width(48.dp)
                                 .constrainAs(btnAdd) {
                                     end.linkTo(parent.end, margin = 8.dp)
-                                    bottom.linkTo(parent.bottom, margin = 8.dp)
+                                    bottom.linkTo(btn.bottom)
                                 }) {
                             Icon(
                                 painter = painterResource(
@@ -263,17 +263,13 @@ class PlayerActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener,
                             )
                         }
                     }
+                } else LinearProgressIndicator(Modifier.constrainAs(sb) {
+                    bottom.linkTo(parent.bottom, margin = 16.dp)
+                    start.linkTo(parent.start, margin = 16.dp)
+                    end.linkTo(parent.end, margin = 16.dp)
+                    width = Dimension.fillToConstraints
+                }, colorPrimary)
 
-                } else {
-                    LinearProgressIndicator(
-                        color = colorPrimary,
-                        modifier = Modifier.constrainAs(sb) {
-                            bottom.linkTo(parent.bottom, margin = 16.dp)
-                            start.linkTo(parent.start, margin = 16.dp)
-                            end.linkTo(parent.end, margin = 16.dp)
-                            width = Dimension.fillToConstraints
-                        })
-                }
             }
             initComponents(added, db.trackDao())
         }
@@ -352,8 +348,7 @@ class PlayerActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener,
         }
     }
 
-    fun play() = cScope.launch {
-        Log.i(TAG, "url=>$streamUrl")
+    fun play() = cScope.launch(Dispatchers.IO) {
         val url = getFinalUrl(streamUrl)
         val uri = Uri.parse(url)
         androidMediaPlayer = MediaPlayer()

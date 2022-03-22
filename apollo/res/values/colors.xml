@@ -10,9 +10,6 @@
     <!-- White -->
     <color name="white">#ffffffff</color>
 
-    <!-- Transparent black -->
-    <color name="transparent_black">#99000000</color>
-
     <!-- Transparent white -->
     <color name="transparent_white">#ffcccccc</color>
 

@@ -18,12 +18,10 @@
 package z.zer.tor.media.util;
 
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.LinkedBlockingQueue;
 
 import z.zer.tor.media.util.http.HttpClient;
-import z.zer.tor.media.util.http.JdkHttpClient;
 import z.zer.tor.media.util.http.OKHTTPClient;
 
 public class HttpClientFactory {
@@ -37,9 +35,6 @@ public class HttpClientFactory {
     }
 
     public static HttpClient getInstance(HttpContext context) {
-        if (isWindowsXP()) {
-            return new JdkHttpClient();
-        }
 
         if (okHttpClientPools == null) {
             okHttpClientPools = buildThreadPools();
@@ -53,11 +48,5 @@ public class HttpClientFactory {
         map.put(HttpContext.DOWNLOAD, new ThreadPool("OkHttpClient-downloads", 1, 10, 5, new LinkedBlockingQueue<Runnable>(), true));
         map.put(HttpContext.MISC, new ThreadPool("OkHttpClient-misc", 2, 10, 30, new LinkedBlockingQueue<Runnable>(), true));
         return map;
-    }
-
-    private static boolean isWindowsXP() {
-        String os = System.getProperty("os.name");
-        os = os.toLowerCase(Locale.US);
-        return os.contains("windows xp");
     }
 }

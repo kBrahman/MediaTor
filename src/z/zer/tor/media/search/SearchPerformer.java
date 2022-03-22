@@ -1,10 +1,12 @@
 package z.zer.tor.media.search;
 
+import java.io.IOException;
+
 public interface SearchPerformer {
 
     long getToken();
 
-    void perform();
+    void perform() throws IOException;
 
     void crawl(CrawlableSearchResult sr);
 

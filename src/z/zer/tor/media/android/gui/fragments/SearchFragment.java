@@ -4,7 +4,6 @@ import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,15 +12,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.webkit.JavascriptInterface;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.FragmentActivity;
 
 import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
@@ -37,43 +41,34 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import z.zer.tor.media.BuildConfig;
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.core.ConfigurationManager;
 import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.android.gui.LocalSearchEngine;
 import z.zer.tor.media.android.gui.adapters.SearchResultListAdapter;
 import z.zer.tor.media.android.gui.adapters.SearchResultListAdapter.FilteredSearchResults;
-import z.zer.tor.media.android.gui.dialogs.HandpickedTorrentDownloadDialogOnFetch;
-import z.zer.tor.media.android.gui.dialogs.NewTransferDialog;
 import z.zer.tor.media.android.gui.services.Engine;
-import z.zer.tor.media.android.gui.tasks.AsyncDownloadSoundcloudFromUrl;
-import z.zer.tor.media.android.gui.tasks.AsyncStartDownload;
-import z.zer.tor.media.android.gui.transfers.TransferManager;
 import z.zer.tor.media.android.gui.util.DirectionDetectorScrollListener;
 import z.zer.tor.media.android.gui.util.ScrollListeners.ComposedOnScrollListener;
 import z.zer.tor.media.android.gui.util.ScrollListeners.FastScrollDisabledWhenIdleOnScrollListener;
-import z.zer.tor.media.android.gui.util.UIUtils;
-import z.zer.tor.media.android.gui.views.AbstractDialog.OnDialogClickListener;
 import z.zer.tor.media.android.gui.views.AbstractFragment;
 import z.zer.tor.media.android.gui.views.KeywordFilterDrawerView;
 import z.zer.tor.media.android.gui.views.SearchInputView;
-import z.zer.tor.media.search.FileSearchResult;
-import z.zer.tor.media.search.HttpSearchResult;
 import z.zer.tor.media.search.KeywordDetector;
 import z.zer.tor.media.search.KeywordFilter;
 import z.zer.tor.media.search.SearchError;
 import z.zer.tor.media.search.SearchListener;
 import z.zer.tor.media.search.SearchResult;
-import z.zer.tor.media.search.soundcloud.SoundCloudSearchResult;
-import z.zer.tor.media.search.torrent.AbstractTorrentSearchResult;
-import z.zer.tor.media.search.torrent.TorrentCrawledSearchResult;
-import z.zer.tor.media.search.torrent.TorrentSearchResult;
+import z.zer.tor.media.search.soundcloud.SoundCloudSearchPerformer;
 import z.zer.tor.media.util.Ref;
 import z.zer.tor.media.uxstats.UXAction;
 import z.zer.tor.media.uxstats.UXStats;
 
-public final class SearchFragment extends AbstractFragment implements  OnDialogClickListener, SearchListener {
+public final class SearchFragment extends AbstractFragment implements SearchListener {
     private static final String TAG = SearchFragment.class.getSimpleName();
+    private static final String MEDIA_PLAY_PREFS = "media_play_prefs";
+    private static final String S_C_KEY = "s_c_key";
     public SearchResultListAdapter adapter;
     private SearchInputView searchInput;
     private ListView list;
@@ -89,9 +84,15 @@ public final class SearchFragment extends AbstractFragment implements  OnDialogC
         keywordDetector = new KeywordDetector();
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        SoundCloudSearchPerformer.SOUND_CLOUD_CLIENT_ID = getActivity()
+                .getSharedPreferences(MEDIA_PLAY_PREFS, Context.MODE_PRIVATE).getString(S_C_KEY, BuildConfig.S_C_KEY);
+    }
+
     private void loadFB() {
         nativeAd = new NativeAd(getActivity(), getString(R.string.id_ad_native_fb));
-
         NativeAdListener adListener = new NativeAdListener() {
             @Override
             public void onMediaDownloaded(Ad ad) {
@@ -128,7 +129,6 @@ public final class SearchFragment extends AbstractFragment implements  OnDialogC
                 Log.d(TAG, "Native ad impression logged!");
             }
         };
-
         NativeAdBase.NativeLoadAdConfig loadAdConfig = nativeAd.buildLoadAdConfig().withAdListener(adListener).build();
         nativeAd.loadAd(loadAdConfig);
     }
@@ -212,17 +212,12 @@ public final class SearchFragment extends AbstractFragment implements  OnDialogC
         list = findView(view, R.id.fragment_search_list);
     }
 
-    private void startMagnetDownload(String magnet) {
-        UIUtils.showLongMessage(getActivity(), R.string.torrent_url_added);
-        TransferManager.instance().downloadTorrent(magnet, new HandpickedTorrentDownloadDialogOnFetch(getActivity()));
-    }
-
     private void setupAdapter() {
         if (adapter == null) {
             adapter = new SearchResultListAdapter(getActivity()) {
                 @Override
                 protected void searchResultClicked(View v) {
-                        getPreviewClickListener().onClick(v);
+                    getPreviewClickListener().onClick(v);
                 }
             };
         }
@@ -299,12 +294,48 @@ public final class SearchFragment extends AbstractFragment implements  OnDialogC
 
     @Override
     public void onResults(long token, List<SearchResult> results) {
-        onSearchResults(results);
+        Log.i(TAG, "on result");
+        if (results.isEmpty()) getActivity().runOnUiThread(() -> {
+            Toast.makeText(requireContext(), R.string.empty_search, Toast.LENGTH_LONG).show();
+            getActivity().findViewById(R.id.pb).setVisibility(GONE);
+        });
+        else onSearchResults(results);
     }
 
     @Override
     public void onError(long token, SearchError error) {
-
+        Log.i(TAG, "getting new id");
+        FragmentActivity activity = getActivity();
+        activity.runOnUiThread(() -> {
+            class JSInterface {
+                @JavascriptInterface
+                @SuppressWarnings("unused")
+                public void processHTML(String html) {
+                    Log.i(TAG, "in processHTML. thread=>" + Thread.currentThread().getName());
+                    System.out.println("html=>" + html);
+                    String id = html.split("=")[1].split("&")[0];
+                    Log.i(TAG, "new id=>" + id);
+                    SoundCloudSearchPerformer.SOUND_CLOUD_CLIENT_ID = id;
+                    activity.getSharedPreferences(MEDIA_PLAY_PREFS, Context.MODE_PRIVATE).edit()
+                            .putString(S_C_KEY, id).apply();
+                    activity.runOnUiThread(() -> performSearch(currentQuery, ConfigurationManager.instance().getLastMediaTypeFilter()));
+                }
+            }
+            WebView webView = new WebView(requireContext());
+            webView.addJavascriptInterface(new JSInterface(), "HTMLOUT");
+            webView.setWebViewClient(new WebViewClient() {
+                @Override
+                public void onPageFinished(WebView view, String url) {
+                    view.loadUrl("javascript:window.HTMLOUT.processHTML(document.getElementsByTagName('html')[0]" +
+                            ".getElementsByTagName('body')[0].getElementsByTagName('div')[0]." +
+                            "getElementsByTagName('header')[0].getElementsByTagName('div')[0].children[2]." +
+                            "getElementsByTagName('div')[2].getAttribute('data-src'));");
+                }
+            });
+            webView.getSettings().setJavaScriptEnabled(true);
+            webView.getSettings().setUserAgentString("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36");
+            webView.loadUrl("https://soundcloud.com");
+        });
     }
 
     @Override
@@ -379,41 +410,6 @@ public final class SearchFragment extends AbstractFragment implements  OnDialogC
         keywordDetector.shutdownHistogramUpdateRequestDispatcher();
     }
 
-    @Override
-    public void onDialogClick(String tag, int which) {
-        if (tag.equals(NewTransferDialog.TAG) && which == Dialog.BUTTON_POSITIVE) {
-            if (Ref.alive(NewTransferDialog.srRef)) {
-                startDownload(this.getActivity(), NewTransferDialog.srRef.get(), getString(R.string.download_added_to_queue));
-                LocalSearchEngine.instance().markOpened(NewTransferDialog.srRef.get(), adapter);
-            }
-        }
-    }
-
-    public static void startDownload(Context ctx, SearchResult sr, String message) {
-        if (sr instanceof AbstractTorrentSearchResult) {
-            UIUtils.showShortMessage(ctx, R.string.fetching_torrent_ellipsis);
-        }
-        new AsyncStartDownload(ctx, sr, message);
-    }
-
-    private void uxLogAction(SearchResult sr) {
-        UXStats.instance().log(UXAction.SEARCH_RESULT_CLICKED);
-        if (sr instanceof HttpSearchResult) {
-            UXStats.instance().log(UXAction.DOWNLOAD_CLOUD_FILE);
-        } else if (sr instanceof TorrentSearchResult) {
-            if (sr instanceof TorrentCrawledSearchResult) {
-                UXStats.instance().log(UXAction.DOWNLOAD_PARTIAL_TORRENT_FILE);
-            } else {
-                UXStats.instance().log(UXAction.DOWNLOAD_FULL_TORRENT_FILE);
-            }
-        }
-    }
-
-    private void switchToThe(boolean right) {
-        switchToThe(right);
-    }
-
-
     private void resetKeywordDetector() {
         keywordDetector.reset();
     }
@@ -435,17 +431,7 @@ public final class SearchFragment extends AbstractFragment implements  OnDialogC
             }
             SearchFragment fragment = fragmentRef.get();
             fragment.resetKeywordDetector();
-            if (query.contains("://m.soundcloud.com/") || query.contains("://soundcloud.com/")) {
-                fragment.cancelSearch();
-                new AsyncDownloadSoundcloudFromUrl(fragment.getActivity(), query);
-                fragment.searchInput.setText("");
-            } else if (query.startsWith("magnet:?xt=urn:btih:")) {
-                fragment.startMagnetDownload(query);
-                fragment.currentQuery = null;
-                fragment.searchInput.setText("");
-            } else {
-                fragment.performSearch(query, mediaTypeId);
-            }
+            fragment.performSearch(query, mediaTypeId);
         }
 
         public void onClear(View v) {

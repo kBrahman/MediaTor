@@ -29,14 +29,14 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(rootProject.file("keystore.properties").newDataInputStream())
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 31
     defaultConfig {
         applicationId localProperties["id"]
-        versionCode 65
-        versionName "2.0"
+        versionCode 66
+        versionName "2.1"
         multiDexEnabled true
         minSdkVersion 23
-        targetSdkVersion 32
+        targetSdkVersion 31
         buildConfigField "String", "S_C_KEY", localProperties["s_c_key"]
     }
 
@@ -73,16 +73,9 @@ android {
         release {
             minifyEnabled true
             shrinkResources true
-            ndk {
-                debugSymbolLevel 'FULL'
-            }
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.zig
-            applicationVariants.all { variant ->
-                variant.outputs.all {
-                    outputFileName = "MediaTor.apk"
-                }
-            }
+            applicationVariants.all { variant -> variant.outputs.all { outputFileName = "MediaPlay.apk" } }
         }
     }
     buildToolsVersion '32.1.0-rc1'
@@ -112,7 +105,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.9.0'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation platform('com.google.firebase:firebase-bom:26.3.0')
-    implementation 'com.google.firebase:firebase-analytics-ktx:20.1.0'
+    implementation 'com.google.firebase:firebase-analytics-ktx:20.1.1'
     implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.9'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     //compose
@@ -121,6 +114,7 @@ dependencies {
     implementation 'androidx.compose.material:material:1.1.1'
     implementation 'androidx.activity:activity-compose:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout-compose:1.0.0'
+    implementation "androidx.media:media:1.5.0"
     //ads
     implementation 'com.facebook.android:audience-network-sdk:6.8.0'
     //db

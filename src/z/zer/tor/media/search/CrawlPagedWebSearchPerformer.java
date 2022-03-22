@@ -12,7 +12,7 @@ public abstract class CrawlPagedWebSearchPerformer<T extends CrawlableSearchResu
 
     private static final Logger LOG = Logger.getLogger(CrawlPagedWebSearchPerformer.class);
 
-    private static final int DEFAULT_CRAWL_TIMEOUT = 10000; // 10 seconds.
+    // 10 seconds.
     private static final int FAILED_CRAWL_URL_CACHE_LIFETIME = 600000; // 10 minutes.
     private static final int DEFAULT_MAGNET_DOWNLOAD_TIMEOUT_SECS = 20; // 20 seconds.
 
@@ -89,8 +89,6 @@ public abstract class CrawlPagedWebSearchPerformer<T extends CrawlableSearchResu
 
                         if (url.startsWith("magnet")) {
                             data = fetchMagnet(url);
-                        } else {
-                            data = fetchBytes(url, sr.getDetailsUrl(), DEFAULT_CRAWL_TIMEOUT);
                         }
 
                         //we put this here optimistically hoping this is actually

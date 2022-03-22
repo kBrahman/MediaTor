@@ -1,27 +1,23 @@
 package z.zer.tor.media.android.gui;
 
+
 import android.text.Html;
 
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
 import z.zer.tor.media.android.gui.views.AbstractListAdapter;
 import z.zer.tor.media.search.CrawlPagedWebSearchPerformer;
-import z.zer.tor.media.search.CrawledSearchResult;
-import z.zer.tor.media.search.FileSearchResult;
 import z.zer.tor.media.search.SearchError;
 import z.zer.tor.media.search.SearchListener;
 import z.zer.tor.media.search.SearchManager;
-import z.zer.tor.media.search.SearchPerformer;
 import z.zer.tor.media.search.SearchResult;
+import z.zer.tor.media.search.soundcloud.SoundCloudSearchPerformer;
 import z.zer.tor.media.util.Utils;
 
 public final class LocalSearchEngine {
@@ -59,7 +55,7 @@ public final class LocalSearchEngine {
 
             @Override
             public void onError(long token, SearchError error) {
-
+                LocalSearchEngine.this.onErr(token, error);
             }
 
             @Override
@@ -81,19 +77,11 @@ public final class LocalSearchEngine {
         if (Utils.isNullOrEmpty(query, true)) {
             return;
         }
-
         manager.stop();
-
         currentSearchToken = Math.abs(System.nanoTime());
         currentSearchTokens = tokenize(query);
         searchFinished = false;
-
-        for (SearchEngine se : SearchEngine.getEngines()) {
-            if (se.isEnabled()) {
-                SearchPerformer p = se.getPerformer(currentSearchToken, query);
-                manager.perform(p);
-            }
-        }
+        manager.perform(new SoundCloudSearchPerformer("api.sndcdn.com", currentSearchToken, query, 1000));
     }
 
     public void cancelSearch() {
@@ -103,20 +91,12 @@ public final class LocalSearchEngine {
         searchFinished = true;
     }
 
-    public boolean isSearchStopped() {
-        return currentSearchToken == 0;
-    }
-
     public boolean isSearchFinished() {
         return searchFinished;
     }
 
     public void clearCache() {
         CrawlPagedWebSearchPerformer.clearCache();
-    }
-
-    public long getCacheSize() {
-        return CrawlPagedWebSearchPerformer.getCacheSize();
     }
 
     public void markOpened(SearchResult sr, AbstractListAdapter adapter) {
@@ -130,16 +110,16 @@ public final class LocalSearchEngine {
         return sr != null && opened.contains(sr.uid());
     }
 
-    private void onResults(long token, List<? extends SearchResult> results) {
+    private void onResults(long token, List<SearchResult> results) {
         if (token == currentSearchToken) { // one more additional protection
-            @SuppressWarnings("unchecked") List<SearchResult> filtered = filter(results);
-
-            if (!filtered.isEmpty()) {
-                if (listener != null) {
-                    listener.onResults(token, filtered);
-                }
+            if (listener != null) {
+                listener.onResults(token, results);
             }
         }
+    }
+
+    private void onErr(long token, SearchError error) {
+        listener.onError(token, error);
     }
 
     private void onFinished(long token) {
@@ -149,65 +129,6 @@ public final class LocalSearchEngine {
                 listener.onStopped(token);
             }
         }
-    }
-
-    private List<SearchResult> filter(List<? extends SearchResult> results) {
-        List<SearchResult> list;
-
-        if (currentSearchTokens == null || currentSearchTokens.isEmpty()) {
-            list = Collections.emptyList();
-        } else {
-            list = filter2(results);
-        }
-
-        return list;
-    }
-
-    private List<SearchResult> filter2(List<? extends SearchResult> results) {
-        List<SearchResult> list = new LinkedList<>();
-
-        try {
-            for (SearchResult sr : results) {
-                if (sr instanceof CrawledSearchResult) {
-                    if (filter(new LinkedList<>(currentSearchTokens), sr)) {
-                        list.add(sr);
-                    }
-                } else {
-                    list.add(sr);
-                }
-            }
-        } catch (Throwable e) {
-            // possible NPE due to cancel search or some inner error in search results, ignore it and cleanup list
-            list.clear();
-        }
-
-        return list;
-    }
-
-    private boolean filter(List<String> tokens, SearchResult sr) {
-        StringBuilder sb = new StringBuilder();
-
-        sb.append(sr.getDisplayName());
-        if (sr instanceof CrawledSearchResult) {
-            sb.append(((CrawledSearchResult) sr).getParent().getDisplayName());
-        }
-
-        if (sr instanceof FileSearchResult) {
-            sb.append(((FileSearchResult) sr).getFilename());
-        }
-
-        String str = sanitize(sb.toString());
-        str = normalize(str);
-
-        Iterator<String> it = tokens.iterator();
-        while (it.hasNext()) {
-            String token = it.next();
-            if (str.contains(token)) {
-                it.remove();
-            }
-        }
-
-        return tokens.isEmpty();
     }
 
     private String sanitize(String str) {

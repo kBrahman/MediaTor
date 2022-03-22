@@ -19,33 +19,21 @@ public abstract class PagedWebSearchPerformer extends WebSearchPerformer {
     }
 
     @Override
-    public void perform() {
+    public void perform() throws IOException {
         for (int i = 1; !isStopped() && i <= pages; i++) {
             onResults(parsePage(i));
         }
     }
 
-    protected List<SearchResult> parsePage(int page) {
+    protected List<SearchResult> parsePage(int page) throws IOException {
         List<SearchResult> result = Collections.emptyList();
-        String url = null;
-        try {
-            url = getUrl(page, getEncodedKeywords());
-            String text = fetchSearchPage(url);
-            if (text != null) {
-                result = parsePage(text);
-            }
-        } catch (Throwable e) {
-            if (url == null) {
-                url = "n.a";
-            }
-            e.printStackTrace();
-            Log.e(TAG, "Error searching page [" + url + "]: " + e.getMessage());
+        String url = getUrl(page, getEncodedKeywords());
+        String text = fetch(url, null, null);
+        Log.i(TAG, "fetched text=>" + text);
+        if (text != null) {
+            result = parsePage(text);
         }
         return result;
-    }
-
-    protected String fetchSearchPage(String url) throws IOException {
-        return fetch(url);
     }
 
     protected abstract String getUrl(int page, String encodedKeywords);

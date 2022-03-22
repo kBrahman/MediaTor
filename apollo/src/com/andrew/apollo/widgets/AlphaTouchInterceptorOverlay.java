@@ -27,7 +27,6 @@ import android.widget.FrameLayout;
  * case you are responsible for managing the z-order of the alpha-layer with
  * respect to your other sub-views. Typically, you would not use this class
  * directly, but rather use another class that uses it, for example
- * {@link FrameLayoutWithOverlay}.
  */
 public class AlphaTouchInterceptorOverlay extends FrameLayout {
 

@@ -96,29 +96,6 @@ public abstract class AbstractHttpClient implements HttpClient {
     abstract public String get(String url, int timeout, String userAgent, String referrer, String cookie, Map<String, String> customHeaders) throws IOException;
 
     @Override
-    public byte[] getBytes(String url) {
-        return getBytes(url, DEFAULT_TIMEOUT);
-    }
-
-    @Override
-    public byte[] getBytes(String url, int timeout) {
-        return getBytes(url, timeout, null);
-    }
-
-    @Override
-    public byte[] getBytes(String url, int timeout, String referrer) {
-        return getBytes(url, timeout, DEFAULT_USER_AGENT, referrer);
-    }
-
-    @Override
-    public byte[] getBytes(String url, int timeout, String userAgent, String referrer) {
-        return getBytes(url, timeout, userAgent, referrer, null);
-    }
-
-    @Override
-    abstract public byte[] getBytes(String url, int timeout, String userAgent, String referrer, String cookies);
-
-    @Override
     public void save(String url, File file) throws IOException {
         save(url, file, false, DEFAULT_TIMEOUT, DEFAULT_USER_AGENT);
     }
@@ -172,11 +149,9 @@ public abstract class AbstractHttpClient implements HttpClient {
 
     protected static void closeQuietly(Closeable closeable) {
         try {
-            if (closeable != null) {
-                closeable.close();
-            }
+            if (closeable != null) closeable.close();
         } catch (IOException ioe) {
-            // ignore
+            ioe.printStackTrace();
         }
     }
 

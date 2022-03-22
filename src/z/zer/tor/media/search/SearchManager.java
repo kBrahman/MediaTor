@@ -14,6 +14,7 @@ import z.zer.tor.media.search.filter.SearchTable;
 import z.zer.tor.media.util.Logger;
 import z.zer.tor.media.util.Ref;
 import z.zer.tor.media.util.ThreadPool;
+import z.zer.tor.media.util.http.UnauthorizedException;
 
 public final class SearchManager {
 
@@ -67,7 +68,6 @@ public final class SearchManager {
                     // nothing since this is calculated in aggregation
                 }
             });
-
             SearchTask task = new PerformTask(this, performer, nextOrdinal(performer.getToken()));
             submit(task);
         } else {
@@ -254,10 +254,12 @@ public final class SearchManager {
         @Override
         public void run() {
             try {
-                if (!stopped()) {
-                    performer.perform();
-                }
+                if (!stopped()) performer.perform();
+            } catch (UnauthorizedException e) {
+                performer.getListener().onError(performer.getToken(), new SearchError(401));
+                e.printStackTrace();
             } catch (Throwable e) {
+                e.printStackTrace();
                 LOG.warn("Error performing search: " + performer + ", e=" + e.getMessage());
             } finally {
                 if (manager.tasks.remove(this)) {
