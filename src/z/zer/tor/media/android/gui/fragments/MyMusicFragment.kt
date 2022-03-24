@@ -147,8 +147,10 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
                                             .padding(4.dp)
                                             .clickable {
                                                 if (showLoading.value) return@clickable
+                                                showPlayer.value=false
                                                 val intent = Intent(context, PlayService::class.java)
                                                 intent.putExtra("index", i)
+                                                service?.resetMP()
                                                 activity?.bindService(intent, this@MyMusicFragment, BIND_AUTO_CREATE)
                                                 activity?.startService(intent)
                                                 showLoading.value = true

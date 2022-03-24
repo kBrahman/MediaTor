@@ -82,13 +82,13 @@ class PlayService : Service() {
         }
         mp.setOnCompletionListener {
             Log.i(TAG, "player finish")
-            if (repeat) {
-                mp.start()
-            } else if (repeatAll) {
+            if (repeat) mp.start()
+            else if (repeatAll) {
                 val pos = if (index == tracks.size - 1) 0 else index + 1
                 binder.listener?.showProgress(true)
                 onStartCommand(Intent().apply { putExtra("index", pos) }, START_FLAG_RETRY, 1)
             } else {
+                binder.listener?.showPlayer(false)
                 stopForeground(true)
                 stopSelf()
             }
@@ -219,6 +219,7 @@ class PlayService : Service() {
         fun setRepeatAll(repeatAll: Boolean) {
             this@PlayService.repeatAll = repeatAll
         }
+        fun resetMP() = mp.reset()
     }
 
 
