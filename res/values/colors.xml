@@ -4,6 +4,7 @@
     <!-- Basic colors -->
     <color name="basic_white">@android:color/white</color>
     <color name="colorPrimary">#613761</color>
+    <color name="colorAccent">@color/colorPrimary</color>
     <color name="basic_blue_transparent">#642889AC</color>
     <color name="basic_blue_dark">#264053</color>
     <color name="basic_blue_dark_highlight">#21313f</color>

@@ -29,7 +29,6 @@ public final class LocalSearchEngine {
     private static LocalSearchEngine instance;
     private final HashSet<Integer> opened = new HashSet<>();
     private long currentSearchToken;
-    private List<String> currentSearchTokens;
     private boolean searchFinished;
 
     public static LocalSearchEngine instance() {
@@ -79,7 +78,6 @@ public final class LocalSearchEngine {
         }
         manager.stop();
         currentSearchToken = Math.abs(System.nanoTime());
-        currentSearchTokens = tokenize(query);
         searchFinished = false;
         manager.perform(new SoundCloudSearchPerformer("api.sndcdn.com", currentSearchToken, query, 1000));
     }
@@ -87,7 +85,6 @@ public final class LocalSearchEngine {
     public void cancelSearch() {
         manager.stop();
         currentSearchToken = 0;
-        currentSearchTokens = null;
         searchFinished = true;
     }
 

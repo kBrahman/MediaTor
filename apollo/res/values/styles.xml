@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Shortcut Activity theme -->
-    <style name="Theme.Transparent" parent="@android:style/Theme.Holo.NoActionBar">
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:backgroundDimEnabled">false</item>
-    </style>
-
     <!-- Notification bar event text -->
     <style name="NotificationText">
         <item name="android:layout_width">match_parent</item>
@@ -29,24 +19,6 @@
         <item name="android:padding">@dimen/notification_action_padding</item>
         <item name="android:background">?android:selectableItemBackground</item>
     </style>
-
-    <!-- Bottom Action Bar TextViews -->
-    <style name="BottomActionBarText">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:ellipsize">end</item>
-        <item name="android:paddingLeft">5dp</item>
-        <item name="android:gravity">top|left|center</item>
-        <item name="android:singleLine">true</item>
-        <item name="android:textAllCaps">true</item>
-        <item name="android:textSize">@dimen/text_size_extra_micro</item>
-    </style>
-
-    <style name="BottomActionBarLineOne" parent="@style/BottomActionBarText">
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="BottomActionBarLineTwo" parent="@style/BottomActionBarText"></style>
 
     <!-- Bottom Action Bar Image Buttons -->
     <style name="BottomActionBarItem">

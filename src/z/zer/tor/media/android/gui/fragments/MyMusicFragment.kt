@@ -15,24 +15,26 @@ import android.view.ViewGroup
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.*
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.runtime.snapshots.SnapshotStateList
+import androidx.compose.ui.Alignment.Companion.CenterHorizontally
+import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.layout.layout
 import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.core.content.ContextCompat.getColor
-import androidx.core.content.ContextCompat.startForegroundService
 import androidx.fragment.app.Fragment
 import androidx.room.Room
 import kotlinx.coroutines.CoroutineScope
@@ -41,19 +43,24 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import z.zer.tor.media.R
 import z.zer.tor.media.android.db.Db
-import z.zer.tor.media.android.db.Track
+import z.zer.tor.media.android.db.PlayTrack
 import z.zer.tor.media.android.service.PlayService
 import java.io.IOException
 import java.net.URL
 
 @ExperimentalMaterialApi
-class MyMusicFragment : Fragment(), ServiceConnection {
+class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener {
     companion object {
         private const val TAG = "MyMusicFragment"
     }
 
-    private lateinit var service: PlayService.PlayBinder
-    private lateinit var tracks: SnapshotStateList<Track>
+    private lateinit var playing: MutableState<Boolean>
+    private lateinit var progress: MutableState<Float>
+    private lateinit var currItem: PlayTrack
+    private lateinit var showPlayer: MutableState<Boolean>
+    private lateinit var showLoading: MutableState<Boolean>
+    private var service: PlayService.PlayBinder? = null
+    private lateinit var tracks: SnapshotStateList<PlayTrack>
     private lateinit var db: Db
     private val cScope = CoroutineScope(Dispatchers.IO)
     private val imageCache = HashMap<String, Bitmap?>()
@@ -73,26 +80,55 @@ class MyMusicFragment : Fragment(), ServiceConnection {
             val colorPrimary = Color(getColor(context, R.color.colorPrimary))
             setContent {
                 MaterialTheme(colors = lightColors(colorPrimary)) {
-                    tracks = remember<SnapshotStateList<Track>> { mutableStateListOf() }.apply { update() }
+                    tracks = remember<SnapshotStateList<PlayTrack>> { mutableStateListOf() }.apply { update() }
                     ConstraintLayout(
                         Modifier
                             .fillMaxSize()
                             .background(Color.White)
                     ) {
                         val (bar, content) = createRefs()
-                        val showPlayer = remember { mutableStateOf(false) }
-                        val playing = remember { mutableStateOf(false) }
-                        val showLoading = remember { mutableStateOf(false) }
+                        val lightBlue = Color(getColor(context, R.color.basic_blue_highlight))
+                        var w = 0
+                        showPlayer = remember { mutableStateOf(false) }
+                        showLoading = remember { mutableStateOf(false) }
+                        playing = remember { mutableStateOf(false) }
+                        progress = remember { mutableStateOf(0F) }
+                        var repeatAll by remember { mutableStateOf(false) }
+                        var repeat by remember { mutableStateOf(false) }
                         TopAppBar(Modifier.constrainAs(bar) {}) {
                             Text(getString(R.string.my_music))
+                            Row(Modifier.fillMaxWidth(), Arrangement.End) {
+                                IconButton(onClick = {
+                                    repeat = !repeat
+                                    service?.setRepeat(repeat)
+                                }) {
+                                    Icon(
+                                        painterResource(R.drawable.ic_repeat_one_24),
+                                        getString(R.string.accessibility_repeat),
+                                        tint = if (repeat) lightBlue else Color.White
+                                    )
+                                }
+                                IconButton(onClick = {
+                                    repeatAll = !repeatAll
+                                    service?.setRepeatAll(repeatAll)
+                                }) {
+                                    Icon(
+                                        painterResource(R.drawable.ic_repeat_24),
+                                        getString(R.string.accessibility_repeat_all),
+                                        tint = if (repeatAll) lightBlue else Color.White
+                                    )
+                                }
+                            }
                         }
-                        if (showLoading.value) LinearProgressIndicator(
-                            Modifier
-                                .fillMaxWidth()
-                                .constrainAs(createRef()) {
-                                    top.linkTo(bar.bottom)
-                                }, Color(R.color.basic_blue_highlight), Color.White
-                        )
+                        if (showLoading.value) {
+                            LinearProgressIndicator(
+                                Modifier
+                                    .fillMaxWidth()
+                                    .constrainAs(createRef()) {
+                                        top.linkTo(bar.bottom)
+                                    }, lightBlue, Color.White
+                            )
+                        }
                         LazyColumn(Modifier.constrainAs(content) {
                             top.linkTo(bar.bottom)
                         }, contentPadding = PaddingValues(4.dp)) {
@@ -110,10 +146,11 @@ class MyMusicFragment : Fragment(), ServiceConnection {
                                             .fillMaxWidth()
                                             .padding(4.dp)
                                             .clickable {
+                                                if (showLoading.value) return@clickable
                                                 val intent = Intent(context, PlayService::class.java)
                                                 intent.putExtra("index", i)
-                                                startForegroundService(context, intent)
-//                                                activity?.bindService(intent, this@MyMusicFragment, BIND_AUTO_CREATE)
+                                                activity?.bindService(intent, this@MyMusicFragment, BIND_AUTO_CREATE)
+                                                activity?.startService(intent)
                                                 showLoading.value = true
                                             }) {
                                         val btp = remember { mutableStateOf<Bitmap?>(null) }
@@ -130,13 +167,55 @@ class MyMusicFragment : Fragment(), ServiceConnection {
                                 }
                             }
                         }
-                        if (showPlayer.value) Card(Modifier.constrainAs(createRef()) {
-                            bottom.linkTo(parent.bottom, margin = 4.dp)
-                        }, elevation = 4.dp) {
-                            if (playing.value)
-                                Row() {
-
+                        if (showPlayer.value) Card(
+                            Modifier
+                                .constrainAs(createRef()) {
+                                    bottom.linkTo(parent.bottom, margin = 4.dp)
                                 }
+                                .padding(16.dp), backgroundColor = lightBlue, elevation = 4.dp) {
+                            Column(Modifier.fillMaxWidth(), horizontalAlignment = CenterHorizontally) {
+                                Text(currItem.name, color = Color.White, fontSize = 17.sp)
+                                Row(Modifier.fillMaxWidth(), verticalAlignment = CenterVertically) {
+                                    Spacer(Modifier.width(8.dp))
+                                    Button(
+                                        onClick = {
+                                            if (playing.value) {
+                                                service?.pause()
+                                                playing.value = false
+                                            } else {
+                                                service?.play()
+                                                playing.value = true
+                                            }
+                                        }, colors = ButtonDefaults.buttonColors(backgroundColor = colorPrimary),
+                                        modifier = Modifier.width(48.dp)
+                                    ) {
+                                        Icon(
+                                            painter = painterResource(id = if (playing.value) R.drawable.ic_pause_24 else R.drawable.ic_play_24),
+                                            contentDescription = "",
+                                            tint = Color.White
+                                        )
+                                    }
+                                    LinearProgressIndicator(progress = progress.value,
+                                        color = colorPrimary,
+                                        modifier = Modifier
+                                            .height(7.dp)
+                                            .fillMaxWidth()
+                                            .padding(start = 8.dp, end = 16.dp)
+                                            .layout { measurable, constraints ->
+                                                val placeable = measurable.measure(constraints)
+                                                w = placeable.width
+                                                layout(placeable.width, placeable.height) {
+                                                    placeable.placeRelative(0, 0)
+                                                }
+                                            }
+                                            .pointerInput(Unit) {
+                                                detectTapGestures {
+                                                    progress.value = it.x / w
+                                                    service?.seekTo(progress.value)
+                                                }
+                                            })
+                                }
+                            }
 
                         }
 
@@ -174,10 +253,38 @@ class MyMusicFragment : Fragment(), ServiceConnection {
 
     override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
         this.service = service as PlayService.PlayBinder
+        service.listener = this
+        Log.i(TAG, "on service connected")
     }
 
-    override fun onServiceDisconnected(name: ComponentName?) {}
+    override fun onServiceDisconnected(name: ComponentName?) {
+        Log.i(TAG, "onServiceDisconnected")
+        service = null
+    }
 
+    override fun showProgress(b: Boolean) {
+        showLoading.value = b
+        showPlayer.value = !b
+        playing.value = !b
+    }
+
+    override fun onProgress(progress: Float) {
+        this.progress.value = progress
+    }
+
+    override fun setCurrItem(t: PlayTrack) {
+        currItem = t
+        Log.i(TAG, "setCurrItem=>$t")
+    }
+
+    override fun setPlaying(playing: Boolean) {
+        this.playing.value = playing
+        if (!showPlayer.value) showPlayer.value = true
+    }
+
+    override fun showPlayer(b: Boolean) {
+        showPlayer.value = b
+    }
 }
 
 

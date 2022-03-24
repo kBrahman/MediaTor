@@ -40,6 +40,7 @@ import kotlinx.coroutines.launch
 import org.json.JSONObject
 import z.zer.tor.media.R
 import z.zer.tor.media.android.db.Db
+import z.zer.tor.media.android.db.PlayTrack
 import java.net.HttpURLConnection
 import java.net.URL
 import java.util.*
@@ -233,11 +234,11 @@ class PlayerActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener,
                             cScope.launch(Dispatchers.IO) {
                                 if (added.value!!) db.trackDao().deleteById(id)
                                 else {
-                                    val track = z.zer.tor.media.android.db.Track(
+                                    val track = PlayTrack(
                                         id,
                                         displayName,
                                         source ?: "",
-                                        streamUrl!!,
+                                        streamUrl!!.substringBefore("="),
                                         imgUrl!!
                                     )
                                     db.trackDao().insert(track)

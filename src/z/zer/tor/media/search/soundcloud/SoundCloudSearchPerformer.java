@@ -72,42 +72,4 @@ public final class SoundCloudSearchPerformer extends PagedWebSearchPerformer {
         return result;
     }
 
-    public static String resolveUrl(String url) {
-        return "http://api.soundcloud.com/resolve.json?url=" + url + "&client_id=" + SOUND_CLOUD_CLIENT_ID;
-    }
-
-    public static LinkedList<SoundCloudSearchResult> fromJson(String json) {
-        LinkedList<SoundCloudSearchResult> r = new LinkedList<>();
-        if (json.contains("\"collection\":")) {
-            SoundcloudResponse obj = JsonUtils.toObject(json, SoundcloudResponse.class);
-
-            if (obj != null && obj.collection != null) {
-                for (SoundcloudItem item : obj.collection) {
-                    if (item != null && item.downloadable) {
-                        SoundCloudSearchResult sr = new SoundCloudSearchResult(item, SOUND_CLOUD_CLIENT_ID);
-                        r.add(sr);
-                    }
-                }
-            }
-        } else if (json.contains("\"tracks\":")) {
-            SoundcloudPlaylist obj = JsonUtils.toObject(json, SoundcloudPlaylist.class);
-
-            if (obj != null && obj.tracks != null) {
-                for (SoundcloudItem item : obj.tracks) {
-                    if (item != null && item.downloadable) {
-                        SoundCloudSearchResult sr = new SoundCloudSearchResult(item, SOUND_CLOUD_CLIENT_ID);
-                        r.add(sr);
-                    }
-                }
-            }
-        } else { // assume it's a single item
-            SoundcloudItem item = JsonUtils.toObject(json, SoundcloudItem.class);
-            if (item != null) {
-                SoundCloudSearchResult sr = new SoundCloudSearchResult(item, SOUND_CLOUD_CLIENT_ID);
-                r.add(sr);
-            }
-        }
-
-        return r;
-    }
 }

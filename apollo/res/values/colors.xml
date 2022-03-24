@@ -4,9 +4,6 @@
     <!-- See through -->
     <color name="transparent">#00000000</color>
 
-    <!-- Black -->
-    <color name="black">#ff000000</color>
-
     <!-- White -->
     <color name="white">#ffffffff</color>
 
@@ -18,12 +15,6 @@
 
     <!-- A darkish color used for the action bar -->
     <color name="action_bar_color">#ff0d0d0d</color>
-
-    <!-- A light, Holo shade of blue -->
-    <color name="holo_blue_light">#ff33b5e5</color>
-
-    <!-- A light, transparent Holo shade of blue -->
-    <color name="holo_blue_light_transparent">#9933b5e5</color>
 
     <!-- A light Holo shade of green -->
     <color name="holo_green_light">#ff99cc00</color>

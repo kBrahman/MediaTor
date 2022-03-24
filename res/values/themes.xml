@@ -13,21 +13,7 @@
         <item name="android:listPreferredItemPaddingLeft">16dp</item>
         <item name="android:listPreferredItemPaddingRight">16dp</item>
         <item name="windowActionModeOverlay">true</item>
-        <item name="actionModeStyle">@style/ActionModeStyle</item>
         <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
-        <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
-    </style>
-
-    <style name="ActionModeStyle" parent="@style/Widget.AppCompat.ActionMode">
-        <item name="background">@color/app_toolbar_background</item>
-        <item name="titleTextStyle">@style/ActionModeStyle.Title</item>
-        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
-    </style>
-
-    <style name="ActionModeStyle.Title">
-        <item name="android:textSize">19sp</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textColor">@color/app_text_white</item>
     </style>
 
     <style name="SplashScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -37,16 +23,5 @@
 
     <style name="PreferenceThemeOverlay" parent="PreferenceThemeOverlay.v14.Material">
         <item name="preferenceCategoryStyle">@style/Preference.Category.Material</item>
-    </style>
-
-    <style name="Preference.Category.Material">
-        <item name="android:layout">@layout/view_preference_category_material</item>
-        <item name="android:textColor">@color/colorPrimary</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="Button" parent="ThemeOverlay.AppCompat.Dark">
-        <item name="colorButtonNormal">@color/basic_gray_dark</item>
-        <item name="colorAccent">@color/basic_gray_medium</item>
     </style>
 </resources>

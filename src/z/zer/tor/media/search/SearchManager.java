@@ -3,6 +3,7 @@ package z.zer.tor.media.search;
 import android.util.Log;
 
 import java.lang.ref.WeakReference;
+import java.net.SocketTimeoutException;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -246,6 +247,7 @@ public final class SearchManager {
     }
 
     private static final class PerformTask extends SearchTask {
+        private boolean ste;
 
         PerformTask(SearchManager manager, SearchPerformer performer, int order) {
             super(manager, performer, order);
@@ -258,6 +260,12 @@ public final class SearchManager {
             } catch (UnauthorizedException e) {
                 performer.getListener().onError(performer.getToken(), new SearchError(401));
                 e.printStackTrace();
+            } catch (SocketTimeoutException e) {
+                e.printStackTrace();
+                if (!ste) {
+                    run();
+                    ste = true;
+                }
             } catch (Throwable e) {
                 e.printStackTrace();
                 LOG.warn("Error performing search: " + performer + ", e=" + e.getMessage());
