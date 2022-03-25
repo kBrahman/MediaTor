@@ -10,10 +10,6 @@ public final class Licenses {
 
     public static final License UNKNOWN = new License("Unknown", "https://www.google.com/#q=license");
 
-    public static final License APACHE = new License("Apache License, Version 2.0", "http://www.apache.org/licenses/LICENSE-2.0.html");
-    public static final License BSD_2_CLAUSE = new License("The FreeBSD Copyright License (BSD 2 Clause)", "http://www.freebsd.org/copyright/freebsd-license.html");
-    public static final License BSD_3_CLAUSE = new License("The FreeBSD Copyright License (BSD 3 Clause)", "http://opensource.org/licenses/BSD-3-Clause");
-    public static final License GPL3 = new License("GNU General Public License Version 3 (GPL 3)", "https://www.gnu.org/licenses/gpl.html");
     public static final License LGPL = new License("GNU Lesser General Public License Version 3 (LGPL 3)", "http://www.gnu.org/copyleft/lesser.html");
     public static final License MIT = new License("The MIT License (MIT)", "http://opensource.org/licenses/MIT");
     public static final License MOZILLA = new License("Mozilla Public License (MPL 2.0)", "http://www.mozilla.org/MPL/2.0/");

@@ -1,4 +1,4 @@
-package z.music.db
+package z.zer.tor.media.android.db
 
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase

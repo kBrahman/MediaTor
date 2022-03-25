@@ -20,6 +20,7 @@ package z.zer.tor.media.android.util;
 import static z.zer.tor.media.android.util.Asyncs.async;
 
 import android.annotation.SuppressLint;
+import android.app.Application;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -30,15 +31,12 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.MediaMetadataRetriever;
 import android.net.Uri;
-import android.os.Build;
 import android.os.StatFs;
 import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.util.Size;
 import android.widget.ImageView;
-
-import androidx.annotation.RequiresApi;
 
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.NetworkPolicy;
@@ -56,7 +54,6 @@ import java.util.HashSet;
 
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
-import z.zer.tor.media.android.gui.MainApplication;
 import z.zer.tor.media.util.Logger;
 import z.zer.tor.media.util.Ref;
 import z.zer.tor.media.util.http.OKHTTPClient;
@@ -321,11 +318,11 @@ public final class ImageLoader {
         picasso.shutdown();
     }
 
-    public static void start(MainApplication mainApplication) {
+    public static void start(Application mainApplication) {
         async(mainApplication, ImageLoader::startImageLoaderBackground);
     }
 
-    private static void startImageLoaderBackground(MainApplication mainApplication) {
+    private static void startImageLoaderBackground(Application mainApplication) {
         if (instance == null) {
             ImageLoader.getInstance(mainApplication);
         }

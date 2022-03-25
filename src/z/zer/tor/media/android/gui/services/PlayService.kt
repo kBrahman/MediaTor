@@ -1,4 +1,4 @@
-package z.zer.tor.media.android.service
+package z.zer.tor.media.android.gui.services
 
 import android.app.NotificationManager.IMPORTANCE_LOW
 import android.app.PendingIntent
@@ -16,12 +16,12 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationCompat.VISIBILITY_PUBLIC
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.graphics.drawable.IconCompat
-import androidx.room.Room
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.json.JSONObject
+import z.zer.tor.media.App
 import z.zer.tor.media.R
 import z.zer.tor.media.android.db.Db
 import z.zer.tor.media.android.db.PlayTrack
@@ -56,12 +56,7 @@ class PlayService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        db = Room.databaseBuilder(
-            this,
-            Db::class.java,
-            getString(R.string.application_label) + "_db"
-        ).build()
-
+        db = (application as App).db
         val style = androidx.media.app.NotificationCompat.MediaStyle()
         style.setShowActionsInCompactView(0, 1, 2, 3)
         style.setCancelButtonIntent(getThisService(ACTION_STOP_SERVICE))
@@ -219,6 +214,7 @@ class PlayService : Service() {
         fun setRepeatAll(repeatAll: Boolean) {
             this@PlayService.repeatAll = repeatAll
         }
+
         fun resetMP() = mp.reset()
     }
 

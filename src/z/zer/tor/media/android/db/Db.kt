@@ -3,7 +3,7 @@ package z.zer.tor.media.android.db
 import androidx.room.*
 
 
-@Database(entities = [PlayTrack::class], version = 1)
+@Database(entities = [PlayTrack::class], version = 2)
 abstract class Db : RoomDatabase() {
 
     abstract fun trackDao(): TrackDao

@@ -31,13 +31,13 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
-import androidx.room.Room
 import com.andrew.apollo.utils.MusicUtils
 import com.facebook.ads.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.json.JSONObject
+import z.zer.tor.media.App
 import z.zer.tor.media.R
 import z.zer.tor.media.android.db.Db
 import z.zer.tor.media.android.db.PlayTrack
@@ -98,11 +98,7 @@ class PlayerActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener,
                 Log.d(TAG, "Native ad impression logged!")
             }
         }).build())
-        val db = Room.databaseBuilder(
-            this,
-            Db::class.java,
-            getString(R.string.application_label) + "_db"
-        ).build()
+        val db = (application as App).db
         setContent {
             val playing = remember { mutableStateOf(true) }
             val added = remember { mutableStateOf<Boolean?>(null) }

@@ -36,15 +36,15 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
-import androidx.room.Room
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import z.zer.tor.media.App
 import z.zer.tor.media.R
 import z.zer.tor.media.android.db.Db
 import z.zer.tor.media.android.db.PlayTrack
-import z.zer.tor.media.android.service.PlayService
+import z.zer.tor.media.android.gui.services.PlayService
 import java.io.IOException
 import java.net.URL
 
@@ -54,6 +54,7 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
         private const val TAG = "MyMusicFragment"
     }
 
+    private lateinit var db: Db
     private lateinit var playing: MutableState<Boolean>
     private lateinit var progress: MutableState<Float>
     private lateinit var currItem: PlayTrack
@@ -61,17 +62,12 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
     private lateinit var showLoading: MutableState<Boolean>
     private var service: PlayService.PlayBinder? = null
     private lateinit var tracks: SnapshotStateList<PlayTrack>
-    private lateinit var db: Db
     private val cScope = CoroutineScope(Dispatchers.IO)
     private val imageCache = HashMap<String, Bitmap?>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        db = Room.databaseBuilder(
-            requireContext(),
-            Db::class.java,
-            getString(R.string.application_label) + "_db"
-        ).build()
+        db=(activity?.application as App).db
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -147,7 +143,7 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
                                             .padding(4.dp)
                                             .clickable {
                                                 if (showLoading.value) return@clickable
-                                                showPlayer.value=false
+                                                showPlayer.value = false
                                                 val intent = Intent(context, PlayService::class.java)
                                                 intent.putExtra("index", i)
                                                 service?.resetMP()

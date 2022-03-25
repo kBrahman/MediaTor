@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
-        android:name="z.zer.tor.media.android.gui.MainApplication"
+        android:name=".App"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -140,7 +140,7 @@
         </activity>
         <!-- services -->
         <service
-            android:name=".android.service.PlayService"
+            android:name=".android.gui.services.PlayService"
             android:foregroundServiceType="mediaPlayback" />
         <!-- providers -->
 
