@@ -29,6 +29,7 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.layout.layout
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -212,7 +213,8 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
                                     Row(
                                         Modifier
                                             .fillMaxWidth()
-                                            .background(Color.White)) {
+                                            .background(Color.White)
+                                    ) {
                                         AndroidView(modifier = Modifier.size(35.dp), factory = { icon })
                                         Spacer(modifier = Modifier.width(4.dp))
                                         Column {
@@ -262,7 +264,13 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
                                         progress = progress.value,
                                         Modifier
                                             .height(7.dp)
-                                            .pointerInput(Unit) {
+                                            .layout { measurable, constraints ->
+                                                val placeable = measurable.measure(constraints)
+                                                w = placeable.width
+                                                layout(placeable.width, placeable.height) {
+                                                    placeable.placeRelative(0, 0)
+                                                }
+                                            }.pointerInput(Unit) {
                                                 detectTapGestures {
                                                     progress.value = it.x / w
                                                     service?.seekTo(progress.value)
