@@ -554,7 +554,7 @@
     <string name="torrent_max_downloads_summary">Максімальную колькасць загрузак</string>
     <string name="rate_our_app">Ацаніце наша дадатак</string>
     <string name="peers_n">Аднагодкі: %s</string>
-    <string name="play_image_description">Гуляць</string>
+    <string name="play">Гуляць</string>
     <string name="transfers_context_menu_stop_delete_data">Прыпынак і выдаленне дадзеных</string>
     <string name="cheaper_than_cigarettes">Танней, чым цыгарэты</string>
     <string name="search_settings">Налады пошуку</string>

@@ -221,7 +221,7 @@
     <string name="transfers">Transferimenti</string>
     <string name="view_transfer_item_list_item_icon">Icona per tipo di file</string>
     <string name="nickname_sharing_count_files">%1$s - condivide %2$d file</string>
-    <string name="play_image_description">Play</string>
+    <string name="play">Play</string>
     <string name="view_transfer_list_item_button_action_description">Azione</string>
     <string name="yes_no_cancel_transfer_question">Sei sicuro di voler interrompere questo download ed eliminarlo dalla lista (i dati scaricati non verranno persi)?</string>
     <string name="yes_no_cancel_delete_transfer_question">Sei sicuro di voler eliminare questo download (i dati scaricati verranno persi)?</string>

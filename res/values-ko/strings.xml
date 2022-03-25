@@ -221,7 +221,7 @@
     <string name="transfers">트랜스퍼</string>
     <string name="view_transfer_item_list_item_icon">파일 형태 아이콘</string>
     <string name="nickname_sharing_count_files">%1$s - 공유 %2$d 파일</string>
-    <string name="play_image_description">재생</string>
+    <string name="play">재생</string>
     <string name="view_transfer_list_item_button_action_description">액션</string>
     <string name="yes_no_cancel_transfer_question">정말 다운로드를 중지하고 리스트에서 제거하시겠습니까? (데이터는 손실되지 않습니다)</string>
     <string name="yes_no_cancel_delete_transfer_question">정말 다운로드를 취소하시겠습니까? (지금까지 다운로드된 데이터는 손실됩니다)</string>

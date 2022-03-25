@@ -64,7 +64,7 @@
                 android:contentDescription="@null"
                 android:paddingEnd="5dp"
                 android:paddingStart="2dp"
-                android:src="@drawable/contextmenu_icon_remove_transfer" />
+                android:src="@drawable/remove" />
         </LinearLayout>
 
     </LinearLayout>

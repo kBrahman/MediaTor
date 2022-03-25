@@ -222,7 +222,7 @@
     <string name="transfers">Transfert</string>
     <string name="view_transfer_item_list_item_icon">Icône pour le type de fichier </string>
     <string name="nickname_sharing_count_files">%1$s – Partage %2$d fichiers</string>
-    <string name="play_image_description">Lecture </string>
+    <string name="play">Lecture </string>
     <string name="view_transfer_list_item_button_action_description">Action</string>
     <string name="yes_no_cancel_transfer_question">Voulez-vous vraiment arrêter et supprimer ce téléchargement de la liste (aucune donnée ne sera effacée)?</string>
     <string name="yes_no_cancel_delete_transfer_question">Voulez-vous vraiment annuler ce téléchargement (les données téléchargées seront effacées)?</string>

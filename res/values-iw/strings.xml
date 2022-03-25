@@ -570,7 +570,7 @@
     <string name="torrent_max_downloads_summary">מקס הורדות</string>
     <string name="rate_our_app">דרג את האפליקציה שלנו</string>
     <string name="peers_n">Peers: %s</string>
-    <string name="play_image_description">השמע שיר</string>
+    <string name="play">השמע שיר</string>
     <string name="transfers_context_menu_stop_delete_data">עצור ולמחוק נתונים</string>
     <string name="cheaper_than_cigarettes">זול יותר מאשר סיגריות</string>
     <string name="search_settings">הגדרות חיפוש</string>

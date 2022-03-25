@@ -202,7 +202,7 @@
     <string name="transfers">स्थानांतरण</string>
     <string name="view_transfer_item_list_item_icon">फ़ाइल प्रकार के लिए चिह्न</string>
     <string name="nickname_sharing_count_files">%1$s - साझा %2$d फाइल</string>
-    <string name="play_image_description">चलाएँ </string>
+    <string name="play">चलाएँ </string>
     <string name="view_transfer_list_item_button_action_description">कार्रवाई</string>
     <string name="yes_no_cancel_transfer_question">आप सुनिश्चित करें कि आप यह डाउनलोड सूची से रोकना या  निकलना चाहते हैं (कोई डेटा नहीं मिटेग) ?</string>
     <string name="yes_no_cancel_delete_transfer_question">क्या आप सुनिश्चित हैं कि आप इस डाउनलोड  को रद्द करना चाहते हैं( अभी तक किया गया डाउनलोड डेटा मिट जाएगा)?</string>

@@ -174,7 +174,7 @@
     <string name="search">Traži</string>
     <string name="transfers">Prijenosi</string>
     <string name="view_transfer_item_list_item_icon">Ikona za vrstu datoteke</string>
-    <string name="play_image_description">Svirati</string>
+    <string name="play">Svirati</string>
     <string name="view_transfer_list_item_button_action_description">Akcija</string>
     <string name="cancel_transfer">Otkazati prijenos</string>
     <string name="azureus_formats_units_alot">Jako puno!</string>

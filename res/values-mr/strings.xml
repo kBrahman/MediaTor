@@ -677,7 +677,7 @@
     <string name="torrent_max_downloads_summary">कमाल डाउनलोड</string>
     <string name="rate_our_app">आमच्या अॅपला रेट करा</string>
     <string name="peers_n">समवयस्क: %s</string>
-    <string name="play_image_description">खेळा</string>
+    <string name="play">खेळा</string>
     <string name="transfers_context_menu_stop_delete_data">थांबवा आणि डेटा हटवा</string>
     <string name="cheaper_than_cigarettes">सिगारेटपेक्षा स्वस्त</string>
     <string name="search_settings">शोध सेटिंग्ज</string>

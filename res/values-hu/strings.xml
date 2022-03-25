@@ -553,7 +553,7 @@
     <string name="torrent_max_downloads_summary">Maximális letöltések</string>
     <string name="rate_our_app">Értékelje app</string>
     <string name="peers_n">Peers: %s</string>
-    <string name="play_image_description">Játssz</string>
+    <string name="play">Játssz</string>
     <string name="transfers_context_menu_stop_delete_data">Megáll és törlése</string>
     <string name="cheaper_than_cigarettes">Olcsóbb, mint a cigaretta</string>
     <string name="search_settings">Keresési beállítások</string>

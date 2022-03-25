@@ -567,7 +567,7 @@
     <string name="cheaper_than_gas">گیس کے مقابلے میں سستی</string>
     <string name="rate_our_app">ہمارے اپلی کیشن کی درجہ بندی کریں</string>
     <string name="peers_n">ہم عمر: %s</string>
-    <string name="play_image_description">کھیلیں</string>
+    <string name="play">کھیلیں</string>
     <string name="transfers_context_menu_stop_delete_data">بند کرو اور ڈیٹا حذف</string>
     <string name="cheaper_than_cigarettes">سگریٹ کے مقابلے میں سستی</string>
     <string name="search_settings">تلاش کی ترتیبات</string>

@@ -549,7 +549,7 @@
     <string name="torrent_max_downloads_summary">Maksimi Lataukset</string>
     <string name="rate_our_app">Arvioi sovellus ohjelmiston</string>
     <string name="peers_n">Peers: %s</string>
-    <string name="play_image_description">Soita</string>
+    <string name="play">Soita</string>
     <string name="transfers_context_menu_stop_delete_data">Lopeta ja poistaa tietoja</string>
     <string name="cheaper_than_cigarettes">Halvempi kuin savukkeet</string>
     <string name="search_settings">Haku Asetukset</string>

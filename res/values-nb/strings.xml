@@ -568,7 +568,7 @@
     <string name="torrent_max_downloads_summary">Max nedlastinger</string>
     <string name="rate_our_app">Vurdere vår app</string>
     <string name="peers_n">Peers: %s</string>
-    <string name="play_image_description">Spill</string>
+    <string name="play">Spill</string>
     <string name="transfers_context_menu_stop_delete_data">Stopp og slette data</string>
     <string name="cheaper_than_cigarettes">Billigere enn sigaretter</string>
     <string name="search_settings">Innstillinger for søk</string>

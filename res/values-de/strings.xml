@@ -229,7 +229,7 @@
     <string name="transfers">Übertragen</string>
     <string name="view_transfer_item_list_item_icon">Symbol für alle Dateitypen</string>
     <string name="nickname_sharing_count_files">%1$s - Freigegeben %2$d Dateien</string>
-    <string name="play_image_description">Abspielen</string>
+    <string name="play">Abspielen</string>
     <string name="view_transfer_list_item_button_action_description">Aktivität</string>
     <string name="yes_no_cancel_transfer_question">Bist du sicher, dass du diesen Download stoppen und von der Liste herunterladen willst (Es werden keine Daten gelöscht)?</string>
     <string name="yes_no_cancel_delete_transfer_question">Bist du sicher, dass du diesen Download abbrechen willst (Schon heruntergeladene Daten werden gelöscht)?</string>

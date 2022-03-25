@@ -552,7 +552,7 @@
     <string name="torrent_max_downloads_summary">Maxima Descărcări în</string>
     <string name="rate_our_app">Evaluați aplicația noastră</string>
     <string name="peers_n">Peers: %s</string>
-    <string name="play_image_description">Reda</string>
+    <string name="play">Reda</string>
     <string name="transfers_context_menu_stop_delete_data">Opriți-vă și ștergerea datelor</string>
     <string name="cheaper_than_cigarettes">Mai ieftin decât țigările</string>
     <string name="search_settings">Setări de căutare</string>

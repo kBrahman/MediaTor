@@ -205,7 +205,7 @@
     <string name="transfers">Transferencias</string>
     <string name="view_transfer_item_list_item_icon">Icono para el tipo de archivo</string>
     <string name="nickname_sharing_count_files">%1$s - Compartiendo %2$d archivos</string>
-    <string name="play_image_description">Reproducir</string>
+    <string name="play">Reproducir</string>
     <string name="view_transfer_list_item_button_action_description">Acción</string>
     <string name="yes_no_cancel_transfer_question">¿Seguro que quieres parar y eliminar esta descarga de la lista? (No se eliminará ningún dato)</string>
     <string name="yes_no_cancel_delete_transfer_question">¿Seguro que quieres cancelar esta descarga? (Los datos descargados hasta ahora se borrarán)</string>

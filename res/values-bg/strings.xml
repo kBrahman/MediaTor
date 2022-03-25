@@ -562,7 +562,7 @@
     <string name="torrent_max_downloads_summary">Макс Свалян</string>
     <string name="rate_our_app">Оцени нашия на приложението</string>
     <string name="peers_n">Връстниците: %s</string>
-    <string name="play_image_description">Възпроизвеждане</string>
+    <string name="play">Възпроизвеждане</string>
     <string name="transfers_context_menu_stop_delete_data">Спрете и изтриване на данни</string>
     <string name="cheaper_than_cigarettes">По-евтини от цигарите</string>
     <string name="search_settings">Настройки за търсенето</string>

@@ -65,7 +65,7 @@ class PlayService : Service() {
             .addAction(getAction(R.drawable.ic_previous_24, ACTION_PREV))
             .addAction(getAction(R.drawable.ic_pause_24, ACTION_PLAY_PAUSE))
             .addAction(getAction(R.drawable.ic_next_24, ACTION_NEXT))
-            .addAction(getAction(R.drawable.contextmenu_icon_remove_transfer, ACTION_STOP_SERVICE))
+            .addAction(getAction(R.drawable.remove, ACTION_STOP_SERVICE))
 
 
         notManager = NotificationManagerCompat.from(this)
@@ -124,7 +124,7 @@ class PlayService : Service() {
         }
         index = intent?.getIntExtra("index", 0) ?: 0
         cScope.launch {
-            if (tracks.isEmpty() || index >= tracks.size) tracks = db.trackDao().all()
+            tracks = db.trackDao().all()
             val t = tracks[index]
             Log.i(TAG, t.url)
             val path = t.url.substringBefore("=") + "=" + SOUND_CLOUD_CLIENT_ID

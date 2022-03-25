@@ -225,7 +225,7 @@
     <string name="transfers">転送</string>
     <string name="view_transfer_item_list_item_icon">ファイルタイプのアイコン</string>
     <string name="nickname_sharing_count_files">%1$s - %2$d個のファイルを共有中</string>
-    <string name="play_image_description">再生</string>
+    <string name="play">再生</string>
     <string name="view_transfer_list_item_button_action_description">アクション</string>
     <string name="yes_no_cancel_transfer_question">このダウンロードを中止してリストから削除しますか(データは一切削除されません)？</string>
     <string name="yes_no_cancel_transfer_question_cloud">このダウンロードを中止してリストから削除しますか？</string>

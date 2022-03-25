@@ -203,7 +203,7 @@
     <string name="transfers">Загрузки</string>
     <string name="view_transfer_item_list_item_icon">Иконка для типа файла</string>
     <string name="nickname_sharing_count_files">%1$s - Раздаёт %2$d файлы</string>
-    <string name="play_image_description">Включить</string>
+    <string name="play">Включить</string>
     <string name="view_transfer_list_item_button_action_description">Действие</string>
     <string name="yes_no_cancel_transfer_question">Вы уверены, что хотите остановить и удалить из списка это скачивание (Данные не будут удалены)?</string>
     <string name="yes_no_cancel_delete_transfer_question">Вы уверены, что хотите отменить это скачивание (Скаченная информация будет удалена)?</string>

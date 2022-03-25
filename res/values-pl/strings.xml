@@ -222,7 +222,7 @@
     <string name="transfers">Transfery</string>
     <string name="view_transfer_item_list_item_icon">Ikona dla typu pliku</string>
     <string name="nickname_sharing_count_files">%1$s - Udostępnianie %2$d plików</string>
-    <string name="play_image_description">Odtwórz</string>
+    <string name="play">Odtwórz</string>
     <string name="view_transfer_list_item_button_action_description">Akcja</string>
     <string name="yes_no_cancel_transfer_question">Czy na pewno chcesz zatrzymać i usunąć ten transfer z listy (dane nie zostaną usunięte)?</string>
     <string name="yes_no_cancel_delete_transfer_question">Czy na pewno chcesz anulować pobieranie (pobrane dane zostaną usunięte)?</string>

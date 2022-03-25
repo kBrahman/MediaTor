@@ -221,7 +221,7 @@
     <string name="transfers">Truyền tải</string>
     <string name="view_transfer_item_list_item_icon">Biểu tượng cho kiểu tập tin</string>
     <string name="nickname_sharing_count_files">%1$s - Đang chia sẻ %2$d tập tin</string>
-    <string name="play_image_description">Xem ảnh</string>
+    <string name="play">Xem ảnh</string>
     <string name="view_transfer_list_item_button_action_description">Xem</string>
     <string name="yes_no_cancel_transfer_question">Bạn có chắc chắn muốn đừng và xóa quá trình tải về này ra khỏi danh sách hay không (Dữ liệu sẽ không bị xóa)?</string>
     <string name="yes_no_cancel_delete_transfer_question">Bạn có chắc chắn muốn hủy quá trình tải về này (Dữ liệu đã tải về sẽ không bị xóa)?</string>

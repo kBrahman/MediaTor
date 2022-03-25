@@ -220,7 +220,7 @@
     <string name="transfers">Transferler</string>
     <string name="view_transfer_item_list_item_icon">Dosya türü için ikon</string>
     <string name="nickname_sharing_count_files">%1$s - %2$d adet dosyayı paylaşıyor</string>
-    <string name="play_image_description">Oynat</string>
+    <string name="play">Oynat</string>
     <string name="view_transfer_list_item_button_action_description">Aksiyon</string>
     <string name="yes_no_cancel_transfer_question">Bu indirmeyi durdurup listeden çıkartmak istediğinize emin misiniz (Hiçbir veri silinmeyecektir)?</string>
     <string name="yes_no_cancel_delete_transfer_question">Bu indirmeden vazgeçmek istediğinize emin misiniz (Şu ana kadarki indirilen veri silinecektir)?</string>

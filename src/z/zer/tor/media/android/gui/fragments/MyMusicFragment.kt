@@ -25,17 +25,19 @@ import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.layout.layout
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
+import com.facebook.ads.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -54,6 +56,8 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
         private const val TAG = "MyMusicFragment"
     }
 
+    private lateinit var nativeAd: NativeAd
+    private var adLoaded = mutableStateOf(false)
     private lateinit var db: Db
     private lateinit var playing: MutableState<Boolean>
     private lateinit var progress: MutableState<Float>
@@ -67,7 +71,34 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        db=(activity?.application as App).db
+        nativeAd = NativeAd(requireContext(), getString(R.string.id_ad_native_fb))
+        nativeAd.loadAd(nativeAd.buildLoadAdConfig().withAdListener(object : NativeAdListener {
+            override fun onMediaDownloaded(ad: Ad) {
+                Log.e(TAG, "Native ad finished downloading all assets.")
+            }
+
+            override fun onError(ad: Ad, adError: AdError) {
+                Log.e(TAG, "Native ad failed to load: " + adError.errorMessage)
+            }
+
+            override fun onAdLoaded(ad: Ad) {
+                if (nativeAd !== ad) {
+                    return
+                }
+                adLoaded.value = true
+                Log.e(TAG, "Native ad is loaded")
+            }
+
+            override fun onAdClicked(ad: Ad) {
+                Log.d(TAG, "Native ad clicked!")
+            }
+
+            override fun onLoggingImpression(ad: Ad) {
+                // Native ad impression
+                Log.d(TAG, "Native ad impression logged!")
+            }
+        }).build())
+        db = (activity?.application as App).db
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -143,6 +174,10 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
                                             .padding(4.dp)
                                             .clickable {
                                                 if (showLoading.value) return@clickable
+                                                if (playing.value && currItem == item) {
+                                                    showPlayer.value = true
+                                                    return@clickable
+                                                }
                                                 showPlayer.value = false
                                                 val intent = Intent(context, PlayService::class.java)
                                                 intent.putExtra("index", i)
@@ -172,11 +207,43 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
                                 }
                                 .padding(16.dp), backgroundColor = lightBlue, elevation = 4.dp) {
                             Column(Modifier.fillMaxWidth(), horizontalAlignment = CenterHorizontally) {
+                                if (adLoaded.value) {
+                                    val icon = MediaView(requireContext())
+                                    Row(
+                                        Modifier
+                                            .fillMaxWidth()
+                                            .background(Color.White)) {
+                                        AndroidView(modifier = Modifier.size(35.dp), factory = { icon })
+                                        Spacer(modifier = Modifier.width(4.dp))
+                                        Column {
+                                            Text(text = nativeAd.advertiserName.toString(), fontSize = 15.sp)
+                                            Text(
+                                                text = nativeAd.sponsoredTranslation.toString(),
+                                                fontSize = 12.sp,
+                                                color = Color.DarkGray
+                                            )
+                                        }
+                                        AndroidView({ AdOptionsView(it, nativeAd, null) })
+                                    }
+                                    AndroidView(
+                                        {
+                                            val mediaView = MediaView(it)
+                                            nativeAd.registerViewForInteraction(mediaView, mediaView, icon)
+                                            mediaView
+                                        },
+                                        Modifier
+                                            .background(Color.White)
+                                            .padding(bottom = 8.dp)
+                                            .height(251.dp)
+                                    )
+                                }
                                 Text(currItem.name, color = Color.White, fontSize = 17.sp)
                                 Row(Modifier.fillMaxWidth(), verticalAlignment = CenterVertically) {
-                                    Spacer(Modifier.width(8.dp))
+                                    val modifier = Modifier
+                                        .padding(start = 8.dp, end = 8.dp)
+                                        .width(48.dp)
                                     Button(
-                                        onClick = {
+                                        {
                                             if (playing.value) {
                                                 service?.pause()
                                                 playing.value = false
@@ -184,34 +251,30 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
                                                 service?.play()
                                                 playing.value = true
                                             }
-                                        }, colors = ButtonDefaults.buttonColors(backgroundColor = colorPrimary),
-                                        modifier = Modifier.width(48.dp)
+                                        }, modifier
                                     ) {
                                         Icon(
-                                            painter = painterResource(id = if (playing.value) R.drawable.ic_pause_24 else R.drawable.ic_play_24),
-                                            contentDescription = "",
-                                            tint = Color.White
+                                            painterResource(id = if (playing.value) R.drawable.ic_pause_24 else R.drawable.ic_play_24),
+                                            getString(R.string.play), tint = Color.White
                                         )
                                     }
-                                    LinearProgressIndicator(progress = progress.value,
-                                        color = colorPrimary,
-                                        modifier = Modifier
+                                    LinearProgressIndicator(
+                                        progress = progress.value,
+                                        Modifier
                                             .height(7.dp)
-                                            .fillMaxWidth()
-                                            .padding(start = 8.dp, end = 16.dp)
-                                            .layout { measurable, constraints ->
-                                                val placeable = measurable.measure(constraints)
-                                                w = placeable.width
-                                                layout(placeable.width, placeable.height) {
-                                                    placeable.placeRelative(0, 0)
-                                                }
-                                            }
                                             .pointerInput(Unit) {
                                                 detectTapGestures {
                                                     progress.value = it.x / w
                                                     service?.seekTo(progress.value)
                                                 }
-                                            })
+                                            }, colorPrimary
+                                    )
+                                    Button(onClick = { showPlayer.value = false }, modifier) {
+                                        Icon(
+                                            painterResource(R.drawable.remove), getString(R.string.delete),
+                                            Modifier.scale(4F), Color.White
+                                        )
+                                    }
                                 }
                             }
 

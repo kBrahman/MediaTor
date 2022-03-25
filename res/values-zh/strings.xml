@@ -220,7 +220,7 @@
     <string name="transfers">传输</string>
     <string name="view_transfer_item_list_item_icon">文件类型图标</string>
     <string name="nickname_sharing_count_files">%1$s - Sharing %2$d files</string>
-    <string name="play_image_description">播放</string>
+    <string name="play">播放</string>
     <string name="view_transfer_list_item_button_action_description">开始</string>
     <string name="yes_no_cancel_transfer_question">确定要停止下载，并从列表中移除（数据不会被删除)?</string>
     <string name="yes_no_cancel_delete_transfer_question">确定要取消此次下载（目前的下载数据会被删除）?</string>

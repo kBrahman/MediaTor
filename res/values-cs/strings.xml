@@ -221,7 +221,7 @@
     <string name="transfers">Transfery</string>
     <string name="view_transfer_item_list_item_icon">Ikona pro typ souboru</string>
     <string name="nickname_sharing_count_files">%1$s - Sdílení %2$d souborů</string>
-    <string name="play_image_description">Hrát</string>
+    <string name="play">Hrát</string>
     <string name="view_transfer_list_item_button_action_description">Akce</string>
     <string name="yes_no_cancel_transfer_question">Jste si jisti, že chcete zastavit a odstranit tento software ke stažení ze seznamu (nebudou smazány žádné údaje)?</string>
     <string name="yes_no_cancel_delete_transfer_question">Jste si jisti, že chcete zrušit tento software ke stažení (Stažená data zatím budou smazány)?</string>

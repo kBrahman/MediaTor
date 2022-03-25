@@ -569,7 +569,7 @@
     <string name="torrent_max_downloads_summary">Max överför</string>
     <string name="rate_our_app">Betygsätta vår App</string>
     <string name="peers_n">Peers: %s</string>
-    <string name="play_image_description">Spela</string>
+    <string name="play">Spela</string>
     <string name="transfers_context_menu_stop_delete_data">Stoppa och ta bort data</string>
     <string name="cheaper_than_cigarettes">Billigare än cigaretter</string>
     <string name="search_settings">Sökinställningar</string>

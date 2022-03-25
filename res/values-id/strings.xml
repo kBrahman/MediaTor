@@ -200,7 +200,7 @@
     <string name="search">Pencarian</string>
     <string name="view_transfer_item_list_item_icon">Ikon untuk tipe arsip</string>
     <string name="nickname_sharing_count_files">%1$s - Sedang berbagi arsip-arsip %2$d</string>
-    <string name="play_image_description">permainan</string>
+    <string name="play">permainan</string>
     <string name="view_transfer_list_item_button_action_description">Tindakan</string>
     <string name="yes_no_cancel_transfer_question">Apakah Anda yakin ingin menghentikan dan menghapus unduhan ini dari daftar (Tidak ada data yang akan dihapus)?</string>
     <string name="yes_no_cancel_delete_transfer_question">Apakah Anda yakin ingin membatalkan unduhan ini (data yang telah diunduh sejauh ini akan hapus)?</string>

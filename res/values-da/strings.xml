@@ -221,7 +221,7 @@
     <string name="transfers">Overførsler</string>
     <string name="view_transfer_item_list_item_icon">Ikon for filtype</string>
     <string name="nickname_sharing_count_files">%1$s - Deling af %2$d filer</string>
-    <string name="play_image_description">Spil</string>
+    <string name="play">Spil</string>
     <string name="view_transfer_list_item_button_action_description">Handling</string>
     <string name="yes_no_cancel_transfer_question">Er du sikker på du ønsker at stoppe og fjerne denne overførsel fra listen (Ingen data vil blive slettet)?</string>
     <string name="yes_no_cancel_delete_transfer_question">Er du sikker på du ønsker at annullere denne download (Overførte data indtil videre vil blive slettet)?</string>

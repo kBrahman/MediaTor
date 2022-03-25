@@ -220,7 +220,7 @@
     <string name="transfers">ملفات منقولة</string>
     <string name="view_transfer_item_list_item_icon">أيقونة نوع الملف</string>
     <string name="nickname_sharing_count_files">%1$s - مشاركة %2$d ملفات</string>
-    <string name="play_image_description">تشغيل</string>
+    <string name="play">تشغيل</string>
     <string name="view_transfer_list_item_button_action_description">عمل</string>
     <string name="yes_no_cancel_transfer_question">هل أنت متأكد أنك ترغب في حذف هذا التنزيل من القائمة أو إيقافه (لن تُحذف أي بيانات)؟</string>
     <string name="yes_no_cancel_delete_transfer_question">هل أنت متأكد أنك ترغب في إلغاء هذا التنزيل (سوف يتم حذف البيانات التي تم تنزيلها حتى الآن)؟</string>

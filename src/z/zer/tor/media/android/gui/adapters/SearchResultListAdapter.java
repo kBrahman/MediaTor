@@ -181,10 +181,7 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
         for (SearchResult sr : results) {
             String extension = FilenameUtils.getExtension(((FileSearchResult) sr).getFilename());
             MediaType mt = MediaType.getMediaTypeForExtension(extension);
-
-            if ("youtube".equals(extension)) {
-                mt = MediaType.getVideoMediaType();
-            } else if (mt != null && mt.equals(MediaType.getVideoMediaType())) {
+            if (mt != null && mt.equals(MediaType.getVideoMediaType())) {
                 // NOTE: this excludes all non .youtube youtube search results (e.g. 3gp, webm) from appearing on results
                 mt = null;
             }

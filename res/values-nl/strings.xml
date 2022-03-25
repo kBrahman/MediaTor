@@ -221,7 +221,7 @@
     <string name="transfers">Transfers</string>
     <string name="view_transfer_item_list_item_icon">Icoon voor file type</string>
     <string name="nickname_sharing_count_files">%1$s - Delen %2$d files</string>
-    <string name="play_image_description">Play</string>
+    <string name="play">Play</string>
     <string name="view_transfer_list_item_button_action_description">Actie</string>
     <string name="yes_no_cancel_transfer_question">Weet je zeker dat je wilt stoppen en deze download van de lijst wilt verwijderen (Er zullen geen data verwijderd worden)?</string>
     <string name="yes_no_cancel_delete_transfer_question">Weet je zeker dat je deze download wilt annuleren (Tot nu toe gedownloade data zullen verwijderd worden)?</string>

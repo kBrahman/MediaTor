@@ -224,7 +224,7 @@
     <string name="transfers">Μεταφορές</string>
     <string name="view_transfer_item_list_item_icon">Εικονίδιο για τύπο αρχείου</string>
     <string name="nickname_sharing_count_files">%1$s - Μοιράζεται %2$d αρχεία</string>
-    <string name="play_image_description">Αναπαραγωγή</string>
+    <string name="play">Αναπαραγωγή</string>
     <string name="view_transfer_list_item_button_action_description">Δράση</string>
     <string name="yes_no_cancel_transfer_question">Θέλεις σίγουρα να σταματήσεις και να αφαιρέσεις αυτό το download από τη λίστα (δε θα διαγραφούν δεδομένα);</string>
     <string name="yes_no_cancel_delete_transfer_question">Θέλεις σίγουρα να ακυρώσεις αυτό το download (τα κατεβασμένα δεδομένα θα διαγραφούν);</string>

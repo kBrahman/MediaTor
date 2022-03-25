@@ -553,7 +553,7 @@
     <string name="torrent_max_downloads_summary">Максимальна кількість завантажень</string>
     <string name="rate_our_app">Оцініть наш додаток</string>
     <string name="peers_n">Однолітки: %s</string>
-    <string name="play_image_description">Грати</string>
+    <string name="play">Грати</string>
     <string name="transfers_context_menu_stop_delete_data">Зупинка і видалення даних</string>
     <string name="cheaper_than_cigarettes">Дешевше, ніж сигарети</string>
     <string name="search_settings">налаштування пошуку</string>

@@ -674,7 +674,7 @@
     <string name="torrent_max_downloads_summary">మాక్స్ డౌన్లోడ్లు</string>
     <string name="rate_our_app">మా అనువర్తనాన్ని రేట్ చేయండి</string>
     <string name="peers_n">తోటివారి: %s</string>
-    <string name="play_image_description">ప్లే</string>
+    <string name="play">ప్లే</string>
     <string name="transfers_context_menu_stop_delete_data">డేటాను ఆపివేసి, తొలగించండి</string>
     <string name="cheaper_than_cigarettes">సిగరెట్ల కంటే చౌకైనది</string>
     <string name="search_settings">శోధన సెట్టింగులు</string>

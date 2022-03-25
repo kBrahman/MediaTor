@@ -235,7 +235,7 @@
     <string name="transfers">Трансфери</string>
     <string name="view_transfer_item_list_item_icon">Икона за тип датотеке</string>
     <string name="nickname_sharing_count_files">%1$s - Делећи %2$d фајлови</string>
-    <string name="play_image_description">Плаи</string>
+    <string name="play">Плаи</string>
     <string name="view_transfer_list_item_button_action_description">Aкција</string>
     <string name="yes_no_cancel_transfer_question">Да ли сте сигурни да желите да зауставите и уклоните ову ставку за преузимање са листе (нема података ће бити избрисани)?</string>
     <string name="yes_no_cancel_transfer_question_cloud">Да ли сте сигурни да желите да зауставите и уклоните ову ставку за преузимање са листе?</string>
