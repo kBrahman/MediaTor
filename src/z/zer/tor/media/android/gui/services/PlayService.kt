@@ -127,7 +127,7 @@ class PlayService : Service() {
             if (tracks.isEmpty() || index >= tracks.size) tracks = db.trackDao().all()
             val t = tracks[index]
             Log.i(TAG, t.url)
-            val path = t.url + "=" + SOUND_CLOUD_CLIENT_ID
+            val path = t.url.substringBefore("=") + "=" + SOUND_CLOUD_CLIENT_ID
             Log.i(TAG, "setting data source=>${mp.hashCode()}")
             mp.setDataSource(getFinalUrl(path))
             mp.prepare()
