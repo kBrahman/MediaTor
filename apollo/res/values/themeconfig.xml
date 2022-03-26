@@ -3,9 +3,6 @@
     <!-- The action bar title color -->
     <color name="action_bar_title">@color/white</color>
 
-    <!-- The action bar sub title color -->
-    <color name="action_bar_subtitle">@color/transparent_white</color>
-
     <!-- Adpater lines -->
     <color name="line_one">@color/app_text_primary</color>
     <color name="line_two">@color/app_text_primary</color>
