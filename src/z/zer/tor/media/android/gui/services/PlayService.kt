@@ -83,13 +83,13 @@ class PlayService : Service() {
                 binder.listener?.showProgress(true)
                 onStartCommand(Intent().apply { putExtra("index", pos) }, START_FLAG_RETRY, 1)
             } else {
+                binder.listener?.setPlaying(false)
                 binder.listener?.showPlayer(false)
                 stopForeground(true)
                 stopSelf()
             }
         }
     }
-
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Log.i(TAG, "on start command, action=>${intent?.action}")
