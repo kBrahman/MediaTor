@@ -1336,31 +1336,6 @@ public final class MusicUtils {
     }
 
     /**
-     * Queries {@link RecentStore} for the last album played by an artist
-     *
-     * @param context    The {@link Context} to use
-     * @param artistName The artist name
-     * @return The last album name played by an artist
-     */
-    public static String getLastAlbumForArtist(final Context context, final String artistName) {
-        return RecentStore.getInstance(context).getAlbumName(artistName);
-    }
-
-    /**
-     * Seeks the current track to a desired position
-     *
-     * @param position The position to seek to
-     */
-    public static void seek(final long position) {
-        if (musicPlaybackService != null) {
-            try {
-                musicPlaybackService.seek(position);
-            } catch (final RemoteException ignored) {
-            }
-        }
-    }
-
-    /**
      * @return The current position time of the track
      */
     public static long position() {
@@ -1384,52 +1359,6 @@ public final class MusicUtils {
             }
         }
         return 0;
-    }
-
-    /**
-     * @param position The position to move the queue to
-     */
-    public static void setQueuePosition(final int position) {
-        if (musicPlaybackService != null) {
-            try {
-                musicPlaybackService.setQueuePosition(position);
-            } catch (final RemoteException ignored) {
-            }
-        }
-    }
-
-    /**
-     * Clears the queue.
-     */
-    public static void clearQueue() {
-        try {
-            if (musicPlaybackService != null) {
-                musicPlaybackService.removeTracks(0, Integer.MAX_VALUE);
-            }
-        } catch (final RemoteException ignored) {
-        }
-    }
-
-    /**
-     * Used to build and show a notification when Apollo is sent into the
-     * background
-     *
-     * @param context The {@link Context} to use.
-     */
-    public static void notifyForegroundStateChanged(final Context context, boolean inForeground) {
-        int old = sForegroundActivities;
-        if (inForeground) {
-            sForegroundActivities++;
-        } else {
-            sForegroundActivities--;
-        }
-
-        if (old == 0 || sForegroundActivities == 0) {
-            final Intent intent = new Intent(context, MusicPlaybackService.class);
-            intent.setAction(MusicPlaybackService.FOREGROUND_STATE_CHANGED);
-            intent.putExtra(MusicPlaybackService.NOW_IN_FOREGROUND, sForegroundActivities != 0);
-            context.startService(intent);
-        }
     }
 
 }
