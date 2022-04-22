@@ -16,9 +16,6 @@
     <!-- A light Holo shade of green -->
     <color name="holo_green_light">#ff99cc00</color>
 
-    <!-- A light Holo shade of red -->
-    <color name="holo_red_light">#ffff4444</color>
-
     <!-- A Holo shade of purple -->
     <color name="holo_purple">#ffaa66cc</color>
 
