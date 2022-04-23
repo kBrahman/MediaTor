@@ -13,9 +13,6 @@
     <!-- A darkish color used for the action bar -->
     <color name="action_bar_color">#ff0d0d0d</color>
 
-    <!-- A light Holo shade of green -->
-    <color name="holo_green_light">#ff99cc00</color>
-
     <!-- A Holo shade of purple -->
     <color name="holo_purple">#ffaa66cc</color>
 

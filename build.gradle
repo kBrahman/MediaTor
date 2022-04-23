@@ -32,8 +32,8 @@ android {
     compileSdkVersion 32
     defaultConfig {
         applicationId localProperties["id"]
-        versionCode 69
-        versionName "3.3"
+        versionCode 70
+        versionName "3.4"
         multiDexEnabled true
         minSdkVersion 23
         targetSdkVersion 32
@@ -91,7 +91,6 @@ android {
 
 dependencies {
     implementation 'com.google.android.material:material:1.5.0'
-    implementation 'androidx.vectordrawable:vectordrawable-animated:1.1.0'
     implementation 'androidx.preference:preference-ktx:1.2.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.google.android.flexbox:flexbox:3.0.0'
@@ -109,7 +108,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout-compose:1.0.0'
     implementation "androidx.media:media:1.6.0"
     //ads
-    implementation 'com.facebook.android:audience-network-sdk:6.8.0'
+    implementation 'com.facebook.android:audience-network-sdk:6.10.0'
     //db
     def room_version = '2.4.2'
     implementation "androidx.room:room-runtime:$room_version"
