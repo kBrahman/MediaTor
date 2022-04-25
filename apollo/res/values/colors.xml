@@ -10,9 +10,6 @@
     <!-- Transparent white -->
     <color name="transparent_white">#ffcccccc</color>
 
-    <!-- A darkish color used for the action bar -->
-    <color name="action_bar_color">#ff0d0d0d</color>
-
     <!-- A Holo shade of purple -->
     <color name="holo_purple">#ffaa66cc</color>
 

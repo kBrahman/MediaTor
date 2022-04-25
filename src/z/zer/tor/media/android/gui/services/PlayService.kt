@@ -102,6 +102,7 @@ class PlayService : Service() {
                 ACTION_STOP_SERVICE -> {
                     mp.stop()
                     mp.reset()
+                    binder.listener?.setPlaying(false)
                     binder.listener?.showPlayer(false)
                     stopForeground(true)
                     stopSelf()

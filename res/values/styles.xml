@@ -193,11 +193,6 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="BodyListSubtitleText">
-        <item name="android:textColor">@color/app_text_primary</item>
-        <item name="android:textSize">@dimen/text_size_small</item>
-    </style>
-
     <!-- All list item sizes -->
     <style name="ListItemTitle">
         <item name="android:singleLine">true</item>

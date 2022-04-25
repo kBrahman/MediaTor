@@ -179,14 +179,12 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        if (outState != null) {
-            // MIGHT DO: save checkedNavViewMenuItemId in bundle.
-            outState.putBoolean("updateAvailable", getIntent().getBooleanExtra("updateAvailable", false));
-            super.onSaveInstanceState(outState);
-            saveLastFragment(outState);
-            saveFragmentsStack(outState);
-        }
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        // MIGHT DO: save checkedNavViewMenuItemId in bundle.
+        outState.putBoolean("updateAvailable", getIntent().getBooleanExtra("updateAvailable", false));
+        super.onSaveInstanceState(outState);
+        saveLastFragment(outState);
+        saveFragmentsStack(outState);
     }
 
     @Override
