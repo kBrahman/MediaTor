@@ -9,7 +9,6 @@
         <item name="android:textColorSecondary">@color/app_text_secondary</item>
         <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButtonStyle</item>
         <item name="toolbarStyle">@style/ToolbarStyle</item>
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
         <item name="android:listPreferredItemPaddingLeft">16dp</item>
         <item name="android:listPreferredItemPaddingRight">16dp</item>
         <item name="windowActionModeOverlay">true</item>
@@ -19,9 +18,5 @@
     <style name="SplashScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/frostwire_splash_screen</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
-    </style>
-
-    <style name="PreferenceThemeOverlay" parent="PreferenceThemeOverlay.v14.Material">
-        <item name="preferenceCategoryStyle">@style/Preference.Category.Material</item>
     </style>
 </resources>
