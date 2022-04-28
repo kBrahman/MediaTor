@@ -17,12 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="page_recent">Nedavno</string>
-  <string name="page_artists">Umjetnici</string>
-  <string name="page_albums">Albumi</string>
-  <string name="page_songs">Pjesme</string>
-    <string name="page_genres">Žanrovi</string>
-  <string name="menu_settings">Postavke</string>
   <string name="menu_search">Pretraga</string>
   <string name="menu_shuffle">Miješaj sve</string>
   <string name="menu_play_all">Sviraj sve</string>

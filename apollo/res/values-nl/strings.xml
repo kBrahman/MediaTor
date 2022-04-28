@@ -17,12 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="page_recent">Recent</string>
-  <string name="page_artists">Artiesten</string>
-  <string name="page_albums">Albums</string>
-  <string name="page_songs">Nummers</string>
-    <string name="page_genres">Genres</string>
-  <string name="menu_settings">Instellingen</string>
   <string name="menu_search">Zoeken</string>
   <string name="menu_shuffle">Alles shufflen</string>
   <string name="menu_play_all">Alles afspelen</string>

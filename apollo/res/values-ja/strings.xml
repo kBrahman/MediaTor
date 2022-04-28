@@ -17,12 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="page_recent">履歴</string>
-  <string name="page_artists">アーティスト</string>
-  <string name="page_albums">アルバム</string>
-  <string name="page_songs">曲</string>
-    <string name="page_genres">ジャンル</string>
-  <string name="menu_settings">設定</string>
   <string name="menu_search">検索</string>
   <string name="menu_shuffle">すべてシャッフル</string>
   <string name="menu_play_all">すべて再生</string>

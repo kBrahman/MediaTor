@@ -17,12 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="page_recent">මෑත</string>
-  <string name="page_artists">කලාකරුවන්</string>
-  <string name="page_albums">ඇල්බම</string>
-  <string name="page_songs">සින්දු</string>
-    <string name="page_genres">ප්‍රභේද</string>
-  <string name="menu_settings">සැකසීම්</string>
   <string name="menu_search">සොයන්න</string>
   <string name="menu_shuffle">සියල්ල කලවම් කරන්න</string>
   <string name="menu_play_all">සියල්ල ධාවනය කරන්න</string>

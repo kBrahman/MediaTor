@@ -17,12 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="page_recent">Előzmények</string>
-  <string name="page_artists">Előadók</string>
-  <string name="page_albums">Albumok</string>
-  <string name="page_songs">Dalok</string>
-    <string name="page_genres">Műfajok</string>
-  <string name="menu_settings">Beállítások</string>
   <string name="menu_search">Keresés</string>
   <string name="menu_shuffle">Véletlen sorrend</string>
   <string name="menu_play_all">Összes lejátszása</string>

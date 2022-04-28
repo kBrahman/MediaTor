@@ -17,12 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="page_recent">Πρόσφατα</string>
-  <string name="page_artists">Καλλιτέχνες</string>
-  <string name="page_albums">Άλμπουμ</string>
-  <string name="page_songs">Τραγούδια</string>
-    <string name="page_genres">Είδη</string>
-  <string name="menu_settings">Ρυθμίσεις</string>
   <string name="menu_search">Αναζήτηση</string>
   <string name="menu_shuffle">Τυχαία αναπαραγωγή όλων</string>
   <string name="menu_play_all">Αναπαραγωγή όλων</string>

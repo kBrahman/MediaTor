@@ -17,12 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="page_recent">Recent</string>
-  <string name="page_artists">Artiști</string>
-  <string name="page_albums">Albume</string>
-  <string name="page_songs">Melodii</string>
-    <string name="page_genres">Genuri</string>
-  <string name="menu_settings">Setări</string>
   <string name="menu_search">Căutare</string>
   <string name="menu_shuffle">Amestecă tot</string>
   <string name="menu_play_all">Redă tot</string>

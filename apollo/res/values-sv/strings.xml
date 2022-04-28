@@ -17,12 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="page_recent">Nya</string>
-  <string name="page_artists">Artister</string>
-  <string name="page_albums">Album</string>
-  <string name="page_songs">Låtar</string>
-    <string name="page_genres">Genrer</string>
-  <string name="menu_settings">Inställningar</string>
   <string name="menu_search">Sök</string>
   <string name="menu_shuffle">Blanda alla</string>
   <string name="menu_play_all">Spela alla</string>

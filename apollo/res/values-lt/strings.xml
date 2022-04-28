@@ -17,12 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="page_recent">Nauja</string>
-  <string name="page_artists">Artistai</string>
-  <string name="page_albums">Albumai</string>
-  <string name="page_songs">Dainos</string>
-    <string name="page_genres">Žanrai</string>
-  <string name="menu_settings">Nustatymai</string>
   <string name="menu_search">Paieška</string>
   <string name="menu_shuffle">Maišyti viską</string>
   <string name="menu_play_all">Paleisti viską</string>

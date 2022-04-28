@@ -9,7 +9,6 @@
     <color name="line_three">@color/app_text_primary</color>
 
     <!-- Now playing -->
-    <color name="audio_player_current_time">#ff000000</color>
     <color name="audio_player_total_time">#ff000000</color>
     <color name="audio_player_line_one">#ff000000</color>
     <color name="audio_player_line_two">#ff000000</color>
@@ -17,12 +16,8 @@
     <!-- Bottom action bar -->
     <color name="bottom_action_bar">@color/app_background_dark_highlight</color>
     <color name="bab_line_one">@color/white</color>
-    <color name="bab_line_two">@color/transparent_white</color>
 
     <!-- Action bar items -->
-    <color name="favorite_normal">@color/transparent_white</color>
-    <color name="search_action">@color/transparent_white</color>
-    <color name="shop_action">@color/transparent_white</color>
     <color name="pinn_to_action">@color/transparent_white</color>
 
 </resources>

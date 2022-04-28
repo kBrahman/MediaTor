@@ -17,12 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="page_recent">ล่าสุด</string>
-  <string name="page_artists">ศิลปิน</string>
-  <string name="page_albums">อัลบั้ม</string>
-  <string name="page_songs">เพลง</string>
-    <string name="page_genres">ประเภท</string>
-  <string name="menu_settings">ตั้งค่า</string>
   <string name="menu_search">ค้นหา</string>
   <string name="menu_shuffle">สลับทั้งหมด</string>
   <string name="menu_play_all">เล่นทั้งหมด</string>

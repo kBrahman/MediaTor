@@ -17,12 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="page_recent">最近播放</string>
-  <string name="page_artists">艺术家</string>
-  <string name="page_albums">专辑</string>
-  <string name="page_songs">歌曲</string>
-    <string name="page_genres">类型</string>
-  <string name="menu_settings">设置</string>
   <string name="menu_search">搜索</string>
   <string name="menu_shuffle">全部随机播放</string>
   <string name="menu_play_all">全部播放</string>

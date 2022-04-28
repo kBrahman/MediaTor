@@ -17,10 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="page_recent">Rezent</string>
-  <string name="page_albums">Alben</string>
-    <string name="page_genres">Genren</string>
-  <string name="menu_settings">Astellungen</string>
   <string name="menu_search">Sichen</string>
   <string name="menu_play_all">All ofspillen</string>
   <string name="menu_save_queue">Waardeschlaang späicheren</string>
@@ -104,7 +100,6 @@
   <string name="settings_delete_cache_summary">Entfernen all zwëschent Biller</string>
   <string name="menu_clear_queue">Klore Sequenz</string>
   <string name="settings_download_only_on_wifi_title">Download nëmmen iwwer Wi-Fi</string>
-  <string name="page_artists">Kënschtler</string>
   <string name="new_photo">Wielt Biller aus der Galerie</string>
   <string name="share_track_using">Bäisetze weg mat:</string>
   <string name="cannot_be_undone">Dat kann net rappen</string>
@@ -114,8 +109,7 @@
   <string name="settings_storage_category">Späicheren</string>
   <string name="settings_download_artist_images_title">Luuchte Kënschtler Biller fidderen</string>
   <string name="context_menu_open_in_play_store">Open am Play Store</string>
-  <string name="page_songs">Lidder</string>
-  <string name="old_photo">Benotzt al Foto</string>
+    <string name="old_photo">Benotzt al Foto</string>
   <string name="sort_order_entry_number_of_songs">Zuel vu Lidder</string>
   <string name="context_menu_fetch_artist_image">Gitt Artist Image</string>
   <string name="menu_sort_by">Zortéieren no</string>

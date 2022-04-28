@@ -17,12 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="page_recent">אחרונים</string>
-  <string name="page_artists">אמנים</string>
-  <string name="page_albums">אלבומים</string>
-  <string name="page_songs">שירים</string>
-    <string name="page_genres">ז\'אנרים</string>
-  <string name="menu_settings">העדפות</string>
   <string name="menu_search">חיפוש</string>
   <string name="menu_shuffle">ערבב את כולם</string>
   <string name="menu_play_all">נגן את כולם</string>

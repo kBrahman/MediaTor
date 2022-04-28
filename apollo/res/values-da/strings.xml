@@ -17,12 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="page_recent">Seneste</string>
-  <string name="page_artists">Kunstnere</string>
-  <string name="page_albums">Albums</string>
-  <string name="page_songs">Sange</string>
-    <string name="page_genres">Genrer</string>
-  <string name="menu_settings">Indstillinger</string>
   <string name="menu_search">Søg</string>
   <string name="menu_shuffle">Bland alle</string>
   <string name="menu_play_all">Afspil alle</string>

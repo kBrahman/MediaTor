@@ -17,12 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="page_recent">Hiljutised</string>
-  <string name="page_artists">Esitajad</string>
-  <string name="page_albums">Albumid</string>
-  <string name="page_songs">Laulud</string>
-    <string name="page_genres">Žanrid</string>
-  <string name="menu_settings">Seaded</string>
   <string name="menu_search">Otsi</string>
   <string name="menu_shuffle">Juhuesita kõik</string>
   <string name="menu_play_all">Esita kõik</string>

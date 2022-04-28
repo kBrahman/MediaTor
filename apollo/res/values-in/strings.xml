@@ -1,10 +1,4 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="page_recent">Terbaru</string>
-    <string name="page_artists">Artis</string>
-    <string name="page_albums">Album</string>
-    <string name="page_songs">Lagu</string>
-    <string name="page_genres">Genre</string>
-    <string name="menu_settings">Pengaturan</string>
     <string name="menu_search">Cari</string>
     <string name="menu_shuffle">Acak semua</string>
     <string name="menu_play_all">Putar semua</string>
