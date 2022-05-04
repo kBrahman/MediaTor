@@ -17,8 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="menu_search">بحث</string>
-  <string name="menu_shuffle">خلْط الكل</string>
   <string name="menu_play_all">تشغيل الكل</string>
   <string name="menu_sort_by">الترتيب حسب</string>
   <string name="menu_shop">متجر للمواضيع</string>

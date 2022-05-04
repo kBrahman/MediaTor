@@ -17,8 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="menu_search">Αναζήτηση</string>
-  <string name="menu_shuffle">Τυχαία αναπαραγωγή όλων</string>
   <string name="menu_play_all">Αναπαραγωγή όλων</string>
   <string name="menu_sort_by">Ταξινόμηση κατά</string>
   <string name="menu_shop">Κατάστημα για θέματα</string>

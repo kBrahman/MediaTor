@@ -17,8 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="menu_search">Пошук</string>
-  <string name="menu_shuffle">Перемішати</string>
   <string name="menu_play_all">Грати все</string>
   <string name="menu_sort_by">Сортувати по</string>
   <string name="menu_shop">Теми</string>

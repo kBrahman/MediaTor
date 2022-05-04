@@ -17,8 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="menu_search">گه‌ڕان</string>
-  <string name="menu_shuffle">هه‌ڕه‌مه‌کی</string>
   <string name="menu_play_all">لێدانی هه‌مووی</string>
   <string name="menu_sort_by">ڕیزکردن به‌پێی</string>
   <string name="menu_shop">کڕینی باکگراوه‌ند</string>

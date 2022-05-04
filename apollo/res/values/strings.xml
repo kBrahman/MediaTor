@@ -2,8 +2,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Option menu items -->
-    <string name="menu_search">Search</string>
-    <string name="menu_shuffle">Shuffle all</string>
     <string name="menu_play_all">Play all</string>
     <string name="menu_sort_by">Sort by</string>
     <string name="menu_shop">Shop for themes</string>

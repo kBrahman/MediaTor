@@ -17,8 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="menu_search">Szukaj</string>
-  <string name="menu_shuffle">Losuj wszystko</string>
   <string name="menu_play_all">Odtwórz wszystko</string>
   <string name="menu_sort_by">Sortuj wg</string>
   <string name="menu_shop">Szukaj motywów w sklepie</string>

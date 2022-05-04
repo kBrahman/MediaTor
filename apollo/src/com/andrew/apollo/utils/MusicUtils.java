@@ -54,11 +54,8 @@ import z.zer.tor.media.util.Logger;
 public final class MusicUtils {
 
     private static final Logger LOG = Logger.getLogger(MusicUtils.class);
-    private static final String TAG = MusicUtils.class.getSimpleName();
 
     public static IApolloService musicPlaybackService = null;
-
-    private static int sForegroundActivities = 0;
 
     private static final WeakHashMap<Context, ServiceBinder> mConnectionMap;
 
@@ -125,10 +122,6 @@ public final class MusicUtils {
     public static void requestMusicPlaybackServiceShutdown(Context context) {
         if (context == null) {
             LOG.warn("requestMusicPlaybackServiceShutdown() aborted. context is null.");
-            return;
-        }
-        if (!SystemUtils.isServiceRunning(context, MusicPlaybackService.class)) {
-            LOG.info("requestMusicPlaybackServiceShutdown() aborted. MusicPlaybackService has already shutdown.");
             return;
         }
         try {

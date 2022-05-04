@@ -1,6 +1,4 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="menu_search">Cari</string>
-    <string name="menu_shuffle">Acak semua</string>
     <string name="menu_play_all">Putar semua</string>
     <string name="menu_sort_by">Urut berdasarkan</string>
     <string name="menu_shop">Beli tema</string>

@@ -32,8 +32,8 @@ android {
     compileSdkVersion 32
     defaultConfig {
         applicationId localProperties["id"]
-        versionCode 72
-        versionName "3.6"
+        versionCode 73
+        versionName "3.7"
         minSdkVersion 23
         targetSdkVersion 32
         buildConfigField "String", "S_C_KEY", localProperties["s_c_key"]

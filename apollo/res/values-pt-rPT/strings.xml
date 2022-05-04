@@ -17,8 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="menu_search">Pesquisa</string>
-  <string name="menu_shuffle">Todas em aleatório</string>
   <string name="menu_play_all">Reproduzir todas</string>
   <string name="menu_sort_by">Ordenar por</string>
   <string name="menu_shop">Loja de temas</string>

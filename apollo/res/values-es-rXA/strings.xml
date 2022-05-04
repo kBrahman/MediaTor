@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="menu_search">Guetar</string>
-    <string name="menu_shuffle">Reproducción aleatoria</string>
     <string name="menu_play_all">Reproducir too</string>
     <string name="menu_sort_by">Ordenar por</string>
     <string name="menu_shop">Descargar temes</string>

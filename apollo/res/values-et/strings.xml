@@ -17,8 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="menu_search">Otsi</string>
-  <string name="menu_shuffle">Juhuesita kõik</string>
   <string name="menu_play_all">Esita kõik</string>
   <string name="menu_sort_by">Sorteeri</string>
   <string name="menu_shop">Külasta teemapoodi</string>

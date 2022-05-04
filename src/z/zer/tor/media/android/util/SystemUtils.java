@@ -35,10 +35,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public final class SystemUtils {
 
     private static final Logger LOG = Logger.getLogger(SystemUtils.class);

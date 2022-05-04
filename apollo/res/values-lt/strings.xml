@@ -17,8 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="menu_search">Paieška</string>
-  <string name="menu_shuffle">Maišyti viską</string>
   <string name="menu_play_all">Paleisti viską</string>
   <string name="menu_sort_by">Rūšiuoti pagal</string>
   <string name="menu_shop">Temų parduotuvė</string>

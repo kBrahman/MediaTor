@@ -17,8 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="menu_search">Haku</string>
-  <string name="menu_shuffle">Sekoita kaikki</string>
   <string name="menu_play_all">Toista kaikki</string>
   <string name="menu_sort_by">Lajittelujärjestys</string>
   <string name="menu_shop">Osta teemoja</string>

@@ -17,8 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="menu_search">ค้นหา</string>
-  <string name="menu_shuffle">สลับทั้งหมด</string>
   <string name="menu_play_all">เล่นทั้งหมด</string>
   <string name="menu_sort_by">เรียงโดย</string>
   <string name="menu_shop">เลือกซื้อธีม</string>

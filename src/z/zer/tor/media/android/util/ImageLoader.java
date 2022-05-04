@@ -558,8 +558,8 @@ public final class ImageLoader {
         Cache cache = new Cache(cacheDir, maxSize);
 
         OkHttpClient.Builder b = new OkHttpClient.Builder();
-        b = b.cache(cache);
-        b = OKHTTPClient.configNullSsl(b);
+        b.cache(cache);
+        OKHTTPClient.configNullSsl(b);
         return b.build();
     }
 

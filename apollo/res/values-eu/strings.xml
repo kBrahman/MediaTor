@@ -17,8 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="menu_search">Bilatu</string>
-  <string name="menu_shuffle">Ausazko erreprodukzioa</string>
   <string name="menu_play_all">Dena erreproduzitu</string>
   <string name="menu_sort_by">Honela ordenatu</string>
   <string name="menu_shop">Gaiak deskargatu</string>

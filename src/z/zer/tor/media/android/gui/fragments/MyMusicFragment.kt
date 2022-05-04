@@ -270,7 +270,8 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
                                                 layout(placeable.width, placeable.height) {
                                                     placeable.placeRelative(0, 0)
                                                 }
-                                            }.pointerInput(Unit) {
+                                            }
+                                            .pointerInput(Unit) {
                                                 detectTapGestures {
                                                     progress.value = it.x / w
                                                     service?.seekTo(progress.value)
@@ -301,7 +302,8 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
             val v = try {
                 BitmapFactory.decodeStream(URL(url).openConnection().getInputStream())
             } catch (ce: IOException) {
-                BitmapFactory.decodeResource(resources, R.mipmap.ic_launcher)
+                if (!isDetached) BitmapFactory.decodeResource(resources, R.mipmap.ic_launcher)
+                else null
             }
             withContext(Dispatchers.Main) {
                 btp.value = v

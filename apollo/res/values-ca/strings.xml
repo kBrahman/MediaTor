@@ -17,8 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="menu_search">Cerca</string>
-  <string name="menu_shuffle">Barreja-ho tot</string>
   <string name="menu_play_all">Reprodueix tot</string>
   <string name="menu_sort_by">Ordena per</string>
   <string name="menu_shop">Compra per temes</string>

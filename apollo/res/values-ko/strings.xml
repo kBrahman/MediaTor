@@ -17,8 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="menu_search">검색</string>
-  <string name="menu_shuffle">모두 임의 재생</string>
   <string name="menu_play_all">모두 재생</string>
   <string name="menu_sort_by">정렬</string>
   <string name="menu_shop">테마 샵</string>

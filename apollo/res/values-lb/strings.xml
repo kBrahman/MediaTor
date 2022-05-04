@@ -17,8 +17,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="menu_search">Sichen</string>
-  <string name="menu_play_all">All ofspillen</string>
+    <string name="menu_play_all">All ofspillen</string>
   <string name="menu_save_queue">Waardeschlaang späicheren</string>
   <string name="menu_share">Deelen</string>
   <string name="menu_simple">Einfach</string>
@@ -95,7 +94,6 @@
   <string name="menu_grid">Grid</string>
   <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' als Klingong</string>
   <string name="are_you_sure_delete_files_text">Sidd Dir sécher datt Dir déi gewielte Fichier vu Ärem Apparat unzehuelen?</string>
-  <string name="menu_shuffle">All kuscheleg</string>
   <string name="delete_warning">Dëst wäert d\'cache Biller sinn dauerhaft liesen</string>
   <string name="settings_delete_cache_summary">Entfernen all zwëschent Biller</string>
   <string name="menu_clear_queue">Klore Sequenz</string>

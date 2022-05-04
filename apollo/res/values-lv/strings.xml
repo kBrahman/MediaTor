@@ -17,8 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="menu_search">Meklēt</string>
-  <string name="menu_shuffle">Jaukt visu</string>
   <string name="menu_play_all">Atskaņot visu</string>
   <string name="menu_sort_by">Kārtot pēc</string>
   <string name="menu_shop">Iegādāties apdares</string>

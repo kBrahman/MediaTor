@@ -17,8 +17,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="menu_search">Hľadať</string>
-  <string name="menu_shuffle">Prehrať všetky náhodne</string>
   <string name="menu_play_all">Prehrať všetky</string>
   <string name="menu_sort_by">Zoradiť podľa</string>
   <string name="menu_shop">Obchod s témami</string>
