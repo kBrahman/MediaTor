@@ -13,7 +13,7 @@ android {
     compileSdkVersion 32
     defaultConfig {
         applicationId localProperties["id"]
-        versionCode 73
+        versionCode 74
         versionName "3.8"
         minSdkVersion 24
         targetSdkVersion 32
@@ -25,19 +25,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 
-    sourceSets {
-        main {
-//            manifest.srcFile 'AndroidManifest.xml'
-            res.srcDirs = ['src/main/res','../apollo/res']
-//            aidl.srcDirs = ['src', 'apollo/src']
-//            assets.srcDirs = ['assets']
-//            java {
-//                srcDir '../common/src/main/java'
-//                srcDir 'apollo/src'
-//                srcDir 'src'
-//            }
-        }
-    }
+    sourceSets { main { res.srcDirs = ['src/main/res', '../apollo/res'] } }
 
     signingConfigs {
         zig {
