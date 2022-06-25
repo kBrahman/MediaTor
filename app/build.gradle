@@ -1,0 +1,96 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+def localProperties = new Properties()
+localProperties.load(rootProject.file('local.properties').newDataInputStream())
+def keystoreProperties = new Properties()
+keystoreProperties.load(rootProject.file("keystore.properties").newDataInputStream())
+
+android {
+    compileSdkVersion 32
+    defaultConfig {
+        applicationId localProperties["id"]
+        versionCode 73
+        versionName "3.8"
+        minSdkVersion 24
+        targetSdkVersion 32
+        buildConfigField "String", "S_C_KEY", localProperties["s_c_key"]
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    sourceSets {
+        main {
+//            manifest.srcFile 'AndroidManifest.xml'
+            res.srcDirs = ['src/main/res','../apollo/res']
+//            aidl.srcDirs = ['src', 'apollo/src']
+//            assets.srcDirs = ['assets']
+//            java {
+//                srcDir '../common/src/main/java'
+//                srcDir 'apollo/src'
+//                srcDir 'src'
+//            }
+        }
+    }
+
+    signingConfigs {
+        zig {
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.zig
+            applicationVariants.all { variant -> variant.outputs.all { outputFileName = "MediaPlay.apk" } }
+        }
+    }
+    buildToolsVersion '32.1.0-rc1'
+    buildFeatures { compose true }
+
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    lint { abortOnError false }
+    composeOptions { kotlinCompilerExtensionVersion "1.2.0-alpha05" }
+    setProperty("archivesBaseName", 'MediaPlay')
+}
+
+dependencies {
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation platform('com.google.firebase:firebase-bom:30.2.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx:21.0.0'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.11'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    //compose
+    implementation 'androidx.compose.foundation:foundation:1.1.1'
+    implementation 'androidx.compose.ui:ui:1.1.1'
+    implementation 'androidx.compose.material:material:1.1.1'
+    implementation 'androidx.activity:activity-compose:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout-compose:1.0.1'
+    implementation "androidx.media:media:1.6.0"
+    implementation 'androidx.fragment:fragment-ktx:1.4.1'
+    //ads
+    implementation 'com.facebook.android:audience-network-sdk:6.11.0'
+    //db
+    def room_version = '2.4.2'
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation("androidx.room:room-ktx:$room_version")
+    kapt "androidx.room:room-compiler:$room_version"
+}
