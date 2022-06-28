@@ -12,9 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.webkit.JavascriptInterface;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -25,7 +22,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.FragmentActivity;
 
 import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
@@ -36,7 +32,12 @@ import com.facebook.ads.NativeAdBase;
 import com.facebook.ads.NativeAdLayout;
 import com.facebook.ads.NativeAdListener;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.ref.WeakReference;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -305,51 +306,29 @@ public final class SearchFragment extends AbstractFragment implements SearchList
     @Override
     public void onError(long token, SearchError error) {
         Log.i(TAG, "getting new id");
-        FragmentActivity activity = getActivity();
-        activity.runOnUiThread(() -> {
-            class JSInterface {
-                @JavascriptInterface
-                @SuppressWarnings("unused")
-                public void processHTML(String html) {
-                    Log.i(TAG, "in processHTML. thread=>" + Thread.currentThread().getName());
-                    System.out.println("html=>" + html);
-
-                }
+        HttpURLConnection connection = null;
+        try {
+            URL url = new URL("http://185.252.146.133:8080/id");
+            connection = (HttpURLConnection) url.openConnection();
+            InputStream in = new BufferedInputStream(connection.getInputStream());
+            StringBuilder builder = new StringBuilder();
+            for (int b = in.read(); b != -1; ) {
+                builder.append((char) b);
+                b = in.read();
             }
-            WebView webView = new WebView(requireContext());
-            webView.addJavascriptInterface(new JSInterface(), "HTMLOUT");
-            webView.setWebViewClient(new WebViewClient() {
-                @Override
-                public void onPageFinished(WebView view, String url) {
-                    Log.i(TAG, "url=>" + url);
-//                    view.loadUrl("javascript:window.HTMLOUT.processHTML(document.getElementsByTagName('html')[0].getElementsByTagName('body')[0]);");
-//                    view.loadUrl("javascript:window.HTMLOUT.processHTML(document.documentElement);");
-                    view.evaluateJavascript("document.documentElement.outerHTML", SearchFragment.this::proceed);
-                }
-
-
-            });
-            webView.getSettings().setJavaScriptEnabled(true);
-//            webView.getSettings().setUserAgentString(USER_AGENTS.get(new Random().nextInt(USER_AGENTS.size())));
-            webView.getSettings().setUserAgentString("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36");
-            webView.loadUrl("https://soundcloud.com");
-        });
-    }
-
-    private void proceed(String html) {
-        String id = "";
-        for (int i = 5; i < html.length(); i++)
-            if (html.regionMatches(i, "client_id", 0, 9)) {
-                id = html.substring(i+1 + 9).split("&")[0];
-                break;
+            Log.i(TAG, "id=>" + builder);
+            String id = builder.toString();
+            SoundCloudSearchPerformer.SOUND_CLOUD_CLIENT_ID = id;
+            getActivity().getSharedPreferences(MEDIA_PLAY_PREFS, Context.MODE_PRIVATE).edit()
+                    .putString(S_C_KEY, id).apply();
+                getActivity().runOnUiThread(() -> performSearch(currentQuery, ConfigurationManager.instance().getLastMediaTypeFilter()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (connection != null) {
+                connection.disconnect();
             }
-
-        Log.i(TAG, "new id=>" + id);
-        SoundCloudSearchPerformer.SOUND_CLOUD_CLIENT_ID = id;
-        getActivity().getSharedPreferences(MEDIA_PLAY_PREFS, Context.MODE_PRIVATE).edit()
-                .putString(S_C_KEY, id).apply();
-        if (!id.isEmpty())
-            getActivity().runOnUiThread(() -> performSearch(currentQuery, ConfigurationManager.instance().getLastMediaTypeFilter()));
+        }
     }
 
 

@@ -31,22 +31,10 @@ public final class SoundCloudSearchPerformer extends PagedWebSearchPerformer {
     private String buildDownloadUrl(SoundcloudItem item) {
         String downloadUrl;
         List<Tanscoding> transcodings = item.media.getTranscodings();
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            Tanscoding t = transcodings.stream().filter(e -> e.getUrl().endsWith("/progressive")).findAny().orElse(null);
-            if (t == null) return null;
-            downloadUrl = t.getUrl();
-        } else {
-            downloadUrl = getUrl(transcodings);
-        }
+        Tanscoding t = transcodings.stream().filter(e -> e.getUrl().endsWith("/progressive")).findAny().orElse(null);
+        if (t == null) return null;
+        downloadUrl = t.getUrl();
         return downloadUrl + "?client_id=" + SOUND_CLOUD_CLIENT_ID;
-    }
-
-    private String getUrl(List<Tanscoding> transcodings) {
-        for (Tanscoding transcoding : transcodings) {
-            String url = transcoding.getUrl();
-            if (url.endsWith("/progressive")) return url;
-        }
-        return null;
     }
 
     @Override
