@@ -20,10 +20,6 @@ package z.zer.tor.media.search.torrent;
 
 import z.zer.tor.media.search.FileSearchResult;
 
-/**
- * @author gubatron
- * @author aldenml
- */
 public interface TorrentSearchResult extends FileSearchResult {
 
     long getCreationTime();

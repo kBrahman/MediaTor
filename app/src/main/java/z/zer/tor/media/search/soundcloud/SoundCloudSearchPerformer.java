@@ -44,7 +44,8 @@ public final class SoundCloudSearchPerformer extends PagedWebSearchPerformer {
         try {
             arr = new JSONObject(page).getJSONArray("collection");
             for (int i = 0; i < arr.length(); i++) {
-                SoundcloudItem item = JsonUtils.toObject(arr.get(i).toString(), SoundcloudItem.class);
+                String json = arr.get(i).toString();
+                SoundcloudItem item = JsonUtils.toObject(json, SoundcloudItem.class);
                 if (!isStopped() && item != null && item.media != null) {
                     String url = buildDownloadUrl(item);
                     if (url == null) continue;
@@ -52,7 +53,7 @@ public final class SoundCloudSearchPerformer extends PagedWebSearchPerformer {
                     result.add(sr);
                 }
             }
-            Log.i(TAG, "result should be redady");
+            Log.i(TAG, "result should be ready");
         } catch (JSONException e) {
             e.printStackTrace();
         }

@@ -1,9 +1,13 @@
 package z.zer.tor.media.search.soundcloud;
 
+import android.util.Log;
+
+import androidx.annotation.Keep;
+import androidx.annotation.NonNull;
+
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
-import androidx.annotation.Keep;
 import z.zer.tor.media.search.AbstractFileSearchResult;
 import z.zer.tor.media.search.HttpSearchResult;
 import z.zer.tor.media.search.StreamableSearchResult;
@@ -12,6 +16,7 @@ import z.zer.tor.media.search.StreamableSearchResult;
 public final class SoundCloudSearchResult extends AbstractFileSearchResult implements HttpSearchResult, StreamableSearchResult {
 
     private static final String DATE_FORMAT = "yyyy/mm/dd HH:mm:ss Z";
+    private static final String TAG = "SoundCloudSearchResult";
 
     private final String displayName;
     private final String username;
@@ -39,6 +44,7 @@ public final class SoundCloudSearchResult extends AbstractFileSearchResult imple
 
         this.date = buildDate(item.created_at);
         this.downloadUrl = downloadUrl;
+        Log.i(TAG, "sc_item=>" + item);
     }
 
     @Override
@@ -117,7 +123,7 @@ public final class SoundCloudSearchResult extends AbstractFileSearchResult imple
             try {
                 url = str.substring(0, str.indexOf("-large.")) + "-t300x300.jpg";
             } catch (Throwable e) {
-                // ignore
+                e.printStackTrace();
             }
         }
         return url;
@@ -131,9 +137,14 @@ public final class SoundCloudSearchResult extends AbstractFileSearchResult imple
         }
     }
 
+    @NonNull
     @Override
     public String toString() {
-        return "SoundcloudSearchResult.getDisplayName(): " + getDisplayName();
+        return "SoundCloudSearchResult{" +
+                "displayName='" + displayName + '\'' +
+                ", thumbnailUrl='" + thumbnailUrl + '\'' +
+                ", downloadUrl='" + downloadUrl + '\'' +
+                '}';
     }
 
     @Override

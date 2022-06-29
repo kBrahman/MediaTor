@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -131,14 +132,10 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
         MediaPlaybackStatusOverlayView overlayView = findView(view, R.id.view_bittorrent_search_result_list_item_filetype_icon_media_playback_overlay_view);
         if (isAudio(sr)) {
             view.setTag(sr);
+            Log.i(TAG, "set tag=>" + sr);
             overlayView.setVisibility(View.VISIBLE);
             overlayView.setPlaybackState(MediaPlaybackOverlayPainter.MediaPlaybackState.PREVIEW);
             overlayView.setOnClickListener(previewClickListener);
-        } else {
-            fileTypeIcon.setTag(null);
-            overlayView.setTag(null);
-            overlayView.setVisibility(View.GONE);
-            overlayView.setPlaybackState(MediaPlaybackOverlayPainter.MediaPlaybackState.NONE);
         }
     }
 
@@ -286,13 +283,16 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
         @Override
         public void onClick(Context ctx, View v) {
             StreamableSearchResult sr = (StreamableSearchResult) v.getTag();
+            Log.i(TAG, "sResult=>" + sr);
             if (sr != null) {
                 LocalSearchEngine.instance().markOpened(sr, (Ref.alive(adapterRef)) ? adapterRef.get() : null);
                 Intent i = new Intent(ctx, PlayerActivity.class);
                 i.putExtra("displayName", sr.getDisplayName());
                 i.putExtra("source", sr.getSource());
                 i.putExtra("streamUrl", sr.getStreamUrl());
-                i.putExtra("image_url", sr.getThumbnailUrl());
+                String url = sr.getThumbnailUrl();
+                Log.i(TAG, "image_url=>" + url);
+                i.putExtra("image_url", url);
                 ctx.startActivity(i);
             }
         }

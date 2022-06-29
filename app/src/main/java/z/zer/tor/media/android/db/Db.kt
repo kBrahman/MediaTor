@@ -1,5 +1,6 @@
 package z.zer.tor.media.android.db
 
+import androidx.annotation.Keep
 import androidx.room.*
 
 
@@ -8,6 +9,7 @@ abstract class Db : RoomDatabase() {
 
     abstract fun trackDao(): TrackDao
 
+    @Keep
     @Dao
     interface TrackDao {
 

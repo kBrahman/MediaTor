@@ -4,9 +4,9 @@ import z.zer.tor.media.licenses.License;
 
 public interface SearchResult {
 
-    String getDisplayName();
-
     String getDetailsUrl();
+
+    String getDisplayName();
 
     long getCreationTime();
 

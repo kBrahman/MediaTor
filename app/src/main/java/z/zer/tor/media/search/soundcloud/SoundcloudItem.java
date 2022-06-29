@@ -17,20 +17,12 @@ final class SoundcloudItem {
     public String created_at;
     public boolean downloadable;
 
-    @NonNull
     @Override
     public String toString() {
         return "SoundcloudItem{" +
                 "id=" + id +
-                ", user=" + user +
-                ", media=" + media +
-                ", duration=" + duration +
-                ", permalink='" + permalink + '\'' +
                 ", title='" + title + '\'' +
-                ", permalink_url='" + permalink_url + '\'' +
                 ", artwork_url='" + artwork_url + '\'' +
-                ", created_at='" + created_at + '\'' +
-                ", downloadable=" + downloadable +
                 '}';
     }
 }
