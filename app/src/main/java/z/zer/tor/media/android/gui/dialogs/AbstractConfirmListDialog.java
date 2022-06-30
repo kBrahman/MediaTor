@@ -28,8 +28,6 @@ import java.util.Set;
 abstract class AbstractConfirmListDialog<T> extends AbstractDialog implements
         AbstractListAdapter.OnItemCheckedListener<T> {
 
-    private static final Logger LOG = Logger.getLogger(AbstractConfirmListDialog.class);
-
     static final String BUNDLE_KEY_CHECKED_OFFSETS = "checkedOffsets";
     static final String BUNDLE_KEY_LAST_SELECTED_RADIO_BUTTON_INDEX = "lastSelectedRadioButtonIndex";
 
@@ -84,7 +82,6 @@ abstract class AbstractConfirmListDialog<T> extends AbstractDialog implements
         } catch (Throwable e) {
             // java.lang.IllegalStateException: Can not perform this action after onSaveInstanceState
             // TODO: this needs a refactor
-            LOG.error("Error in show, review your logic", e);
         }
     }
 
@@ -296,8 +293,6 @@ abstract class AbstractConfirmListDialog<T> extends AbstractDialog implements
                 int i = all.indexOf(item);
                 if (i >= 0) {
                     result[i] = true;
-                } else {
-                    LOG.warn("getSelected() is not finding the checked items on the list. Verify that [" + item.getClass().getSimpleName() + "] implements equals() and hashCode()");
                 }
             }
         }

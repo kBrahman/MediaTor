@@ -23,13 +23,6 @@ import android.widget.AbsListView;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/**
- * Created on 11/23/16.
- *
- * @author gubatron
- * @author aldenml
- */
-
 public final class DirectionDetectorScrollListener implements AbsListView.OnScrollListener {
     private final ScrollDirectionVotes votes = new ScrollDirectionVotes();
     private final ExecutorService threadPool;
@@ -142,6 +135,7 @@ public final class DirectionDetectorScrollListener implements AbsListView.OnScro
 
     public interface ScrollDirectionListener {
         void onScrollUp();
+
         void onScrollDown();
     }
 
