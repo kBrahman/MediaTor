@@ -1,6 +1,5 @@
 package z.zer.tor.media.android.db
 
-import androidx.room.Room
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 

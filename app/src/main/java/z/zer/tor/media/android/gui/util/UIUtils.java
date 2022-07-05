@@ -1,10 +1,8 @@
 package z.zer.tor.media.android.gui.util;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -17,9 +15,7 @@ import android.widget.Toast;
 
 import androidx.annotation.StringRes;
 import androidx.core.content.FileProvider;
-import androidx.fragment.app.FragmentManager;
 
-import z.zer.tor.media.utils.MusicUtils;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.apache.commons.io.FilenameUtils;
@@ -35,10 +31,9 @@ import z.zer.tor.media.R;
 import z.zer.tor.media.android.core.ConfigurationManager;
 import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.android.gui.activity.MainActivity;
-import z.zer.tor.media.android.gui.dialogs.YesNoDialog;
-import z.zer.tor.media.android.gui.views.EditTextDialog;
 import z.zer.tor.media.util.Logger;
 import z.zer.tor.media.util.MimeDetector;
+import z.zer.tor.media.utils.MusicUtils;
 import z.zer.tor.media.uxstats.UXAction;
 import z.zer.tor.media.uxstats.UXStats;
 
@@ -124,28 +119,6 @@ public final class UIUtils {
 
     public static void showShortMessage(Context context, int resId, Object... formatArgs) {
         showShortMessage(context, context.getString(resId, formatArgs));
-    }
-
-    public static void showYesNoDialog(FragmentManager fragmentManager, String message, int titleId, OnClickListener positiveListener) {
-        showYesNoDialog(fragmentManager, message, titleId, positiveListener, (dialog, which) -> dialog.dismiss());
-    }
-
-    public static void showYesNoDialog(FragmentManager fragmentManager, String message, int titleId, OnClickListener positiveListener, OnClickListener negativeListener) {
-        YesNoDialog yesNoDialog = YesNoDialog.newInstance(message, titleId, message, (byte) 0);
-        yesNoDialog.setOnDialogClickListener((tag, which) -> {
-            if (which == Dialog.BUTTON_POSITIVE && positiveListener != null) {
-                positiveListener.onClick(yesNoDialog.getDialog(), which);
-            } else if (which == Dialog.BUTTON_NEGATIVE && negativeListener != null) {
-                negativeListener.onClick(yesNoDialog.getDialog(), which);
-            }
-            yesNoDialog.dismiss();
-        });
-        yesNoDialog.show(fragmentManager);
-    }
-
-    public static void showEditTextDialog(FragmentManager fragmentManager, int messageStringId, int titleStringId, int positiveButtonStringId, boolean cancelable, boolean multilineInput, String optionalEditTextValue, final EditTextDialog.TextViewInputDialogCallback callback) {
-        new EditTextDialog().
-                init(titleStringId, messageStringId, positiveButtonStringId, cancelable, multilineInput, optionalEditTextValue, callback).show(fragmentManager);
     }
 
     public static String getBytesInHuman(long size) {

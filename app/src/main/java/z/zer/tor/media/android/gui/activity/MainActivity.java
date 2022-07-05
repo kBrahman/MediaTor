@@ -15,8 +15,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import z.zer.tor.media.utils.MusicUtils;
-import z.zer.tor.media.utils.MusicUtils.ServiceToken;
 import com.google.android.material.tabs.TabLayout;
 
 import java.lang.reflect.Method;
@@ -28,7 +26,6 @@ import z.zer.tor.media.android.core.Constants;
 import z.zer.tor.media.android.gui.LocalSearchEngine;
 import z.zer.tor.media.android.gui.NetworkManager;
 import z.zer.tor.media.android.gui.activity.internal.MainController;
-import z.zer.tor.media.android.gui.dialogs.YesNoDialog;
 import z.zer.tor.media.android.gui.fragments.MyMusicFragment;
 import z.zer.tor.media.android.gui.fragments.SearchFragment;
 import z.zer.tor.media.android.gui.util.DangerousPermissionsChecker;
@@ -36,6 +33,8 @@ import z.zer.tor.media.android.gui.views.AbstractActivity;
 import z.zer.tor.media.android.gui.views.AbstractDialog.OnDialogClickListener;
 import z.zer.tor.media.util.Logger;
 import z.zer.tor.media.util.Utils;
+import z.zer.tor.media.utils.MusicUtils;
+import z.zer.tor.media.utils.MusicUtils.ServiceToken;
 import z.zer.tor.media.uxstats.UXAction;
 import z.zer.tor.media.uxstats.UXStats;
 
@@ -285,12 +284,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
 
     private void toggleDrawer() {
         syncNavigationMenu();
-    }
-
-    public void showShutdownDialog() {
-        UXStats.instance().flush();
-        YesNoDialog dlg = YesNoDialog.newInstance(SHUTDOWN_DIALOG_ID, R.string.app_shutdown_dlg_title, R.string.app_shutdown_dlg_message, YesNoDialog.FLAG_DISMISS_ON_OK_BEFORE_PERFORM_DIALOG_CLICK);
-        dlg.show(getSupportFragmentManager()); //see onDialogClick
     }
 
     public void onDialogClick(String tag, int which) {

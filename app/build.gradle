@@ -13,8 +13,8 @@ android {
     compileSdkVersion 32
     defaultConfig {
         applicationId localProperties["id"]
-        versionCode 77
-        versionName "3.12"
+        versionCode 78
+        versionName "3.13"
         minSdkVersion 25
         targetSdkVersion 32
         buildConfigField "String", "S_C_KEY", localProperties["s_c_key"]
@@ -68,10 +68,10 @@ dependencies {
     implementation 'androidx.compose.foundation:foundation:1.1.1'
     implementation 'androidx.compose.ui:ui:1.1.1'
     implementation 'androidx.compose.material:material:1.1.1'
-    implementation 'androidx.activity:activity-compose:1.4.0'
+    implementation 'androidx.activity:activity-compose:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout-compose:1.0.1'
     implementation "androidx.media:media:1.6.0"
-    implementation 'androidx.fragment:fragment-ktx:1.4.1'
+    implementation 'androidx.fragment:fragment-ktx:1.5.0'
     //ads
     implementation 'com.facebook.android:audience-network-sdk:6.11.0'
     //db
