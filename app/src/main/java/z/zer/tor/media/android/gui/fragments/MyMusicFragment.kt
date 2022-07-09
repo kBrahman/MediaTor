@@ -44,6 +44,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import z.zer.tor.media.App
+import z.zer.tor.media.BuildConfig
 import z.zer.tor.media.R
 import z.zer.tor.media.android.db.Db
 import z.zer.tor.media.android.db.PlayTrack
@@ -72,7 +73,9 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i(TAG,"on create")
         nativeAd = NativeAd(requireContext(), getString(R.string.id_ad_native_fb))
+        if (BuildConfig.DEBUG) AdSettings.addTestDevice("2fc89f65-eb70-4b9d-aac2-d812bb0b95b3")
         nativeAd.loadAd(nativeAd.buildLoadAdConfig().withAdListener(object : NativeAdListener {
             override fun onMediaDownloaded(ad: Ad) {
                 Log.e(TAG, "Native ad finished downloading all assets.")

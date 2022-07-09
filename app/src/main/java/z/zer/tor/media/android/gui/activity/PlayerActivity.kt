@@ -31,16 +31,17 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
-import z.zer.tor.media.utils.MusicUtils
 import com.facebook.ads.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.json.JSONObject
 import z.zer.tor.media.App
+import z.zer.tor.media.BuildConfig
 import z.zer.tor.media.R
 import z.zer.tor.media.android.db.Db
 import z.zer.tor.media.android.db.PlayTrack
+import z.zer.tor.media.utils.MusicUtils
 import java.net.HttpURLConnection
 import java.net.URL
 import java.util.*
@@ -68,6 +69,7 @@ class PlayerActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener,
         title = getString(R.string.application_label)
         displayName = intent.getStringExtra("displayName").toString()
         source = intent.getStringExtra("source")
+        if (BuildConfig.DEBUG) AdSettings.addTestDevice("2fc89f65-eb70-4b9d-aac2-d812bb0b95b3")
         val nativeAd = NativeAd(this, getString(R.string.id_ad_native_fb))
         nativeAd.loadAd(nativeAd.buildLoadAdConfig().withAdListener(object : NativeAdListener {
             override fun onMediaDownloaded(ad: Ad) {

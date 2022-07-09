@@ -10,14 +10,15 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(rootProject.file("keystore.properties").newDataInputStream())
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
     defaultConfig {
         applicationId localProperties["id"]
         versionCode 78
-        versionName "3.13"
-        minSdkVersion 25
-        targetSdkVersion 32
+        versionName "3.14"
+        minSdkVersion 26
+        targetSdkVersion 33
         buildConfigField "String", "S_C_KEY", localProperties["s_c_key"]
+        buildConfigField "String", "ID_SERVER", localProperties["server_id"]
     }
 
     compileOptions {

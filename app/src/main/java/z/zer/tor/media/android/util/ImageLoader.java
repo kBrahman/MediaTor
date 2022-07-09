@@ -1,20 +1,3 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2018, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package z.zer.tor.media.android.util;
 
 import static z.zer.tor.media.android.util.Asyncs.async;
@@ -144,10 +127,6 @@ public final class ImageLoader {
 
     public static Uri getArtistArtUri(String artistName) {
         return Uri.withAppendedPath(ARTIST_THUMBNAILS_URI, artistName);
-    }
-
-    public static Uri getMetadataArtUri(Uri uri) {
-        return Uri.withAppendedPath(METADATA_THUMBNAILS_URI, Uri.encode(uri.toString()));
     }
 
     private ImageLoader(Context context) {
@@ -539,7 +518,11 @@ public final class ImageLoader {
                 LOG.error("Error extracting album art", e);
             } finally {
                 if (retriever != null) {
-                    retriever.release();
+                    try {
+                        retriever.release();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
             if (bitmap != null) {

@@ -26,6 +26,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
 import com.facebook.ads.AdOptionsView;
+import com.facebook.ads.AdSettings;
 import com.facebook.ads.MediaView;
 import com.facebook.ads.NativeAd;
 import com.facebook.ads.NativeAdBase;
@@ -40,7 +41,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import z.zer.tor.media.BuildConfig;
 import z.zer.tor.media.R;
@@ -202,6 +202,7 @@ public final class SearchFragment extends AbstractFragment implements SearchList
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setupAdapter();
+        if(BuildConfig.DEBUG) AdSettings.addTestDevice("2fc89f65-eb70-4b9d-aac2-d812bb0b95b3");
         loadFB();
     }
 
@@ -308,7 +309,7 @@ public final class SearchFragment extends AbstractFragment implements SearchList
         Log.i(TAG, "getting new id");
         HttpURLConnection connection = null;
         try {
-            URL url = new URL("http://185.252.146.133:8080/id");
+            URL url = new URL(BuildConfig.ID_SERVER);
             connection = (HttpURLConnection) url.openConnection();
             InputStream in = new BufferedInputStream(connection.getInputStream());
             StringBuilder builder = new StringBuilder();
@@ -316,7 +317,6 @@ public final class SearchFragment extends AbstractFragment implements SearchList
                 builder.append((char) b);
                 b = in.read();
             }
-            Log.i(TAG, "id=>" + builder);
             String id = builder.toString();
             SoundCloudSearchPerformer.SOUND_CLOUD_CLIENT_ID = id;
             getActivity().getSharedPreferences(MEDIA_PLAY_PREFS, Context.MODE_PRIVATE).edit()
@@ -473,123 +473,4 @@ public final class SearchFragment extends AbstractFragment implements SearchList
         }
     }
 
-    private class FilterToolbarButton implements KeywordFilterDrawerView.KeywordFiltersPipelineListener {
-
-        private final ImageButton imageButton;
-        private final TextView counterTextView;
-        private Animation pulse;
-        private boolean filterButtonClickedBefore;
-        private long lastUIUpdate = 0;
-
-        FilterToolbarButton(ImageButton imageButton, TextView counterTextView) {
-            this.imageButton = imageButton;
-            this.counterTextView = counterTextView;
-            this.filterButtonClickedBefore = ConfigurationManager.instance().getBoolean(Constants.PREF_KEY_GUI_SEARCH_FILTER_DRAWER_BUTTON_CLICKED);
-            if (!filterButtonClickedBefore) {
-                this.pulse = AnimationUtils.loadAnimation(getActivity(), R.anim.pulse);
-            }
-            initListeners();
-        }
-
-        // self determine if it should be hidden or not
-        public void updateVisibility() {
-            setVisible(currentQuery != null && adapter != null && adapter.getTotalCount() > 0);
-        }
-
-        public void reset(boolean hide) { //might do, parameter to not hide drawer
-            setVisible(!hide);
-            keywordDetector.reset();
-        }
-
-        @Override
-        public void onPipelineUpdate(List<KeywordFilter> pipeline) {
-            // this will make the adapter filter
-            FilteredSearchResults filteredSearchResults = adapter.setKeywordFiltersPipeline(pipeline);
-            updateFileTypeCounter(filteredSearchResults);
-            if (pipeline != null) {
-                if (pipeline.isEmpty()) {
-                    counterTextView.setText("");
-                } else {
-                    counterTextView.setText(String.valueOf(pipeline.size()));
-                }
-            }
-            updateVisibility();
-            List<SearchResult> results = adapter.getKeywordFiltersPipeline().isEmpty() ? adapter.getList() : filteredSearchResults.keywordFiltered;
-            keywordDetector.reset();
-            keywordDetector.requestHistogramsUpdateAsync(results);
-        }
-
-        @Override
-        public void onAddKeywordFilter(KeywordFilter keywordFilter) {
-            keywordDetector.clearHistogramUpdateRequestDispatcher();
-            FilteredSearchResults filteredSearchResults = adapter.addKeywordFilter(keywordFilter);
-            updateFileTypeCounter(filteredSearchResults);
-        }
-
-        @Override
-        public void onRemoveKeywordFilter(KeywordFilter keywordFilter) {
-            keywordDetector.clearHistogramUpdateRequestDispatcher();
-            updateFileTypeCounter(adapter.removeKeywordFilter(keywordFilter));
-        }
-
-        @Override
-        public List<KeywordFilter> getKeywordFiltersPipeline() {
-            if (adapter == null) {
-                return new ArrayList<>(0);
-            }
-            return adapter.getKeywordFiltersPipeline();
-        }
-
-        private void setVisible(boolean visible) {
-            int visibility = visible ? View.VISIBLE : GONE;
-            int oldVisibility = imageButton.getVisibility();
-            imageButton.setVisibility(visibility);
-            if (visible) {
-                if (oldVisibility == GONE && !filterButtonClickedBefore) {
-                    pulse.reset();
-                    imageButton.setAnimation(pulse);
-                    pulse.setStartTime(AnimationUtils.currentAnimationTimeMillis() + 1000);
-                }
-                counterTextView.setVisibility(getKeywordFiltersPipeline().size() > 0 ? View.VISIBLE : GONE);
-                counterTextView.setText(String.valueOf(getKeywordFiltersPipeline().size()));
-            } else {
-                imageButton.clearAnimation();
-                counterTextView.setVisibility(GONE);
-            }
-        }
-
-        private void initListeners() {
-            imageButton.setOnClickListener(v -> {
-                if (!filterButtonClickedBefore) {
-                    filterButtonClickedBefore = true;
-                    ConfigurationManager.instance().setBoolean(Constants.PREF_KEY_GUI_SEARCH_FILTER_DRAWER_BUTTON_CLICKED, true);
-                    imageButton.clearAnimation();
-                    pulse = null;
-                }
-                UXStats.instance().log(UXAction.SEARCH_FILTER_BUTTON_CLICK);
-            });
-        }
-    }
-
-    @SuppressWarnings("unused")
-    private static void possiblyWaitInBackgroundToUpdateUI(FilterToolbarButton filterToolbarButton, KeywordFilterDrawerView keywordFilterDrawerView, Map<KeywordDetector.Feature, List<Map.Entry<String, Integer>>> filteredHistograms) {
-        long timeSinceLastUpdate = System.currentTimeMillis() - filterToolbarButton.lastUIUpdate;
-        if (timeSinceLastUpdate < 500) {
-            try {
-                Thread.sleep(500L - timeSinceLastUpdate);
-            } catch (InterruptedException ignored) {
-            }
-        }
-    }
-
-    private static void updateUIWithFilteredHistogramsPerFeature(FilterToolbarButton filterToolbarButton, KeywordFilterDrawerView keywordFilterDrawerView, Map<KeywordDetector.Feature, List<Map.Entry<String, Integer>>> filteredHistograms) {
-        filterToolbarButton.lastUIUpdate = System.currentTimeMillis();
-        // should be safe from concurrent modification exception as new list with filtered elements
-        for (KeywordDetector.Feature feature : filteredHistograms.keySet()) {
-            List<Map.Entry<String, Integer>> filteredHistogram = filteredHistograms.get(feature);
-            keywordFilterDrawerView.updateData(feature, filteredHistogram);
-        }
-        filterToolbarButton.updateVisibility();
-        keywordFilterDrawerView.requestLayout();
-    }
 }
