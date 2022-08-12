@@ -520,7 +520,7 @@ public final class ImageLoader {
                 if (retriever != null) {
                     try {
                         retriever.release();
-                    } catch (IOException e) {
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }

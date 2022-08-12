@@ -4,9 +4,6 @@
     <!-- See through -->
     <color name="transparent">#00000000</color>
 
-    <!-- White -->
-    <color name="white">#ffffffff</color>
-
     <!-- Transparent white -->
     <color name="transparent_white">#ffcccccc</color>
 
