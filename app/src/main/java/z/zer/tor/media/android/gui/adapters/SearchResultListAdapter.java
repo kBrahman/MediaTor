@@ -1,5 +1,7 @@
 package z.zer.tor.media.android.gui.adapters;
 
+import static z.zer.tor.media.android.core.Constants.IMAGE_URL;
+
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -292,7 +294,7 @@ public abstract class SearchResultListAdapter extends AbstractListAdapter<Search
                 i.putExtra("streamUrl", sr.getStreamUrl());
                 String url = sr.getThumbnailUrl();
                 Log.i(TAG, "image_url=>" + url);
-                i.putExtra("image_url", url);
+                i.putExtra(IMAGE_URL, url);
                 ctx.startActivity(i);
             }
         }

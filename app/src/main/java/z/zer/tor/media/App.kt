@@ -6,13 +6,13 @@ import com.facebook.ads.AudienceNetworkAds
 import z.zer.tor.media.android.core.ConfigurationManager
 import z.zer.tor.media.android.db.Db
 import z.zer.tor.media.android.db.MIGRATION_1_2
+import z.zer.tor.media.android.db.MIGRATION_2_3
 import z.zer.tor.media.android.gui.LocalSearchEngine
 import z.zer.tor.media.android.gui.NetworkManager
 import z.zer.tor.media.android.gui.views.AbstractActivity
 import z.zer.tor.media.android.util.Asyncs
 import z.zer.tor.media.android.util.ImageLoader
 import z.zer.tor.media.android.util.RunStrict
-import z.zer.tor.media.util.Logger
 
 class App : Application() {
 
@@ -29,7 +29,7 @@ class App : Application() {
             this,
             Db::class.java,
             getString(R.string.application_label) + "_db"
-        ).addMigrations(MIGRATION_1_2).build()
+        ).addMigrations(MIGRATION_1_2, MIGRATION_2_3).build()
     }
 
     private fun onCreateSafe() {

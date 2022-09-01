@@ -39,6 +39,7 @@ import org.json.JSONObject
 import z.zer.tor.media.App
 import z.zer.tor.media.BuildConfig
 import z.zer.tor.media.R
+import z.zer.tor.media.android.core.Constants.IMAGE_URL
 import z.zer.tor.media.android.db.Db
 import z.zer.tor.media.android.db.PlayTrack
 import z.zer.tor.media.utils.MusicUtils
@@ -237,7 +238,7 @@ class PlayerActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener,
                                         displayName,
                                         source ?: "",
                                         streamUrl!!.substringBefore("="),
-                                        imgUrl!!
+                                        imgUrl
                                     )
                                     db.trackDao().insert(track)
                                 }
@@ -274,11 +275,11 @@ class PlayerActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener,
         }
     }
 
-    fun initComponents(added: MutableState<Boolean?>, trackDao: Db.TrackDao) {
+    private fun initComponents(added: MutableState<Boolean?>, trackDao: Db.TrackDao) {
         val i: Intent = intent
         stopAnyOtherPlayers()
         streamUrl = i.getStringExtra("streamUrl")
-        imgUrl = i.getStringExtra("image_url")
+        imgUrl = i.getStringExtra(IMAGE_URL)
         Log.i(TAG, "stream url=>$streamUrl")
         Log.i(TAG, "img=>$imgUrl")
         if (streamUrl == null) {

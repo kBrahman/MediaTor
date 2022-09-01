@@ -154,7 +154,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
     protected void onResume() {
         super.onResume();
         ConfigurationManager CM = ConfigurationManager.instance();
-        checkLastSeenVersionBuild();
         syncNavigationMenu();
         updateNavigationMenu();
         async(NetworkManager.instance(), NetworkManager::queryNetworkStatusBackground);
@@ -262,23 +261,6 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         Fragment fragment = getCurrentFragment();
         if (fragment != null) {
             getSupportFragmentManager().putFragment(outState, CURRENT_FRAGMENT_KEY, fragment);
-        }
-    }
-
-    private void checkLastSeenVersionBuild() {
-        final ConfigurationManager CM = ConfigurationManager.instance();
-        final String lastSeenVersionBuild = CM.getString(Constants.PREF_KEY_CORE_LAST_SEEN_VERSION_BUILD);
-        final String currentVersionBuild = Constants.FROSTWIRE_VERSION_STRING + "." + Constants.MEDIAT_TOR_BUILD;
-        if (Utils.isNullOrEmpty(lastSeenVersionBuild)) {
-            //fresh install
-            //Offers.forceDisabledAds(this); // no ads on first session ever
-            CM.setString(Constants.PREF_KEY_CORE_LAST_SEEN_VERSION_BUILD, currentVersionBuild);
-            UXStats.instance().log(UXAction.CONFIGURATION_WIZARD_FIRST_TIME);
-        } else if (!currentVersionBuild.equals(lastSeenVersionBuild)) {
-            //just updated.
-            //Offers.forceDisabledAds(this); // no ads right after update
-            CM.setString(Constants.PREF_KEY_CORE_LAST_SEEN_VERSION_BUILD, currentVersionBuild);
-            UXStats.instance().log(UXAction.CONFIGURATION_WIZARD_AFTER_UPDATE);
         }
     }
 

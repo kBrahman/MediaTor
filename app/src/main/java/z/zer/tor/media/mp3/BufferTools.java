@@ -14,12 +14,6 @@ public class BufferTools {
 		return stringBuffer.toString();
 	}
 
-	public static byte[] stringToByteBuffer(String s, int offset, int length) {
-		String stringToCopy = s.substring(offset, offset + length);
-		byte[] bytes = stringToCopy.getBytes();
-		return bytes;
-	}
-	
 	public static void stringIntoByteBuffer(String s, int offset, int length, byte[] bytes, int destOffset) {
 		for (int i = 0; i < length; i++) {
 			char ch = s.charAt(offset + i);
@@ -28,30 +22,6 @@ public class BufferTools {
 			else by = (byte)(ch - 256);
 			bytes[destOffset + i] = by;
 		}
-	}
-
-	public static String trimStringRight(String s) {
-		int endPosition = s.length() - 1;
-		char endChar;
-		while (endPosition >= 0) {
-			endChar = s.charAt(endPosition);
-			if (endChar > 32) {
-				break;
-			} 
-			endPosition--;
-		}
-		if (endPosition == s.length() - 1) return s;
-		else if (endPosition < 0) return "";
-		return s.substring(0, endPosition + 1);
-	}
-	
-	public static String padStringRight(String s, int length, char padWith) {
-		if (s.length() >= length) return s;
-		StringBuilder stringBuffer = new StringBuilder(s);
-		while (stringBuffer.length() < length) {
-			stringBuffer.append(padWith);
-		}
-		return stringBuffer.toString();
 	}
 
 	public static boolean checkBit(byte b, int bitPosition) {

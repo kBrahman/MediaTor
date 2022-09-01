@@ -1,6 +1,3 @@
-# okhttp3
--keep class okhttp3.Headers { *; }
-
 -dontwarn javax.annotation.Nullable
 -dontwarn javax.annotation.ParametersAreNonnullByDefault
 -dontwarn org.conscrypt.Conscrypt
@@ -19,3 +16,5 @@
 }
 -dontobfuscate
 -optimizations !code/simplification/arithmetic,!code/simplification/cast,!field/*,!class/merging/*,!code/allocation/variable
+
+-keepattributes SourceFile,LineNumberTable

@@ -6,4 +6,4 @@ import androidx.room.PrimaryKey
 
 @Keep
 @Entity
-data class PlayTrack(@PrimaryKey val id: String, val name: String, val source: String, val url: String, val img: String)
+data class PlayTrack(@PrimaryKey val id: String, val name: String, val source: String, val url: String, val img: String?)

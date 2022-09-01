@@ -4,7 +4,7 @@ import androidx.annotation.Keep
 import androidx.room.*
 
 
-@Database(entities = [PlayTrack::class], version = 2, exportSchema = false)
+@Database(entities = [PlayTrack::class], version = 3, exportSchema = false)
 abstract class Db : RoomDatabase() {
 
     abstract fun trackDao(): TrackDao

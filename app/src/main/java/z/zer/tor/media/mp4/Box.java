@@ -1,20 +1,3 @@
-/*
- * Created by Angel Leon (@gubatron), Alden Torres (aldenml)
- * Copyright (c) 2011-2016, FrostWire(R). All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package z.zer.tor.media.mp4;
 
 import java.io.IOException;
@@ -22,10 +5,7 @@ import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-/**
- * @author gubatron
- * @author aldenml
- */
+
 public class Box {
 
     public static final int uuid = Bits.make4cc("uuid");
@@ -256,12 +236,7 @@ public class Box {
     private static HashMap<Integer, BoxLambda> buildMapping() {
         HashMap<Integer, BoxLambda> map = new HashMap<>();
 
-        map.put(mdat, new BoxLambda() {
-            @Override
-            public Box empty() {
-                return new MediaDataBox();
-            }
-        });
+        map.put(mdat, MediaDataBox::new);
         map.put(ftyp, new BoxLambda() {
             @Override
             public Box empty() {
@@ -578,12 +553,7 @@ public class Box {
                 return new TrackFragmentBaseMediaDecodeTimeBox();
             }
         });
-        map.put(trun, new BoxLambda() {
-            @Override
-            public Box empty() {
-                return new TrackRunBox();
-            }
-        });
+        map.put(trun, () -> new TrackRunBox());
 
         return map;
     }

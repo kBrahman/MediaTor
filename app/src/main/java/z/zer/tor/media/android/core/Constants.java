@@ -1,22 +1,15 @@
 package z.zer.tor.media.android.core;
 
 
-import z.zer.tor.media.BuildConfig;
-
 public final class Constants {
 
-    public static final String MEDIAT_TOR_BUILD = String.valueOf((BuildConfig.VERSION_CODE % 1000));
-    public static final String FROSTWIRE_VERSION_STRING = BuildConfig.VERSION_NAME;
-
     // preference keys
+    public static final String IMAGE_URL = "image_url";
     public static final String PREF_KEY_CORE_UUID = "zig.zak.media.tor.core.uuid";
     public static final String PREF_KEY_CORE_LAST_SEEN_VERSION_BUILD = "zig.zak.media.tor.core.last_seen_version_build";
     public static final String PREF_KEY_MAIN_APPLICATION_ON_CREATE_TIMESTAMP = "zig.zak.media.tor.core.main_application_on_create_timestamp";
 
-    public static final String PREF_KEY_NETWORK_ENABLE_DHT = "froswire.prefs.network.enable_dht";
-
     public static final String PREF_KEY_NETWORK_USE_WIFI_ONLY = "frostwire.prefs.network.use_wifi_only";
-    public static final String PREF_KEY_NETWORK_BITTORRENT_ON_VPN_ONLY = "frostwire.prefs.network.bittorrent_on_vpn_only";
 
     public static final String PREF_KEY_SEARCH_COUNT_DOWNLOAD_FOR_TORRENT_DEEP_SCAN = "frostwire.prefs.search.count_download_for_torrent_deep_scan";
     public static final String PREF_KEY_SEARCH_COUNT_ROUNDS_FOR_TORRENT_DEEP_SCAN = "frostwire.prefs.search.count_rounds_for_torrent_deep_scan";

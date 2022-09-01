@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!-- Text sizes -->
-    <dimen name="text_size_medium">16.0sp</dimen>
-    <dimen name="text_size_large">18.0sp</dimen>
-    <dimen name="text_size_x_large">20.0sp</dimen>
-    <dimen name="text_size_xx_large">24.0sp</dimen>
-    <dimen name="text_size_xxx_large">28.0sp</dimen>
-    <dimen name="text_size_dayum">36.0sp</dimen>
-
     <!-- List and grid view padding -->
     <dimen name="list_preferred_item_padding">0dp</dimen>
     <!-- List view fast scroll padding left -->

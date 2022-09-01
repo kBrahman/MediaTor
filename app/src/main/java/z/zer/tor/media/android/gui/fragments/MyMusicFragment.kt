@@ -69,7 +69,7 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
     private var service: PlayService.PlayBinder? = null
     private lateinit var tracks: SnapshotStateList<PlayTrack>
     private val cScope = CoroutineScope(Dispatchers.IO)
-    private val imageCache = HashMap<String, Bitmap?>()
+    private val imageCache = HashMap<String?, Bitmap?>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -302,11 +302,12 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
         }
     }
 
-    private fun setBitmap(btp: MutableState<Bitmap?>, url: String) {
+    private fun setBitmap(btp: MutableState<Bitmap?>, url: String?) {
         val bitmap = imageCache[url]
         if (bitmap != null) btp.value = bitmap
         else cScope.launch {
             val v = try {
+                if (url == null) throw IOException();
                 BitmapFactory.decodeStream(URL(url).openConnection().getInputStream())
             } catch (ce: IOException) {
                 if (!isDetached) BitmapFactory.decodeResource(resources, R.mipmap.ic_launcher)
