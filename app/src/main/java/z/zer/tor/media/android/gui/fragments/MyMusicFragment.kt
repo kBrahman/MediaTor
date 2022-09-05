@@ -67,7 +67,7 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
     private lateinit var showPlayer: MutableState<Boolean>
     private lateinit var showLoading: MutableState<Boolean>
     private var service: PlayService.PlayBinder? = null
-    private lateinit var tracks: SnapshotStateList<PlayTrack>
+    private var tracks: SnapshotStateList<PlayTrack> = mutableStateListOf()
     private val cScope = CoroutineScope(Dispatchers.IO)
     private val imageCache = HashMap<String?, Bitmap?>()
 
@@ -300,6 +300,12 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
                 }
             }
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i(TAG, "on stop")
+        activity?.unbindService(this)
     }
 
     private fun setBitmap(btp: MutableState<Bitmap?>, url: String?) {

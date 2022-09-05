@@ -60,8 +60,11 @@ class PlayService : Service() {
         val style = androidx.media.app.NotificationCompat.MediaStyle()
         style.setShowActionsInCompactView(0, 1, 2, 3)
         style.setCancelButtonIntent(getThisService(ACTION_STOP_SERVICE))
+        val color = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) getColor(R.color.colorPrimary)
+        else resources.getColor(R.color.colorPrimary)
+
         builder = NotificationCompat.Builder(this, CHANNEL_ID).setStyle(style).setVisibility(VISIBILITY_PUBLIC)
-            .setSmallIcon(R.drawable.ic_notification).setColorized(true).setColor(getColor(R.color.colorPrimary))
+            .setSmallIcon(R.drawable.ic_notification).setColorized(true).setColor(color)
             .addAction(getAction(R.drawable.ic_previous_24, ACTION_PREV))
             .addAction(getAction(R.drawable.ic_pause_24, ACTION_PLAY_PAUSE))
             .addAction(getAction(R.drawable.ic_next_24, ACTION_NEXT))
@@ -123,7 +126,15 @@ class PlayService : Service() {
             }
             return super.onStartCommand(intent, flags, startId)
         }
-        index = intent?.getIntExtra("index", 0) ?: 0
+        val i = intent?.getIntExtra("index", 0) ?: 0
+        if (mp.isPlaying && index == i) {
+            binder.listener?.setCurrItem(tracks[index])
+            binder.listener?.showProgress(false)
+            binder.listener?.setPlaying(true)
+            return super.onStartCommand(intent, flags, startId)
+        }
+        index = i
+        mp.reset()
         cScope.launch {
             tracks = db.trackDao().all()
             val t = tracks[index]

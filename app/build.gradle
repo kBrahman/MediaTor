@@ -13,10 +13,10 @@ android {
     compileSdkVersion 33
     defaultConfig {
         applicationId localProperties["id"]
-        versionCode 81
-        versionName "3.17"
-        minSdkVersion 22
         targetSdkVersion 33
+        minSdkVersion 22
+        versionName "3.18"
+        versionCode 82
         buildConfigField "String", "S_C_KEY", localProperties["s_c_key"]
         buildConfigField "String", "ID_SERVER", localProperties["server_id"]
     }
@@ -60,7 +60,6 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.google.android.flexbox:flexbox:3.0.0'
     implementation 'com.google.code.gson:gson:2.9.1'
-    implementation platform('com.google.firebase:firebase-bom:30.3.2')
     implementation 'com.google.firebase:firebase-analytics-ktx:21.1.0'
     implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.12'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
@@ -74,6 +73,7 @@ dependencies {
     implementation 'androidx.fragment:fragment-ktx:1.5.2'
     //ads
     implementation 'com.facebook.android:audience-network-sdk:6.11.0'
+//    implementation 'io.popanet.sdk:popa:2.0.24'
     //db
     def room_version = '2.4.3'
     implementation "androidx.room:room-runtime:$room_version"
