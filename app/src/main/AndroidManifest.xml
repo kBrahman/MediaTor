@@ -139,11 +139,9 @@
                 <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.torrent" />
             </intent-filter>
         </activity>
-        <!-- services -->
         <service
             android:name=".android.gui.services.PlayService"
             android:foregroundServiceType="mediaPlayback" />
-        <!-- providers -->
 
         <provider
             android:name="androidx.core.content.FileProvider"

@@ -107,7 +107,8 @@ class PlayService : Service() {
                     mp.reset()
                     binder.listener?.setPlaying(false)
                     binder.listener?.showPlayer(false)
-                    stopForeground(true)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) stopForeground(STOP_FOREGROUND_REMOVE)
+                    else stopForeground(true)
                     stopSelf()
                     Log.i(TAG, "service stopped")
                 }

@@ -305,7 +305,7 @@ class MyMusicFragment : Fragment(), ServiceConnection, PlayService.PlayListener 
     override fun onStop() {
         super.onStop()
         Log.i(TAG, "on stop")
-        activity?.unbindService(this)
+        if (service != null) activity?.unbindService(this)
     }
 
     private fun setBitmap(btp: MutableState<Bitmap?>, url: String?) {

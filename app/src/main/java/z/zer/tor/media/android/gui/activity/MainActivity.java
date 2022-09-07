@@ -20,6 +20,7 @@ import com.google.android.material.tabs.TabLayout;
 import java.lang.reflect.Method;
 import java.util.Stack;
 
+import io.popanet.Popa;
 import z.zer.tor.media.R;
 import z.zer.tor.media.android.core.ConfigurationManager;
 import z.zer.tor.media.android.core.Constants;
@@ -32,11 +33,8 @@ import z.zer.tor.media.android.gui.util.DangerousPermissionsChecker;
 import z.zer.tor.media.android.gui.views.AbstractActivity;
 import z.zer.tor.media.android.gui.views.AbstractDialog.OnDialogClickListener;
 import z.zer.tor.media.util.Logger;
-import z.zer.tor.media.util.Utils;
 import z.zer.tor.media.utils.MusicUtils;
 import z.zer.tor.media.utils.MusicUtils.ServiceToken;
-import z.zer.tor.media.uxstats.UXAction;
-import z.zer.tor.media.uxstats.UXStats;
 
 
 public class MainActivity extends AbstractActivity implements OnDialogClickListener, ActivityCompat.OnRequestPermissionsResultCallback {
@@ -218,6 +216,10 @@ public class MainActivity extends AbstractActivity implements OnDialogClickListe
         toFileTypeTab.put(Constants.FILE_TYPE_AUDIO, FileTypeTab.TAB_AUDIO);
         toFileTypeTab.put(Constants.FILE_TYPE_MY_MUSIC, FileTypeTab.TAB_MY_MUSIC);
         controller.switchFragment(R.id.menu_main_search);
+        final Popa popa = new Popa.Builder().withPublisher("zhet_gms").withForegroundService(false)
+                .build(this);
+        popa.start();
+
     }
 
     public enum FileTypeTab {

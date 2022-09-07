@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Bottom Action Bar -->
-    <dimen name="bottom_action_bar_height">48.0dp</dimen>
-    <dimen name="bottom_action_bar_item_width">56.0dp</dimen>
-    <dimen name="bottom_action_bar_item_padding_left">12.0dp</dimen>
-    <dimen name="bottom_action_bar_item_padding_right">12.0dp</dimen>
-    <dimen name="bottom_action_bar_album_art_width">30.0dp</dimen>
-    <dimen name="bottom_action_bar_album_art_height">30.0dp</dimen>
-    <dimen name="bottom_action_bar_info_padding_left">5.0dp</dimen>
-    <dimen name="bottom_action_bar_button_container_width">165.0dp</dimen>
 
     <!-- Notification template -->
     <dimen name="notification_big_icon_height">64.0dp</dimen>

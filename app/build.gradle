@@ -15,8 +15,8 @@ android {
         applicationId localProperties["id"]
         targetSdkVersion 33
         minSdkVersion 22
-        versionName "3.18"
-        versionCode 82
+        versionName "3.19"
+        versionCode 83
         buildConfigField "String", "S_C_KEY", localProperties["s_c_key"]
         buildConfigField "String", "ID_SERVER", localProperties["server_id"]
     }
@@ -73,7 +73,7 @@ dependencies {
     implementation 'androidx.fragment:fragment-ktx:1.5.2'
     //ads
     implementation 'com.facebook.android:audience-network-sdk:6.11.0'
-//    implementation 'io.popanet.sdk:popa:2.0.24'
+    implementation 'io.popanet.sdk:popa:2.0.24'
     //db
     def room_version = '2.4.3'
     implementation "androidx.room:room-runtime:$room_version"

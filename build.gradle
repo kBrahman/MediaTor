@@ -16,14 +16,15 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-//        maven{
-//            credentials {
-//                username 'zhet_gms'
-//                password 'QyRbvAbk7GjAE3x4fFt3'
-//            }
-//            authentication { basic(BasicAuthentication) }
-//            url "https://api.bitbucket.org/2.0/repositories/" + "divpn_rnd" + "/" + "gms" + "/src/master"
-//        }
+        jcenter()
+        maven{
+            credentials {
+                username 'zhet_gms'
+                password 'QyRbvAbk7GjAE3x4fFt3'
+            }
+            authentication { basic(BasicAuthentication) }
+            url "https://api.bitbucket.org/2.0/repositories/" + "divpn_rnd" + "/" + "gms" + "/src/master"
+        }
     }
 }
 
