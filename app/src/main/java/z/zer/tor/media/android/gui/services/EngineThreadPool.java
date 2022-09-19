@@ -17,21 +17,18 @@
 
 package z.zer.tor.media.android.gui.services;
 
-import z.zer.tor.media.android.util.Debug;
-import z.zer.tor.media.util.ThreadPool;
-
 import java.util.Map;
 import java.util.WeakHashMap;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 
+import z.zer.tor.media.android.util.Debug;
+import z.zer.tor.media.util.ThreadPool;
+
 /**
  * This executor helps to keep track of potential context leaks
  * and excessive submission of tasks.
- *
- * @author gubatron
- * @author aldenml
  */
 final class EngineThreadPool extends ThreadPool {
 

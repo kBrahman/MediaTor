@@ -15,15 +15,14 @@ import android.widget.TextView;
 
 import androidx.fragment.app.FragmentManager;
 
-import z.zer.tor.media.R;
-import z.zer.tor.media.android.gui.views.AbstractDialog;
-import z.zer.tor.media.android.gui.views.AbstractListAdapter;
-import z.zer.tor.media.util.Logger;
-
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import z.zer.tor.media.R;
+import z.zer.tor.media.android.gui.views.AbstractDialog;
+import z.zer.tor.media.android.gui.views.AbstractListAdapter;
 
 abstract class AbstractConfirmListDialog<T> extends AbstractDialog implements
         AbstractListAdapter.OnItemCheckedListener<T> {
@@ -47,15 +46,15 @@ abstract class AbstractConfirmListDialog<T> extends AbstractDialog implements
         SINGLE_SELECTION,
         MULTIPLE_SELECTION;
 
-       public static SelectionMode fromInt(int n) {
-           SelectionMode selectionMode = SelectionMode.NO_SELECTION;
-           if (n == SelectionMode.MULTIPLE_SELECTION.ordinal()) {
-               selectionMode = SelectionMode.MULTIPLE_SELECTION;
-           } else if (n == SelectionMode.SINGLE_SELECTION.ordinal()) {
-               selectionMode = SelectionMode.SINGLE_SELECTION;
-           }
-           return selectionMode;
-       }
+        public static SelectionMode fromInt(int n) {
+            SelectionMode selectionMode = SelectionMode.NO_SELECTION;
+            if (n == SelectionMode.MULTIPLE_SELECTION.ordinal()) {
+                selectionMode = SelectionMode.MULTIPLE_SELECTION;
+            } else if (n == SelectionMode.SINGLE_SELECTION.ordinal()) {
+                selectionMode = SelectionMode.SINGLE_SELECTION;
+            }
+            return selectionMode;
+        }
     }
 
     protected final static String TAG = "confirm_list_dialog";
@@ -68,10 +67,12 @@ abstract class AbstractConfirmListDialog<T> extends AbstractDialog implements
 
     abstract protected OnClickListener createOnYesListener();
 
-    /** rebuilds list of objects from json and does listView.setAdapter(YourAdapter(theObjectList)) */
+    /**
+     * rebuilds list of objects from json and does listView.setAdapter(YourAdapter(theObjectList))
+     */
     abstract public List<T> deserializeData(String listDataInJSON);
 
-    public AbstractConfirmListDialog()  {
+    public AbstractConfirmListDialog() {
         super(TAG, R.layout.dialog_confirm_list);
     }
 
@@ -166,14 +167,6 @@ abstract class AbstractConfirmListDialog<T> extends AbstractDialog implements
         selectAllCheckbox.setOnCheckedChangeListener(selectAllCheckboxOnCheckedChangeListener);
     }
 
-    public String getDialogTitle() {
-        Bundle bundle = getArguments();
-        if (bundle != null) {
-            return bundle.getString(BUNDLE_KEY_DIALOG_TITLE);
-        }
-        return null;
-    }
-
     public abstract ConfirmListDialogDefaultAdapter<T> createAdapter(Context context,
                                                                      List<T> listData,
                                                                      SelectionMode selectionMode,
@@ -190,8 +183,8 @@ abstract class AbstractConfirmListDialog<T> extends AbstractDialog implements
         }
 
         if (adapter == null &&
-            listData != null  &&
-            !listData.isEmpty()) {
+                listData != null &&
+                !listData.isEmpty()) {
             adapter = createAdapter(getActivity(), listData, selectionMode, bundle);
         } else if (adapter != null && adapter.getTotalCount() == 0 && !listData.isEmpty()) {
             adapter.addList(listData);
@@ -225,7 +218,7 @@ abstract class AbstractConfirmListDialog<T> extends AbstractDialog implements
         }
         if (bundle.containsKey(BUNDLE_KEY_CHECKED_OFFSETS)) {
             final boolean[] checkedOffsets = bundle.getBooleanArray(BUNDLE_KEY_CHECKED_OFFSETS);
-            for (int i=0; i < checkedOffsets.length; i++) {
+            for (int i = 0; i < checkedOffsets.length; i++) {
                 adapter.setChecked(i, checkedOffsets[i]);
             }
         }
@@ -324,7 +317,7 @@ abstract class AbstractConfirmListDialog<T> extends AbstractDialog implements
     private void updateSelectedCount() {
         if (adapter == null || selectionMode == SelectionMode.SINGLE_SELECTION) {
             final LinearLayout summaryLayout = findView(dlg, R.id.dialog_confirm_list_selection_summary);
-            summaryLayout.setVisibility(View.GONE );
+            summaryLayout.setVisibility(View.GONE);
             return;
         }
 
@@ -340,9 +333,9 @@ abstract class AbstractConfirmListDialog<T> extends AbstractDialog implements
         final TextView numCheckedTextView = findView(dlg, R.id.dialog_confirm_list_num_checked_textview);
 
         boolean summaryVisible = selected > 0 &&
-                                 selectionMode == SelectionMode.MULTIPLE_SELECTION &&
-                                 summaryLayout != null &&
-                                 numCheckedTextView != null;
+                selectionMode == SelectionMode.MULTIPLE_SELECTION &&
+                summaryLayout != null &&
+                numCheckedTextView != null;
 
         if (summaryLayout != null) {
             summaryLayout.setVisibility(summaryVisible ? View.VISIBLE : View.GONE);
@@ -383,7 +376,7 @@ abstract class AbstractConfirmListDialog<T> extends AbstractDialog implements
     }
 
     private void scrollToSelectedRadioButton() {
-        if (dlg != null && selectionMode == SelectionMode.SINGLE_SELECTION ) {
+        if (dlg != null && selectionMode == SelectionMode.SINGLE_SELECTION) {
             ListView listView = findView(dlg, R.id.dialog_confirm_list_listview);
             if (listView == null) {
                 return;
@@ -404,11 +397,11 @@ abstract class AbstractConfirmListDialog<T> extends AbstractDialog implements
                 View selectedView = listView.getChildAt(adapter.getLastSelectedRadioButtonIndex());
 
                 if (selectedView == null) {
-                    selectedView = adapter.getView(getLastSelectedIndex(),null,listView);
+                    selectedView = adapter.getView(getLastSelectedIndex(), null, listView);
                 }
 
                 if (selectedView != null) {
-                    listView.scrollTo(0, Math.max(0, (int) selectedView.getY()-(selectedView.getHeight()/2)));
+                    listView.scrollTo(0, Math.max(0, (int) selectedView.getY() - (selectedView.getHeight() / 2)));
                 }
             }
         }

@@ -1,2 +1,2 @@
--keepattributes SourceFile,LineNumberTable
+-keepattributes *Annotation*,SourceFile,LineNumberTable
 -keep class com.facebook.ads.** { *; }
