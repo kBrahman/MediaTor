@@ -1,6 +1,7 @@
 package z.zer.tor.media.android.gui.fragments
 
 import android.content.ComponentName
+import android.content.Context
 import android.content.Context.BIND_AUTO_CREATE
 import android.content.Intent
 import android.content.ServiceConnection

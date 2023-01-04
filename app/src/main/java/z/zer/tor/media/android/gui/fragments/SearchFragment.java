@@ -83,6 +83,7 @@ public final class SearchFragment extends AbstractFragment implements SearchList
         fileTypeCounter = new FileTypeCounter();
         currentQuery = null;
         keywordDetector = new KeywordDetector();
+        
     }
 
     @Override
