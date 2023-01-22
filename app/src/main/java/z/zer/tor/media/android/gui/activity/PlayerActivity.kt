@@ -387,18 +387,13 @@ class PlayerActivity : AppCompatActivity(), MediaPlayer.OnCompletionListener,
         super.onDestroy()
     }
 
-    override fun onPause() {
-        releaseMediaPlayer()
-        super.onPause()
-    }
-
     override fun onAudioFocusChange(focusChange: Int) {
         if (focusChange == AudioManager.AUDIOFOCUS_LOSS || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT) {
             releaseMediaPlayer()
         }
     }
 
-    fun startSeekBar() {
+    private fun startSeekBar() {
         handler.postDelayed(this, 1000)
     }
 

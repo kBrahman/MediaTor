@@ -18,7 +18,6 @@ class App : Application() {
 
 
     lateinit var db: Db
-
     override fun onCreate() {
         super.onCreate()
         RunStrict.runStrict { onCreateSafe() }
@@ -34,10 +33,6 @@ class App : Application() {
 
     private fun onCreateSafe() {
         ConfigurationManager.create(this)
-
-        // some phones still can configure an external button as the
-        // permanent menu key
-//        ignoreHardwareMenu();
         AbstractActivity.setMenuIconsVisible()
         NetworkManager.create(this)
         Asyncs.async(NetworkManager.instance()) { manager: NetworkManager? ->

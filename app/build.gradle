@@ -15,8 +15,8 @@ android {
         applicationId localProperties["id"]
         targetSdkVersion 33
         minSdkVersion 22
-        versionName "3.21"
-        versionCode 85
+        versionName "3.22"
+        versionCode 86
         buildConfigField "String", "S_C_KEY", localProperties["s_c_key"]
         buildConfigField "String", "ID_SERVER", localProperties["server_id"]
     }
@@ -49,9 +49,9 @@ android {
     buildToolsVersion '32.1.0-rc1'
     buildFeatures { compose true }
 
-    kotlinOptions { jvmTarget = '11' }
+    kotlinOptions { jvmTarget = '1.8' }
     lint { abortOnError false }
-    composeOptions { kotlinCompilerExtensionVersion "1.3.2" }
+    composeOptions { kotlinCompilerExtensionVersion '1.4.0-alpha02' }
     setProperty("archivesBaseName", 'MediaPlay')
     namespace 'z.zer.tor.media'
 }
@@ -60,11 +60,11 @@ dependencies {
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.google.android.flexbox:flexbox:3.0.0'
-    implementation 'com.google.code.gson:gson:2.10'
+    implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     //compose
     implementation 'androidx.compose.foundation:foundation:1.3.1'
-    implementation 'androidx.compose.ui:ui:1.3.2'
+    implementation 'androidx.compose.ui:ui:1.3.3'
     implementation 'androidx.compose.material:material:1.3.1'
     implementation 'androidx.activity:activity-compose:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout-compose:1.0.1'
@@ -73,7 +73,7 @@ dependencies {
     implementation 'androidx.fragment:fragment-ktx:1.5.5'
     implementation 'com.facebook.android:audience-network-sdk:6.12.0'
     //db
-    def room_version = '2.4.3'
+    def room_version = '2.5.0'
     implementation "androidx.room:room-runtime:$room_version"
     implementation("androidx.room:room-ktx:$room_version")
     kapt "androidx.room:room-compiler:$room_version"

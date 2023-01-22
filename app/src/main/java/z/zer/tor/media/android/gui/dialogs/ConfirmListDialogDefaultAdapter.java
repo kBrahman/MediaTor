@@ -22,7 +22,7 @@ import z.zer.tor.media.android.gui.views.AbstractListAdapter;
 import z.zer.tor.media.android.util.ImageLoader;
 import z.zer.tor.media.util.Logger;
 
-abstract class ConfirmListDialogDefaultAdapter<T> extends AbstractListAdapter {
+abstract class ConfirmListDialogDefaultAdapter<T> extends AbstractListAdapter<T> {
     private static final Logger LOGGER = Logger.getLogger(ConfirmListDialogDefaultAdapter.class);
     private static final int ITEM_TITLE = 0;
     private static final int ITEM_SIZE = 1;
